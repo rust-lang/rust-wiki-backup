@@ -4,4 +4,4 @@ File bugs as you like in the issue tracker here.
 
 If you are already have <a href="http://www.mozilla.org/hacking/commit-access-policy/">Level 1 Access</a> to commit within the Mozilla project, you're welcome to request direct push access to this repository. Email one of the existing authors of this repository and ask.
 
-To accept pull requests into this repository from persons outside the levels of the existing Mozilla Commit Access Policy, we require that the contributor has signed a <a href="http://www.mozilla.org/hacking/notification/">Committer's Agreement</a> with the Mozilla Foundation.
+To accept code or documentation contributions (patches, pull requests and such) into this repository from persons outside the levels of the existing Mozilla Commit Access Policy, we require that the contributor has signed a <a href="http://www.mozilla.org/hacking/notification/">Committer's Agreement</a> with the Mozilla Foundation.
