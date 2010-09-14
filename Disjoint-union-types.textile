@@ -31,7 +31,7 @@ h3. Cons
 
 h2. Nominal disjoint-union types
 
-h3. How to understand them:
+h3. How to understand them
 
 * Disjoint-union types must be named, and they are compared for equality by name.
 
@@ -50,7 +50,7 @@ h3. Cons
 
 h2. Local, generative disjoint-union types
 
-h3. How to understand them:
+h3. How to understand them
 
 * Evaluating a piece of code with a local type declaration produces values of distinct, mutually incompatible types each time.
 
