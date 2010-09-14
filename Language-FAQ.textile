@@ -1,3 +1,5 @@
+h2. General language issues
+
 h3. I'm impatient. Can you give a brief summary of the salient features?
 
 h4. Safety oriented:
@@ -21,6 +23,33 @@ h4. Practicality oriented:
 * UTF-8 strings, assortment of machine-level types.
 * Works with existing native toolchains. GDB / Valgrind / Shark / etc.
 * Practical rule-breaking: can break safety rules, if explicit about where and how. 
+
+h3. Does it run on Windows?
+
+Yes. All development happens in lock-step on all 3 target platforms. Using mingw, not cygwin.
+
+h3. Are there any big programs written in it yet? I want to read big samples.
+
+Sorry, no. It doesn't even have much of a standard library yet.
+
+h3. Have you seen this Google language, Go? How does Rust compare?
+
+Yes.
+* Rust development was several years underway before Go launched, no direct inspiration.
+** Though Pike's previous languages in the Go family (Newsqueak, Alef, Limbo) were influential.
+* Go adopted semantics (safety and memory model) that are quite unsatisfactory.
+** Shared mutable state.
+** Global GC.
+** Null pointers.
+** No RAII or destructors.
+** No type-parametric user code.
+* There are a number of other fine coroutine / actor languages in development presently. It's an area of focus across the PL community.
+
+h3. I like the language but it really needs _$somefeature_.
+
+At this point we are focusing on removing and stabilizing features rather than adding them. File a bug if you think it's important in terms of meeting the existing goals or making the language passably usable. Reductions are more interesting than additions though.
+
+h2. Specific language issues
 
 h3. Is it OO? How do I do this thing I normally do in an OO language?
 
@@ -93,40 +122,15 @@ h3. Why are channels weak?
 
 To simplify reasoning about resource-ownership and resource-allocation costs. All allocated resources are (at worst) owned by the enclosing domain, and die with it.  At best, Rust tries to localize resource ownership to a task or even a frame or a single allocation. Since channels can cross all such boundaries -- even domains -- we did not want the escape of a channel to require the system to keep the receiving-end alive beyond the lifetime of its referent. Besides which, since the receiving-end can't escape its enclosing task -- see previous FAQ -- nobody could _use_ such a kept-alive receiving end. It's as good as dead once the owning task dies.
 
-h3. Why limit to ASCII outside comments, strings and characters? Why not use the most general Unicode character class for every lexeme?
+h3. Why are lexemes limited to ASCII outside comments, strings and characters? Why not use the most general Unicode character class for every lexeme?
 
 Our informal conversations with non-English programmers and our search for examples of non-ASCII identifier use in languages that support them has not turned up many leads; it seems non-English programmers still write in ASCII identifiers (and numbers, and whitespace, etc.) Moreover all of our keywords and operators are ASCII-range, so you have to have an ASCII-capable input method to even write Rust code. If you have evidence to suggest we are just not looking in the right places, and non-ASCII identifier use is widespread somewhere we're not aware of, feel free to suggest this change on practical grounds! At the moment it's just a matter of keeping the lexer simple (no character-class tables to consult) as well as any tools that want to work with the language.
 
-h3. Why UTF-8 strings by default? Why not UCS2 or UCS4?
+h3. Why are strings UTF8 by default? Why not UCS2 or UCS4?
 
-The <code>str</code> type is UTF-8 because we observe more text in the wild in this encoding -- particularly in network transmissions, which are endian-agnostic -- and we think it's best that the default treatment of I/O not involve having to recode codepoints in each direction.
+The <code>str</code> type is UTF8 because we observe more text in the wild in this encoding -- particularly in network transmissions, which are endian-agnostic -- and we think it's best that the default treatment of I/O not involve having to recode codepoints in each direction.
 
 This does mean that indexed access to a Unicode codepoint inside a <code>str</code> value is an O(n) operation. On the one hand, this is clearly undesirable; on the other hand, this problem is full of trade-offs and we'd like to point a few important qualifications:
-* Scanning a <code>str</code> for ASCII-range codepoints can still be done safely octet-at-a-time, with each indexing operation pulling out a <code>u8</code> costing only O(1) and producing a value that can be cast and compared to an ASCII-range <code>char</code>. So if you're (say) line-breaking on <code>'\n'</code>, octet-based treatment still works. UTF-8 was well-designed this way.
+* Scanning a <code>str</code> for ASCII-range codepoints can still be done safely octet-at-a-time, with each indexing operation pulling out a <code>u8</code> costing only O(1) and producing a value that can be cast and compared to an ASCII-range <code>char</code>. So if you're (say) line-breaking on <code>'\n'</code>, octet-based treatment still works. UTF8 was well-designed this way.
 * Most "character oriented" operations on text only work under very restricted language assumptions sets such as "ASCII-range codepoints only". Outside ASCII-range, you tend to have to use a complex (non-constant-time) algorithm for determining linguistic-unit (glyph, word, paragraph) boundaries anyways. We recommend using an "honest" linguistically-aware, Unicode-approved algorithm.
 * The <code>char</code> type is UCS4. If you honestly need to do a lot of codepoint-at-a-time algorithm, it's trivial to write a <code>type wstr = vec[char]</code>, and unpack a <code>str</code> into it in a single pass, then work with the <code>wstr</code>. In other words: the fact that the language is not "decoding to UCS4 by default" shouldn't stop you from decoding (or re-encoding any other way) if you need to work with that encoding.
-
-h3. Does it run on Windows?
-
-Yes. All development happens in lock-step on all 3 target platforms. Using mingw, not cygwin.
-
-h3. Are there any big programs written in it yet? I want to read big samples.
-
-Sorry, no. It doesn't even have much of a standard library yet.
-
-h3. Have you seen this Google language, Go? How does Rust compare?
-
-Yes.
-* Rust development was several years underway before Go launched, no direct inspiration.
-** Though Pike's previous languages in the Go family (Newsqueak, Alef, Limbo) were influential.
-* Go adopted semantics (safety and memory model) that are quite unsatisfactory.
-** Shared mutable state.
-** Global GC.
-** Null pointers.
-** No RAII or destructors.
-** No type-parametric user code.
-* There are a number of other fine coroutine / actor languages in development presently. It's an area of focus across the PL community.
-
-h3. I like the language but it really needs _$somefeature_.
-
-At this point we are focusing on removing and stabilizing features rather than adding them. File a bug if you think it's important in terms of meeting the existing goals or making the language passably usable. Reductions are more interesting than additions though.
