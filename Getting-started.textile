@@ -10,7 +10,15 @@ Version numbers listed here are "what we're using"; the code may well work with 
 * Valgrind 3.5 (recommended but not required for linux)
 * Texinfo's makeinfo and/or texi2pdf commands, if you wish to build HTML or PDF docs, respectively
 
-On windows we recommend developing under the "TDM mingw repackaging":http://tdm-gcc.tdragon.net/ as it has newer tools.
+h4. Debian-based Linux distributions
+
+@sudo apt-get install ocamlc@
+
+64-bit systems: @sudo apt-get install g++-multilib@.
+
+h4. Windows
+
+We recommend developing under the "TDM mingw repackaging":http://tdm-gcc.tdragon.net/ as it has newer tools.
 
 h3. Downloading and building
 
