@@ -16,3 +16,7 @@ h2. FAQ
 
 * [[Language FAQ]]
 * [[Project FAQ]]
+
+h2. Developer notes
+
+* [[Getting started]]
