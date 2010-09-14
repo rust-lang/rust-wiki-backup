@@ -186,7 +186,7 @@ They start very small (a few hundred bytes) and expand dynamically by doubling r
 
 h3. What is the difference between an alias and a box pointer?
 
-* An box pointer points into a reference-counted heap allocation.
+* A box pointer points into a reference-counted heap allocation.
 * An alias points to the interior of a stack _or_ heap allocation, and formation or duplication of an alias does not entail reference counting.
 * Aliases can only be formed when the alias referent will provably outlive the alias.
 * Aliases can therefore only be declared in function or iterator signatures, as parameters.
