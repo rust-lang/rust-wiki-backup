@@ -50,6 +50,6 @@ h3. Communicating
 
 Join irc.mozilla.org #rust if you want to discuss anything more "interactively", we try to remain on that channel during working hours in UTC-7 (US Pacific).
 
-Join the <a herf="https://mail.mozilla.org/listinfo/rust-dev">mailing list</a> if you want to have longer conversations.
+Join the "mailing list":https://mail.mozilla.org/listinfo/rust-dev if you want to have longer conversations.
 
 In both cases, please follow the conduct guidelines on the [[Development policy]] page.
