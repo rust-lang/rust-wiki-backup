@@ -24,15 +24,33 @@ h4. Practicality oriented:
 
 h3. Is it OO? How do I do this thing I normally do in an OO language?
 
-It is multi-paradigm. Not everything is shoe-horned into the object abstraction. Many
-things you can do in OO languages you can do in Rust, but not everything, and not always
-using objects.
+It is multi-paradigm. Not everything is shoe-horned into the object abstraction. Many things you can do in OO languages you can do in Rust, but not everything, and not always using objects.
 
 h3. How do you get away with "no null pointers"?
 
-Data values in the language can only be constructed through a fixed set of initializer forms.
-Each of those forms requires that its inputs already be initialized. A dataflow analysis (the 
-typestate system used elsewhere) ensures that local variables are initialized before use.
+Data values in the language can only be constructed through a fixed set of initializer forms. Each of those forms requires that its inputs already be initialized. A dataflow analysis (the typestate system used elsewhere) ensures that local variables are initialized before use.
+
+h3. What is the relationship between a module and a crate?
+
+* A crate is a top-level compilation unit that corresponds to a single loadable object.
+* A module is a (possibly nested) unit of name-management inside a crate.
+* A crate contains an implicit, un-named top-level module.
+* Recursive definitions can span modules, but not crates.
+* Crates do not have global names, only a set of non-unique metadata tags.
+* There is no global inter-crate namespace; all name management occurs within a crate.
+** Using another crate binds the root of _its_ namespace into the user's namespace.
+
+h3. Why is failure unwinding non-recoverable within a task? Why not try to "catch exceptions"?
+
+In short, because too few guarantees could be statically made about the dynamic environment of the catch block to be able to safely resume.
+
+In more detail: the origin-state of a failure is unknown by definition, therefore catching it would result in dropping the static typestate of the "catch block" to the lowest initialization typestate in the containing block, as well as dropping all user-defined conditions at any statements in the task. While it might be possible to produce a construct that worked this way, the set of operations that would be legal to perform in such a catch block would be minimal at a local level, and intractable at a task level: there would be no way to tell how much of the typestate assumed by the caller of the catch -- or any other functions in the task -- still holds. This sort of "resume in an arbitrarily damaged state" construct would defeat most of the other static rules in the language.
+
+Rust provides, instead, three predictable and well-defined options for handling any combination of the three main categories of "catch" logic:
+* Failure _logging_ is done by the integrated <code>note</code> statement.
+* _Recovery_ after a failure is done by by trapping a task failure from _outside_ the task, where the typestate of other tasks is known to be unaffected.
+* _Cleanup_ of resources is done by RAII-style objects with destructors.
+Cleanup through RAII-style destructors  is more likely to work than in catch blocks anyways, since it will be better tested (part of the non-error control paths, so executed all the time).
 
 h3. Does it run on Windows?
 
