@@ -86,15 +86,15 @@ h3. Why don't local functions or objects capture their dynamic environment? What
 
 Because environment capture would be redundant in two ways, and undermine the goals of clarity and maintainability in two ways:
 * Redundancy:
-** Because there are a variety of ways in which a slot may refer to a referent (three modes, plus the presence or absence of mutability) we would need to accompany such "automatic capture" with a mechanism similar to the capture clauses present in C++0x lambdas. This strikes us as redundant given that there is already a per-function place to declare slot modes: in the _normal invocation signature_.
-** Environment capture only works when you're trying to capture into a locally-defined function. If you want to capture into the arguments of a function defined elsewhere, you _need a <code>bind</code> construct anyways_, if you want to avoid having to write local functions (and capture clauses! see previous point) just to bind an existing argument.
+** Because there are a variety of ways in which a slot may refer to a referent (two modes, plus the presence or absence of mutability) we would need to accompany such "automatic capture" with a mechanism similar to the capture clauses present in C++0x lambdas. This strikes us as redundant given that there is already a per-function place to declare slot modes: in the _normal invocation signature_.
+** Environment capture only works when you're trying to capture into a locally-defined function. If you want to capture into the arguments of a function defined elsewhere, you _need a <code>bind</code> construct anyways_, if you want to avoid having to write local functions (and capture clauses; see previous point) just to bind an existing argument.
 * Clarity and maintainability:
-** If the point of being "more implicit" with capture is to support an abbreviated "capture everything mentioned in the function" form of capture clause, such a form would requires the maintenance programmer to read the whole function to know what gets captured. The <code>bind</code> construct is always explicit.
-** Because environment-capture would involve taking a snapshot of some slots (but not others: again, depending on the capture clause!) the state that gets captured may, or may not, depend on the statements proceeding and following the local declaration. This deepens the previous maintainability risk: the presence of an easily-overlooked capture clause -- particularly one that abbreviates to capturing "everything" -- attached to a local function declaration would change it from a location-insensitive declaration to one sensitive to the order of statements before and after it.
+** If the point of being "more implicit" with capture is to support an abbreviated "capture everything mentioned in the function" form of capture clause, such a form requires the maintenance programmer to read the whole function to know what gets captured. The <code>bind</code> construct is always explicit.
+** Because environment-capture would involve taking a snapshot of some slots (but not others: again, depending on the capture clause) the state that gets captured may, or may not, depend on the statements proceeding and following the local declaration. This deepens the previous maintainability risk: the presence of an easily-overlooked capture clause -- particularly one that abbreviates to capturing "everything" -- attached to a local function declaration would change it from a location-insensitive declaration to one sensitive to the order of statements before and after it.
 
 h3. Why aren't modules type-parametric?
 
-Doing so would require that type-parametric code  is statically expanded, duplicating code. It would also require a complex mechanism inside crates for maintaining uninstantiated module-bodies. While this is a possible implementation approach for parametric code, we don't want to mandate it. We want to maintain the option to parametrize at runtime (this is the default implementation).
+Doing so would likely require that type-parametric code  is statically expanded, duplicating code. It would also require a complex mechanism inside crates for maintaining uninstantiated module-bodies. While this is a possible implementation approach for parametric code, we don't want to mandate it. We want to maintain the option to parametrize at runtime (this is the default implementation).
 
 h3. Why aren't values type-parametric? Why only items?
 
@@ -158,9 +158,9 @@ h3. How do Rust's task stacks work?
 
 They start very small (a few hundred bytes) and expand dynamically by doubling reallocation, like a vector. Stack pointers held inside a task's stack are rewritten when a stack grows. Stack pointers can never escape to the heap in Rust -- by design -- so the heap does not need to be scanned during stack growth.
 
-h3. What is the difference between an alias and an exterior pointer?
+h3. What is the difference between an alias and a box pointer?
 
-* An exterior pointer points into a reference-counted heap allocation.
+* An box pointer points into a reference-counted heap allocation.
 * An alias points to the interior of a stack _or_ heap allocation, and formation or duplication of an alias does not entail reference counting.
 * Aliases can only be formed when the alias referent will provably outlive the alias.
 * Aliases can therefore only be declared in function or iterator signatures, as parameters.
@@ -171,12 +171,12 @@ h3. Why aren't function signatures inferred? Why only local slots?
 * Mechanically, it simplifies the inference algorithm; inference only requires looking at one function at a time.
 * The same simplification goes double for human readers. A reader does not need an IDE running an inference algorithm across an entire crate to be able to guess at a function's argument types; it's always explicit and nearby.
 
-h3. Why can't mutable objects have destructors? Why only immutable ones?
+h3. Why can't state objects have destructors? Why only immutable ones?
 
-Because mutability places an object's destruction sequence under control of the garbage collection system, rather than the reference counting system, and this makes it potentially unclear which order to destroy objects in (the garbage graph may be cyclic, in which case there is no meaning to "top-down".)
+Because state-ness places an object's destruction sequence under control of the garbage collection system, rather than the reference counting system, and this makes it potentially unclear which order to destroy objects in (the garbage graph may be cyclic, in which case there is no meaning to "top-down".)
 
-If you want a mutable object to have something destructor-like, the easiest thing to do is split the immutable part of it off into a separate sub-object and give that sub-object a destructor. This works because while immutable memory cannot contain mutable memory, the opposite is just fine: the immutable subgraph hanging off the mutable one has a well-defined, top-down destruction order.
+If you want a state object to have something destructor-like, the easiest thing to do is split some minimal immutable parts of it off into a separate sub-object and give that sub-object a destructor. This works because while immutable memory cannot contain mutable memory, the opposite is just fine: the immutable subgraph hanging off the state object has a well-defined, top-down destruction order.
 
-h3. Isn't that a bit over-simplistic? Not every mutable value is cyclic! Some may be structurally acyclic, even if they contain mutable bits.
+h3. Isn't that a bit over-simplistic? Not every state value is cyclic! Some may be structurally acyclic, even if they contain mutable bits.
 
-That's true. For a while we played with having the type system differentiate "cyclic" from "state" as different effects, but it seemed to be a confusing distinction (and not always possible to determine, for example given an object or bound function, the contents of its binding is abstract). We decided to remove the distinction. Besides, as the second paragraph above indicates, it's not so hard to work around by splitting up mutable and immutable pieces of an object.
+That's true. For a while we played with having the type system differentiate "cyclic" from "state" as different effects, but it seemed to be a confusing distinction (and not always possible to determine, for example given an object or bound function, the contents of its binding is abstract). We decided to remove the distinction. Besides, as the second paragraph above indicates, it's not so hard to work around by splitting up stateful and immutable pieces of an object.
