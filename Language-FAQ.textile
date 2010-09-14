@@ -24,6 +24,32 @@ h4. Practicality oriented:
 * Works with existing native toolchains. GDB / Valgrind / Shark / etc.
 * Practical rule-breaking: can break safety rules, if explicit about where and how. 
 
+h3. What does it look like?
+
+Well, we really *really* don't want to be spending time on syntax discussions presently; but everyone asks. So here's a small sample from our testsuite (testing tuple-outputs on iterators):
+
+bc. iter pairs() -> tup(int,int) {
+  let int i = 0;
+  let int j = 0;
+  while (i < 10) {
+    put tup(i, j);
+    i += 1;
+    j += i;
+  }
+}
+fn main() {
+  let int i = 10;
+  let int j = 0;
+  for each (tup(int,int) p in pairs()) {
+      log p._0;
+      log p._1;
+      check (p._0 + 10 == i);
+      i += 1;
+      j = p._1;
+    }
+  check(j == 45);
+}
+
 h3. Does it run on Windows?
 
 Yes. All development happens in lock-step on all 3 target platforms. Using mingw, not cygwin.
