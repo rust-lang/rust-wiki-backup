@@ -2,17 +2,9 @@ h1. Rust language
 
 This is a very preliminary work in progress. No supported releases yet nor defined release schedule / plans. Caveat emptor. It will crash. It will change syntax and semantics. It will eat your laundry. Use at your own risk. Etc.
 
-h2. Development policy (please read):
+h2. [[Development policy]] (please read)
 
-File bugs as you like in the issue tracker here.
-
-If you are already have <a href="http://www.mozilla.org/hacking/commit-access-policy/">Level 1 Access</a> to commit within the Mozilla project, you can request direct push access to this repository. Email one of the existing authors of this repository and ask if you want to be contributing quickly and regularly this way.
-
-More likely is a fork and pull-request. To accept code or documentation contributions (patches, pull requests and such) into this repository from persons outside the levels of the existing Mozilla Commit Access Policy, we require that the contributor has signed a <a href="http://www.mozilla.org/hacking/notification/">Committer's Agreement</a> with the Mozilla Foundation.
-
-All contributions should pass the existing tests on all platforms, including under valgrind on linux. If you have a good reason for breaking a test, XFAIL it. We aim for clean builds at all times.
-
-h2. FAQ
+h2. FAQs
 
 * [[Language FAQ]]
 * [[Project FAQ]]
