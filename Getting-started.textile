@@ -52,4 +52,4 @@ Join irc.mozilla.org #rust if you want to discuss anything more "interactively",
 
 Join the <a herf="https://mail.mozilla.org/listinfo/rust-dev">mailing list</a> if you want to have longer conversations.
 
-In both cases, please try to follow the conduct guidelines on the [[Development policy]] page.
+In both cases, please follow the conduct guidelines on the [[Development policy]] page.
