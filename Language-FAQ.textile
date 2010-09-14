@@ -22,6 +22,20 @@ h4. Practicality oriented:
 * Works with existing native toolchains. GDB / Valgrind / Shark / etc.
 * Practical rule-breaking: can break safety rules, if explicit about where and how. 
 
+h3. Is it OO? How do I do this thing I normally do in an OO language?
+
+It is multi-paradigm. Not everything is shoe-horned into the object abstraction. Many
+things you can do in OO languages you can do in Rust, but not everything, and not always
+using objects.
+
+h3. Does it run on Windows?
+
+Yes. All development happens in lock-step on all 3 target platforms.
+
+h3. Are there any big programs written in it yet? I want to read big samples.
+
+Sorry, no. It doesn't even have much of a standard library yet.
+
 h3. Have you seen this Google language, Go? How does Rust compare?
 
 Yes.
