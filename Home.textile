@@ -20,4 +20,4 @@ h2. Developer notes
 
 h2. Design notes
 
-* [[Disjoint Union Types]]
+* [[Disjoint union types]]
