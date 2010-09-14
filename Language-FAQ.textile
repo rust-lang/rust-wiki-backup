@@ -52,6 +52,28 @@ Rust provides, instead, three predictable and well-defined options for handling 
 * _Cleanup_ of resources is done by RAII-style objects with destructors.
 Cleanup through RAII-style destructors  is more likely to work than in catch blocks anyways, since it will be better tested (part of the non-error control paths, so executed all the time).
 
+h3. Why don't local functions or objects capture their dynamic environment? What's with <code>bind</code>?
+
+Because environment capture would be redundant in two ways, and undermine the goals of clarity and maintainability in two ways:
+* Redundancy:
+** Because there are a variety of ways in which a slot may refer to a referent (three modes, plus the presence or absence of mutability) we would need to accompany such "automatic capture" with a mechanism similar to the capture clauses present in C++0x lambdas. This strikes us as redundant given that there is already a per-function place to declare slot modes: in the _normal invocation signature_.
+** Environment capture only works when you're trying to capture into a locally-defined function. If you want to capture into the arguments of a function defined elsewhere, you _need a <code>bind</code> construct anyways_, if you want to avoid having to write local functions (and capture clauses! see previous point) just to bind an existing argument.
+* Clarity and maintainability:
+** If the point of being "more implicit" with capture is to support an abbreviated "capture everything mentioned in the function" form of capture clause, such a form would requires the maintenance programmer to read the whole function to know what gets captured. The <code>bind</code> construct is always explicit.
+** Because environment-capture would involve taking a snapshot of some slots (but not others: again, depending on the capture clause!) the state that gets captured may, or may not, depend on the statements proceeding and following the local declaration. This deepens the previous maintainability risk: the presence of an easily-overlooked capture clause -- particularly one that abbreviates to capturing "everything" -- attached to a local function declaration would change it from a location-insensitive declaration to one sensitive to the order of statements before and after it.
+
+h3. Why aren't modules type-parametric?
+
+Doing so would require that type-parametric code  is statically expanded, duplicating code. It would also require a complex mechanism inside crates for maintaining uninstantiated module-bodies. While this is a possible implementation approach for parametric code, we don't want to mandate it. We want to maintain the option to parametrize at runtime (this is the default implementation).
+
+h3. Why aren't values type-parametric? Why only items?
+
+Doing so would make type inference much more complex, and require the implementation strategy of runtime parametrization. While this is our default implementation strategy, we don't want to mandate it.
+
+h3. Why are tag types nominal and closed?
+
+We don't know if there's an obvious, easy, efficient, stock-textbook way of supporting open or structural tags. We prefer to stick to language features that have an obvious and well-explored semantics.
+
 h3. Does it run on Windows?
 
 Yes. All development happens in lock-step on all 3 target platforms. Using mingw, not
