@@ -4,7 +4,7 @@ If you are already have <a href="http://www.mozilla.org/hacking/commit-access-po
 
 More likely is a fork and pull-request. To accept code or documentation contributions (patches, pull requests and such) into this repository from persons outside the levels of the existing Mozilla Commit Access Policy, we require that the contributor has signed a <a href="http://www.mozilla.org/hacking/notification/">Committer's Agreement</a> with the Mozilla Foundation.
 
-Pull requests will be treated as "review requests", and we will give feedback we expect to see corrected on style and substance before pulling. Changes contributed via pull-request should focus on a single issue at a time, like any other. Do not try to use pull-requests as a way to "sneak" unrelated changes in.
+Pull-requests will be treated as "review requests", and we will give feedback we expect to see corrected on style and substance before pulling. Changes contributed via pull-request should focus on a single issue at a time, like any other. Do not try to use pull-requests as a way to "sneak" unrelated changes in.
 
 h2. Conduct
 
