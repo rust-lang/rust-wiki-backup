@@ -30,6 +30,12 @@ h3. Conform to source-formatting house style:
 * indent ocaml code under emacs tuareg-mode defaults
 * stick to local naming and code-organization style
 
+h2. Communication
+
+We have an IRC channel on irc.mozilla.org, channel #rust. You're welcome to drop in and ask questions, discuss bugs and such.
+
+There's no mailing list yet. We'll set one up soon, stay tuned.
+
 h2. Issue tracking
 
 Add a test for anything you're unsure of or see breaking in passing. The test driver runs every non-XFAILed test in the compile-fail, run-fail, and run-pass subdirectories.
