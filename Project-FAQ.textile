@@ -2,6 +2,13 @@ h3. What is this project's goal, in one sentence?
 
 To design and implement a safe, concurrent, practical, static systems language.
 
+h3. Why are you doing this?
+
+Existing languages at this level of abstraction and efficiency are unsatisfactory. In particular:
+* Too little attention paid to safety.
+* Poor concurrency support.
+* Lack of practical affordances, too dogmatic about paradigm.
+
 h3. What are some non-goals?
 
 * To employ any particularly cutting-edge technologies. Old, established techniques are better.
@@ -10,13 +17,6 @@ h3. What are some non-goals?
 * To cover the complete feature-set of C++, or any other language. It should provide majority-case features.
 * To be 100% static, 100% safe, 100% reflective, or too dogmatic in any other sense. Trade-offs exist.
 * To run on "every possible platform". It must eventually work without unnecessary compromises on widely-used hardware and software platforms.
-
-h3. Why are you doing this?
-
-Existing languages at this level of abstraction and efficiency are unsatisfactory. In particular:
-* Too little attention paid to safety.
-* Poor concurrency support.
-* Lack of practical affordances, too dogmatic about paradigm.
 
 h3. Is any part of this thing production-ready?
 
