@@ -1,0 +1,9 @@
+* We currently have structural object types.
+
+* There's no current way to make them recursive. For example, you can't write the type of an object that has a clone method that returns the same type again.
+
+* Just as with [[disjoint union types]], introducing recursive structural types makes for a much more complicated type system.
+
+* We could consider adding interface types, which would be nominal object types that could be recursive, and we could allow objects to be annotated as implementing specific interfaces.
+
+* As a convenience, we could also implicitly bind every object constructor to an interface type of the same name, where instances are automatically implementations of that type.
