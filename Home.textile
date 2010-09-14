@@ -17,3 +17,7 @@ h2. FAQs
 h2. Developer notes
 
 * [[Getting started]]
+
+h2. Design notes
+
+* [[Disjoint Union Types]]
