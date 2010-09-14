@@ -171,12 +171,12 @@ h3. Why aren't function signatures inferred? Why only local slots?
 * Mechanically, it simplifies the inference algorithm; inference only requires looking at one function at a time.
 * The same simplification goes double for human readers. A reader does not need an IDE running an inference algorithm across an entire crate to be able to guess at a function's argument types; it's always explicit and nearby.
 
-h3. Why can't state objects have destructors? Why only immutable ones?
+h3. Why can't stateful objects have destructors? Why only immutable ones?
 
-Because state-ness places an object's destruction sequence under control of the garbage collection system, rather than the reference counting system, and this makes it potentially unclear which order to destroy objects in (the garbage graph may be cyclic, in which case there is no meaning to "top-down".)
+Because statefulness places an object's destruction sequence under control of the garbage collection system, rather than the reference counting system, and this makes it potentially unclear which order to destroy objects in (the garbage graph may be cyclic, in which case there is no meaning to "top-down".)
 
-If you want a state object to have something destructor-like, the easiest thing to do is split some minimal immutable parts of it off into a separate sub-object and give that sub-object a destructor. This works because while immutable memory cannot contain mutable memory, the opposite is just fine: the immutable subgraph hanging off the state object has a well-defined, top-down destruction order.
+If you want a stateful object to have something destructor-like, the easiest thing to do is split some minimal stateless parts of it off into a separate sub-object and give that sub-object a destructor. This works because while stateless memory cannot contain stateful memory, the opposite is just fine: the stateless subgraph hanging off the stateful object has a well-defined, top-down destruction order.
 
 h3. Isn't that a bit over-simplistic? Not every state value is cyclic! Some may be structurally acyclic, even if they contain mutable bits.
 
-That's true. For a while we played with having the type system differentiate "cyclic" from "state" as different effects, but it seemed to be a confusing distinction (and not always possible to determine, for example given an object or bound function, the contents of its binding is abstract). We decided to remove the distinction. Besides, as the second paragraph above indicates, it's not so hard to work around by splitting up stateful and immutable pieces of an object.
+That's true. For a while we played with having the type system differentiate "cyclic" from "state" as different effects, but it seemed to be a confusing distinction (and not always possible to determine, for example given an object or bound function, the contents of its binding is abstract). We decided to remove the distinction. Besides, as the second paragraph above indicates, it's not so hard to work around by splitting up stateful and stateless pieces of an object.
