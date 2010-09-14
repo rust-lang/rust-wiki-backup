@@ -1,0 +1,53 @@
+h2. Committer access and agreements:
+
+If you are already have <a href="http://www.mozilla.org/hacking/commit-access-policy/">Level 1 Access</a> to commit within the Mozilla project, you can request direct push access to this repository. Email one of the existing authors of this repository and ask if you want to be contributing quickly and regularly this way.
+
+More likely is a fork and pull-request. To accept code or documentation contributions (patches, pull requests and such) into this repository from persons outside the levels of the existing Mozilla Commit Access Policy, we require that the contributor has signed a <a href="http://www.mozilla.org/hacking/notification/">Committer's Agreement</a> with the Mozilla Foundation.
+
+Pull requests will be treated as "review requests", and we will give feedback we expect to see corrected on style and substance before pulling. Changes contributed via pull-request should focus on a single issue at a time, like any other. Do not try to use pull-requests as a way to "sneak" unrelated changes in.
+
+h2. Conduct
+
+* Please be kind and courteous. There's no need to be mean or rude.
+* Respect that people have differences of opinion and that every design or implementation choice carries a trade-off and numerous costs. There is seldom a right answer.
+* Please keep unstructured critique to a minimum. If you have solid ideas you want to experiment with, follow the language-change process (see below). Noisy debate just impedes progress.
+* We will exclude you from interaction if you insult, demean or harass anyone. That is not welcome behaviour.
+* Likewise any spamming, trolling, flaming, baiting or other attention-stealing behaviour.
+
+h2. Contributed code requirements:
+
+Pass the existing tests. If you have a good reason for breaking a test, XFAIL it. We aim for clean builds at all times.
+
+h3. Pay attention to portability:
+* You are responsible for clean-build condition _on all platforms_, including under valgrind on linux. 
+* Temporary breakage is acceptable only on a per-platform basis if you're on platform A and the breakage was on platform B that you happened to not be developing on today, and only if you fix it fast.
+* If you're going to commit directly to this repo, or land other people's work into it via pull-request, please make sure you have access to all 3 primary platforms and _can_ fix per-platform breakage.
+* If you are doing a lot of changes likely to cause per-platform breakage (say, a lot of linkage or threading work) please use a staging branch.
+
+h3. Conform to source-formatting house style:
+* 78 column maximum lines
+* no tabs (except Makefiles)
+* format ML code under emacs tuareg-mode
+* stick to local naming and code-organization style
+
+h2. Issue tracking
+
+Add a test for anything you're unsure of or see breaking in passing. The test driver runs every non-XFAILed test in the compile-fail, run-fail, and run-pass subdirectories.
+
+File bugs in the issue tracker here as well as adding tests, or instead if you can't quite figure out how to test the thing you want to point out.
+
+Tag bugs liberally. The bug tracker here currently has weak search capabilities. Github staff has made a variety of comments suggesting "they're working on it", but in the meantime tags are our only hope.
+
+Add "FIXME (issue #NN): blah blah" in the source anywhere you see room for improvement, where #NN is the issue number in the tracker here. If you fix an issue on commit, remove the associated FIXMEs (grep for other occurrences) and put the exact phrase "Closes #NN" (with that capitalization) in the commit message and github will pick it up and link to the commit, close the issue.
+
+h2. Language changes
+
+We'd like to modify the language -- in non-trivial ways -- in a relatively orderly process.
+* Have a _quick_ chat about it with some of the longer-time developers on IRC or the mailing list, to gauge interest or existing objections to the concept. Do not go on endlessly about it in conversation; structured design and implementation will prove the matter one way or another, debate will only get so far.
+* Assuming there's no major objections:
+** If it's a small-ish change, file an issue.
+** If it's a large-ish change, add an entry to [[RIPs]] and go through the process of reasoning out how it'll interact with various other parts of the system. You will probably encounter some aspects you hadn't yet considered; languages have a lot of moving parts.
+* Ask for some feedback on the RIP and iterate there until you get at least consensus that it's worth trying.
+* If other developers like the idea enough to implement it for you and/or have time to do so, sit back and enjoy programming by auto-pilot.
+* If you are impatient -- aren't we all? -- fork the repository and get to work!
+* Send a pull request (or a review request) once you get the _very first version_ that works _minimally_ -- or even carries groundwork that you think will be important -- and does not carry too many gratuitous hacks. You do not need to complete your idea to get useful implementation feedback. It will make future integration easier if you do this early.
