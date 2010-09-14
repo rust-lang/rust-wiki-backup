@@ -45,7 +45,8 @@ h2. Language changes
 We'd like to modify the language -- in non-trivial ways -- in a relatively orderly process.
 * Have a _quick_ chat about it with some of the longer-time developers on IRC or the mailing list, to gauge interest or existing objections to the concept. Do not go on endlessly about it in conversation; structured design and implementation will prove the matter one way or another, debate will only get so far.
 * Assuming there's no major objections:
-** If it's a small-ish change, file an issue.
+** If it's just new library code, particularly additions to existing modules within the library, write it up in code and send a pull request. No deeper process is really necessary.
+** If it's a small-ish semantic or library change, file an issue.
 ** If it's a large-ish change, add an entry to [[RIPs]] and go through the process of reasoning out how it'll interact with various other parts of the system. You will probably encounter some aspects you hadn't yet considered; languages have a lot of moving parts.
 * Ask for some feedback on the RIP and iterate there until you get at least consensus that it's worth trying.
 * If other developers like the idea enough to implement it for you and/or have time to do so, sit back and enjoy programming by auto-pilot.
