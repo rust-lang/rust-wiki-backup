@@ -28,9 +28,15 @@ It is multi-paradigm. Not everything is shoe-horned into the object abstraction.
 things you can do in OO languages you can do in Rust, but not everything, and not always
 using objects.
 
+h3. How do you get away with "no null pointers"?
+
+Data values in the language can only be constructed through a fixed set of initializer forms.
+Each of those forms requires that its inputs already be initialized. It's as simple as that.
+
 h3. Does it run on Windows?
 
-Yes. All development happens in lock-step on all 3 target platforms.
+Yes. All development happens in lock-step on all 3 target platforms. Using mingw, not
+cygwin.
 
 h3. Are there any big programs written in it yet? I want to read big samples.
 
