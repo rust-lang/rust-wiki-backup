@@ -1,0 +1,3 @@
+h3. What does @Common.Semant_err(_, "unsatisfied 'use' clause")@ mean?
+
+Usually it means that Rust couldn't find the library you linked to. If you get this with @use std;@, make sure that you're providing the full path to the standard library on the command line (e.g. @rustboot -L /path/to/rust/src myprog.rs@).
