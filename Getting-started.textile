@@ -33,3 +33,19 @@ This will build and test the bootstrap compiler and standard library.
 
 *Note:* on linux, if you have valgrind installed, the tests will run slowly because they are running under valgrind. If you define NO_VALGRIND=1 in your build environment, you can see the tests running at "full" speed (though of course, the bootstrap compiler generates terrible code).
 </pre>
+
+h3. Navigating
+
+There's a quick guide to the source of the bootstrap compiler in src/boot/README, you should probably give it a read if you're going to be looking around the compiler.
+
+h3. Dealing with the issue tracker
+
+The github issue tracker is somewhat weak. However, it exposes itself through an API and there's a "secondary front-end that is quite a bit more responsive":http://githubissues.heroku.com/#graydon/rust
+
+h3. Picking something interesting to do
+
+Bugs in the tracker tagged as "easy" and/or "cleanup" are a good way to get your feet wet.
+
+h3. Communicating
+
+Join irc.mozilla.org #rust if you want to discuss anything more "interactively", we try to remain on that channel during working hours in UTC-7 (US Pacific). We'll probably also get a mailing list set up soon, though there are a thousand things to do right now and we're a bit overwhelmed.
