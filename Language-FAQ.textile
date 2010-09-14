@@ -74,6 +74,25 @@ h3. Why are tag types nominal and closed?
 
 We don't know if there's an obvious, easy, efficient, stock-textbook way of supporting open or structural tags. We prefer to stick to language features that have an obvious and well-explored semantics.
 
+h3. Why aren't channels synchronous?
+
+There's a lot of debate on this topic; it's easy to find a proponent of default-sync or default-async communication, and there are good reasons for either. Our choice rests on the following arguments:
+* Part of the point of isolating tasks is to decouple tasks from one another, such that assumptions in one task do not cause undue constraints (or bugs, if violated!) in another. Temporal coupling is as real as any other kind; async-by-default relaxes the default case to only _causal_ coupling.
+* Default-async supports buffering and batching communication, reducing the frequency and severity of task-switching and inter-task / inter-domain synchronization.
+* Default-async with transmittable channels is the lowest-level building block on which more-complex synchronization topologies and strategies can be built; it is not clear to us that the majority of cases fit the 2-party full-synchronization pattern rather than some more complex multi-party or multi-stage scenario. We did not want to force all programs to pay for wiring the former assumption in to all communications.
+
+h3. Why are channels half-duplex (one-way)?
+
+Similar to the reasoning about default-sync: it wires fewer assumptions into the implementation, that would have to be paid by all use-cases even if they actually require a more complex communication topology.
+
+h3. Why can't I send a port (receiving-end) over a channel?
+
+Ports are implicitly mutable: extracting a message is how you "observe" the state of a port, and performing such an "observation" dequeues the message and changes the state of the port. Transmitting a port over a channel would result in two tasks being able to "communicate" by shared-mutation of the port, and it is a design goal in Rust to prohibit (as much as possible) such accidental, non-explicit communication. It would also require a great deal of additional (costly) under-the-covers synchronization to co-ordinate receive operations between multiple receivers.
+
+h3. Why are channels weak?
+
+To simplify reasoning about resource-ownership and resource-allocation costs. All allocated resources are (at worst) owned by the enclosing domain, and die with it.  At best, Rust tries to localize resource ownership to a task or even a frame or a single allocation. Since channels can cross all such boundaries -- even domains -- we did not want the escape of a channel to require the system to keep the receiving-end alive beyond the lifetime of its referent. Besides which, since the receiving-end can't escape its enclosing task -- see previous FAQ -- nobody could _use_ such a kept-alive receiving end. It's as good as dead once the owning task dies.
+
 h3. Why limit to ASCII outside comments, strings and characters? Why not use the most general Unicode character class for every lexeme?
 
 Our informal conversations with non-English programmers and our search for examples of non-ASCII identifier use in languages that support them has not turned up many leads; it seems non-English programmers still write in ASCII identifiers (and numbers, and whitespace, etc.) Moreover all of our keywords and operators are ASCII-range, so you have to have an ASCII-capable input method to even write Rust code. If you have evidence to suggest we are just not looking in the right places, and non-ASCII identifier use is widespread somewhere we're not aware of, feel free to suggest this change on practical grounds! At the moment it's just a matter of keeping the lexer simple (no character-class tables to consult) as well as any tools that want to work with the language.
