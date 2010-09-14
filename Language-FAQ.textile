@@ -164,7 +164,7 @@ h3. What is the difference between an alias and a box pointer?
 * An alias points to the interior of a stack _or_ heap allocation, and formation or duplication of an alias does not entail reference counting.
 * Aliases can only be formed when the alias referent will provably outlive the alias.
 * Aliases can therefore only be declared in function or iterator signatures, as parameters.
-* Think of aliases as "pass by reference". They are no for holding long-term, stable references, just for references passing between functions.
+* Think of aliases as "pass by reference". They are not for holding long-term, stable references, just for references passing between functions.
 
 h3. Why aren't function signatures inferred? Why only local slots?
 
