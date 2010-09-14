@@ -74,10 +74,22 @@ h3. Why are tag types nominal and closed?
 
 We don't know if there's an obvious, easy, efficient, stock-textbook way of supporting open or structural tags. We prefer to stick to language features that have an obvious and well-explored semantics.
 
+h3. Why limit to ASCII outside comments, strings and characters? Why not use the most general Unicode character class for every lexeme?
+
+Our informal conversations with non-English programmers and our search for examples of non-ASCII identifier use in languages that support them has not turned up many leads; it seems non-English programmers still write in ASCII identifiers (and numbers, and whitespace, etc.) Moreover all of our keywords and operators are ASCII-range, so you have to have an ASCII-capable input method to even write Rust code. If you have evidence to suggest we are just not looking in the right places, and non-ASCII identifier use is widespread somewhere we're not aware of, feel free to suggest this change on practical grounds! At the moment it's just a matter of keeping the lexer simple (no character-class tables to consult) as well as any tools that want to work with the language.
+
+h3. Why UTF-8 strings by default? Why not UCS2 or UCS4?
+
+The <code>str</code> type is UTF-8 because we observe more text in the wild in this encoding -- particularly in network transmissions, which are endian-agnostic -- and we think it's best that the default treatment of I/O not involve having to recode codepoints in each direction.
+
+This does mean that indexed access to a Unicode codepoint inside a <code>str</code> value is an O(n) operation. On the one hand, this is clearly undesirable; on the other hand, this problem is full of trade-offs and we'd like to point a few important qualifications:
+* Scanning a <code>str</code> for ASCII-range codepoints can still be done safely octet-at-a-time, with each indexing operation pulling out a <code>u8</code> costing only O(1) and producing a value that can be cast and compared to an ASCII-range <code>char</code>. So if you're (say) line-breaking on <code>'\n'</code>, octet-based treatment still works. UTF-8 was well-designed this way.
+* Most "character oriented" operations on text only work under very restricted language assumptions sets such as "ASCII-range codepoints only". Outside ASCII-range, you tend to have to use a complex (non-constant-time) algorithm for determining linguistic-unit (glyph, word, paragraph) boundaries anyways. We recommend using an "honest" linguistically-aware, Unicode-approved algorithm.
+* The <code>char</code> type is UCS4. If you honestly need to do a lot of codepoint-at-a-time algorithm, it's trivial to write a <code>type wstr = vec[char]</code>, and unpack a <code>str</code> into it in a single pass, then work with the <code>wstr</code>. In other words: the fact that the language is not "decoding to UCS4 by default" shouldn't stop you from decoding (or re-encoding any other way) if you need to work with that encoding.
+
 h3. Does it run on Windows?
 
-Yes. All development happens in lock-step on all 3 target platforms. Using mingw, not
-cygwin.
+Yes. All development happens in lock-step on all 3 target platforms. Using mingw, not cygwin.
 
 h3. Are there any big programs written in it yet? I want to read big samples.
 
