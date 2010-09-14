@@ -12,4 +12,3 @@ h2. FAQs
 h2. Developer notes
 
 * [[Getting started]]
-* [[RIPs]]
