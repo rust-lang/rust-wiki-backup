@@ -3,7 +3,7 @@ h2. Preliminaries
 One thing that's helpful to remember is the distinction between the semantics of ??type names?? and ??constructor names??. The structural-vs-nominal axis is primarily about the ??type name??, but it also has implications for the semantics of ??constructor names??.
 
 
-h2. Structural disjoint-union types:
+h2. Structural disjoint-union types
 
 h3. How to understand them
 
