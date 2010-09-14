@@ -1,3 +1,10 @@
+h3. Why are you doing this?
+
+Existing languages at this level of abstraction and efficiency are unsatisfactory. In particular:
+* Too little attention paid to safety.
+* Poor concurrency support.
+* Lack of practical affordances, too dogmatic about paradigm.
+
 h3. Is any part of this thing production-ready?
 
 No. Feel free to play around, but don't expect completeness or stability yet. Expect incompleteness and breakage.
@@ -11,13 +18,6 @@ What exists presently is:
 * The humble beginnings of a standard library. Mostly stubs.
 
 We hope to shift to working on a self-hosting (written-in-Rust) replacement for the bootstrap compiler shortly, as we add enough material to the standard library to make that a realistic concept. The self-hosting one will not have a built-in backend; it will _just_ target LLVM.
-
-h3. Why are you doing this?
-
-Existing languages at this level of abstraction and efficiency are unsatisfactory. In particular:
-* Too little attention paid to safety.
-* Poor concurrency support.
-* Lack of practical affordances, too dogmatic about paradigm.
 
 h3. Is this a completely Mozilla-planned and orchestrated thing?
 
