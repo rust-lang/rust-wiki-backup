@@ -1,0 +1,27 @@
+h3. Prerequisites
+
+Version numbers listed here are "what we're using"; the code may well work on earlier versions of these releases, we do not know minimum version requirements.
+
+* A recent linux, OSX or win32 system.
+* Python 3.1 ("download link":http://www.python.org/download/)
+* Ocaml 3.11 ("download link":http://caml.inria.fr/download.en.html)
+* GNU make 3.81
+* g++ 4.4
+* Valgrind 3.5 (recommended but not required for linux)
+* Texinfo's makeinfo and/or texi2pdf commands, if you wish to build HTML or PDF docs, respectively
+
+On windows we recommend developing under the TDM mingw repackaging (http://tdm-gcc.tdragon.net/) as it has newer tools.
+
+h3. Downloading and building
+
+<pre>
+<code>
+$ git clone git@github.com:graydon/rust.git
+$ cd rust/src
+$ make check
+</code>
+</pre>
+This will build and test the bootstrap compiler and standard library.
+
+*Note:* on linux, if you have valgrind installed, the tests will run slowly because they are running under valgrind.
+</pre>
