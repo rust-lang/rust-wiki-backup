@@ -20,7 +20,7 @@ h4. Practicality oriented:
 ** First class functions with bindings.
 ** Structurally-typed objects (no nominal types or type hierarchy).
 * Multi-platform. Developed on Windows, Linux, OSX.
-* UTF-8 strings, assortment of machine-level types.
+* UTF8 strings, assortment of machine-level types.
 * Works with existing native toolchains. GDB / Valgrind / Shark / etc.
 * Practical rule-breaking: can break safety rules, if explicit about where and how. 
 
