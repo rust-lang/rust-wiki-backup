@@ -79,6 +79,7 @@ Rust provides, instead, three predictable and well-defined options for handling 
 * Failure _logging_ is done by the integrated <code>note</code> statement.
 * _Recovery_ after a failure is done by by trapping a task failure from _outside_ the task, where the typestate of other tasks is known to be unaffected.
 * _Cleanup_ of resources is done by RAII-style objects with destructors.
+
 Cleanup through RAII-style destructors  is more likely to work than in catch blocks anyways, since it will be better tested (part of the non-error control paths, so executed all the time).
 
 h3. Why don't local functions or objects capture their dynamic environment? What's with <code>bind</code>?
