@@ -1,0 +1,39 @@
+h3. I'm impatient. Can you give a brief summary of the salient features?
+
+h4. Safety oriented:
+* Memory safe. No null pointers, wild pointers, etc. Automatic storage management.
+* Mutability control. Immutable by default. No shared mutable state across tasks.
+* Dynamic execution safety: task failure / unwinding, trapping, logging. RAII / dtors.
+
+h4. Concurrency and efficiency oriented:
+* Explicit memory control. Layout and allocation control. Interior / value types.
+* Very lightweight tasks (coroutines). Cheap to spawn thousands-to-millions.
+* Stack iterators (effectively lambda-blocks w/o heap allocation).
+* Static, native compilation. Emits ELF / PE / Mach-o files.
+* Direct and simple interface to C code (switch stacks and call, ~8 insns).
+
+h4. Practicality oriented:
+* Multi-paradigm. pure-functional, concurrent-actor, imperative-procedural, OO.
+** First class functions with bindings.
+** Structurally-typed objects (no nominal types or type hierarchy).
+* Multi-platform. Developed on Windows, Linux, OSX.
+* UTF-8 strings, assortment of machine-level types.
+* Works with existing native toolchains. GDB / Valgrind / Shark / etc.
+* Practical rule-breaking: can break safety rules, if explicit about where and how. 
+
+h3. Have you seen this Google language, Go? How does Rust compare?
+
+Yes.
+* Rust development was several years underway before Go launched, no direct inspiration.
+** Though Pike's previous languages in the Go family (Newsqueak, Alef, Limbo) were influential.
+* Go adopted semantics (safety and memory model) that are quite unsatisfactory.
+** Shared mutable state.
+** Global GC.
+** Null pointers.
+** No RAII or destructors.
+** No type-parametric user code.
+* There are a number of other fine coroutine / actor languages in development presently. It's an area of focus across the PL community.
+
+h3. I like the language but it really needs _$somefeature_.
+
+At this point we are focusing on removing and stabilizing features rather than adding them. File a bug if you think it's important in terms of meeting the existing goals or making the language passably usable. Reductions are more interesting than additions though.
