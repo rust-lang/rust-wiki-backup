@@ -18,6 +18,8 @@ h2. Contributed code requirements:
 
 Pass the existing tests. If you have a good reason for breaking a test, XFAIL it. We aim for clean builds at all times.
 
+There is <a href="http://tinderbox.mozilla.org/showbuilds.cgi?tree=Rust">a tinderbox</a> that should be kept green.
+
 h3. Pay attention to portability:
 * You are responsible for clean-build condition _on all platforms_ (linux, OSX, win32), including under valgrind on linux. 
 * Temporary breakage is acceptable only on a per-platform basis if you're on platform A and the breakage was on platform B that you happened to not be developing on today, and only if you fix it fast.
