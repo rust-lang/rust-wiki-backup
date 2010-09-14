@@ -10,6 +10,8 @@ If you are already have <a href="http://www.mozilla.org/hacking/commit-access-po
 
 To accept code or documentation contributions (patches, pull requests and such) into this repository from persons outside the levels of the existing Mozilla Commit Access Policy, we require that the contributor has signed a <a href="http://www.mozilla.org/hacking/notification/">Committer's Agreement</a> with the Mozilla Foundation.
 
+All contributions should pass the existing tests on all platforms, including under valgrind on linux. If you have a good reason for breaking a test, XFAIL it. We aim for clean builds at all times.
+
 h2. FAQ
 
 * [[Language FAQ]]
