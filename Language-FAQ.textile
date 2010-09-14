@@ -31,7 +31,8 @@ using objects.
 h3. How do you get away with "no null pointers"?
 
 Data values in the language can only be constructed through a fixed set of initializer forms.
-Each of those forms requires that its inputs already be initialized. It's as simple as that.
+Each of those forms requires that its inputs already be initialized. A dataflow analysis (the 
+typestate system used elsewhere) ensures that local variables are initialized before use.
 
 h3. Does it run on Windows?
 
