@@ -4,6 +4,7 @@ h4. Safety oriented:
 * Memory safe. No null pointers, wild pointers, etc. Automatic storage management.
 * Mutability control. Immutable by default. No shared mutable state across tasks.
 * Dynamic execution safety: task failure / unwinding, trapping, logging. RAII / dtors.
+* Typestate system: ability to define complex invariants that hold over data structures.
 
 h4. Concurrency and efficiency oriented:
 * Explicit memory control. Layout and allocation control. Interior / value types.
