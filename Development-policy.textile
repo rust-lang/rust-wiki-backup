@@ -27,7 +27,7 @@ h3. Pay attention to portability:
 h3. Conform to source-formatting house style:
 * 78 column maximum lines
 * no tabs (except Makefiles)
-* format ML code under emacs tuareg-mode
+* indent ocaml code under emacs tuareg-mode defaults
 * stick to local naming and code-organization style
 
 h2. Issue tracking
