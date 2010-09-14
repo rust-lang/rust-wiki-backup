@@ -48,4 +48,8 @@ Bugs in the tracker tagged as "easy" and/or "cleanup" are a good way to get your
 
 h3. Communicating
 
-Join irc.mozilla.org #rust if you want to discuss anything more "interactively", we try to remain on that channel during working hours in UTC-7 (US Pacific). We'll probably also get a mailing list set up soon, though there are a thousand things to do right now and we're a bit overwhelmed.
+Join irc.mozilla.org #rust if you want to discuss anything more "interactively", we try to remain on that channel during working hours in UTC-7 (US Pacific).
+
+Join the <a herf="https://mail.mozilla.org/listinfo/rust-dev">mailing list</a> if you want to have longer conversations.
+
+In both cases, please try to follow the conduct guidelines on the [[Development policy]] page.
