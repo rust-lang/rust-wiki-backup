@@ -42,13 +42,6 @@ Add "FIXME (issue #NN): blah blah" in the source anywhere you see room for impro
 
 h2. Language changes
 
-We'd like to modify the language -- in non-trivial ways -- in a relatively orderly process.
-* Have a _quick_ chat about it with some of the longer-time developers on IRC or the mailing list, to gauge interest or existing objections to the concept. Do not go on endlessly about it in conversation; structured design and implementation will prove the matter one way or another, debate will only get so far.
-* Assuming there's no major objections:
-** If it's just new library code, particularly additions to existing modules within the library, write it up in code and send a pull request. No deeper process is really necessary.
-** If it's a small-ish semantic or library change, file an issue.
-** If it's a large-ish change, add an entry to [[RIPs]] and go through the process of reasoning out how it'll interact with various other parts of the system. You will probably encounter some aspects you hadn't yet considered; languages have a lot of moving parts.
-* Ask for some feedback on the RIP and iterate there until you get at least consensus that it's worth trying.
-* If other developers like the idea enough to implement it for you and/or have time to do so, sit back and enjoy programming by auto-pilot.
-* If you are impatient -- aren't we all? -- fork the repository and get to work!
-* Send a pull request (or a review request) once you get the _very first version_ that works _minimally_ -- or even carries groundwork that you think will be important -- and does not carry too many gratuitous hacks. You do not need to complete your idea to get useful implementation feedback. It will make future integration easier if you do this early.
+At the moment we're going to avoid a formal change policy; it's too early and we're still changing too many things in an ad-hoc, informal way. If we get to the point of a full supported release cycle, we'll set up a language-change process. Until then, we will accept or reject pull requests mostly as a mater of taste and available energy.
+
+Library additions are probably the most likely to be accepted.
