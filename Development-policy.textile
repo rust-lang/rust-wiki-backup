@@ -42,6 +42,6 @@ Add "FIXME (issue #NN): blah blah" in the source anywhere you see room for impro
 
 h2. Language changes
 
-At the moment we're going to avoid a formal change policy; it's too early and we're still changing too many things in an ad-hoc, informal way. If we get to the point of a full supported release cycle, we'll set up a language-change process. Until then, we will accept or reject pull requests mostly as a mater of taste and available energy.
+At the moment we're going to avoid a formal change policy; it's too early and we're still changing too many things in an ad-hoc, informal way. If we get to the point of a full supported release cycle, we'll set up a language-change process. Until then, we will accept or reject pull requests mostly as a matter of taste and available energy.
 
 Library additions are probably the most likely to be accepted.
