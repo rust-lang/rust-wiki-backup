@@ -134,3 +134,48 @@ This does mean that indexed access to a Unicode codepoint inside a <code>str</co
 * Scanning a <code>str</code> for ASCII-range codepoints can still be done safely octet-at-a-time, with each indexing operation pulling out a <code>u8</code> costing only O(1) and producing a value that can be cast and compared to an ASCII-range <code>char</code>. So if you're (say) line-breaking on <code>'\n'</code>, octet-based treatment still works. UTF8 was well-designed this way.
 * Most "character oriented" operations on text only work under very restricted language assumptions sets such as "ASCII-range codepoints only". Outside ASCII-range, you tend to have to use a complex (non-constant-time) algorithm for determining linguistic-unit (glyph, word, paragraph) boundaries anyways. We recommend using an "honest" linguistically-aware, Unicode-approved algorithm.
 * The <code>char</code> type is UCS4. If you honestly need to do a lot of codepoint-at-a-time algorithm, it's trivial to write a <code>type wstr = vec[char]</code>, and unpack a <code>str</code> into it in a single pass, then work with the <code>wstr</code>. In other words: the fact that the language is not "decoding to UCS4 by default" shouldn't stop you from decoding (or re-encoding any other way) if you need to work with that encoding.
+
+h3. Why is <code>log</code> a statement rather than a library function?
+
+We wish to integrate logging with the language at multiple levels: in terms of filtering by module path and task, with type-specific logging variants, with lazy evaluation of the arguments such that inactive logging statements are very cheap, and also integrated with the <code>note</code> statement for logging during failure. It's possible we could replicate these features via a mixture of compiler-provided hooks, syntax-extensions and library calls, but it's neither clear that this would be possible nor whether the interface would be syntactically cumbersome: the best logging, after all, is the kind that's light enough that you regularly use it!
+
+If someone manages to cook up a useful version that seems light and usable and hits all the same use-cases, without requiring a dedicated statement, we'll consider replacing it.
+
+h3. Why are channels, tasks, ports, strings, vectors etc. built-in types rather than (say) special kinds of obj?
+
+In each case there is one or more operator, literal constructor, overloaded use or integration with a built-in control structure that makes us think it would be awkward to phrase the type in terms of more-general type constructors. Same as, say, with numbers! But this is partly an aesthetic call and, similarly to with the <code>log</code> statement, we'd be willing to look at a worked-out proposal for eliminating or rephrasing these special cases.
+
+h3. Can Rust code call C code?
+
+Yes. Directly and synchronously, on the C stack. Rust writes arguments to the C stack, then switches stack and performs the call, switching back on return. The Rust domain owning the task that makes the call will block for the duration of the call, so if the call is likely to be long-lasting, you should consider putting the task in its own domain (thread or process).
+
+h3. Can C code call Rust code?
+
+Not directly. We expect to develop a mechanism for C code to transmit messages into Rust channels, but a direct call would not make much sense since all Rust code runs in a task -- which may deschedule and switch to another task mid-call -- whereas C code does not, and will not behave well if "switched away" from.
+
+h3. How do Rust's task stacks work?
+
+They start very small (a few hundred bytes) and expand dynamically by doubling reallocation, like a vector. Stack pointers held inside a task's stack are rewritten when a stack grows. Stack pointers can never escape to the heap in Rust -- by design -- so the heap does not need to be scanned during stack growth.
+
+h3. What is the difference between an alias and an exterior pointer?
+
+* An exterior pointer points into a reference-counted heap allocation.
+* An alias points to the interior of a stack _or_ heap allocation, and formation or duplication of an alias does not entail reference counting.
+* Aliases can only be formed when the alias referent will provably outlive the alias.
+* Aliases can therefore only be declared in function or iterator signatures, as parameters.
+* Think of aliases as "pass by reference". They are no for holding long-term, stable references, just for references passing between functions.
+
+h3. Why aren't function signatures inferred? Why only local slots?
+
+* Mechanically, it simplifies the inference algorithm; inference only requires looking at one function at a time.
+* The same simplification goes double for human readers. A reader does not need an IDE running an inference algorithm across an entire crate to be able to guess at a function's argument types; it's always explicit and nearby.
+
+h3. Why can't mutable objects have destructors? Why only immutable ones?
+
+Because mutability places an object's destruction sequence under control of the garbage collection system, rather than the reference counting system, and this makes it potentially unclear which order to destroy objects in (the garbage graph may be cyclic, in which case there is no meaning to "top-down".)
+
+If you want a mutable object to have something destructor-like, the easiest thing to do is split the immutable part of it off into a separate sub-object and give that sub-object a destructor. This works because while immutable memory cannot contain mutable memory, the opposite is just fine: the immutable subgraph hanging off the mutable one has a well-defined, top-down destruction order.
+
+h3. Isn't that a bit over-simplistic? Not every mutable value is cyclic! Some may be structurally acyclic, even if they contain mutable bits.
+
+That's true. For a while we played with having the type system differentiate "cyclic" from "state" as different effects, but it seemed to be a confusing distinction (and not always possible to determine, for example given an object or bound function, the contents of its binding is abstract). We decided to remove the distinction. Besides, as the second paragraph above indicates, it's not so hard to work around by splitting up mutable and immutable pieces of an object.
