@@ -23,5 +23,5 @@ $ make check
 </pre>
 This will build and test the bootstrap compiler and standard library.
 
-*Note:* on linux, if you have valgrind installed, the tests will run slowly because they are running under valgrind.
+*Note:* on linux, if you have valgrind installed, the tests will run slowly because they are running under valgrind. If you define NO_VALGRIND=1, you can see them running at "full" speed (though of course, the bootstrap compiler generates terrible code).
 </pre>
