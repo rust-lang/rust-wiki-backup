@@ -9,6 +9,7 @@ Version numbers listed here are "what we're using"; the code may well work with 
 * g++ 4.4
 * Valgrind 3.5 (recommended but not required for linux)
 * Texinfo's makeinfo and/or texi2pdf commands, if you wish to build HTML or PDF docs, respectively
+* LLVM SVN revision 110060, built for x86 (not x64 if you have one!) and @--enable-shared@.
 
 h4. Debian-based Linux distributions
 
@@ -19,6 +20,16 @@ h4. Debian-based Linux distributions
 h4. Windows
 
 We recommend developing under the "TDM mingw repackaging":http://tdm-gcc.tdragon.net/ as it has newer tools.
+
+h3. Installing LLVM
+
+You'll need LLVM if you want anything other than the x86 backend of the bootstrap compiler. Because Rust doesn't support x64 yet and because you can't link Rust programs against static libraries, you'll need to configure LLVM using some special flags. On the Mac, use:
+
+```sh
+$ ./configure --enable-shared --host=i686-apple-darwin --target=i686-apple-darwin
+$ make
+$ make install
+```
 
 h3. Downloading and building
 
