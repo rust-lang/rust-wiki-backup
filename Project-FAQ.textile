@@ -30,8 +30,10 @@ What exists presently is:
 * An incomplete but functional version of the runtime library.
 * Some tests and documentation.
 * The humble beginnings of a standard library. Mostly stubs.
-
-We hope to shift to working on a self-hosting (written-in-Rust) replacement for the bootstrap compiler shortly, as we add enough material to the standard library to make that a realistic concept. The self-hosting one will not have a built-in backend; it will _just_ target LLVM.
+* The beginnings of a self-hosted (written in Rust) compiler, which _only_ uses LLVM as a backend.
+** Compiles a few smaller tests but is maturing rapidly.
+** Produces _much_ smaller and faster code than the bootstrap compiler.
+** Will eventually take over from the bootstrap compiler for further language development.
 
 h3. Is this a completely Mozilla-planned and orchestrated thing?
 
