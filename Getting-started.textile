@@ -55,7 +55,11 @@ The github issue tracker is somewhat weak. However, it exposes itself through an
 
 h3. Picking something interesting to do
 
-Bugs in the tracker tagged as "easy" and/or "cleanup" are a good way to get your feet wet.
+We're presently in the process of bootstrapping. This means we're using the first compiler (rustboot, written in ocaml) to develop a second compiler (rustc, written in rust). The state of the second compiler is incomplete, but it's advancing rapidly and needs lots of details filled in. When we complete rustc we will retire rustboot altogether. Therefore bugs or missing features in rustboot are only worth fixing at this point if they block completion of rustc; all other work should be feature-completion work on rustc.
+
+The easiest way to figure out some rustc feature to work on is to try running 'make self'. This is the bootstrapping command for rustc to attempt to compile itself. It will fail, as rustc is currently incomplete. Whatever the next thing it's failing on, that's a fine thing to attempt to fix!
+
+If that appears too involved, another approach is to look at the testsuite directory: test/run-pass. See if there is a test in there that rustboot can pass but rustc cannot; any test where there is a '.boot' executable produced during 'make check' but not a '.rustc' executable. Those are all missing features, that require someone to finish them.
 
 h3. Communicating
 
