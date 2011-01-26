@@ -16,6 +16,7 @@ h2. FAQs
 
 h2. Developer notes
 
+* [[Roadmap]]
 * [[Getting started]]
 
 h2. Design notes
