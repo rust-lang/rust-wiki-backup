@@ -47,7 +47,7 @@ This will build and test the bootstrap compiler and standard library.
 
 h3. Navigating
 
-There's a quick guide to the source of the bootstrap compiler in src/boot/README, you should probably give it a read if you're going to be looking around the compiler.
+There's a quick guide to the source of the bootstrap compiler in src/boot/README and one for the self-hosted compiler in src/comp/README. You should probably look through whichever one corresponds to the compiler you're working on, if you're going to be contributing.
 
 h3. Dealing with the issue tracker
 
