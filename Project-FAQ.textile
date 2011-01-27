@@ -26,7 +26,6 @@ What exists presently is:
 * A bootstrap compiler written in Ocaml.
 ** With lots of bugs and missing features.
 ** A very minimal built-in x86-emitting backend that produces inefficient code and object files for Linux, OSX and Win32.
-** A preliminary backend that emits LLVM bitcode using the Ocaml LLVM bindings.
 * An incomplete but functional version of the runtime library.
 * Some tests and documentation.
 * The humble beginnings of a standard library. Mostly stubs.
