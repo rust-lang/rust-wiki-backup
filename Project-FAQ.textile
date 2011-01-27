@@ -30,7 +30,7 @@ What exists presently is:
 * An incomplete but functional version of the runtime library.
 * Some tests and documentation.
 * The humble beginnings of a standard library. Mostly stubs.
-* The beginnings of a self-hosted (written in Rust) compiler, which _only_ uses LLVM as a backend.
+* A self-hosted (written in Rust) compiler, which _only_ uses LLVM as a backend.
 ** Compiles a few smaller tests but is maturing rapidly.
 ** Produces _much_ smaller and faster code than the bootstrap compiler.
 ** Will eventually take over from the bootstrap compiler for further language development.
