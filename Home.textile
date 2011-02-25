@@ -6,7 +6,7 @@ This is a very preliminary work in progress. No supported releases yet nor defin
 
 h2. Documentation
 
-* "Latest snapshot PDF - 2011-02-08":https://github.com/downloads/graydon/rust/rust-2011-02-08-snap.pdf
+* "Latest snapshot PDF - 2011-02-25":https://github.com/downloads/graydon/rust/rust-2011-02-25-snap.pdf
 
 h2. FAQs
 
