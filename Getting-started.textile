@@ -13,9 +13,9 @@ Version numbers listed here are "what we're using"; the code may well work with 
 
 h4. Debian-based Linux distributions
 
-@sudo apt-get install ocamlc@
+@sudo apt-get install ocamlc ocaml-native-compilers@
 
-64-bit systems: @sudo apt-get install g++-multilib@.
+64-bit systems: @sudo apt-get install g++-multilib ia32-libs@.
 
 h4. Windows
 
@@ -26,7 +26,14 @@ h3. Installing LLVM
 You'll need LLVM if you want anything other than the x86 backend of the bootstrap compiler. Because Rust doesn't support x64 yet and because you can't link Rust programs against static libraries, you'll need to configure LLVM using some special flags. On the Mac, use:
 
 ```sh
-$ ./configure --enable-shared --host=i686-apple-darwin --target=i686-apple-darwin
+$ CXX='g++ -m32' CC='gcc -m32' CFLAGS=-m32 CXXFLAGS=-m32 LDFLAGS=-m32 ./configure --enable-shared --{build,host,target}=i686-apple-darwin --enable-targets=x86,x86_64,cbe
+$ make
+$ make install
+```
+
+On 64-bit linux, use:
+```sh
+$ CXX='g++ -m32' CC='gcc -m32' CFLAGS=-m32 CXXFLAGS=-m32 LDFLAGS=-m32 ./configure --enable-shared --{build,host,target}=i686-unknown-linux-gnu --enable-targets=x86,x86_64,cbe
 $ make
 $ make install
 ```
