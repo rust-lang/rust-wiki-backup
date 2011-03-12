@@ -38,6 +38,8 @@ $ make
 $ make install
 ```
 
+Currently (hopefully this will change soon), the Linux and OS X libs *must* be called libLLVM-2.8svn.so and libLLVM-2.8svn.dylib for rustc to find them.
+
 h3. Downloading and building
 
 <pre>
