@@ -7,7 +7,6 @@ This is a very preliminary work in progress. No supported releases yet nor defin
 h2. Documentation
 
 * "Latest snapshot PDF - 2011-02-25":https://github.com/downloads/graydon/rust/rust-2011-02-25-snap.pdf
-* [[Standard lib]]
 
 h2. FAQs
 
