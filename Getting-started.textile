@@ -6,10 +6,10 @@ Version numbers listed here are "what we're using"; the code may well work with 
 * Python 3.1 ("download link":http://www.python.org/download/)
 * Ocaml 3.11 ("download link":http://caml.inria.fr/download.en.html)
 * GNU make 3.81
-* g++ 4.4
+* g++ 4.4 at least on linux, 4.5 on win32, and the 4.x gcc in Apple's SDK for OSX.
 * Valgrind 3.5 (recommended but not required for linux)
 * Texinfo's makeinfo and/or texi2pdf commands, if you wish to build HTML or PDF docs, respectively
-* LLVM SVN revision 110060, built for x86 (not x64 if you have one!) and @--enable-shared@.
+* LLVM SVN revision 127624 or newer, built for x86 (not x64 if you have one!) and @--enable-shared@.
 
 h4. Debian-based Linux distributions
 
@@ -38,7 +38,7 @@ $ make
 $ make install
 ```
 
-Currently (hopefully this will change soon), the Linux and OS X libs *must* be called libLLVM-2.8svn.so and libLLVM-2.8svn.dylib for rustc to find them.
+Currently (hopefully this will change soon), the Linux, OS X and win32 libs *must* be called libLLVM-2.8svn.so, libLLVM-2.8svn.dylib and LLVM-2.8svn.dll, respectively, for rustc to find them. You will need to symlink or copy the resulting library to the "-2.8svn" name in order for anything to work.
 
 h3. Downloading and building
 
