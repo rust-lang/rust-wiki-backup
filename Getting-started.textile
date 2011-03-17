@@ -59,6 +59,7 @@ This will build and test the bootstrap compiler and standard library.
 *Note:* On Linux or OS X, if you have valgrind installed, the tests will run slowly because they are running under valgrind. If you define NO_VALGRIND=1 in your build environment, you can see the tests running at "full" speed (though, of course, the bootstrap compiler generates terrible code).
 
 h4. Notes specific to Mac OS X 10.5
+
 Getting rust to build on OS X 10.5 requires some tweaking:
 * Assuming you're using a gcc that came with Xcode 3.1, make sure it is gcc 4.2 rather than 4.0.1.  Xcode should come with both, although 4.0.1 is the default.  (See, for instance, "how to set gcc 4.2 as the default compiler on OS X Leopard":http://stackoverflow.com/questions/1165361/setting-gcc-4-2-as-the-default-compiler-on-mac-os-x-leopard).
 * In addition to the @LD_LIBRARY_PATH@ environment variable, which should be set to something like @$HOME/rust/src:/usr/local/lib@, you'll need to export the @DYLD_LIBRARY_PATH@ environment variable, which should have the same value as @LD_LIBRARY_PATH@.  Use something like @export DYLD_LIBRARY_PATH=$LD_LIBRARY_PATH@.
