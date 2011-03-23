@@ -18,6 +18,7 @@ h2. Developer notes
 
 * [[Roadmap]]
 * [[Getting started]]
+* [[git workflow]]
 
 h2. Design notes
 
