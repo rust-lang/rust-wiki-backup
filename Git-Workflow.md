@@ -21,5 +21,5 @@ git checkout master; git fetch graydon; git merge graydon/master
 
 5. Verify that master contains your changes, then delete 'mybranch' from both local and remote repos:
 ```
-git branch -D myproject; git push origin :myproject
+git branch -D mybranch; git push origin :mybranch
 ```
