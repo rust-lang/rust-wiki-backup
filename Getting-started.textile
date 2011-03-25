@@ -50,7 +50,10 @@ h3. Downloading and building
 <pre>
 <code>
 $ git clone git://github.com/graydon/rust.git
-$ cd rust/src
+$ cd rust
+$ mkdir build
+$ cd build
+$ ../configure
 $ make check
 </code>
 </pre>
