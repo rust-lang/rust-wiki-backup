@@ -7,21 +7,30 @@ One possible workflow that has worked for developers on the project is outlined 
 git checkout master -b mybranch
 ```
 
-2. When done, push your work up to github:
+2. While working, rebase your branch forwards regularly:
+```
+git checkout master
+git fetch graydon
+git merge graydon/master
+git rebase master mybranch
+```
+
+
+3. When done, push your work up to github:
 ```
 git push origin mybranch
 ```
 
-3. Make a pull request to Graydon.  In the meantime, you can create a new branch and do something else.  
+4. Make a pull request to Graydon.  In the meantime, you can create a new branch and do something else.  
 
-4. After Graydon integrates your stuff, pull his master branch into your local repo:
+5. After Graydon integrates your stuff, pull his master branch into your local repo:
 ```
 git checkout master
 git fetch graydon
 git merge graydon/master
 ```
 
-5. Verify that master contains your changes, then delete 'mybranch' from both local and remote repos:
+6. Verify that master contains your changes, then delete 'mybranch' from both local and remote repos:
 ```
 git branch -D mybranch
 git push origin :mybranch
