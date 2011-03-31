@@ -1,6 +1,9 @@
 When submitting pull requests it is important to know that the rust developers make heavy use of rebasing. Branches that you submit for integration may be rebased, which will change their history and make your branch's history invalid.
 
-One possible workflow that has worked for developers on the project is outlined below. This assumes that you have an 'origin' remote that represents your remote github repo, and a 'graydon' remote that represents graydon's.
+One possible workflow that has worked for developers on the project is outlined below. This assumes that you have an 'origin' remote that represents your remote github repo, and a 'graydon' remote that represents graydon's. To create the latter, you can execute:
+```
+git remote add graydon git://github.com/graydon/rust.git
+```
 
 1. Whenever you start working on anything new, create a new branch:
 ```
