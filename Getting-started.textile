@@ -74,7 +74,7 @@ There's a quick guide to the source of the bootstrap compiler in src/boot/README
 
 h3. Dealing with the issue tracker
 
-The github issue tracker is somewhat weak. However, it exposes itself through an API and there's a "secondary front-end that is quite a bit more responsive":http://githubissues.heroku.com/#graydon/rust
+The github issue tracker is somewhat weak. However, it exposes itself through an API and there's a "secondary front-end that is quite a bit more responsive":http://githubissues.heroku.com/#graydon/rust and a "tertiary front-end that is pleasantly minimal":http://izs.no.de/graydon/rust
 
 h3. Picking something interesting to do
 
