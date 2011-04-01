@@ -59,7 +59,7 @@ $ make check
 </pre>
 This will build and test the bootstrap compiler and standard library.
 
-*Note:* On Linux or OS X, if you have valgrind installed, the tests will run slowly because they are running under valgrind. If you define NO_VALGRIND=1 in your build environment, you can see the tests running at "full" speed (though, of course, the bootstrap compiler generates terrible code).
+*Note:* On Linux or OS X, if you have valgrind installed, the tests will run slowly because they are running under valgrind. If you define CFG_DISABLE_VALGRIND=1 in your build environment or run configure with the --disable-valgrind flag, you can see the tests running at "full" speed (though, of course, the bootstrap compiler generates terrible code).
 
 h4. Notes specific to Mac OS X 10.5
 
