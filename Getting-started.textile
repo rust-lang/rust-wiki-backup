@@ -28,22 +28,22 @@ Also, to get your builds made in ocaml "native" mode (rather than bytecode) inst
 
 h3. Installing LLVM
 
-You'll need LLVM if you want anything other than the x86 backend of the bootstrap compiler. Because Rust doesn't support x64 yet and because you can't link Rust programs against static libraries, you'll need to configure LLVM using some special flags. On the Mac, use:
+You'll need LLVM if you want anything other than the x86 backend of the bootstrap compiler. Because Rust doesn't support x64 yet you may need to configure LLVM using some special flags. On the Mac, use:
 
 ```sh
-$ CXX='g++ -m32' CC='gcc -m32' CFLAGS=-m32 CXXFLAGS=-m32 LDFLAGS=-m32 ./configure --enable-shared --disable-bindings --{build,host,target}=i686-apple-darwin --enable-targets=x86,x86_64,cbe
+$ CXX='g++ -m32' CC='gcc -m32' CFLAGS=-m32 CXXFLAGS=-m32 LDFLAGS=-m32 ./configure --disable-bindings --{build,host,target}=i686-apple-darwin --enable-targets=x86,x86_64,cbe
 $ make
 $ make install
 ```
 
-On 64-bit linux, use:
+On 64-bit Linux, use:
 ```sh
-$ CXX='g++ -m32' CC='gcc -m32' CFLAGS=-m32 CXXFLAGS=-m32 LDFLAGS=-m32 ./configure --enable-shared --disable-bindings --{build,host,target}=i686-unknown-linux-gnu --enable-targets=x86,x86_64,cbe
+$ CXX='g++ -m32' CC='gcc -m32' CFLAGS=-m32 CXXFLAGS=-m32 LDFLAGS=-m32 ./configure --disable-bindings --{build,host,target}=i686-unknown-linux-gnu --enable-targets=x86,x86_64,cbe
 $ make
 $ make install
 ```
 
-Currently (hopefully this will change soon), the Linux, OS X and win32 libs *must* be called libLLVM-3.0svn.so, libLLVM-3.0svn.dylib and LLVM-3.0svn.dll, respectively, for rustc to find them. You will need to symlink or copy the resulting library to the "-3.0svn" name if any other version is produced from your build.
+On 32-bit Linux a simple @./configure; make; make install@ should be sufficient.
 
 h3. Downloading and building
 
@@ -59,7 +59,7 @@ $ make check
 </pre>
 This will build and test the bootstrap compiler and standard library.
 
-*Note:* On Linux or OS X, if you have valgrind installed, the tests will run slowly because they are running under valgrind. If you define CFG_DISABLE_VALGRIND=1 in your build environment or run configure with the --disable-valgrind flag, you can see the tests running at "full" speed (though, of course, the bootstrap compiler generates terrible code).
+*Note:* On Linux or OS X, if you have valgrind installed, the tests will run slowly because they are running under valgrind. If you define @CFG_DISABLE_VALGRIND=1@ in your build environment or run configure with the @--disable-valgrind@ flag, you can see the tests running at "full" speed (though, of course, the bootstrap compiler generates terrible code).
 
 h4. Notes specific to Mac OS X 10.5
 
