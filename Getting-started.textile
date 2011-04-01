@@ -43,7 +43,7 @@ $ make
 $ make install
 ```
 
-On 32-bit Linux a simple @./configure; make; make install@ should be sufficient.
+On 32-bit Linux @./configure; make; make install@ should be sufficient.
 
 h3. Downloading and building
 
