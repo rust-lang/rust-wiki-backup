@@ -28,7 +28,7 @@ Also, to get your builds made in ocaml "native" mode (rather than bytecode) inst
 
 h4. Mac
 
-On the Mac (Darwin), you need to apply a small patch to LLVM in order to use the standard library under `rustc`: https://gist.github.com/916582
+On the Mac (Darwin), you need to apply a small patch to LLVM in order to use the standard library under @rustc@: https://gist.github.com/916582
 
 h3. Installing LLVM
 
