@@ -26,6 +26,10 @@ The Ocaml build for MinGW is the one you want.
 
 Also, to get your builds made in ocaml "native" mode (rather than bytecode) install the "flexdll package":http://alain.frisch.fr/flexdll.html and make sure its install dir (containing @flexlink.exe@) is in your @PATH@. Furthermore set this env var: @export FLEXLINKFLAGS="-nocygpath -L c:\path-to-mingw\lib"@ such that @flexlink.exe@ can find your MinGW libraries. You probably want to do this since bytecode mode is miserably slow for building @rustc.exe@.
 
+h4. Mac
+
+On the Mac (Darwin), you need to apply a small patch to LLVM in order to use the standard library under `rustc`: https://gist.github.com/916582
+
 h3. Installing LLVM
 
 You'll need LLVM if you want anything other than the x86 backend of the bootstrap compiler. Because Rust doesn't support x64 yet you may need to configure LLVM using some special flags. On the Mac, use:
