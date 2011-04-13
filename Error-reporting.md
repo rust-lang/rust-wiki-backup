@@ -1,4 +1,6 @@
-# Fix-Its
+# Error reporting
+
+## Fix-Its
 
 `rustc` should output "fix-its" like clang does. Here are some ideas:
 
