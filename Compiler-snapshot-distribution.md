@@ -1,10 +1,10 @@
 (draft)
 
-After bootstrapping, we'll have a weird, dependant relationship to our own compiler binaries. Someone starting a checkout will have to get one from a central place, as will people who pull in changes from others.
+After bootstrapping, we'll have a weird, dependent relationship to our own compiler binaries. Someone starting a checkout will have to get one from a central place, as will people who pull in changes from others.
 
 In today's (April 8 2011) meeting, we decided:
 
-- We'll test using a three-stage (1-3) test process, with the first stage being built by a snapshot compiler (stage0) and the third stage being expected to be the same as the second (either by LLVM code or by code/data sections) -- i.e. a 'fixpoint' where recompiles don't introduce new changes.
+- We'll test using a three-stage test process, with the first stage being built by a snapshot compiler (stage0) and the third stage being expected to be the same as the second (either by LLVM code or by code/data sections) -- i.e. a 'fixpoint' where recompiles don't introduce new changes.
 
 - There will be a file (snapshot registry) in the repository that tracks the URLs of compilers that can be used to build the different revisions (by git hash).
 
