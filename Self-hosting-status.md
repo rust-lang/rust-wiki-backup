@@ -18,7 +18,7 @@ All modules typecheck.
 * ☑ `middle.fold`
 * ☑ `middle.resolve`
 * ☑ `middle.capture`
-* ☒ `middle.trans` &mdash;infinite loop on line 1024 (`if (cx.kind != NON_SCOPE_BLOCK)`. Suspect structural compare.)
+* ☒ `middle.trans` &mdash;infinite loop on line 1024 (`if (cx.kind != NON_SCOPE_BLOCK)`. `trans_compare_inner`/`trans_compare`/`iter_structural_ty_full` infinite loop.)
 * ☐ `middle.ty`
 * ☐ `middle.typeck`
 * ☐ `middle.typestate_check`
