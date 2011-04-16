@@ -16,9 +16,9 @@ All modules typecheck.
 * ☑ `front.eval`
 * ☑ `middle.metadata`
 * ☑ `middle.fold`
-* ☒ `middle.resolve` &mdash;infinite loop
-* ☐ `middle.capture`
-* ☐ `middle.trans`
+* ☑ `middle.resolve`
+* ☑ `middle.capture`
+* ☒ `middle.trans` &mdash;infinite loop on line 1024 (`if (cx.kind != NON_SCOPE_BLOCK)`. Suspect structural compare.)
 * ☐ `middle.ty`
 * ☐ `middle.typeck`
 * ☐ `middle.typestate_check`
