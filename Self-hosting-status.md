@@ -22,13 +22,13 @@ All modules typecheck.
 * ☐ `middle.ty`
 * ☐ `middle.typeck`
 * ☐ `middle.typestate_check`
-* ☐ `back.abi`
-* ☐ `back.x86`
-* ☐ `driver.rustc`
-* ☐ `driver.session`
-* ☐ `pretty.pp`
-* ☐ `pretty.pprust`
-* ☐ `util.common`
-* ☐ `util.typestate_ann`
+* ☑ `back.abi`
+* ☑ `back.x86`
+* ☑ `driver.rustc`
+* ☑ `driver.session`
+* ☑ `pretty.pp`
+* ☒ `pretty.pprust` &mdash;infinite recursion, unclear where, possibly print_fn.print_arg
+* ☑ `util.common`
+* ☑ `util.typestate_ann`
 
 Feel free to add to this list; just move modules around in `rustc.rc` to see what works and what doesn't.
