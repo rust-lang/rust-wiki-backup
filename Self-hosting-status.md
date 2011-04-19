@@ -27,7 +27,7 @@ All modules typecheck.
 * ☑ `driver.rustc`
 * ☑ `driver.session`
 * ☑ `pretty.pp`
-* ☒ `pretty.pprust` &mdash;infinite recursion, unclear where, possibly print_fn.print_arg
+* ☑ `pretty.pprust`
 * ☑ `util.common`
 * ☑ `util.typestate_ann`
 
