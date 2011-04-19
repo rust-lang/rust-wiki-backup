@@ -18,7 +18,7 @@ All modules typecheck.
 * ☑ `middle.fold`
 * ☑ `middle.resolve`
 * ☑ `middle.capture`
-* ☒ `middle.trans` &mdash;infinite loop on line 1024 (`if (cx.kind != NON_SCOPE_BLOCK)`. `trans_compare_inner`/`trans_compare`/`iter_structural_ty_full` infinite loop.)
+* ☒ `middle.trans` &mdash;infinite loop on line 6501 (`Assertion failed: (getType() == V->getType() && "All operands to PHI node must be the same type as the PHI node!"), function addIncoming, file /Users/pwalton/Source/llvm/local/include/llvm/Instructions.h, line 1910.`)
 * ☒ `middle.ty` &mdash;bad LLVM cast while translating ty_to_str.fn_to_str
 * ☑ `middle.typeck`
 * ☑ `middle.typestate_check`
