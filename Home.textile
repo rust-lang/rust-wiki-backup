@@ -21,6 +21,7 @@ h2. Developer notes
 * [[Git workflow]]
 * [[Error reporting]]
 * [[Self-hosting status]]
+* [[Logging-vision]]
 
 h2. Design notes
 
