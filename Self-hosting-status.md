@@ -18,7 +18,7 @@ All modules typecheck.
 * ☑ `middle.fold`
 * ☑ `middle.resolve`
 * ☑ `middle.capture`
-* ☒ `middle.trans` &mdash;infinite loop on line 6501 (`Assertion failed: (getType() == V->getType() && "All operands to PHI node must be the same type as the PHI node!"), function addIncoming, file /Users/pwalton/Source/llvm/local/include/llvm/Instructions.h, line 1910.`) Suspect broken phi node generation on alt statement.
+* ☑ `middle.trans`
 * ☑ `middle.ty`
 * ☑ `middle.typeck`
 * ☑ `middle.typestate_check`
