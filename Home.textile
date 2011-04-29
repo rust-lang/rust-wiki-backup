@@ -20,7 +20,6 @@ h2. Developer notes
 * [[Getting started]]
 * [[Git workflow]]
 * [[Error reporting]]
-* [[Self-hosting status]]
 * [[Logging-vision]]
 
 h2. Design notes
