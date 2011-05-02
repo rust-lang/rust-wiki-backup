@@ -1,19 +1,12 @@
-Bono et al. [1] say, "The gain of introducing an
-appropriate type for self is evident when a form of inheritance is
-present, either a class-based one (via class hierarchies), or an
-object-based one (via method addition/override)."  We don't have classes or a class hierarchy in Rust, and our documentation claims that we do not have "any concept of inheritance".  The same documentation says
-that "method overriding and object restriction are performed explicitly on object values", which sounds like
-what Bono et al. would call a form of inheritance, albeit an object-based one.
+My project for the summer is to design and implement self-types (that is, "the type of the current object", as found in, for example, Scala) for the Rust type system.  Right now, has the beginnings of an object system, but it's pretty limited; the only notion of "self" that I've implemented so far is support for self-calls like `self.foo()`.  `self` still doesn't exist as a standalone, first-class entity; right now, it's nothing more than a magic prefix to method calls, and you can't do things like return `self`, nor can you write functions that take arguments of type `self`. For that, we need self-types.
 
-However, method overriding and object restriction are not actually implemented yet; neither is method addition.  We'd like to implement method overriding in a way that works more or less analogously to our existing functional record update, which is available in Rust via the `with` syntax (although we don't have similar operations on records that are analogous to method addition or restriction, as in actually adding fields to a record or removing them).
+## Method overriding/addition/restriction
 
-For objects, rather than "copying forward" stuff from the extended-or-overridden object, we would wrap it in an adaptor.  (Graydon: "All delegation is wrapping.")  We'd have an expression form that would look something like:
+The Rust documentation says that "method overriding and object restriction are performed explicitly on object values", but method overriding and object restriction are not actually implemented yet; neither is method addition.  We'd like to implement method overriding in a way that works more or less analogously to our existing functional record update, which is available in Rust via the `with` syntax.  (We don't have, and probably don't need, similar operations on records that are analogous to method addition or restriction, as in actually adding fields to a record or removing them).
 
-    obj { fn foo() { ... new method ... } with other_obj }
+For objects, rather than "copying forward" stuff from the extended-or-overridden object, we would wrap it in an adaptor.  (Graydon: "All delegation is wrapping.")  We'd have an expression form that would look something like `obj { fn foo() { ... new method ... } with other_obj }`, where `other_obj` is an already-defined object.  So, step one for implementing this would be "anonymous object expressions", and then object expressions that wrap inner objects.  This is kind of like prototype-based OO, although according to Graydon, we're "flattening the prototype chain".
 
-where `other_obj` is an already-defined object.  So step one for implementing this would be "anonymous object expressions", and then object expressions that wrap inner objects.  This is something like prototype-based OO, although according to Graydon, we're "flattening the prototype chain".
-
-Again, the reason all this is relevant is because, as Bono et al. say, having self-types is particularly useful in a situation that has some form of inheritance (even if it's "only" prototype-style inheritance).  As a concrete example, say you have the following:
+The reason all this is relevant to self-types is that having self-types is particularly useful in a situation that has some form of inheritance (even if it's "only" prototype-style inheritance).  As a concrete example, say you have the following:
 
      obj a() {
          fn foo() -> int {
@@ -27,16 +20,16 @@ Again, the reason all this is relevant is because, as Bono et al. say, having se
      auto my_a = a();
      auto my_b = obj { fn baz() -> int { return self.foo() } with my_a };
 
-Now, my_b is an object, so it's going to be a pair of a vtbl pointer and
+Now, my_b is an object, so it's going to be a pair of a vtable pointer and
 a body pointer:
 
      my_b: [vtbl* | body*]
 
-my_b's vtbl has entries for foo, bar, and baz, whereas my_a's vtbl has
-only foo and bar.  my_b's 3-entry vtbl consists of 2 forwarding
+my_b's vtbl has entries for foo, bar, and baz, whereas my_a's vtable has
+only foo and bar.  my_b's 3-entry vtable consists of 2 forwarding
 functions and 1 real method.
 
-my_b's body just cotains the pair a: [ a_vtbl | a_body ], wrapped up
+my_b's body just cotains the pair a: [ a_vtable | a_body ], wrapped up
 with any additional fields that my_b added.  None were added, so my_b
 is just the wrapped inner object.
 
@@ -53,7 +46,7 @@ have an object that extends my_a, overriding foo():
 
 Now, if we call my_c.bar(), it calls self.a.bar(), which passes the
 my_c object as 'self' to a.bar(), which calls looks up the foo()
-method of self, so it should hit my_c.foo().  I *think* I have this correct -- I hope -- but I'm not totally sure.
+method of self, so it should hit my_c.foo().  (I *think* I have this correct -- I hope -- but I'm not totally sure.)
 
 Bono et al. go on to say: "In fact, an appropriate type for self would allow
 to specialize automatically those inherited/overridden methods that
