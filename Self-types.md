@@ -20,75 +20,61 @@ The reason all this is relevant to self-types is that having self-types is parti
      auto my_a = a();
      auto my_b = obj { fn baz() -> int { return self.foo() } with my_a };
 
-Now, my_b is an object, so it's going to be a pair of a vtable pointer and
-a body pointer:
+Here we're making up syntax to extend the `my_a` object with an additional method `baz`, creating an object `my_b`.  Since it's an object, `my_b` is a pair of a vtable pointer and a body pointer:
 
      my_b: [vtbl* | body*]
 
-my_b's vtbl has entries for foo, bar, and baz, whereas my_a's vtable has
-only foo and bar.  my_b's 3-entry vtable consists of 2 forwarding
-functions and 1 real method.
+`my_b`'s vtable has entries for `foo`, `bar`, and `baz`, whereas `my_a`'s vtable has
+only `foo` and `bar`.  `my_b`'s 3-entry vtable consists of two forwarding functions and one real method.
 
-my_b's body just cotains the pair a: [ a_vtable | a_body ], wrapped up
-with any additional fields that my_b added.  None were added, so my_b
+`my_b`'s body just contains the pair `a: [ a_vtable | a_body ]`, wrapped up
+with any additional fields that `my_b` added.  None were added, so `my_b`
 is just the wrapped inner object.
 
-When you call my_b.foo(), it calls self.a.foo(), essentially, and that
-latter call passes the my_a object as 'self' to a.foo().  This is
-"wrapping the inner object to appear like the outer object", also
-known as wrapping, period.
+When we call `my_b.foo()`, it calls `self.a.foo()`, essentially, and that
+latter call passes the `my_a` object as 'self' to `a.foo()`.  This is
+"wrapping the inner object to appear like the outer object".
 
 The less-expected direction, wrapping the outer object to appear like
-the inner, happens when you *override*, not just extend.  Suppose we
-have an object that extends my_a, overriding foo():
+the inner, happens when we *override*, a method in `my_a`, rather than just extend it.  Suppose we
+have an object that extends `my_a`, overriding `foo`:
 
      auto my_c = obj { fn foo() -> int { return 3; } with my_a };
 
-Now, if we call my_c.bar(), it calls self.a.bar(), which passes the
-my_c object as 'self' to a.bar(), which calls looks up the foo()
-method of self, so it should hit my_c.foo().  (I *think* I have this correct -- I hope -- but I'm not totally sure.)
+Now, if we call `my_c.bar()`, it calls `self.a.bar()`, which passes the
+my_c object as 'self' to `a.bar()`, which calls looks up the `foo()`
+method of self, so it should hit `my_c.foo()`.  (I *think* I have this correct -- I hope -- but I'm not totally sure.)
 
-Bono et al. go on to say: "In fact, an appropriate type for self would allow
+## Hopefully-relevant literature
+
+Bono et al. [1] say: "an appropriate type for self would allow
 to specialize automatically those inherited/overridden methods that
 either return the host object, or have some parameters of the same
 type as the host object (binary methods)."  These sound like the
 things we want to be able to do: return self and take arguments of
-type self.  I hadn't thought about the problem as one having to do
+type self -- I hadn't thought about the problem as one having to do
 with inheritance.
 
-In the second section of Bono et al.:
+In the second section of [1]:
 
-"It might seem natural to identify objects with recursive records ,so
+  * "It might seem natural to identify objects with recursive records, 
 their types with recursive types, but this is misleading." Curious to
 see why.
 
-"This paper might be seen as a first step towards introducing
-selftypes in real programming languages as an alternative to
-typecasts."  Great!  That's what we want!
+  * "This paper might be seen as a first step towards introducing selftypes in real programming languages as an alternative to typecasts."  Great!  That's what we want!
 
-M <= i extracts the i-th method from object M.  Operational semantics:
+  * The notation `M <= i` extracts the `i`-th method from object `M`.  Operational semantics: `pro s<M_1, M_2> <= i --> M_i[pro s<M1, M2>/s]`.  That is, extracting the `i`-th method gives us `M_i` but with `pro s<M1, M2>` in place of occurrences of the bound variable `s`.  This smacks of recursive types.
 
-pro s<M_1, M_2> <= i --> M_i[pro s<M1, M2>/s]
-
-that is, M_i but with pro s<M1, M2> in place of occurrences of the
-bound variable s.  This smacks of recursive types.
-
-"Another reason why we do not want to use recursive types is that we
-certainly want to distinguish between pro s<3, pro s<2, s>> and pro
-s<2, s>."  Wait, this just sounds like we're just saying that we want
+  * "Another reason why we do not want to use recursive types is that we certainly want to distinguish between `pro s<3, pro s<2, s>>` and `pro s<2, s>`."  To me this just sounds like we're saying that we want
 iso-recursive types rather than equi-recursive types.
 
-Fisher et al. [2] is another example of a system with self-types, and like Bono et al., deals with nesting.  I like the notation better and the paper is interesting but I'm not seeing how it is immediately relevant to the problem of assigning a type to `self`.
+Fisher et al. [2] is another example of a system with self-types, and like Bono et al., deals with nesting.  I like the notation better, and the ideas are nice (lambda-tastic object encodings), but I don't see immediate relevance to the problem of assigning a type to `self` -- although I'm probably missing something.
 
-Abadi and Cardelli's "Theory of Objects" tutorial from OOPSLA '96 [3]
-looks kind of promising, though!  Slide 42 (p. 11 of the PDF) lists a bunch of
-object calculi with various features.  it appears from this that the
+Abadi and Cardelli's "Theory of Objects" tutorial from OOPSLA '96 [3] looks kind of promising.  Slide 42 (p. 11 of the PDF) lists a bunch of object calculi with various features.  it appears from this that the
 simplest object calculus with self types is ςOb ("sigma-ob").  Of the features they're considering, sigma-ob
-has only objects, object types ,subtyping, and self types.  Notably, it doesn't have recursive types.
+has only objects, object types, subtyping, and self types.  Notably, it doesn't have recursive types.  (Interestingly, two of the systems that they list as having recursive types also have an open (not-filled-in) circle in the "self-types" spot -- I don't know what it means, but maybe it means something like "can encode self-types".  What else do those systems have that would enable such an encoding?  Subtyping?  Variance?  (What's variance?)
 
-(Interestingly, two of the systems that they list as having recursive types also have an open (not-filled-in) circle in the "self-types" spot -- I don't know what it means, but maybe it means something like "can encode self-types".  What else do those systems have that would enable such an encoding?  Subtyping?  Variance?  (What's variance?)
-
-And then there's the sigma-ob paper [4], which looks promising...
+And then there's the sigma-ob paper [4], which I'm reading now...
 
 [1] Type Inference for Nested Self Types.  Viviana Bono, Jerzy Tiuryn,
 and Pawel Urzyczyn.
@@ -98,7 +84,7 @@ http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.106.7277&rep=rep1&type=
 Fisher, Furio Honsell, and John C. Mitchell.
 http://citeseer.ist.psu.edu/viewdoc/download?doi=10.1.1.48.5828&rep=rep1&type=pdf
 
-[3] A Theory of OBjects (OOPSLA Tutorial).  Martin Abadi and Luca Cardelli.
+[3] A Theory of Objects (OOPSLA Tutorial).  Martin Abadi and Luca Cardelli.
 http://lucacardelli.name/Talks/1996-10%20A%20Theory%20of%20Objects%20(OOPSLA%20Tutorial).pdf
 
 [4] A Theory of Primitive Objects: Second-Order Systems.  Martin Abadi and Luca Cardelli.
