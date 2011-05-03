@@ -74,9 +74,9 @@ Abadi and Cardelli's "Theory of Objects" tutorial from OOPSLA '96 [3] looks kind
 simplest object calculus with self types is ςOb ("sigma-ob").  Of the features they're considering, sigma-ob
 has only objects, object types, subtyping, and self types.  Notably, it doesn't have recursive types.  (Interestingly, two of the systems that they list as having recursive types also have an open (not-filled-in) circle in the "self-types" spot -- I don't know what it means, but maybe it means something like "can encode self-types".  What else do those systems have that would enable such an encoding?  Subtyping?  Variance?  (What's variance?)
 
-And then there's the sigma-ob paper [4], which I'm reading now...
+The sigma-ob paper [4], which I'm reading now, is looking very promising.  I haven't got my head around it yet completely, but it explains why, if we used regular recursive types to try and implement self, that would just be *wrong* in the presence of method override.  They offer two fixes for this problem.  The fix laid out in [4] uses a second-order quantifier sigma (different from the sigma appearing at the term level!) that I don't understand yet.  The other fix is "the standard solution", which is apparently what Modula-3 did, and is laid out in [5].  I'm going to look into the latter next.  Apparently the disadvantage of that solution is that it  "sacrifices static typing information which must be recorvered dynamically, thus abandoning the static typing of subsumption".  I'm not entirely sure what that means yet.
 
-Suggested by mccr8 ("self types sound a little like the typing issues involved with typing functions with explicit self parameters, as arise in the typed compilation of OO languages"):
+Also, suggested by mccr8 ("self types sound a little like the typing issues involved with typing functions with explicit self parameters, as arise in the typed compilation of OO languages"):
 
  * http://research.microsoft.com/apps/pubs/default.aspx?id=59934  
    A simple typed intermediate language for object-oriented languages.  Juan Chen and David Tarditi.  POPL 2005. ("focuses just on the encoding technique" -- mccr8)
@@ -99,3 +99,6 @@ http://lucacardelli.name/Talks/1996-10%20A%20Theory%20of%20Objects%20(OOPSLA%20T
 
 [4] A Theory of Primitive Objects: Second-Order Systems.  Martin Abadi and Luca Cardelli.
 http://lucacardelli.name/Papers/PrimObj2ndOrder.A4.pdf
+
+[5] A theory of primitive objects: Untyped and first-order systems. Martín Abadi and Luca Cardelli. 
+http://lucacardelli.name/Papers/PrimObj1stOrder.A4.pdf
