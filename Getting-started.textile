@@ -31,19 +31,19 @@ h3. Installing LLVM
 You'll need LLVM if you want anything other than the x86 backend of the bootstrap compiler. Because Rust doesn't support x64 yet you may need to configure LLVM using some special flags. On the Mac, use:
 
 ```sh
-$ CXX='g++ -m32' CC='gcc -m32' CFLAGS=-m32 CXXFLAGS=-m32 LDFLAGS=-m32 ./configure --disable-bindings --{build,host,target}=i686-apple-darwin --enable-targets=x86,x86_64,cbe
+$ CXX='g++ -m32' CC='gcc -m32' CFLAGS=-m32 CXXFLAGS=-m32 LDFLAGS=-m32 ./configure --disable-bindings --{build,host,target}=i686-apple-darwin --enable-targets=x86,x86_64,cbe --enable-optimized
 $ make
 $ make install
 ```
 
 On 64-bit Linux, use:
 ```sh
-$ CXX='g++ -m32' CC='gcc -m32' CFLAGS=-m32 CXXFLAGS=-m32 LDFLAGS=-m32 ./configure --disable-bindings --{build,host,target}=i686-unknown-linux-gnu --enable-targets=x86,x86_64,cbe
+$ CXX='g++ -m32' CC='gcc -m32' CFLAGS=-m32 CXXFLAGS=-m32 LDFLAGS=-m32 ./configure --disable-bindings --{build,host,target}=i686-unknown-linux-gnu --enable-targets=x86,x86_64,cbe --enable-optimized
 $ make
 $ make install
 ```
 
-On 32-bit Linux @./configure; make; make install@ should be sufficient.
+On 32-bit Linux @./configure --enable-optimized; make; make install@ should be sufficient.  If you omit the `--enable-optimized` flag, it'll work, but more slowly.
 
 h3. Downloading and building
 
