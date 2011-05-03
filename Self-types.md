@@ -76,6 +76,16 @@ has only objects, object types, subtyping, and self types.  Notably, it doesn't 
 
 And then there's the sigma-ob paper [4], which I'm reading now...
 
+Suggested by mccr8 ("self types sound a little like the typing issues involved with typing functions with explicit self parameters, as arise in the typed compilation of OO languages"):
+
+ * http://research.microsoft.com/apps/pubs/default.aspx?id=59934  
+   A simple typed intermediate language for object-oriented languages.  Juan Chen and David Tarditi.  POPL 2005. ("focuses just on the encoding technique" -- mccr8)
+
+ * http://contrapunctus.net/league/research/papers/pip03.pdf
+   Precision in practice: A type-preserving Java compiler.  C. League, Z. Shao, and V. Trifonov.  CC 2003. 
+
+---
+
 [1] Type Inference for Nested Self Types.  Viviana Bono, Jerzy Tiuryn,
 and Pawel Urzyczyn.
 http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.106.7277&rep=rep1&type=pdf
