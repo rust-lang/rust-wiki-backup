@@ -8,6 +8,7 @@ Version numbers listed here are "what we're using"; the code may well work with 
 * GNU make 3.81
 * git 1.7
 * g++ 4.4 at least on linux, 4.5 on win32, and the 4.x gcc in Apple's SDK for OSX.
+* curl
 * Valgrind 3.5 (recommended but not required for linux)
 * Texinfo's makeinfo and/or texi2pdf commands, if you wish to build HTML or PDF docs, respectively
 * LLVM SVN revision 127624 or newer (**not** any stable release older than March 11, 2011), built for x86 (not x64 if you have one!).
