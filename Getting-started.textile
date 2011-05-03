@@ -43,7 +43,7 @@ $ make
 $ make install
 ```
 
-On 32-bit Linux @./configure --enable-optimized; make; make install@ should be sufficient.  If you omit the `--enable-optimized` flag, it'll work, but more slowly.
+On 32-bit Linux @./configure --enable-optimized; make; make install@ should be sufficient.  If you omit the @--enable-optimized@ flag, it'll work, but more slowly.
 
 h3. Downloading and building
 
