@@ -36,10 +36,10 @@ latter call passes the `my_a` object as 'self' to `a.foo()`.  This is
 "wrapping the inner object to appear like the outer object".
 
 The less-expected direction, wrapping the outer object to appear like
-the inner, happens when we *override*, a method in `my_a`, rather than just extend it.  Suppose we
+the inner, happens when we *override* a method in `my_a`, rather than just extend it.  Suppose we
 have an object that extends `my_a`, overriding `foo`:
 
-     auto my_c = obj { fn foo() -> int { return 3; } with my_a };
+     auto my_c = obj { fn foo() -> int { ret 3; } with my_a };
 
 Now, if we call `my_c.bar()`, it calls `self.a.bar()`, which passes the
 my_c object as 'self' to `a.bar()`, which calls looks up the `foo()`
