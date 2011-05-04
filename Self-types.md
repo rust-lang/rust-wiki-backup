@@ -18,7 +18,7 @@ The reason all this is relevant to self-types is that having self-types is parti
      }
 
      auto my_a = a();
-     auto my_b = obj { fn baz() -> int { return self.foo() } with my_a };
+     auto my_b = obj { fn baz() -> int { ret self.foo() } with my_a };
 
 Here we're making up syntax to extend the `my_a` object with an additional method `baz`, creating an object `my_b`.  Since it's an object, `my_b` is a pair of a vtable pointer and a body pointer:
 
