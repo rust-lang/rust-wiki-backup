@@ -43,7 +43,7 @@ have an object that extends `my_a`, overriding `foo`:
 
 Now, if we call `my_c.bar()`, it calls `self.a.bar()`, which passes the
 my_c object as 'self' to `a.bar()`, which calls looks up the `foo()`
-method of self, so it should hit `my_c.foo()`.  (I *think* I have this correct -- I hope -- but I'm not totally sure.)
+method of self, so it should hit `my_c.foo()` and return 3 rather than 2.
 
 ## Hopefully-relevant literature
 
