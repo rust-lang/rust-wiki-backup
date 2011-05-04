@@ -15,7 +15,7 @@ Version numbers listed here are "what we're using"; the code may well work with 
 
 h4. Debian-based Linux distributions
 
-@sudo apt-get install ocaml ocaml-native-compilers@
+@sudo apt-get install ocaml ocaml-native-compilers curl@
 
 64-bit systems: @sudo apt-get install g++-multilib ia32-libs@.
 
