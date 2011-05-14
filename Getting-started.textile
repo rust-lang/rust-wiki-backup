@@ -16,7 +16,7 @@ Rust regularly incorporates new features and fixes from LLVM so it's best to jus
 
 h4. Debian-based Linux distributions
 
-@sudo apt-get install ocaml ocaml-native-compilers curl@
+@sudo apt-get install g++ make texlive valgrind curl@
 
 64-bit systems: @sudo apt-get install g++-multilib ia32-libs@.
 
