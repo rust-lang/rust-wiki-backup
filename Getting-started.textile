@@ -4,7 +4,6 @@ Version numbers listed here are "what we're using"; the code may well work with 
 
 * A recent linux, OSX or win32 system.
 * Python 3.1 ("download link":http://www.python.org/download/)
-* Ocaml 3.11 ("download link":http://caml.inria.fr/download.en.html)
 * GNU make 3.81
 * git 1.7
 * g++ 4.4 at least on linux, 4.5 on win32, and the 4.x gcc in Apple's SDK for OSX.
@@ -24,10 +23,6 @@ h4. Debian-based Linux distributions
 h4. Windows
 
 We recommend developing under the newest "MinGW packages":http://www.mingw.org using their auto-installer.
-
-The Ocaml build for MinGW is the one you want.
-
-Also, to get your builds made in ocaml "native" mode (rather than bytecode) install the "flexdll package":http://alain.frisch.fr/flexdll.html and make sure its install dir (containing @flexlink.exe@) is in your @PATH@. Furthermore set this env var: @export FLEXLINKFLAGS="-nocygpath -L c:\path-to-mingw\lib"@ such that @flexlink.exe@ can find your MinGW libraries. You probably want to do this since bytecode mode is miserably slow for building @rustc.exe@.
 
 h3. Installing LLVM
 
@@ -62,7 +57,7 @@ $ make check
 </pre>
 This will build and test the bootstrap compiler and standard library.
 
-*Note:* On Linux or OS X, if you have valgrind installed, the tests will run slowly because they are running under valgrind. If you define @CFG_DISABLE_VALGRIND=1@ in your build environment or run configure with the @--disable-valgrind@ flag, you can see the tests running at "full" speed (though, of course, the bootstrap compiler generates terrible code).
+*Note:* On Linux or OS X, if you have valgrind installed, the tests will run slowly because they are running under valgrind. If you define @CFG_DISABLE_VALGRIND=1@ in your build environment or run configure with the @--disable-valgrind@ flag, you can see the tests running at full speed.
 
 h4. Notes specific to Mac OS X 10.5
 
@@ -73,7 +68,7 @@ Getting rust to build on OS X 10.5 requires some tweaking:
 
 h3. Navigating
 
-There's a quick guide to the source of the bootstrap compiler in src/boot/README and one for the self-hosted compiler in src/comp/README. You should probably look through whichever one corresponds to the compiler you're working on, if you're going to be contributing.
+There's a quick guide to the source of the compiler in src/comp/README. You should probably look through it if you're going to be contributing.
 
 h3. Dealing with the issue tracker
 
