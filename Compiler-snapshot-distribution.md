@@ -32,6 +32,8 @@ If you have _any questions_ about these procedures, please drop by IRC and ask i
 
 While you're making snapshots, you'll be pushing to non-`master` branches until your work is done and you need to integrate it back to `master`. Other people may be pushing to `master` in the meantime. It is essential that you _never_ rebase your snapshot-making commits when finishing your work and pushing to `master`. Use `git merge` if anyone else races with you in the meantime. Snapshots are identified by revision ID and those will change if you rebase.
 
+You should probably also not race with other users who are themselves making snapshots; in theory it will work but only if the tinderboxes don't overlook your pushes. Since the tinderboxes are inexact (they just pull "the most recent change on a branch") it's possible no snapshot will get built for you, which will be sad.
+
 ## Stage3 (backwards-compatible) snapshots
 
 * Make your change in your workspace. Check that it builds and passes `make check`.
