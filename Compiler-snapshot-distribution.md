@@ -61,7 +61,7 @@ s3cmd put -P rust-stage0-2011-05-13-0d32ff7-linux-i386-4adfe572211e609bf8faeb327
 
 * Save `snapshots.txt` and make check in your workspace. Make sure everything's cool. You are now building with your new snapshot locally.
 
-* If that worked, commit and push to `master`. Now everyone will be using your snapshot.
+* If that worked, commit and push to `master`. Now everyone will be using your snapshot. If there have been changes on `master` in the meantime, _you must_ merge with them before pushing, _not_ rebase onto them.
 
 ## Stage1 (backwards-incompatible) snapshots
 
@@ -79,4 +79,4 @@ s3cmd put -P rust-stage0-2011-05-13-0d32ff7-linux-i386-4adfe572211e609bf8faeb327
     * Commit this change along with the `T` snapshot registration in `snapshots.txt`.
     * Push to `snap-stage3`
     * Wait for the tinderboxes to cycle as above and make an entry in `snapshots.txt`, this time making an `S` entry as you would do for a compatible change.
-    * Commit this final snapshot registration, and push to `master`.
+    * Commit this final snapshot registration, and push to `master`. If there have been changes on `master` in the meantime, _you must_ merge with them before pushing, _not_ rebase onto them.
