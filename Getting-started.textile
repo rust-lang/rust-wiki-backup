@@ -26,6 +26,15 @@ We recommend developing under the newest "MinGW packages":http://www.mingw.org u
 
 h3. Installing LLVM
 
+Rust requires a 3.0svn build of LLVM. Follow the instructions on http://clang.llvm.org/get_started.html to check out LLVM and Clang.
+
+You will also need to check out compiler-rt:
+
+```sh
+cd llvm/projects
+svn co http://llvm.org/svn/llvm-project/compiler-rt/trunk compiler-rt
+```
+
 Because Rust doesn't support x64 yet you may need to configure LLVM using some special flags. On the Mac, use:
 
 ```sh
