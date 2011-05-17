@@ -59,7 +59,7 @@ s3cmd put -P rust-stage0-2011-05-13-0d32ff7-linux-i386-4adfe572211e609bf8faeb327
 ```
     These are examples; you should use the values from the lines you pulled out of the logs. The thing to notice is that the first part `S 2011-05-13 0d32ff7` names the git revision you pushed, and the subsequent 3 indented lines name the per-platform snapshots and give their sha1 values, that you pulled out of the builder logs. Be sure to actually add all 3 lines, otherwise you'll be leaving some platform out in the cold. That's not cool.
 
-* Save `snapshots.txt` and make check in your workspace. Make sure everything's cool. You are now building with your new snapshot locally.
+* Save `src/snapshots.txt` and make check in your workspace. Make sure everything's cool. You are now building with your new snapshot locally.
 
 * If that worked, commit and push to `master`. Now everyone will be using your snapshot. If there have been changes on `master` in the meantime, _you must_ merge with them before pushing, _not_ rebase onto them.
 
@@ -72,11 +72,21 @@ s3cmd put -P rust-stage0-2011-05-13-0d32ff7-linux-i386-4adfe572211e609bf8faeb327
     * edit the compiler source, changing all occurrences of `fn` to `func`, then _use_ that `snap-stage1` compiler to make a `snap-stage3` compiler.
 
 * The tricky part is sequencing these changes.
-    * Make your first change. That is, change the parser to recognize `func` but not `fn`. Be sure it builds to stage1 with `make stage1/rustc`, then commit and push to `snap-stage1`
-    * Wait for the tinderboxes to cycle as above and make an entry in `snapshots.txt` only put a `T` in place of the `S` identifying the snapshot, because this is a _transitional_ snapshot. The makefile will, when working in a source directory with a transitional snapshot, not build anything beyond stage1.
+    * Make your first change. That is, change the parser to recognize `func` but not `fn`. Then add a line at the start of `src/snapshots.txt` consisting just of the letter `T`. The presence of `T` in the first column of the first line of that file inhibits building beyond stage1; it tells the build system that you're in the middle of a transition. Be sure it builds to stage1 with `make`.
+    * Commit your changes (including the `T` line in `src/snapshots.txt`) and push to `snap-stage1`. That is, push with:
+```
+    git push -f origin master:snap-stage1
+```
+    * Wait for the tinderboxes to cycle as above and copy down the filenames uploaded to S3 in the end of the build logs. Modify the entry in `src/snapshots.txt` to complete the `T` entry. It should look like an `S` entry, as above, but with `T` in place of `S`. So it should look like this:
+```
+     T 2011-05-13 0d32ff7
+       linux-i386 4adfe572211e609bf8faeb327ffabc4bb6bc3a1e
+       macos-i386 bc7ee4d146ef6e0236afbd7cc4a9241582fd2952
+       winnt-i386 5d3279a2dd0e3179b0e982432d63d79f87cac221
+```
     * Do not commit that yet.
     * Make your change to the compiler sources now. That is, change `fn` to `func` everywhere, in our example.
-    * Commit this change along with the `T` snapshot registration in `snapshots.txt`.
+    * Commit this change along with the completed `T` snapshot registration in `src/snapshots.txt`.
     * Push to `snap-stage3`
-    * Wait for the tinderboxes to cycle as above and make an entry in `snapshots.txt`, this time making an `S` entry as you would do for a compatible change.
+    * Wait for the tinderboxes to cycle as above and make a final entry in `src/snapshots.txt`, this time making an `S` entry as you would do for a compatible change.
     * Commit this final snapshot registration, and push to `master`. If there have been changes on `master` in the meantime, _you must_ merge with them before pushing, _not_ rebase onto them.
