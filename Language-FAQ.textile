@@ -18,7 +18,7 @@ h4. Concurrency and efficiency oriented:
 h4. Practicality oriented:
 * Multi-paradigm. Pure-functional, concurrent-actor, imperative-procedural, OO.
 ** First-class functions with bindings.
-** Structural:http://en.wikipedia.org/wiki/Structural_type_system (rather than nominal:http://en.wikipedia.org/wiki/Nominative_type_system) object types; no class-based hierarchy.
+** "Structural":http://en.wikipedia.org/wiki/Structural_type_system (rather than "nominal":http://en.wikipedia.org/wiki/Nominative_type_system) object types; no class-based hierarchy.
 * Multi-platform. Developed on Windows, Linux, OS X.
 * UTF-8 strings, assortment of machine-level types.
 * Works with existing native toolchains. GDB / Valgrind / Instruments / etc.
