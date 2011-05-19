@@ -1,0 +1,68 @@
+h2. Syntactic issues in pattern matching
+
+h3. Use @=@ or @==@ for non-pattern expressions whose result is matched by @==@.
+
+h3. Use @and@ or @as@ for compound patterns.
+
+h3. Distinguish bindings from assignments by context vs by keyword.
+
+h3. How to distinguish variables from tags.
+
+h4. Use @?@ to mark variables, or to mark variable bindings only.
+
+Cons:
+* pattern matching becomes much more noisy and verbose
+* binding positions in the language can't be defined as just patterns; it depends on whether they are a single variable (no sigil) or a pattern (sigils)
+* maybe looks weird for variables in non-binding position, when used in destructuring assignment
+
+h4. Use @var@ to mark variables, or to mark variable bindings only.
+
+Pros:
+* possible to use arbitrary expressions without an @=@ sigil (this is arguably not a pro)
+
+Cons:
+* Dave *absolutely hates* this option :)
+* pattern matching becomes extremely verbose
+
+h4. Use a sigil like @$@ to mark tags, or to mark nullary tags only.
+
+Cons:
+* papercut: nullary patterns are common; if they are a special case that needs disambiguation, programmers will curse us eternally
+
+h4. Use distinct lexical classes for tag names and variables.
+
+This is what ML and Haskell do.
+
+Pros:
+* simple, relatively tasteful
+
+Cons:
+* Rust has so far avoided any special lexical classes
+* in the C tradition, CapitalizedNames are typically type, module, or class names
+* in the C tradition, ALL_CAPS_NAMES are typically constants
+
+h4. Use @==@ to mark nullary tags.
+
+Pros:
+* since nullary tags don't bind variables, the @=@ case happens to coincide with the right meaning
+
+Cons:
+* again, papercut: special case for common case of nullary tags means death of a thousand papercuts
+
+h4. Use the type of the pattern to disambiguate, and disallow the use of tag names of the current pattern's type as variables.
+
+This is more hostile to tools, and trickier to define and implement, because it imposes a two-way dependency between type checking and variable resolution.
+
+h4. Use the current scope to disambiguate, and disallow the use of tag names as variables.
+
+This is currently Patrick and Dave's favorite.
+
+Pros:
+* better phase separation
+* no lexical classes
+* no special sigils
+* the clashes are probably unlikely to occur in practice
+* all binding and lvalue positions can be specified as patterns
+
+Cons:
+* somewhat of a refactoring hazard: introducing a new tag into scope can break a pattern match
