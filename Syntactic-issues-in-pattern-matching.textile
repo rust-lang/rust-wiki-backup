@@ -34,8 +34,14 @@ We could allow individual variables in a pattern to be distinguished as assignme
 A hybrid approach is to distinguish binding positions and assignment positions, but to optionally allow binding variables in an assignment position. For example:
 
 bc. var (a, b) = foo(); // always binding
-(a, b) = bar(); // always assignment
-(a, var c) = baz(); // defaults to assignment, but the use of 'var' overrides to bind a new variable
+(a, b) = bar();         // always assignment
+(a, var c) = baz();     // assignment by default but 'var' binds a new variable
+
+For the sake of cleanliness, the @var@ pattern form shouldn't be allowed in a binding pattern. This suggests two different non-terminals in the grammar:
+
+bc. BindingPattern ::= identifier | BindingPattern 'and' BindingPattern | ...
+AssignmentPattern ::= identifier | AssignmentPattern 'and' AssignmentPattern | ...
+                   |  'var' BindingPattern
 
 h3. How to distinguish variables from tags.
 
