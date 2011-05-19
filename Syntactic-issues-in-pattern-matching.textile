@@ -1,12 +1,45 @@
 h2. Syntactic issues in pattern matching
 
+This page captures a bunch of axes in the space of pattern matching syntax.
+
+h3. Allow pattern guards, using @if@ or @when@ or @where@ or @|@.
+
+Pros:
+* very expressive
+
+Cons:
+* requires conservative approximation for exhaustiveness checking
+
 h3. Use @=@ or @==@ for non-pattern expressions whose result is matched by @==@.
+
+Pros:
+* very expressive
+
+Cons:
+* requires conservative approximation for exhaustiveness checking
+* could be simulated with just pattern guards
 
 h3. Use @and@ or @as@ for compound patterns.
 
+This is important for destructuring but still being able to bind a name to the destructured thing:
+
+bc. var (x, y) as t = foo();
+
+The right-hand side can in fact be an arbitrary pattern.
+
 h3. Distinguish bindings from assignments by context vs by keyword.
 
+We could allow individual variables in a pattern to be distinguished as assignments vs. bindings by use of a keyword, but always requiring the keyword (such as @var@) is very verbose (see the discussion of distinguishing variables from tags below). The alternative is to have binding positions for patterns and assignment positions for patterns, and not to distinguish them.
+
+A hybrid approach is to distinguish binding positions and assignment positions, but to optionally allow binding variables in an assignment position. For example:
+
+bc. var (a, b) = foo(); // always binding
+(a, b) = bar(); // always assignment
+(a, var c) = baz(); // defaults to assignment, but the use of 'var' overrides to bind a new variable
+
 h3. How to distinguish variables from tags.
+
+This is the biggest and subtlest issue in this space. Following are a bunch of alternatives we've discussed.
 
 h4. Use @?@ to mark variables, or to mark variable bindings only.
 
