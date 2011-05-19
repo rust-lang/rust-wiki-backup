@@ -4,11 +4,9 @@ The runtime representation of a @slot.<T>@ is bit-for-bit identical to the runti
 
 Providing first-class support for mutable, interior slots makes it possible to create mutable vectors without having to have two different kinds of vectors. This allows us to write a simple, polymorphic @map@:
 
-bc
-fn map.<T,U>(f : &fn(T) -> U, v : T[]) : U[] {
+bc. fn map.<T,U>(f : &fn(T) -> U, v : T[]) : U[] {
     ...
 }
-bc
 
 There is one single implementation, and the immutable version will produce an immutable vector, and the mutable version will produce a mutable version.
 
