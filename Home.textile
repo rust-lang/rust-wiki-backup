@@ -28,3 +28,4 @@ h2. Design notes
 * [[Disjoint union types]]
 * [[Object types]]
 * [[Mutable slots]]
+* [[Syntactic issues in pattern matching]]
