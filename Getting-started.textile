@@ -10,7 +10,7 @@ Version numbers listed here are "what we're using"; the code may well work with 
 * curl
 * Valgrind 3.5 (recommended but not required for linux)
 * Texinfo's makeinfo and/or texi2pdf commands, if you wish to build HTML or PDF docs, respectively
-* LLVM SVN, built for x86 (not x64 if you have one!).
+* LLVM SVN, built for x86 (not x64 if you have one!).  See the directions below for how to build LLVM.
 
 Rust regularly incorporates new features and fixes from LLVM so it's best to just assume that the very latest LLVM SVN revision is required.
 
@@ -26,7 +26,7 @@ We recommend developing under the newest "MinGW packages":http://www.mingw.org u
 
 h3. Installing LLVM
 
-Rust requires a 3.0svn build of LLVM. Follow the instructions on http://clang.llvm.org/get_started.html to check out LLVM and Clang.
+Rust requires a 3.0svn build of LLVM. Follow the instructions on http://clang.llvm.org/get_started.html to check out LLVM (and Clang, if you like).  *Don't follow the build instructions on that page -- see below.*
 
 You will also need to check out compiler-rt:
 
