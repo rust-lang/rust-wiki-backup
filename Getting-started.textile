@@ -12,7 +12,7 @@ Version numbers listed here are "what we're using"; the code may well work with 
 * Texinfo's makeinfo and/or texi2pdf commands, if you wish to build HTML or PDF docs, respectively
 * LLVM SVN, built for x86 (not x64 if you have one!).  See the directions below for how to build LLVM.
 
-Rust regularly incorporates new features and fixes from LLVM so it's best to just assume that the very latest LLVM SVN revision is required.
+Rust regularly incorporates new features and fixes from LLVM so it's best to just assume that the very latest LLVM SVN revision is required. If you find that Rust doesn't build with your version of LLVM, then ask on IRC and somebody will tell you which revision is working for them.
 
 h4. Debian-based Linux distributions
 
