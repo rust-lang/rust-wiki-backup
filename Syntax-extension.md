@@ -15,5 +15,6 @@ The presence of these "second-generation" macros means that requiring "first-gen
 If one file (module?) `import_for_syntax`es another file (module?), the exported functions are brought in as syntax extensions.  Each file (module?) will only contain things in the same phase (to use a term from _You Want it When?_). We'll provide an API for syntax extensions, containing, at the least, some sort of syntax tree-manipulating functions. Ideally, syntax-quotation will also be present.
 
 After that is complete, consider the following tasks:
+
 * implement a term-rewriting (match/splice)-style macro system, possibly allowing macros to be used in the same file they are defined in.
 * possibly allow macros that know the `typeof` expressions, or macros that preserve types. (Both of these are very hard. For the former, dherman believe that a simple subset may be possible. No one is very interested in the latter, but pauls things that they're mutually exclusive, just as a warning.)
