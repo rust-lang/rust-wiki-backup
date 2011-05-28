@@ -29,3 +29,4 @@ h2. Design notes
 * [[Object types]]
 * [[Mutable slots]]
 * [[Syntactic issues in pattern matching]]
+* [[Syntax extension]]
