@@ -105,3 +105,17 @@ This is currently Patrick and Dave's favorite.
 
 *Cons*
 * somewhat of a refactoring hazard: introducing a new tag into scope can break a pattern match
+
+
+h4. Marijn's feedback:
+
+I was initially enthusiastic about the bottom proposal (disallow tag names as bound names), but after mulling it over for a while I think it is too awkward. Context-insensitive fresh binding names (I'm sure there's a lambda-calculus word for this, but I unfortunately don't know it, so I can't throw it around) are a very nice thing to have. Not just for refactoring, but also for being able to import or define new tags without having some code a few pages down break.
+
+I'm leaning towards the "USE A SIGIL TO MARK TAGS" option. If we mandate a single dot (which currently has no meaning in patterns) after nullary tag names, we have a pretty light-weight way of unambiguously distinguishing them from new bindings. Consider the dot to replace the parenthesized argument list. So you get something like
+
+pre. alt (mylist) {
+  case (cons(head, tail)) { /* */ }
+  case (nil.)             { /* */ }
+}
+  
+
