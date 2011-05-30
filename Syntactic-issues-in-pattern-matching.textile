@@ -118,4 +118,49 @@ pre. alt (mylist) {
   case (nil.)             { /* */ }
 }
   
+h4. Graydon's odd proposal:
 
+Delete tuples from the language as well as implicit concept of tag-args-are-tuples. Tuples are the villain in this whole conversation. Apply a tag to a record if you want them to carry arguments. Support the same sugar we have for tag declarators mixed with args as we have now, just use records not tuples.
+
+*Pros*
+* No more "expected 7 args but found 6" error-message hazard
+* No more "I added a single field now I have to change 300 occurrences of @foo(_,_)@ to @foo(_,_,_)@ in the code" hazard
+* No more "did I mean @foo._6@ or @foo._7@?" hazard
+* No more weird parse cases like "1-arg tuple not possible" or "parens make comma change nature"
+* No more worry about the pattern matching thing on tags. If a tag carries an arg, you name the arg (with or without parens wrapping the juxtaposed arg, depending on whether you want it to look more or less like a function call, I don't care) and access the field names using @arg.foo@, @arg.bar@ etc.
+* No more worry about pattern matching on tuples, which (sadly) revive all the same issues as this page is about wrt. tag-args. 
+
+*Cons*
+* Someone who thinks tuples are more mathematically fundamental will cry out in misery and shame?
+* I can't think of any others.
+
+Seriously, almost all the meaningful code paths in the compiler for record and tuple are identical now anyways, with the exception that the tuple ones are littered with usability hazards. Lots of languages get by just fine with named record-fields only. I think the situation gets much nicer without them.
+
+Pattern match would look like any or all of these:
+
+pre. alt (mylist) {
+  case (c: cons) { c.head = ...; }
+  case (nil)     { /* */ }
+}
+
+pre. alt (mylist) {
+  case (cons(c)) { c.head = ...; }
+  case (nil)     { /* */ }
+}
+
+pre. alt (mylist) {
+  case (cons c)  { c.head = ...; }
+  case (nil)     { /* */ }
+}
+
+pre. alt (mylist) {
+  case (cons {head: hd, tail: tl}) { hd = ...; }
+  case (nil)     { /* */ }
+}
+
+pre. alt (mylist) {
+  case (cons {head, tail}) { head = ...; }
+  case (nil)     { /* */ }
+}
+
+Anyone have more convincing "con" arguments I'm missing? I am really having a hard time pulling together a strong "we need it or else ..." motive for keeping tuples.
