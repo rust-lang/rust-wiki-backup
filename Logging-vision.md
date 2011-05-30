@@ -8,9 +8,9 @@
 
 * `log` is a conditional logging statement. Its output is suppressed by default, but can be turned on using the `RUST_LOG` environment variable.
 
-* `RUST_LOG` takes a comma-separated list of directives. A directive is, for now, a module name prefix, for example `std.io`. The 'main' program will live under `main`, unless an explicit crate name is given in the crate file.
+* `RUST_LOG` takes a comma-separated list of directives. A directive is, for now, a module name prefix, for example `std::io`. The 'main' program will live under `main`, unless an explicit crate name is given in the crate file.
 
-* In the runtime, the `LOG` and `LOG_ERR`, (or `DLOG_[ERR]` if no task pointer is available) serve a similar role as `log` and `log_err`. They explicitly set their own 'module'. These modules live under `rt`, for example `rt.comm`, `rt.upcall`.
+* In the runtime, the `LOG` and `LOG_ERR`, (or `DLOG_[ERR]` if no task pointer is available) serve a similar role as `log` and `log_err`. They explicitly set their own 'module'. These modules live under `rt`, for example `rt::comm`, `rt::upcall`.
 
 * Rustboot doesn't support per-module logging. The runtime modules work, but rust `log` statements can only be turned on en masse, using `RUST_LOG=rustboot`.
 
