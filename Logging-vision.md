@@ -1,6 +1,6 @@
 # The current situation
 
-(as per April 19 2011)
+(as per May 30 2011)
 
 * There are two logging primitives `log` and `log_err`. Both allow a variety of types to be given.
 
@@ -12,9 +12,7 @@
 
 * In the runtime, the `LOG` and `LOG_ERR`, (or `DLOG_[ERR]` if no task pointer is available) serve a similar role as `log` and `log_err`. They explicitly set their own 'module'. These modules live under `rt`, for example `rt::comm`, `rt::upcall`.
 
-* Rustboot doesn't support per-module logging. The runtime modules work, but rust `log` statements can only be turned on en masse, using `RUST_LOG=rustboot`.
-
-* Logging (when muffled) is really really cheap in rustc now. Rustboot still does an upcall for every log statement, even if they don't actually log anything.
+* Logging (when muffled) is really really cheap in rustc now.
 
 # The future
 
