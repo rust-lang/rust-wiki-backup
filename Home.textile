@@ -30,3 +30,4 @@ h2. Design notes
 * [[Mutable slots]]
 * [[Syntactic issues in pattern matching]]
 * [[Syntax extension]]
+* [[Extracted documentation]]
