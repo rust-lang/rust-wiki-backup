@@ -18,3 +18,17 @@ After that is complete, consider the following tasks:
 
 * implement a term-rewriting (match/splice)-style macro system, possibly allowing macros to be used in the same file they are defined in.
 * possibly allow macros that know the `typeof` expressions, or macros that preserve types. (Both of these are very hard. For the former, dherman believe that a simple subset may be possible. No one is very interested in the latter, but pauls things that they're mutually exclusive, just as a warning.)
+
+# Issues
+## Macro definition interface
+A macro is at least a function from syntax to syntax. It may need an error reporting facility, and possibly a way to communicate to the parser to deal with the various nonterminals it may expect. It's possible that macros will transform syntax directly into new macros, to be fed back to the expander. That's a weird thing to do, though.
+
+## Nonterminals: expr/type/item/view_item
+Will we use sigils to indicate which is which? Or will macros tell the parser what they expect?
+
+## Syntax
+We've provisionally used `#` as a sigil to indicate a macro expansion. But it would be nice to have more flexibility than a flat list of syntactic arguments, so some other kind of delimiter (or possibly a way to specify keywords) may be necessary.
+
+## Expansion order
+Expansion should be outside-in. This means that macros will need to expand code that has macro invocations in it. This means that the AST will need nodes representing macro invocations.
+
