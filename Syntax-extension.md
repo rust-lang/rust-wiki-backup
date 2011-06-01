@@ -27,9 +27,9 @@ A macro is at least a function from syntax to syntax. It may need an error repor
 Macros will need to be able to take various different kinds of nonterminals. 
 
 * One (terrible) option is for macros to take blocks, and will specify a syntactically valid place to put, say, a type in the block; the macro will then throw out everything other than the type in that position.
-* We could provide syntax that marks which nonterminal is coming up (a sort of sigil-like syntax). 
-* We could leave off sigils, and write a parser that chooses one possibility over the others deterministically (and make sure that the syntax allows us to disambiguate).
-* We could have macros tell the parser what nonterminals they expect. This requires some form of dependent parsing.
+* We could provide syntax that marks which nonterminal is coming up (a sort of sigil-like syntax).
+* We could leave off sigils, and write a parser that chooses one possibility over the others deterministically (and make sure that the syntax allows us to disambiguate). 
+* We could have macros tell the parser what nonterminals they expect. This will require some form of dependent parsing, and we're not sure how it interacts with macro-defining macros. pauls believes that it will work fine, but no one has done it before.
 
 ## Syntax
 We've provisionally used `#` as a sigil to indicate a macro expansion. But it would be nice to have more flexibility than a flat list of syntactic arguments, so some other kind of delimiter (or possibly a way to specify keywords) may be necessary.
