@@ -24,7 +24,12 @@ After that is complete, consider the following tasks:
 A macro is at least a function from syntax to syntax. It may need an error reporting facility, and possibly a way to communicate to the parser to deal with the various nonterminals it may expect. It's possible that macros will transform syntax directly into new macros, to be fed back to the expander. That's a weird thing to do, though.
 
 ## Nonterminals: expr/type/item/view_item
-Will we use sigils to indicate which is which? Or will macros tell the parser what they expect?
+Macros will need to be able to take various different kinds of nonterminals. 
+
+* One (terrible) option is for macros to take blocks, and will specify a syntactically valid place to put, say, a type in the block; the macro will then throw out everything other than the type in that position.
+* We could provide syntax that marks which nonterminal is coming up (a sort of sigil-like syntax). 
+* We could leave off sigils, and write a parser that chooses one possibility over the others deterministically (and make sure that the syntax allows us to disambiguate).
+* We could have macros tell the parser what nonterminals they expect. This requires some form of dependent parsing.
 
 ## Syntax
 We've provisionally used `#` as a sigil to indicate a macro expansion. But it would be nice to have more flexibility than a flat list of syntactic arguments, so some other kind of delimiter (or possibly a way to specify keywords) may be necessary.
