@@ -28,14 +28,14 @@ h3. Installing LLVM
 
 Rust requires a 3.0svn build of LLVM. Follow the instructions on http://clang.llvm.org/get_started.html to check out LLVM (and Clang, if you like).  *Don't follow the build instructions on that page -- see below.*
 
-You will also need to check out compiler-rt:
+You will also need to check out compiler-rt *revision 131034* (later revisions are broken):
 
 ```sh
 cd llvm/projects
-svn co http://llvm.org/svn/llvm-project/compiler-rt/trunk compiler-rt
+svn co -r131034 http://llvm.org/svn/llvm-project/compiler-rt/trunk compiler-rt
 ```
 
-Because Rust doesn't support x64 yet you may need to configure LLVM using some special flags. On the Mac, use:
+Because Rust doesn't support x86-64 yet, you may need to configure LLVM using some special flags. On the Mac, use:
 
 ```sh
 $ CXX='g++ -m32' CC='gcc -m32' CFLAGS=-m32 CXXFLAGS=-m32 LDFLAGS=-m32 ./configure --disable-bindings --{build,host,target}=i686-apple-darwin --enable-targets=x86,x86_64,cbe --enable-optimized
