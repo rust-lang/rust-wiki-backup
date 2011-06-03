@@ -28,6 +28,11 @@ h3. Installing LLVM
 
 Rust requires a 3.0svn build of LLVM. Follow the instructions on "Clang's Getting Started Page":http://clang.llvm.org/get_started.html to check out LLVM (and Clang, if you like).  *Don't follow the build instructions on that page -- see below.*
 
+Because Rust is building against the LLVM's trunk, not every revision will work correctly. Here are revisions that are known to work for each platform:
+* Linux: 131824 (almost, you have to change an include from PassMAnager.h to PassManager.h)
+* Windows: 
+* OS X: 
+
 You will also need to check out compiler-rt *revision 131034* (later revisions are broken):
 
 ```sh
