@@ -26,7 +26,7 @@ We recommend developing under the newest "MinGW packages":http://www.mingw.org u
 
 h3. Installing LLVM
 
-Rust requires a 3.0svn build of LLVM. Follow the instructions on http://clang.llvm.org/get_started.html to check out LLVM (and Clang, if you like).  *Don't follow the build instructions on that page -- see below.*
+Rust requires a 3.0svn build of LLVM. Follow the instructions on "Clang's Getting Started Page":http://clang.llvm.org/get_started.html to check out LLVM (and Clang, if you like).  *Don't follow the build instructions on that page -- see below.*
 
 You will also need to check out compiler-rt *revision 131034* (later revisions are broken):
 
