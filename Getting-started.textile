@@ -3,7 +3,7 @@ h3. Prerequisites
 Version numbers listed here are "what we're using"; the code may well work with earlier versions of these tools, we do not know minimum version requirements.
 
 * A recent linux, OS X or win32 system.
-* Python 3.1 ("download link":http://www.python.org/download/)
+* Python 3.1 ("download link":http://www.python.org/download/) (Python 2.6.2 has also been used successfully)
 * GNU make 3.81
 * git 1.7
 * g++ 4.4 at least on linux, 4.5 on win32, and the 4.x gcc in Apple's SDK for OSX.
