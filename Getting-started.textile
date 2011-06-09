@@ -2,23 +2,25 @@ h3. Prerequisites
 
 Version numbers listed here are "what we're using"; the code may well work with earlier versions of these tools, we do not know minimum version requirements.
 
-* A recent linux, OS X or win32 system.
-* Python 3.1 ("download link":http://www.python.org/download/) (Python 2.6.2 has also been used successfully)
+* A recent Linux, OS X or Win32 system
+* "Python 3.1":http://www.python.org/download/ (versions as old as Python 2.6.2 have also been used successfully)
 * GNU make 3.81
 * git 1.7
-* g++ 4.4 at least on linux, 4.5 on win32, and the 4.x gcc in Apple's SDK for OSX.
+* g++ 4.4 at least on linux, 4.5 on win32, and the 4.x gcc in Apple's SDK for OS X.
 * curl
-* Valgrind 3.5 (recommended but not required for linux)
+* Valgrind 3.5 (recommended but not required for Linux)
 * Texinfo's makeinfo and/or texi2pdf commands, if you wish to build HTML or PDF docs, respectively
-* LLVM SVN, built for x86 (not x64 if you have one!).  See the directions below for how to build LLVM.
-
-Rust regularly incorporates new features and fixes from LLVM, so it's best to just assume that the very latest LLVM SVN revision is required. If you find that Rust doesn't build with your version of LLVM, then ask on IRC and somebody will tell you which revision is working for them.
+* A recent LLVM SVN revision, built for x86 (not x64 if you have one!).  See the directions below for how to build LLVM.
 
 h4. Debian-based Linux distributions
 
-@sudo apt-get install g++ make texlive valgrind curl@
+You can install all the prerequisites you need to build Rust by running
 
-64-bit systems: @sudo apt-get install g++-multilib ia32-libs@.
+@sudo apt-get install python3 make git g++ curl valgrind texlive@
+
+On 64-bit systems, you'll also need: 
+
+@sudo apt-get install g++-multilib ia32-libs@
 
 h4. Windows
 
@@ -26,19 +28,16 @@ We recommend developing under the newest "MinGW packages":http://www.mingw.org u
 
 h3. Installing LLVM
 
-Rust requires a 3.0svn build of LLVM. Follow the instructions on "Clang's Getting Started Page":http://clang.llvm.org/get_started.html to check out LLVM (and Clang, if you like).  *Don't follow the build instructions on that page -- see below.*
+Rust requires a 3.0svn build of LLVM. Follow the instructions on "Clang's Getting Started page":http://clang.llvm.org/get_started.html to check out LLVM (and Clang, if you like), but don't follow the build instructions on that page -- see below.*
 
-Because Rust is building against the LLVM's trunk, not every revision will work correctly. Here are revisions that are known to work for each platform:
-* Linux: 131752
-* Windows: 
-* OS X: 131752
+Rust regularly incorporates new features and fixes from LLVM, so it's best to just assume that the very latest LLVM SVN revision is required.  Unfortunately, because Rust is building against LLVM's trunk, not every revision will work correctly.  If you find that Rust doesn't build with your version of LLVM, then ask on IRC and somebody will tell you which revision is working for them.
 
 You will also need to check out compiler-rt *revision 131034* (later revisions are broken):
-
 ```sh
 cd llvm/projects
 svn co -r131034 http://llvm.org/svn/llvm-project/compiler-rt/trunk compiler-rt
 ```
+h4. Building LLVM
 
 Because Rust doesn't support x86-64 yet, you may need to configure LLVM using some special flags. On the Mac, use:
 
@@ -57,7 +56,7 @@ $ make install
 
 On 32-bit Linux @./configure --enable-optimized; make; make install@ should be sufficient.  If you omit the @--enable-optimized@ flag, it'll work, but more slowly.
 
-h3. Downloading and building
+h3. Downloading and building Rust
 
 <pre>
 <code>
@@ -71,24 +70,19 @@ $ make check
 </pre>
 This will build and test the compiler and standard library.
 
-*Note:* On Linux or OS X, if you have valgrind installed, the tests will run slowly because they are running under valgrind. If you define @CFG_DISABLE_VALGRIND=1@ in your build environment or run configure with the @--disable-valgrind@ flag, you can see the tests running at full speed.
-
-h4. Notes specific to Mac OS X 10.5
-
-Getting rust to build on OS X 10.5 requires some tweaking:
-* Assuming you're using a gcc that came with Xcode 3.1, make sure it is gcc 4.2 rather than 4.0.1.  Xcode should come with both, although 4.0.1 is the default.  (See, for instance, "how to set gcc 4.2 as the default compiler on OS X Leopard":http://stackoverflow.com/questions/1165361/setting-gcc-4-2-as-the-default-compiler-on-mac-os-x-leopard).
+*Note:* On Linux or OS X, if you have Valgrind installed, the tests will run slowly because they are running under Valgrind. If you define @CFG_DISABLE_VALGRIND=1@ in your build environment or run configure with the @--disable-valgrind@ flag, you can see the tests running at full speed.
 
 h3. Navigating
 
 There's a quick guide to the source of the compiler in src/comp/README. You should probably look through it if you're going to be contributing.
 
-h3. Dealing with the issue tracker
+h3. The issue tracker
 
-The github issue tracker is somewhat weak. However, it exposes itself through an API and there's a "secondary front-end that is quite a bit more responsive":http://githubissues.heroku.com/#graydon/rust and a "tertiary front-end that is pleasantly minimal":http://izs.no.de/graydon/rust
+We use the "GitHub issue tracker":https://github.com/graydon/rust/issues to track bugs and feature requests in Rust.  If you prefer not to use the standard GitHub issue tracker, there's a "secondary front-end that is quite a bit more responsive":http://githubissues.heroku.com/#graydon/rust and a "tertiary front-end that is pleasantly minimal":http://izs.no.de/graydon/rust
 
 h3. Picking something interesting to do
 
-We've recently transitioned off of the bootstrap compiler and are moving full steam ahead with the self-hosted compiler. To get an idea of where we're going see the [[Roadmap]].
+We've recently transitioned off the bootstrap compiler and are moving full steam ahead with the self-hosted compiler. To get an idea of where we're going, see the [[Roadmap]].
 
 Many of the features of the bootstrap compiler that were not needed for self-hosting have not yet been implemented in the new compiler. As such, the test suite is full of tests that don't yet pass, and this is a good way to jump into Rust development. Just look for files in the test/run-pass directory containing the string 'xfail-stage1'. Those are all missing features that someone needs to finish.
 
@@ -98,7 +92,7 @@ If in doubt, ask on IRC. Somebody will surely have a task that needs doing.
 
 h3. Communicating
 
-Join irc.mozilla.org #rust if you want to discuss anything more "interactively", we try to remain on that channel during working hours in UTC-7 (US Pacific).
+Join irc.mozilla.org #rust if you want to discuss anything more "interactively".  We try to remain on that channel during working hours in UTC-7 (US Pacific).
 
 Join the "mailing list":https://mail.mozilla.org/listinfo/rust-dev if you want to have longer conversations.
 
