@@ -37,3 +37,11 @@ We've provisionally used `#` as a sigil to indicate a macro expansion. But it wo
 ## Expansion order
 Expansion should be outside-in. This means that macros will need to expand code that has macro invocations in it. This means that the AST will need nodes representing macro invocations.
 
+# Benchmarks (brainstorm)
+
+* RPC-enabled object type generator
+* Parser generator
+* `lambda-match`
+* `and`
+* `when`/`unless`
+* declarative data struture
