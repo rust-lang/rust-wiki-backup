@@ -37,6 +37,7 @@ You will also need to check out compiler-rt *revision 131034* (later revisions a
 cd llvm/projects
 svn co -r131034 http://llvm.org/svn/llvm-project/compiler-rt/trunk compiler-rt
 ```
+
 h4. Building LLVM
 
 Because Rust doesn't support x86-64 yet, you may need to configure LLVM using some special flags. On the Mac, use:
