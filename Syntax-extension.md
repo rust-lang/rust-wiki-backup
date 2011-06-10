@@ -45,3 +45,8 @@ Expansion should be outside-in. This means that macros will need to expand code 
 * `and`
 * `when`/`unless`
 * declarative data struture
+
+# Super-simple syntax extension structure
+
+    #simpleext(m1,param1,param2,param3,...,paramn,some_expr)
+Then, `m1` is defined as an extension taking `n` parameters, named `param1`-`paramn`. Those identifiers may appear free in various expression positions in `some_expr`; the argument syntax will be substituted at that point.
