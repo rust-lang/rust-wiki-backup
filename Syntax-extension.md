@@ -45,6 +45,7 @@ Expansion should be outside-in. This means that macros will need to expand code 
 * `and`
 * `when`/`unless`
 * declarative data struture
+* fixed-length arrays
 
 # Super-simple syntax extension structure
 
