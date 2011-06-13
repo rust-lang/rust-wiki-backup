@@ -26,7 +26,7 @@ h4. Windows
 
 We recommend developing under the newest "MinGW packages":http://www.mingw.org using their auto-installer.
 
-If you install msysgit, you will want to put the git binary path *after* the mingw path. So add a line like:
+For Git, we recommend "MsysGit":http://code.google.com/p/msysgit/ and if you use that you will want to put the git binary path *after* the MinGW path. So add a line like:
 ```
 export PATH=$PATH:/c/Program\ Files/Git/bin
 ```
