@@ -31,3 +31,4 @@ h2. Design notes
 * [[Syntactic issues in pattern matching]]
 * [[Syntax extension]]
 * [[Extracted documentation]]
+* [[Standard library notes]]
