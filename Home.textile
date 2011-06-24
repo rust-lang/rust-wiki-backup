@@ -32,3 +32,4 @@ h2. Design notes
 * [[Syntax extension]]
 * [[Extracted documentation]]
 * [[Standard library notes]]
+* [[Tasks and Communication]]
