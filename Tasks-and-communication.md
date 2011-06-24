@@ -18,6 +18,14 @@ Communication is accomplished using channels and ports. Each channel is associat
 
 In order to enforce the no shared mutable state rule, only immutable data can be sent over channels. Likewise, arguments to spawned tasks must also be immutable.
 
+## Runtime
+
+This section is currently proposed changes from the way things worked before. As of the first cut at M:N scheduling, domains now track multiple threads, instead of a single one. In many ways, the domain is doing what is normally done by a kernel. Thus, the proposal is to remove `rust_domain` and divide its responsibilities between `rust_kernel` and `rust_task`. The kernel will handle multiple tasks and threads, while tasks will handle things such as memory management.
+
+Previously, intra-domain communication was the norm, and communication across domains (or threads) was a special case. Now that tasks migrate freely between threads, inter-thread communication is the norm. Therefore, for the time being, all communication should assume it is with another thread. In the future we might be able to optimize this, such as when a task is blocked on the current task and is about to be woken up by the current task.
+
+While the whole scheduling and communication system can probably be done without locks, the next step is probably to use a more conservative version with locks. We'll have two main types of locks now: the kernel lock and the task lock. The kernel lock will be held when a task is performing kernel activities, and the task lock will be used for inter-thread communication.
+
 # Historical Design
 
 This section describes more or less how the task and communication system worked in rustboot. Much has changed since then.
