@@ -49,3 +49,5 @@ All of the communication and task primitives were originally core language synta
 ## Runtime
 
 Overall, the runtime is made up of a `rust_srv`, which owns a `rust_kernel`, which owns one or more `rust_domain`s, each of which own one or more `rust_task`s. Domains corresponded to an operating system thread, and would schedule multiple tasks. Tasks could not migrate between domains. Because only one task would be running at a time in each domain, intra-domain communication happened through directly calling things such as `rust_chan::send`. For communication with tasks in other domains, `rust_proxy` objects are used. These queue messages in a lock-free style on the target domain's message queue, which processes the message at each iteration through the scheduler loop. The kernel's job was to coordinate inter-domain issues.
+
+`rust_srv` is meant to provide an interface to the outside world. This currently includes memory allocation and logging. It seems like this might be a good candidate for deletion...
