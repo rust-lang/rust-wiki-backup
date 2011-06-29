@@ -31,6 +31,25 @@ Macros will need to be able to take various different kinds of nonterminals.
 * We could leave off sigils, and write a parser that chooses one possibility over the others deterministically (and make sure that the syntax allows us to disambiguate). 
 * We could have macros tell the parser what nonterminals they expect. This will require some form of dependent parsing, and we're not sure how it interacts with macro-defining macros. pauls believes that it will work fine, but no one has done it before.
 
+### Proposals for aggregate sigil systems
+
+#### graydon-ish
+    Expr → "#" Id SExpr | ⋯
+    SExpr → Expr | "(" SExpr …₍,₎ ")" | SChange
+    SType → Type | "<" SType …₍,₎ ">" | SChange
+    SBlock → BlockBody
+    SChange → "#(" SExpr ")" | "#<" SType ">" | "#{" SBlock "}"
+
+#### pauls-ish
+    Expr → "#" Id Expr | Change | ⋯
+    Type → Change | ⋯
+    Change → "(" Expr …₍,₎ ")" | "<" Type …₍,₎ ">"
+  
+#### pcwalton-ish
+    Expr → "#" Id MExpr | ⋯
+    MExpr → "(" Expr ")" | "<" Type ">" | "{" MExpr … "}" | Id ":" MExpr
+
+
 ## Syntax
 We've provisionally used `#` as a sigil to indicate a macro expansion. But it would be nice to have more flexibility than a flat list of syntactic arguments, so some other kind of delimiter (or possibly a way to specify keywords) may be necessary.
 
