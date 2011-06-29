@@ -37,8 +37,7 @@ Macros will need to be able to take various different kinds of nonterminals.
     Expr → "#" Id SExpr | ⋯
     SExpr → Expr | "(" SExpr …₍,₎ ")" | SChange
     SType → Type | "<" SType …₍,₎ ">" | SChange
-    SBlock → BlockBody
-    SChange → "#(" SExpr ")" | "#<" SType ">" | "#{" SBlock "}"
+    SChange → "#(" SExpr ")" | "#<" SType ">" | "#{" Item …₍;₎"}"
 
 #### pauls-ish
     Expr → "#" Id Expr | Change | ⋯
