@@ -34,9 +34,8 @@ Macros will need to be able to take various different kinds of nonterminals.
 ### Proposals for aggregate sigil systems
 
 #### graydon-ish
-    Expr → "#" Id SExpr | ⋯
-    SExpr → Expr | "(" SExpr …₍,₎ ")" | SChange
-    SType → Type | "<" SType …₍,₎ ">" | SChange
+    Expr → "#" Id "(" Expr …₍,₎ ")" | SChange | ⋯ 
+    Type → SChange | ⋯ 
     SChange → "#(" SExpr ")" | "#<" SType ">" | "#{" Item …₍;₎"}"
 
 #### pauls-ish
