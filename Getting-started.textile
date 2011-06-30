@@ -79,6 +79,8 @@ This will build and test the compiler and standard library.
 
 *Note:* On Linux or OS X, if you have Valgrind installed, the tests will run slowly because they are running under Valgrind. If you define @CFG_DISABLE_VALGRIND=1@ in your build environment or run configure with the @--disable-valgrind@ flag, you can see the tests running at full speed.
 
+For development, it is recommended that you configure with @--disable-optimize@, since this will greatly speed up your compilation.
+
 h3. Navigating
 
 There's a quick guide to the source of the compiler in src/comp/README. You should probably look through it if you're going to be contributing.
