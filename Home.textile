@@ -19,6 +19,7 @@ h2. Developer notes
 * [[Roadmap]]
 * [[Getting started]]
 * [[Git workflow]]
+* [[Running a Tinderbox]]
 * [[Compiler snapshots]]
 * [[Error reporting]]
 * [[Logging-vision]]
