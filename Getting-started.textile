@@ -34,7 +34,7 @@ To your @.bashrc@
 
 h3. Installing LLVM
 
-Rust requires a 3.0svn build of LLVM. Follow the instructions on "Clang's Getting Started page":http://clang.llvm.org/get_started.html to check out LLVM (and Clang, if you like), but don't follow the build instructions on that page -- see below.*
+Rust requires a 3.0svn build of LLVM, at or after *revision 134378*. Follow the instructions on "Clang's Getting Started page":http://clang.llvm.org/get_started.html to check out LLVM (and Clang, if you like), but don't follow the build instructions on that page -- see below.*
 
 ```sh
 svn co http://llvm.org/svn/llvm-project/llvm/trunk llvm
@@ -68,6 +68,23 @@ sudo make install
 ```
 
 On 32-bit Linux @./configure --enable-optimized; make; make install@ should be sufficient.  If you omit the @--enable-optimized@ flag, it'll work, but more slowly.
+
+h3. Mingw-cross
+
+Rust occasionally works under mingw-cross compilation on linux. This is *experimental* but can sometimes lead to a more pleasant windows development experience. To configure LLVM for this, do the following:
+
+```
+# assuming llvm is in $SRCROOT/llvm and rust in $SRCROOT/rust
+$ sudo apt-get install wine1.2 mingw{,-binutils,-runtime} 
+$ cd $SRCROOT
+$ mkdir llvm-{build,inst}-mingw; cd llvm-build-mingw
+$ STRIP=i586-mingw32msvc-strip NM=i586-mingw32msvc-nm CXX=i586-mingw32msvc-g++ CC=i586-mingw32msvc-gcc LD=i586-mingw32msvc-ld AS=i586-mingw32msvc-as RANLIB=i586-mingw32msvc-ranlib ../llvm/configure --prefix=$SRCROOT/llvm-inst-mingw32/ --disable-bindings --build=i686-unknown-linux-gnu --{host,target}=i586-mingw32 --enable-targets=x86,x86_64 --enable-optimized
+$ make && make install
+$ cd $SRCROOT/rust
+$ mkdir mingw-build; cd mingw-build
+$ CFG_LLVM_ROOT=$SRCROOT/llvm-inst-mingw32/ CFG_LLVM_CONFIG=$SRCROOT/llvm-inst-mingw32/bin/llvm-config ../configure --enable-mingw-cross
+```
+If you are tremendously lucky and patient, you may convince that to work. But as mentioned above, *experimental*. We'll support this when we can.
 
 h3. Downloading and building Rust
 
