@@ -1,0 +1,1 @@
+`std::map_reduce` is a parallel processing framework for Rust inspired by Google's MapReduce. This page describes (or will eventually describe) the design and implementation of `std::map_reduce`.
