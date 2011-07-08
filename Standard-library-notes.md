@@ -26,7 +26,7 @@ Notes taken at rust work week, 2011/06/23
 * xml
 * crypto
 * concurrency
- * task management, actor, OTP, mapreduce, pools
+ * task management, actor, OTP, [[MapReduce]], pools
 * low-level OS services
 * unit testing
 * FFI, ctypes
