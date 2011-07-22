@@ -59,6 +59,7 @@ A safe function must have a known definition: in `check(p(...))`, `p` may not be
 The arguments to a safe function must be immutable and transparent.
 
 A safe function may *not*:
+
 * call functions declared with `fn`
 * move, assign or swap to anything other than a local slot
 * receive on a channel (sending is OK)
