@@ -43,32 +43,58 @@ So far, three major solutions have been proposed:
 2. Graydon: "preds can call non-pred functions, but can still only apply to immutable values. With further restriction: can only apply to immutable transparent values -- nothing containing objects, functions (or channels/ports/tasks, which will probably all be in libraries as obj and fn types anyways)." (From comments on Issue #693)
 3. Dave/Tim: Compromise solution where we specify a "safe" predicate language and guarantee that the compiler will reject any programs that attempt to call constrained functions in contexts where those functions' constraints may not be satisfied, as long as all predicates are implemented in the "safe" subset; in addition, we provide an unsafe predicate language where guarantees are weaker, but the programmer can write more powerful predicates.
 
+##Problems with solutions
+
+The problem with solution 1 is that it may have surprising results. Consider:
+
+    fn f(int x) : p(x) -> bool { x == 5 && is_it_raining() }
+
+    check p(x);
+    foo();
+    f(x);
+
+where `is_it_raining()` queries some mutable state (perhaps over the network) and the call to `foo` may also mutate that state. Then, the predicate `p(x)` may not hold just before the call to `f`, even though it's true after the `check`.
+
+Effectively, the meaning of a predicate can now depend on implicit state, and thus the restriction that predicate arguments must be immutable is no longer useful either. Thus, it becomes somewhat unclear what guarantee the compiler affords about the meanings of predicates.
+
+The argument for this solution is that the compiler never tried to guarantee that there was a relationship between the implementation of a predicate `p` with type `int -> bool` and the semantics of the refinement type `{x:int | p(x)}` -- this is always a proof obligation on the user. So the nature of the guarantee is unclear in the first place.
+
+The problem with solution 2 is... **TODO** 
+
 ##Safe/unsafe language solution
 
-**not finished yet**
+This proposal would add a `check-referentially-opaque` keyword to the language (name subject to change), in addition to the existing `check` keyword. Comparing `check(p(x, y, z))` with `check-referentially-opaque(q(x, y, z))`, `q` could be an arbitrary function while `p` would have to be declared with `pred` (similarly to the current compiler) and its body would be checked according to a set of effect-checking rules. 
 
-(philosophy: if you declare your stuff to be referentially transparent, we'll help you. if not, we won't stop you from expressing your invariants, but all bets are off. in practice we would think most people want to write referentially transparent things, but cases like the `str::len` example above show we don't want to rule 
-out useful things or make people duplicate code.)
+The basic idea is that the compiler guarantees that the invariants declared as part of a function precondition will actually be true at all of its call sites, _if_ all typestate predicates are referentially transparent. The problem is that a predicate may be semantically referentially transparent (like `le_length_of`), but might fail a simple syntactic test for referential transparency (lack of assignment expressions).
 
-Pure = declared with pred. Safe = not declared with pred, but the compiler infers that it *could* have been. (For modularity, allow people to use a safe function like a pure function, but within the same module (crate?) only.)
+We introduce a distinction between safe and unsafe predicates so that when a programmer knows that a predicate is referentially transparent but can't prove it to the compiler, they can still use it anyway, in a `check-referentially-opaque` expression. They then incur a proof obligation that the predicate really is referentially transparent; the compiler guarantees nothing in this case.
 
-This proposal would add a `check-referentially-opaque` keyword to the language (name subject to change), in addition to the existing `check` keyword. Comparing `check(p(x, y, z))` with `check-referentially-opaque(q(x, y, z))`, `q` could be an arbitrary function while `p` would have to be declared with `pred` (similarly to the current compiler) and its body would be checked according to the following set of rules. 
+In practice, we would expect that most predicates will be referentially transparent (and obviously so, at that), but cases like the `str::len` example suggest we don't want to limit expressivity unduly or force code duplication.
+
+We actually distinguish between three sorts of functions:
+
+* **Unsafe** functions are declared with `fn`, and subject to no restrictions beyond Rust's usual type system.
+* **Pure** functions are declared with `pred`, and subject to the effect checking rules described in what follows.
+* **Safe** functions are declared with `fn`, and subject to the effect checking rules as well. The motivation is that the compiler is free to "promote" some unsafe functions to safe status if it can infer that the function is actually safe.
+
+Every pure function is also safe. For modularity purposes, a `fn` function will only be treated as safe if it's within the same crate as the caller. The reason is that otherwise, a change to the implementation of a safe function in a different crate could cause code to fail to compile, which would be surprising.
+
+To summarize, `check` takes a safe or pure predicate, while `check-referentially-opaque` takes any function with a boolean return type.
 
 A safe function must have a known definition: in `check(p(...))`, `p` may not be bound to a function argument.
 
 The arguments to a safe function must be immutable and transparent.
 
-A safe function may *not*:
+### Effect-checking rules
+
+A safe function may not
 
 * call functions declared with `fn`
 * move, assign or swap to anything other than a local slot
 * receive on a channel (sending is OK)
 * refer to upvars
 
-(This sounds similar to the effect system... and it is... but there's the ability to opt out (major difference)... and it avoids the really complicated issues like effect polymorphism / higher-orderness... and we would do effect masking.)
+These rules may appear similar to the effect system (impure/pure functions) in earlier versions of the language, and they are. However, a major difference is the ability to opt out of the effect-checking rules by using unsafe predicates. Impurity is the default for _declaring_ functions, rather than purity, while purity is the default for _checking_ predicates. We also foreclose complicated issues such as effect polymorphism by simplifying the system. Finally, we do a limited form of effect masking (pure functions may modify local state).
 
-(Discovery / change to implementation breaking safety?)
-
-type soundness vs. guarantee to user about the invariants that they specify
-
-Summary: Can do anything in the pred language, but if you want to do something not obviously safe you have to communicate your intention, reminding yourself that you have a proof obligation to ensure that your predicates _behave_ in a way that's referentially transparent, even if they're too complicated for the compiler to prove their referential transparency.
+## Summary
+Allowing unsafe predicates has no effect on type soundness; only on the guarantee to the user about how much confidence they can have about the relationship between the high-level invariants in the code they write, and in the code they run. Declaring unsafe predicates as unsafe should be a warning sign to the user that they should tread carefully (that is, that they have a proof obligation to ensure that semantically, their predicates are referentially transparent). At the same time, the safe/unsafe predicate distinction affords the expressivity to use any Rust function as a predicate.
