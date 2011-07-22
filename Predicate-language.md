@@ -1,3 +1,5 @@
+# Under construction -- don't take this page seriously yet!
+
 ## Preliminaries
 Typestate constraints are _predicates_: applications of a Rust function to one or more arguments. So a predicate has the form:
 
