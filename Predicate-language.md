@@ -1,0 +1,1 @@
+Typestate constraints are _predicates_: applications of a Rust function to one or more arguments.
