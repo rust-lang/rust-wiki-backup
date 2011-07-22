@@ -7,37 +7,53 @@ The rust test suite has several sets of tests for different purposes. As the com
 ### Recipes
 
 * Run the test suite: `make check`. This runs all stage2 tests and its success is the typical criteria for a successful build
+* Run only xfailed (ignored) tests: `make check CHECK_XFAILS=1`
+* Run with verbose output: `make check VERBOSE=1`. This will print useful information like the exact commands being run.
 * Run without valgrind: `make check CFG_DISABLE_VALGRIND=1`
+* Run a specific test: `make check TESTNAME=[...]` - Note that while this will run only tests matching the given pattern, it will still execute all test runners - most of them will just not execute any tests. For more precise control call make on one of the targets below.
 
 ## Compiler tests
 
-These are tests of the compiler as a whole. Each test is a source file or source crate over which the compiler is run in some configuration. They live in the src/test directory.
+These are tests of the compiler as a whole. Each test is a source file or source crate over which the compiler is run in some configuration and the resulting executable run. They typically have a `main` function that takes no arguments and may have directives that instruct the test runner how to run the test.
 
-The compiler tests are further divided into four directories: compile-fail, for source which should fail to compile; run-fail, for source which should compile but fail at runtime; run-pass, for source which should compile and run successfully; and bench, for benchmarks.
+A typical test might look like:
 
-The behavior of these tests is controlled by directives in comments at the top of each test. Valid directives include:
+```
+// error-pattern:mismatched types
+// Regression test for issue #XXX
+
+fn main() {
+   let bool a = 10;
+}
+```
+
+Valid directives include:
 
 * `xfail-stage[N]` - Don't run the test in a specific build stage
-* `error-pattern: [...]` - For compile-fail and run-fail tests, the error that the test runner should expect to see on standard out
+* `error-pattern:[...]` - A message that should be expected on standard out. If multiple patterns are provided then they must all be matched, in order.
+* `compile-flags:[...]` - Additional arguments to pass to the compiler
 
-The test runner for these tests is built into the makefiles.
+There are four sets of this type of test:
+
+* run-pass - Tests that are expected to compile and run successfully. They live in src/test/run-pass and their build target is `check-stage[N]-rpass`.
+* run-fail - Tests that are expected compile but fail when run. They live in src/test/run-fail and their build target is `check-stage[N]-rfail`. These tests must include at least one 'error-pattern' directive.
+* compile-fail - Tests that are expected not to compile. They live in src/test/compile-fail and their build target is `check-stage[N]-cfail`. These tests must include at least one 'error-pattern' directive.
+* bench - Benchmarks and miscellaneous snippets of code that are expected to compile and run successfully. They live in src/test/bench and their build target is `check-stage[N]-bench`.
+
+The test runner for these tests is at src/test/compiletest and is compiled to test/compiletest.stage[N].
 
 ### Recipes
 
-* Running a specific test: `make test/run-pass/hello.stage1.out`
-* Resetting a test result: `rm test/run-pass/hello.stage1.out`
-* Adding a test: put a .rs file in the appropriate directory and add the appropriate comment headers
+* Running the run-pass tests for stage1: `make check-stage1-rpass`
+* Running a specific compile-fail test: `make check-stage2-cfail TESTNAME=type-mismatch`
+* Finding the command to compile a failing test: `make check-stage1-rpass TESTNAME=hello VERBOSE=1`
+* Running xfailed tests: `make check-stage1-rpass CHECK_XFAILS=1`
 
 ## Compiler unit tests
 
 These are unit tests against rustc internals. They are part of the rustc crate, and use the standard Rust test runner. Their test runner is compiled to test/rustctest.stage[N]
 
-### Recipes
-* Running the tests: `make check-stage[N]-rustc`
-* Running a specific test: `make check-stage[N]-rustc TESTNAME=[test]`
-* Running ignored tests: `make check-stage[N]-rustc CHECK_XFAILS=1`
-* Resetting the test results: `rm test/rustctest.stage[N].out`
-* Adding a test: tests go directly into rustc, near the functionality they test, and wrapped in a test module:
+Unit test for rustc go near the code they test and should be wrappend in a conditionally-compiled test module like so
 
 ```
 #[cfg(test)]
@@ -49,13 +65,18 @@ mod test {
 }
 ```
 
+Note that currently tests need to be visible at the top level of a create in order to run.
+
+### Recipes
+* Running the tests: `make check-stage[N]-rustc`
+* Running a specific test: `make check-stage[N]-rustc TESTNAME=[test]`
+* Running ignored tests: `make check-stage[N]-rustc CHECK_XFAILS=1`
+
 ## Standard library unit tests
 
 Tests of the standard library live in a separate stdtest crate, under the test/stdtest directory. The compiled test runner lives at test/stdtest.stage[N]
 
-## Recipes
+### Recipes
 * Running the tests: `make check-stage[N]-std`
 * Running a specific test: `make check-stage[N]-std TESTNAME=[test]`
 * Running ignored tests: `make check-stage[N]-std CHECK_XFAILS=1`
-* Resetting the test results: `rm test/stdtest.stage[N].out`
-* Adding a test: tests go in test/stdtest, usually in a module named after the std module they test
