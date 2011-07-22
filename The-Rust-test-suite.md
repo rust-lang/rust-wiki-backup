@@ -29,10 +29,10 @@ fn main() {
 
 Valid directives include:
 
-* `xfail-stage[N]` - Don't run the test in a specific build stage
-* `xfail-fast` - Don't run as part of check-fast, a special win32 test runner (some tests don't work with it)
 * `error-pattern:[...]` - A message that should be expected on standard out. If multiple patterns are provided then they must all be matched, in order.
 * `compile-flags:[...]` - Additional arguments to pass to the compiler
+* `xfail-stage[N]` - Don't run the test in a specific build stage
+* `xfail-fast` - Don't run as part of check-fast, a special win32 test runner (some tests don't work with it)
 
 There are four sets of this type of test:
 
