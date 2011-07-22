@@ -68,4 +68,6 @@ A safe function may *not*:
 
 (Discovery / change to implementation breaking safety?)
 
+type soundness vs. guarantee to user about the invariants that they specify
+
 Summary: Can do anything in the pred language, but if you want to do something not obviously safe you have to communicate your intention, reminding yourself that you have a proof obligation to ensure that your predicates _behave_ in a way that's referentially transparent, even if they're too complicated for the compiler to prove their referential transparency.
