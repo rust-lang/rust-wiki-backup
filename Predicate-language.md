@@ -59,7 +59,12 @@ Effectively, the meaning of a predicate can now depend on implicit state, and th
 
 The argument for this solution is that the compiler never tried to guarantee that there was a relationship between the implementation of a predicate `p` with type `int -> bool` and the semantics of the refinement type `{x:int | p(x)}` -- this is always a proof obligation on the user. So the nature of the guarantee is unclear in the first place.
 
-The problem with solution 2 is... **TODO** 
+The problem with solution 2 is that it still allows predicates to call any function: the user just has to write a `pred` wrapper around it. For example:
+
+    pred p(int x) -> bool { x == 5 && is_it_raining() }
+    fn is_it_raining() { /* does some network communication with a hard-wired server name */ }
+
+This code obeys the rules proposed in solution 2, because it calls `is_it_raining()` with only immutable arguments (that is, no arguments). But `is_it_raining` may then call any function, including functions that interact with mutable state.
 
 ##Safe/unsafe language solution
 
