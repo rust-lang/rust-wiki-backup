@@ -81,3 +81,7 @@ Tests of the standard library live in a separate stdtest crate, under the test/s
 * Running the tests: `make check-stage[N]-std`
 * Running a specific test: `make check-stage[N]-std TESTNAME=[test]`
 * Running ignored tests: `make check-stage[N]-std CHECK_XFAILS=1`
+
+## Fast check
+
+Because Windows has slow process spawning running `make check` on that platform can take a long time. For this reason we have a `make check-fast` target that the Windows build servers run to keep the cycle time down. This is a special test runner that is built by combining all the run-pass tests into a single library. It is created by the src/etc/combine-tests.py script.
