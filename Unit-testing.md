@@ -39,8 +39,48 @@ A test runner built with the '--test' flag supports a limited set of arguments t
 running 30 tests
 running driver::tests::mytest1 ... ok
 running driver::tests::mytest2 ... ignored
-...
-running driver::tests::mytest3 ... ok
+... snip ...
+running driver::tests::mytest30 ... ok
 
 result: ok. 28 passed; 0 failed; 2 ignored
+```
+
+### Test run with failures
+
+```
+> mytests
+
+running 30 tests
+running driver::tests::mytest1 ... ok
+running driver::tests::mytest2 ... ignored
+... snip ...
+running driver::tests::mytest30 ... FAILED
+
+result: FAILED. 27 passed; 1 failed; 2 ignored
+```
+
+### Running ignored tests
+
+```
+> mytests --ignored
+
+running 2 tests
+running driver::tests::mytest2 ... failed
+running driver::tests::mytest10 ... ok
+
+result: FAILED. 1 passed; 1 failed; 0 ignored
+```
+
+### Running a subset of tests
+
+```
+> mytests mytest1
+
+running 11 tests
+running driver::tests::mytest1 ... ok
+running driver::tests::mytest10 ... ignored
+... snip ...
+running driver::tests::mytest19 ... ignored
+
+result: ok. 11 passed; 0 failed; 1 ignored
 ```
