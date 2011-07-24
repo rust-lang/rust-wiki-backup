@@ -23,6 +23,7 @@ h2. Developer notes
 * [[Compiler snapshots]]
 * [[Error reporting]]
 * [[Logging-vision]]
+* [[Unit testin]]
 
 h2. Design notes
 
