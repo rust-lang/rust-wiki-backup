@@ -6,7 +6,7 @@ The rust test suite has several sets of tests for different purposes. As the com
 
 ### Recipes
 
-* Run the test suite: `make check`. This runs all stage2 tests and its success is the typical criteria for a successful build
+* Run the test suite: `make check`. This runs all stage2 tests. This is the criteria for a successful build.
 * Run only xfailed (ignored) tests: `make check CHECK_XFAILS=1`
 * Run with verbose output: `make check VERBOSE=1`. This will print useful information like the exact commands being run.
 * Run without valgrind: `make check CFG_DISABLE_VALGRIND=1`
