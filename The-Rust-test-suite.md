@@ -1,7 +1,5 @@
 # The Rust test suite
 
-Note: this is what the test suite will look like in the future, not currently.
-
 The rust test suite has several sets of tests for different purposes. As the compiler is built several times, over multiple stages, the tests can genarally be run against each stage of the build. Under linux, all tests are run under valgrind if it is installed, unless the build was configured with --disable-valgrind or CFG_DISABLE_VALGRIND=1 is provided on the command line.
 
 ### Recipes
