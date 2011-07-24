@@ -80,7 +80,7 @@ running 11 tests
 running driver::tests::mytest1 ... ok
 running driver::tests::mytest10 ... ignored
 ... snip ...
-running driver::tests::mytest19 ... ignored
+running driver::tests::mytest19 ... ok
 
 result: ok. 11 passed; 0 failed; 1 ignored
 ```
