@@ -9,7 +9,7 @@ fn return_none_if_empty() {
 }
 ```
 
-To run the tests in a crate, it must be compiled with the '--test' flag: `rustc myprogram.rs --test -o myprogram-tests`. Running the resulting executable will run all the tests in the crate. A test is considered successful if its function returns; if fail is called, directly or indirectly, then the test fails.
+A test function's signature must have no arguments and no return value. To run the tests in a crate, it must be compiled with the '--test' flag: `rustc myprogram.rs --test -o myprogram-tests`. Running the resulting executable will run all the tests in the crate. A test is considered successful if its function returns; if fail is called, directly or indirectly, then the test fails.
 
 When compiling a crate with the '--test' flag '--cfg test' is also implied, so that tests can be conditionally compiled.
 
