@@ -24,6 +24,7 @@ h2. Developer notes
 * [[Error reporting]]
 * [[Logging-vision]]
 * [[Unit testing]]
+* [[The Rust test suite]]
 
 h2. Design notes
 
