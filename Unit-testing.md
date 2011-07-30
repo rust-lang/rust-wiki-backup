@@ -29,6 +29,10 @@ Tests that should not be run can be annotated with the 'ignore' attribute. The e
 
 A test runner built with the '--test' flag supports a limited set of arguments to control which tests are run: the first free argument passed to a test runner specifies a filter used to narrow down the set of tests being run; the '--ignored' flag tells the test runner to run only tests with the 'ignore' attribute.
 
+## Parallelism
+
+By default, tests are run in parallel, which can make interpreting failure output difficult. In these cases you can set the RUST_THREADS environment variable to 1 to make the tests run sequentially.
+
 ## Examples
 
 ### Typical test run
