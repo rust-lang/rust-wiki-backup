@@ -17,6 +17,8 @@ These options can be combined.  For instance, `make check CHECK_XFAILS=1 TESTNAM
 
 These are tests of the compiler as a whole. Each test is a source file or source crate over which the compiler is run in some configuration and the resulting executable run. They typically have a `main` function that takes no arguments and may have directives that instruct the test runner how to run the test.
 
+The test runner for these tests is at src/test/compiletest and is compiled to test/compiletest.stage[N].
+
 A typical test might look like:
 
 ```
@@ -30,8 +32,8 @@ fn main() {
 
 There are four different modes for compile tests. Each test is run under one or more modes:
 
-* compile-fail - The test should fail to compile
-* run-fail - The test should compile but fail to run
+* compile-fail - The test should fail to compile. Must include at least one error-pattern directive.
+* run-fail - The test should compile but fail to run. Must include at least one error-pattern directive.
 * run-pass - The test should compile and run successfully
 * pretty - The test should round-trip through the pretty-printer and then compile successfully
 
@@ -45,14 +47,23 @@ Valid directives include:
 * `xfail-fast` - Don't run as part of check-fast, a special win32 test runner (some tests don't work with it)
 * `xfail-pretty` - Test is doesn't pretty-print correcty
 
-There are five directories
+There are five directories containing compile tests, living in the src/tests directory:
 
-* run-pass - Tests that are expected to compile and run successfully. They live in src/test/run-pass and their build target is `check-stage[N]-rpass`.
-* run-fail - Tests that are expected compile but fail when run. They live in src/test/run-fail and their build target is `check-stage[N]-rfail`. These tests must include at least one 'error-pattern' directive.
-* compile-fail - Tests that are expected not to compile. They live in src/test/compile-fail and their build target is `check-stage[N]-cfail`. These tests must include at least one 'error-pattern' directive.
-* bench - Benchmarks and miscellaneous snippets of code that are expected to compile and run successfully. They live in src/test/bench and their build target is `check-stage[N]-bench`.
+* run-pass - Tests that are expected to compile and run successfully. Also used for pretty-print testing.
+* run-fail - Tests that are expected compile but fail when run. Also used for pretty-print testing.
+* compile-fail - Tests that are expected not to compile
+* bench - Benchmarks and miscellaneous snippets of code that are expected to compile and run successfully
 
-The test runner for these tests is at src/test/compiletest and is compiled to test/compiletest.stage[N].
+And finally, build targets:
+
+* check-stage[N]-rpass - The tests in the run-pass directory, in run-pass mode
+* check-stage[N]-rfail - The tests in the run-fail-directory, in run-fail mode
+* check-stage[N]-cfail - The tests in the compile-fail directory, in compile-fail mode
+* check-stage[N]-bench - The tests in the bench directory, in run-pass mode
+* check-stage[N]-pretty - All the pretty-print tests
+* check-stage[N]-pretty-rpass - The tests in the run-pass directory, in pretty mode
+* check-stage[N]-pretty-rfail - The tests in the run-fail directory, in pretty mode
+* check-stage[N]-pretty-pretty - The tests in the pretty directory, in pretty mode
 
 ### Recipes
 
