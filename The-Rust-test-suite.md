@@ -41,10 +41,11 @@ Valid directives include:
 * `compile-flags:[...]` - Additional arguments to pass to the compiler
 * `pp-exact` - The test should pretty-print exactly as written
 * `pp-exact:[filename]` - The pretty-printed test should match the example in `filename`
-* `xfail-stage[N]` - Don't run the test in a specific build stage
+* `xfail-stage[N]` - Test is broken in stage[N]
 * `xfail-fast` - Don't run as part of check-fast, a special win32 test runner (some tests don't work with it)
+* `xfail-pretty` - Test is doesn't pretty-print correcty
 
-There are four sets of this type of test:
+There are five directories
 
 * run-pass - Tests that are expected to compile and run successfully. They live in src/test/run-pass and their build target is `check-stage[N]-rpass`.
 * run-fail - Tests that are expected compile but fail when run. They live in src/test/run-fail and their build target is `check-stage[N]-rfail`. These tests must include at least one 'error-pattern' directive.
