@@ -53,6 +53,7 @@ There are five directories containing compile tests, living in the src/tests dir
 * run-fail - Tests that are expected compile but fail when run. Also used for pretty-print testing.
 * compile-fail - Tests that are expected not to compile
 * bench - Benchmarks and miscellaneous snippets of code that are expected to compile and run successfully
+* pretty - Pretty-print tests
 
 And finally, build targets:
 
