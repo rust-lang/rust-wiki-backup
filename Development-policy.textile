@@ -42,9 +42,9 @@ In both contexts, please follow the conduct guidelines above. Language issues ar
 
 h2. Issue tracking
 
-Add a test for anything you're unsure of or see breaking in passing. The test driver runs every non-XFAILed test in the compile-fail, run-fail, and run-pass subdirectories.
+Add a <a href="https://github.com/graydon/rust/wiki/The-Rust-test-suite">test</a> for anything you're unsure of or see breaking in passing.
 
-File bugs in the issue tracker here as well as adding tests, or instead if you can't quite figure out how to test the thing you want to point out.
+File bugs in <a href="https://github.com/graydon/rust/issues">the issue tracker</a> here as well as adding tests, or instead if you can't quite figure out how to test the thing you want to point out.
 
 Tag bugs liberally. The bug tracker here currently has weak search capabilities. Github staff has made a variety of comments suggesting "they're working on it", but in the meantime tags are our only hope. (There's also <a href="http://githubissues.heroku.com/#graydon/rust">GHI on Heroku</a>, but it's slow.)
 
