@@ -52,7 +52,7 @@ There are five directories containing compile tests, living in the src/tests dir
 * run-pass - Tests that are expected to compile and run successfully. Also used for pretty-print testing.
 * run-fail - Tests that are expected compile but fail when run. Also used for pretty-print testing.
 * compile-fail - Tests that are expected not to compile
-* bench - Benchmarks and miscellaneous snippets of code that are expected to compile and run successfully
+* bench - Benchmarks and miscellaneous snippets of code that are expected to compile and run successfully. Also used for pretty-print testing.
 * pretty - Pretty-print tests
 
 And finally, build targets:
@@ -64,6 +64,7 @@ And finally, build targets:
 * check-stage[N]-pretty - All the pretty-print tests
 * check-stage[N]-pretty-rpass - The tests in the run-pass directory, in pretty mode
 * check-stage[N]-pretty-rfail - The tests in the run-fail directory, in pretty mode
+* check-stage[N]-pretty-bench - The tests in the bench directory, in pretty mode
 * check-stage[N]-pretty-pretty - The tests in the pretty directory, in pretty mode
 
 ### Recipes
