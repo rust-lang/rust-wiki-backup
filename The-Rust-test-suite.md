@@ -28,10 +28,19 @@ fn main() {
 }
 ```
 
+There are four different modes for compile tests. Each test is run under one or more modes:
+
+* compile-fail - The test should fail to compile
+* run-fail - The test should compile but fail to run
+* run-pass - The test should compile and run successfully
+* pretty - The test should round-trip through the pretty-printer and then compile successfully
+
 Valid directives include:
 
 * `error-pattern:[...]` - A message that should be expected on standard out. If multiple patterns are provided then they must all be matched, in order.
 * `compile-flags:[...]` - Additional arguments to pass to the compiler
+* `pp-exact` - The test should pretty-print exactly as written
+* `pp-exact:[filename]` - The pretty-printed test should match the example in `filename`
 * `xfail-stage[N]` - Don't run the test in a specific build stage
 * `xfail-fast` - Don't run as part of check-fast, a special win32 test runner (some tests don't work with it)
 
