@@ -53,7 +53,7 @@ The test runner for these tests is at src/test/compiletest and is compiled to te
 
 ## Compiler unit tests
 
-These are unit tests against rustc internals. They are part of the rustc crate, and use the standard Rust test runner. Their test runner is compiled to test/rustctest.stage[N]
+These are <a href="https://github.com/graydon/rust/wiki/Unit-testing">unit tests</a> against rustc internals. They are part of the rustc crate, and use the standard Rust test runner. Their test runner is compiled to test/rustctest.stage[N]
 
 Unit test for rustc go near the code they test and should be wrapped in a conditionally-compiled test module like so
 
