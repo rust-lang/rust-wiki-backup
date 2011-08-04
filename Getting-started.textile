@@ -116,7 +116,7 @@ h3. Picking something interesting to do
 
 We've recently transitioned off the bootstrap compiler and are moving full steam ahead with the self-hosted compiler. To get an idea of where we're going, see the [[Roadmap]].
 
-Outstanding bugs or feature requests in Rust typically have a corresponding test in the test suite that doesn't yet pass.  One good way to jump into Rust development is to look for files in the test/run-pass directory containing the string 'xfail-stage1'.  Those are all bugs that need to be fixed or features features that someone needs to finish.  Another way to get involved is to look through the issue tracker for "open issues tagged with 'easy'":https://github.com/graydon/rust/issues?labels=easy&sort=updated&direction=desc&state=open&page=1, or with "'unassigned'":https://github.com/graydon/rust/issues?labels=unassigned&sort=updated&direction=desc&state=open&page=1, or both.
+Outstanding bugs or feature requests in Rust typically have a corresponding test in the test suite that doesn't yet pass.  One good way to jump into Rust development is to look for files in the test/run-pass directory containing the string 'xfail-stage1'.  Those are all bugs that need to be fixed or features that someone needs to finish.  Another way to get involved is to look through the issue tracker for "open issues tagged with 'easy'":https://github.com/graydon/rust/issues?labels=easy&sort=updated&direction=desc&state=open&page=1, or with "'unassigned'":https://github.com/graydon/rust/issues?labels=unassigned&sort=updated&direction=desc&state=open&page=1, or both.
 
 If in doubt, ask on IRC. Somebody will surely have a task that needs doing.
 
