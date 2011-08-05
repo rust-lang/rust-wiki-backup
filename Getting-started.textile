@@ -44,7 +44,7 @@ Rust requires a 3.0svn build of LLVM, at *revision 135178 (and no later)*. Follo
 svn co -r135178 http://llvm.org/svn/llvm-project/llvm/trunk llvm
 ```
 
-Rust regularly incorporates new features and fixes from LLVM, so it's best to just assume that the very latest LLVM SVN revision is required.  Unfortunately, because Rust is building against LLVM's trunk, not every revision will work correctly.  If you find that Rust doesn't build with your version of LLVM, then ask on IRC and somebody will tell you which revision is working for them.
+Unfortunately, because Rust is building against LLVM's trunk, not every revision will work correctly.  If you find that Rust doesn't build with your version of LLVM, then ask on IRC and somebody will tell you which revision is working for them.
 
 If you're using clang, you will also need to check out compiler-rt *revision 131034* (later revisions are broken):
 ```sh
