@@ -49,7 +49,7 @@ Unfortunately, because Rust is building against LLVM's trunk, not every revision
 If you're using clang (*revision 135210*), you will also need to check out compiler-rt *revision 133487* (later revisions are broken):
 ```sh
 cd llvm/projects
-svn co -r131034 http://llvm.org/svn/llvm-project/compiler-rt/trunk compiler-rt
+svn co -r133487 http://llvm.org/svn/llvm-project/compiler-rt/trunk compiler-rt
 ```
 
 h4. Building LLVM
