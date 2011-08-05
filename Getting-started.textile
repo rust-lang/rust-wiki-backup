@@ -34,10 +34,10 @@ To your @.bashrc@
 
 h3. Installing LLVM
 
-Rust requires a 3.0svn build of LLVM, at or after *revision 135178*. Follow the instructions on "Clang's Getting Started page":http://clang.llvm.org/get_started.html to check out LLVM (and Clang, if you like), but don't follow the build instructions on that page -- see below.*
+Rust requires a 3.0svn build of LLVM, at *revision 135178 (and no later)*. Follow the instructions on "Clang's Getting Started page":http://clang.llvm.org/get_started.html to check out LLVM (and Clang, if you like), but don't follow the build instructions on that page -- see below.*
 
 ```sh
-svn co http://llvm.org/svn/llvm-project/llvm/trunk llvm
+svn co -r135178 http://llvm.org/svn/llvm-project/llvm/trunk llvm
 ```
 
 Rust regularly incorporates new features and fixes from LLVM, so it's best to just assume that the very latest LLVM SVN revision is required.  Unfortunately, because Rust is building against LLVM's trunk, not every revision will work correctly.  If you find that Rust doesn't build with your version of LLVM, then ask on IRC and somebody will tell you which revision is working for them.
