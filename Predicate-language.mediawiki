@@ -70,11 +70,11 @@ This code obeys the rules proposed in solution 2, because it calls `is_it_rainin
 
 ##Safe/unsafe language solution
 
-This proposal would add a `check-referentially-opaque` keyword to the language (name subject to change), in addition to the existing `check` keyword. Comparing `check(p(x, y, z))` with `check-referentially-opaque(q(x, y, z))`, `q` could be an arbitrary function while `p` would have to be declared with `pred` (similarly to the current compiler) and its body would be checked according to a set of effect-checking rules. 
+This proposal would add a `check-volatile` keyword to the language (name subject to change), in addition to the existing `check` keyword. The difference between `check(p(x, y, z))` and `check-volatile(q(x, y, z))`, `q` could be an arbitrary function while `p` would have to be declared with `pred` (similarly to the current compiler) and its body would be checked according to a set of effect-checking rules. 
 
 The basic idea is that the compiler guarantees that the invariants declared as part of a function precondition will actually be true at all of its call sites, _if_ all typestate predicates are referentially transparent. The problem is that a predicate may be semantically referentially transparent (like `le_length_of`), but might fail a simple syntactic test for referential transparency (lack of assignment expressions).
 
-We introduce a distinction between safe and unsafe predicates so that when a programmer knows that a predicate is referentially transparent but can't prove it to the compiler, they can still use it anyway, in a `check-referentially-opaque` expression. They then incur a proof obligation that the predicate really is referentially transparent; the compiler guarantees nothing in this case.
+We introduce a distinction between safe and unsafe predicates so that when a programmer knows that a predicate is referentially transparent but can't prove it to the compiler, they can still use it anyway, in a `check-volatile` expression. They then incur a proof obligation that the predicate really is referentially transparent; the compiler guarantees nothing in this case.
 
 In practice, we would expect that most predicates will be referentially transparent (and obviously so, at that), but cases like the `str::len` example suggest we don't want to limit expressivity unduly or force code duplication.
 
@@ -86,7 +86,7 @@ We actually distinguish between three sorts of functions:
 
 Every pure function is also safe. For modularity purposes, a `fn` function will only be treated as safe if it's within the same crate as the caller. The reason is that otherwise, a change to the implementation of a safe function in a different crate could cause code to fail to compile, which would be surprising.
 
-To summarize, `check` takes a safe or pure predicate, while `check-referentially-opaque` takes any function with a boolean return type.
+To summarize, `check` takes a safe or pure predicate, while `check-volatile` takes any function with a boolean return type.
 
 A safe function must have a known definition: in `check(p(...))`, `p` may not be bound to a function argument.
 
