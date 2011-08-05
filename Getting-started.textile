@@ -22,6 +22,10 @@ On 64-bit systems, you'll also need:
 
 @sudo apt-get install g++-multilib ia32-libs@
 
+h4. Arch Linux
+
+See "the information on multilib setups":https://wiki.archlinux.org/index.php/Arch64_FAQ#Multilib_Repository_-_Multilib_Project.
+
 h4. Windows
 
 We recommend developing under the newest "MinGW packages":http://www.mingw.org using their auto-installer.
