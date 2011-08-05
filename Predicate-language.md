@@ -96,7 +96,7 @@ The arguments to a pure function must be immutable and transparent.
 
 A pure function may not
 
-* call functions declared with `fn`
+* call general functions (it may call declared-pure functions, and other pure functions)
 * move, assign or swap to anything other than a local slot
 * receive on a channel (sending is OK)
 * refer to upvars
