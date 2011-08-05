@@ -68,40 +68,40 @@ The problem with solution 2 is that it still allows predicates to call any funct
 
 This code obeys the rules proposed in solution 2, because it calls `is_it_raining()` with only immutable arguments (that is, no arguments). But `is_it_raining` may then call any function, including functions that interact with mutable state.
 
-##Safe/unsafe language solution
+##Pure/impure language solution
 
 This proposal would add a `check-volatile` keyword to the language (name subject to change), in addition to the existing `check` keyword. The difference between `check(p(x, y, z))` and `check-volatile(q(x, y, z))`, `q` could be an arbitrary function while `p` would have to be declared with `pred` (similarly to the current compiler) and its body would be checked according to a set of effect-checking rules. 
 
 The basic idea is that the compiler guarantees that the invariants declared as part of a function precondition will actually be true at all of its call sites, _if_ all typestate predicates are referentially transparent. The problem is that a predicate may be semantically referentially transparent (like `le_length_of`), but might fail a simple syntactic test for referential transparency (lack of assignment expressions).
 
-We introduce a distinction between safe and unsafe predicates so that when a programmer knows that a predicate is referentially transparent but can't prove it to the compiler, they can still use it anyway, in a `check-volatile` expression. They then incur a proof obligation that the predicate really is referentially transparent; the compiler guarantees nothing in this case.
+We introduce a distinction between pure and impure (general) predicates so that when a programmer knows that a predicate is referentially transparent but can't prove it to the compiler, they can still use it anyway, in a `check-volatile` expression. They then incur a proof obligation that the predicate really is referentially transparent; the compiler guarantees nothing in this case.
 
 In practice, we would expect that most predicates will be referentially transparent (and obviously so, at that), but cases like the `str::len` example suggest we don't want to limit expressivity unduly or force code duplication.
 
 We actually distinguish between three sorts of functions:
 
-* **Unsafe** functions are declared with `fn`, and subject to no restrictions beyond Rust's usual type system.
-* **Pure** functions are declared with `pred`, and subject to the effect checking rules described in what follows.
-* **Safe** functions are declared with `fn`, and subject to the effect checking rules as well. The motivation is that the compiler is free to "promote" some unsafe functions to safe status if it can infer that the function is actually safe.
+* **General** functions are declared with `fn`, and subject to no restrictions beyond Rust's usual type system.
+* **Declared-pure** functions are declared with `pred`, and subject to the effect checking rules described in what follows.
+* **Pure** functions are declared with `fn`, and subject to the effect checking rules as well. The motivation is that the compiler is free to "promote" some general functions to pure status if it can infer that the function's observable behavior is that of a pure function.
 
-Every pure function is also safe. For modularity purposes, a `fn` function will only be treated as safe if it's within the same crate as the caller. The reason is that otherwise, a change to the implementation of a safe function in a different crate could cause code to fail to compile, which would be surprising.
+Every declared-pure function is pure, as enforced by the effect checking rules. For modularity purposes, a `fn` function will only be treated as pure if it's within the same crate as the caller. The reason is that otherwise, a change to the implementation of a pure function in one crate could cause code in another crate to fail to compile, which would be surprising.
 
-To summarize, `check` takes a safe or pure predicate, while `check-volatile` takes any function with a boolean return type.
+To summarize, `check` takes a declared-pure or pure predicate, while `check-volatile` takes any function with a boolean return type.
 
-A safe function must have a known definition: in `check(p(...))`, `p` may not be bound to a function argument.
+A pure function must have a known definition: in `check(p(...))`, `p` may not be bound to a function argument.
 
-The arguments to a safe function must be immutable and transparent.
+The arguments to a pure function must be immutable and transparent.
 
 ### Effect-checking rules
 
-A safe function may not
+A pure function may not
 
 * call functions declared with `fn`
 * move, assign or swap to anything other than a local slot
 * receive on a channel (sending is OK)
 * refer to upvars
 
-These rules may appear similar to the effect system (impure/pure functions) in earlier versions of the language, and they are. However, a major difference is the ability to opt out of the effect-checking rules by using unsafe predicates. Impurity is the default for _declaring_ functions, rather than purity, while purity is the default for _checking_ predicates. We also foreclose complicated issues such as effect polymorphism by simplifying the system. Finally, we do a limited form of effect masking (pure functions may modify local state).
+These rules may appear similar to the effect system (impure/pure functions) in earlier versions of the language, and they are. However, a major difference is the ability to opt out of the effect-checking rules by using general predicates. Impurity is the default for _declaring_ functions, rather than purity, while purity is the default for _checking_ predicates. We also foreclose complicated issues such as effect polymorphism by simplifying the system. Finally, we do a limited form of effect masking (pure functions may modify local state).
 
 ## Summary
-Allowing unsafe predicates has no effect on type soundness; only on the guarantee to the user about how much confidence they can have about the relationship between the high-level invariants in the code they write, and in the code they run. Declaring unsafe predicates as unsafe should be a warning sign to the user that they should tread carefully (that is, that they have a proof obligation to ensure that semantically, their predicates are referentially transparent). At the same time, the safe/unsafe predicate distinction affords the expressivity to use any Rust function as a predicate.
+Allowing general (possibly-impure) predicates has no effect on type soundness; only on the guarantee to the user about how much confidence they can have about the relationship between the high-level invariants in the code they write, and in the code they run. Declaring uses of general predicates as unsafe (using the `check-volatile` keyword) should be a warning sign to the user that they should tread carefully (that is, that they have a proof obligation to ensure that semantically, their predicates are referentially transparent). At the same time, the distinction between general and pure predicates affords the expressivity to use any Rust function as a predicate.
