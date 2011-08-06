@@ -96,12 +96,28 @@ The arguments to a pure function must be immutable and transparent.
 
 A pure function may not
 
-* call general functions (it may call declared-pure functions, and other pure functions)
+* call general functions (it may call declared-pure functions, and other pure functions), except inside the antecedent of an `if check-volatile` expression (see next section)
 * move, assign or swap to anything other than a local slot
 * receive on a channel (sending is OK)
 * refer to upvars
 
 These rules may appear similar to the effect system (impure/pure functions) in earlier versions of the language, and they are. However, a major difference is the ability to opt out of the effect-checking rules by using general predicates. Impurity is the default for _declaring_ functions, rather than purity, while purity is the default for _checking_ predicates. We also foreclose complicated issues such as effect polymorphism by simplifying the system. Finally, we do a limited form of effect masking (pure functions may modify local state).
+
+### Dangerous calls
+
+We extend the principle of allowing the user to violate safety rules as long as they declare their intentions to also allow calls from declared-pure functions to general functions. In addition to the `check-volatile` expression, we introduce an `if check-volatile` expression form, which works the way `if check` does except that (as in a `check-volatile` expression), the operator in the constraint may be a general function. For example:
+
+    pred f(int x) -> bool {
+      if check-volatile(other_crate::fn_that_really_acts_pure()) {
+         ...
+      }
+      else {
+         ...
+      }
+    }
+    ```
+
+(working note: This may not be good enough. What if we want to delegate to a general function whose return type isn't bool?)
 
 ## Summary
 Allowing general (possibly-impure) predicates has no effect on type soundness; only on the guarantee to the user about how much confidence they can have about the relationship between the high-level invariants in the code they write, and in the code they run. Declaring uses of general predicates as unsafe (using the `check-volatile` keyword) should be a warning sign to the user that they should tread carefully (that is, that they have a proof obligation to ensure that semantically, their predicates are referentially transparent). At the same time, the distinction between general and pure predicates affords the expressivity to use any Rust function as a predicate.
