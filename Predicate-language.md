@@ -115,7 +115,6 @@ We extend the principle of allowing the user to violate safety rules as long as 
          ...
       }
     }
-    ```
 
 (working note: This may not be good enough. What if we want to delegate to a general function whose return type isn't bool?)
 
