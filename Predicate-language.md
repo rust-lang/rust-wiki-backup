@@ -47,7 +47,8 @@ So far, three major solutions have been proposed:
 
 ##Problems with solutions
 
-The problem with solution 1 is that it may have surprising results. Consider:
+###Solution 1
+Solution 1 may have surprising results. Consider:
 
     fn f(int x) : p(x) -> bool { x == 5 && is_it_raining() }
 
@@ -61,12 +62,36 @@ Effectively, the meaning of a predicate can now depend on implicit state, and th
 
 The argument for this solution is that the compiler never tried to guarantee that there was a relationship between the implementation of a predicate `p` with type `int -> bool` and the semantics of the refinement type `{x:int | p(x)}` -- this is always a proof obligation on the user. So the nature of the guarantee is unclear in the first place.
 
-The problem with solution 2 is that it still allows predicates to call any function: the user just has to write a `pred` wrapper around it. For example:
+###Solution 2
+1. Wrappers
+    Solution 2 still allows predicates to call any function: the user just has to write a `pred` wrapper around it. For example:
 
     pred p(int x) -> bool { x == 5 && is_it_raining() }
     fn is_it_raining() { /* does some network communication with a hard-wired server name */ }
 
-This code obeys the rules proposed in solution 2, because it calls `is_it_raining()` with only immutable arguments (that is, no arguments). But `is_it_raining` may then call any function, including functions that interact with mutable state.
+    This code obeys the rules proposed in solution 2, because it calls `is_it_raining()` with only immutable arguments (that is, no arguments). But `is_it_raining` may then call any function, including functions that interact with mutable state.
+
+1. Predictability
+
+    Dave points out: "if the integration of the predicate checking system with the control flow analysis doesn't actually provide any guarantees about the result of the predicate, then if programmers started to discover subtle bugs due to control-sensitivity, they'd lose trust in the predicate type system." For example, if the predicate type system is trustworthy, that means that the programmer should be able to expect that this program will never `fail` at runtime:
+
+    pred p(int x) -> bool { /* maybe calls non-referentially-transparent functions */ }
+    fn f(int y) : p(y) -> int {
+       check p(y);
+       ...
+    }
+    fn main() {
+       let x = 5; 
+       check p(x);
+       /* sleep for 8 hours, yielding to other tasks */
+       log f(x);
+    }
+
+    If the typestate analysis is sound with respect to any reasonable semantics, the user should expect that the `check` inside `f` should always succeed, as the compiler is supposed to prevent `f` from being called on a `y` for which `p` is false. But since `p` here has non-referentially-transparent semantics, its meaning is actually dependent on some hidden state, not just on `y`. I think this behavior could surprise the user, and cause them to distrust the predicate type system (making them not want to rely on it, and stop using it).
+
+1. Usability
+
+    If it's easy to silence typestate errors by wrapping a truly impure predicate with a trivial `pred` wrapper, that raises the temptation for users to do so in order to shut the compiler up, without understanding that this obliges them to prove that it is safe to do so, and without understanding the risks they thus introduce.
 
 ##Pure/impure language solution
 
