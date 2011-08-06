@@ -95,6 +95,10 @@ The argument for this solution is that the compiler never tried to guarantee tha
 
     If it's easy to silence typestate errors by wrapping a truly impure predicate with a trivial `pred` wrapper, that raises the temptation for users to do so in order to shut the compiler up, without understanding that this obliges them to prove that it is safe to do so, and without understanding the risks they thus introduce.
 
+1. #### Mutable data
+
+    Conceivably, it might actually be useful to write predicates that accept mutable data structures. For example, we might want to check an invariant on a mutable data structure. It would be good to document that the user must not mutate the data structure between checks, and calls that rely on those checks. Solution 2 forbids such a scenario completely by disallowing any predicate applications with mutable arguments.
+
 ##Pure/impure language solution
 
 This proposal would add a `check-volatile` keyword to the language (name subject to change), in addition to the existing `check` keyword. The difference between `check(p(x, y, z))` and `check-volatile(q(x, y, z))`, `q` could be an arbitrary function while `p` would have to be declared with `pred` (similarly to the current compiler) and its body would be checked according to a set of effect-checking rules. 
@@ -146,4 +150,6 @@ We extend the principle of allowing the user to violate safety rules as long as 
 (working note: This may not be good enough. What if we want to delegate to a general function whose return type isn't bool?)
 
 ## Summary
-Allowing general (possibly-impure) predicates has no effect on type soundness; only on the guarantee to the user about how much confidence they can have about the relationship between the high-level invariants in the code they write, and in the code they run. Declaring uses of general predicates as unsafe (using the `check-volatile` keyword) should be a warning sign to the user that they should tread carefully (that is, that they have a proof obligation to ensure that semantically, their predicates are referentially transparent). At the same time, the distinction between general and pure predicates affords the expressivity to use any Rust function as a predicate.
+Allowing general (possibly-impure) predicates has no effect on type soundness; only on the guarantee to the user about how much confidence they can have about the relationship between the high-level invariants in the code they write, and in the code they run. Declaring uses of general predicates as unsafe (using the `check-volatile` keyword) should be a warning sign to the user that they should tread carefully (that is, the predicate writer and the predicate user have a shared proof obligation to ensure that semantically, predicates and their uses are referentially transparent). At the same time, the distinction between general and pure predicates affords the expressivity to use any Rust function as a predicate.
+
+In the best case, the predicate writer ensures that the predicate is actually referentially transparent in all cases, which means the predicate user's obligations are vacuous. In general, we would expect that there is a set of certain restricted conditions under which the predicate behaves referentially transparently, in which case it's the predicate writer's job to specify those conditions and the predicate user's job to satisfy them at all call sites.
