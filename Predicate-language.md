@@ -120,25 +120,27 @@ In practice, we would expect that most predicates will be referentially transpar
 We actually distinguish between three sorts of functions:
 
 * **General** functions are declared with `fn`, and subject to no restrictions beyond Rust's usual type system.
-* **Declared-pure** functions are declared with `pred`, and subject to the effect checking rules described in what follows.
-* **Pure** functions are declared with `fn`, and subject to the effect checking rules as well. The motivation is that the compiler is free to "promote" some general functions to pure status if it can infer that the function's observable behavior is that of a pure function.
+* **Declared-pure** functions are declared with `pure-fn`, and are subject to the effect checking rules described in what follows. A declared-pure function may have any return type except for `()` or `_|_`, which would be nonsensical. A declared-pure function that has a boolean return type -- called a "predicate", but not syntactically distinct from other declared-pure functions -- may appear in a typestate constraint. A predicate may call declared-pure functions that have non-boolean return types.
+* **Pure** functions are declared with `fn`, and subject to the effect checking rules as well. The motivation is that the compiler is free to "promote" some general functions to pure status (to infer purity for them) if it can infer that the function's observable behavior is that of a pure function. A pure function that has a boolean return type is also a predicate.
 
-Every declared-pure function is pure, as enforced by the effect checking rules. For modularity purposes, a `fn` function will only be treated as pure if it's within the same crate as the caller. The reason is that otherwise, a change to the implementation of a pure function in one crate could cause code in another crate to fail to compile, which would be surprising.
+Every declared-pure function is pure, as enforced by the effect checking rules. For modularity purposes, the compiler will only promote a `fn` function to pure status if it's within the same crate as the caller. The reason is that otherwise, a change to the implementation of a pure function in one crate could cause code in another crate to fail to compile, which would be surprising.
 
 To summarize, `check` takes a declared-pure or pure predicate, while `check-volatile` takes any function with a boolean return type.
 
-A pure function must have a known definition: in `check(p(...))`, `p` may not be bound to a function argument.
+A predicate must have a known definition: in `check(p(...))`, `p` may not be bound to a function argument.
 
-The arguments to a pure function must be immutable and transparent.
+The arguments to a declared-pure function must be immutable and transparent. A general function whose arguments may be mutable or opaque can't be promoted to pure status.
 
 ### Effect-checking rules
 
-A pure function may not
+A declared-pure function may not
 
 * call general functions (it may call declared-pure functions, and other pure functions), except inside the antecedent of an `if check-volatile` expression (see next section)
 * move, assign or swap to anything other than a local slot
 * receive on a channel (sending is OK)
 * refer to upvars
+
+These rules specify the conditions under which the compiler will promote a general function to pure status.
 
 These rules may appear similar to the effect system (impure/pure functions) in earlier versions of the language, and they are. However, a major difference is the ability to opt out of the effect-checking rules by using general predicates. Impurity is the default for _declaring_ functions, rather than purity, while purity is the default for _checking_ predicates. We also foreclose complicated issues such as effect polymorphism by simplifying the system. Finally, we do a limited form of effect masking (pure functions may modify local state).
 
@@ -154,8 +156,6 @@ We extend the principle of allowing the user to violate safety rules as long as 
          ...
       }
     }
-
-(working note: This may not be good enough. What if we want to delegate to a general function whose return type isn't bool?)
 
 ## Summary
 Allowing general (possibly-impure) predicates has no effect on type soundness; only on the guarantee to the user about how much confidence they can have about the relationship between the high-level invariants in the code they write, and in the code they run. Declaring uses of general predicates as unsafe (using the `check-volatile` keyword) should be a warning sign to the user that they should tread carefully (that is, the predicate writer and the predicate user have a shared proof obligation to ensure that semantically, predicates and their uses are referentially transparent). At the same time, the distinction between general and pure predicates affords the expressivity to use any Rust function as a predicate.
