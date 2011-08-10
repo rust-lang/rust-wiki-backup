@@ -10,7 +10,7 @@ where `p` must be defined as a known function, and `x` (and so on) must be names
 ## The problem: specifying the predicate language
 The question is, what is `p` allowed to be? In the current design, `p` must be declared with the keyword `pred` instead of `fn`. Items declared with `pred` must fall within a very conservative approximation of the set of observably-pure (referentially transparent) functions. For example, `pred` functions can't use assignment at all, and can only call other `pred` functions.
 
-The current design may limit expressivity overly. Consider the following hypothetical function declarations
+The current design may not be expressive enough to implement the kinds of invariants programmers would like to declare about their code. Consider the following hypothetical function declarations
 
     fn substr(uint start, uint end, str s) : le(start, end), le(end, str::len(s)) -> str {
        ...
