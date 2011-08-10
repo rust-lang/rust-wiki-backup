@@ -99,6 +99,12 @@ The argument for this solution is that the compiler never tried to guarantee tha
 
     Conceivably, it might actually be useful to write predicates that accept mutable data structures. For example, we might want to check an invariant on a mutable data structure. It would be good to document that the user must not mutate the data structure between checks, and calls that rely on those checks. Solution 2 forbids such a scenario completely by disallowing any predicate applications with mutable arguments.
 
+    As an example, consider a balanced binary tree type that allows destructive updates. If the user wants to enforce statically that certain operations take a balanced tree as an argument, they could write:
+         
+        fn insert(t: &Tree) : is_balanced(t) { ... }
+
+    We would expect that there are intermediate states (like during a rebalancing operation) where ```is_balanced(t)``` would not hold for a given tree ```t```. Solution 2 would disallow this example, since it disallows predicates that take mutable types, like ```Tree```. Yet it seems like a fairly common scenario to have invariants on a mutable data structure that may or may not hold at an arbitrary program point, but need to hold at certain program points for correctness.
+
 ##Pure/impure language solution
 
 This proposal would add a `check-volatile` keyword to the language (name subject to change), in addition to the existing `check` keyword. The difference between `check(p(x, y, z))` and `check-volatile(q(x, y, z))`, `q` could be an arbitrary function while `p` would have to be declared with `pred` (similarly to the current compiler) and its body would be checked according to a set of effect-checking rules. 
