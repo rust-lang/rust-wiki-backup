@@ -140,7 +140,7 @@ A declared-pure function may not
 * receive on a channel (sending is OK)
 * refer to upvars
 
-These rules specify the conditions under which the compiler will promote a general function to pure status.
+These rules also specify the conditions under which the compiler will promote a general function to pure status.
 
 These rules may appear similar to the effect system (impure/pure functions) in earlier versions of the language, and they are. However, a major difference is the ability to opt out of the effect-checking rules by using general predicates. Impurity is the default for _declaring_ functions, rather than purity, while purity is the default for _checking_ predicates. We also foreclose complicated issues such as effect polymorphism by simplifying the system. Finally, we do a limited form of effect masking (pure functions may modify local state).
 
