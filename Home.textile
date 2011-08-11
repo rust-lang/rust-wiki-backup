@@ -33,7 +33,7 @@ h2. Design notes
 * [[Extracted documentation]]
 * [[Standard library notes]]
 * [[Tasks and Communication]]
-* [[Predicate language]]
+* [[Proposal for predicate language]]
 * [[Constrained types]]
 * [[Error reporting]]
 * [[Logging-vision]]
