@@ -38,17 +38,16 @@ To your @.bashrc@
 
 h3. Installing LLVM
 
-Rust requires a 3.0svn build of LLVM, at *revision 137336 (and no later)*. Follow the instructions on "Clang's Getting Started page":http://clang.llvm.org/get_started.html to check out LLVM (and Clang, if you like), but don't follow the build instructions on that page -- see below.*
+Rust requires a 3.0svn build of LLVM *at revision 137336 or later*. Follow the instructions on "Clang's Getting Started page":http://clang.llvm.org/get_started.html to check out LLVM (and Clang, if you like), but don't follow the build instructions on that page -- see below.
 
 ```sh
-svn co -r135178 http://llvm.org/svn/llvm-project/llvm/trunk llvm
+svn co -r137336 http://llvm.org/svn/llvm-project/llvm/trunk llvm
 ```
-
-Unfortunately, because Rust is building against LLVM's trunk, not every revision will work correctly.  If you find that Rust doesn't build with your version of LLVM, then ask on IRC and somebody will tell you which revision is working for them.
+Since Rust is building against LLVM's trunk, not every revision will work correctly.  The revision number listed above is a minimum that's known to work.  If you're having trouble finding an LLVM revision that works, ask on IRC and somebody will tell you which revision is working for them.
 
 h4. Building with clang (Experimental)
 
-The Rust runtime can be built with clang, though it is only regularly tested on Mac, and known to have problems on Linux. To do so you'll need to build clang from SVN along with LLVM. If you're using clang (*revision 135210*), you will also need to check out compiler-rt *revision 133487* (later revisions are broken):
+The Rust runtime can be built with clang, though it is only regularly tested on Mac and known to have problems on Linux. To do so you'll need to build clang from SVN along with LLVM. If you're using clang (*revision 135210*), you will also need to check out compiler-rt *revision 133487* (later revisions are broken):
 
 ```sh
 cd llvm/projects
@@ -60,7 +59,7 @@ cd llvm/tools
 svn co -r 135210 http://llvm.org/svn/llvm-project/cfe/trunk clang
 ```
 
-Rust's configure script will automatically use clang if it finds an appropriate version, otherwise it will use gcc.
+Rust's configure script will automatically use clang if it finds an appropriate version; otherwise, it will use gcc.
 
 h4. Building LLVM
 
