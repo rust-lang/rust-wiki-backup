@@ -21,9 +21,6 @@ h2. Developer notes
 * [[Git workflow]]
 * [[Running a Tinderbox]]
 * [[Compiler snapshots]]
-* [[Error reporting]]
-* [[Logging-vision]]
-* [[Unit testing]]
 * [[The Rust test suite]]
 
 h2. Design notes
@@ -38,3 +35,7 @@ h2. Design notes
 * [[Tasks and Communication]]
 * [[Predicate language]]
 * [[Constrained types]]
+* [[Error reporting]]
+* [[Logging-vision]]
+* [[Attribute notes]]
+* [[Unit testing]]
