@@ -37,3 +37,4 @@ h2. Design notes
 * [[Standard library notes]]
 * [[Tasks and Communication]]
 * [[Predicate language]]
+* [[Constrained types]]
