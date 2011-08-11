@@ -4,6 +4,18 @@
 
 Mutation of local variables that have constrained types explicitly assigned to them means that programmers can introduce all kinds of type assertions that can't be checked in the typechecker (because it doesn't do typestate), and can't be checked in typestate (because these assertions are non-local).
 
+For example, consider the following program:
+
+    type odd = int : odd(*);
+    fn odd(int x) -> bool { ... }
+    ...
+
+    check odd(y);
+    let x : odd = y;
+    y = 4;
+
+This program is bad. But why is it bad? [TO BE CONTINUED]
+
 ## Solution
 
 Disallow constrained type names as an explicit type on the LHS of a declaration. Constrained type names can only appear as data structure field types, and function argument types.
@@ -17,3 +29,7 @@ What to do about variants? Can individual tags have constraints, as well as prod
 ## Other notes
 
 Typestate _has_ to happen after typechecking -- unless type inference has already occurred, we don't have access to information about which nodes have constrained types, and thus can't check the relevant constraints.
+
+## To Do (for Tim)
+
+I'm not even sure whether constrained types that aren't record types (e.g. `odd` above) actually work right now. So checking whether they work would be the first thing for me to do.
