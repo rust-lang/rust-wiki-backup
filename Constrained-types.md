@@ -13,3 +13,7 @@ Introduce nominal records. Constraints can only be on nominal records, not on tu
 ## Unresolved questions
 
 What to do about variants? Can individual tags have constraints, as well as product types? (What about constraints that say "this data structure was built with tag X"? That could be faked with predicates, but maybe syntax for it would be nice.)
+
+## Other notes
+
+Typestate _has_ to happen after typechecking -- unless type inference has already occurred, we don't have access to information about which nodes have constrained types, and thus can't check the relevant constraints.
