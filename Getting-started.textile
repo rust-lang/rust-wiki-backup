@@ -30,20 +30,19 @@ h4. Windows
 
 We recommend developing under the newest "MinGW packages":http://www.mingw.org using their auto-installer.
 
-For Git, we recommend "MsysGit":http://code.google.com/p/msysgit/ and if you use that you will want to put the git binary path *after* the MinGW path. So add a line like:
+For Git, we recommend "MsysGit":http://code.google.com/p/msysgit/ and if you use that you will want to put the git binary path *after* the MinGW path. So add a line like the following to your @.bashrc@:
 ```
 export PATH=$PATH:/c/Program\ Files/Git/bin
 ```
-To your @.bashrc@
 
 h3. Installing LLVM
 
-Rust requires a 3.0svn build of LLVM *at revision 137336 or later*. Follow the instructions on "Clang's Getting Started page":http://clang.llvm.org/get_started.html to check out LLVM (and Clang, if you like), but don't follow the build instructions on that page -- see below.
+Rust requires a 3.0svn build of LLVM *at revision 137336*. Follow the instructions on "Clang's Getting Started page":http://clang.llvm.org/get_started.html to check out LLVM (and Clang, if you like), but don't follow the build instructions on that page -- see below.
 
 ```sh
 svn co -r137336 http://llvm.org/svn/llvm-project/llvm/trunk llvm
 ```
-Since Rust is building against LLVM's trunk, not every revision will work correctly.  The revision number listed above is a minimum that's known to work.  If you're having trouble finding an LLVM revision that works, ask on IRC and somebody will tell you which revision is working for them.
+Later revisions _might_ work, but since Rust is building against LLVM's trunk, not every revision will work correctly.  The revision number listed above is a minimum that's known to work.  If you're having trouble finding an LLVM revision that works, ask on IRC and somebody will tell you which revision is working for them.
 
 h4. Building with clang (Experimental)
 
@@ -135,8 +134,8 @@ If in doubt, ask on IRC. Somebody will surely have a task that needs doing.
 
 h3. Communicating
 
-Join irc.mozilla.org #rust if you want to discuss anything more "interactively".  We try to remain on that channel during working hours in UTC-7 (US Pacific).
+Join irc.mozilla.org #rust for real-time discussion of Rust development.  We try to remain on that channel during working hours in UTC-7 (US Pacific).
 
-Join the "mailing list":https://mail.mozilla.org/listinfo/rust-dev if you want to have longer conversations.
+Join the "mailing list":https://mail.mozilla.org/listinfo/rust-dev for longer conversations.
 
 In both cases, please follow the conduct guidelines on the [[Development policy]] page.
