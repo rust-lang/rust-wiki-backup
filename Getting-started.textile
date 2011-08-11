@@ -38,7 +38,7 @@ To your @.bashrc@
 
 h3. Installing LLVM
 
-Rust requires a 3.0svn build of LLVM, at *revision 135178 (and no later)*. Follow the instructions on "Clang's Getting Started page":http://clang.llvm.org/get_started.html to check out LLVM (and Clang, if you like), but don't follow the build instructions on that page -- see below.*
+Rust requires a 3.0svn build of LLVM, at *revision 137336 (and no later)*. Follow the instructions on "Clang's Getting Started page":http://clang.llvm.org/get_started.html to check out LLVM (and Clang, if you like), but don't follow the build instructions on that page -- see below.*
 
 ```sh
 svn co -r135178 http://llvm.org/svn/llvm-project/llvm/trunk llvm
