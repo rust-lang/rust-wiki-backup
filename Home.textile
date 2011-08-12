@@ -35,6 +35,7 @@ h2. Design notes
 * [[Tasks and Communication]]
 * [[Proposal for predicate language]]
 * [[Constrained types]]
+* [[Constraints in rustc and libraries]]
 * [[Error reporting]]
 * [[Logging-vision]]
 * [[Attribute notes]]
