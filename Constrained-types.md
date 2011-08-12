@@ -12,9 +12,16 @@ For example, consider the following program:
 
     check odd(y);
     let x : odd = y;
-    y = 4;
 
-This program is bad. But why is it bad? [TO BE CONTINUED]
+This program is perfectly acceptable. On the other hand, consider this program (with the same definitions):
+
+    let x : odd = y;
+
+where we omit the `check`. The typechecker or typestate pass (one or the other) needs to be able to reject this program. 
+
+(Ok, I'm getting lost here. I can see why we didn't want subsequent assignments to `x`. But why did we decide it wasn't even a good idea to allow `odd` in the decl for `x`? It seems like here, it would be pretty easy for the typechecker to generate a hint for typestate that says "make sure you already know `odd(y)` at this point".)
+
+[To be continued...]
 
 ## Solution
 
