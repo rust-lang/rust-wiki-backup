@@ -18,6 +18,8 @@ _This list is incomplete. You can help by adding to it._
 
 `trans::trans_be` -- could make the assertion `is_call_expr(e)` a precondition instead. (Is `is_call_expr` a pred?)
 
+* It's a pred now -- but this points to the usefulness of syntax for checking that "`e` is built with tag `expr_call`" without having to write out a pred to do it.
+
 ## Libraries
 
 ### std::ivec
