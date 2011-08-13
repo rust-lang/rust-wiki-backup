@@ -12,6 +12,10 @@ _This list is incomplete. You can help by adding to it._
 
 ### Middle-end
 
+#### Types
+
+`tstate::tritv::t` -- could have a constraint saying that `uncertain` and `val` have the same length, and that for all indices `i`, it's not the case that `uncertain.(i)` and `val.(i)` are both 1. (The latter part seems hard.)
+
 #### Functions
 
 `trans::GEP_tag` -- could give this function a precondition expressing that the argument `ix` must be ≥ 0 and ≤ the number of variants that the argument `tag_id` has. Specifying the latter constraint involves looking up some information in the type context (which is also an argument), but it should be do-able as a pure predicate.
