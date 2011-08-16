@@ -47,7 +47,7 @@ Later revisions _might_ work, but since Rust is building against LLVM's trunk, n
 
 h4. Building with clang (Experimental)
 
-The Rust runtime can be built with clang, though it is only regularly tested on Mac and known to have problems on Linux. To do so you'll need to build clang from SVN along with LLVM. If you're using clang (*revision 135210*), you will also need to check out compiler-rt *revision 133487* (later revisions are broken):
+The Rust runtime can be built with clang, though it is only regularly tested on Mac and known to have problems on Linux. To do so you'll need to build clang from SVN along with LLVM. If you're using clang (*revision 137491*), you will also need to check out compiler-rt *revision 133487* (later revisions are broken):
 
 ```sh
 cd llvm/projects
@@ -56,7 +56,7 @@ svn co -r133487 http://llvm.org/svn/llvm-project/compiler-rt/trunk compiler-rt
 
 ```sh
 cd llvm/tools
-svn co -r 135210 http://llvm.org/svn/llvm-project/cfe/trunk clang
+svn co -r137491 http://llvm.org/svn/llvm-project/cfe/trunk clang
 ```
 
 Rust's configure script will automatically use clang if it finds an appropriate version; otherwise, it will use gcc.
