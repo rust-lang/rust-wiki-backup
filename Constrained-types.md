@@ -52,7 +52,13 @@ it would be strange if `f`'s argument had to be immutable and `g`'s was mutable,
 
 * Solution (3) poses a refactoring hazard: adding a perfectly good constraint on `x` to an existing function `f` with argument `x` could render the code ill-typed if `f`'s body assigns to `x`.
 
+*  For functions, the constraint applies to the _caller's_ view of the argument, but mutation applies to the _callee's_ view of the argument.
+
 * What to do about variants? Can individual tags have constraints, as well as product types? (What about constraints that say "this data structure was built with tag X"? That could be faked with predicates, but maybe syntax for it would be nice.)
+
+## Another possibility
+
+This possibility requires a more pervasive change to the language, but what if argument slots were immutable and Rust had an additional assignment operator, `:=`? The semantics of `a := b` -- where `b` must be an argument of the nearest lexically enclosing function, and `a` must be a local variable that's not an argument -- are that the compiler must statically reject this code if it's impossible to do copy propagation, eliminating the binding for `a` while preserving all constraints. That is, if `b` has constraints and the function body ever mutates `a` again, this code would be rejected, as a constraint could be violated that way. Call it a "virtual assignment" operator.
 
 ## Other notes
 
