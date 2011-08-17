@@ -48,6 +48,8 @@ Introduce nominal records. Constraints can only be on nominal records, not on tu
 
 it would be strange if `f`'s argument had to be immutable and `g`'s was mutable, or vice versa.
 
+* Each of the three possibilities in the "design space" section also applies for arguments that have constrained types. For consistency, it would be desirable to apply a consistent policy to arguments and to locals.
+
 * What to do about variants? Can individual tags have constraints, as well as product types? (What about constraints that say "this data structure was built with tag X"? That could be faked with predicates, but maybe syntax for it would be nice.)
 
 ## Other notes
