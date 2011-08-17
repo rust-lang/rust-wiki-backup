@@ -27,7 +27,7 @@ There are three possible solutions:
 2. Allow declaring `x` as type `odd`, and statically require every write `x = y` (for any `y`) to be preceded (on every incoming path) by `check odd(y);`
 3. Disallow `let` declarations with explicit type `odd` (or any other constrained type).
 
-(2) is troublesome as no other part of the language says anything about constraints on mutable data. It would be a bit inconsistent to handle constrained types differently from predicate constraints.
+(2) is troublesome as no other part of the language says anything about constraints on mutable data. It would be a bit inconsistent to handle constrained types differently from predicate constraints. Also, this solution requires a pretty wide interface between the typechecker and typestate: there has to be a way for the typechecker to record hints saying "there needs to be a check for this constraint holding for this subexpression because it's an RHS of an assignment to something with a constrained type", since the need for the check isn't locally syntactically apparent.
 
 (1) is confusing because in this scenario, the static type of a declaration for `x` -- `odd` in this example -- doesn't make it immediately obvious what type `x` has in *every* context. If `x` is declared `odd`, but on some control paths it actually has type `int`, that's an unusual use of a static type declaration.
 
