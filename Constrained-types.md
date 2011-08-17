@@ -50,6 +50,8 @@ it would be strange if `f`'s argument had to be immutable and `g`'s was mutable,
 
 * Each of the three possibilities in the "design space" section also applies for arguments that have constrained types. For consistency, it would be desirable to apply a consistent policy to arguments and to locals.
 
+* Solution (3) poses a refactoring hazard: adding a perfectly good constraint on `x` to an existing function `f` with argument `x` could render the code ill-typed if `f`'s body assigns to `x`.
+
 * What to do about variants? Can individual tags have constraints, as well as product types? (What about constraints that say "this data structure was built with tag X"? That could be faked with predicates, but maybe syntax for it would be nice.)
 
 ## Other notes
