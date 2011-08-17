@@ -38,6 +38,8 @@ At the moment, macros can only destructure `#<>`, `#{}`, and `[]`. It suffices, 
     BalancedLexemes → "{" BalancedLexemes "}"
     BalancedLexemes → AnyOtherLexeme *
 
+The macro system will need a way to call back into the parser to turn the lexemes into actual syntax. This is non-trivial, especially ergonomics-wise, but should be doable, and would allow for a great deal of flexibility in macro definition.
+
 ## Expansion order
 Expansion should be outside-in. This means that macros will need to expand code that has macro invocations in it. This means that the AST will need nodes representing macro invocations.
 
