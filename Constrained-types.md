@@ -19,9 +19,13 @@ This program is perfectly acceptable. On the other hand, consider this program (
 
 where we omit the `check`. The typechecker or typestate pass (one or the other) needs to be able to reject this program. 
 
-(Ok, I'm getting lost here. I can see why we didn't want subsequent assignments to `x`. But why did we decide it wasn't even a good idea to allow `odd` in the decl for `x`? It seems like here, it would be pretty easy for the typechecker to generate a hint for typestate that says "make sure you already know `odd(y)` at this point".)
+## Design space
 
-[To be continued...]
+There are three possible solutions:
+
+1. Allow declaring `x` as type `odd`, but with the caveat that the semantics of `let x : odd = y` don't imply that `odd(x)` holds everywhere in the scope of `x`.
+2. Allow declaring `x` as type `odd`, and statically require every write `x = y` (for any `y`) to be preceded (on every incoming path) by `check odd(y);`
+3. Disallow `let` declarations with explicit type `odd` (or any other constrained type).
 
 ## Solution
 
