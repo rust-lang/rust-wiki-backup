@@ -39,7 +39,14 @@ Introduce nominal records. Constraints can only be on nominal records, not on tu
 
 ## Unresolved questions
 
-* Disallowing mutation on constrained variables seems to suggest that, for consistency, function arguments that are mentioned in a function precondition should also be made immutable. But that introduces another question: in general, argument slots are mutable. Is making an exception for constrained arguments too confusing?
+* Disallowing mutation on constrained variables seems to suggest that, for consistency, function arguments that are declared with constrained types should also be made immutable. But that introduces another question: in general, argument slots are mutable. Is making an exception for arguments with constrained types too confusing?
+
+* Then, if arguments with constrained types are immutable, for consistency, arguments mentioned in a function precondition constraint should also be immutable. That is, in the following two example function signatures (where the definitions of the `odd` type and the `odd` predicate are as above):
+
+    fn f(x:odd) { ... }
+    fn g(x:int) : odd(x) { ... }
+
+it would be strange if `f`'s argument had to be immutable and `g`'s was mutable, or vice versa.
 
 * What to do about variants? Can individual tags have constraints, as well as product types? (What about constraints that say "this data structure was built with tag X"? That could be faked with predicates, but maybe syntax for it would be nice.)
 
