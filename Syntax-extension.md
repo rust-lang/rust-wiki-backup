@@ -33,10 +33,10 @@ At the moment, macros can only destructure `#<>`, `#{}`, and `[]`. It suffices, 
 
 ## Proposed
     Expr → "#" Path BalancedLexemes
-    BalancedLexemes → "(" BalancedLexemes ")"
-    BalancedLexemes → "[" BalancedLexemes "]"
-    BalancedLexemes → "{" BalancedLexemes "}"
-    BalancedLexemes → AnyOtherLexeme *
+    BalancedLexemes → "(" BalancedLexemes * ")"
+    BalancedLexemes → "[" BalancedLexemes * "]"
+    BalancedLexemes → "{" BalancedLexemes * "}"
+    BalancedLexemes → AnyOtherLexeme
 
 The macro system will need a way to call back into the parser to turn the lexemes into actual syntax. This is non-trivial, especially ergonomics-wise, but should be doable, and would allow for a great deal of flexibility in macro definition.
 
