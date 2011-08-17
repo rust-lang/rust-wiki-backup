@@ -8,11 +8,12 @@ Pull-requests will be treated as "review requests", and we will give feedback we
 
 h2. Conduct
 
+* We are committed to providing a friendly, safe and welcoming environment for all, regardless of gender, sexual orientation, disability, ethnicity, religion, or similar personal characteristic.
 * Please be kind and courteous. There's no need to be mean or rude.
 * Respect that people have differences of opinion and that every design or implementation choice carries a trade-off and numerous costs. There is seldom a right answer.
 * Please keep unstructured critique to a minimum. If you have solid ideas you want to experiment with, make a fork and see how it works.
-* We will exclude you from interaction if you insult, demean or harass anyone. That is not welcome behaviour.
-* Likewise any spamming, trolling, flaming, baiting or other attention-stealing behaviour.
+* We will exclude you from interaction if you insult, demean or harass anyone. That is not welcome behaviour. We interpret the term "harassment" as including of the definition in the <a href="http://citizencodeofconduct.org/">Citizen Code of Conduct</a>; if you have any lack of clarity about what might be included in that concept, please read their definition.
+* Likewise any spamming, trolling, flaming, baiting or other attention-stealing behaviour is not welcome.
 
 h2. Contributed code requirements:
 
