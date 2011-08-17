@@ -43,8 +43,8 @@ Introduce nominal records. Constraints can only be on nominal records, not on tu
 
 * Then, if arguments with constrained types are immutable, for consistency, arguments mentioned in a function precondition constraint should also be immutable. That is, in the following two example function signatures (where the definitions of the `odd` type and the `odd` predicate are as above):
 
-    fn f(x:odd) { ... }
-    fn g(x:int) : odd(x) { ... }
+        fn f(x:odd) { ... }
+        fn g(x:int) : odd(x) { ... }
 
 it would be strange if `f`'s argument had to be immutable and `g`'s was mutable, or vice versa.
 
