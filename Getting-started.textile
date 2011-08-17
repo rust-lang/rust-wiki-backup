@@ -1,6 +1,6 @@
 h3. Prerequisites
 
-Version numbers listed here are "what we're using"; the code may well work with earlier versions of these tools, we do not know minimum version requirements.
+Version numbers listed here are "what we're using"; the code may well work with earlier versions of these tools, but we don't know minimum version requirements.
 
 * A recent Linux, OS X or Win32 system
 * "Python 3.1":http://www.python.org/download/ (versions as old as Python 2.6.2 have also been used successfully)
