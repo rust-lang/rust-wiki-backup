@@ -27,15 +27,21 @@ There are three possible solutions:
 2. Allow declaring `x` as type `odd`, and statically require every write `x = y` (for any `y`) to be preceded (on every incoming path) by `check odd(y);`
 3. Disallow `let` declarations with explicit type `odd` (or any other constrained type).
 
+(2) is troublesome as no other part of the language says anything about constraints on mutable data. It would be a bit inconsistent to handle constrained types differently from predicate constraints.
+
+(1) is confusing because in this scenario, the static type of a declaration for `x` -- `odd` in this example -- doesn't make it immediately obvious what type `x` has in *every* context. If `x` is declared `odd`, but on some control paths it actually has type `int`, that's an unusual use of a static type declaration.
+
 ## Solution
 
-Disallow constrained type names as an explicit type on the LHS of a declaration. Constrained type names can only appear as data structure field types, and function argument types.
+So, Solution (3) seems like the most appealing one: Disallow constrained type names as an explicit type on the LHS of a declaration. Constrained type names can only appear as data structure field types, and function argument types. 
 
 Introduce nominal records. Constraints can only be on nominal records, not on tuples or structural records. 
 
 ## Unresolved questions
 
-What to do about variants? Can individual tags have constraints, as well as product types? (What about constraints that say "this data structure was built with tag X"? That could be faked with predicates, but maybe syntax for it would be nice.)
+* Disallowing mutation on constrained variables seems to suggest that, for consistency, function arguments that are mentioned in a function precondition should also be made immutable. But that introduces another question: in general, argument slots are mutable. Is making an exception for constrained arguments too confusing?
+
+* What to do about variants? Can individual tags have constraints, as well as product types? (What about constraints that say "this data structure was built with tag X"? That could be faked with predicates, but maybe syntax for it would be nice.)
 
 ## Other notes
 
