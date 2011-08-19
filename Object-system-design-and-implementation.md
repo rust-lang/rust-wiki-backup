@@ -95,7 +95,7 @@ This behavior is implemented using, once again, a stack that keeps track of what
 
 ## Self-types
 
-The notion of self-type, or "the type of the current object", is a type-theoretic approach to reasoning about the semantics of self-dispatch (and expressions involving "self" in general).  Object extension and method overriding are the situations that make self-types most useful and interesting, since, as illustrated above, those are the situations that change the meaning of "self" at run-time.  Although the Rust implementation doesn't use self-types as such, it's possible that what Rust has would fit into a self-types theory of objects.
+The notion of self-type, or "the type of the current object", is a type-theoretic approach to reasoning about the semantics of self-dispatch (and expressions involving "self" in general).  Object extension and method overriding are the situations that make self-types most useful and interesting, since, as illustrated above, those are the situations that change the meaning of "self" at run-time.  Although the Rust object system doesn't use self-types explicitly, it's possible that what Rust has would fit into a theory of objects that uses self-types.
 
 ### Some relevant literature
 
