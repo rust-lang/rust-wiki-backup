@@ -1,4 +1,4 @@
-At the time of this writing, Rust has a lightweight, structural object system with support for self-dispatch, method overriding, and object restriction.
+At the time of this writing (August 2011), Rust has a lightweight, structural object system with support for self-dispatch, method overriding, and object restriction.
 
 ## Self-dispatch
 
@@ -48,97 +48,62 @@ An example of Rust's object extension syntax:
     assert (longcat.zzz() == "meow");
 ```
 
-Here we're extending `shortcat` (see `with shortcat` clause) with two new methods to create an object called `longcat`.  The expression being assigned to `longcat` is what Rust calls an anonymous object expression.  It's not a definition as for `shortcat`, rather, it's an expression that can appear in any expression context and evaluates to an object.  No constructor is called; instead, the object is created "inline".
+Here we're extending `shortcat` (see `with shortcat` clause) with two new methods to create an object called `longcat`.  The expression being assigned to `longcat` is what Rust calls an _anonymous object expression_.  It's not a definition as for `shortcat`, rather, it's an expression that can appear in any expression context and evaluates to an object.  No constructor is called; instead, the object is created "inline".
 
-`longcat` is a bona fide object with five entries in its vtable.  Of those, `lol` and `nyan` are "normal" entries, and the others are "forwarding functions" that, roughly speaking, forward us along to the appropriate vtable entries from `shortcat`.  (Vtable entries appear in alphabetical order: `ack`, `lol`, `meow`, `nyan`, `zzz`.)  Rather than "copying forward" stuff from the object being extended, Rust puts a wrapper around it.
+`longcat` is a bona fide object with five entries in its vtable, appearing in alphabetical order: `ack`, `lol`, `meow`, `nyan`, `zzz`.  Rather than "copying forward" stuff from the object being extended, Rust puts a wrapper around it: `lol` and `nyan` are "normal" vtable entries, and the others are "forwarding functions" that, roughly speaking, forward us along to the appropriate vtable entries from `shortcat`.
 
 ### Backwarding
 
-When we call `longcat.zzz()`, we're forwarded along to `shortcat`'s vtable entry for `zzz`, which contains the compiled code for `ret self.meow()`.  However, `shortcat`'s vtable (which contains three entries, `ack`, `meow`, and `zzz`, in that order) was created under the assumption that `self` is `shortcat`.  The 
+When we call `longcat.zzz()`, we're forwarded along to `shortcat`'s vtable entry for `zzz`, which contains the compiled code for `ret self.meow()`.  However, `shortcat`'s vtable (which contains three entries, `ack`, `meow`, and `zzz`, in that order) was created under the assumption that `self` is `shortcat`.  The call to `self.meow()` therefore compiles to the equivalent of "do whatever the (zero-indexed) slot 1 in my vtable says to do".  At this point, `self` is supposed to be `longcat`, but if we simply use `longcat` for `self`, since the zero-indexed slot 1 of `longcat` will be the wrong method -- `lol` instead of `meow`.
 
+We need whatever we use for `self` inside `shortcat` to have the same type as `shortcat` does.  By "same type", we mean that its vtable must have the same number of methods, with the same names, in the same order, and having the same types as the original.  We accomplish this by adding another level of indirection.  When we create the forwarding functions, we replace `self` with a vtable that contains three "_backwarding_" unctions, one for each of the original three methods `ack`, `meow`, and `zzz`, which point to the corresponding entries in `longcat`'s vtable.  From there, of course, they'll forward right back to `shortcat`'s vtable -- unless they're being overridden.
+ 
+## Overriding
 
+Rust allows methods in an extended object to override methods on the original:
 
+```
+    let longercat = obj() {
+        fn meow() -> str {
+            ret "zzz";
+        }
+        with shortcat
+    };
 
+    assert (longercat.zzz() == "zzz");
+```
 
-The reason all this is relevant to self-types is that having self-types is particularly useful in a situation that has some form of inheritance (even if it's "only" prototype-style inheritance).  As a concrete example, say you have the following:
+Here, the call `longercat.zzz()` will forward us to the `zzz` method on `shortcat`.  The call `self.meow()` will use the backwarding vtable provided for `shortcat`, which will point us to `longercat.meow()`, which returns "zzz", as we expect.  So we get the overriding behavior "for free" with the backwarding/forwarding architecture that makes object extension possible.
 
-     obj a() {
-         fn foo() -> int {
-                ret 2;
-         }
-         fn bar() -> int {
-                ret self.foo();
-         }
-     }
+## Multi-level extension
 
-     auto my_a = a();
-     auto my_b = obj { fn baz() -> int { ret self.foo() } with my_a };
+Objects can be extended to arbitrary depth.  At this point, we could write:
 
-Here we're making up syntax to extend the `my_a` object with an additional method `baz`, creating an object `my_b`.  Since it's an object, `my_b` is a pair of a vtable pointer and a body pointer:
+```
+    let evenlongercat = obj() {
+        fn meow() -> str {
+            ret "zzzzzz";
+        }
+        with longercat
+    };
 
-     my_b: [vtbl* | body*]
+    // Tests two-level forwarding/backwarding + self-call + override.
+    assert (evenlongercat.zzz() == "zzzzzz");
+```
 
-`my_b`'s vtable has entries for `foo`, `bar`, and `baz`, whereas `my_a`'s vtable has
-only `foo` and `bar`.  `my_b`'s 3-entry vtable consists of two forwarding functions and one real method.
+This behavior is implemented using, once again, a stack that keeps track of what vtable should be used for `self`.  This stack is pushed and popped each time a forwarding or backwarding call is made, respectively, and is threaded through the run-time stack using space allocated in the forwarding and backwarding functions' frames.
 
-`my_b`'s body just contains the pair `a: [ a_vtable | a_body ]`, wrapped up
-with any additional fields that `my_b` added.  None were added, so `my_b`
-is just the wrapped inner object.
+## Self-types
 
-When we call `my_b.foo()`, it calls `self.a.foo()`, essentially, and that
-latter call passes the `my_a` object as 'self' to `a.foo()`.  This is
-"wrapping the inner object to appear like the outer object".
+The notion of self-type, or "the type of the current object", is a type-theoretic approach to reasoning about the semantics of self-dispatch (and expressions involving "self" in general).  Object extension and method overriding are the situations that make self-types most useful and interesting, since, as illustrated above, those are the situations that change the meaning of "self" at run-time.  Although the Rust implementation doesn't use self-types as such, it's possible that what Rust has would fit into a self-types theory of objects.
 
-The less-expected direction, wrapping the outer object to appear like
-the inner, happens when we *override* a method in `my_a`, rather than just extend it.  Suppose we
-have an object that extends `my_a`, overriding `foo`:
+### Some relevant literature
 
-     auto my_c = obj { fn foo() -> int { ret 3; } with my_a };
+Bono et al. [1] write: "an appropriate type for self would allow to specialize automatically those inherited/overridden methods that either return the host object, or have some parameters of the same
+type as the host object (binary methods)" -- that is, return `self` and take arguments of
+type `self`  Fisher et al. [2] is another example of a system with self-types, and like Bono et al., deals with nesting.
 
-Now, if we call `my_c.bar()`, it calls `self.a.bar()`, which passes the
-my_c object as 'self' to `a.bar()`, which calls looks up the `foo()`
-method of self, so it should hit `my_c.foo()` and return 3 rather than 2.
-
-## Hopefully-relevant literature
-
-Bono et al. [1] say: "an appropriate type for self would allow
-to specialize automatically those inherited/overridden methods that
-either return the host object, or have some parameters of the same
-type as the host object (binary methods)."  These sound like the
-things we want to be able to do: return self and take arguments of
-type self -- I hadn't thought about the problem as one having to do
-with inheritance.
-
-In the second section of [1]:
-
-  * "It might seem natural to identify objects with recursive records, 
-their types with recursive types, but this is misleading." Curious to
-see why.
-
-  * "This paper might be seen as a first step towards introducing selftypes in real programming languages as an alternative to typecasts."  Great!  That's what we want!
-
-  * The notation `M <= i` extracts the `i`-th method from object `M`.  Operational semantics: `pro s<M_1, M_2> <= i --> M_i[pro s<M1, M2>/s]`.  That is, extracting the `i`-th method gives us `M_i` but with `pro s<M1, M2>` in place of occurrences of the bound variable `s`.  This smacks of recursive types.
-
-  * "Another reason why we do not want to use recursive types is that we certainly want to distinguish between `pro s<3, pro s<2, s>>` and `pro s<2, s>`."  To me this just sounds like we're saying that we want
-iso-recursive types rather than equi-recursive types.
-
-Fisher et al. [2] is another example of a system with self-types, and like Bono et al., deals with nesting.  I like the notation better, and the ideas are nice (lambda-tastic object encodings), but I don't see immediate relevance to the problem of assigning a type to `self` -- although I'm probably missing something.
-
-Abadi and Cardelli's "Theory of Objects" tutorial from OOPSLA '96 [3] looks kind of promising.  Slide 42 (p. 11 of the PDF) lists a bunch of object calculi with various features.  it appears from this that the
-simplest object calculus with self types is ςOb ("sigma-ob").  Of the features they're considering, sigma-ob
-has only objects, object types, subtyping, and self types.  Notably, it doesn't have recursive types.  (Interestingly, two of the systems that they list as having recursive types also have an open (not-filled-in) circle in the "self-types" spot -- I don't know what it means, but maybe it means something like "can encode self-types".  What else do those systems have that would enable such an encoding?  Subtyping?  Variance?  (What's variance?)
-
-The sigma-ob paper [4], which I'm reading now, is looking very promising.  I haven't got my head around it yet completely, but it explains why, if we used regular recursive types to try and implement self, that would just be *wrong* in the presence of method override.  They offer two fixes for this problem.  The fix laid out in [4] uses a second-order quantifier sigma (different from the sigma appearing at the term level!) that I don't understand yet.  The other fix is "the standard solution", which is apparently what Modula-3 did, and is laid out in [5].  I'm going to look into the latter next.  Apparently the disadvantage of that solution is that it  "sacrifices static typing information which must be recorvered dynamically, thus abandoning the static typing of subsumption".  I'm not entirely sure what that means yet.
-
-Also, suggested by mccr8 ("self types sound a little like the typing issues involved with typing functions with explicit self parameters, as arise in the typed compilation of OO languages"):
-
- * http://research.microsoft.com/apps/pubs/default.aspx?id=59934  
-   A simple typed intermediate language for object-oriented languages.  Juan Chen and David Tarditi.  POPL 2005. ("focuses just on the encoding technique" -- mccr8)
-
- * http://contrapunctus.net/league/research/papers/pip03.pdf
-   Precision in practice: A type-preserving Java compiler.  C. League, Z. Shao, and V. Trifonov.  CC 2003. 
-
----
+Abadi and Cardelli's "Theory of Objects" tutorial from OOPSLA '96 [3] suggests that the simplest object calculus with self types is ςOb ("sigma-ob"), (Slide 42 (p. 11 of the PDF).  Of the features they consider, sigma-ob has only objects, object types, subtyping, and self types.  The sigma-ob paper [4]  explains why using ordinary recursive types to try to implement self doesn't work in the presence of method override.  They offer two fixes for this problem.  The fix laid out in [4] uses a "Self quantifier"; the other fix is "the standard solution", which is apparently what Modula-3 did, and is laid out in [5]; its disadvantage is that it  "sacrifices static typing information which must be recovered dynamically, thus abandoning the static typing of subsumption".
 
 [1] Type Inference for Nested Self Types.  Viviana Bono, Jerzy Tiuryn,
 and Pawel Urzyczyn.
@@ -156,10 +121,3 @@ http://lucacardelli.name/Papers/PrimObj2ndOrder.A4.pdf
 
 [5] A theory of primitive objects: Untyped and first-order systems. Martín Abadi and Luca Cardelli. 
 http://lucacardelli.name/Papers/PrimObj1stOrder.A4.pdf
-
-
-
-
-
-
-
