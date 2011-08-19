@@ -168,6 +168,8 @@ We won't add a new `check-volatile` construct. Instead, the "unsafeword" will be
 
 We will rename `pred` to `pure fn` so that one phrase can be used to declare pure fns regardless of their return type.
 
+It'll only be possible to call things either declared as `pure fn`, or promoted to `pure fn` status by the compiler, from a `check`. But a `pure fn` can use a block tagged with an unsafeword to circumvent the effect-checking rules.
+
 Syntax for the unsafeword is still up for debate. Graydon suggested some possibilities:
 
     #[impure] {     // no keywords, jump up to attribute system
