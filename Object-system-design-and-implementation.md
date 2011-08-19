@@ -1,10 +1,64 @@
-My project for the summer is to design and implement self-types (that is, "the type of the current object", as found in, for example, Scala) for the Rust type system.  The only notion of "self" that I've implemented so far is support for self-calls like `self.foo()`.  `self` still doesn't exist as a standalone, first-class entity; right now, it's nothing more than a magic prefix to method calls, and you can't do things like return `self`, nor can you write functions that take arguments of type `self`. For that, we need self-types.
+At the time of this writing, Rust has a lightweight, structural object system with support for self-dispatch, method overriding, and object restriction.
 
-## Method overriding/addition/restriction
+## Self-dispatch
 
-The Rust documentation says that "method overriding and object restriction are performed explicitly on object values", but method overriding and object restriction are not actually implemented yet; neither is method addition.  We'd like to implement method overriding in a way that works more or less analogously to our existing functional record update, which is available in Rust via the `with` syntax.  (We don't have, and probably don't need, similar operations on records that are analogous to method addition or restriction, as in actually adding fields to a record or removing them).
+Here's a very simple example of an object where a method contains a self-call:
 
-For objects, rather than "copying forward" stuff from the extended-or-overridden object, we would wrap it in an adaptor.  (Graydon: "All delegation is wrapping.")  We'd have an expression form that would look something like `obj { fn foo() { ... new method ... } with other_obj }`, where `other_obj` is an already-defined object.  So, step one for implementing this would be "anonymous object expressions", and then object expressions that wrap inner objects.  This is kind of like prototype-based OO, although according to Graydon, we're "flattening the prototype chain".
+```
+    obj cat() {
+        fn ack() -> str {
+            ret "ack";
+        }
+        fn meow() -> str {
+            ret "meow";
+        }
+        fn zzz() -> str {
+            ret self.meow();
+        }
+    }
+
+    let shortcat = cat();
+
+    assert (shortcat.zzz() == "meow");
+```
+
+Here we have an object definition, or _object item_ as it's called in Rust.  This definition causes there to be a constructor `cat`; we're calling that constructor to create an object called `shortcat`.  One of the methods on that object contains a self-call.
+
+If the parser sees the token `self`, it assumes that whatever follows the dot is a call expression, and it parses the function part of that call expression into a special flavor of AST node (`expr_self_method`).  During typechecking, the crate context keeps a stack `obj_infos` to track the current object, so when it comes time to typecheck a self-call, we grab `self`'s type out of the current object type.  During translation, we again have a context that keeps track of the current object, if there is one, so we can look up the method's identifier on that object in much the same way that we would look up a field of a record.
+
+### Limitations of `self`
+
+Rust's notion of `self` is currently limited to support for self-calls like `self.meow()`.  The only thing you can put after the dot is an identifier, and `self` doesn't exist as a standalone, first-class entity; it's nothing more than a prefix to method calls.  You can't do things like return `self` from a method, nor can you write methods that explicitly take arguments of type `self`. 
+
+## Object extension
+
+An example of Rust's object extension syntax:
+
+```
+    let longcat = obj() {
+        fn lol() -> str {
+            ret "lol";
+        }
+        fn nyan() -> str {
+            ret "nyan";
+        }
+        with shortcat
+    };
+
+    assert (longcat.zzz() == "meow");
+```
+
+Here we're extending `shortcat` (see `with shortcat` clause) with two new methods to create an object called `longcat`.  The expression being assigned to `longcat` is what Rust calls an anonymous object expression.  It's not a definition as for `shortcat`, rather, it's an expression that can appear in any expression context and evaluates to an object.  No constructor is called; instead, the object is created "inline".
+
+`longcat` is a bona fide object with five entries in its vtable.  Of those, `lol` and `nyan` are "normal" entries, and the others are "forwarding functions" that, roughly speaking, forward us along to the appropriate vtable entries from `shortcat`.  (Vtable entries appear in alphabetical order: `ack`, `lol`, `meow`, `nyan`, `zzz`.)  Rather than "copying forward" stuff from the object being extended, Rust puts a wrapper around it.
+
+### Backwarding
+
+When we call `longcat.zzz()`, we're forwarded along to `shortcat`'s vtable entry for `zzz`, which contains the compiled code for `ret self.meow()`.  However, `shortcat`'s vtable (which contains three entries, `ack`, `meow`, and `zzz`, in that order) was created under the assumption that `self` is `shortcat`.  The 
+
+
+
+
 
 The reason all this is relevant to self-types is that having self-types is particularly useful in a situation that has some form of inheritance (even if it's "only" prototype-style inheritance).  As a concrete example, say you have the following:
 
@@ -102,3 +156,10 @@ http://lucacardelli.name/Papers/PrimObj2ndOrder.A4.pdf
 
 [5] A theory of primitive objects: Untyped and first-order systems. Martín Abadi and Luca Cardelli. 
 http://lucacardelli.name/Papers/PrimObj1stOrder.A4.pdf
+
+
+
+
+
+
+
