@@ -19,6 +19,7 @@ Here's a very simple example of an object where a method contains a self-call:
 
     let shortcat = cat();
 
+    // Tests self-call.
     assert (shortcat.zzz() == "meow");
 ```
 
@@ -45,6 +46,7 @@ An example of Rust's object extension syntax:
         with shortcat
     };
 
+    // Tests forwarding/backwarding + self-call.
     assert (longcat.zzz() == "meow");
 ```
 
@@ -70,6 +72,7 @@ Rust allows methods in an extended object to override methods on the original:
         with shortcat
     };
 
+    // Tests forwarding/backwarding + self-call + override.
     assert (longercat.zzz() == "zzz");
 ```
 
