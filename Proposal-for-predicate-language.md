@@ -161,3 +161,22 @@ We extend the principle of allowing the user to violate safety rules as long as 
 Allowing general (possibly-impure) predicates has no effect on type soundness; only on the guarantee to the user about how much confidence they can have about the relationship between the high-level invariants in the code they write, and in the code they run. Declaring uses of general predicates as unsafe (using the `check-volatile` keyword) should be a warning sign to the user that they should tread carefully (that is, the predicate writer and the predicate user have a shared proof obligation to ensure that semantically, predicates and their uses are referentially transparent). At the same time, the distinction between general and pure predicates affords the expressivity to use any Rust function as a predicate.
 
 In the best case, the predicate writer ensures that the predicate is actually referentially transparent in all cases, which means the predicate user's obligations are vacuous. In general, we would expect that there is a set of certain restricted conditions under which the predicate behaves referentially transparently, in which case it's the predicate writer's job to specify those conditions and the predicate user's job to satisfy them at all call sites.
+
+## Provisional solution (August 18, 2011)
+
+We won't add a new `check-volatile` construct. Instead, the "unsafeword" will be attached to the callee, not the caller.
+
+We will rename `pred` to `pure fn` so that one phrase can be used to declare pure fns regardless of their return type.
+
+Syntax for the unsafeword is still up for debate. Graydon suggested some possibilities:
+    #[impure] {     // no keywords, jump up to attribute system
+      x = foo();
+    }
+
+     impure {        // takes a new keyword
+      x = foo();
+    }
+
+    claim pure {    // reuses, though blurs, keywords
+      x = foo();
+    }
