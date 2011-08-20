@@ -1,4 +1,4 @@
-At the time of this writing (August 2011), Rust has a lightweight, structural object system with support for self-dispatch, method overriding, and object restriction.
+At the time of this writing (August 2011), Rust has a lightweight, structural object system with support for self-dispatch, object extension, and method overriding.
 
 ## Self-dispatch
 
