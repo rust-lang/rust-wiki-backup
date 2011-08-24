@@ -40,7 +40,7 @@ bc. iter pairs() -> (int,int) {
 fn main() {
   let i = 10;
   let j = 0;
-  for each p in pairs()) {
+  for each p in pairs() {
       let (x, y) = p;
       log x
       log y
