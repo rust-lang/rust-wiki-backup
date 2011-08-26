@@ -1,5 +1,7 @@
 This page is an attempt to catalogue places in the compiler, and in the standard Rust libraries, where the addition of a typestate constraint would improve quality.
 
+All "types" suggestions probably require nominal records -- see [[Constrained types]].
+
 _This list is incomplete. You can help by adding to it._
 
 ## Compiler
