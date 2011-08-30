@@ -2,6 +2,8 @@
 
 ## Problem
 
+How should the typechecker generate constraints for typestate to solve, specifically those that arise from uses of constrained types?
+
 Mutation of local variables that have constrained types explicitly assigned to them means that programmers can introduce all kinds of type assertions that can't be checked in the typechecker (because it doesn't do typestate), and can't be checked in typestate (because these assertions are non-local).
 
 For example, consider the following program:
@@ -35,7 +37,7 @@ There are three possible solutions:
 
 So, Solution (3) seems like the most appealing one: Disallow constrained type names as an explicit type on the LHS of a declaration. Constrained type names can only appear as data structure field types, and function argument types. 
 
-Introduce nominal records. Constraints can only be on nominal records, not on tuples or structural records. 
+Introduce nominal records. Constraints can only be on nominal records, not on tuples or structural records. (This makes constrained types analogous to calls to functions that have constraints: we add a single introduction form for constrained types, otherwise known as a data constructor.)
 
 ## Unresolved questions
 
@@ -55,6 +57,8 @@ it would be strange if `f`'s argument had to be immutable and `g`'s was mutable,
 *  For functions, the constraint applies to the _caller's_ view of the argument, but mutation applies to the _callee's_ view of the argument.
 
 * What to do about variants? Can individual tags have constraints, as well as product types? (What about constraints that say "this data structure was built with tag X"? That could be faked with predicates, but maybe syntax for it would be nice.)
+
+* Nominal records: could we avoid adding them to the language, and instead, encode them as product types using the ```tag``` construct and a field that has a structural record type?
 
 ## Another possibility
 
