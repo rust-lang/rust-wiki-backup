@@ -35,3 +35,9 @@ _This list is incomplete. You can help by adding to it._
 #### Functions
 
 [IMPLEMENTED] `zip` -- could have a precondition indicating that both arguments have the same length.
+
+## Bigger ideas
+
+Typestate for array bounds checking? The idea is that if we have a constraint in the environment like ```le_len_of(x, v)```, where `x:uint` and `v:vec<T>`, then `v[x]` shouldn't require a dynamic bounds check.
+
+However, this would violate the idea that typestate constraints don't have semantics and need not in order to guarantee type soundness.
