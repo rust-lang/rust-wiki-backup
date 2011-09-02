@@ -43,7 +43,7 @@ Valid directives include:
 * `compile-flags:[...]` - Additional arguments to pass to the compiler
 * `pp-exact` - The test should pretty-print exactly as written
 * `pp-exact:[filename]` - The pretty-printed test should match the example in `filename`
-* `xfail-stage[N]` - Test is broken in stage[N]
+* `xfail-test` - Test is broken, don't run it
 * `xfail-fast` - Don't run as part of check-fast, a special win32 test runner (some tests don't work with it)
 * `xfail-pretty` - Test is doesn't pretty-print correcty
 
