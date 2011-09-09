@@ -195,7 +195,7 @@ h3. Why aren't function signatures inferred? Why only local slots?
 * The same simplification goes double for human readers. A reader does not need an IDE running an inference algorithm across an entire crate to be able to guess at a function's argument types; it's always explicit and nearby.
 * Parameters in Rust can be passed by reference or by value. We can't automatically infer which one the programmer means.
 
-h3. Why can't stateful objects have destructors? Why only immutable ones?
+h3. Why can't resources contain stateful values?
 
 Because statefulness places an object's destruction sequence under control of the garbage collection system, rather than the reference counting system, and this makes it potentially unclear which order to destroy objects in (the garbage graph may be cyclic, in which case there is no meaning to "top-down".)
 
