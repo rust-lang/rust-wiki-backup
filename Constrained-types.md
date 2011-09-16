@@ -68,6 +68,8 @@ This possibility requires a more pervasive change to the language, but what if a
 
 Typestate _has_ to happen after typechecking -- unless type inference has already occurred, we don't have access to information about which nodes have constrained types, and thus can't check the relevant constraints.
 
+Open question: should the compiler be able to use refinements (for example, "this refinement on tag T never has constructor a") to eliminate some `alt` checks? This introduces some more machinery and would mean, for the first time, that type soundness involves arguments about the meaning of user-defined predicates.
+
 ## To Do (for Tim)
 
 I'm not even sure whether constrained types that aren't record types (e.g. `odd` above) actually work right now. So checking whether they work would be the first thing for me to do.
