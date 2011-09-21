@@ -76,9 +76,11 @@ On 64-bit Linux, use:
 ```sh
 cd llvm
 CXX='g++ -m32' CC='gcc -m32' CFLAGS=-m32 CXXFLAGS=-m32 LDFLAGS=-m32 ./configure --disable-bindings --{build,host,target}=i686-unknown-linux-gnu --enable-targets=x86,x86_64,cbe --enable-optimized
-make
+CXXFLAGS='-fno-omit-frame-pointer' make
 sudo make install
 ```
+
+(The `-fno-omit-frame-pointer` part is necessary if you want gdb backtraces when an LLVM assertion hits.)
 
 On 32-bit Linux @./configure --enable-optimized; make; make install@ should be sufficient.  If you omit the @--enable-optimized@ flag, it'll work, but more slowly.
 
