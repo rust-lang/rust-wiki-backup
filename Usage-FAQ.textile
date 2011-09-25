@@ -1,10 +1,8 @@
-h3. What does @Common.Semant_err(_, "unsatisfied 'use' clause")@ mean?
-
-Usually it means that Rust couldn't find the library you linked to. If you get this with @use std;@, make sure that you're providing the full path to the standard library on the command line (e.g. @rustboot -L /path/to/rust/src myprog.rs@).
-
 h3. What does it mean when a program exits with @leaked memory in rust main loop (2 objects)' failed, rt/memory_region.cpp:99 2 objects@?
 
-If the previous lines of output indicate failure, probably nothing. It just means the program stopped with an error. Particularly if it's coming from rustc. Rustc is compiled in 'minimal' mode, a hackish mode of rustboot in which we've disabled the unwinder (and numerous other optional cost centers). This means that when rustc encounters a 'fail' statement or any other sort of failure-inducing condition, it exits abruptly, rather than unwinding carefully. The runtime is just complaining about unfreed memory it would normally expect to be free, were the unwinder enabled.
+This message indicates a memory leak, and is mostly likely to happen on rarely exercised failure paths. Note that failure unwinding is not yet implemented on windows so this is expected. If you see this on linux or mac it's a compiler bug; please report it.
 
-This is a temporary hack and will be removed.
+h3. Why does my build fail with a "bad hash on download" message?
+
+This happens when the snapshot compiler failed to download correctly so doesn't have the correct hash. To fix it just delete the mentioned tar.bz2 file from the dl folder in your build directory and run make again.
 
