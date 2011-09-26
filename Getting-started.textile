@@ -124,7 +124,7 @@ There's a quick guide to the source of the compiler in src/comp/README. You shou
 
 h3. Editor support
 
-Syntax highlighting for vim is included in the Rust repository, under src/etc/vim. There is also a "rust-mode for emacs":http://github.com/marijnh/rust-mode.
+Syntax highlighting for vim is included in the Rust repository, under src/etc/vim. There is also a "rust-mode for emacs":http://github.com/marijnh/rust-mode and "a BBEdit plugin":https://github.com/erikrose/rust-bbedit-plugin
 
 h3. The issue tracker
 
