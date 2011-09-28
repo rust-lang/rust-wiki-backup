@@ -45,7 +45,7 @@ Valid directives include:
 * `pp-exact:[filename]` - The pretty-printed test should match the example in `filename`
 * `xfail-test` - Test is broken, don't run it
 * `xfail-fast` - Don't run as part of check-fast, a special win32 test runner (some tests don't work with it)
-* `xfail-pretty` - Test is doesn't pretty-print correcty
+* `xfail-pretty` - Test doesn't pretty-print correcty
 
 There are five directories containing compile tests, living in the src/tests directory:
 
