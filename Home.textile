@@ -6,7 +6,7 @@ This is a very preliminary work in progress. No supported releases yet nor defin
 
 h2. Documentation
 
-* "Latest snapshot PDF - 2011-04-19":https://github.com/downloads/graydon/rust/rust-2011-04-19-snap.pdf
+* Latest snapshot ("HTML":http://www.rust-lang.org/doc/rust.html) ("PDF":http://www.rust-lang.org/doc/rust.pdf)
 
 h2. FAQs
 
