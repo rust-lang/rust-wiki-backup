@@ -52,6 +52,7 @@ Expansion should be outside-in. This means that macros will need to expand code 
 * `when`/`unless`
 * declarative data struture
 * fixed-length arrays
+* `cut`, from [SRFI 26](http://srfi.schemers.org/srfi-26/srfi-26.html).
 
 # Super-simple syntax extension structure
 
