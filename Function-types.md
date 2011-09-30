@@ -41,9 +41,9 @@ take &block(...), meaning &fn&(...)
 named locals w/ capture:
 ------------------------
 
-fn& foo(...) { ... }
-fn~ foo(...) { ... }
-fn@ foo(...) { ... }
+* fn& foo(...) { ... }
+* fn~ foo(...) { ... }
+* fn@ foo(...) { ... }
 
 are all legal forms of declaring a local, named, capture. They capture the
 environment *at the referencing expression*. That is, when I later say 'foo'
@@ -56,9 +56,9 @@ time the capture takes place.
 anonymous immediates locals w/ capture:
 ---------------------------------------
 
-fn&(...) { ... }
-fn~(...) { ... }
-fn@(...) { ... }
+* fn&(...) { ... }
+* fn~(...) { ... }
+* fn@(...) { ... }
 
 capture occurs at the point of evaluation
 
