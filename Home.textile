@@ -30,7 +30,7 @@ h2. Design notes
 * [[Constraints in rustc and libraries]]
 * [[Disjoint union types]]
 * [[Error reporting]]
-* [[Extracted documentation]]
+* [[Function types]]
 * [[Logging vision]]
 * [[Mutable slots]]
 * [[Object system design and implementation]]
