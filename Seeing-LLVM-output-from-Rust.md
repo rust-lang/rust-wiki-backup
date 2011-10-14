@@ -4,11 +4,11 @@
 
 # Long answer
 
-If the test you want to run is in ''test/run-pass/foobar.rs'', the invocation (as described on the [test suite page][The Rust test suite]) is
+If the test you want to run is in `test/run-pass/foobar.rs`, the invocation (as described on the [test suite page][The-Rust-test-suite]) is
 
 `make check TESTNAME=test/run-pass/foobar.rs`
 
-If you stick a ''VERBOSE=1'' in front of that, you'll see what's happening under the hood.  So, for instance:
+If you stick a `VERBOSE=1` in front of that, you'll see what's happening under the hood.  So, for instance:
 
 `VERBOSE=1 make check TESTNAME=test/run-pass/hello.rs`
 
