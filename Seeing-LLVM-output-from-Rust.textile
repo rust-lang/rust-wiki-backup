@@ -1,3 +1,5 @@
+h1. Seeing LLVM output from Rust
+
 h2. Short answer
 
 @--save-temps@ and then use @llvm-dis@ to look at the resulting .bc file.
