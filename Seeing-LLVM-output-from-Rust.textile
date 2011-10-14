@@ -6,7 +6,7 @@ Invoke the Rust compiler with the @--save-temps@ flag:
 
 bc. stage2/bin/rustc ../rust/src/test/run-pass/hello.rs -o test/run-pass/hello.stage2 -O --save-temps
 
-Since the @--save-temps@ was in there, an LLVM bitcode file will now be sitting in @test/run-pass/hello.bc@.  Run it through @llvm-dis@:
+An LLVM bitcode file will now be sitting in @test/run-pass/hello.bc@.  Run it through @llvm-dis@:
 
 bc. llvm-dis test/run-pass/hello.bc
 
