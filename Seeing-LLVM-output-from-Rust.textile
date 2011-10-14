@@ -2,31 +2,9 @@ h1. Seeing LLVM output from Rust
 
 h2. Short answer
 
-@--save-temps@ and then use @llvm-dis@ to look at the resulting LLVM bitcode file.
+Invoke the Rust compiler with the @--save-temps@ flag:
 
-h2. Long answer
-
-If the test you want to run is in @test/run-pass/foobar.rs@, the invocation (as described in [[The Rust test suite]] page) is
-
-bc. make check TESTNAME=test/run-pass/foobar.rs
-
-If you stick a @VERBOSE=1@ in front of that, you'll see what's happening under the hood.  So, for instance:
-
-bc. VERBOSE=1 make check TESTNAME=test/run-pass/hello.rs
-
-will spit out a bunch of verbose output, including (if you scroll up a ways) a call to @compiletest@, the test runner, which will look something like:
-
-bc. stage2/bin/compiletest --compile-lib-path stage2/lib --run-lib-path stage2/lib/rustc/i686-unknown-linux-gnu/lib --rustc-path stage2/bin/rustc --stage-id stage2 --rustcflags "-O" test/run-pass/hello.rs --verbose  --src-base ../rust/src/test/run-pass/ --build-base test/run-pass/ --mode run-pass --runtool "/usr/bin/valgrind --leak-check=full --error-exitcode=100 --quiet --suppressions=../rust/src/etc/x86.supp"
-
-Beware -- there are a bunch of calls to @compiletest@ that get spit out, and most of them are not what you want.
-
-What you want is to add the @--save-temps@ flag to the @--rustcflags@ list, and the test runner will pass it along to the compiler.  So the entire invocation, for this particular test, becomes:
-
-bc. stage2/bin/compiletest --compile-lib-path stage2/lib --run-lib-path stage2/lib/rustc/i686-unknown-linux-gnu/lib --rustc-path stage2/bin/rustc --stage-id stage2 --rustcflags "-O --save-temps" test/run-pass/hello.rs --verbose  --src-base ../rust/src/test/run-pass/ --build-base test/run-pass/ --mode run-pass --runtool "/usr/bin/valgrind --leak-check=full --error-exitcode=100 --quiet --suppressions=../rust/src/etc/x86.supp"
-
-When you do that, you'll see the test runner actually invoke the Rust compiler, which will look like
-
-bc. executing stage2/bin/rustc ../rust/src/test/run-pass/hello.rs -o test/run-pass/hello.stage2 -O --save-temps
+bc. stage2/bin/rustc ../rust/src/test/run-pass/hello.rs -o test/run-pass/hello.stage2 -O --save-temps
 
 Since the @--save-temps@ was in there, an LLVM bitcode file will now be sitting in @test/run-pass/hello.bc@.  Run it through @llvm-dis@:
 
@@ -35,3 +13,21 @@ bc. llvm-dis test/run-pass/hello.bc
 This will produce a @.ll@ file that you can look at:
 
 bc. less test/run-pass/hello.ll
+
+h2. Longer answer
+
+Recall that if the test you want to run is in @test/run-pass/hello.rs@, the invocation (as described in [[The Rust test suite]] page) is
+
+bc. make check TESTNAME=test/run-pass/hello.rs
+
+If you stick a @VERBOSE=1@ in front of that, you'll see what's happening under the hood.  So, for instance:
+
+bc. VERBOSE=1 make check TESTNAME=test/run-pass/hello.rs
+
+will spit out a bunch of verbose output, including (if you scroll up a ways) various calls to @compiletest@, the test runner, one of which will look something like:
+
+bc. stage2/bin/compiletest --compile-lib-path stage2/lib --run-lib-path stage2/lib/rustc/i686-unknown-linux-gnu/lib --rustc-path stage2/bin/rustc --stage-id stage2 --rustcflags "-O" test/run-pass/hello.rs --verbose  --src-base ../rust/src/test/run-pass/ --build-base test/run-pass/ --mode run-pass --runtool "/usr/bin/valgrind --leak-check=full --error-exitcode=100 --quiet --suppressions=../rust/src/etc/x86.supp"
+
+You can manually add the @--save-temps@ flag to the @--rustcflags@ list, and the test runner will pass it along to the compiler.  So the entire invocation, for this particular test, becomes:
+
+bc. stage2/bin/compiletest --compile-lib-path stage2/lib --run-lib-path stage2/lib/rustc/i686-unknown-linux-gnu/lib --rustc-path stage2/bin/rustc --stage-id stage2 --rustcflags "-O --save-temps" test/run-pass/hello.rs --verbose  --src-base ../rust/src/test/run-pass/ --build-base test/run-pass/ --mode run-pass --runtool "/usr/bin/valgrind --leak-check=full --error-exitcode=100 --quiet --suppressions=../rust/src/etc/x86.supp"
