@@ -1,4 +1,4 @@
-h3. Prerequisites
+h2. Prerequisites
 
 Version numbers listed here are "what we're using"; the code may well work with earlier versions of these tools, but we don't know minimum version requirements.
 
@@ -8,7 +8,7 @@ Version numbers listed here are "what we're using"; the code may well work with 
 * git 1.7
 * g++ 4.4 at least on linux, 4.5 on win32, and the 4.x gcc in Apple's SDK for OS X.
 * curl
-* Valgrind 3.5 (recommended but not required for Linux)
+* Valgrind 3.5 (recommended, but not required for Linux)
 * Texinfo's makeinfo and/or texi2pdf commands, if you wish to build HTML or PDF docs, respectively
 * A recent LLVM SVN revision, built for x86 (not x64 if you have one!).  See the directions below for how to build LLVM.
 
@@ -26,15 +26,56 @@ h4. Arch Linux
 
 See "the information on multilib setups":https://wiki.archlinux.org/index.php/Arch64_FAQ#Multilib_Repository_-_Multilib_Project.
 
-h4. Windows
+h2. Windows
 
-We recommend developing under the newest "MinGW packages":http://www.mingw.org using their auto-installer.
+We recommend developing under the newest "MSYS and MinGW":http://www.mingw.org using their auto-installer.
+All instructions will be made in the MSYS Shell.
 
 For Git, we recommend "MsysGit":http://code.google.com/p/msysgit/ and if you use that you will want to put the git binary path *after* the MinGW path. So add a line like the following to your @.bashrc@:
 
 ```sh
 export PATH=$PATH:/c/Program\ Files/Git/bin
 ```
+
+h3. Installing LLVM
+
+h4. Downloading
+
+If you have svn installed, you can get the proper revision using:
+```sh
+svn co -r142082 http://llvm.org/svn/llvm-project/llvm/trunk llvm
+```
+
+otherwise you can use a git mirror:
+
+```sh
+git clone http://llvm.org/git/llvm.git
+```
+
+h4. Installing
+
+```sh
+cd llvm
+./configure --disable-bindings --enable-targets=x86 --enable-optimized
+make
+make install
+```
+
+(note: if you have a multi-core processor, it may help to use @make -j3@ (or 5 if you have a quad-core) to speed up the build process)
+
+h3. Building Rust
+```sh
+git clone git://github.com/graydon/rust.git
+cd rust
+mkdir build
+cd build
+../configure
+make
+```
+
+You should now have rustc.exe in build/stage3/bin
+
+h2. *nix
 
 h3. Installing LLVM
 
