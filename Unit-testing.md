@@ -25,7 +25,7 @@ mod tests {
 
 Note that attaching the 'test' attribute to a function does not imply the 'cfg(test)' attribute. Test items must still be explicitly marked for conditional compilation (though this could change in the future).
 
-Tests that should not be run can be annotated with the 'ignore' attribute. The existence of these tests will be noted in the test runner output, but the test will not be run.
+Tests that should not be run can be annotated with the 'ignore' attribute. The existence of these tests will be noted in the test runner output, but the test will not be run. Tests can also be ignored by configuration so, for example, to ignore a test on windows you can write `#[ignore(cfg(target_os = "win32"))]`.
 
 A test runner built with the '--test' flag supports a limited set of arguments to control which tests are run: the first free argument passed to a test runner specifies a filter used to narrow down the set of tests being run; the '--ignored' flag tells the test runner to run only tests with the 'ignore' attribute.
 
