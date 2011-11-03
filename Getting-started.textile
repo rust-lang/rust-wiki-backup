@@ -100,7 +100,7 @@ cd llvm/tools
 svn co -r138774 http://llvm.org/svn/llvm-project/cfe/trunk clang
 ```
 
-By default the @configure@ script will use Clang if it finds an appropriate version and GCC otherwise. If you want to force use of GCC, define the variable @CFG_ONLY_GCC=1@ in your build environment when running @configure@.
+When you run the Rust @configure@ script you will need to pass the @--enable-clang@ argument.
 
 h4. Building LLVM
 
