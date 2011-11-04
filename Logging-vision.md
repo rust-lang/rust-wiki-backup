@@ -1,4 +1,6 @@
-# The current situation
+# Logging
+
+## The current situation
 
 (as per May 30 2011)
 
@@ -14,7 +16,7 @@
 
 * Logging (when muffled) is really really cheap in rustc now.
 
-# The future
+## The future
 
 * Logging will be done through a `#fmt`-like syntax extension, which (somehow) expands to a special form that handles the module-check wiring and such. The syntax extension will handle stringification, so the runtime logger will only deal with strings anymore.
 
