@@ -25,6 +25,17 @@ h3. Arch Linux
 
 See "the information on multilib setups":https://wiki.archlinux.org/index.php/Arch64_FAQ#Multilib_Repository_-_Multilib_Project.
 
+h3. Windows
+
+We recommend developing under the newest "MSYS and MinGW":http://www.mingw.org using their auto-installer.
+All instructions will be made in the MSYS Shell.
+
+For Git, we recommend "MsysGit":http://code.google.com/p/msysgit/ and if you use that you will want to put the git binary path *after* the MinGW path. So add a line like the following to your @.bashrc@:
+
+```sh
+export PATH=$PATH:/c/Program\ Files/Git/bin
+```
+
 
 h2. Downloading and building Rust
 
