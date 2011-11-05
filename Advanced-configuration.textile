@@ -1,3 +1,7 @@
+FIXME: This is just a dump of old information from the getting started page. It is likely incomplete and out of date.
+
+h2. Windows
+
 h3. Installing LLVM
 
 h4. Downloading
