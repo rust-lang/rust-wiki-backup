@@ -9,7 +9,8 @@ Version numbers listed here are "what we're using"; the code may well work with 
 * g++ 4.4 at least on linux, 4.5 on win32, and the 4.x gcc in Apple's SDK for OS X.
 * curl
 * Valgrind 3.5 (recommended, but not required for Linux)
-* Texinfo's makeinfo and/or texi2pdf commands, if you wish to build HTML or PDF docs, respectively
+* Texinfo's makeinfo and/or texi2pdf commands (optional), if you wish to build HTML or PDF docs, respectively
+* Naturaldocs (optional), if you wish to build the standard library documentation
 
 h3. Debian-based Linux distributions
 
