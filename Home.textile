@@ -22,6 +22,7 @@ h2. Developer notes
 * [[Running a Tinderbox]]
 * [[Compiler snapshots]]
 * [[The Rust test suite]]
+* [[Advanced configuration]]
 
 h2. Design notes
 
