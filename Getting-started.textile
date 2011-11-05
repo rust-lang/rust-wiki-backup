@@ -11,7 +11,7 @@ Version numbers listed here are "what we're using"; the code may well work with 
 * Valgrind 3.5 (recommended, but not required for Linux)
 * Texinfo's makeinfo and/or texi2pdf commands, if you wish to build HTML or PDF docs, respectively
 
-h4. Debian-based Linux distributions
+h3. Debian-based Linux distributions
 
 You can install all the prerequisites you need to build Rust by running
 
@@ -21,12 +21,12 @@ On 64-bit systems, you'll also need:
 
 @sudo apt-get install g++-multilib ia32-libs@
 
-h4. Arch Linux
+h3. Arch Linux
 
 See "the information on multilib setups":https://wiki.archlinux.org/index.php/Arch64_FAQ#Multilib_Repository_-_Multilib_Project.
 
 
-h3. Downloading and building Rust
+h2. Downloading and building Rust
 
 ```sh
 git clone git://github.com/graydon/rust.git
@@ -43,19 +43,19 @@ This will build and test the compiler and standard library.
 
 For development, it is recommended that you configure with @--disable-optimize@, since this will greatly speed up your compilation.
 
-h3. Navigating
+h2. Navigating
 
 There's a quick guide to the source of the compiler in src/comp/README. You should probably look through it if you're going to be contributing.
 
-h3. Editor support
+h2. Editor support
 
 Syntax highlighting for vim is included in the Rust repository, under src/etc/vim. There is also a "rust-mode for emacs":http://github.com/marijnh/rust-mode and "a BBEdit plugin":https://github.com/erikrose/rust-bbedit-plugin.
 
-h3. The issue tracker
+h2. The issue tracker
 
 We use the "GitHub issue tracker":https://github.com/graydon/rust/issues to track bugs and feature requests in Rust.  If you prefer not to use the standard GitHub issue tracker, there's a "secondary front-end that is quite a bit more responsive":http://githubissues.heroku.com/#graydon/rust and a "tertiary front-end that is pleasantly minimal":http://izs.no.de/graydon/rust.
 
-h3. Picking something interesting to do
+h2. Picking something interesting to do
 
 We've recently transitioned off the bootstrap compiler and are moving full steam ahead with the self-hosted compiler. To get an idea of where we're going, see the [[Roadmap]].
 
@@ -63,7 +63,7 @@ Outstanding bugs or feature requests in Rust typically have a corresponding test
 
 If in doubt, ask on IRC. Somebody will surely have a task that needs doing.
 
-h3. Communicating
+h2. Communicating
 
 Join irc.mozilla.org #rust for real-time discussion of Rust development.  We try to remain on that channel during working hours in UTC-7 (US Pacific).
 
