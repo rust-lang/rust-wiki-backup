@@ -68,9 +68,15 @@ We use the "GitHub issue tracker":https://github.com/graydon/rust/issues to trac
 
 h2. Picking something interesting to do
 
-We've recently transitioned off the bootstrap compiler and are moving full steam ahead with the self-hosted compiler. To get an idea of where we're going, see the [[Roadmap]].
+To get an idea of where we're going, see the [[Roadmap]].
 
-Outstanding bugs or feature requests in Rust typically have a corresponding test in the test suite that doesn't yet pass.  One good way to jump into Rust development is to look for files in the test/run-pass directory containing the string 'xfail-test'.  Those are all bugs that need to be fixed or features that someone needs to finish.  Another way to get involved is to look through the issue tracker for "open issues tagged with 'easy'":https://github.com/graydon/rust/issues?labels=easy&sort=updated&direction=desc&state=open&page=1, or with "'unassigned'":https://github.com/graydon/rust/issues?labels=unassigned&sort=updated&direction=desc&state=open&page=1, or both.
+The way most people seem to get involved is by simply trying to write Rust code. Inevitably you will hit a bug or missing feature, at which point you may feel compelled to write a patch.
+
+Another way to get involved is to look through the issue tracker for "open issues tagged with 'easy'":https://github.com/graydon/rust/issues?labels=easy&sort=updated&direction=desc&state=open&page=1, or with "'unassigned'":https://github.com/graydon/rust/issues?labels=unassigned&sort=updated&direction=desc&state=open&page=1, or "both":https://github.com/graydon/rust/issues?labels=unassigned&sort=created&direction=desc&state=open&page=1. Issues marked "'feature'":https://github.com/graydon/rust/issues?labels=feature&sort=updated&direction=desc&state=open&page=1 tend to describe the most interesting tasks, so those marked "'feature' + 'easy' + 'unassigned'":https://github.com/graydon/rust/issues?labels=easy%2Cfeature%2Cunassigned&sort=created&direction=desc&state=open&page=1 may be both approachable and engaging.
+
+Outstanding bugs or feature requests in Rust often have a corresponding test in the test suite that doesn't yet pass.  One good way to jump into Rust development is to look for files in the test/run-pass directory containing the string 'xfail-test'.  Those are all bugs that need to be fixed or features that someone needs to finish.
+
+The source is also littered with hundreds of comments marked with 'FIXME' and 'TODO'. Often these refer to issues that have already been resolved or which may be resolved easily, though sometimes their purpose is rather more obscure. It can occasionally be profitable to grep through the source trying to trim these down.
 
 If in doubt, ask on IRC. Somebody will surely have a task that needs doing.
 
