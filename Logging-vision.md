@@ -2,8 +2,6 @@
 
 ## The current situation
 
-(as per May 30 2011)
-
 * There are two logging primitives `log` and `log_err`. Both allow a variety of types to be given.
 
 * `log_err` output is always printed. This is typically used right before a `fail`, or in case of other serious problems.
@@ -12,7 +10,7 @@
 
 * `RUST_LOG` takes a comma-separated list of directives. A directive is, for now, a module name prefix, for example `std::io`. The 'main' program will live under `main`, unless an explicit crate name is given in the crate file.
 
-* In the runtime, the `LOG` and `LOG_ERR`, (or `DLOG_[ERR]` if no task pointer is available) serve a similar role as `log` and `log_err`. They explicitly set their own 'module'. These modules live under `rt`, for example `rt::comm`, `rt::upcall`.
+* In the runtime, the `LOG` and `LOG_ERR`, (or `DLOG_[ERR]` if no task pointer is available) serve a similar role as `log` and `log_err`. They explicitly set their own 'module'. These modules live under `rt`, for example `::rt::comm`, `::rt::upcall` (see rust_log.h for a list).
 
 * Logging (when muffled) is really really cheap in rustc now.
 
