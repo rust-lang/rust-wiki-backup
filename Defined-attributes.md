@@ -1,7 +1,7 @@
 This page catalogs the item attributes known to the compiler or used by convention.
 
 Crate
-=====
+-----
 
 * link
  * name
@@ -13,20 +13,20 @@ Crate
 * copyright
 
 Native
-======
+------
 
 * abi
 * link_name
 * link_args
 
 Testing
-=======
+-------
 
 * test
 * ignore
 * should_fail
 
 Misc
-====
+----
 
 * cfg
