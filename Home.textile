@@ -24,6 +24,7 @@ h2. Developer notes
 * [[Compiler snapshots]]
 * [[The Rust test suite]]
 * [[Advanced configuration]]
+* [[Defined attributes]]
 
 h2. Design notes
 
