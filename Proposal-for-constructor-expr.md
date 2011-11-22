@@ -106,6 +106,10 @@ used once is implicitly moved.
 >     fn apply<S,T>(s: S, blk: block(S) -> new T) -> new T { 
 >         ret blk(s); // implicitly: ret blk(move s); 
 >     }
+>
+>     fn apply_twice<copy S,T>(s: S, blk: block(S) -> new T) -> new (T,T) {
+>        ret (blk(copy(s)), blk(s)); // Note: first use of `s` requires a copy
+>     }
 
 ## Possible changes
 
