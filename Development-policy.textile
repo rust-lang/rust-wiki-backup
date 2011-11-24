@@ -1,6 +1,6 @@
 h2. Contributions and commit access
 
-If you are already have <a href="http://www.mozilla.org/hacking/commit-access-policy/">Level 1 Access</a> to commit within the Mozilla project you may commit directly to this repository. Email one of the existing authors of this repository and ask for commit access if you want to be contributing quickly and regularly this way.
+If you are already have <a href="http://www.mozilla.org/hacking/commit-access-policy/">Level 1 Access</a> to commit within the Mozilla project you may commit directly to this repository. Email one of the existing authors and ask for commit access if you want to be contributing quickly and regularly this way.
 
 More likely is a fork and pull-request. Pull-requests will be treated as "review requests", and we will give feedback we expect to see corrected on style and substance before pulling. Changes contributed via pull-request should focus on a single issue at a time, like any other. Do not try to use pull-requests as a way to "sneak" unrelated changes in.
 
