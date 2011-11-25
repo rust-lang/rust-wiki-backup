@@ -30,3 +30,4 @@ Misc
 ----
 
 * cfg
+* path
