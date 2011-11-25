@@ -1,3 +1,5 @@
+Note: This information is out of date and tinderbox is no longer our preferred build automation
+
 Running a tinderbox is very simple:
 
 * Get a rust build environment working first. Like, get your own system through 'make check'
