@@ -59,7 +59,8 @@ Brian, Dave, Marijn, Niko, Patrick
 * Niko: overloading is nice if you want user-defined collections to be first-class citizens
 * Marijn: and you'll want the low-level construct (fixed-size arrays) for a systems language, so you can drop as low as you need
 * Patrick: also for C interop
-* Niko: another approach: (_Dave was writing notes and missed this_)
+* Niko: still an impedance mismatch b/c of the length field
+* Niko: could use the user-contributed c_vec module approach for interop, but still requires marshalling from C, so not really a win
 * Dave: so pulse of the group?
 * Patrick: I think we're all in favor of fixed-size arrays
 * Niko: should be inline, see how painful it gets
