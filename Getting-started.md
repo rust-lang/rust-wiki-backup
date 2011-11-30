@@ -36,6 +36,11 @@ For Git, we recommend "MsysGit":http://code.google.com/p/msysgit/ and if you use
 export PATH=$PATH:/c/Program\ Files/Git/bin
 ```
 
+If while building you receive an error that `libpthread-2.dll` is not found, you need to install the "libpthread-2.8.0-3-mingw32-dll-2.tar.lzma package":http://sourceforge.net/projects/mingw/files/MinGW/Base/pthreads-w32/pthreads-w32-2.8.0-3/.  It seems this must be installed by hand, as far as I can tell:
+
+```sh
+cd /mingw; lzma -d -c /path/to/downloaded/libpthread-2.8.0-3-mingw32-dll-2.tar.lzma | tar xf -
+```
 
 h2. Downloading and building Rust
 
