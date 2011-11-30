@@ -34,7 +34,7 @@ This call is statically resolved. The set of imported interface implementations 
 
 The above declares a named interface type `seq`. You can make implementations refer to a specific interface by using its name.
 
-    iface std::seq::seq<T> : std::list::list {
+    impl std::seq::seq<T> : std::list::list {
         fn len() -> uint { std::list::len(self) }
         fn iter(f: block(T)) { std::list::iter(self, f); }
     }
