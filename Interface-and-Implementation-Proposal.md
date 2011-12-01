@@ -39,6 +39,8 @@ The above declares a named interface type `seq`. You can make implementations re
         fn iter(f: block(T)) { std::list::iter(self, f); }
     }
 
++ Maybe the two portions of the impl should be flipped. When we use interfaces we say `fn blah(x:interface)` meaning "`x` has an implementation of `interface`", we put the interface after the colon in the type position. The same thing would make sense here. The order of definition should probably match the order of use. - Dylan
+
 This will recycle the name of the interface for the name of the implementation, so if you define this in `std::list`, `std::list::seq` will refer to this implementation. The compiler will verify that an implementation of an existing interface actually conforms to the interface declaration.
 
 *We may want to allow optionally specifying a different name. I'm currently thinking that, if we allow implementations to share names as long as they are specializing on different types, it will rarely be a problem to default to the interface name.*
