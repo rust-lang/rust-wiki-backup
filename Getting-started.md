@@ -16,7 +16,7 @@ h3. Debian-based Linux distributions
 
 You can install all the prerequisites you need to build Rust by running
 
-@sudo apt-get install python3 make git g++ curl valgrind texinfo@
+@sudo apt-get install python3 make git g++ curl valgrind texinfo naturaldocs@
 
 On 64-bit systems, you'll also need: 
 
