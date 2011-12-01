@@ -18,14 +18,6 @@ You can install all the prerequisites you need to build Rust by running
 
 @sudo apt-get install python3 make git g++ curl valgrind texinfo naturaldocs@
 
-On 64-bit systems, you'll also need: 
-
-@sudo apt-get install g++-multilib ia32-libs@
-
-h3. Arch Linux
-
-See "the information on multilib setups":https://wiki.archlinux.org/index.php/Arch64_FAQ#Multilib_Repository_-_Multilib_Project.
-
 h3. Windows
 
 We recommend developing under the newest "MSYS and MinGW":http://www.mingw.org using their auto-installer (the version dated 20110802 is known to work), and performing the build in the MSYS Shell.
