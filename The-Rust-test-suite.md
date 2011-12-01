@@ -90,7 +90,7 @@ mod test {
 }
 ```
 
-Note that currently tests need to be visible at the top level of a create in order to run.
+Note that currently tests need to be visible at the top level of a crate in order to run.
 
 ### Recipes
 * Running the tests: `make check-stage[N]-rustc`
