@@ -129,3 +129,17 @@ You could then implement operators for non-primitive types by defining (and impo
         /* etc */
     }
 
+
+## Delegation
+
+Go has a feature called "anonymous fields" where a struct may include another struct as a field addressed by type name and by merit of that inherits all methods defined on that field.  This is a practical approach to implement delegation.  Perhaps there could be a similar feature as an extension of the type class proposal where an impl can elect to implement an iface by delegating calls to another impl by calling a pure function or dispatching to a member field. Syntax:
+
+    // via pure call
+    // pure_call(some_typ) would either return a boxed iter_util<T> or some value of type S that implements iter_util<T>
+    impl iter_util<T> : some_typ via pure_call(*); 
+
+    // via tuple field
+    impl iter_util<T> : (int, float, foo: T) via *.foo;
+
+    // via record field
+    impl iter_util<T> : { foo: T, bar: int } via *.foo;
