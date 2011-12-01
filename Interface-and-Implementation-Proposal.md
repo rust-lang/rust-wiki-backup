@@ -92,42 +92,6 @@ The below has not been properly worked out or discussed yet, but will undoubtedl
 
 Not sure about that syntax, but what it is saying is 'if `T` has an implementation of `hash`, then this is an implementation of `hash` for `[T]`'. When creating the vtable for `[T]`, the vtable for `T` must first be looked up (in local scope), and then stored in the vtable for `[T]` somehow, so that it can be fed to the `hash` method.
 
-## Alternate Syntax
-
-I personally don't think it's a good idea to conflate the `I<T>` syntax used by generics with interfaces/typeclasses as well. What we're essentially creating here, for an interface `I`, is both a hidden typeclass `I`, as well as an existential type `I`. In this reasoning, the x:I syntax for "x has an implementation of I" makes perfect sense.
-
-In addition, what if we want to define interfaces over parameterized types? These are extremely common and the syntax would become confusing with both meanings of `<_>` in use.
-
-With these considerations, perhaps a better and more logical syntax for the above would be...
-
-    iface F<T> : functor<T> { 
-      fn map(f: block(T) -> S, thing:F<T>) -> F<S>; 
-    }
-    
-    impl [T] : functor<T> {
-      fn map(f: block(T) -> S, thing:F<T>) -> F<S>; 
-        
-      }
-    }
-
-The <T> on the interface itself is required. Multiple dispatch is achieved by simply separating the types on the left hand side of the `:` in the `iface`/`impl`. (Separating with commas is ambiguous with other grammar). For instance, we could implement static casts as follows:
-
-    iface T S : castable {
-      fn static_cast(T) -> S;
-    }
-
-    impl foo bar : castable {
-      fn static_cast(f: foo) -> bar {
-        // perform a conversion from foo to bar
-      }
-    }
-
-C++ uses the confusing syntax static_cast<dest_type>(x), inferring the src_type from x. This is immensely confusing because it suggests a generic type, which in turn suggests it should be generic over ALL destination types. However this is untrue, and you may not be able to convert to a certain destination type.
-
-In conclusion, I think the syntax we use for our interfaces should reflect their **existential** nature, and avoid conflation with **universal** (generic) syntax.
-
-- Dylan
-
 ## Self type
 
 Many interface specifications have to refer to the type of their `self` somehow. For example:
