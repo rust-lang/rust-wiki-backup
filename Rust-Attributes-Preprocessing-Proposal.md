@@ -54,7 +54,7 @@ During each preprocessing phase, all of the top level attributes which are known
 
 ## Predicates
 
-Some reserved named lists are defined as simplistic predicates. At the moment you cannot define your own. When "evaluated" they are textually replaced with a true value. Existing ones will include:
+Some reserved named lists are defined as simplistic predicates. At the moment you cannot define your own. When "evaluated" they are textually replaced with a true/false value. Existing ones will include:
 
  * Config Predicate: `cfg(_foo_=_bar_, _baz_=_qux_)`
  * Flags Predicate: `flags("-foo", "--bar"
