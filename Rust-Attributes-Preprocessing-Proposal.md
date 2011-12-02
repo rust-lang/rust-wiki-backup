@@ -24,7 +24,7 @@ The attribute language consists of:
    - Symbols: _sym_
       + Alphabetic only.
       + Can be considered _set_ or _unset_.
-         * A _set_ symbol has a string value (defaults to the empty string).
+         * A _set_ symbol has string or boolean value (default to the empty string and false).
       + May contain a string value. This automatically makes the symbol "set".
    - String Literals: _"contents"_
    - Boolean Literal: true, false
