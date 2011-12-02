@@ -57,7 +57,7 @@ During each preprocessing phase, all of the top level attributes which are known
 Some reserved named lists are defined as simplistic predicates. At the moment you cannot define your own. When "evaluated" they are textually replaced with a true/false value. Existing ones will include:
 
  * Config Predicate: `cfg(_foo_=_bar_, _baz_=_qux_)`
- * Flags Predicate: `flags("-foo", "--bar"
+ * Flags Predicate: `flags("-foo", "--bar")`
  * Set/Unset Predicate: `is_set(_sym_)`
  * Version String Predicates: `v_gt(_i1_, _i2_)`, `v_eq(_i1_, _i2_)`, `v_lt(_i1_, _i2_)`
     * These compare versions of the form "x.y.z", and understand alphanumeric ordering.
