@@ -41,8 +41,8 @@ Notes taken at rust work week, 2011/06/23
 ## Things that do not belong in std
 * DB API
 * ZeroMQ
-** How will libs like this be integrated with regular nonblocking io?
-** ZeroMQ sockets need to be used from a fixed thread, can we do this in rust?
+ * How will libs like this be integrated with regular nonblocking io?
+ * ZeroMQ sockets need to be used from a fixed thread, can we do this in rust?
 * GUI
 
 ## Missing language features
