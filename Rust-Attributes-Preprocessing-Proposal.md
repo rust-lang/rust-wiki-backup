@@ -45,8 +45,10 @@ The first symbol in an attribute is the `command` of that attribute. You cannot 
    - **IMPORTANT: This is the only way to insert new static attributes.** 
 * `#[omit]`
    - Omits the attributed item from the generated code.
-* `#[set _sym_ _val_]
+* `#[set _sym_ _val_]`
    - Sets the symbol to the value (boolean or string)
+* `#[unset _sym_]`
+   - Unsets a symbol.
 
 During each preprocessing phase, all of the top level attributes which are known to be commands are executed. **Since attributes inserted by `when` are always placed immediately after the `when`, they will be evaluated by preprocessor immediately following it.** This prevents the need for multiple preprocessing passes.
 
