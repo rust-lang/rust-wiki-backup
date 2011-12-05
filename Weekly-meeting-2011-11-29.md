@@ -9,6 +9,7 @@ Brian, Dave, Marijn, Niko, Patrick
 * Marijn: in my proposal, `impl`s are named in a separate namespace, and they default to the name of their corresponding `iface`
 * Patrick: what about more duck-typing examples like:
 
+``` rust
     impl const_vec : vec<const T> {
         fn len() -> uint { ... }
         fn push(T x) { ... }
@@ -26,6 +27,7 @@ Brian, Dave, Marijn, Niko, Patrick
         let v = [ 1, 2, 3 ];
         show mylen(v);
     }
+```
 
 * Marijn: I don't like automatic creation of vtables; feels magic, and not hard to declare explicitly. but as long as I *can* declare I'm not too unhappy
 * Patrick: having a static assertion you conform to an iface is fine
