@@ -11,6 +11,7 @@ Crate
 * comment
 * license
 * copyright
+* crate_type
 
 Native
 ------
