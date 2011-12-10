@@ -138,8 +138,8 @@ Go has a feature called "anonymous fields" where a struct may include another st
     // pure_call(some_typ) would either return a boxed iter_util<T> or some value of type S that implements iter_util<T>
     impl iter_util<T> : some_typ via pure_call(*); 
 
-    // via tuple field
+    // via tuple field (where there T either is a boxed iter_util<T> or implements iter_util<T>)
     impl iter_util<T> : (int, float, foo: T) via *.foo;
 
-    // via record field
+    // via record field (where there T either is a boxed iter_util<T> or implements iter_util<T>)
     impl iter_util<T> : { foo: T, bar: int } via *.foo;
