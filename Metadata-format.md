@@ -6,7 +6,9 @@ Metadata is specified in the `.note.rustc` section of a crate. The metadata is i
 
 The schema is given in pseudo-BNF. Some nonterminals are delimited by EBML tags; for these, the tag that surrounds the data is given in parentheses, for brevity. (For example, `foo (TAG_FOO) ::== bar` is really `foo ::== TAG_FOO bar END_TAG_FOO`.)
 
-crate ::== attributes crate-deps tag-paths tag-items
+crate ::== crate-hash attributes crate-deps tag-paths tag-items
+
+crate-hash (TAG_CRATE_HASH) ::== crate-hash*
 
 attributes (TAG_ATTRIBUTE) ::== attribute*
 
