@@ -19,7 +19,7 @@ Native
 * abi
 * link_name
 * link_args
-* nolink - Don't perform linking for the native module
+* nolink - Don't perform the default linking for a native module
 
 Testing
 -------
