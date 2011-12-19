@@ -6,7 +6,7 @@ This page is for collecting ideas around axing or implementing tail calls in rus
 * Pro: People expect that in a language that says to support functional programming with immutability as a default (But: Well     
   that really just is a sales argument and should not steer design)
 * Pro: Simple, forwarding functions don't pay the cost of an extra stack frame
-  * this surprisingly is currently used in core::float to pass calls on to core::f32 and core::f64 depending on the target    
+  * this is currently used in core::float to pass calls on to core::f32 and core::f64 depending on the target    
     architecture (even though "be" is not really implemented)
   * it may be very relevant for supporting delegation in the object system or typeclass proposal
   * but: is delegation/forwarding really that important
