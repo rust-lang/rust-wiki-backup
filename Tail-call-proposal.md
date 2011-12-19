@@ -2,13 +2,17 @@ This page is for collecting ideas around axing or implementing tail calls in rus
 
 ## Pro/Con
 
-* Pro: Obvious uses in functional programming (Con: Replacable with iterators/blocks in many cases)
-* Pro: People expect that in a language that says to support functional programming with immutability as a default (Con: Well     
+* Pro: Obvious uses in functional programming (But: Replacable with iterators/blocks in many cases)
+* Pro: People expect that in a language that says to support functional programming with immutability as a default (But: Well     
   that really just is a sales argument and should not steer design)
-* Simple, forwarding functions don't pay the cost of an extra stack frame
+* Pro: Simple, forwarding functions don't pay the cost of an extra stack frame
   * this surprisingly is currently used in core::float to pass calls on to core::f32 and core::f64 depending on the target    
     architecture (even though "be" is not really implemented)
   * it may be very relevant for supporting delegation in the object system or typeclass proposal
+  * but: is delegation/forwarding really that important
+  * but: maybe can be supported with a different mechanism
+* Con: Tail calls cannot be implemented in general without a serious performance hit for all calls (But: There may be sensible, limited forms of tail call support that avoids this)
+* Con: Rustic code isn't that likely to need tail calls (But: until you code an algorithm that cries for it)
 
 ## Make it explicit
 
