@@ -79,3 +79,6 @@ An example of using conditional compilation to build different methods on differ
 ## Unit testing
 
 Rust includes a built-in [[unit testing]] facility which makes use of attributes and conditional compilation.
+
+## Relationship with macros
+Please cf [[Syntax-extension]]
