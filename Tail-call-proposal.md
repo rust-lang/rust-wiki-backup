@@ -1,4 +1,4 @@
-This page is for collecting ideas around axing or implementing tail calls in rust. The current status of this issue is undecided after a longer discussion on the list in jul/aug 2001. (This page currently is NOT a complete summary of that thread, I am just writing down a few own thoughts right now but it may very well become that -- boggle)
+This page is for collecting ideas around axing or implementing tail calls in rust. The current status of this issue is undecided after a longer discussion on the list in jul/aug 2001. (There currently is no consensus on the matter nor is this page a complete summary of that thread, I am just writing down a few own thoughts right now but the page may very well become that -- boggle)
 
 ## Pro/Con
 
