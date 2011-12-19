@@ -31,7 +31,7 @@ Ok, the main problem seems to be the overhead of making every function tail call
 
     fn bar(y: int) -> int { be foo(y+1); }
 
-where the type of foo would be `tail fn(int) -> int`.  Additionally, at least within a crate, there could be a
+where the type of `foo` would be `tail fn(int) -> int`.  Additionally, at least within a crate, there could be a
 
     bind tail fn bar(_)
 
