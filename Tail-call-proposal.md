@@ -11,10 +11,10 @@ This page is for collecting ideas around axing or implementing tail calls in rus
   * it may be very relevant for supporting delegation in the object system or typeclass proposal
   * but: is delegation/forwarding really that important
   * but: maybe can be supported with a different mechanism
-* Pro: The classic way to implement actors is by having them loop on a tail callable function.
+* Pro: The classic way to implement actors is by having them loop on a tail callable function
   * The interesting bit about this is that it becomes easier to change actor behavior at runtime which may help
-    with code migration (atomic switch point) in some very distant future (erlang does it that way) and 
-    implementing control flows over multiple actors by sending closures (did a paper on that, nice if actors
+    with code migration (atomic switch point) in some very distant future (erlang does it that way) and supports
+    implementing complex control flows over multiple actors by sending closures (did a paper on that, nice if actors
     correspond to "stages")
   * But: ORLY, second guessing the future? 
   * But: Other solutions possible
