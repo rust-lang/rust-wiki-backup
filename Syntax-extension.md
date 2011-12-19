@@ -58,3 +58,7 @@ Expansion should be outside-in. This means that macros will need to expand code 
 
     #simpleext(m1,param1,param2,param3,...,paramn,some_expr)
 Then, `m1` is defined as an extension taking `n` parameters, named `param1`-`paramn`. Those identifiers may appear free in various expression positions in `some_expr`; the argument syntax will be substituted at that point.
+
+# Ideas concerning attributes
+
+It may be desirable to access or even generate attributes via macros. Though that complicates matters, it also could be really powerful as scoped metadata (i.e. attributes) could be used to control macro expansion.
