@@ -26,4 +26,4 @@ Additionally, at least within a crate, there could be a
 
     bind tail fn bar(_)
 
-expression for creating tail-callable wrapper functions of normal functions in scope.
+expression for creating tail-callable wrapper functions of normal functions in scope. Inversly, tail callable functions could be bound into non tail callables using a normal `bind` call.
