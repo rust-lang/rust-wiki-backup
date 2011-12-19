@@ -14,12 +14,12 @@ This page is for collecting ideas around axing or implementing tail calls in rus
 
 Ok, the main problem seems to be the overhead of making every function tail callable and having to respect that at call sites, too. Thus I suggest to make "tail callability" an explicit part of function types (like "pure"), i.e.
 
-   tail fn foo(x: int) -> int { x + 1 }
+    tail fn foo(x: int) -> int { x + 1 }
 
-   fn bar(y: int) -> int { be foo(y+1); }
+    fn bar(y: int) -> int { be foo(y+1); }
 
 Additionally, at least within a crate, there could be a
 
-   bind tail fn bar(_)
+    bind tail fn bar(_)
 
 expression for creating tail-callable wrapper functions of normal functions in scope.
