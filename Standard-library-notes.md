@@ -14,17 +14,17 @@ Notes taken at rust work week, 2011/06/23
  * timers
 * string manipulation
  * slicing w/o copy, stringref
- * regexp
+ * [regexp](https://github.com/elly/rustpcre)
  * ropes
 * networking
  * HTTP client / server
 * date / time
 * math, random
-* compression
+* [compression](https://github.com/elly/rustzlib)
 * libicu
 * serialization (protobuf / thrift / [json](https://github.com/graydon/rust/blob/master/src/libstd/json.rs))
 * xml
-* crypto
+* [crypto](https://github.com/elly/rustcrypto)
 * concurrency
  * task management, actor, OTP, [[MapReduce]], pools
 * low-level OS services
