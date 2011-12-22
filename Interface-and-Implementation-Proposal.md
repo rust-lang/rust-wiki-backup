@@ -145,3 +145,8 @@ Go has a feature called "anonymous fields" where a struct may include another st
     // via a tuple field
     type tuple_t = (int, float, iter_util)
     impl iter_util<T> : t via (_, _, *) 
+
+## Constants
+
+Interfaces should cover constants as well, these will show up in any sensible, type class based number hierarchy.
+While consts could be implemented via pure nullary functions, this may be undesirable from a performance perspective. It would also hurt readability.
