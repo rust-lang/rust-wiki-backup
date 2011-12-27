@@ -31,6 +31,7 @@ h2. Design notes
 * [[Attribute notes]]
 * [[Constrained types]]
 * [[Constraints in rustc and libraries]]
+* [[Core library notes]]
 * [[Disjoint union types]]
 * [[Error reporting]]
 * [[Function types]]
