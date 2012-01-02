@@ -10,6 +10,7 @@ See https://mail.mozilla.org/pipermail/rust-dev/2011-December/001037.html
 ## TODO
 
 * "char":
+  * why does "to_digit" show up twice on http://www.rust-lang.org/doc/core/files/char-rs.html ?
   * rename:
       * "to_lowercase" => "to_lower" (analgous to "str")
       * "to_uppercase" => "to_upper" (analgous to "str")
