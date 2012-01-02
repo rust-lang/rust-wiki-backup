@@ -9,6 +9,8 @@ See https://mail.mozilla.org/pipermail/rust-dev/2011-December/001037.html
 
 ## TODO
 
+* "char":
+  * rename "to_lowercase" => "to_lower", "to_uppercase" => "to_upper" analgous to "str"
 * "str":
   * rename "byte_len" to "len_bytes" and "char_len" to "len_chars", to be in line of "iter_chars", "loop_chars", "push_byte", "push_char"
   * rename "char_len" => "len" and "iter_chars" => "iter" because operating on chars would be most common for users?
