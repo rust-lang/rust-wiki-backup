@@ -15,6 +15,7 @@ See https://mail.mozilla.org/pipermail/rust-dev/2011-December/001037.html
       * "to_lowercase" => "to_lower" (analgous to "str")
       * "to_uppercase" => "to_upper" (analgous to "str")
 * "str":
+  * add "pure" to a lot of functions
   * rename:
       * "byte_len" => "len_bytes" (analogous to "iter_chars", "loop_chars", "push_byte", "push_char")
       * "byte_len_range" => "len_bytes_range"
