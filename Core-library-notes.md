@@ -30,7 +30,7 @@ See https://mail.mozilla.org/pipermail/rust-dev/2011-December/001037.html
       * "len_chars" renamed from "char_len"
       * "lines": added
       * "lines_iter": added
-      * "map" and implement "to_upper", "to_lower" on top of it
+      * "map": added
       * "split": added  := "split_char"
       * "split_char" renamed from "split" (analogous to "split_str")
       * "split_iter": added
@@ -39,4 +39,5 @@ See https://mail.mozilla.org/pipermail/rust-dev/2011-December/001037.html
       * "substr_len_chars" renamed from "char_len_range"
       * "words": added
       * "words_iter": added
+  * implement "to_upper", "to_lower" on top of "map"
   * add "pure" to a lot of functions
