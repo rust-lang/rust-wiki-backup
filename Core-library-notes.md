@@ -27,10 +27,14 @@ See https://mail.mozilla.org/pipermail/rust-dev/2011-December/001037.html
       * "unsafe_from_byte" => "from_byte_unsafe"
       * "unsafe_from_bytes" => "from_bytes_unsafe"
       * "split" => "split_char"? (analogous to "split_str")
+      * "to_chars" => "chars" (analogous to "bytes")
   * add:
       * "len" := "len_char"
       * "split" := "split_char"
       * "map" and implement "to_upper", "to_lower" on top of it
       * "iter_lines"
       * "iter_words"
-  * when to return a list of strings and when an iterator? for example "split" would be a condidate for returning an iterator when applied to a huge string
+      * add iterator versions?
+          * "bytes_iter"
+          * "chars_iter"
+          * "split_iter"
