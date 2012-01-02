@@ -21,16 +21,16 @@ See https://mail.mozilla.org/pipermail/rust-dev/2011-December/001037.html
   * rename:
       * "str_from_cstr" => "from_cstr"
       * "byte_len" => "len_bytes" (analogous to "iter_chars", "loop_chars", "push_byte", "push_char")
-      * "byte_len_range" => "len_bytes_range"
+      * "byte_len_range" => "substr_len_bytes"
       * "char_len" => "len_chars"
-      * "char_len_range" => "len_chars_range"
+      * "char_len_range" => "substr_len_chars"
       * "unsafe_from_byte" => "from_byte_unsafe"
       * "unsafe_from_bytes" => "from_bytes_unsafe"
       * "split" => "split_char"? (analogous to "split_str")
       * "to_chars" => "chars" (analogous to "bytes")
       * "iter_chars" => "chars_iter" (to make the analagous to the iter versions to come)
       * "loop_chars" => "chars_loop"
-      * "loop_chars_sub" => "chars_range_loop"
+      * "loop_chars_sub" => "substr_loop" (analogous to "substr")
   * add:
       * "len" := "len_char"
       * "split" := "split_char"
