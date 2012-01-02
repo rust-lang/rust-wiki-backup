@@ -16,7 +16,9 @@ See https://mail.mozilla.org/pipermail/rust-dev/2011-December/001037.html
 * "str":
   * rename:
       * "byte_len" => "len_bytes" (analogous to "iter_chars", "loop_chars", "push_byte", "push_char")
-      * "char_len" => "len_chars" (analogous to "iter_chars", "loop_chars", "push_byte", "push_char")
+      * "byte_len_range" => "len_bytes_range"
+      * "char_len" => "len_chars"
+      * "char_len_range" => "len_chars_range"
   * add:
       * "len" := "len_char"
       * "iter_lines"
