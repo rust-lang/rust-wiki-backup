@@ -12,8 +12,8 @@ See https://mail.mozilla.org/pipermail/rust-dev/2011-December/001037.html
 * "char":
   * fix "maybe_digit" documentation "Function: to_digit"
   * rename:
-      * "to_lowercase" => "to_lower" (analgous to "str")
-      * "to_uppercase" => "to_upper" (analgous to "str")
+      * "to_lowercase" => "to_lower" (analogous to "str")
+      * "to_uppercase" => "to_upper" (analogous to "str")
   * add:
       * "is_digit"
 * "str":
