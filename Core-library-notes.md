@@ -26,7 +26,7 @@ See https://mail.mozilla.org/pipermail/rust-dev/2011-December/001037.html
       * "char_len_range" => "len_chars_range"
       * "unsafe_from_byte" => "from_byte_unsafe"
       * "unsafe_from_bytes" => "from_bytes_unsafe"
-      * "split_str" => "split_char"? (analogous to "split_str")
+      * "split" => "split_char"? (analogous to "split_str")
   * add:
       * "len" := "len_char"
       * "map" and implement "to_upper", "to_lower" on top of it
