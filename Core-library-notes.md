@@ -88,6 +88,6 @@ See https://mail.mozilla.org/pipermail/rust-dev/2011-December/001037.html
       * "words_iter": **add**
 * "str":
   * "is_ascii": spin-off functionality to "char", implement on top of "chars_loop"
-  * "is_whitespace": spin-off functionality to "char", implement on top of "chars_loop"
+  * "is_whitespace": implement on top of "char::is_whitespace", "chars_loop"
   * implement "to_upper", "to_lower" on top of "map"
   * add "pure" to a lot of functions
