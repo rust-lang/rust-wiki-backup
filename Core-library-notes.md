@@ -34,7 +34,7 @@ See https://mail.mozilla.org/pipermail/rust-dev/2011-December/001037.html
       * "from_bytes" **rename** from "unsafe_from_bytes"
       * "from_char"
       * "from_chars"
-      * "from_cstr" **rename** from "str_from_cstr"
+      * "from_cstr"
       * "hash"
       * "index"
       * "is_ascii"
