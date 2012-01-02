@@ -9,7 +9,7 @@ See https://mail.mozilla.org/pipermail/rust-dev/2011-December/001037.html
 
 ## TODO
 
-* "str"
-  * **rename "byte_len" to "len_bytes" and "char_len" to "len_chars"** to be in line of iter_chars, loop_chars, push_byte, push_char
+* "str":
+  * rename "byte_len" to "len_bytes" and "char_len" to "len_chars", to be in line of iter_chars, loop_chars, push_byte, push_char
   * what functions are missing?
   * decide when to return a list of strings and when an iterator
