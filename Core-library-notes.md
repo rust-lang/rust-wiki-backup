@@ -10,9 +10,6 @@ See https://mail.mozilla.org/pipermail/rust-dev/2011-December/001037.html
 ## TODO
 
 * "char":
-  * rename:
-      * "to_lowercase" => "to_lower" (analogous to "str")
-      * "to_uppercase" => "to_upper" (analogous to "str")
   * add:
       * "is_ascii"
       * "is_digit"
