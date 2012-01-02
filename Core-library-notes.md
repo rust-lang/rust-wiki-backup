@@ -18,7 +18,6 @@ See https://mail.mozilla.org/pipermail/rust-dev/2011-December/001037.html
       * "is_digit"
 * "str":
   * rename:
-      * "byte_len" => "len_bytes" (analogous to "iter_chars", "loop_chars", "push_byte", "push_char")
       * "byte_len_range" => "substr_len_bytes"
       * "char_len" => "len_chars"
       * "char_len_range" => "substr_len_chars"
@@ -30,14 +29,15 @@ See https://mail.mozilla.org/pipermail/rust-dev/2011-December/001037.html
       * "to_chars" => "chars" (analogous to "bytes")
       * "unsafe_from_byte" => "from_byte_unsafe"
       * "unsafe_from_bytes" => "from_bytes_unsafe"
-  * add:
-      * "len": added := "len_char"
-      * "split": added  := "split_char"
+  * goal:
       * "bytes_iter": added
+      * "len": added := "len_char"
+      * "len_bytes" renamed from "byte_len" (analogous to "iter_chars", "loop_chars", "push_byte", "push_char")
       * "lines": added
       * "lines_iter": added
+      * "map" and implement "to_upper", "to_lower" on top of it
+      * "split": added  := "split_char"
       * "split_iter": added
       * "words": added
       * "words_iter": added
-      * "map" and implement "to_upper", "to_lower" on top of it
   * add "pure" to a lot of functions
