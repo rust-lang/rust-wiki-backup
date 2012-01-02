@@ -17,14 +17,13 @@ See https://mail.mozilla.org/pipermail/rust-dev/2011-December/001037.html
   * add:
       * "is_digit"
 * "str":
-  * goal:
       * "bytes"
-      * "bytes_iter": added
+      * "bytes_iter": **add**
       * "char_at"
       * "char_range_at"
-      * "chars" renamed from "to_chars" (analogous to "bytes")
-      * "chars_iter" renamed from "iter_chars" (to make the analagous to the iter versions to come)
-      * "chars_loop" renamed from "loop_chars"
+      * "chars" **rename** from "to_chars" (analogous to "bytes")
+      * "chars_iter" **rename** from "iter_chars" (to make the analagous to the iter versions to come)
+      * "chars_loop" **rename** from "loop_chars"
       * "concat"
       * "connect"
       * "contains"
@@ -33,11 +32,11 @@ See https://mail.mozilla.org/pipermail/rust-dev/2011-December/001037.html
       * "escape_char"
       * "eq"
       * "find"
-      * "from_byte_unsafe" renamed from "unsafe_from_byte"
-      * "from_bytes_unsafe" renamed from "unsafe_from_bytes"
+      * "from_byte_unsafe" **rename** from "unsafe_from_byte"
+      * "from_bytes_unsafe" **rename** from "unsafe_from_bytes"
       * "from_char"
       * "from_chars"
-      * "from_cstr" renamed from "str_from_cstr"
+      * "from_cstr" **rename** from "str_from_cstr"
       * "hash"
       * "index"
       * "is_ascii"
@@ -45,13 +44,13 @@ See https://mail.mozilla.org/pipermail/rust-dev/2011-December/001037.html
       * "is_not_empty"
       * "is_utf8"
       * "is_whitespace"
-      * "len": added := "len_char"
-      * "len_bytes" renamed from "byte_len" (analogous to "iter_chars", "loop_chars", "push_byte", "push_char")
-      * "len_chars" renamed from "char_len"
-      * "lines": added
-      * "lines_iter": added
+      * "len":: **add** := "len_char"
+      * "len_bytes" **rename** from "byte_len" (analogous to "iter_chars", "loop_chars", "push_byte", "push_char")
+      * "len_chars" **rename** from "char_len"
+      * "lines": **add**
+      * "lines_iter": **add**
       * "lteq"
-      * "map": added
+      * "map": **add**
       * "pop_byte"
       * "pop_char"
       * "push_byte"
@@ -62,18 +61,18 @@ See https://mail.mozilla.org/pipermail/rust-dev/2011-December/001037.html
       * "shift_byte"
       * "shift_char"
       * "slice"
-      * "slice_char" renamed from "char_slice"
-      * "slice_safe" renamed from "safe_slice"
+      * "slice_char" **rename** from "char_slice"
+      * "slice_safe" **rename** from "safe_slice"
       * "split" := "split_char"
       * "splitn"
-      * "split_char" added/renamed from "split" (analogous to "split_str")
-      * "split_iter": added
+      * "split_char" **add**/**rename** from "split" (analogous to "split_str")
+      * "split_iter": **add**
       * "split_str"
       * "starts_with"
       * "substr"
-      * "substr_chars_loop" renamed from "loop_chars_sub" (analogous to "substr")
-      * "substr_len_bytes" renamed from "byte_len_range"
-      * "substr_len_chars" renamed from "char_len_range"
+      * "substr_chars_loop" **rename** from "loop_chars_sub" (analogous to "substr")
+      * "substr_len_bytes" **rename** from "byte_len_range"
+      * "substr_len_chars" **rename** from "char_len_range"
       * "to_lower"
       * "to_upper"
       * "trim"
@@ -81,7 +80,7 @@ See https://mail.mozilla.org/pipermail/rust-dev/2011-December/001037.html
       * "trim_right"
       * "unshift_char"
       * "utf8_char_width"
-      * "words": added
-      * "words_iter": added
+      * "words": **add**
+      * "words_iter": **add**
   * implement "to_upper", "to_lower" on top of "map"
   * add "pure" to a lot of functions
