@@ -25,7 +25,7 @@ See https://mail.mozilla.org/pipermail/rust-dev/2011-December/001037.html
       * "char_len_range" => "substr_len_chars"
       * "iter_chars" => "chars_iter" (to make the analagous to the iter versions to come)
       * "loop_chars" => "chars_loop"
-      * "loop_chars_sub" => "substr_loop" (analogous to "substr")
+      * "loop_chars_sub" => "substr_chars_loop" (analogous to "substr")
       * "split" => "split_char"? (analogous to "split_str")
       * "str_from_cstr" => "from_cstr"
       * "to_chars" => "chars" (analogous to "bytes")
