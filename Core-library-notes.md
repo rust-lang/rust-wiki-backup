@@ -28,13 +28,12 @@ See https://mail.mozilla.org/pipermail/rust-dev/2011-December/001037.html
       * "unsafe_from_bytes" => "from_bytes_unsafe"
       * "split" => "split_char"? (analogous to "split_str")
       * "to_chars" => "chars" (analogous to "bytes")
+      * "iter_chars" => "chars_iter" (to make the analagous to the iter versions to come)
   * add:
       * "len" := "len_char"
       * "split" := "split_char"
+      * "bytes_iter"
+      * "lines_iter"
+      * "split_iter"
+      * "words_iter"
       * "map" and implement "to_upper", "to_lower" on top of it
-      * "iter_lines"
-      * "iter_words"
-      * add iterator versions?
-          * "bytes_iter"
-          * "chars_iter"
-          * "split_iter"
