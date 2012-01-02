@@ -29,6 +29,7 @@ See https://mail.mozilla.org/pipermail/rust-dev/2011-December/001037.html
       * "split" => "split_char"? (analogous to "split_str")
   * add:
       * "len" := "len_char"
+      * "split" := "split_char"
       * "map" and implement "to_upper", "to_lower" on top of it
       * "iter_lines"
       * "iter_words"
