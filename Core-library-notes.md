@@ -16,6 +16,7 @@ See https://mail.mozilla.org/pipermail/rust-dev/2011-December/001037.html
       * "to_uppercase" => "to_upper" (analogous to "str")
   * add:
       * "is_digit"
+
 * "str":
       * "bytes"
       * "bytes_iter": **add**
@@ -82,5 +83,6 @@ See https://mail.mozilla.org/pipermail/rust-dev/2011-December/001037.html
       * "utf8_char_width"
       * "words": **add**
       * "words_iter": **add**
+* "str":
   * implement "to_upper", "to_lower" on top of "map"
   * add "pure" to a lot of functions
