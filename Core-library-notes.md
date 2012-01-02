@@ -14,6 +14,8 @@ See https://mail.mozilla.org/pipermail/rust-dev/2011-December/001037.html
   * rename:
       * "to_lowercase" => "to_lower" (analgous to "str")
       * "to_uppercase" => "to_upper" (analgous to "str")
+  * add:
+      * "is_digit"
 * "str":
   * add "pure" to a lot of functions
   * rename:
