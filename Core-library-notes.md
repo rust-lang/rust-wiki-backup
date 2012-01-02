@@ -60,9 +60,9 @@ See https://mail.mozilla.org/pipermail/rust-dev/2011-December/001037.html
       * "rindex"
       * "shift_byte"
       * "shift_char"
-      * "slice"
+      * "slice" **rename** from "safe_slice"
       * "slice_char" **rename** from "char_slice"
-      * "slice_safe" **rename** from "safe_slice"
+      * "slice_unsafe" **rename** from "slice"
       * "split" := "split_char"
       * "splitn"
       * "split_char" **add**/**rename** from "split" (analogous to "split_str")
