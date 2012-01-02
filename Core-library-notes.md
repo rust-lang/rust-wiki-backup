@@ -18,26 +18,26 @@ See https://mail.mozilla.org/pipermail/rust-dev/2011-December/001037.html
       * "is_digit"
 * "str":
   * rename:
-      * "byte_len_range" => "substr_len_bytes"
-      * "char_len" => "len_chars"
-      * "char_len_range" => "substr_len_chars"
-      * "iter_chars" => "chars_iter" (to make the analagous to the iter versions to come)
-      * "loop_chars" => "chars_loop"
-      * "loop_chars_sub" => "substr_chars_loop" (analogous to "substr")
-      * "split" => "split_char"? (analogous to "split_str")
-      * "str_from_cstr" => "from_cstr"
-      * "to_chars" => "chars" (analogous to "bytes")
-      * "unsafe_from_byte" => "from_byte_unsafe"
-      * "unsafe_from_bytes" => "from_bytes_unsafe"
+      * "str_from_cstr" => "from_cstr" renamed from
+      * "to_chars" => "chars" renamed from (analogous to "bytes")
+      * "unsafe_from_byte" => "from_byte_unsafe" renamed from
+      * "unsafe_from_bytes" => "from_bytes_unsafe" renamed from
   * goal:
       * "bytes_iter": added
+      * "chars_iter" renamed from "iter_chars" (to make the analagous to the iter versions to come)
+      * "chars_loop" renamed from "loop_chars"
       * "len": added := "len_char"
       * "len_bytes" renamed from "byte_len" (analogous to "iter_chars", "loop_chars", "push_byte", "push_char")
+      * "len_chars" renamed from "char_len"
       * "lines": added
       * "lines_iter": added
       * "map" and implement "to_upper", "to_lower" on top of it
       * "split": added  := "split_char"
+      * "split_char" renamed from "split" (analogous to "split_str")
       * "split_iter": added
+      * "substr_chars_loop" renamed from "loop_chars_sub" (analogous to "substr")
+      * "substr_len_bytes" renamed from "byte_len_range"
+      * "substr_len_chars" renamed from "char_len_range"
       * "words": added
       * "words_iter": added
   * add "pure" to a lot of functions
