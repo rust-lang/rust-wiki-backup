@@ -15,6 +15,7 @@ See https://mail.mozilla.org/pipermail/rust-dev/2011-December/001037.html
       * "to_lowercase" => "to_lower" (analogous to "str")
       * "to_uppercase" => "to_upper" (analogous to "str")
   * add:
+      * "is_ascii"
       * "is_digit"
 
 * "str":
@@ -87,7 +88,7 @@ See https://mail.mozilla.org/pipermail/rust-dev/2011-December/001037.html
       * "words": **add**
       * "words_iter": **add**
 * "str":
-  * "is_ascii": spin-off functionality to "char", implement on top of "chars_loop"
+  * "is_ascii": implement on top of "char::is_ascii", "chars_loop"
   * "is_whitespace": implement on top of "char::is_whitespace", "chars_loop"
   * implement "to_upper", "to_lower" on top of "map"
   * add "pure" to a lot of functions
