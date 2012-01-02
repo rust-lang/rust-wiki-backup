@@ -79,6 +79,7 @@ See https://mail.mozilla.org/pipermail/rust-dev/2011-December/001037.html
       * "trim"
       * "trim_left"
       * "trim_right"
+      * "unshift_byte": **add**
       * "unshift_char"
       * "utf8_char_width"
       * "words": **add**
