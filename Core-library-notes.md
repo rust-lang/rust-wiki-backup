@@ -22,6 +22,7 @@ See https://mail.mozilla.org/pipermail/rust-dev/2011-December/001037.html
       * "byte_len_range" => "len_bytes_range"
       * "char_len" => "len_chars"
       * "char_len_range" => "len_chars_range"
+      * "unsafe_from_bytes" => "from_bytes_unsafe"
       * "split_str" => "split_char"? (analogous to "split_str")
   * add:
       * "len" := "len_char"
