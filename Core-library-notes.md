@@ -64,11 +64,13 @@ See https://mail.mozilla.org/pipermail/rust-dev/2011-December/001037.html
       * "slice" **rename** from "safe_slice"
       * "slice_char" **rename** from "char_slice"
       * "slice_unsafe" **rename** from "slice"
-      * "split" := "split_char"
-      * "splitn"
+      * "split": **add**, takes a block of type 'char -> bool'
       * "split_char" **add**/**rename** from "split" (analogous to "split_str")
-      * "split_iter": **add**
+      * "split_char_iter": **add**
+      * "splitn_char": **rename** from "splitn"
+      * "splitn_char_iter": **add**
       * "split_str"
+      * "split_str_iter": **add**
       * "starts_with"
       * "substr"
       * "substr_chars_loop" **rename** from "loop_chars_sub" (analogous to "substr")
