@@ -10,7 +10,9 @@ See https://mail.mozilla.org/pipermail/rust-dev/2011-December/001037.html
 ## TODO
 
 * "char":
-  * rename "to_lowercase" => "to_lower", "to_uppercase" => "to_upper" analgous to "str"
+  * rename
+      * "to_lowercase" => "to_lower" (analgous to "str")
+      * "to_uppercase" => "to_upper" (analgous to "str")
 * "str":
   * rename:
       * "byte_len" to "len_bytes" (analogous to "iter_chars", "loop_chars", "push_byte", "push_char")
