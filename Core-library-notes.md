@@ -17,12 +17,14 @@ See https://mail.mozilla.org/pipermail/rust-dev/2011-December/001037.html
 * "str":
   * add "pure" to a lot of functions
   * rename:
+      * "str_from_cstr" => "from_cstr"
       * "byte_len" => "len_bytes" (analogous to "iter_chars", "loop_chars", "push_byte", "push_char")
       * "byte_len_range" => "len_bytes_range"
       * "char_len" => "len_chars"
       * "char_len_range" => "len_chars_range"
   * add:
       * "len" := "len_char"
+      * "map" and implement "to_upper", "to_lower" on top of it
       * "iter_lines"
       * "iter_words"
   * when to return a list of strings and when an iterator? for example "split" would be a condidate for returning an iterator when applied to a huge string
