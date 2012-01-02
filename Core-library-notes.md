@@ -11,6 +11,6 @@ See https://mail.mozilla.org/pipermail/rust-dev/2011-December/001037.html
 
 * "str":
   * rename "byte_len" to "len_bytes" and "char_len" to "len_chars", to be in line of "iter_chars", "loop_chars", "push_byte", "push_char"
-  * should we make operations on chars default and thus rename "char_len" => "len" and "iter_chars" => "iter"?
+  * rename "char_len" => "len" and "iter_chars" => "iter" because operating on chars would be most common for users?
   * what functions are missing?
-  * decide when to return a list of strings and when an iterator
+  * when to return a list of strings and when an iterator?
