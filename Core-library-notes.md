@@ -17,15 +17,14 @@ See https://mail.mozilla.org/pipermail/rust-dev/2011-December/001037.html
   * add:
       * "is_digit"
 * "str":
-  * rename:
-      * "str_from_cstr" => "from_cstr" renamed from
-      * "to_chars" => "chars" renamed from (analogous to "bytes")
-      * "unsafe_from_byte" => "from_byte_unsafe" renamed from
-      * "unsafe_from_bytes" => "from_bytes_unsafe" renamed from
   * goal:
       * "bytes_iter": added
+      * "chars" renamed from "to_chars" (analogous to "bytes")
       * "chars_iter" renamed from "iter_chars" (to make the analagous to the iter versions to come)
       * "chars_loop" renamed from "loop_chars"
+      * "from_byte_unsafe" renamed from "unsafe_from_byte"
+      * "from_bytes_unsafe" renamed from "unsafe_from_bytes"
+      * "from_cstr" renamed from "str_from_cstr"
       * "len": added := "len_char"
       * "len_bytes" renamed from "byte_len" (analogous to "iter_chars", "loop_chars", "push_byte", "push_char")
       * "len_chars" renamed from "char_len"
