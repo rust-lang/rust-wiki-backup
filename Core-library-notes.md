@@ -10,7 +10,7 @@ See https://mail.mozilla.org/pipermail/rust-dev/2011-December/001037.html
 ## TODO
 
 * "char":
-  * fix "maybe_digit" dcoumentation "Function: to_digit"
+  * fix "maybe_digit" documentation "Function: to_digit"
   * rename:
       * "to_lowercase" => "to_lower" (analgous to "str")
       * "to_uppercase" => "to_upper" (analgous to "str")
