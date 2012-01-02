@@ -10,14 +10,15 @@ See https://mail.mozilla.org/pipermail/rust-dev/2011-December/001037.html
 ## TODO
 
 * "char":
-  * rename
+  * rename:
       * "to_lowercase" => "to_lower" (analgous to "str")
       * "to_uppercase" => "to_upper" (analgous to "str")
 * "str":
   * rename:
-      * "byte_len" to "len_bytes" (analogous to "iter_chars", "loop_chars", "push_byte", "push_char")
-      * "char_len" to "len_chars" (analogous to "iter_chars", "loop_chars", "push_byte", "push_char")
+      * "byte_len" => "len_bytes" (analogous to "iter_chars", "loop_chars", "push_byte", "push_char")
+      * "char_len" => "len_chars" (analogous to "iter_chars", "loop_chars", "push_byte", "push_char")
   * add:
+      * "len" := "len_char"
       * "iter_lines"
       * "iter_words"
   * when to return a list of strings and when an iterator? for example "split" would be a condidate for returning an iterator when applied to a huge string
