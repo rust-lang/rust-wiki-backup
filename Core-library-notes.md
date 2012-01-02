@@ -12,8 +12,10 @@ See https://mail.mozilla.org/pipermail/rust-dev/2011-December/001037.html
 * "char":
   * rename "to_lowercase" => "to_lower", "to_uppercase" => "to_upper" analgous to "str"
 * "str":
-  * rename "byte_len" to "len_bytes" and "char_len" to "len_chars", to be in line of "iter_chars", "loop_chars", "push_byte", "push_char"
-  * what functions are missing?
+  * rename:
+      * "byte_len" to "len_bytes" (analogous to "iter_chars", "loop_chars", "push_byte", "push_char")
+      * "char_len" to "len_chars" (analogous to "iter_chars", "loop_chars", "push_byte", "push_char")
+  * add:
       * "iter_lines"
       * "iter_words"
   * when to return a list of strings and when an iterator? for example "split" would be a condidate for returning an iterator when applied to a huge string
