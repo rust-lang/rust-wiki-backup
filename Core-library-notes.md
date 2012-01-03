@@ -15,13 +15,14 @@ See https://mail.mozilla.org/pipermail/rust-dev/2011-December/001037.html
       * "is_digit"
 
 * "str":
+      * "all_chars" **rename** from "loop_chars"
+      * "any_char" **add** (analogous to "all_chars")
       * "bytes"
       * "bytes_iter": **add**
       * "char_at"
       * "char_range_at"
       * "chars" **rename** from "to_chars" (analogous to "bytes")
       * "chars_iter" **rename** from "iter_chars" (to make the analagous to the iter versions to come)
-      * "chars_loop" **rename** from "loop_chars"
       * "concat"
       * "connect"
       * "contains"
