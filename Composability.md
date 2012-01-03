@@ -1,12 +1,10 @@
 We should think about how to improve composability in Rust.
 
 ## Example
-```str``` and ```list``` should have a ```any``` like ```vec::any```.
+* ```str``` and ```list``` should have a ```any``` like ```vec::any```.
+But why duplicate the implementation when they all simply expect just a stream of values?
 
-Why duplicate the implementation when they all simply expect just a stream of values?
-
-```vec::any2``` is like ```vec::any``` operating no two lists. In Haskell you would simlpy would do ```any foo . zip``` and would not need a special ```any2```.
-
+* ```vec::any2``` is like ```vec::any``` operating no two lists. In Haskell you would simlpy would do ```any foo . zip``` and would not need a special ```any2```.
 In Rust ```vec::zip``` creates a whole new vector, while we'd need something like ```vec::zip_iter``` that only iterates over the zipped-list.
 
 
