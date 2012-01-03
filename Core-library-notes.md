@@ -15,8 +15,8 @@ See https://mail.mozilla.org/pipermail/rust-dev/2011-December/001037.html
       * "is_digit"
 
 * "str":
-      * "all_chars" **rename** from "loop_chars" (analogous to str::all)
-      * "any_char" **add** (analogous to str::any)
+      * "all" **rename** from "loop_chars" (analogous to str::all)
+      * "any" **add** (analogous to str::any)
       * "bytes"
       * "bytes_iter": **add**
       * "char_at"
