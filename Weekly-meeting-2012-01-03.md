@@ -1,0 +1,68 @@
+- Shall I push the new block syntax?
+	- marijn: Yes, seems harmless enough, we'll "see how it goes"
+- Replace for with block
+	- break, cont, etc
+	- graydon: this was all discussed
+	- nmatsakis: 
+		we could add another kind of proto (loopblk) that permits break, cont, etc
+		wraps result in a special tag
+- nmatsakis: Been working on cleaning up the task library
+- interfaces:
+	- marijn: making good progress on interfaces, starting to Just Work
+	- method resolution (compile-time) quite a bit slower this way
+	- added a lot more vectors, causing more malloc/free
+	- long term perf graph might help for monitoring perf regression
+	- maybe just exposing all the data we have
+- rustbot:
+	- graydon: we're not getting "multiple builds" anymore
+	- msg broker was sending multiple build requests, causing multiple builds
+	- reseting the poll server seemed to solve this
+	- maybe we can use an EC2 cluster to achieve better latency, more builds
+	- currently very limited testing of ia32
+	- we could perhaps use multiple bots per machine as build is not particularly parallel
+	- perhaps we could just ignore stage3, or not build it
+		- change stage3 to once per day if at all?
+	- EC2 is expensive ($$), Cloudkick or Rackspace is better
+		- constant on (like rustbot) is not good on EC2
+	- graydon: one other problem with virtualized machines:
+		- linux machines super easy, windows hard, mac impossible
+	- maybe testing linux is enough
+	- marijn: get better control over work queue of bots, allow to cancel jobs etc
+	- graydon: all bots are listening to one another, in an async. comm. pool 
+		- easy for bots to listen to each other and if one fails they could all fail
+		- maybe not a good idea, interesting to know if one platform fails
+	- add a command for rustbot to edit work queue
+- graydon: working on documentation drift
+	- wants docs to autogenerate whenever we commit
+	- have a tool, rustdoc, that is evolving and would allow
+		- command line query support for documentation
+		- would allow emacs modes to better integrate for documentation
+- Release management
+	- shall we hold release until interfaces are in place?
+		- new code would be shaky though
+		- should discuss with bigger group
+		- usable in another week, maybe can replace some objects
+	- graydon: do we need objects + interfaces?
+		- lots of overlap
+		- marijn: pcwalton still plans to go fwd with classes
+			- would integrate with interfaces and allow for classical patterns
+			- current obj system doesn't add anything to new work
+		- nmatsakis: I'm inclined to agree, obj system doesn't add a lot
+		- ad-hoc per object extension largely unused, so not an imp't feature?
+			- maybe used in the I/O system?
+		- marijn: nominal records alongside structural ones?
+			- better for recursive types
+			- better for specializing interfaces
+			- graydon: personally he likes keeping nominalness orthogonal
+			- nmatsakis: I don't like having nominal and stuctural recs, 
+				- but calling nominal records classes might be ok
+			- graydon, marijn: absolutely do not want to give up structural records
+	- timeline for release: this month
+		- focus on the release
+		- anything missing from issue milestones?
+- nmatsakis: no copying proposal?
+	- marijn approves
+	- unique vectors are a pain
+	- nmatsakis: I started work on converting compiler to use vec:map() etc
+		- so that we know how well fixed-size arrays will work
+		- but more to be done
