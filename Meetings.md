@@ -8,3 +8,4 @@
 * [[Weekly meeting 2011-12-06]] (status update)
 * [[Weekly meeting 2011-12-13]] (no implicit copies; unique closures; type classes; libraries)
 * [[Weekly meeting 2011-12-20]] (varieties of function; semicolon syntax)
+* [[Weekly meeting 2012-01-03]] (new syntax; blocks vs for loops; interfaces; rustbot)
