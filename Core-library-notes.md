@@ -71,7 +71,7 @@ See https://mail.mozilla.org/pipermail/rust-dev/2011-December/001037.html
       * "split_str_iter": **add**
       * "starts_with"
       * "substr"
-      * "substr_chars_loop" **rename** from "loop_chars_sub" (analogous to "substr")
+      * "substr_any" **rename** from "loop_chars_sub" (analogous to "substr")
       * "substr_len_bytes" **rename** from "byte_len_range"
       * "substr_len_chars" **rename** from "char_len_range"
       * "to_lower"
@@ -85,6 +85,6 @@ See https://mail.mozilla.org/pipermail/rust-dev/2011-December/001037.html
       * "words": **add**
       * "words_iter": **add**
 * "str":
-  * "is_ascii": implement on top of "char::is_ascii", "chars_loop"
+  * "is_ascii": implement on top of "char::is_ascii", "all"
   * implement "to_upper", "to_lower" on top of "map"
   * add "pure" to a lot of functions
