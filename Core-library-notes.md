@@ -71,7 +71,7 @@ See https://mail.mozilla.org/pipermail/rust-dev/2011-December/001037.html
       * "split_str_iter": **add**
       * "starts_with"
       * "substr"
-      * "substr_any" **rename** from "loop_chars_sub" (analogous to "substr")
+      * "substr_all" **rename** from "loop_chars_sub" (analogous to "substr")
       * "substr_len_bytes" **rename** from "byte_len_range"
       * "substr_len_chars" **rename** from "char_len_range"
       * "to_lower"
