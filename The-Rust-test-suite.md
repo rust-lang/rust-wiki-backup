@@ -81,11 +81,11 @@ messages is:
 
 fn main() {
    let a: bool = 10; //! ERROR mismatched types
-   log b;
+   log (debug, b);
 }
 ```
 In fact, this test would fail, because there are two errors: the type
-mismatch 
+mismatch and the undefined variable `b`.  
 
 Sometimes it is not possible or not convenient to place the `//!`
 comment on precisely the line where the error occurs. For those cases,
@@ -93,7 +93,16 @@ you may make a comment of the form `//!^` where the carrot `^`
 indicates that the error is expected to appear on the line above.  You
 may have as many carrots as you like, so `//!^^^ ERROR foo` indicates
 that the error message `foo` is expected to be reported 3 lines above
-the comment.
+the comment.  We could therefore correct the above test like so:
+```
+// Regression test for issue #XXX
+
+fn main() {
+   let a: bool = 10; //! ERROR mismatched types
+   log (debug, b);
+   //!^ ERROR undefined variable `b`
+}
+```
 
 The older technique for specify error messages is to use an
 `error-pattern` directive.  These directives are placed at the top of
