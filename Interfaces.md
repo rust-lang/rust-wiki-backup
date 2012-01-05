@@ -5,7 +5,7 @@ This describes the interface (`iface`) and implementation (`impl`) features as t
 ## Method implementation
 
     // An implementation named `iter_util` for vector types
-    impl iter_util<T> for [T] {
+    impl <T> of iter_util<T> for [T] {
         fn len() -> uint { vec::len(self) }
         fn iter(f: block(T)) { for elt in self { f(elt); } }
         fn map<U>(f: block(T) -> U) -> [U] {
