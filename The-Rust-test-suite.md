@@ -22,30 +22,29 @@ The test runner for these tests is at src/test/compiletest and is compiled to te
 A typical test might look like:
 
 ```
-// error-pattern:mismatched types
 // Regression test for issue #XXX
 
 fn main() {
-   let bool a = 10;
+   let a: bool = 10; //! ERROR mismatched types
 }
 ```
 
 There are four different modes for compile tests. Each test is run under one or more modes:
 
-* compile-fail - The test should fail to compile. Must include at least one error-pattern directive.
+* compile-fail - The test should fail to compile. Must include at least one expected error.
 * run-fail - The test should compile but fail to run. Must include at least one error-pattern directive.
 * run-pass - The test should compile and run successfully
 * pretty - The test should round-trip through the pretty-printer and then compile successfully
 
 Valid directives include:
 
-* `error-pattern:[...]` - A message that should be expected on standard out. If multiple patterns are provided then they must all be matched, in order.
 * `compile-flags:[...]` - Additional arguments to pass to the compiler
 * `pp-exact` - The test should pretty-print exactly as written
 * `pp-exact:[filename]` - The pretty-printed test should match the example in `filename`
 * `xfail-test` - Test is broken, don't run it
 * `xfail-fast` - Don't run as part of check-fast, a special win32 test runner (some tests don't work with it)
 * `xfail-pretty` - Test doesn't pretty-print correcty
+* `error-pattern:[...]` - A message that should be expected on standard out. If multiple patterns are provided then they must all be matched, in order (**Note:** error-patterns are somewhat deprecated, see the section on Expected Errors below).
 
 There are five directories containing compile tests, living in the src/tests directory:
 
@@ -66,6 +65,43 @@ And finally, build targets:
 * check-stage[N]-pretty-rfail - The tests in the run-fail directory, in pretty mode
 * check-stage[N]-pretty-bench - The tests in the bench directory, in pretty mode
 * check-stage[N]-pretty-pretty - The tests in the pretty directory, in pretty mode
+
+### Specifying the expected errors and warnings
+
+When writing a compile-fail test, you must specify at least one
+expected error or warning message.  The preferred way to do this is to
+place a comment with the form `//! ERROR msg` or `//! WARNING msg` on
+the line where the error or warning is expected to occur.  You may
+have as many of these comments as you like.  The test harness will
+verify that the compiler reports precisely the errors/warnings that are
+specified, no more and no less.  An example of using the error/warning
+messages is:
+```
+// Regression test for issue #XXX
+
+fn main() {
+   let a: bool = 10; //! ERROR mismatched types
+   log b;
+}
+```
+In fact, this test would fail, because there are two errors: the type
+mismatch 
+
+Sometimes it is not possible or not convenient to place the `//!`
+comment on precisely the line where the error occurs. For those cases,
+you may make a comment of the form `//!^` where the carrot `^`
+indicates that the error is expected to appear on the line above.  You
+may have as many carrots as you like, so `//!^^^ ERROR foo` indicates
+that the error message `foo` is expected to be reported 3 lines above
+the comment.
+
+The older technique for specify error messages is to use an
+`error-pattern` directive.  These directives are placed at the top of
+the file and each message found in an `error-pattern` directive must
+appear in the output.  Using error comments is preferred, however,
+because it is a more thorough test: (a) it verifies that the error is
+reported on the expected line number and (b) it verifies that no
+additional errors or warnings are reported.
 
 ### Recipes
 
