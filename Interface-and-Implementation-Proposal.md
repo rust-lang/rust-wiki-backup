@@ -1,6 +1,10 @@
 # Interface/Implementation Proposal
 
+**Note:** The current implementation, which has syntactically drifted a bit from the proposal, is described [in this page][2].
+
 Discussion [here][1], issue number #1227
+
+[2]: https://github.com/graydon/rust/wiki/Interfaces
 
 [1]: https://mail.mozilla.org/pipermail/rust-dev/2011-November/001010.html
 
