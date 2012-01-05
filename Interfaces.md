@@ -6,7 +6,7 @@ This describes the interface (`iface`) and implementation (`impl`) features as t
 
     // An implementation named `iter_util` for vector types
     impl iter_util<T> for [T] {
-        fn len() -> uint { std::vec::len(self) }
+        fn len() -> uint { vec::len(self) }
         fn iter(f: block(T)) { for elt in self { f(elt); } }
         fn map<U>(f: block(T) -> U) -> [U] {
             let rslt = [];
@@ -19,10 +19,10 @@ Note that both the `impl` and the individial methods can take type parameters.
 
 ## Static resolution
 
-If the above `impl` was defined in `std::vec`, another module can import the interface implementation and use it for method calls:
+If the above `impl` was defined in `core::vec`, another module can import the interface implementation and use it for method calls:
 
-    import std::vec::iter_util;
-    [1, 2, 3].iter {|e| log_err e;}
+    import vec::iter_util;
+    [1, 2, 3].iter {|e| log(error, e);}
 
 This call is statically resolved. The set of imported interface implementations is searched for an `iter` method matching the type of the method call's receiver (`[int]`). If more than one match, the 'nearest' (in scope) import wins. If there are still multiple implementations in the nearest scope, an error is raised (we may want to revisit that and use specificity scoring).
 
@@ -35,12 +35,12 @@ This call is statically resolved. The set of imported interface implementations 
 
 The above declares a named interface type `seq`. You can make implementations refer to a specific interface by referring to it using the `of` keyword.
 
-    impl list_seq<T> of std::seq::seq<T> for std::list::list {
+    impl list_seq<T> of seq::seq<T> for std::list::list {
         fn len() -> uint { std::list::len(self) }
         fn iter(f: block(T)) { std::list::iter(self, f); }
     }
 
-You are allowed to leave off the name of the `impl` in order to inherit the name of the `iface`, as in `impl <T> of std::seq::seq<T> for ...`. Impl names don't clash -- they are only used for importing and exporting, and if you import a name that happens to refer to multiple impls, you simply get all of them  in scope.
+You are allowed to leave off the name of the `impl` in order to inherit the name of the `iface`, as in `impl <T> of seq::seq<T> for ...`. Impl names don't clash -- they are only used for importing and exporting, and if you import a name that happens to refer to multiple impls, you simply get all of them  in scope.
 
 ## Dynamic dispatch through bounded type params
 
