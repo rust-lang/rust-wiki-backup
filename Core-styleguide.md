@@ -1,4 +1,4 @@
-These are guidelines for the Rust compiler and standard library code.
+These are coding guidelines for the Rust compiler and standard library.
 
 ## Naming
 
