@@ -1,4 +1,4 @@
-# Notes on attributes
+General information about attributes.
 
 ## Meta items
 

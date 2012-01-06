@@ -11,6 +11,7 @@ Listing of proposals:
 ## Implemented
 
 * [[Proposal for unique types]]
+* [[Proposal for interfaces]]
 
 ## Accepted
 

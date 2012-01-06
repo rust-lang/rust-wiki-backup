@@ -1,5 +1,13 @@
 Listing of Notes for developers:
 
+## Process and workflow notes
+
 * [[Note wiki conventions]]
-* [[Note tasks and communication]]
 * [[Note compiler snapshots]]
+* [[Note git workflow]]
+
+## Language notes
+
+* [[Note attributes]]
+* [[Note defined attributes]]
+* [[Note tasks and communication]]
