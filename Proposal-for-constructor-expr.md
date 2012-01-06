@@ -1,5 +1,3 @@
-## Constructor expressions
-
 The aim of this proposal is to make the DPS optimization more
 transparent to end users and simultaneously eliminate implicit copies
 of (potentially) mutable state.  The gist of it is that when aggregate
