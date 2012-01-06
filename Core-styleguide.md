@@ -4,7 +4,7 @@ These are guidelines for coding the Rust compiler and standard library.
 
 ### Interfaces
 
-Interfaces names should be verbs.
+Interface names should be verbs.
 
 ### Predicates
 
