@@ -48,10 +48,6 @@ h3. Are you going to use this to suddenly rewrite the browser and change everyth
 
 No. The Mozilla Corporation's involvement is at the _labs_ level: the group concerned with doing _experiments_. The point is to explore some possibilities. No particular plan of use exists at the moment; any possible future uptake or use will depend (as always) on community interest.
 
-h3. What's with the development policy? Why don't you take random pull requests?
-
-Most of the development work on Rust is being done by Mozilla Corporation employees and so much of the copyright is owned by the Mozilla Foundation. Any time you have a legal entity involved in program development it's good to have a liability paper trail about where things came from, even if they're well licensed; helps for avoiding any possible rights/ownership disputes down the line. It's not at all unusual for development sponsored by larger institutions or organizations. See for example the FSF, ASF, Eclipse Foundation, or similar contributor agreements. This is just how it works.
-
 h3. Why Github rather than the normal Mozilla setup (Mercurial / Bugzilla / Tinderbox)?
 
 * This is a fresh codebase and has no existing ties to Mozilla infrastructure; there is no particular advantage to (re)using any of the above infrastructure, it would all have to be upgraded and adapted to our needs.
