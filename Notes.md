@@ -1,3 +1,4 @@
 Listing of Notes for developers:
 
-* [[Compiler snapshots]]
+* [[Note tasks and communication]]
+* [[Note compiler snapshots]]
