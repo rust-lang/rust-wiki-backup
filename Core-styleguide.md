@@ -6,6 +6,10 @@ These are guidelines for the Rust compiler and standard library code.
 
 Interface names should be verbs.
 
+Examples:
+
+* ```iterate```
+
 ### Predicates
 
 The names of simple boolean predicates should start with "is_" or similarly be expressed using a "small question word".
