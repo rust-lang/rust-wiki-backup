@@ -1,4 +1,4 @@
-# Tasks and Communication
+Tasks and communication:
 
 ## Current Status
 
