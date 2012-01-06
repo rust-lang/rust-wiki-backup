@@ -8,6 +8,7 @@ Listing of Notes for developers:
 
 ## Language notes
 
+* [[Note interfaces]]
 * [[Note attributes]]
 * [[Note defined attributes]]
 * [[Note tasks and communication]]
