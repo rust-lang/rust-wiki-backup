@@ -1,4 +1,4 @@
-## Group meetings
+Listing of minutes from weekly meetings
 
 * [[Weekly meeting 2011-10-11]] (unsafe blocks; typestate; tutorial; destructuring)
 * [[Weekly meeting 2011-10-18]] (status update)
