@@ -14,6 +14,7 @@ Listing of proposals:
 
 * [[Proposal for unique types]]
 * [[Proposal for interfaces]]
+* [[Proposal for logging]]
 
 ## Withdrawn
 

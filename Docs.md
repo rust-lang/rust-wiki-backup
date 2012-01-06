@@ -9,7 +9,7 @@ Listing of documentation for users:
 
 ## Wiki Documents
 
-###
+### General instructions for users
 
 * [[Doc getting started]]
 
@@ -18,3 +18,7 @@ Listing of documentation for users:
 * [[Doc language FAQ]]
 * [[Doc project FAQ]]
 * [[Doc usage FAQ]]
+
+### Old or disorganized instructions
+
+* [[Doc old getting started]]

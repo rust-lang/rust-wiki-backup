@@ -1,17 +1,19 @@
-Listing of Notes for developers:
+Listing of notes for developers:
 
 ## Process and workflow notes
 
 * [[Note wiki conventions]]
+* [[Note development roadmap]]
 * [[Note compiler snapshots]]
 * [[Note git workflow]]
 
-## Language notes
+## Language and implementation notes
 
 * [[Note interfaces]]
 * [[Note attributes]]
 * [[Note defined attributes]]
 * [[Note tasks and communication]]
+* [[Note metadata format]]
 
 ## Library notes
 
@@ -21,3 +23,4 @@ Listing of Notes for developers:
 ## Miscellaneous notes
 
 * [[Note constraints in rustc and libraries]]
+* [[Note seeing LLVM output from rust]]

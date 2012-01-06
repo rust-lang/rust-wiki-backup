@@ -9,3 +9,6 @@ When you're done with a bikeshed topic, please either abandon it or move it to a
 * [[Bikeshed constrained types]]
 
 ## Abandonned
+
+* [[Bikeshed extracted documentation]]
+* [[Bikeshed disjoint union types]]

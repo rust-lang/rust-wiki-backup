@@ -1,4 +1,4 @@
-The github wiki system is generally good but Suffers from a couple weak points.
+The github wiki system is generally good but suffers from a couple weak points.
 
 * No built-in category, tagging or namespace system
 * No search
