@@ -1,5 +1,3 @@
-# Compiler snapshots
-
 The compiler (`rustc`) is self-hosting. This means that while you develop, you "start" from a pre-built binary we serve from an archive server, and build new copies of the same program (from the same source) in your workspace.
 
 Self-hosting involves "stages". There are 4 stages to know about:
