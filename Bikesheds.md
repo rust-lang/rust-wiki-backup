@@ -9,6 +9,7 @@ When you're done with a bikeshed topic, please either abandon it or move it to a
 * [[Bikeshed constrained types]]
 * [[Bikeshed object types]]
 * [[Bikeshed pattern matching syntax]]
+* [[Bikeshed note]]
 
 ## Abandonned
 

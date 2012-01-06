@@ -7,6 +7,7 @@ Listing of proposals:
 * [[Proposal for predicate language]]
 * [[Proposal for regions]]
 * [[Proposal for attribute preprocessing]]
+* [[Proposal for fixits]]
 
 ## Accepted
 
