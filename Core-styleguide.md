@@ -2,7 +2,7 @@ These are guidelines for coding the Rust compiler and standard library.
 
 ## Naming
 
-## Interfaces
+### Interfaces
 
 Interfaces names should be verbs.
 
