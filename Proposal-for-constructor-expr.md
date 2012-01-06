@@ -1,4 +1,4 @@
-# Constructor expressions
+## Constructor expressions
 
 The aim of this proposal is to make the DPS optimization more
 transparent to end users and simultaneously eliminate implicit copies
