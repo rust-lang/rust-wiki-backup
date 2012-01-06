@@ -12,3 +12,12 @@ Listing of Notes for developers:
 * [[Note attributes]]
 * [[Note defined attributes]]
 * [[Note tasks and communication]]
+
+## Library notes
+
+* [[Note libcore]]
+* [[Note wanted libraries]
+
+## Miscellaneous notes
+
+* [[Note constraints in rustc and libraries]]

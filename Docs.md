@@ -11,10 +11,10 @@ Listing of documentation for users:
 
 ###
 
-* [[Getting Started]]
+* [[Doc getting started]]
 
 ### FAQs
 
-* [[Language FAQ]]
-* [[Project FAQ]]
-* [[Usage FAQ]]
+* [[Doc language FAQ]]
+* [[Doc project FAQ]]
+* [[Doc usage FAQ]]
