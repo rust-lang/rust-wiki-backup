@@ -1,4 +1,6 @@
-h2. Contributions and commit access
+Development policy for Rust.
+
+## Contributions and commit access
 
 If you are already have <a href="http://www.mozilla.org/hacking/commit-access-policy/">Level 1 Access</a> to commit within the Mozilla project you may commit directly to this repository. Email one of the existing authors and ask for commit access if you want to be contributing quickly and regularly this way.
 
@@ -6,7 +8,7 @@ More likely is a fork and pull-request. Pull-requests will be treated as "review
 
 Regular contributors who do not have Level 1 Access within the Mozilla project may request commit access, whereupon they will be required to sign a <a href="http://www.mozilla.org/hacking/notification/">Committer's Agreement</a> with the Mozilla Foundation.
 
-h2. Conduct
+## Conduct
 
 * We are committed to providing a friendly, safe and welcoming environment for all, regardless of gender, sexual orientation, disability, ethnicity, religion, or similar personal characteristic.
 * Please be kind and courteous. There's no need to be mean or rude.
@@ -15,24 +17,24 @@ h2. Conduct
 * We will exclude you from interaction if you insult, demean or harass anyone. That is not welcome behaviour. We interpret the term "harassment" as including the definition in the <a href="http://citizencodeofconduct.org/">Citizen Code of Conduct</a>; if you have any lack of clarity about what might be included in that concept, please read their definition.
 * Likewise any spamming, trolling, flaming, baiting or other attention-stealing behaviour is not welcome.
 
-h2. Contributed code requirements:
+## Contributed code requirements:
 
 Pass the existing tests. If you have a good reason for breaking a test, XFAIL it. We aim for clean builds at all times.
 
-There is <a href="http://tinderbox.mozilla.org/showbuilds.cgi?tree=Rust">a tinderbox</a> that should be kept green.
+There is a [bot](http://bot.rust-lang.org) that builds rust. The `master` branch should be kept green.
 
-h3. Pay attention to portability:
+### Pay attention to portability:
 * You are responsible for clean-build condition _on all platforms_ (linux, OSX, win32), including under valgrind on linux. 
 * Temporary breakage is acceptable only on a per-platform basis if you're on platform A and the breakage was on platform B that you happened to not be developing on today, and only if you fix it fast.
 * If you're going to commit directly to this repo, or land other people's work into it via pull-request, please make sure you have access to all 3 primary platforms and _can_ fix per-platform breakage.
 * If you are doing a lot of changes likely to cause per-platform breakage (say, a lot of linkage or threading work) please use a staging branch.
 
-h3. Conform to source-formatting house style:
+### Conform to source-formatting house style:
 * 78 column maximum lines
 * no tabs (except Makefiles)
 * stick to local naming and code-organization style
 
-h2. Communication
+## Communication
 
 There is an IRC channel on irc.mozilla.org, channel #rust. You're welcome to drop in and ask questions, discuss bugs and such. It is logged at <a href="http://irclog.gr/#browse/irc.mozilla.org/rust">http://irclog.gr/#browse/irc.mozilla.org/rust</a>
 
@@ -40,9 +42,9 @@ There is also a mailing list at <a href="https://mail.mozilla.org/listinfo/rust-
 
 In both contexts, please follow the conduct guidelines above. Language issues are often contentious and we'd like to keep discussion brief, civil and focused on what we're actually doing, not wandering off into too much imaginary stuff.
 
-h2. Issue tracking
+## Issue tracking
 
-Add a <a href="https://github.com/graydon/rust/wiki/The-Rust-test-suite">test</a> for anything you're unsure of or see breaking in passing.
+Add a test to the testsuite for anything you're unsure of or see breaking in passing. See [[Note testsuite]] for details.
 
 File bugs in <a href="https://github.com/graydon/rust/issues">the issue tracker</a> here as well as adding tests, or instead if you can't quite figure out how to test the thing you want to point out.
 
@@ -50,8 +52,8 @@ Tag bugs liberally. The bug tracker here currently has weak search capabilities.
 
 Add "FIXME (issue #NN): blah blah" in the source anywhere you see room for improvement, where #NN is the issue number in the tracker here. If you fix an issue on commit, remove the associated FIXMEs (grep for other occurrences) and put the exact phrase "Closes #NN" (with that capitalization) in the commit message and github will pick it up and link to the commit, close the issue.
 
-h2. Language changes
+## Language changes
 
-At the moment we're going to avoid a formal change policy; it's too early and we're still changing too many things in an ad-hoc, informal way. If we get to the point of a full supported release cycle, we'll set up a language-change process. Until then, we will accept or reject pull requests mostly as a matter of taste and available energy.
+At the moment we're going to avoid a formal change policy; it's too early and we're still changing too many things in an ad-hoc, informal way. If we get to the point of a full supported release cycle, we'll set up a language-change process. Until then, we will accept or reject pull requests mostly as a matter of taste and available energy. If you have some vague ideas, add an entry to [[Bikesheds]]. If you have a worked-out idea, add an entry to [[Proposals]].
 
-Library additions are probably the most likely to be accepted.
+Library additions are probably the most likely to be accepted. See [[Note wanted libraries]] for possible candidates.
