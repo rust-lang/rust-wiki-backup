@@ -1,26 +1,26 @@
-h2. Preliminaries
+## Preliminaries
 
-One thing that's helpful to remember is the distinction between the semantics of ??type names?? and ??constructor names??. The structural-vs-nominal axis is primarily about the ??type name??, but it also has implications for the semantics of ??constructor names??.
+One thing that's helpful to remember is the distinction between the semantics of _type names_ and _constructor names_. The structural-vs-nominal axis is primarily about the _type name_, but it also has implications for the semantics of _constructor names_.
 
 
-h2. Structural disjoint-union types
+## Structural disjoint-union types
 
-h3. How to understand them
+### How to understand them
 
 * Types are compared structurally rather than by type name. Disjoint union types do not have to be named.
 
-* Structural disjoint-unions more sense if you think of the constructor names as being ??labels?? rather than ??variables??, i.e., they aren't lexically scoped. That way when you compare two types for equality, no matter where in the program the types came from, you can sensibly compare the variant names. (This is similar to record field labels.)
+* Structural disjoint-unions more sense if you think of the constructor names as being _labels_ rather than _variables_, i.e., they aren't lexically scoped. That way when you compare two types for equality, no matter where in the program the types came from, you can sensibly compare the variant names. (This is similar to record field labels.)
 
 * The labels are associated globally (at least globally to the module; or, if labels are not module-qualified, then globally to the crate) with a particular type. You can't use the same variant label for two different datatypes. (This is also similar to record field labels.)
 
 * Alternatively, you could allow constructors to be used in multiple distinct types. The constructor must always have the same type, no matter what type it appears in, but it can appear in multiple types. This is like Ocaml's polymorphic variants. It's a more expensive feature and has less predictable performance (based on hashing).
 
 
-h3. Pros
+### Pros
 
 * There are marshalling/unmarshalling benefits to structural disjoint-union types: when you marshall a value, you just have to store the structure of the type, and then other code can unmarshall it as long as the structure matches its expectations. By contrast, nominal types are less flexible and I think require some sort of branding.
 
-h3. Cons
+### Cons
 
 * Structural disjoint-union types become complex in the face of recursive types ("equi-recursive types"). Even without subtyping, the algorithm for comparing types for equality is tricky (and more expensive -- it's not a runtime cost, but it could affect compilation times, which Mozilla definitely cares about). Comparing types for equality becomes a cyclic-graph-equality problem. The basic algorithm is in TAPL (p. 305, fig 21 - 4), but that doesn't handle mutual recursion. Apparently the more general algorithm is a little trickier since it has to be able to equate syntactically-different-but-semantically-equivalent unrollings of a type.
 
@@ -29,28 +29,28 @@ h3. Cons
 * Most of the historical precedent is in more experimental languages or experimental features of languages (Alice ML, Ocaml's polymorphic variants, Typed Racket's ad-hoc unions).
 
 
-h2. Nominal disjoint-union types
+## Nominal disjoint-union types
 
-h3. How to understand them
+### How to understand them
 
 * Disjoint-union types must be named, and they are compared for equality by name.
 
 * You still treat constructor names as non-lexically-scoped labels, and each constructor name belongs to a single disjoint-union type. This is not much different from the structural case, but it's a little easier to understand, since it's a constructor-name-to-type-name association rather than a constructor-name-to-type-structure association.
 
-h3. Pros
+### Pros
 
 * Bog-standard, well-understood.
 
 * Recursive types are not as complicated ("iso-recursive types"). Type equality is trivial to implement, efficient, and easy to understand.
 
-h3. Cons
+### Cons
 
 * Less flexible for marshalling/unmarshalling. If you want to recover the flexibility with structural union types you may end up having to reimplement equi-recursive type equality under the hood.
 
 
-h2. Local, generative disjoint-union types
+## Local, generative disjoint-union types
 
-h3. How to understand them
+### How to understand them
 
 * Evaluating a piece of code with a local type declaration produces values of distinct, mutually incompatible types each time.
 
@@ -63,9 +63,9 @@ h3. How to understand them
 * But it's easier just to disallow local types from escaping their scope.
 
 
-h2. Local, non-generative disjoint-union types
+## Local, non-generative disjoint-union types
 
-h3. How to understand them
+### How to understand them
 
 * Evaluating a piece of code with a local type declaration produces values of the same type each time.
 
