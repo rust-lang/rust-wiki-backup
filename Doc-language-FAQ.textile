@@ -193,3 +193,8 @@ h3. Why aren't function signatures inferred? Why only local slots?
 * Mechanically, it simplifies the inference algorithm; inference only requires looking at one function at a time.
 * The same simplification goes double for human readers. A reader does not need an IDE running an inference algorithm across an entire crate to be able to guess at a function's argument types; it's always explicit and nearby.
 * Parameters in Rust can be passed by reference or by value. We can't automatically infer which one the programmer means.
+
+h3. Why isn't `let i: uint = 0` valid Rust?
+
+Rust provides no coercion or overloading for literals so the `0` is _always_ type int. Implicit conversions are a common source of errors in C-like languages, so there is a strong desire to not let such problems creep into the language. That said, this is a common source of frustration, so a limited form of literal overloading may be introduced in the future.
+
