@@ -1,5 +1,3 @@
-
-# Non-first-line title
 ## `#macro`-style
 
 The expander allows for simple macro definitions. Sadly, we haven't had time to make them hygienic or look at macro-defining macros.
