@@ -196,5 +196,5 @@ h3. Why aren't function signatures inferred? Why only local slots?
 
 h3. Why isn't <code>let i: uint = 0</code> valid Rust?
 
-Rust provides no coercion or overloading for literals so the <code>0</code> is _always_ type int. Implicit conversions are a common source of errors in C-like languages, so there is a strong desire to not let such problems creep into the language. That said, this is feature is often frustrating, so a limited form of literal overloading may be introduced in the future.
+Rust provides no coercion or overloading for literals so the <code>0</code> is _always_ type int. To create a uint the literal must be suffixed with <code>u</code>. Implicit conversions are a common source of errors in C-like languages, so there is a strong desire to not let such problems creep into the language. That said, this is feature is often frustrating, so a limited form of literal overloading may be introduced in the future.
 
