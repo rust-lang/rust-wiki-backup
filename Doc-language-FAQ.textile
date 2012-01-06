@@ -164,7 +164,7 @@ We wish to integrate logging with the language at multiple levels: in terms of f
 
 If someone manages to cook up a useful version that seems light and usable and hits all the same use-cases, without requiring a dedicated statement, we'll consider replacing it.
 
-h3. Why are channels, tasks, ports, strings, vectors etc. built-in types rather than (say) special kinds of obj?
+h3. Why are strings, vectors etc. built-in types rather than (say) special kinds of obj?
 
 In each case there is one or more operator, literal constructor, overloaded use or integration with a built-in control structure that makes us think it would be awkward to phrase the type in terms of more-general type constructors. Same as, say, with numbers! But this is partly an aesthetic call and, similarly to with the <code>log</code> statement, we'd be willing to look at a worked-out proposal for eliminating or rephrasing these special cases.
 
