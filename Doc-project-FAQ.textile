@@ -24,11 +24,11 @@ No. Feel free to play around, but don't expect completeness or stability yet. Ex
 
 What exists presently is:
 * A self-hosted (written in Rust) compiler, which uses LLVM as a backend.
-** Compiles a significant portion of the test suite.
-** Produces _much_ smaller and faster code than the old bootstrap compiler.
-* An incomplete but functional version of the runtime library.
-* Some tests and documentation.
-* The humble beginnings of a standard library. Mostly stubs.
+* A runtime library.
+* An evolving standard library.
+* A test suite covering the compiler and libraries.
+* Documentation for the language and libraries.
+* Incomplete tools for packaging and documentation.
 
 h3. Is this a completely Mozilla-planned and orchestrated thing?
 
