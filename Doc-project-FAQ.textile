@@ -46,7 +46,11 @@ h3. Why publish it now?
 
 h3. Are you going to use this to suddenly rewrite the browser and change everything? Is the Mozilla Corporation trying to force the community to use a new language?
 
-No. The Mozilla Corporation's involvement is at the _labs_ level: the group concerned with doing _experiments_. The point is to explore some possibilities. No particular plan of use exists at the moment; any possible future uptake or use will depend (as always) on community interest.
+No. The Mozilla Corporation's involvement is at the _labs_ level: the group concerned with doing _experiments_. The point is to explore ideas. There is currently no plan to incorporate any Rust-based technology into Firefox.
+
+h3. What will Mozilla use Rust for?
+
+Mozilla intends to use Rust as a platform for prototyping experimental browser architectures. Specifically, the hope is to develop a browser that is more amenable to parallelization then existing ones, while also being less prone to common C++ coding errors. The name of that project is _Servo_.
 
 h3. Why Github rather than the normal Mozilla setup (Mercurial / Bugzilla / Tinderbox)?
 
