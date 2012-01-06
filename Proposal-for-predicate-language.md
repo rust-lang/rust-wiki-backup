@@ -1,4 +1,4 @@
-# Predicate language
+Predicate language.
 
 ## Preliminaries
 Typestate constraints are _predicates_: applications of a Rust function to one or more arguments. So a predicate has the form:
@@ -37,7 +37,7 @@ The code as it stands above wouldn't be accepted by the current version of `rust
 
 However, the compiler wouldn't accept this code either, because a pred can't call a `fn` -- `str::len` -- and we can't rewrite `str::len` as a pred straightforwardly, given its use of assignment. It's possible to imagine writing a "pred" version of `str::len` that computes the string's length with tail recursion rather than a loop, but this solution raises three distinct, and major, issues: first, it's undesirable from a code reuse point of view; second, we might like to use more complicated functions that `str::len` in predicates, where it would be harder to write a pure version; third, we may opt to eliminate tail calls from the language, making a recursive pure predicate potentially gratuitously more expensive than the equivalent loop-based function.
 
-##Solutions
+## Solutions
 
 So far, three major solutions have been proposed:
 

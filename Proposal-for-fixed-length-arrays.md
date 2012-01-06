@@ -1,5 +1,3 @@
-# Fixed length arrays
-
 It is generally acknowledged that unique vectors and strings are not
 working out well in practice, due to implicit copies and limitations
 of unique types.  This proposal advances the idea of fixed length

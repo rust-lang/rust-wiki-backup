@@ -1,5 +1,3 @@
-# Unique types
-
 I propose a unique pointer system similar to
 [Haller's work for Scala][haller]. Any value with a unique type `~T`
 is always statically guaranteed to be either dead (i.e., will never be
