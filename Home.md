@@ -1,4 +1,3 @@
-# Rust language
 
 This is a very preliminary work in progress. No supported releases yet nor defined release schedule / plans. Caveat emptor. It will crash. It will change syntax and semantics. It will eat your laundry. Use at your own risk. Etc.
 
