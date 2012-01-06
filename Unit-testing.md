@@ -23,7 +23,7 @@ mod tests {
 }
 ```
 
-Note that attaching the 'test' attribute to a function does not imply the 'cfg(test)' attribute. Test items must still be explicitly marked for conditional compilation (though this could change in the future).
+Additionally #[test] items behave as if they also have the #[cfg(test)] attribute, and will not be compiled when the --test flag is not used.
 
 Tests that should not be run can be annotated with the 'ignore' attribute. The existence of these tests will be noted in the test runner output, but the test will not be run. Tests can also be ignored by configuration so, for example, to ignore a test on windows you can write `#[ignore(cfg(target_os = "win32"))]`.
 
