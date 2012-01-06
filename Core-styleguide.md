@@ -7,4 +7,5 @@ The names of simple boolean predicates in std and core should start with "is_" o
 The notable exception are generally established predicate names like "lt", "ge", etc.
 
 Examples:
+
 * ```is_not_empty```
