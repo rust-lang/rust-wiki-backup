@@ -1,4 +1,4 @@
-Listing of proposals
+Listing of proposals:
 
 ## Active
 
@@ -6,6 +6,7 @@ Listing of proposals
 * [[Proposal for fixed length arrays]]
 * [[Proposal for predicate language]]
 * [[Proposal for regions]]
+* [[Proposal for attribute preprocessing]]
 
 ## Implemented
 
