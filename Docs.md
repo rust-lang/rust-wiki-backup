@@ -21,4 +21,3 @@ Listing of documentation for users:
 
 ### Old or disorganized instructions
 
-* [[Doc old getting started]]

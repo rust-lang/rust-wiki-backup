@@ -1,22 +1,22 @@
-h2. Structural object types
+## Structural object types
 
 * We currently have structural object types.
 
 * There's no current way to make them recursive. For example, you can't write the type of an object that has a clone method that returns the same type again.
 
-* Just as with [[disjoint union types]], introducing recursive structural types makes for a much more complicated type system.
+* Just as with [[Bikeshed disjoint union types]], introducing recursive structural types makes for a much more complicated type system.
 
-h2. Nominal object types
+## Nominal object types
 
 * We could consider adding interface types, which would be nominal object types that could be recursive, and we could allow objects to be annotated as implementing specific interfaces.
 
 * As a convenience, we could also implicitly bind every object constructor to an interface type of the same name, where instances are automatically implementations of that type.
 
-h2. Hybrid approach
+## Hybrid approach
 
 * The above two approaches could work together, with structural types not being recursive and nominal types being recursive.
 
-h3. Pros
+### Pros
 
 * Not as complex as equirecursive types.
 
@@ -24,13 +24,13 @@ h3. Pros
 
 * Still provides the flexibility of structural types, just not in cases where the type needs to refer to itself.
 
-h3. Cons
+### Cons
 
 * May not be expressive enough, since nominal interfaces must be pre-declared.
 
 * Two different kinds of object types is confusing for users (which kind do I need this time? what's the difference?)
 
-h2. Self-types
+## Self-types
 
 * Based on Kim Bruce's work.
 
@@ -40,7 +40,7 @@ h2. Self-types
 
 * Type equality must take into account @self@, but doesn't have to worry about mutually recursive types.
 
-h3. Pros
+### Pros
 
 * All the benefits of structural types.
 
@@ -52,7 +52,7 @@ h3. Pros
 
 * Pretty close to the way things are now.
 
-h3. Cons
+### Cons
 
 * Not as expressive as full recursive types (may not matter).
 

@@ -1,8 +1,6 @@
-h2. Syntactic issues in pattern matching
-
 This page captures a bunch of axes in the space of pattern matching syntax.
 
-h3. Allow pattern guards, using @if@ or @when@ or @where@ or @|@.
+### Allow pattern guards, using `if` or `when` or `where` or `|`.
 
 *Pros*
 * very expressive
@@ -10,7 +8,7 @@ h3. Allow pattern guards, using @if@ or @when@ or @where@ or @|@.
 *Cons*
 * requires conservative approximation for exhaustiveness checking
 
-h3. Use @=@ or @==@ for non-pattern expressions whose result is matched by @==@.
+### Use `=` or `==` for non-pattern expressions whose result is matched by `==`.
 
 *Pros*
 * very expressive
@@ -19,56 +17,56 @@ h3. Use @=@ or @==@ for non-pattern expressions whose result is matched by @==@.
 * requires conservative approximation for exhaustiveness checking
 * could be simulated with just pattern guards
 
-h3. Use @and@ or @as@ for compound patterns.
+### Use `and` or `as` for compound patterns.
 
 This is important for destructuring but still being able to bind a name to the destructured thing:
 
-bc. var (x, y) as t = foo();
+    var (x, y) as t = foo();
 
 The right-hand side can in fact be an arbitrary pattern.
 
-h3. Distinguish bindings from assignments by context vs by keyword.
+### Distinguish bindings from assignments by context vs by keyword.
 
-We could allow individual variables in a pattern to be distinguished as assignments vs. bindings by use of a keyword, but always requiring the keyword (such as @var@) is very verbose (see the discussion of distinguishing variables from tags below). The alternative is to have binding positions for patterns and assignment positions for patterns, and not to distinguish them.
+We could allow individual variables in a pattern to be distinguished as assignments vs. bindings by use of a keyword, but always requiring the keyword (such as `var`) is very verbose (see the discussion of distinguishing variables from tags below). The alternative is to have binding positions for patterns and assignment positions for patterns, and not to distinguish them.
 
 A hybrid approach is to distinguish binding positions and assignment positions, but to optionally allow binding variables in an assignment position. For example:
 
-bc. var (a, b) = foo(); // always binding
-(a, b) = bar();         // always assignment
-(a, var c) = baz();     // assignment by default but 'var' binds a new variable
+    var (a, b) = foo(); // always binding
+    (a, b) = bar();         // always assignment
+    (a, var c) = baz();     // assignment by default but 'var' binds a new variable
 
-For the sake of cleanliness, the @var@ pattern form shouldn't be allowed in a binding pattern. This suggests two different non-terminals in the grammar:
+For the sake of cleanliness, the `var` pattern form shouldn't be allowed in a binding pattern. This suggests two different non-terminals in the grammar:
 
-bc. BindingPattern ::= identifier | BindingPattern 'and' BindingPattern | ...
-AssignmentPattern ::= identifier | AssignmentPattern 'and' AssignmentPattern | ...
-                   |  'var' BindingPattern
+    BindingPattern ::= identifier | BindingPattern 'and' BindingPattern | ...
+    AssignmentPattern ::= identifier | AssignmentPattern 'and' AssignmentPattern | ...
+                       |  'var' BindingPattern
 
-h3. How to distinguish variables from tags.
+### How to distinguish variables from tags.
 
 This is the biggest and subtlest issue in this space. Following are a bunch of alternatives we've discussed.
 
-h4. Use @?@ to mark variables, or to mark variable bindings only.
+#### Use `?` to mark variables, or to mark variable bindings only.
 
 *Cons*
 * pattern matching becomes much more noisy and verbose
 * binding positions in the language can't be defined as just patterns; it depends on whether they are a single variable (no sigil) or a pattern (sigils)
 * maybe looks weird for variables in non-binding position, when used in destructuring assignment
 
-h4. Use @var@ to mark variables, or to mark variable bindings only.
+#### Use `var` to mark variables, or to mark variable bindings only.
 
 *Pros*
-* possible to use arbitrary expressions without an @=@ sigil (this is arguably not a pro)
+* possible to use arbitrary expressions without an `=` sigil (this is arguably not a pro)
 
 *Cons*
 * Dave *absolutely hates* this option :)
 * pattern matching becomes extremely verbose
 
-h4. Use a sigil like @$@ to mark tags, or to mark nullary tags only.
+#### Use a sigil like `$` to mark tags, or to mark nullary tags only.
 
 *Cons*
 * papercut: nullary patterns are common; if they are a special case that needs disambiguation, programmers will curse us eternally
 
-h4. Use distinct lexical classes for tag names and variables.
+#### Use distinct lexical classes for tag names and variables.
 
 This is what ML and Haskell do.
 
@@ -80,19 +78,19 @@ This is what ML and Haskell do.
 * in the C tradition, CapitalizedNames are typically type, module, or class names
 * in the C tradition, ALL_CAPS_NAMES are typically constants
 
-h4. Use @==@ to mark nullary tags.
+#### Use `==` to mark nullary tags.
 
 *Pros*
-* since nullary tags don't bind variables, the @=@ case happens to coincide with the right meaning
+* since nullary tags don't bind variables, the `=` case happens to coincide with the right meaning
 
 *Cons*
 * again, papercut: special case for common case of nullary tags means death of a thousand papercuts
 
-h4. Use the type of the pattern to disambiguate, and disallow the use of tag names of the current pattern's type as variables.
+#### Use the type of the pattern to disambiguate, and disallow the use of tag names of the current pattern's type as variables.
 
 This is more hostile to tools, and trickier to define and implement, because it imposes a two-way dependency between type checking and variable resolution.
 
-h4. Use the current scope to disambiguate, and disallow the use of tag names as variables.
+#### Use the current scope to disambiguate, and disallow the use of tag names as variables.
 
 This is currently Patrick and Dave's favorite.
 
@@ -107,27 +105,27 @@ This is currently Patrick and Dave's favorite.
 * somewhat of a refactoring hazard: introducing a new tag into scope can break a pattern match
 
 
-h4. Marijn's feedback:
+#### Marijn's feedback:
 
 I was initially enthusiastic about the bottom proposal (disallow tag names as bound names), but after mulling it over for a while I think it is too awkward. Context-insensitive fresh binding names (I'm sure there's a lambda-calculus word for this, but I unfortunately don't know it, so I can't throw it around) are a very nice thing to have. Not just for refactoring, but also for being able to import or define new tags without having some code a few pages down break.
 
 I'm leaning towards the "USE A SIGIL TO MARK TAGS" option. If we mandate a single dot (which currently has no meaning in patterns) after nullary tag names, we have a pretty light-weight way of unambiguously distinguishing them from new bindings. Consider the dot to replace the parenthesized argument list. So you get something like
 
-pre. alt (mylist) {
-  case (cons(head, tail)) { /* */ }
-  case (nil.)             { /* */ }
-}
-  
-h4. Graydon's odd proposal:
+    alt (mylist) {
+      case (cons(head, tail)) { /* */ }
+      case (nil.)             { /* */ }
+    }
+
+#### Graydon's odd proposal:
 
 Delete tuples from the language as well as implicit concept of tag-args-are-tuples. Tuples are the villain in this whole conversation. Apply a tag to a record if you want them to carry arguments. Support the same sugar we have for tag declarators mixed with args as we have now, just use records not tuples.
 
 *Pros*
 * No more "expected 7 args but found 6" error-message hazard
-* No more "I added a single field now I have to change 300 occurrences of @foo(_,_)@ to @foo(_,_,_)@ in the code" hazard
-* No more "did I mean @foo._6@ or @foo._7@?" hazard
+* No more "I added a single field now I have to change 300 occurrences of `foo(_,_)` to `foo(_,_,_)` in the code" hazard
+* No more "did I mean `foo._6` or `foo._7`?" hazard
 * No more weird parse cases like "1-arg tuple not possible" or "parens make comma change nature"
-* No more worry about the pattern matching thing on tags. If a tag carries an arg, you name the arg (with or without parens wrapping the juxtaposed arg, depending on whether you want it to look more or less like a function call, I don't care) and access the field names using @arg.foo@, @arg.bar@ etc.
+* No more worry about the pattern matching thing on tags. If a tag carries an arg, you name the arg (with or without parens wrapping the juxtaposed arg, depending on whether you want it to look more or less like a function call, I don't care) and access the field names using `arg.foo`, `arg.bar` etc.
 * No more worry about pattern matching on tuples, which (sadly) revive all the same issues as this page is about wrt. tag-args. 
 
 *Cons*
@@ -138,29 +136,29 @@ Seriously, almost all the meaningful code paths in the compiler for record and t
 
 Pattern match would look like any or all of these:
 
-pre. alt (mylist) {
-  case (c: cons) { c.head = ...; }
-  case (nil)     { /* */ }
-}
+    alt (mylist) {
+      case (c: cons) { c.head = ...; }
+      case (nil)     { /* */ }
+    }
 
-pre. alt (mylist) {
-  case (cons(c)) { c.head = ...; }
-  case (nil)     { /* */ }
-}
+    alt (mylist) {
+      case (cons(c)) { c.head = ...; }
+      case (nil)     { /* */ }
+    }
 
-pre. alt (mylist) {
-  case (cons c)  { c.head = ...; }
-  case (nil)     { /* */ }
-}
+    alt (mylist) {
+      case (cons c)  { c.head = ...; }
+      case (nil)     { /* */ }
+    }
 
-pre. alt (mylist) {
-  case (cons {head: hd, tail: tl}) { hd = ...; }
-  case (nil)     { /* */ }
-}
+    alt (mylist) {
+      case (cons {head: hd, tail: tl}) { hd = ...; }
+      case (nil)     { /* */ }
+    }
 
-pre. alt (mylist) {
-  case (cons {head, tail}) { head = ...; }
-  case (nil)     { /* */ }
-}
+    alt (mylist) {
+      case (cons {head, tail}) { head = ...; }
+      case (nil)     { /* */ }
+    }
 
 Anyone have more convincing "con" arguments I'm missing? I am really having a hard time pulling together a strong "we need it or else ..." motive for keeping tuples.
