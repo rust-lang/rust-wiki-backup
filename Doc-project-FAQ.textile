@@ -52,7 +52,7 @@ h3. What will Mozilla use Rust for?
 
 Mozilla intends to use Rust as a platform for prototyping experimental browser architectures. Specifically, the hope is to develop a browser that is more amenable to parallelization then existing ones, while also being less prone to common C++ coding errors. The name of that project is _Servo_.
 
-h3. Why Github rather than the normal Mozilla setup (Mercurial / Bugzilla / Tinderbox)?
+h3. Why GitHub rather than the normal Mozilla setup (Mercurial / Bugzilla / Tinderbox)?
 
 * This is a fresh codebase and has no existing ties to Mozilla infrastructure; there is no particular advantage to (re)using any of the above infrastructure, it would all have to be upgraded and adapted to our needs.
 * Git has been progressing rapidly in the years since Mozilla picked Mercurial for its main development needs, and appears to be both more widely known and more accessible at this point.
