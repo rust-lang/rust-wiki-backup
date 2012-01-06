@@ -3,9 +3,11 @@ Listing of notes for developers:
 ## Process and workflow notes
 
 * [[Note wiki conventions]]
+* [[Note development policy]] -- **please read this**
 * [[Note development roadmap]]
 * [[Note compiler snapshots]]
 * [[Note git workflow]]
+* [[Note style guide]]
 
 ## Language and implementation notes
 
@@ -14,6 +16,7 @@ Listing of notes for developers:
 * [[Note defined attributes]]
 * [[Note tasks and communication]]
 * [[Note metadata format]]
+* [[Note object system]]
 
 ## Library notes
 
