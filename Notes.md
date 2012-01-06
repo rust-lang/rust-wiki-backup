@@ -1,3 +1,3 @@
-Listing of Developer Notes
+Listing of Notes for developers:
 
 * [[Compiler snapshots]]
