@@ -59,7 +59,7 @@ We use the [GitHub issue tracker](https://github.com/graydon/rust/issues) to tra
 
 ## Picking something interesting to do
 
-To get an idea of where we're going, see the [[Roadmap]].
+To get an idea of where we're going, see the [[Note development roadmap]].
 
 The way most people seem to get involved is by simply trying to write Rust code. Inevitably you will hit a bug or missing feature, at which point you may feel compelled to write a patch.
 
