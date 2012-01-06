@@ -1,3 +1,3 @@
 List of bikeshed topics:
 
-* [[Bikeshed tailcalls]]
+* [[Bikeshed tailcall]]
