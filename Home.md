@@ -1,23 +1,23 @@
-h1. Rust language
+# Rust language
 
 This is a very preliminary work in progress. No supported releases yet nor defined release schedule / plans. Caveat emptor. It will crash. It will change syntax and semantics. It will eat your laundry. Use at your own risk. Etc.
 
 * [[Development policy]] (please read)
 
-h2. Documentation
+## Documentation
 
-* "Tutorial":http://www.rust-lang.org/doc/tutorial/
-* Latest snapshot ("HTML":http://doc.rust-lang.org/doc/rust.html) ("PDF":http://doc.rust-lang.org/doc/rust.pdf)
-* "Core library":http://doc.rust-lang.org/doc/core/index.html
-* "Standard library":http://doc.rust-lang.org/doc/std/index.html
+* [Tutorial](http://www.rust-lang.org/doc/tutorial/)
+* Manual ([HTML](http://doc.rust-lang.org/doc/rust.html)) ([PDF](http://doc.rust-lang.org/doc/rust.pdf))
+* [Core library](http://doc.rust-lang.org/doc/core/index.html)
+* [Standard library](http://doc.rust-lang.org/doc/std/index.html)
 
-h2. FAQs
+## FAQs
 
 * [[Language FAQ]]
 * [[Project FAQ]]
 * [[Usage FAQ]]
 
-h2. Developer notes
+## Developer notes
 
 * [[Getting started]] — _read this first_
 * [[Core Styleguide]]
@@ -29,7 +29,7 @@ h2. Developer notes
 * [[Advanced configuration]]
 * [[Defined attributes]]
 
-h2. Design notes
+## Design notes
 
 * [[Attribute notes]]
 * [[Composability]]
@@ -50,6 +50,6 @@ h2. Design notes
 * [[Tasks and communication]]
 * [[Unit testing]]
 
-h2. Meetings
+## Meetings
 
 * [[Meetings]]
