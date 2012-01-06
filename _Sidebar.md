@@ -1,1 +1,3 @@
-Some sidebar text
+Categories:
+
+[[Proposals]]
