@@ -20,6 +20,7 @@ h2. FAQs
 h2. Developer notes
 
 * [[Getting started]] — _read this first_
+* [[Core Styleguide]]
 * [[Roadmap]]
 * [[Git workflow]]
 * [[Running a Tinderbox]]
