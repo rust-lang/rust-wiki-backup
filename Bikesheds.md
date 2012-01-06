@@ -1,6 +1,8 @@
 List of bikeshed topics:
 
-When you're done with a bikeshed topic, please either abandon it or move it to a proposal or note.
+These tend to be either syntax issues, more-superficial features, or "wish list" thinking, wherein we haven't quite decided what we even want to do yet, and are collecting ideas, requirement-lists, contradictory approaches, opinions, etc.
+
+When you're done with a bikeshed page, please either abandon it or move it to a proposal or note.
 
 ## Active
 
@@ -8,8 +10,11 @@ When you're done with a bikeshed topic, please either abandon it or move it to a
 * [[Bikeshed composability]]
 * [[Bikeshed constrained types]]
 * [[Bikeshed object types]]
+* [[Bikeshed function types]]
+* [[Bikeshed syntax extension]]
 * [[Bikeshed pattern matching syntax]]
 * [[Bikeshed note]]
+* [[Bikeshed mapreduce]]
 
 ## Abandonned
 

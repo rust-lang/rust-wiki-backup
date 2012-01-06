@@ -8,9 +8,11 @@ Listing of notes for developers:
 * [[Note compiler snapshots]]
 * [[Note git workflow]]
 * [[Note style guide]]
+* [[Note testsuite]]
 
 ## Language and implementation notes
 
+* [[Note unit testing]]
 * [[Note interfaces]]
 * [[Note attributes]]
 * [[Note defined attributes]]

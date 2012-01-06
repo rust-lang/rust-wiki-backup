@@ -16,6 +16,7 @@ Listing of proposals:
 * [[Proposal for unique types]]
 * [[Proposal for interfaces]]
 * [[Proposal for logging]]
+* [[Proposal for crate format]]
 
 ## Withdrawn
 
