@@ -11,7 +11,6 @@ h4. Safety oriented:
 h4. Concurrency and efficiency oriented:
 * Explicit memory control. Layout and allocation control. Interior / value types.
 * Very lightweight tasks (coroutines). Cheap to spawn thousands-to-millions.
-* Stack iterators (effectively lambda-blocks w/o heap allocation).
 * Static, native compilation. Uses LLVM, including its optimization passes. Emits ELF / PE / Mach-O files.
 * Direct and simple interface to C code.
 
