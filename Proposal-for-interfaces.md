@@ -1,5 +1,3 @@
-# Interface/Implementation Proposal
-
 **Note:** The current implementation, which has syntactically drifted a bit from the proposal, is described [in this page][2].
 
 Discussion [here][1], issue number #1227
