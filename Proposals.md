@@ -8,13 +8,13 @@ Listing of proposals:
 * [[Proposal for regions]]
 * [[Proposal for attribute preprocessing]]
 
+## Accepted
+
 ## Implemented
 
 * [[Proposal for unique types]]
 * [[Proposal for interfaces]]
 
-## Accepted
-
 ## Withdrawn
 
-## Obsolete
+* [[Proposal for mutable slots]]
