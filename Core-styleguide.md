@@ -8,7 +8,7 @@ Interfaces names should be verbs.
 
 ### Predicates
 
-The names of simple boolean predicates in std and core should start with "is_" or similarly be expressed using a "small question word".
+The names of simple boolean predicates should start with "is_" or similarly be expressed using a "small question word".
 
 The notable exception are generally established predicate names like "lt", "ge", etc.
 
