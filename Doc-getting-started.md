@@ -3,7 +3,7 @@
 Version numbers listed here are "what we're using"; the code may well work with earlier versions of these tools, but we don't know minimum version requirements.
 
 * A recent Linux, OS X or Win32 system
-* "Python 3.1":http://www.python.org/download/ (versions as old as Python 2.6.2 have also been used successfully)
+* [Python 3.1](http://www.python.org/download/) (versions as old as Python 2.6.2 have also been used successfully)
 * GNU make 3.81
 * git 1.7
 * g++ 4.4 at least on linux, 4.5 on win32, and the 4.x gcc in Apple's SDK for OS X.
@@ -20,13 +20,13 @@ You can install all the prerequisites you need to build Rust by running
 
 ### Windows
 
-We recommend developing under the newest "MSYS and MinGW":http://www.mingw.org using their auto-installer (the version dated 20110802 is known to work), and performing the build in the MSYS Shell.
+We recommend developing under the newest [MSYS and MinGW](http://www.mingw.org) using their auto-installer (the version dated 20110802 is known to work), and performing the build in the MSYS Shell.
 
-For Git, we recommend "MsysGit":http://code.google.com/p/msysgit/ and if you use that you will want to put the git binary path *after* the MinGW path. So add a line like the following to your `.bashrc`:
+For Git, we recommend [MsysGit](http://code.google.com/p/msysgit/) and if you use that you will want to put the git binary path *after* the MinGW path. So add a line like the following to your `.bashrc`:
 
     export PATH=$PATH:/c/Program\ Files/Git/bin
 
-If while building you receive an error that `libpthread-2.dll` is not found, you need to install the "libpthread-2.8.0-3-mingw32-dll-2.tar.lzma package":http://sourceforge.net/projects/mingw/files/MinGW/Base/pthreads-w32/pthreads-w32-2.8.0-3/.  It seems this must be installed by hand, as far as I can tell:
+If while building you receive an error that `libpthread-2.dll` is not found, you need to install the [libpthread-2.8.0-3-mingw32-dll-2.tar.lzma package](http://sourceforge.net/projects/mingw/files/MinGW/Base/pthreads-w32/pthreads-w32-2.8.0-3/).  It seems this must be installed by hand, as far as I can tell:
 
     cd /mingw; lzma -d -c /path/to/downloaded/libpthread-2.8.0-3-mingw32-dll-2.tar.lzma | tar xf -
 
@@ -55,7 +55,7 @@ Syntax highlighting for vim is included in the Rust repository, under src/etc/vi
 
 ## The issue tracker
 
-We use the "GitHub issue tracker":https://github.com/graydon/rust/issues to track bugs and feature requests in Rust.  If you prefer not to use the standard GitHub issue tracker, there's a [secondary front-end that is quite a bit more responsive](http://githubissues.heroku.com/#graydon/rust) and a [tertiary front-end that is pleasantly minimal](http://izs.no.de/graydon/rust).
+We use the [GitHub issue tracker](https://github.com/graydon/rust/issues) to track bugs and feature requests in Rust.  If you prefer not to use the standard GitHub issue tracker, there's a [secondary front-end that is quite a bit more responsive](http://githubissues.heroku.com/#graydon/rust) and a [tertiary front-end that is pleasantly minimal](http://izs.no.de/graydon/rust).
 
 ## Picking something interesting to do
 
