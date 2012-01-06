@@ -4,7 +4,7 @@ These are coding guidelines for the Rust compiler and standard library.
 
 ### Interfaces
 
-Interface names should be verbs.
+[Interface](Interfaces) names should be verbs.
 
 Examples:
 
