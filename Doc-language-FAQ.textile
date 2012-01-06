@@ -25,30 +25,35 @@ h4. Practicality oriented:
 
 h3. What does it look like?
 
-Well, we really *really* don't want to be spending time on syntax discussions presently; but everyone asks. So here's a small sample from our testsuite (testing tuple-outputs on iterators):
+The syntax is still evolving, but here's a snippet from cargo, the Rust package manager:
 
-bc. iter pairs() -> (int,int) {
-  let i = 0;
-  let j = 0;
-  while i < 10 {
-    put (i, j);
-    i += 1;
-    j += i;
-  }
-}
-fn main() {
-  let i = 10;
-  let j = 0;
-  for each p in pairs() {
-      let (x, y) = p;
-      log x
-      log y
-      assert x + 10 == i;
-      i += 1;
-      j = y;
+<pre>
+fn install_source(c: cargo, path: str) {
+    #debug("source: %s", path);
+    fs::change_dir(path);
+    let contents = fs::list_dir(".");
+
+    #debug("contents: %s", str::connect(contents, ", "));
+
+    let cratefiles = vec::filter(contents) { |n|
+        str::ends_with(n, ".rc")
     }
-  assert j == 45;
+
+    if vec::is_empty(cratefiles) {
+        fail "This doesn't look like a rust package (no .rc files).";
+    }
+
+    for cf in cratefiles {
+        let p = load_pkg(cf);
+        alt p {
+            none. { cont; }
+            some(_p) {
+                install_one_crate(c, path, cf, _p);
+            }
+        }
+    }
 }
+</pre>
 
 h3. Does it run on Windows?
 
