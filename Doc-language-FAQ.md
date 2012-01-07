@@ -2,19 +2,22 @@
 
 ### I'm impatient. Can you give a brief summary of the salient features?
 
-### Safety oriented:
+#### Safety oriented:
+
 * Memory safe. No null pointers, wild pointers, etc. Automatic storage management.
 * Mutability control. Immutable by default. No shared mutable state across tasks.
 * Dynamic execution safety: task failure / unwinding, trapping, logging. RAII / dtors.
 * Typestate system: ability to define complex invariants that hold over data structures.
 
-### Concurrency and efficiency oriented:
+#### Concurrency and efficiency oriented:
+
 * Explicit memory control. Layout and allocation control. Interior / value types.
 * Very lightweight tasks (coroutines). Cheap to spawn thousands-to-millions.
 * Static, native compilation. Uses LLVM, including its optimization passes. Emits ELF / PE / Mach-O files.
 * Direct and simple interface to C code.
 
-### Practicality oriented:
+#### Practicality oriented:
+
 * Multi-paradigm. Pure-functional, concurrent-actor, imperative-procedural, OO.
  * First-class functions with bindings.
  * [Structural](http://en.wikipedia.org/wiki/Structural_type_system) (rather than [nominal](http://en.wikipedia.org/wiki/Nominative_type_system)) object types; no class-based hierarchy.
