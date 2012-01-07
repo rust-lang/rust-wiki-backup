@@ -1,4 +1,4 @@
-h3. How do I get my program to display the output of `log` statements?
+### How do I get my program to display the output of `log` statements?
 
 Short answer: set the RUST_LOG environment variable to the name of your source file, sans extension.
 
@@ -10,13 +10,13 @@ export RUST_LOG=hello
 
 Long answer: RUST_LOG takes a 'logging spec' that consists of a comma-separated list of paths, where a path consists of the crate name and sequence of module names, each separated by double-colons. For standalone .rs files the crate is implicitly named after the source file, so in the above example we were setting RUST_LOG to the name of the hello crate. Multiple paths can be combined to control the exact logging you want to see. For example, when debugging linking in the compiler you might set @RUST_LOG=rustc::metadata::creader,rustc::util::filesearch,rustc::back::rpath@
 
-Also try setting RUST_LOG to @::help@. For a full description see the Ref.Run.Log section of the language documentation.
+Also try setting RUST_LOG to `::help`. For a full description see the Ref.Run.Log section of the language documentation.
 
-h3. What does it mean when a program exits with @leaked memory in rust main loop (2 objects)' failed, rt/memory_region.cpp:99 2 objects@?
+### What does it mean when a program exits with `leaked memory in rust main loop (2 objects)' failed, rt/memory_region.cpp:99 2 objects`?
 
 This message indicates a memory leak, and is mostly likely to happen on rarely exercised failure paths. Note that failure unwinding is not yet implemented on windows so this is expected. If you see this on linux or mac it's a compiler bug; please report it.
 
-h3. Why does my build fail with a "bad hash on download" message?
+### Why does my build fail with a "bad hash on download" message?
 
 This happens when the snapshot compiler failed to download correctly so doesn't have the correct hash. To fix it just delete the mentioned tar.bz2 file from the dl folder in your build directory and run make again.
 
