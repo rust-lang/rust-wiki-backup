@@ -26,7 +26,7 @@
 * Works with existing native toolchains. GDB / Valgrind / Instruments / etc.
 * Practical rule-breaking: can break safety rules, if explicit about where and how. 
 
-## What does it look like?
+### What does it look like?
 
 The syntax is still evolving, but here's a snippet from cargo, the Rust package manager:
 
