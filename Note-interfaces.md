@@ -2,7 +2,8 @@ This describes the interface (`iface`) and implementation (`impl`) features as t
 
 ## Method implementation
 
-    // An implementation named `iter_util` for vector types
+The form below implements an interface-less implementation. This can be used for static overloading, but not for any of the dynamic interface features. The (export/import) name of the impl is `iter_util`, and it applies to all vector types.
+
     impl <T> of iter_util<T> for [T] {
         fn len() -> uint { vec::len(self) }
         fn iter(f: block(T)) { for elt in self { f(elt); } }
@@ -13,7 +14,7 @@ This describes the interface (`iface`) and implementation (`impl`) features as t
         }
     }
 
-Note that both the `impl` and the individial methods can take type parameters.
+Note that both the `impl` and the individual methods can take type parameters.
 
 ## Static resolution
 
@@ -52,6 +53,16 @@ If `seq` names an interface that has been imported, it can be used as a bound on
     }
 
 You can also specify multiple bounds (separated by whitespace, as in `<T:seq to_str>`). What actually happens here is that vtables for the interface are passed as hidden parameters to the generic (much like type descriptors).
+
+## Per-value vtables
+
+The above does not help when you want to have a collection of generic values, each with its own vtable. For this, you can explicitly casting a value to an interface type.
+
+    circle(10f, "red") as drawable
+
+This copies the value and the data (vtable, type parameters) need to call methods on it into a into a reference counted box. You could then stuff a number of those into a collection, and call their `.draw()` methods through the boxed vtable.
+
+    fn draw_all(ds: [drawable]) { for d in ds { d.draw(); } }
 
 ## Kinds as bounded type parameters
 
