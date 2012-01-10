@@ -30,7 +30,7 @@
 
 The syntax is still evolving, but here's a snippet from cargo, the Rust package manager:
 
-```
+```none
 fn install_source(c: cargo, path: str) {
     #debug("source: %s", path);
     fs::change_dir(path);
