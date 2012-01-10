@@ -40,7 +40,7 @@ fn install_source(c: cargo, path: str) {
 
     let cratefiles = vec::filter(contents) { |n|
         str::ends_with(n, ".rc")
-    }
+    };
 
     if vec::is_empty(cratefiles) {
         fail "This doesn't look like a rust package (no .rc files).";
