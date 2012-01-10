@@ -64,7 +64,7 @@ Yes. All development happens in lock-step on all 3 target platforms. Using mingw
 
 ### Are there any big programs written in it yet? I want to read big samples.
 
-The Rust compiler, 40,000+ lines at the time of writing, is written in Rust. See the `src/comp/` directory. For some smaller samples, check out the benchmark programs in `src/test/bench`.
+The Rust compiler, 40,000+ lines at the time of writing, is written in Rust. See the `src/comp/` directory.
 
 ### Have you seen this Google language, Go? How does Rust compare?
 
