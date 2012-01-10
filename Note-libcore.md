@@ -10,9 +10,8 @@ See https://mail.mozilla.org/pipermail/rust-dev/2011-December/001037.html
 ## TODO
 
 * "char":
-  * add:
-      * "is_ascii"
-      * "is_digit"
+  * "is_ascii" **add** 
+  * "is_digit" **add** 
 
 * "str":
       * "all" **add** (analogous to vec::all)
