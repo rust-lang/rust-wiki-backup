@@ -1,4 +1,3 @@
-
 Listing of minutes from meetings:
 
 ## Weekly meetings:
@@ -12,6 +11,7 @@ Listing of minutes from meetings:
 * [[Meeting weekly 2011-12-13]] (no implicit copies; unique closures; type classes; libraries)
 * [[Meeting weekly 2011-12-20]] (varieties of function; semicolon syntax)
 * [[Meeting weekly 2012-01-03]] (new syntax; blocks vs for loops; interfaces; rustbot)
+* [[Meeting weekly 2012-01-10]] (0.1 blockers; object system)
 
 ## In-person meetings:
 
