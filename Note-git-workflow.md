@@ -43,19 +43,19 @@ $ git push origin :mybranch
 
 In order to create a git submodule, follow this procedure:
 
-1. First we have to prepare the submodule. If the project is hosted on http://github.com, fork it into http://github.com/graydon. Otherwise check it out and push it into http://github.com/graydon.
+1. First we have to prepare the submodule. If the project is hosted on http://github.com, fork it into http://github.com/mozilla. Otherwise check it out and push it into http://github.com/mozilla.
 
 2. In the rust repository, create the submodule. Make sure that you specify a publicly accessible read-only url here, or else you may break the build for a non-rust developer:
 
 ```
-$ git submodule add https://github.com/graydon/libuv.git src/rt/libuv
+$ git submodule add https://github.com/mozilla/libuv.git src/rt/libuv
 ```
 
 3. Git will checkout the project into the subdirectory `src/rt/libuv`. We'll need to switch the origin to a writable repository so we can push to it.
 
 ```
 $ cd src/rt/libuv
-$ git remote set-url origin git@github.com:graydon/libuv.git
+$ git remote set-url origin git@github.com:mozilla/libuv.git
 ```
 
 4. I would suggest creating a branch to track the remote project, which we'll use to designate which revision we'll pin rust to. We'll also use this branch to track any rust customizations:
