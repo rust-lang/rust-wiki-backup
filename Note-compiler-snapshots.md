@@ -36,9 +36,9 @@ You should probably also not race with other users who are themselves making sna
 
 * Make your change in your workspace. Check that it builds and passes `make check`.
 
-* Commit your change but do _not_ push to `master`; instead push to `snap-stage3`. You do this using the `local:remote` convention in git, pushing _your_ `master` branch to _Graydon's_ `snap-stage3` branch. Assuming you have a remote configured for graydon, that is, you run:
+* Commit your change but do _not_ push to `master`; instead push to `snap-stage3`. You do this using the `local:remote` convention in git, pushing _your_ `master` branch to _Mozilla's_ `snap-stage3` branch. Assuming you have a remote configured for mozilla, that is, you run:
 ```
-$ git push -f graydon master:snap-stage3
+$ git push -f mozilla master:snap-stage3
 ```
 
 * Wait for the tinderboxes to cycle. They will get around to building your commit. Look for a green box to show up with your name and `snap-stage3` (assuming you're not racing with someone else making a snapshot).
@@ -71,9 +71,9 @@ s3cmd put -P rust-stage0-2011-05-13-0d32ff7-linux-i386-4adfe572211e609bf8faeb327
 
 * The tricky part is sequencing these changes.
     * Make your first change. That is, change the parser to recognize `func` but not `fn`. Then add a line at the start of `src/snapshots.txt` consisting just of the letter `T`. The presence of `T` in the first column of the first line of that file inhibits building beyond stage1; it tells the build system that you're in the middle of a transition. Be sure it builds to stage1 with `make`.
-    * Commit your changes (including the `T` line in `src/snapshots.txt`) and push to Graydon's `snap-stage1`. That is, push with:
+    * Commit your changes (including the `T` line in `src/snapshots.txt`) and push to Mozilla's `snap-stage1`. That is, push with:
 ```
-    git push -f graydon master:snap-stage1
+    git push -f mozilla master:snap-stage1
 ```
     * Wait for the tinderboxes to cycle as above and copy down the filenames uploaded to S3 in the end of the build logs. Modify the entry in `src/snapshots.txt` to complete the `T` entry. It should look like an `S` entry, as above, but with `T` in place of `S`. So it should look like this:
 ```
@@ -85,6 +85,6 @@ s3cmd put -P rust-stage0-2011-05-13-0d32ff7-linux-i386-4adfe572211e609bf8faeb327
     * Do not commit that yet.
     * Make your change to the compiler sources now. That is, change `fn` to `func` everywhere, in our example.
     * Commit this change along with the completed `T` snapshot registration in `src/snapshots.txt`.
-    * Push to Graydon's `snap-stage3`
+    * Push to Mozilla's `snap-stage3`
     * Wait for the tinderboxes to cycle as above and make a final entry in `src/snapshots.txt`, this time making an `S` entry as you would do for a compatible change.
     * Commit this final snapshot registration, and push to `master`. If there have been changes on `master` in the meantime, _you must_ merge with them before pushing, _not_ rebase onto them.
