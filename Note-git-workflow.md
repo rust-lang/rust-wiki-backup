@@ -43,7 +43,7 @@ $ git push origin :mybranch
 
 In order to create a git submodule, follow this procedure:
 
-1. First we have to prepare the submodule. If the project is hosted on http://github.com, fork it into http://github.com/mozilla. Otherwise check it out and push it into http://github.com/mozilla.
+1. First we have to prepare the submodule. If the project is hosted on http://github.com, fork it so we can apply changes. Otherwise check it out and push it into http://github.com/mozilla/ or wherever.
 
 2. In the rust repository, create the submodule. Make sure that you specify a publicly accessible read-only url here, or else you may break the build for a non-rust developer:
 
