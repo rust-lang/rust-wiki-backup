@@ -46,9 +46,9 @@ In both contexts, please follow the conduct guidelines above. Language issues ar
 
 Add a test to the testsuite for anything you're unsure of or see breaking in passing. See [[Note testsuite]] for details.
 
-File bugs in <a href="https://github.com/graydon/rust/issues">the issue tracker</a> here as well as adding tests, or instead if you can't quite figure out how to test the thing you want to point out.
+File bugs in <a href="https://github.com/mozilla/rust/issues">the issue tracker</a> here as well as adding tests, or instead if you can't quite figure out how to test the thing you want to point out.
 
-Tag bugs liberally. The bug tracker here currently has weak search capabilities. Github staff has made a variety of comments suggesting "they're working on it", but in the meantime tags are our only hope. (There's also <a href="http://githubissues.heroku.com/#graydon/rust">GHI on Heroku</a>, but it's slow.)
+Tag bugs liberally. The bug tracker here currently has weak search capabilities. Github staff has made a variety of comments suggesting "they're working on it", but in the meantime tags are our only hope. (There's also <a href="http://githubissues.heroku.com/#mozilla/rust">GHI on Heroku</a>, but it's slow.)
 
 Add "FIXME (issue #NN): blah blah" in the source anywhere you see room for improvement, where #NN is the issue number in the tracker here. If you fix an issue on commit, remove the associated FIXMEs (grep for other occurrences) and put the exact phrase "Closes #NN" (with that capitalization) in the commit message and github will pick it up and link to the commit, close the issue.
 

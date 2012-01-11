@@ -1,5 +1,5 @@
 Request for comments—I've been trying to work on
-[issue 244](https://github.com/graydon/rust/issues/labels/a.marijn#issue/244).
+[issue 244](https://github.com/mozilla/rust/issues/labels/a.marijn#issue/244).
 Since my understanding of the compiler internals isn't all that deep
 yet, and everybody else on the team is asleep when I'm working, I
 think it'd be useful to have some discussion in wiki format before I
@@ -44,7 +44,7 @@ The downsides to this approach seem to be:
   already known is reconstructed from a more verbose representation.
 
 * It doesn't help with 'forwarding' exports—referring to X.a, where
-  module X contains an import Y.a. See [issue 268](https://github.com/graydon/rust/issues/closed#issue/268). Rustboot
+  module X contains an import Y.a. See [issue 268](https://github.com/mozilla/rust/issues/closed#issue/268). Rustboot
   currently doesn't do this at all. It could be kludged into this
   approach, of course.
 

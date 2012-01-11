@@ -22,7 +22,7 @@ Notes taken at rust work week, 2011/06/23
 * math, random
 * [compression](https://github.com/elly/rustzlib)
 * libicu
-* serialization (protobuf / thrift / [json](https://github.com/graydon/rust/blob/master/src/libstd/json.rs))
+* serialization (protobuf / thrift / [json](https://github.com/mozilla/rust/blob/master/src/libstd/json.rs))
 * xml
 * [crypto](https://github.com/elly/rustcrypto)
 * concurrency

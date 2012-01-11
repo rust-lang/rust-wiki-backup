@@ -32,7 +32,7 @@ If while building you receive an error that `libpthread-2.dll` is not found, you
 
 ## Downloading and building Rust
 
-    git clone git://github.com/graydon/rust.git
+    git clone git://github.com/mozilla/rust.git
     cd rust
     mkdir build
     cd build
@@ -47,7 +47,7 @@ If you are going to be hacking on the Rust compiler itself then it is recommende
 
 ## Navigating
 
-There's a quick guide to the source of the compiler in [src/comp/README](https://github.com/graydon/rust/blob/master/src/comp/README). You should probably look through it if you're going to be contributing.
+There's a quick guide to the source of the compiler in [src/comp/README](https://github.com/mozilla/rust/blob/master/src/comp/README). You should probably look through it if you're going to be contributing.
 
 ## Editor support
 
@@ -55,7 +55,7 @@ Syntax highlighting for vim is included in the Rust repository, under src/etc/vi
 
 ## The issue tracker
 
-We use the [GitHub issue tracker](https://github.com/graydon/rust/issues) to track bugs and feature requests in Rust.  If you prefer not to use the standard GitHub issue tracker, there's a [secondary front-end that is quite a bit more responsive](http://githubissues.heroku.com/#graydon/rust) and a [tertiary front-end that is pleasantly minimal](http://izs.no.de/graydon/rust).
+We use the [GitHub issue tracker](https://github.com/mozilla/rust/issues) to track bugs and feature requests in Rust.  If you prefer not to use the standard GitHub issue tracker, there's a [secondary front-end that is quite a bit more responsive](http://githubissues.heroku.com/#mozilla/rust) and a [tertiary front-end that is pleasantly minimal](http://izs.no.de/mozilla/rust).
 
 ## Picking something interesting to do
 
@@ -65,11 +65,11 @@ The way most people seem to get involved is by simply trying to write Rust code.
 
 Another way to get involved is to look through the issue tracker for these issues:
 
-* [open issues tagged with 'easy'](https://github.com/graydon/rust/issues?labels=easy&sort=updated&direction=desc&state=open&page=1)
-* [open issues tagged with 'unassigned'](https://github.com/graydon/rust/issues?labels=unassigned&sort=updated&direction=desc&state=open&page=1)
-* [open issues tagged with 'easy' and 'unassigned'](https://github.com/graydon/rust/issues?labels=unassigned&sort=created&direction=desc&state=open&page=1)
-* [open issues tagged with 'feature'](https://github.com/graydon/rust/issues?labels=feature&sort=updated&direction=desc&state=open&page=1)
-* [open issues tagged with 'easy', 'unassigned' and 'feature'](https://github.com/graydon/rust/issues?labels=easy%2Cfeature%2Cunassigned&sort=updated&direction=desc&state=open&page=1)
+* [open issues tagged with 'easy'](https://github.com/mozilla/rust/issues?labels=easy&sort=updated&direction=desc&state=open&page=1)
+* [open issues tagged with 'unassigned'](https://github.com/mozilla/rust/issues?labels=unassigned&sort=updated&direction=desc&state=open&page=1)
+* [open issues tagged with 'easy' and 'unassigned'](https://github.com/mozilla/rust/issues?labels=unassigned&sort=created&direction=desc&state=open&page=1)
+* [open issues tagged with 'feature'](https://github.com/mozilla/rust/issues?labels=feature&sort=updated&direction=desc&state=open&page=1)
+* [open issues tagged with 'easy', 'unassigned' and 'feature'](https://github.com/mozilla/rust/issues?labels=easy%2Cfeature%2Cunassigned&sort=updated&direction=desc&state=open&page=1)
 
 Outstanding bugs or feature requests in Rust often have a corresponding test in the test suite that doesn't yet pass.  One good way to jump into Rust development is to look for files in the test/run-pass directory containing the string 'xfail-test'.  Those are all bugs that need to be fixed or features that someone needs to finish.
 

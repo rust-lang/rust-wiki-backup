@@ -2,7 +2,7 @@ When submitting pull requests it is important to know that the rust developers m
 
 One possible workflow that has worked for developers on the project is outlined below. This assumes that you have an 'origin' remote that represents your remote github repo, and a 'graydon' remote that represents graydon's. To create the latter, you can execute:
 ```
-$ git remote add graydon git://github.com/graydon/rust.git
+$ git remote add graydon git://github.com/mozilla/rust.git
 ```
 
 1. Whenever you start working on anything new, create a new branch:
@@ -84,7 +84,7 @@ $ git commit -a
 6. To be safe, check to make sure you can clone and build rust from the read-only repository:
 
 ```
-$ git clone --recursive https://github.com/graydon/rust.git
+$ git clone --recursive https://github.com/mozilla/rust.git
 $ configure
 $ make
 ```
