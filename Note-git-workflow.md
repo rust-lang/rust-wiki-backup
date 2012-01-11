@@ -24,7 +24,7 @@ $ git rebase master mybranch
 $ git push origin mybranch
 ```
 
-4. Make a pull request to Mozilla.  In the meantime, you can create a new branch and do something else.  
+4. Make a pull request to Mozilla.  In the meantime, you can create a new branch and do something else.
 
 5. After Mozilla integrates your stuff, pull that master branch into your local repo:
 ```
