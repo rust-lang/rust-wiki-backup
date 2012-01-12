@@ -150,3 +150,16 @@ Go has a feature called "anonymous fields" where a struct may include another st
 
 Interfaces should cover constants as well, these will show up in any sensible, type class based number hierarchy.
 While consts could be implemented via pure nullary functions, this may be undesirable from a performance perspective. It would also hurt readability.
+
+## Implementation Self-Type
+
+It may be useful to declare functions that take/return values of the same type as their implementation. For example
+
+     iface clone {
+       fn clone() -> self.type
+     }
+
+
+     iface reconciling {
+       fn reconcile(new_version: self.type) -> self.type
+     }
