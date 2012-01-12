@@ -104,6 +104,11 @@ Many interface specifications have to refer to the type of their `self` somehow.
 
 I don't think self types are a good idea, since we're not really talking about objects, and its somewhat unclear. Should `self` refer to the iface, or to the type being implemented? At least due to the first example on this page, this makes no sense to me. A `self` locally bound to the (existential) type of the interface itself would make sense. - Dylan
 
+I advocate for both. An existential `iface.type` of `self` will be useful in the presence of interface inheritance (e.g. return value has same interface as called value). An existential `impl.type` of the implementation type of `self` is useful for declaring interfaces for cloning, reconciliation of object versions etc. However it may be required that it gets "upgraded" automatically to the corresponding `iface.type` whenever the implementation type is not known to the caller (i.e. when using type parameters or the real type is in will behave like `impl.type`, when using polymorphism behaves like `iface.type`) - boggle
+
+
+
+
 ## Non-method-syntax methods
 
 The dot-syntax is great for operations that obviously hang off a single value, but becomes awkward for binary or N-ary operations. For example a set union is traditionally done `set1.union(set2)` in OO languages. We could allow something like `union.(set1, set2)` to specify that `union` is to be looked up as a method.
@@ -151,15 +156,3 @@ Go has a feature called "anonymous fields" where a struct may include another st
 Interfaces should cover constants as well, these will show up in any sensible, type class based number hierarchy.
 While consts could be implemented via pure nullary functions, this may be undesirable from a performance perspective. It would also hurt readability.
 
-## Implementation Self-Type
-
-It may be useful to declare functions that take/return values of the same type as their implementation. For example
-
-     iface clone {
-       fn clone() -> self.type
-     }
-
-
-     iface reconciling {
-       fn reconcile(new_version: self.type) -> self.type
-     }
