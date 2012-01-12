@@ -2,6 +2,8 @@ Tim's notes after discussing the current state of typestate with Dave:
 
 * The notion of "immutable" type becomes problematic in the presence of abstract types and interfaces. How do you know whether a type is immutable?
 
+  'Becomes' problematic? We've had objs and closures since forever, neither of which could be seen through. --Marijn
+
 * Immutable types are no longer as central a part of Rust as they used to be.
 
 Possible solutions:
