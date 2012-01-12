@@ -104,7 +104,7 @@ Many interface specifications have to refer to the type of their `self` somehow.
 
 I don't think self types are a good idea, since we're not really talking about objects, and its somewhat unclear. Should `self` refer to the iface, or to the type being implemented? At least due to the first example on this page, this makes no sense to me. A `self` locally bound to the (existential) type of the interface itself would make sense. - Dylan
 
-I advocate for both. An existential `iface.type` of `self` will be useful in the presence of interface inheritance (e.g. return value has same interface as called value). An existential `impl.type` of the implementation type of `self` is useful for declaring interfaces for cloning, reconciliation of object versions etc. However it may be required that it gets "upgraded" automatically to the corresponding `iface.type` whenever the implementation type is not known to the caller (i.e. when using type parameters or the real type is in will behave like `impl.type`, when using polymorphism behaves like `iface.type`) - boggle
+I advocate for both. An existential `iface.type` of `self` will be useful in the presence of interface inheritance (e.g. return value has same interface as called value). An existential `impl.type` of the implementation type of `self` is useful for declaring interfaces for cloning, reconciliation of object versions etc. However it may be required that it gets "upgraded" automatically to the corresponding `iface.type` whenever the implementation type is not known to the caller (i.e. when using type parameters or the real type behaves like the implementation type, when using polymorphism behaves like the interface type) - boggle
 
 
 
