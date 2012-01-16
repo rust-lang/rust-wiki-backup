@@ -6,7 +6,7 @@ Rust code in error messages should be enclosed in backquotes.
 
 Examples:
 
-* ```Found `int` but expected `str` ```
+* ```found `int` but expected `str` ```
 
 ## Interfaces
 
