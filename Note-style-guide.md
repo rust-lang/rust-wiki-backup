@@ -2,7 +2,7 @@ These are coding guidelines for the Rust compiler and standard library.
 
 ## Error messages
 
-Rust code in error messages should be enclosed in backticks.
+Rust code in error messages should be enclosed in backquotes.
 
 Examples:
 
