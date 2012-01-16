@@ -1,8 +1,14 @@
 These are coding guidelines for the Rust compiler and standard library.
 
-## Naming
+## Error messages
 
-### Interfaces
+Rust code in error messages should be enclosed in backticks.
+
+Examples:
+
+* ```Found `int` but expected `str` ```
+
+## Interfaces
 
 [Interface](Note Interfaces) names should be verbs.
 
@@ -10,7 +16,7 @@ Examples:
 
 * ```iterate```
 
-### Predicates
+## Predicates
 
 The names of simple boolean predicates should start with "is_" or similarly be expressed using a "small question word".
 
