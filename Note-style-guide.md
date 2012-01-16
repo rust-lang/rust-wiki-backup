@@ -1,6 +1,6 @@
 These are coding guidelines for the Rust compiler and standard library.
 
-## Error messages
+## Error messages and warnings
 
 Rust code in error messages should be enclosed in backquotes.
 
