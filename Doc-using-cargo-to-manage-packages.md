@@ -1,6 +1,6 @@
 When you run `make install` or install rust from a package, you will get a tool called `cargo` as well.
 
-Cargo is a decentralized system for registering, finding, installing, updating and otherwise "managing" collections of rust source code, libraries, and similar "packages". The definitions here are all somewhat loose since the conventions of use for cargo are still evolving; we encourage new rust users to register any rust code they publish by name with our `cargo` package list, so that other users can find your work and easily install it.
+Cargo is a decentralized system for registering, finding, installing, updating and otherwise "managing" collections of rust source code, libraries, and similar "packages". The definitions here are all somewhat loose since the conventions of use for cargo are still evolving; we encourage new rust users to register any rust code they publish by name with [cargo central](http://github.com/mozilla/cargo-central), our central cargo package list, so that other users can find your work and easily install it.
 
 ## How it works
 
