@@ -22,6 +22,7 @@ To "register" a package, the easiest approach is the following:
 
   * Push your package to a git repository somewhere. Make sure your package has a crate file in its root directory called `<yourpackage>.rc`, that contains a suitably detailed `#[link ...]` attribute describing at least its short name. We will likely make some link attribute fields mandatory for future inclusion in cargo -- possibly the `uuid` field or `vers` for version numbers -- so it's good to include those as well.
   * fork the `cargo-central` repository and add a new entry to the `packages.json` file, for example:
+
         {
         "name": "crypto",
         "uuid": "38297409-b4c2-4499-8131-a99a7e44dad3",
@@ -29,6 +30,7 @@ To "register" a package, the easiest approach is the following:
         "method": "git",
         "tags": ["crypto"]
         },
+
   * submit a pull request and, if you want it expedited, notify someone on IRC or through email who has write access to the cargo-central repository. 
 
 Once you've registered your package like this *once* you no longer have to interact with `cargo-central`, cargo has been directed to use `git` to access your repository. So as you push updates to that repository, on your own time, they will immediately become visible to users performing `cargo install <yourpackage>`.
