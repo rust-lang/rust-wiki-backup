@@ -19,8 +19,10 @@
 #### Practicality oriented:
 
 * Multi-paradigm. Pure-functional, concurrent-actor, imperative-procedural, OO.
- * First-class functions with bindings.
- * [Structural](http://en.wikipedia.org/wiki/Structural_type_system) (rather than [nominal](http://en.wikipedia.org/wiki/Nominative_type_system)) object types; no class-based hierarchy.
+ * First-class functions, cheap non-escaping closures.
+ * Structural and nominal types.
+ * Memory isolation for concurrent tasks, cheap tasks with expanding stacks, async message passing.
+ * Typeclass-like interfaces and implementations, "method" definitions on any type.
 * Multi-platform. Developed on Windows, Linux, OS X.
 * UTF-8 strings, assortment of machine-level types.
 * Works with existing native toolchains. GDB / Valgrind / Instruments / etc.
@@ -88,7 +90,7 @@ At this point we are focusing on removing and stabilizing features rather than a
 
 ### Is it OO? How do I do this thing I normally do in an OO language?
 
-It is multi-paradigm. Not everything is shoe-horned into the object abstraction. Many things you can do in OO languages you can do in Rust, but not everything, and not always using objects.
+It is multi-paradigm. Not everything is shoe-horned into a single abstraction. Many things you can do in OO languages you can do in Rust, but not everything, and not always using the same abstraction you're accustomed to.
 
 ### How do you get away with "no null pointers"?
 
@@ -118,17 +120,6 @@ Rust provides, instead, three predictable and well-defined options for handling 
 
 Cleanup through RAII-style destructors  is more likely to work than in catch blocks anyways, since it will be better tested (part of the non-error control paths, so executed all the time).
 
-### Why don't local functions or objects capture their dynamic environment? What's with `bind`?
-
-Because environment capture would be redundant in two ways, and undermine the goals of clarity and maintainability in two ways:
-
-* Redundancy:
- * Because there are a variety of ways in which a slot may refer to a referent (two modes, plus the presence or absence of mutability) we would need to accompany such "automatic capture" with a mechanism similar to the capture clauses present in C++0x lambdas. This strikes us as redundant given that there is already a per-function place to declare slot modes: in the _normal function signature_.
- * Environment capture only works when you're trying to capture into a locally-defined function. If you want to capture into the arguments of a function defined elsewhere, you _need a `bind` construct anyways_, if you want to avoid having to write local functions (and capture clauses; see previous point) just to bind an existing argument.
-* Clarity and maintainability:
- * If the point of being "more implicit" with capture is to support an abbreviated "capture everything mentioned in the function" form of capture clause, such a form requires the maintenance programmer to read the whole function to know what gets captured. The `bind` construct is always explicit.
- * Because environment-capture would involve taking a snapshot of some slots (but not others: again, depending on the capture clause) the state that gets captured may, or may not, depend on the statements preceding and following the local declaration. This deepens the previous maintainability risk: the presence of an easily-overlooked capture clause -- particularly one that abbreviates to capturing "everything" -- attached to a local function declaration would change it from a location-insensitive declaration to one sensitive to the order of statements before and after it.
-
 ### Why aren't modules type-parametric?
 
 Doing so would likely require that type-parametric code  is statically expanded, duplicating code. It would also require a complex mechanism inside crates for maintaining uninstantiated module-bodies. While this is a possible implementation approach for parametric code, we don't want to mandate it. We want to maintain the option to parametrize at runtime (this is the default implementation).
@@ -137,9 +128,9 @@ Doing so would likely require that type-parametric code  is statically expanded,
 
 Doing so would make type inference much more complex, and require the implementation strategy of runtime parametrization. While this is our default implementation strategy, we don't want to mandate it.
 
-### Why are tag types nominal and closed?
+### Why are enumerations nominal and closed?
 
-We don't know if there's an obvious, easy, efficient, stock-textbook way of supporting open or structural tags. We prefer to stick to language features that have an obvious and well-explored semantics.
+We don't know if there's an obvious, easy, efficient, stock-textbook way of supporting open or structural disjoint unions. We prefer to stick to language features that have an obvious and well-explored semantics.
 
 ### Why aren't channels synchronous?
 
@@ -153,13 +144,9 @@ There's a lot of debate on this topic; it's easy to find a proponent of default-
 
 Similar to the reasoning about default-sync: it wires fewer assumptions into the implementation, that would have to be paid by all use-cases even if they actually require a more complex communication topology.
 
-### Why can't I send a port (receiving-end) over a channel?
-
-Ports are implicitly mutable: extracting a message is how you "observe" the state of a port, and performing such an "observation" dequeues the message and changes the state of the port. Transmitting a port over a channel would result in two tasks being able to "communicate" by shared-mutation of the port, and it is a design goal in Rust to prohibit (as much as possible) such accidental, non-explicit communication. It would also require a great deal of additional (costly) under-the-covers synchronization to co-ordinate receive operations between multiple receivers.
-
 ### Why are channels weak?
 
-To simplify reasoning about resource-ownership and resource-allocation costs. All allocated resources are (at worst) owned by the enclosing domain, and die with it.  At best, Rust tries to localize resource ownership to a task or even a frame or a single allocation. Since channels can cross all such boundaries -- even domains -- we did not want the escape of a channel to require the system to keep the receiving-end alive beyond the lifetime of its referent. Besides which, since the receiving-end can't escape its enclosing task -- see previous FAQ -- nobody could _use_ such a kept-alive receiving end. It's as good as dead once the owning task dies.
+To simplify reasoning about resource-ownership and task-lifetime reasoning. This decision may be revisited in the future.
 
 ### Why are strings UTF-8 by default? Why not UCS2 or UCS4?
 
@@ -171,15 +158,15 @@ This does mean that indexed access to a Unicode codepoint inside a `str` value i
 * Most "character oriented" operations on text only work under very restricted language assumptions sets such as "ASCII-range codepoints only". Outside ASCII-range, you tend to have to use a complex (non-constant-time) algorithm for determining linguistic-unit (glyph, word, paragraph) boundaries anyways. We recommend using an "honest" linguistically-aware, Unicode-approved algorithm.
 * The `char` type is UCS4. If you honestly need to do a codepoint-at-a-time algorithm, it's trivial to write a `type wstr = vec[char]`, and unpack a `str` into it in a single pass, then work with the `wstr`. In other words: the fact that the language is not "decoding to UCS4 by default" shouldn't stop you from decoding (or re-encoding any other way) if you need to work with that encoding.
 
-### Why is `log` a statement rather than library function?
+### Why is `log` an expression rather than library function?
 
-We wish to integrate logging with the language at multiple levels: in terms of filtering by module path and task, with type-specific logging variants, with lazy evaluation of the arguments such that inactive logging statements are very cheap, and also integrated with the `note` statement for logging during failure. It's possible we could replicate these features via a mixture of compiler-provided hooks, syntax-extensions and library calls, but it's neither clear that this would be possible nor whether the interface would be syntactically cumbersome: the best logging, after all, is the kind that's light enough that you regularly use it!
+We wish to integrate logging with the language at multiple levels: in terms of filtering by module path and task, with type-specific logging variants, with lazy evaluation of the arguments such that inactive logging statements are very cheap, and also integrated with the `note` expression for logging during failure. It's possible we could replicate these features via a mixture of compiler-provided hooks, syntax-extensions and library calls, but it's neither clear that this would be possible nor whether the interface would be syntactically cumbersome: the best logging, after all, is the kind that's light enough that you regularly use it!
 
 If someone manages to cook up a useful version that seems light and usable and hits all the same use-cases, without requiring a dedicated statement, we'll consider replacing it.
 
-### Why are strings, vectors etc. built-in types rather than (say) special kinds of obj?
+### Why are strings, vectors etc. built-in types rather than (say) special kinds of iface/impl?
 
-In each case there is one or more operator, literal constructor, overloaded use or integration with a built-in control structure that makes us think it would be awkward to phrase the type in terms of more-general type constructors. Same as, say, with numbers! But this is partly an aesthetic call and, similarly to with the `log` statement, we'd be willing to look at a worked-out proposal for eliminating or rephrasing these special cases.
+In each case there is one or more operator, literal constructor, overloaded use or integration with a built-in control structure that makes us think it would be awkward to phrase the type in terms of more-general type constructors. Same as, say, with numbers! But this is partly an aesthetic call and, similarly to with the `log` expression, we'd be willing to look at a worked-out proposal for eliminating or rephrasing these special cases.
 
 ### Can Rust code call C code?
 
@@ -193,13 +180,12 @@ Not directly. We expect to develop a mechanism for C code to transmit messages i
 
 They start very small (a few hundred bytes) and expand dynamically by calling through special frames that allocate new stack segments. This is known as the "spaghetti stack" approach.
 
-### What is the difference between an alias and a box pointer?
+### What is the difference between a reference and a box pointer?
 
 * A box pointer points into a reference-counted heap allocation.
-* An alias points to the interior of a stack _or_ heap allocation, and formation or duplication of an alias does not entail reference counting.
-* Aliases can only be formed when the alias referent will provably outlive the alias.
-* Aliases can therefore only be declared in function or iterator signatures, as parameters.
-* Think of aliases as "pass by reference". They are not for holding long-term, stable references, just for references passing between functions.
+* A reference points to the interior of a stack _or_ heap allocation, and formation or duplication of an alias does not entail reference counting.
+* References can only be formed when the referent will provably outlive the reference.
+* References can therefore only be declared in function signatures, as parameters.
 
 ### Why aren't function signatures inferred? Why only local slots?
 
