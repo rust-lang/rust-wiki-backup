@@ -4,7 +4,7 @@ Cargo is a decentralized system for registering, finding, installing, updating a
 
 ## How it works
 
-Cargo keeps a list of "sources" from which it loads "package lists". Sources are described in a "sources file" kept in `$HOME/.cargo/sources.json` file, a plain-text JSON file listing named URLs, and package lists are, themselves, JSON files loaded from the URLs specified in the sources file.
+Cargo keeps a list of "sources" from which it loads "package lists". Sources are described in a "sources file" kept in `$HOME/.cargo/sources.json`, a JSON file listing named URLs for package lists. Package lists are, themselves, JSON files called `packages.json`, loaded from the URLs specified in a sources file.
 
 * `cargo help` will give you a list of commands.
 * `cargo init` will set up a `$HOME/.cargo` directory in which packages and package-lists will reside.
