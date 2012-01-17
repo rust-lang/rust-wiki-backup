@@ -18,7 +18,6 @@ Listing of notes for developers:
 * [[Note defined attributes]]
 * [[Note tasks and communication]]
 * [[Note metadata format]]
-* [[Note object system]]
 
 ## Library notes
 
