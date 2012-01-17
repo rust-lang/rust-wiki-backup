@@ -13,6 +13,8 @@ Listing of documentation for users:
 
 * [[Doc getting started]]
 
+* [[Doc using cargo to manage packages]]
+
 ### FAQs
 
 * [[Doc language FAQ]]
