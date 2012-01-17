@@ -9,14 +9,14 @@ Version numbers listed here are "what we're using"; the code may well work with 
 * g++ 4.4 at least on linux, 4.5 on win32, and the 4.x gcc in Apple's SDK for OS X.
 * curl
 * Valgrind 3.5 (recommended, but not required for Linux)
-* Texinfo's makeinfo and/or texi2pdf commands (optional), if you wish to build HTML or PDF docs, respectively
+* Pandoc and pdflatex commands (optional), if you wish to build HTML or PDF docs, respectively
 * Naturaldocs (optional), if you wish to build the standard library documentation
 
 ### Debian-based Linux distributions
 
 You can install all the prerequisites you need to build Rust by running
 
-    sudo apt-get install python3 make git g++ curl valgrind texinfo naturaldocs
+    sudo apt-get install python3 make git g++ curl valgrind pandoc latex naturaldocs
 
 ### Windows
 
@@ -51,7 +51,7 @@ There's a quick guide to the source of the compiler in [src/comp/README](https:/
 
 ## Editor support
 
-Syntax highlighting for vim is included in the Rust repository, under src/etc/vim. There is also a [rust-mode for emacs](https://github.com/mozilla/rust/tree/master/src/etc/emacs) and [a BBEdit plugin](https://github.com/erikrose/rust-bbedit-plugin).
+Syntax highlighting for vim is included in the Rust repository, under `src/etc/vim` and for emacs under `src/etc/emacs`. There is also [a BBEdit plugin](https://github.com/erikrose/rust-bbedit-plugin).
 
 ## The issue tracker
 
@@ -71,7 +71,7 @@ Another way to get involved is to look through the issue tracker for these issue
 * [open issues tagged with 'feature'](https://github.com/mozilla/rust/issues?labels=feature&sort=updated&direction=desc&state=open&page=1)
 * [open issues tagged with 'easy', 'unassigned' and 'feature'](https://github.com/mozilla/rust/issues?labels=easy%2Cfeature%2Cunassigned&sort=updated&direction=desc&state=open&page=1)
 
-Outstanding bugs or feature requests in Rust often have a corresponding test in the test suite that doesn't yet pass.  One good way to jump into Rust development is to look for files in the test/run-pass directory containing the string 'xfail-test'.  Those are all bugs that need to be fixed or features that someone needs to finish.
+Outstanding bugs or feature requests in Rust often have a corresponding test in the test suite that doesn't yet pass.  One good way to jump into Rust development is to look for files in the test/run-pass directory containing the string `xfail-test`.  Those are all bugs that need to be fixed or features that someone needs to finish.
 
 The source is also littered with hundreds of comments marked with 'FIXME' and 'TODO'. Often these refer to issues that have already been resolved or which may be resolved easily, though sometimes their purpose is rather more obscure. It can occasionally be profitable to grep through the source trying to trim these down.
 
