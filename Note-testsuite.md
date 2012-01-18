@@ -119,15 +119,17 @@ additional errors or warnings are reported.
 * Finding the command to compile a failing test: `make check-stage1-rpass TESTNAME=hello VERBOSE=1`
 * Running xfailed tests: `make check-stage1-rpass CHECK_XFAILS=1`
 
-## Compiler unit tests
+## Unit Tests
 
-These are <a href="https://github.com/mozilla/rust/wiki/Unit-testing">unit tests</a> against rustc internals. They are part of the rustc crate, and use the standard Rust test runner. Their test runner is compiled to test/rustctest.stage[N]
+Most crates include <a href="https://github.com/mozilla/rust/wiki/Unit-testing">unit tests</a> which are part of the crate they test. These crates are built with the --test flag and run as part of `make check`.
 
-Unit test for rustc go near the code they test and should be wrapped in a conditionally-compiled test module like so
+Tests should go near the code they test. If a module's tests require additional helper functions then they should be enclosed in a conditionally-compiled test module:
 
 ```
 #[cfg(test)]
 mod test {
+   fn helper_fn() { ... }
+
    #[test]
    fn resolve_fn_types() {
      ...
@@ -135,21 +137,12 @@ mod test {
 }
 ```
 
-Note that currently tests need to be visible at the top level of a crate in order to run.
+### Build targets
 
-### Recipes
-* Running the tests: `make check-stage[N]-rustc`
-* Running a specific test: `make check-stage[N]-rustc TESTNAME=[test]`
-* Running ignored tests: `make check-stage[N]-rustc CHECK_XFAILS=1`
-
-## Standard library unit tests
-
-Tests of the standard library live in a separate stdtest crate, under the test/stdtest directory. The compiled test runner lives at test/stdtest.stage[N]
-
-### Recipes
-* Running the tests: `make check-stage[N]-std`
-* Running a specific test: `make check-stage[N]-std TESTNAME=[test]`
-* Running ignored tests: `make check-stage[N]-std CHECK_XFAILS=1`
+* `make check-stage[N]-rustc`
+* `make check-stage[N]-core`
+* `make check-stage[N]-std`
+* `make check-stage[N]-rustdoc`
 
 ## Fast check
 
