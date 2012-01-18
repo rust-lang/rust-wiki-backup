@@ -46,7 +46,8 @@ See https://mail.mozilla.org/pipermail/rust-dev/2011-December/001037.html
       * "len":: **add** := "len_char"
       * "len_bytes" **rename** from "byte_len" (analogous to "iter_chars", "loop_chars", "push_byte", "push_char")
       * "len_chars" **rename** from "char_len"
-      * "lines": **add**
+      * "lines"
+      * "lines_any"
       * "lines_iter": **add**
       * "lteq"
       * "map": **add**
@@ -81,7 +82,7 @@ See https://mail.mozilla.org/pipermail/rust-dev/2011-December/001037.html
       * "trim_right"
       * "unshift_char"
       * "utf8_char_width"
-      * "words": **add**
+      * "words"
       * "words_iter": **add**
 * "str":
   * "is_ascii": implement on top of "char::is_ascii", "all"
