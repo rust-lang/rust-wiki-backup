@@ -3,6 +3,7 @@ Meeting notes, 2012/01/17
 Brian, Niko, Marijn, Graydon, Dave, Patrick, Tim
 ## Vidyo Joy
 * M: let's try G+ hangout next week
+
 ## Release status
 * M: discussion points?
 * G: not especially. I can explain what I'm blocked on, but I'm getting through it. getting ref manual into a presentable state. not far from done; not sure how thorough needed to be for release
@@ -38,7 +39,9 @@ Brian, Niko, Marijn, Graydon, Dave, Patrick, Tim
 * M: anyone have too much on their plate? I'm out of blockers & can take something
 * G: I kind of am
 * M: I can take Makefiles
+
 ## Bug review
+
 ### 1427
 * G: how far are we on this?
 * M: Tim has been working on it, but not finished
@@ -50,14 +53,17 @@ Brian, Niko, Marijn, Graydon, Dave, Patrick, Tim
 * N: Tim: what's status?
 * T: more annoying than expected, but should be ready to check in today
 * P: if so I'll try to commit comma thing and we can do one snapshot for both
+
 ### 1428
 * N: where are we on this?
 * P: been trying to do snapshots
 * B: they're done
 * P: okay, then I can run my Perl scripts
 * D (in his head): Perl FTW
+
 ### 1486
 * B: no way rustdoc is gonna be ready this week
+
 ### 1483
 * N: we can go a little stronger on this now
 * G: yeah that's easy
@@ -68,6 +74,7 @@ Brian, Niko, Marijn, Graydon, Dave, Patrick, Tim
 * N: just snapshot is hard
 * M: I can also do that tomorrow. just a lot of regexping, if Patrick is busy
 * P: I have a Perl script. I've tested it. I'll do it today, including commas
+
 ### 1381
 * M: shall I take this?
 * G: yeah sure!
@@ -105,6 +112,7 @@ Brian, Niko, Marijn, Graydon, Dave, Patrick, Tim
 ### 1011
 * B: only thing is to add installation PATH to system PATH in installer
 * B: I'll do that today and do some testing on the windows installer
+
 ### 427
 * G: Marijn: you're currently processing tutorial using node
 * G: what I want to happen is that whenever we push, documents rebuilt and repushed
@@ -121,6 +129,7 @@ Brian, Niko, Marijn, Graydon, Dave, Patrick, Tim
 * N: do we have any checks that the examples parse and run?
 * G: not currently; long-term would be good
 * M: you have to be careful to have some extra magic to avoid long examples
+
 ### Miscellaneous
 * G: Marijn: did you see the markdown file with remaining work items?
 * M: no
