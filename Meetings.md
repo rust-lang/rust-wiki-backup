@@ -12,6 +12,7 @@ Listing of minutes from meetings:
 * [[Meeting weekly 2011-12-20]] (varieties of function; semicolon syntax)
 * [[Meeting weekly 2012-01-03]] (new syntax; blocks vs for loops; interfaces; rustbot)
 * [[Meeting weekly 2012-01-10]] (0.1 blockers; object system)
+* [[Meeting weekly 2012-01-17]] (0.1 prep)
 
 ## In-person meetings:
 
