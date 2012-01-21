@@ -39,7 +39,7 @@ If while building you receive an error that `libpthread-2.dll` is not found, you
     ../configure
     make check
 
-This will build and test the compiler and standard library.
+This will build and test the compiler, standard libraries, and supporting tools.
 
 *Note:* On Linux or OS X, if you have Valgrind installed, the tests will run slowly because they are running under Valgrind. If you define `CFG_DISABLE_VALGRIND=1` in your build environment or run configure with the `--disable-valgrind` flag, you can see the tests running at full speed.
 
