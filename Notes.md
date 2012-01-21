@@ -28,3 +28,4 @@ Listing of notes for developers:
 
 * [[Note constraints in rustc and libraries]]
 * [[Note seeing LLVM output from rust]]
+* [[Note related projects]]
