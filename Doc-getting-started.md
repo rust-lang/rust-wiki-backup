@@ -51,7 +51,7 @@ There's a quick guide to the source of the compiler in [src/comp/README](https:/
 
 ## Editor support
 
-Syntax highlighting for vim is included in the Rust repository, under `src/etc/vim` and for emacs under `src/etc/emacs`. There is also [a BBEdit plugin](https://github.com/erikrose/rust-bbedit-plugin).
+Syntax highlighting for vim is included in the Rust repository, under `src/etc/vim` and for emacs under `src/etc/emacs`.
 
 ## The issue tracker
 
