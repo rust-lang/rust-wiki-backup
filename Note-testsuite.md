@@ -144,6 +144,10 @@ mod test {
 * `make check-stage[N]-std`
 * `make check-stage[N]-rustdoc`
 
+## Documentation tests
+
+The build system is able to extract Rust code snippets from documentation and run them using the compiletest driver. Currently only the tutorial is tested this way. The target is `make check-stage[N]-doc-tutorial`.
+
 ## Fast check
 
 Because Windows has slow process spawning running `make check` on that platform can take a long time. For this reason we have a `make check-fast` target that the Windows build servers run to keep the cycle time down. This is a special test runner that is built by combining all the run-pass tests into a single library. It is created by the src/etc/combine-tests.py script.
