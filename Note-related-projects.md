@@ -6,3 +6,4 @@ A listing of various rust-related projects that aren't in cargo so I can keep tr
 * [startling's pygments plugin](https://github.com/startling/pygments-rust) - Pygments syntax highlighting
 * [GitHub linguist](https://github.com/github/linguist) - GitHub's language detection supports Rust
 * [lkuper's PLT Redex model](https://github.com/github/linguist) - An (out-of-date) model of Rust in PLT Redex
+* [kib2's SublimeText2 language file](http://kib2.free.fr/Rust/Rust.zip) - Highlighting for SublimeText 2
