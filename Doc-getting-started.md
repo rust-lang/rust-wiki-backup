@@ -45,6 +45,13 @@ This will build and test the compiler, standard libraries, and supporting tools.
 
 If you are going to be hacking on the Rust compiler itself then it is recommended that you configure with `--disable-optimize`, since this will greatly speed up your compilation.
 
+## Packages
+
+Rust is also packaged for various systems by community members
+
+* [Ubuntu PPA](https://launchpad.net/~kevincantu/+archive/rust/) - maintained by kcantu
+* [FreeBSD Port](http://www.freebsd.org/cgi/cvsweb.cgi/ports/lang/rust/) - maintained by jyyou
+
 ## Navigating
 
 There's a quick guide to the source of the compiler in [src/comp/README](https://github.com/mozilla/rust/blob/master/src/comp/README). You should probably look through it if you're going to be contributing.
