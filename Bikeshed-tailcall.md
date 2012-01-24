@@ -41,3 +41,6 @@ signal an error where they cannot be made.
 Arguably partitioning function types into tail and non tail callables is an implementations aspect that just should not surface on the type level (at least in interfaces) as it hurts homogeniety as well as substitutability. Yet sensible uses most likely are limited, crate-local, and related to implementation where total abstraction (i.e. being able to call with any function irrespective of it's tail callability status) is not as important. 
 
 The exception will be in "strategy pattern instances", like abstract actor main loop functions. However, here it seems rational to require tail callability as part of the interface since it is part of the contract of instantiating the strategy.
+
+
+Question: why does implementing tail calls necessitate slower function calls? Is this because the compilation strategy currently used would necessitate a trampoline approach?
