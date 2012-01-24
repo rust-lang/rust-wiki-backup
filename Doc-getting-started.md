@@ -3,7 +3,7 @@
 Version numbers listed here are "what we're using"; the code may well work with earlier versions of these tools, but we don't know minimum version requirements.
 
 * A recent Linux, OS X or Win32 system
-* [Python 3.1](http://www.python.org/download/) (versions as old as Python 2.6.2 have also been used successfully)
+* [Python 2.x](http://www.python.org/download/) (version 2.7 is known to work)
 * GNU make 3.81
 * git 1.7
 * g++ 4.4 at least on linux, 4.5 on win32, and the 4.x gcc in Apple's SDK for OS X.
