@@ -25,7 +25,7 @@ Moving to IRC. Vidyo non-functional.
 IRC Logs:
 
 <pre>
-nmatsakis: all accounted for?
+[5:30pm] nmatsakis: all accounted for?
 [5:30pm] brson: yes
 [5:30pm] brson: let's go!
 [5:31pm] nmatsakis: first, Jesse, to address what you said about giving undue priv. to built-in vec... I think what pcwalton meant is that any type or function could be monomorphized, but in practice it would mostly be the stuff in core
