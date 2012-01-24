@@ -9,15 +9,17 @@ See https://mail.mozilla.org/pipermail/rust-dev/2011-December/001037.html
 
 ## TODO
 
+(This list should be consistent with the list here: https://docs.google.com/document/d/1nsQP3PQYBjpnwaBklJ-YKhH0YQA-1UgisiW4Qwfvs3A ...)
+
 * "char":
   * "is_ascii" **add** 
   * "is_digit" **add** 
 
 * "str":
-      * "all" **add** (analogous to vec::all)
-      * "any" **add** (analogous to vec::any)
+      * "all"
+      * "any"
       * "bytes"
-      * "bytes_iter": **add**
+      * "bytes_iter"
       * "char_at"
       * "char_range_at"
       * "chars" **rename** from "to_chars" (analogous to "bytes")
@@ -43,14 +45,14 @@ See https://mail.mozilla.org/pipermail/rust-dev/2011-December/001037.html
       * "is_not_empty"
       * "is_utf8"
       * "is_whitespace"
-      * "len":: **add** := "len_char"
+      * "len":: **add** := "len_char" (??)
       * "len_bytes" **rename** from "byte_len" (analogous to "iter_chars", "loop_chars", "push_byte", "push_char")
       * "len_chars" **rename** from "char_len"
       * "lines"
       * "lines_any"
-      * "lines_iter": **add**
+      * "lines_iter"
       * "lteq"
-      * "map": **add**
+      * "map"
       * "pop_byte"
       * "pop_char"
       * "push_byte"
@@ -63,8 +65,8 @@ See https://mail.mozilla.org/pipermail/rust-dev/2011-December/001037.html
       * "slice" **rename** from "safe_slice"
       * "slice_char" **rename** from "char_slice"
       * "slice_unsafe" **rename** from "slice"
-      * "split": **add**, takes a block of type 'char -> bool' see "splitfn" on https://github.com/killerswan/rust-tools/blob/master/str2.rs
-      * "split_char" **add**/**rename** from "split" (analogous to "split_str")
+      * "split": **rename** from split_func
+      * "split_char"
       * "split_char_iter": **add**
       * "splitn_char": **rename** from "splitn"
       * "splitn_char_iter": **add**
@@ -83,7 +85,7 @@ See https://mail.mozilla.org/pipermail/rust-dev/2011-December/001037.html
       * "unshift_char"
       * "utf8_char_width"
       * "words"
-      * "words_iter": **add**
+      * "words_iter"
 * "str":
   * "is_ascii": implement on top of "char::is_ascii", "all"
   * implement "to_upper", "to_lower" on top of "map"
