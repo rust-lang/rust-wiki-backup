@@ -1,11 +1,11 @@
-2012-01-24 Meeting Notes
+# 2012-01-24 Meeting Notes
 
-==Congrats on 0.1!==
+## Congrats on 0.1!
 
 - http://news.ycombinator.com/item?id=3501980
 - http://www.reddit.com/r/programming/comments/opgxd/mozilla_and_the_rust_community_release_rust_01_a/
 
-==Monomorphizing, cross-crate inlining==
+## Monomorphizing, cross-crate inlining
 
 - P: How best to proceed? Prob. start ugly then make it nice
 - P: Having ability to "#include" (in the compiler) crates, basically "use" finds .rc files as well
