@@ -45,6 +45,7 @@ Valid directives include:
 * `xfail-fast` - Don't run as part of check-fast, a special win32 test runner (some tests don't work with it)
 * `xfail-pretty` - Test doesn't pretty-print correcty
 * `error-pattern:[...]` - A message that should be expected on standard out. If multiple patterns are provided then they must all be matched, in order (**Note:** error-patterns are somewhat deprecated, see the section on Expected Errors below).
+* `no-reformat` - Don't reformat the code when running the test through the pretty-printer
 
 There are five directories containing compile tests, living in the src/tests directory:
 
