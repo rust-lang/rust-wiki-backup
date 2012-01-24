@@ -43,4 +43,4 @@ Arguably partitioning function types into tail and non tail callables is an impl
 The exception will be in "strategy pattern instances", like abstract actor main loop functions. However, here it seems rational to require tail callability as part of the interface since it is part of the contract of instantiating the strategy.
 
 
-Question: why does implementing tail calls necessitate slower function calls? Is this because the compilation strategy currently used would necessitate a trampoline approach?
+Question: why does implementing tail calls necessitate slower function calls? Is this because the compilation strategy currently used would necessitate a trampoline approach? Most functional languages implement function calls in a very low overhead way, and any slowness is usually an artifact of also having the function call scheme support a light weight call with current continuation operation, which I do not think Rust will likely support (or at least that seems unlikely).
