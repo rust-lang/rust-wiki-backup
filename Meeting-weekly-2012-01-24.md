@@ -365,4 +365,10 @@ shoenig: any recommendations for things to work on for newcomers to the project?
 [6:47pm] graydon: brson: "miserable infrastructure work" for the most part. I mean, I can do that stuff full time and still it never all gets done.
 [6:47pm] graydon: I just want to keep some of my focus on it
 [6:47pm] graydon: maybe only takes 1 person
+[6:48pm] brson: ok. we can leverage the community for some of that too. lots of people have stepped up to do packaging work - we just have to bless it and encourage them
+[6:49pm] brson: I know we have a PPA, homebrew and freebsd port
+[6:50pm] brson: and homebrew
+[6:50pm] graydon: great
+[6:50pm] brson: oh, I said that
+[6:50pm] graydon: let's link to them visibly! and/or adopt them if they feel excluded or burdened by it
 </pre>
