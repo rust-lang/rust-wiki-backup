@@ -1,8 +1,9 @@
 2012-01-24 Meeting Notes
 
 ==Congrats on 0.1!==
-* http://news.ycombinator.com/item?id=3501980
-* http://www.reddit.com/r/programming/comments/opgxd/mozilla_and_the_rust_community_release_rust_01_a/
+
+- http://news.ycombinator.com/item?id=3501980
+- http://www.reddit.com/r/programming/comments/opgxd/mozilla_and_the_rust_community_release_rust_01_a/
 
 ==Monomorphizing, cross-crate inlining==
 
@@ -360,4 +361,8 @@ shoenig: any recommendations for things to work on for newcomers to the project?
 [6:45pm] brson: *issues
 [6:46pm] nmatsakis: graydon: yes, it might be that it begins and runs in parallel, doesn't land for release.  particularly if the release focuses on the front end, conflicts ought to be minimal.
 [6:46pm] nmatsakis: where by front end I am lumping in libraries, tools, etc
+[6:46pm] graydon: brson: there are a couple weird bits. linux ABI tag. win32 installer. I'd like to get mingw-cross working. I'd like to get msvc working. other linux packages would be great (PPA / RPM). freebsd or pkgsrc.org. OSX homebrew or port.
+[6:47pm] graydon: brson: "miserable infrastructure work" for the most part. I mean, I can do that stuff full time and still it never all gets done.
+[6:47pm] graydon: I just want to keep some of my focus on it
+[6:47pm] graydon: maybe only takes 1 person
 </pre>
