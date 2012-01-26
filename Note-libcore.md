@@ -45,7 +45,7 @@ See https://mail.mozilla.org/pipermail/rust-dev/2011-December/001037.html
       * "is_not_empty"
       * "is_utf8"
       * "is_whitespace"
-      * "len":: **add** := "len_char" (??)
+      * "len":: **add** (make it an alias for "len_char") because i think people exepect str::len to be character based. E.g. Ruby has "size" := "length" and "bytesize"
       * "len_bytes" **rename** from "byte_len" (analogous to "iter_chars", "loop_chars", "push_byte", "push_char")
       * "len_chars" **rename** from "char_len"
       * "lines"
