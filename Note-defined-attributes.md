@@ -12,6 +12,9 @@ Crate
 * license
 * copyright
 * crate_type
+* no_core - Don't link libcore automatically
+* lint
+ * no_ctypes
 
 Native
 ------
