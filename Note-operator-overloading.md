@@ -12,8 +12,11 @@ impl point_ops for point {
         {x: self.x - other.x, y: self.y - other.y}
     }
 }
+fn main() {
+    {x: 1, y: 0} + {x: 2, y: 3}
+}
 ```
 
-When this impl is in scope, and binary + or - are applied to a value of type `point`, the operators will turn into calls to these methods. Operator/type combinations that are defined 'natively' by the language can not be overload (for example + on int).
+When this impl is in scope, and binary + or - are applied to a value of type `point`, the operators will turn into calls to these methods. Operator/type combinations that are defined 'natively' by the language can not be overloaded (for example + on int).
 
 The operators that can be overloaded are: `+`, `-` (both unary and binary), `*`, `/`, `%`, `&`, `|`, `^`, `<<`, `>>`, `>>>`, `!` (unary) and `[]` (the index operator). The names of the methods used to implement them correspond to the operator symbols (these operators are parsed as valid method names). For unary minus, the name `unary-` is used.
