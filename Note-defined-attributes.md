@@ -36,3 +36,4 @@ Misc
 
 * cfg
 * path
+* doc
