@@ -1,5 +1,4 @@
-
-This is a very preliminary work in progress. No supported releases yet nor defined release schedule / plans. Caveat emptor. It will crash. It will change syntax and semantics. It will eat your laundry. Use at your own risk. Etc.
+This is alpha-level software with many known bugs, incomplete features and planned future changes. Use at your own risk, expect some instability, disruption and source-level incompatibility for a while yet.
 
 See the category list in the sidebar for lists of sub-pages.
 
