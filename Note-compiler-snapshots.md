@@ -43,7 +43,7 @@ $ git push -f mozilla master:snap-stage3
 
 * Wait for the tinderboxes to cycle. They will get around to building your commit. Look for a green box to show up with your name and `snap-stage3` (assuming you're not racing with someone else making a snapshot).
 
-* Open the tabs corresponding to the short build logs for the snapshots made on all 3 platforms -- you get that by clicking the blue `L` link on the green box -- and scroll to the bottom of the logs. Look for the line showing the upload to S3, which looks like so:
+* Open the tabs corresponding to the short build logs for the snapshots made on all 3 platforms -- you get that by clicking the green checkbox -- and scroll to the bottom of the logs. Look for the line showing the upload to S3, which looks like so:
 ```
 s3cmd put -P rust-stage0-2011-05-13-0d32ff7-linux-i386-4adfe572211e609bf8faeb327ffabc4bb6bc3a1e.tar.bz2 ...
 ```
