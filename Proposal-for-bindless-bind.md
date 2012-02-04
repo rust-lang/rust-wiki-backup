@@ -69,17 +69,17 @@ Moreover, for things like `a.b(_)`, where `b` is a method, it is precisely this 
    yields `{|x| x(_.a)}` (as shown above).  However, this nesting rule is
    not 100% consistent: the receiver of a call is not considered
    nested, but calls are.  So:
-   ```
-   _.a(_) => {|x,y| x.a(y)}
-   _.a(_).b(_) => {|z| _.a(_).b(z)}
-   ```
+      ```
+      _.a(_) => {|x,y| x.a(y)}
+      _.a(_).b(_) => {|z| _.a(_).b(z)}
+      ```
    Unfortunately, because we do not know syntactically whether the `a.b` in
    `a.b()` is a method call or a field access. I could either (a) leave it this
    way; (b) accept `_.b(_)` but only if `b()` turns out to be a method; or
    (c) translate nested calls like this:
-   ```
-   _.a(_).b(_) => {|x,y,z| x.a(y).b(z)}
-   ```
+      ```
+      _.a(_).b(_) => {|x,y,z| x.a(y).b(z)}
+      ```
    Option (c) however does not mesh with the iteration library I had in mind.
    I am not 100% sure whether the iteration library design is right in any
    case.
