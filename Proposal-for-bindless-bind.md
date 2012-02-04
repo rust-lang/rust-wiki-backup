@@ -1,4 +1,4 @@
-This is a proposal for a lightweight bind syntax which (basically) omits the keyword bind.  I (nmatsakis) have implemented a prototype which I will describe here.  I am unsure about some of the particulars, however, and wanted to receive feedback.
+This is a proposal for a lightweight bind syntax which (basically) omits the keyword bind.  I (nmatsakis) have implemented a prototype which I will describe here.  I am unsure about some of the particulars, however, and wanted to receive feedback. -- Niko Matsakis
 
 ## Goals
 
