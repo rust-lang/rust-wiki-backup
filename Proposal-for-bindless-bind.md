@@ -28,7 +28,7 @@ a.b(_, _)      => {|x,y| a.b(x, y) }
 _.a.b.c(_, _)  => {|x,y,z| x.a.b.c(y, z) }
 ```
 
-A naked `_` is an error: it can only appear as a hole in a larger expression.  Binary operators (`_ + _`) are not currently allowed but would not be terribly hard to support.  Larger expressions 
+A naked `_` is an error: it can only appear as a hole in a larger expression.  Binary operators (`_[_]`, `_ + _`) are not currently allowed but would be easy to support.  We could also allow the conditions of expressions like `if _ { a } else { b }` to be omitted.
 
 These expressions can be nested, so:
 
@@ -54,11 +54,11 @@ Moreover, for things like `a.b(_)`, where `b` is a method, it is precisely this 
 
 ## Questions and concerns
 
-1. **Should other expression forms be supported?**
+1. **Should other expression forms be supported?  Which ones?**
    In particular I think binary operators can be useful,
    especially if we allow for method overloading.  Something like
    `scores.foldl(0, _+_)` (which would sum all of the scores)
-   reads fairly well.  
+   reads fairly well to me.  What do we want to allow?
 2. **Do we care about the change in evaluation order vs `bind`?**
 3. **Nesting is somewhat inconsistent.**
    In general, I tried to say that a plain `_` indicates a hold in the
