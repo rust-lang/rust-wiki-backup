@@ -56,35 +56,45 @@ Moreover, for things like `a.b(_)`, where `b` is a method, it is precisely this 
 
 ## Questions and concerns
 
-1. **Should other expression forms be supported?  Which ones?**
-   In particular I think binary operators can be useful,
-   especially if we allow for method overloading.  Something like
-   `scores.foldl(0, _+_)` (which would sum all of the scores)
-   reads fairly well to me.  What do we want to allow?
-2. **Do we care about the change in evaluation order vs `bind`?**
-3. **Nesting is somewhat inconsistent.**
-   In general, I tried to say that a plain `_` indicates a hold in the
-   expression in which it appears, but a nested `_` expression creates
-   a nested closure.  So `_(_)` yields `{|x,y| x(y)}` but `_(_.a)`
-   yields `{|x| x(_.a)}` (as shown above).  However, this nesting rule is
-   not 100% consistent: the receiver of a call is not considered
-   nested, but calls are.  So:
+#### 1. Should other expression forms be supported?  Which ones?
+
+In particular I think binary operators can be useful,
+especially if we allow for method overloading.  Something like
+`scores.foldl(0, _+_)` (which would sum all of the scores)
+reads fairly well to me.  What do we want to allow?
+
+#### 2. Do we care about the change in evaluation order vs `bind`?
+
+I don't, particularly, but the old order corresponded more to classic
+currying.
+
+#### 3. Nesting is somewhat inconsistent.
+
+In general, I tried to say that a plain `_` indicates a hold in the
+expression in which it appears, but a nested `_` expression creates
+a nested closure.  So `_(_)` yields `{|x,y| x(y)}` but `_(_.a)`
+yields `{|x| x(_.a)}` (as shown above).  However, this nesting rule is
+not 100% consistent: the receiver of a call is not considered
+nested, but calls are.  So:
       ```
       _.a(_) => {|x,y| x.a(y)}
       _.a(_).b(_) => {|z| _.a(_).b(z)}
       ```
-   Unfortunately, because we do not know syntactically whether the `a.b` in
-   `a.b()` is a method call or a field access. I could either (a) leave it this
-   way; (b) accept `_.b(_)` but only if `b()` turns out to be a method; or
-   (c) translate nested calls like this:
+Unfortunately, because we do not know syntactically whether the `a.b` in
+`a.b()` is a method call or a field access. I could either (a) leave it this
+way; (b) accept `_.b(_)` but only if `b()` turns out to be a method; or
+(c) translate nested calls like this:
       ```
       _.a(_).b(_) => {|x,y,z| x.a(y).b(z)}
       ```
-   Option (c) however does not mesh with the iteration library I had in mind.
-   I am not 100% sure whether the iteration library design is right in any
-   case.
-4. **Is it too magical?** I feel like I'm always tweaking the syntax to make
-   it more complex.  Odd because I think of myself as preferring simple, regular syntax, so
-   long as it's not S-expressions (sorry Dave).  But perhaps I don't know myself that well!
-   Anyhow, I do think `{|x| f(x)}` and `{|x| x.f}` are significantly less readable
-   than `f(_)` and `_.f`.
+Option (c) however does not mesh with the iteration library I had in mind.
+I am not 100% sure whether the iteration library design is right in any
+case.
+
+#### 4. Is it too magical?
+
+I feel like I'm always tweaking the syntax to make
+it more complex.  Odd because I think of myself as preferring simple, regular syntax, as
+long as it's not S-expressions (sorry Dave).  But perhaps I don't know myself that well!
+Anyhow, I do think `{|x| f(x)}` and `{|x| x.f}` are significantly less readable
+than `f(_)` and `_.f`.
