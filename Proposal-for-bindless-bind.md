@@ -26,9 +26,6 @@ _.a.b.c        => {|x| x.a.b.c }
 _(_, _)        => {|x,y,z| x(y, z) }
 a.b(_, _)      => {|x,y| a.b(x, y) }
 _.a.b.c(_, _)  => {|x,y,z| x.a.b.c(y, z) }
-_[_]           => {|x,y| x[y] }
-a.b[_]         => {|x| a.b[x] }
-_.a.b.c[_]     => {|x,y| x.a.b.c[y] }
 ```
 
 A naked `_` is an error: it can only appear as a hole in a larger expression.  Binary operators (`_ + _`) are not currently allowed but would not be terribly hard to support.  Larger expressions 
@@ -57,17 +54,24 @@ Moreover, for things like `a.b(_)`, where `b` is a method, it is precisely this 
 
 ## Questions and concerns
 
-1. Should other expression forms be supported?
-
+1. **Should other expression forms be supported?**
    In particular I think binary operators can be useful,
    especially if we allow for method overloading.  Something like
    `scores.foldl(0, _+_)` (which would sum all of the scores)
-   reads fairly well.
-
-2. Nesting is somewhat inconsistent
-
+   reads fairly well.  
+2. **Do we care about the change in evaluation order vs `bind`?**
+3. **Nesting is somewhat inconsistent.**
    In general, I tried to say that a plain `_` indicates a hold in the
    expression in which it appears, but a nested `_` expression creates
    a nested closure.  So `_(_)` yields `{|x,y| x(y)}` but `_(_.a)`
    yields `{|x| x(_.a)}` (as shown above).  However, this nesting rule is
-   not
+   not 100% consistent: the receiver of a call is not considered
+   nested, but calls are.  So:
+   ```
+   _.a(_) => {|x,y| x.a(y)}
+   _.a(_).b(_) => {|z| _.a(_).b(z)}
+   ```
+   Unfortunately, because we do not know syntactically whether the `a.b` in
+   `a.b()` is a method call or a field access, I am not sure how this can be
+   rectified while preserving the ability to chain binds as I originally
+   wanted.  
