@@ -73,5 +73,15 @@ Moreover, for things like `a.b(_)`, where `b` is a method, it is precisely this 
    ```
    Unfortunately, because we do not know syntactically whether the `a.b` in
    `a.b()` is a method call or a field access, I am not sure how this can be
-   rectified while preserving the ability to chain binds as I originally
-   wanted.  
+   rectified other than translating nested calls like this:
+   ```
+   _.a(_).b(_) => {|x,y,z| x.a(y).b(z)}
+   ```
+   This however does not mesh with the iteration library I had in mind.
+   I am not 100% sure whether the iteration library design is right in any
+   case.
+4. **Is it too magical?** I feel like I'm always tweaking the syntax to make
+   it more complex.  Odd because I think of myself as preferring simple, regular syntax, so
+   long as it's not S-expressions (sorry Dave).  But perhaps I don't know myself that well!
+   Anyhow, I do think `{|x| f(x)}` and `{|x| x.f}` are significantly less readable
+   than `f(_)` and `_.f`.
