@@ -50,7 +50,9 @@ f(a.b, _) => {|y| f(a.b,y) }
 
 Old-style bind is closer to classic currying.  New-style is basically a shorthand.  I could fix this, but it would largely erase the gains of a consolidated code path.  I don't yet see an obvious way to keep a consolidated code path *and* the old semantics.  
 
-Moreover, for things like `a.b(_)`, where `b` is a method, it is precisely this change which makes this work whereas before it failed.  This is because there is no need to reify a "about to be invoked" method.  Basically this work "fixes" issue #435 by circumventing the problem.  Syntax like `a.b` where `b` is a method could then just be made illegal.
+Moreover, for things like `a.b(_)`, where `b` is a method, it is precisely this change which makes this work whereas before it failed.  This is because there is no need to reify a "about to be invoked" method.  Basically this work "fixes" [issue #435][435] by circumventing the problem.  Syntax like `a.b` where `b` is a method could then just be made illegal.
+
+[435]: https://github.com/mozilla/rust/issues/435
 
 ## Questions and concerns
 
