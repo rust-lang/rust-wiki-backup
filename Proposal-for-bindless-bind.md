@@ -91,10 +91,7 @@ Unfortunately, because we do not know syntactically whether the `a.b` in
    ```
    _.a(_).b(_) => {|x,y,z| x.a(y).b(z)}
    ```
-
-Option (3) however does not mesh with the iteration library I had in mind.
-I am not 100% sure whether the iteration library design is right in any
-case.
+   This option however does not mesh with the iteration library I had in mind.
 
 #### 4. Is it too magical?
 
