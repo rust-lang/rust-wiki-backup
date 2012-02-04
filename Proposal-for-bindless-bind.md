@@ -76,18 +76,23 @@ a nested closure.  So `_(_)` yields `{|x,y| x(y)}` but `_(_.a)`
 yields `{|x| x(_.a)}` (as shown above).  However, this nesting rule is
 not 100% consistent: the receiver of a call is not considered
 nested, but calls are.  So:
-      ```
-      _.a(_) => {|x,y| x.a(y)}
-      _.a(_).b(_) => {|z| _.a(_).b(z)}
-      ```
+
+```
+_.a(_) => {|x,y| x.a(y)}
+_.a(_).b(_) => {|z| _.a(_).b(z)}
+```
+
 Unfortunately, because we do not know syntactically whether the `a.b` in
-`a.b()` is a method call or a field access. I could either (a) leave it this
-way; (b) accept `_.b(_)` but only if `b()` turns out to be a method; or
-(c) translate nested calls like this:
-      ```
-      _.a(_).b(_) => {|x,y,z| x.a(y).b(z)}
-      ```
-Option (c) however does not mesh with the iteration library I had in mind.
+`a.b()` is a method call or a field access. I could either 
+
+1. leave it this way;
+2. accept `_.b(_)` but only if `b()` turns out to be a method; or
+3. translate nested calls like this:
+   ```
+   _.a(_).b(_) => {|x,y,z| x.a(y).b(z)}
+   ```
+
+Option (3) however does not mesh with the iteration library I had in mind.
 I am not 100% sure whether the iteration library design is right in any
 case.
 
