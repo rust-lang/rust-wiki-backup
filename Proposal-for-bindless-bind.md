@@ -70,7 +70,7 @@ currying.
 
 #### 3. Nesting is somewhat inconsistent.
 
-In general, I tried to say that a plain `_` indicates a hold in the
+In general, I tried to say that a plain `_` indicates a hole in the
 expression in which it appears, but a nested `_` expression creates
 a nested closure.  So `_(_)` yields `{|x,y| x(y)}` but `_(_.a)`
 yields `{|x| x(_.a)}` (as shown above).  However, this nesting rule is
