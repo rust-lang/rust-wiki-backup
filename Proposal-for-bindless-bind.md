@@ -74,12 +74,13 @@ Moreover, for things like `a.b(_)`, where `b` is a method, it is precisely this 
    _.a(_).b(_) => {|z| _.a(_).b(z)}
    ```
    Unfortunately, because we do not know syntactically whether the `a.b` in
-   `a.b()` is a method call or a field access, I am not sure how this can be
-   rectified other than translating nested calls like this:
+   `a.b()` is a method call or a field access. I could either (a) leave it this
+   way; (b) accept `_.b(_)` but only if `b()` turns out to be a method; or
+   (c) translate nested calls like this:
    ```
    _.a(_).b(_) => {|x,y,z| x.a(y).b(z)}
    ```
-   This however does not mesh with the iteration library I had in mind.
+   Option (c) however does not mesh with the iteration library I had in mind.
    I am not 100% sure whether the iteration library design is right in any
    case.
 4. **Is it too magical?** I feel like I'm always tweaking the syntax to make
