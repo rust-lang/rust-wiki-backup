@@ -1,4 +1,4 @@
-Status of changes in progress, by section (per the [naturaldoc](http://doc.rust-lang.org/doc/core/files/str-rs.html)), as of Superbowl 2012.
+The following describes various changes in progress within core::str as of February 5, 2012.
 
 ### Creating a string
 **from_cstr_len**: Add this per [issue 1666](https://github.com/mozilla/rust/issues/1666).
