@@ -1,4 +1,4 @@
-The following describes various changes in progress within core::str as of February 5, 2012.
+The following describes various changes in progress within core::str as of February 5, 2012.  (Beyond lots of optimization...)
 
 ### Creating a string
 **from_cstr_len**: Add this per [issue 1666](https://github.com/mozilla/rust/issues/1666).
