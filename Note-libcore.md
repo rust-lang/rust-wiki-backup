@@ -9,7 +9,7 @@ See https://mail.mozilla.org/pipermail/rust-dev/2011-December/001037.html
 
 ## TODO
 
-(This list should be consistent with [[Note core::str status]])
+(This list should be consistent with [[Note core::str]])
 
 * "char":
   * "is_ascii" **add** 
