@@ -41,13 +41,10 @@ Rename:
 
 **sbuf**: Replace with `ctypes::c_char` per [issue 1715](https://github.com/mozilla/rust/issues/1715)
 
-##Long term thoughts (from Kevin Cantu)
-I'm thinking about how best to include support for the various other string encodings that we'll need for interoperability with things like NTFS file names, etc.  Encodings that would be useful for basic filesystem traversal and so on include at least:
+##Long term thoughts
+RFCs and brainstorming:
 
-* Latin-1
-* UTF-16
-* wchar_t (whatever libuv on Windows needs...)
-
-Reliable automatic detection of all these is impossible, so all I imagine is a `str_codec` interface with methods `to` and `from` that can be manually specified.
-
-Libmagic bindings and Unicode ICU bindings are welcome, but not nearly as important for basic interop.
+* Input and output in other encodings should be supported: https://github.com/mozilla/rust/issues/1771
+* String literals should be constant: https://github.com/mozilla/rust/issues/879
+* String literals should have their types inferred, perhaps the way Haskell's -XOverloadedStrings allows ByteString, Text, and String literals to all be written like `let x = "hello"`.
+* a library with ICU bindings would be nice
