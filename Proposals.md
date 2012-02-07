@@ -9,6 +9,7 @@ Listing of proposals:
 * [[Proposal for attribute preprocessing]]
 * [[Proposal for fixits]]
 * [[Proposal for Lightweight RFC Process]]
+* [[Proposal to address Dan's bug]]
 
 ## Accepted
 
