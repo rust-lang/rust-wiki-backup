@@ -42,12 +42,11 @@ Rename:
 **sbuf**: Replace with `ctypes::c_char` per [issue 1715](https://github.com/mozilla/rust/issues/1715)
 
 ##Long term thoughts (from Kevin Cantu)
-I'm thinking about how best to include support for the various other string encodings that we'll need for interoperability with things like NTFS file names, etc.  Common encodings that would be nice to handle in a most basic way include at least:
-* UTF-8 bytes (done)
-* ASCII bytes (done/in progress)
+I'm thinking about how best to include support for the various other string encodings that we'll need for interoperability with things like NTFS file names, etc.  Encodings that would be useful for basic filesystem traversal and so on include at least:
+
 * Latin-1
 * UTF-16
-* wchar_t (whatever libuv on Windows needs for filesystem access, perhaps?)
+* wchar_t (whatever libuv on Windows needs...)
 
 Reliable automatic detection of these and others may be impossible, so all I imagine is a `str_codec` interface with methods `to` and `from`.
 
