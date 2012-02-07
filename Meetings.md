@@ -15,6 +15,7 @@ Listing of minutes from meetings:
 * [[Meeting weekly 2012-01-17]] (0.1 prep)
 * [[Meeting weekly 2012-01-24]] (monomorphizing, comp. perf., 0.2)
 * [[Meeting weekly 2012-01-31]] (exhaustiveness checking, scheduling, monomorphizing, 0.2)
+* [[Meeting weekly 2012-02-07]] (bind; monomorphization; proposal process; regions; FFI)
 
 ## In-person meetings:
 
