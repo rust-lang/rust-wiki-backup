@@ -3,9 +3,6 @@ The following describes various changes in progress within core::str as of Febru
 ### Creating a string
 **from_cstr_len**: Add this per [issue 1666](https://github.com/mozilla/rust/issues/1666).
 
-###Adding to and removing from a string
--
-
 ###Transforming strings
 This renaming [is pending](https://github.com/mozilla/rust/pull/1754):
 
@@ -24,8 +21,6 @@ After these pending changes I think split, split_char, split_byte, and split_str
 
 ###Comparing strings
 **hash**: Implement murmur or cityhash to randomize this (and also other string hashes used elsewhere), see issue [1616](https://github.com/mozilla/rust/issues/1616)
-
-###Iterating through strings
 
 ###Searching
 **index** and **rindex**: These are finding a byte, not a char.  Should we create `index_byte` and `rindex_byte` in addition to making these look for a char?  Should all return a byte position, or char and byte positions, respectively?
@@ -46,5 +41,14 @@ Rename:
 
 **sbuf**: Replace with `ctypes::c_char` per [issue 1715](https://github.com/mozilla/rust/issues/1715)
 
-###Unsafe
--
+##Long term thoughts (from Kevin Cantu)
+I'm thinking about how best to include support for the various other string encodings that we'll need for interoperability with things like NTFS file names, etc.  Common encodings that would be nice to handle in a most basic way include at least:
+* UTF-8 bytes (done)
+* ASCII bytes (done/in progress)
+* Latin-1
+* UTF-16
+* wchar_t (whatever libuv on Windows needs for filesystem access, perhaps?)
+
+Reliable automatic detection of these and others may be impossible, so all I imagine is a `str_codec` interface with methods `to` and `from`.
+
+Libmagic bindings and Unicode ICU bindings are welcome, but not nearly as important for basic interop.
