@@ -1,11 +1,6 @@
 # Proposal: Lightweight RFC process
 
-In general, we'd like to ensure consensus among the core Rust team on
-all changes to the language or major changes to the libraries and implementation.  
-So, if you'd like to make such a change, the
-single basic requirement is to document your proposal and discuss it
-as widely as you can.  The rest of this document describes the
-"official" procedure for doing this.
+In general, we'd like to ensure consensus among the core Rust team on all changes to the language or major changes to the libraries and implementation.  So, if you'd like to make such a change, the single basic requirement is to document your proposal and discuss it as widely as you can.  The rest of this document describes the "official" procedure for doing this.
 
 The first step is to create an RFC issue: open an issue on github with
 the "RFC" in the title and tag it with the `rfc` tag.  Others should
