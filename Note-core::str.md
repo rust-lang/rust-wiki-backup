@@ -14,22 +14,18 @@ This renaming [is pending](https://github.com/mozilla/rust/pull/1754):
 * split_func -> split
 * split_char -> split_char
 * split_chars_iter -> split_char_iter
+* substr: use char positions
+* splitn_char: add
+
 
 After these pending changes I think split, split_char, split_byte, and split_str should all behave identically in terms of "", "x", "xABCx", "xx", and so on.
 
-**substr**: Currently not UTF-8.  Should we (A) make substr (char) and substr_bytes, or (B) just make substr a char function?
-
-**splitn_char**: Add this.
-
 **replace**: Add more test cases to verify UTF-8 safety.
-
-
 
 ###Comparing strings
 **hash**: Implement murmur or cityhash to randomize this (and also other string hashes used elsewhere), see issue [1616](https://github.com/mozilla/rust/issues/1616)
 
 ###Iterating through strings
-**splitn_char_iter**: This needs to use splitn_char
 
 ###Searching
 **index** and **rindex**: These are finding a byte, not a char.  Should we create `index_byte` and `rindex_byte` in addition to making these look for a char?  Should all return a byte position, or char and byte positions, respectively?
