@@ -23,3 +23,7 @@ There is quite a bit of research on this.  Implementing streaming MapReduce shou
 ### Distributed MapReduce
 
 Going over the network. Needs way to spawn remote processes, distribute data and handling of failures.
+
+### Strom/Kafka
+
+I'm (boggle) quite intrigued by the storm framework and kafka event broker. It is more powerful than mapreduce and allows to implement all of the above use cases. So maybe we should implement something like storm for multicore processing right away and put mapreducejoin atop as an example. I think this would also be useful for implementing rendering pipelines, and streaming to webpages and all kinds of other things Mozilla might like. 
