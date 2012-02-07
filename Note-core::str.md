@@ -48,6 +48,6 @@ I'm thinking about how best to include support for the various other string enco
 * UTF-16
 * wchar_t (whatever libuv on Windows needs...)
 
-Reliable automatic detection of these and others may be impossible, so all I imagine is a `str_codec` interface with methods `to` and `from`.
+Reliable automatic detection of all these is impossible, so all I imagine is a `str_codec` interface with methods `to` and `from` that can be manually specified.
 
 Libmagic bindings and Unicode ICU bindings are welcome, but not nearly as important for basic interop.
