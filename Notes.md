@@ -21,7 +21,7 @@ Listing of notes for developers:
 
 ## Library notes
 
-* [[Note libcore]]
+* [[Note libcore]] (and [[Note core::str]])
 * [[Note wanted libraries]]
 
 ## Miscellaneous notes
