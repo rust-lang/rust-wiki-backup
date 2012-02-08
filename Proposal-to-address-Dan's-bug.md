@@ -103,7 +103,7 @@ guarnatee that the value being matched against remains live.
 
 We already have a definition for when an lvalue is mutable.  The
 algorithm is given in `mut.rs` and we can reuse it.  However, there is
-a hole in our type system which actually makes this algorithm unsound
+a hole in our type system (see Appendix A) which actually makes this algorithm unsound
 (and, indeed, the type system itself, which treats supposedly
 immutable fields covariantly, and probably alias analysis too).  We
 must therefore close this hole first (we should do this anyway).
@@ -143,3 +143,24 @@ An assignment `l=r` is permitted only if the type of `l` is
 assignable.  Similarly, a mutable field (resp. box, vector) can only
 be created if the type is assignable.
 
+## Appendix A: Type system hole
+
+To show why the current type system is unsound, consider this example, which creates an immutable box manages to mutate it:
+
+```
+type T = { f: @const int };
+
+fn foo(&t: T, v: @const int) {
+    t = {f:v};
+}
+
+fn main() {
+    let h = @3; // note: h is immutable
+    let g = @mutable {f: @mutable 4};
+    #error["h=%? g=%?", h, g]; // prints "h=@3 g=@(@4)"
+    foo(*g, h);
+    #error["h=%? g=%?", h, g]; // prints "h=@4 g=@(@4)"
+    *g.f = 5;
+    #error["h=%? g=%?", h, g]; // prints "h=@5 g=@(@5)"
+}
+```
