@@ -145,7 +145,7 @@ be created if the type is assignable.
 
 ## Appendix A: Type system hole
 
-To show why the current type system is unsound, consider this example, which creates an immutable box manages to mutate it:
+To show why the current type system is unsound, consider this example, which creates an immutable box but then manages to mutate it:
 
 ```
 type T = { f: @const int };
