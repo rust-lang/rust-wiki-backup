@@ -1,22 +1,9 @@
-The following describes various changes in progress within core::str as of February 5, 2012.  (Beyond lots of optimization...)
+The following describes various changes in progress within core::str as of February 7, 2012.  (Beyond lots of optimization...)
 
 ### Creating a string
 **from_cstr_len**: Add this per [issue 1666](https://github.com/mozilla/rust/issues/1666).
 
 ###Transforming strings
-This renaming [is pending](https://github.com/mozilla/rust/pull/1754):
-
-* split -> split_byte
-* splitn -> splitn_byte
-* split_func -> split
-* split_char -> split_char
-* split_chars_iter -> split_char_iter
-* substr: use char positions
-* splitn_char: add
-
-
-After these pending changes I think split, split_char, split_byte, and split_str should all behave identically in terms of "", "x", "xABCx", "xx", and so on.
-
 **replace**: Add more test cases to verify UTF-8 safety.
 
 ###Comparing strings
