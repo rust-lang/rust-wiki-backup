@@ -102,7 +102,9 @@ guarnatee that the value being matched against remains live.
 ## Defining mut memory
 
 We already have a definition for when an lvalue is mutable.  The
-algorithm is given in `mut.rs` and we can reuse it.  However, there is
+algorithm is given in `mut.rs` and we can mostly reuse it, though we
+will have to be careful around `&&` references, as these may in fact
+point to mutable memory. However, there is
 a hole in our type system (see Appendix A) which actually makes this algorithm unsound
 (and, indeed, the type system itself, which treats supposedly
 immutable fields covariantly, and probably alias analysis too).  We
