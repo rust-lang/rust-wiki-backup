@@ -301,7 +301,7 @@ imagine a tree type like:
     
 I can now write a recursive processor like this:
 
-    fn map_tree<S,T>(t: tree<S>, f: block(S) => T) -> ~tree<T> {
+    fn map_tree<S,T>(t: &tree<S>, f: fn(S) => T) -> ~tree<T> {
         // Note: no "~" on type, hence borrow.
         let d = f(t.data);
         let l = map_tree(t.left);
