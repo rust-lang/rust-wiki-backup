@@ -176,34 +176,13 @@ Note that `~` is not a region: instead, it is a way of indicating that
 the pointer is located in a unique region only accessible via the
 given pointer.
 
-### Capture regions
+### Capture regions and unique pointers
 
 A unique pointer like `~T` is not in a region `~`; rather, it is in
 some distinct region of its own.  To simulate this, any time that a
 unique pointer `~T` is assigned to an lvalue of type `R&T` (function
 calls and `alt` statements, really), `R` is bound to a fresh region
 `X`.
-
-Due to ref-counting, the `@` region is distinct from stack regions and
-must be carefully handled.  Therefore, we apply the same capture
-treatment to `@` which we apply to `~`.  The intention is to prohibit
-a region that appears in multiple places within the function signature
-from being bound to a `@` or `~` variable, as this could allow the
-callee function to make incorrect assignments in the future
-(currently, it would be harmless).
-
-> Example of what would be harmful, assuming types parameterized
-> by regions:
->
->     type T<R&> = { mutable f: R&F };
->     fn set_f(t: A&T<A&>, f: A&F) {
->         t.f = f;
->     }
->
-> If `set_f()` were invoked with `A` bound to `@`, the ref count would
-> not be properly maintained. Bad. Of course, right now this cannot
-> happen because we do not allow types parameterized by regions.  But
-> this might be a useful feature.
 
 ### "Reparenting:" Taking the address of something
 
