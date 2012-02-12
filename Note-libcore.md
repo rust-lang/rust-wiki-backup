@@ -6,7 +6,3 @@ See https://mail.mozilla.org/pipermail/rust-dev/2011-December/001037.html
 ## TODO
 
 * "str": [[Note core::str]]
-
-* "char":
-  * "is_ascii" **add** 
-  * "is_digit" **add** 
