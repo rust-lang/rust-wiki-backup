@@ -10,8 +10,6 @@ The following describes various changes in progress within core::str as of Febru
 **hash**: Implement murmur or cityhash to randomize this (and also other string hashes used elsewhere), see issue [1616](https://github.com/mozilla/rust/issues/1616)
 
 ###Searching
-**index** and **rindex**: These are finding a byte, not a char.  Should we create `index_byte` and `rindex_byte` in addition to making these look for a char?  Should all return a byte position, or char and byte positions, respectively?
-
 **find**: Add more test cases to verify UTF-8 support.  Should this return a byte or a char position?  Furthermore, shouldn't **find** and **contains** use an option type, rather than -1 vs. a valid value?
 
 ###String properties
