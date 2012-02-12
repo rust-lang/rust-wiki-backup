@@ -18,7 +18,7 @@ The following describes various changes in progress within core::str as of Febru
 Rename:
 
 * byte_len -> len_bytes
-* char_len -> len_chars
+* char_len -> len_chars / len
 
 ###Misc
 Rename:
@@ -34,4 +34,4 @@ RFCs and brainstorming:
 * Input and output in other encodings should be supported: https://github.com/mozilla/rust/issues/1771
 * String literals should be constant: https://github.com/mozilla/rust/issues/879
 * String literals should have their types inferred, perhaps the way Haskell's -XOverloadedStrings allows ByteString, Text, and String literals to all be written like `let x = "hello"`.
-* a library with ICU bindings would be nice. See ```std::unicode.rs```
+* a library with ICU bindings would be nice. See ```std::unicode.rs``
