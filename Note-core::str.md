@@ -1,8 +1,5 @@
 The following describes various changes in progress within core::str as of February 7, 2012.  (Beyond lots of optimization...)
 
-### Creating a string
-**from_cstr_len**: Add this per [issue 1666](https://github.com/mozilla/rust/issues/1666).
-
 ###Transforming strings
 **replace**: Add more test cases to verify UTF-8 safety.
 
