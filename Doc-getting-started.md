@@ -2,7 +2,7 @@
 
 Version numbers listed here are "what we're using"; the code may well work with earlier versions of these tools, but we don't know minimum version requirements.
 
-* A recent Linux, OS X or Win32 system
+* A recent Linux, OS X, Win32 or FreeBSD system
 * [Python 2.x](http://www.python.org/download/) (version 2.7 is known to work)
 * GNU make 3.81
 * git 1.7
@@ -29,6 +29,14 @@ For Git, we recommend [MsysGit](http://code.google.com/p/msysgit/) and if you us
 If while building you receive an error that `libpthread-2.dll` is not found, you need to install the [libpthread-2.8.0-3-mingw32-dll-2.tar.lzma package](http://sourceforge.net/projects/mingw/files/MinGW/Base/pthreads-w32/pthreads-w32-2.8.0-3/).  It seems this must be installed by hand, as far as I can tell:
 
     cd /mingw; lzma -d -c /path/to/downloaded/libpthread-2.8.0-3-mingw32-dll-2.tar.lzma | tar xf -
+
+### FreeBSD
+
+Rust builds on FreeBSD but is not officially supported. It is only known to work on 9.0-RELEASE. You'll need some prerequisites:
+
+    pkg_add -r git gmake libexecinfo libunwind
+
+The gcc included with FreeBSD is old, so your best bet is to run the `configure` script with `--enable-clang`. Installing gcc 4.6 can also work. Build with `gmake` instead of `make`.
 
 ## Downloading and building Rust
 
