@@ -12,9 +12,6 @@ See #1849
 ###Comparing strings
 **hash**: Implement murmur or cityhash to randomize this (and also other string hashes used elsewhere), see issue [1616](https://github.com/mozilla/rust/issues/1616)
 
-###Searching
-**find**: Add more test cases to verify UTF-8 support.  Should this return a byte or a char position?  Furthermore, shouldn't **find** use an option type, rather than -1 vs. a valid value?
-
 ###Misc
 **sbuf**: Replace with `ctypes::c_char` per [issue 1715](https://github.com/mozilla/rust/issues/1715)
 
