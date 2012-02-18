@@ -37,3 +37,4 @@ Misc
 * cfg
 * path
 * doc
+* inline
