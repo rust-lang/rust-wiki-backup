@@ -1,6 +1,6 @@
 Many changes can be reviewed after-the-fact, or via bugs or the usual code-review mechanisms of github.
 
-Some changes are "substantial", and we ask that these be put through a bit of a design process and produce a consensus among the core developers (those with administrative access to the mozilla/rust repository).
+Some changes are "substantial", and we ask that these be put through a bit of a design process and produce a consensus among the **core developers** (those with administrative access to the `mozilla/rust` repository, currently: andreasgal, BrendanEich, brson, catamorphism, dherman, erickt, graydon, jdm, jruderman, lht, marijnh, nikomatsakis, pcwalton).
 
 ## When you need to follow this process
 
@@ -19,23 +19,23 @@ Where we define "substantial change" as any change _excluding_:
     platform coverage, more parallelism, trap more errors, etc.)
   - Additions only likely to be _noticed by_ other developers-of-rust, invisible to users-of-rust.
 
-## What the process is for such substantial changes
+## What the process is
 
-The process is still pretty lightweight: you need to convince yourself that your change has been 
+The process is still pretty lightweight: 
 
-  - Put in an obvious place to be seen by everyone in the core group (currently: andreasgal, BrendanEich, brson, catamorphism, dherman, erickt, graydon, jdm, jruderman, lht, marijnh, nikomatsakis, pcwalton)
-  - Given a sufficient amount of time to ripen in such view, **at least a week**.
-  - **Agreed-on** by everyone in that group, or at least explicitly agreed-on by a good number (more than 4?) and **leaving no outstanding unaddressed concerns**, or the impression that anyone else might have any.
+  - **Indicate you have an RFC in one of the obvious places below**, so the core group will consider it.
+  - **Give the RFC some time** to ripen and collect feedback, at least a week.
+  - **Acquire consensus** from everyone in that group. Consensus is the only vague part, but at least look for an explicit "yes" by more than half the group and **no outstanding unaddressed concerns** from anyone else, nor any reason to believe anyone else might have any. We're not always paying attention to everything, so you have to use some judgment about this part.
 
-For our part, we will try to run through the RFC-tagged bugs weekly to make sure that if there's consensus among the attendees, an explicit expression of it gets made.
+### "Obvious places?"
 
-### "Convince myself?"
+The following are places where RFC-requiring bugs will be seen:
 
-The following are some effective ways to convince yourself:
+  - Make a bug tagged `[B-RFC]` that explains things in detail. Make a proposal page in the wiki if the proposal is much longer than a few paragraphs, or you expect to be revising it. Wiki pages are more easily editable in place than bugs.
+  - Post an email with `[RFC]` in the title, again with a proposal page if the proposal has much size or you expect much revision.
+  - Attend one of our in-person meetings and discuss it there.
 
-  - Make a bug tagged `[B-RFC]` and wait a week. Ensure that several developers from the core group have said "yes" and there are no outstanding, unaddressed concerns raised.
-  - Post an email with `[RFC]` in the title and wait a week. Same standard of conviction: several core developers have agreed and there are no outstanding, unaddressed concerns raised.
-  - Attend one of our in-person meetings and get the same level of verbal consensus.
+For our part, we will try to run through the RFC-tagged bugs at our weekly meetings, to make sure that if there's consensus among the attendees, an explicit expression of it gets made. If a bug is not RFC-worthy, someone may remove the `[B-RFC]` tag as part of bug triage. Using RFC-tagged bugs are best since they naturally queue up.
 
 ### Help this is all too informal!
 
