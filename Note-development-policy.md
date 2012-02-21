@@ -50,10 +50,18 @@ File bugs in <a href="https://github.com/mozilla/rust/issues">the issue tracker<
 
 Tag bugs liberally. The bug tracker here currently has weak search capabilities. Github staff has made a variety of comments suggesting "they're working on it", but in the meantime tags are our only hope. (There's also <a href="http://githubissues.heroku.com/#mozilla/rust">GHI on Heroku</a>, but it's slow.)
 
+Tags in the tracker are in groups:
+
+  - `[A-foo]` tags mean that the bug is in the **area** of "foo", meaning that someone who wants to work on the foo modules in the compiler should look at it. These should be pretty specific areas, not vague. Some bugs will be tagged with multiple _areas_ because they cut across areas.
+  - `[B-foo]` tags mean that the bug is **blocked** in a particular state, such as "wanting clarification" or "RFC". These are effectively workflow-oriented tags, so we can see try to attack bugs that are stuck in a particular state of their life and could possibly become unstuck. Just "awaiting someone to do the work" is not a blocked state. A bug should be in _zero or one_ `[B-foo]` states, no more than one.
+  - `[E-foo]` tags indicate a guess of the **effort** required by a bug. Most bugs are "medium" and don't need such tags; but some are especially easy or hard, and this can be helpful to highlight.
+  - `[I-foo]` tags area subjective judgment of **importance**. A bug should be in only one `[I-foo]` state.
+  - `[C-foo]` tags are explanations that may be applied as an explanation when a bug is **closed** without fixing it. Application of these tags is inconsistent and occasional, mostly as a form of politeness.
+
 Add "FIXME (issue #NN): blah blah" in the source anywhere you see room for improvement, where #NN is the issue number in the tracker here. If you fix an issue on commit, remove the associated FIXMEs (grep for other occurrences) and put the exact phrase "Closes #NN" (with that capitalization) in the commit message and github will pick it up and link to the commit, close the issue.
 
 ## Language changes
 
-At the moment we're going to avoid a formal change policy; it's too early and we're still changing too many things in an ad-hoc, informal way. If we get to the point of a full supported release cycle, we'll set up a language-change process. Until then, we will accept or reject pull requests mostly as a matter of taste and available energy. If you have some vague ideas, add an entry to [[Bikesheds]]. If you have a worked-out idea, add an entry to [[Proposals]].
+If you have some vague ideas, add an entry to [[Bikesheds]]. If you have a worked-out idea, we suggest you look at the [[Note RFC Process]] to see how we manage larger changes.
 
 Library additions are probably the most likely to be accepted. See [[Note wanted libraries]] for possible candidates.
