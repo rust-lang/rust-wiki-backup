@@ -4,6 +4,7 @@ Listing of notes for developers:
 
 * [[Note wiki conventions]]
 * [[Note development policy]] -- **please read this**
+* [[Note RFC process]] -- **read this for larger changes**
 * [[Note development roadmap]]
 * [[Note compiler snapshots]]
 * [[Note git workflow]]
