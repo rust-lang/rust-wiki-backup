@@ -8,7 +8,6 @@ Listing of proposals:
 * [[Proposal for regions]]
 * [[Proposal for attribute preprocessing]]
 * [[Proposal for fixits]]
-* [[Proposal for Lightweight RFC Process]]
 * [[Proposal to address Dan's bug]]
 * [[Proposal for all-or-nothing mut]]
 
@@ -20,6 +19,7 @@ Listing of proposals:
 * [[Proposal for interfaces]]
 * [[Proposal for logging]]
 * [[Proposal for crate format]]
+* [[Proposal for Lightweight RFC Process]]
 
 ## Withdrawn
 
