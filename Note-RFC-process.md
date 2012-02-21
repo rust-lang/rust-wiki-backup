@@ -24,6 +24,7 @@ Where we define "substantial change" as any change _excluding_:
 The process is still pretty lightweight: you need to convince yourself that your change has been 
 
   - Put in an obvious place to be seen by everyone in the core group (currently: andreasgal, BrendanEich, brson, catamorphism, dherman, erickt, graydon, jdm, jruderman, lht, marijnh, nikomatsakis, pcwalton)
+  - Given a sufficient amount of time to ripen in such view, **at least a week**.
   - **Agreed-on** by everyone in that group, or at least explicitly agreed-on by a good number (more than 4?) and **leaving no outstanding unaddressed concerns**, or the impression that anyone else might have any.
 
 For our part, we will try to run through the RFC-tagged bugs weekly to make sure that if there's consensus among the attendees, an explicit expression of it gets made.
