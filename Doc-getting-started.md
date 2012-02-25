@@ -33,7 +33,7 @@ If while building you receive an error that `libpthread-2.dll` is not found, you
 If you are installing the 0.1 snapshot, note that there was a bug in the `install.mk` file that means that the `make install` target will put some files in the wrong place on windows. This can be fixed as follows, assuming that `$prefix` is where you installed to and you're on an `i686-pc-mingw32` host (the only type supported by this release):
 
     mv $prefix/lib/*.dll  $prefix/bin/ ;
-    mv $prefix/lib/rustc/i686-pc-mingw32/lib/*.dll  $prefix/lib/rustc/i686-pc-mingw32/bin/ ;
+    mv $prefix/lib/rustc/i686-pc-mingw32/lib  $prefix/lib/rustc/i686-pc-mingw32/bin ;
     mv $prefix/lib/rustc  $prefix/bin/ ;
 
 
