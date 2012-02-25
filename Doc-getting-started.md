@@ -30,6 +30,13 @@ If while building you receive an error that `libpthread-2.dll` is not found, you
 
     cd /mingw; lzma -d -c /path/to/downloaded/libpthread-2.8.0-3-mingw32-dll-2.tar.lzma | tar xf -
 
+If you are installing the 0.1 snapshot, note that there was a bug in the `install.mk` file that means that the `make install` target will put some files in the wrong place on windows. This can be fixed as follows, assuming that `$prefix` is where you installed to and you're on an `i686-pc-mingw32` host (the only type supported by this release):
+
+    mv $prefix/lib/*.dll  $prefix/bin/ ;
+    mv $prefix/lib/rustc/i686-pc-mingw32/lib/*.dll  $prefix/lib/rustc/i686-pc-mingw32/bin/ ;
+    mv $prefix/lib/rustc  $prefix/bin/ ;
+
+
 ### FreeBSD
 
 Rust builds on FreeBSD but is not officially supported. It is only known to work on 9.0-RELEASE. You'll need some prerequisites:
