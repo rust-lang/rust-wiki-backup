@@ -18,6 +18,7 @@ Listing of minutes from meetings:
 * [[Meeting weekly 2012-02-07]] (bind; monomorphization; proposal process; regions; FFI)
 * [[Meeting weekly 2012-02-14]] (triage and bug tracking; non-exhaustive alts; crust functions)
 * [[Meeting weekly 2012-02-21]] (status updates; refinements and typestate; unsafe blocks; SEH)
+* [[Meeting weekly 2012-02-28]] (C types; let mut; iteration; regions; bug sheriff)
 
 ## In-person meetings:
 
