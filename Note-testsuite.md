@@ -46,6 +46,7 @@ Valid directives include:
 * `xfail-pretty` - Test doesn't pretty-print correcty
 * `error-pattern:[...]` - A message that should be expected on standard out. If multiple patterns are provided then they must all be matched, in order (**Note:** error-patterns are somewhat deprecated, see the section on Expected Errors below).
 * `no-reformat` - Don't reformat the code when running the test through the pretty-printer
+* `aux-build:foo.rs` - Compiles an auxiliary library for use in multi-crate tests.  See the section on multi-crate testing below.
 
 There are five directories containing compile tests, living in the src/tests directory:
 
@@ -54,6 +55,7 @@ There are five directories containing compile tests, living in the src/tests dir
 * compile-fail - Tests that are expected not to compile
 * bench - Benchmarks and miscellaneous snippets of code that are expected to compile and run successfully. Also used for pretty-print testing.
 * pretty - Pretty-print tests
+* auxiliary - libraries used in multi-crate testing. See the section on this topic below.
 
 And finally, build targets:
 
@@ -112,6 +114,26 @@ appear in the output.  Using error comments is preferred, however,
 because it is a more thorough test: (a) it verifies that the error is
 reported on the expected line number and (b) it verifies that no
 additional errors or warnings are reported.
+
+### Multi-crate testing
+
+Sometimes it is useful to write tests that make use of more than one crate.  We have limited support for this scenario.  Basically, you can write and add modules into the `src/test/auxiliary` directory. These files are not built nor tested directly.  Instead, you write a main test in one of the other directories (`run-pass`, `compile-fail`, etc) and add a `aux-build` directive at the head of the main test.  When running the main test, the test framework will build the files it is directed to build from the auxiliary directory.  These builds *must* succeed or the test will fail.  You can then include `use` and `import` commands to make use of the byproducts from these builds as you wish.  
+
+An example consisting of two files:
+```
+auxiliary/cci_iter_lib.rs:
+  #[inline]
+  fn iter<T>(v: [T], f: fn(T)) {...}
+
+run-pass/cci_iter_exe.rs:
+  // aux-build:cci_iter_lib.rs
+  use std;
+  use cci_iter_lib;
+  import std::io;
+  fn main() {
+    cci_iter_lib::iter([1, 2, 3]) {|i| ... }
+  }
+```
 
 ### Recipes
 
