@@ -134,7 +134,7 @@ You could then implement operators for non-primitive types by defining (and impo
         /* etc */
     }
 
-
+<a name="delegation">
 ## Delegation
 
 Go has a feature called "anonymous fields" where a struct may include another struct as a field addressed by type name and by merit of that inherits all methods defined on that field.  This is a practical approach to implement delegation.  Perhaps there could be a similar feature as an extension of the type class proposal where an impl can elect to implement an iface by delegating calls to another impl by calling a pure function or dispatching to a member field. Syntax:
