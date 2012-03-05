@@ -12,4 +12,4 @@ One or more core developers spend one day per week mopping up accumulated mess i
   - Tuesday: @marijnh
   - Wednesday: @graydon
   - Thursday: @catamorphism (tjc on IRC)
-  - Friday: @pcwalton
+  - Friday: @pcwalton / @nikomatsakis
