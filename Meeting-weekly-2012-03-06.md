@@ -1,0 +1,80 @@
+## Mar 6, 2012 ##
+Attending:
+- T: tjc
+- G: graydon
+- M: marijn
+- N: nmatsakis
+- B: brson
+- P: pcwalton
+- G: Should we schedule 0.2 release around features or by time
+    - a lot of detail work in the bug list
+    - e.g., hold it for regions, unwinding, etc?
+- P: I don't think we need to *hold it* on anything but if new features are done, let's take them.
+- G: I am seeing a fair number of people having trouble with FFI being underpowered
+    - inability to pass structures by value
+    - inability to do interior allocation
+    - inability to teach cargo to build C code (the ultimate glue)
+- P: We should fix FFI bugs having ability to build C is good anyhow
+- G: Trying to decide how to prioritize, the two issues seem independent
+- G: Giving rustc the ability to process C files... does that horrify anyone?
+    - basically by passing C files through to gcc
+    - T: that's what ghc does
+- B: There are open bugs and someone was interested in implementing it
+- G: Speed-related things queued up, in theory compiler should start to go faster
+    - in time-passes, main bottleneck is the LLVM code generation
+    - only way to attack it, basically, is to generate less code
+    - will try and instrument and see if we can easily generate less
+    - P: I think a lot is cleanups
+    - G: and maybe ref counting
+    - G: but maybe there is some low-hanging fruit
+- G: rustbot automation is crappy
+    - is it worth spending time improving it? adding features?
+    - N: going faster would be good
+    - G: partly that's just the cycle time of the compiler
+    - G: main thing I wanted to change:
+        - messaging structure is garbage, winds up doing multiple builds
+        - no prioritization
+        - P: try/chooser syntax.  e.g., turn off valgrind, be more selective.
+- M: with regard to bug triage, if each of us is spending a day, question is where do we start
+    - last guy will have started at top of the bug list
+    - should we keep some information about where to look?
+    - is 5 days a wek overkill?
+    - G: it's possible.  I've been starting at random in the list.  
+    - P: I did not think you had to spend 8 hours doing bug triage,
+        just enough to keep it under control
+    - G: No, but there is "bug-related" work that needs to get done
+        - there are plenty of actually *legitimate* bugs
+        - goal is to make sure that number of open bugs does not grow endlessly
+    - N: is this just a problem of not knowing what's not assigned?
+        - T,G: no, there are other scenarios too (duplicates, things that became easy)
+    - T: so shall we make a wiki page to coordinate this?
+        - G: there exists one: "bug-trackers"
+- T: issue #1906, suggestion of adding an infinite loop construct
+    - general consensus about "loop" as a keyword for infinite loop
+- M: the resolve pass might require a complete rewrite
+    - shall we open an issue to rewrite resolve?
+    - P: sounds good
+    - G: it's sufficiently complicated that it's hard to tell what it does
+    - P: also slow
+    - G: might be worth combining changes to export control (per-item `pub`) with rewrite
+        - or is that too much bundling?
+        - concern is that a rewrite might yield a structure that doesn't fit?
+    - M: we should probably combine them if we decide to go forward with the bug
+    - P: what was final decision? default is crate-protected?
+        - G: some concern over how that interacts with tags?
+        - N: what about "descendants"?
+        - G: I was thinking priv would be "this module + its children"
+        - G: minor tidbits that need resolution:
+            - enum variants
+                - should enum variants inherit the visibility of their parent?
+                - e.g., `pub enum foo { bar() priv qed() }`
+                - P: that makes sense to me
+            - G: do we then generalize that rule? what about modules?
+                - T: if you don't want that you can use explicit exports
+                - N: I think not... enums are different because they project into the outer namespace
+            - G: do we need a keyword for crate-level visibility?
+                - `crate` as the keyword
+                - P: could use `protected`.
+                    - misc: carries undesired heritage, long
+                - G: `local`?
+                    - misc: `local` is not very clear
