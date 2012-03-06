@@ -1,11 +1,14 @@
 ## Mar 6, 2012 ##
+
 Attending:
+
 - T: tjc
 - G: graydon
 - M: marijn
 - N: nmatsakis
 - B: brson
 - P: pcwalton
+
 - G: Should we schedule 0.2 release around features or by time
     - a lot of detail work in the bug list
     - e.g., hold it for regions, unwinding, etc?
