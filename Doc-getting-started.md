@@ -10,7 +10,6 @@ Version numbers listed here are "what we're using"; the code may well work with 
 * curl
 * Valgrind 3.5 (recommended, but not required for Linux)
 * Pandoc and pdflatex commands (optional), if you wish to build HTML or PDF docs, respectively
-* Naturaldocs (optional), if you wish to build the standard library documentation
 
 ### Debian-based Linux distributions
 
