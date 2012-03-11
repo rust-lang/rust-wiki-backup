@@ -1,4 +1,4 @@
-Listing of minutes from meetings:
+Listing of minutes from meetings
 
 ## Weekly meetings:
 
