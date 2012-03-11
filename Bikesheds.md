@@ -1,4 +1,4 @@
-List of bikeshed topics:
+Listing of bikeshed topics
 
 These tend to be either syntax issues, more-superficial features, or "wish list" thinking, wherein we haven't quite decided what we even want to do yet, and are collecting ideas, requirement-lists, contradictory approaches, opinions, etc.
 
