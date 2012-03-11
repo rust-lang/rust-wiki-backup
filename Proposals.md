@@ -1,4 +1,4 @@
-Listing of proposals:
+Listing of proposals
 
 ## Active
 
