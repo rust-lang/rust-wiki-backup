@@ -7,7 +7,7 @@ Listing of documentation for users
 * [Core library](http://doc.rust-lang.org/doc/core/index.html)
 * [Standard library](http://doc.rust-lang.org/doc/std/index.html)
 
-## General instructions for users
+## General instructions
 
 * [[Doc getting started]]
 * [[Doc using cargo to manage packages]]
