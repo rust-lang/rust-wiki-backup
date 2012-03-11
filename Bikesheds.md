@@ -16,7 +16,7 @@ When you're done with a bikeshed page, please either abandon it or move it to a 
 * [[Bikeshed note]]
 * [[Bikeshed mapreduce]]
 
-## Abandonned
+## Abandoned
 
 * [[Bikeshed extracted documentation]]
 * [[Bikeshed disjoint union types]]
