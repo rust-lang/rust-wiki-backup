@@ -1,4 +1,4 @@
-Listing of notes for developers:
+Listing of notes for developers
 
 ## Process and workflow notes
 
