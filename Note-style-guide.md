@@ -4,6 +4,12 @@ These are coding guidelines for the Rust compiler and standard library.
 
 If possible then constructor functions should simply be named for the type that they construct, e.g. `str_reader`. When disambiguation is needed then they should be prefixed with `new_`. One common exception is functions that create values be converting from other values, in which case they should have a `from_` prefix, like `vec::from_elem`.
 
+Examples:
+
+* `io::str_reader`
+* `task::new_task_builder`
+* `vec::from_elem`
+
 ## Error messages and warnings
 
 Rust code in error messages should be enclosed in backquotes.
