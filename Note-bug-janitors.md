@@ -5,6 +5,7 @@ One or more core developers spend one day per week mopping up accumulated mess i
   - Reproduction: checking locally to see if bugs are still valid.
   - Followup: requesting clarification, testcases, etc. from reporters of unclear bugs. 
   - Actual fixing: if there's any time left, pick some work off that seems fixable in short order.
+  - Documentation: perhaps leave a note on this wiki page about what you did, for the next janitor's benefit.
 
 ## Janitors by day:
 
@@ -13,3 +14,7 @@ One or more core developers spend one day per week mopping up accumulated mess i
   - Wednesday: @graydon
   - Thursday: @catamorphism (tjc on IRC)
   - Friday: @pcwalton / @nikomatsakis
+
+## Log:
+
+  - Thursday 3/15, tjc reviewed open issues 1-1000.
