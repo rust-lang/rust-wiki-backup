@@ -72,7 +72,7 @@ There's a quick guide to the source of the compiler in [src/comp/README](https:/
 
 ## Editor support
 
-Syntax highlighting for vim is included in the Rust repository, under `src/etc/vim` and for emacs under `src/etc/emacs`.
+Syntax highlighting for vim is included in the Rust repository, under `src/etc/vim` and for emacs under `src/etc/emacs`. Support for other editors can be found on [[Note Related Projects]].
 
 ## The issue tracker
 
