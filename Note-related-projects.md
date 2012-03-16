@@ -8,3 +8,4 @@ A listing of various rust-related projects that aren't in cargo so I can keep tr
 * [lkuper's PLT Redex model](https://github.com/github/linguist) - An (out-of-date) model of Rust in PLT Redex
 * [kib2's SublimeText2 language file](http://kib2.free.fr/Falcon/blog/25-01-2012-SublimeText2-Rust.html) - Highlighting for SublimeText 2
 * [ianb's Eclipse plugin](https://github.com/ianbollinger/oxide) - Eclipse!
+* [gareth0's rust-gnome](https://bitbucket.org/gareth0/rust-gnome) - A syntax highlighting file for GtkSourceView (Gedit) and a GNOME mime-database file.
