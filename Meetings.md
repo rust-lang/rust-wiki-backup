@@ -20,6 +20,7 @@ Listing of minutes from meetings
 * [[Meeting weekly 2012-02-21]] (status updates; refinements and typestate; unsafe blocks; SEH)
 * [[Meeting weekly 2012-02-28]] (C types; let mut; iteration; regions; bug sheriff)
 * [[Meeting weekly 2012-03-06]] (FFI, bugs, exports)
+* [[Meeting weekly 2012-03-20]] (modes; 0.2; emerging languages 2012; conveniences; arenas experiment; jemalloc)
 
 ## In-person meetings:
 
