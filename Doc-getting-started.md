@@ -68,7 +68,7 @@ Rust is also packaged for various systems by community members
 
 ## Navigating
 
-There's a quick guide to the source of the compiler in [src/comp/README](https://github.com/mozilla/rust/blob/master/src/comp/README.txt). You should probably look through it if you're going to be contributing.
+There's a quick guide to the source of the compiler in [src/rustc/README.txt](https://github.com/mozilla/rust/blob/master/src/rustc/README.txt). You should probably look through it if you're going to be contributing.
 
 ## Editor support
 
