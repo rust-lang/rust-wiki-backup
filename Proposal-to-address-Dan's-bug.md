@@ -101,53 +101,41 @@ guarnatee that the value being matched against remains live.
 
 ## Defining mut memory
 
-We already have a definition for when an lvalue is mutable.  The
-algorithm is given in `mut.rs` and we can mostly reuse it, though we
-will have to be careful around `&&` references, as these may in fact
-point to mutable memory. However, there is
-a hole in our type system (see Appendix A) which actually makes this algorithm unsound
-(and, indeed, the type system itself, which treats supposedly
-immutable fields covariantly, and probably alias analysis too).  We
-must therefore close this hole first (we should do this anyway).
+This entire concept is premised on the ability of the type system to
+detect "mutable" memory.  The current system of references is not able
+to do that very well, but a region-based type system will be able to
+do so.  
 
-The problem is due to types like `@mut T` or `[mut T]` where `T` is an
-aggregate type. Let's focus on `@mut T`, `[mut T]` is analogous. Here
-is an example showing the problem:
+The basic requirement is that we must be able to determine whether
+any given bit of reachable memory is mutable or not.  We rely on a few
+recent additions to make this possible:
 
-    type T = { f: int, g: int }; // note: f and g are immutable
-    fn foo() {
-        let x = @mut {f: 3, g: 5};
-        let y = @mut {f: 4, g: 6};
-        
-        // Here x.f == 3
+- local variables that are tagged as mutable: variables not tagged as `mut`
+  can never be updated, so we know whether that portion of the stack is
+  mutable or not.
+- region pointers in place of references: a region type like `&T` can
+  only point at immutable memory; similarly, `&mut` can only point at
+  mutable memory.  `&const` can point at either.  Only the first can
+  be considered immutable.
 
-        *x = y;
-        
-        // Here x.f == 4, but wait, wasn't it immutable?
-    }
-    
-As this example demonstrates, an immutable field in our system isn't
-really immutable: it's only immutable if contained in an immutable
-context.  But we *treat* such fields as immutable in numerous places
-(as, indeed, I think we should).
+Based on this, a given lvalue L is potentially mutable under the following
+conditions (here, we ignore autoderef, which is simply a pre-expansion step):
 
-## The `assign` type kind
-
-To close the type hole described in the previous section, we introduce
-an `assign` type kind that indicates whether a type is assignable.
-Most copyable types are also assignable.  The only exceptions are:
-
-- enums
-- records with immutable fields or fields of non-assignable type
-- tuples
-
-An assignment `l=r` is permitted only if the type of `l` is
-assignable.  Similarly, a mutable field (resp. box, vector) can only
-be created if the type is assignable.
+- L = L'.f where f is f declared mutable
+- L = L'.f where L' is potentially mutable
+- L = x where x is a local variable declared mutable
+- L = x where x is a mutable upvar captured by reference (that is, in an fn&)
+- L = *L' where L' has type &mut or &const
+- L = *L' where L' has type @mut or @const
+- L = *L' where L' has type ~mut or ~const
+- L = L'[_] where L' has type [mut _] or [const _]
 
 ## Appendix A: Type system hole
 
-To show why the current type system is unsound, consider this example, which creates an immutable box but then manages to mutate it:
+The current type system using references is unsound because it cannot
+determine, based on the types alone, whether a given lvalue is
+mutable.  Consider this example, which creates an immutable box but
+then manages to mutate it:
 
 ```
 type T = { f: @const int };
@@ -166,3 +154,29 @@ fn main() {
     #error["h=%? g=%?", h, g]; // prints "h=@5 g=@(@5)"
 }
 ```
+
+In a new region-like universe, this program would be written like so:
+
+```
+type T = { f: @const int };
+
+fn foo(t: &mut T, v: @const int) {
+    t = {f:v};
+}
+
+fn main() {
+    let h = @3; // note: h is immutable
+    let g = @mutable {f: @mutable 4};
+    foo(g, h); // ERROR
+    *g.f = 5;
+}
+```
+
+The line marked `ERROR` indicates where the type check would fail: the
+type of `g` is `@mutable {f: @mutable int}`.  This can be implicitly
+coerced to `&mutable {f: @mutable int}`, but it is not a subtype of
+`&mutable {f: @const int}`.  In the old system, the mutability that
+was derived from the "by-mutable-reference" kind of the parameter `t`
+was invisible to the type system, and hence the type system applied a
+covariant rule, leading to the hole.
+
