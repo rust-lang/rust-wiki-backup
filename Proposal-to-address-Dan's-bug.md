@@ -37,10 +37,9 @@ Today we prevent these via approximate, type-based alias analysis.
 - Only allow variant patterns to be matched against immutable memory
 - Only allow dereferencing (auto or otherwise) in patterns against
   immutable memory.
-- Fix a type hole in current system where immutability does not in fact
-  mean "won't be modified"
-- In process, introduce a bound `assign` which refines `copy` to indicate
-  types that can safely be overwritten
+- Fix a type hole in current system where immutability does not in
+  fact mean "won't be modified" via the introduction of a `&`,
+  `&const`, and `&mut` reference types (a.k.a., regions).
 
 ## The solution
 
@@ -129,6 +128,22 @@ conditions (here, we ignore autoderef, which is simply a pre-expansion step):
 - L = *L' where L' has type @mut or @const
 - L = *L' where L' has type ~mut or ~const
 - L = L'[_] where L' has type [mut _] or [const _]
+
+## Additional changes that might make sense
+
+We could add a copy pattern `copy P`: it causes the value to be copied
+into immutable memory and then matches the pattern `P` against it.
+This is just a useful shorthand.  
+
+We should also allow fields that are not declared as mutable to be assigned
+if the record itself in a mutable location.  For example:
+
+    fn foo() {
+        let mut pnt = {x: 32, y: 64};
+        pnt = {x: 33, y: 65}; // if this is legal...
+        pnt.x += 1; // ...why not these?
+        pnt.y += 1; 
+    }
 
 ## Appendix A: Type system hole
 
