@@ -2,7 +2,7 @@ These are coding guidelines for the Rust compiler and standard library.
 
 ## Constructor functions
 
-If possible then constructor functions should simply be named for the type that they construct, e.g. `str_reader`. When disambiguation is needed then they should be prefixed with `new_`. One common exception is functions that create values be converting from other values, in which case they should have a `from_` prefix, like `vec::from_elem`.
+If possible then constructor functions should simply be named for the type that they construct, e.g. `str_reader`. When disambiguation is needed then they should be prefixed with `new_`. One common exception is functions that create values by converting from other values, in which case they should have a `from_` prefix, like `vec::from_elem`.
 
 Examples:
 
