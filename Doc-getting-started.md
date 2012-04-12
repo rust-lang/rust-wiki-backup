@@ -84,13 +84,7 @@ To get an idea of where we're going, see the [[Note development roadmap]].
 
 The way most people seem to get involved is by simply trying to write Rust code. Inevitably you will hit a bug or missing feature, at which point you may feel compelled to write a patch.
 
-Another way to get involved is to look through the issue tracker for these issues:
-
-* [open issues tagged with 'easy'](https://github.com/mozilla/rust/issues?labels=easy&sort=updated&direction=desc&state=open&page=1)
-* [open issues tagged with 'unassigned'](https://github.com/mozilla/rust/issues?labels=unassigned&sort=updated&direction=desc&state=open&page=1)
-* [open issues tagged with 'easy' and 'unassigned'](https://github.com/mozilla/rust/issues?labels=unassigned&sort=created&direction=desc&state=open&page=1)
-* [open issues tagged with 'feature'](https://github.com/mozilla/rust/issues?labels=feature&sort=updated&direction=desc&state=open&page=1)
-* [open issues tagged with 'easy', 'unassigned' and 'feature'](https://github.com/mozilla/rust/issues?labels=easy%2Cfeature%2Cunassigned&sort=updated&direction=desc&state=open&page=1)
+Another way to get involved is to look through the issue tracker for issues labeled with "E-easy", "I-enhancement", and/or "I-wishlist". Unassigned bugs are always fair game. Assigned bugs that don't seem to be getting worked on actively can be fair game, but always check with the bug owner first in that case. Also see [[Note development policy]].
 
 Outstanding bugs or feature requests in Rust often have a corresponding test in the test suite that doesn't yet pass.  One good way to jump into Rust development is to look for files in the test/run-pass directory containing the string `xfail-test`.  Those are all bugs that need to be fixed or features that someone needs to finish.
 
