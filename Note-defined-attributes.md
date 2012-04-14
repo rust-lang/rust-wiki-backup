@@ -16,6 +16,11 @@ Crate
 * lint
  * no_ctypes
 
+Mod
+-----
+
+* path
+
 Native
 ------
 
@@ -37,4 +42,5 @@ Misc
 * cfg
 * path
 * doc
+* doc(hidden)
 * inline
