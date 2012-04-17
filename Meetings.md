@@ -21,6 +21,7 @@ Listing of minutes from meetings
 * [[Meeting weekly 2012-02-28]] (C types; let mut; iteration; regions; bug sheriff)
 * [[Meeting weekly 2012-03-06]] (FFI, bugs, exports)
 * [[Meeting weekly 2012-03-20]] (modes; 0.2; emerging languages 2012; conveniences; arenas experiment; jemalloc)
+* [[Meeting weekly 2012-04-17]] (alt syntax; clang integration; lint changes; labels; crate files; build logic; vector changes; resolve rewrite)
 
 ## In-person meetings:
 
