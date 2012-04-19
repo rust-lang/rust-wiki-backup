@@ -10,7 +10,9 @@ export RUST_LOG=hello
 
 Long answer: RUST_LOG takes a 'logging spec' that consists of a comma-separated list of paths, where a path consists of the crate name and sequence of module names, each separated by double-colons. For standalone .rs files the crate is implicitly named after the source file, so in the above example we were setting RUST_LOG to the name of the hello crate. Multiple paths can be combined to control the exact logging you want to see. For example, when debugging linking in the compiler you might set `RUST_LOG=rustc::metadata::creader,rustc::util::filesearch,rustc::back::rpath`
 
-Also try setting RUST_LOG to `::help`. For a full description see the Ref.Run.Log section of the language documentation.
+Also try setting RUST_LOG to `::help`. For a full description see [the language reference][1].
+
+[1]:http://doc.rust-lang.org/doc/rust.html#logging-system
 
 ### What does it mean when a program exits with `leaked memory in rust main loop (2 objects)' failed, rt/memory_region.cpp:99 2 objects`?
 
