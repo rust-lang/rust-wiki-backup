@@ -16,7 +16,7 @@ Also try setting RUST_LOG to `::help`. For a full description see [the language 
 
 ### What does it mean when a program exits with `leaked memory in rust main loop (2 objects)' failed, rt/memory_region.cpp:99 2 objects`?
 
-This message indicates a memory leak, and is mostly likely to happen on rarely exercised failure paths. Note that failure unwinding is not yet implemented on windows so this is expected. If you see this on linux or mac it's a compiler bug; please report it.
+This message indicates a memory leak, and is mostly likely to happen on rarely exercised failure paths. Note that failure unwinding is not yet implemented on windows so this is expected. If you see this on Linux or Mac it's a compiler bug; please report it.
 
 ### Why does my build fail with a "bad hash on download" message?
 
