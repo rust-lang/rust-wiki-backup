@@ -20,7 +20,7 @@ We encourage all users to register their packages with [cargo central](http://gi
 
 To "register" a package, the easiest approach is the following:
 
-  * Push your package to a git repository somewhere. Make sure your package has a crate file in its root directory called `<yourpackage>.rc`, that contains a suitably detailed `#[link ...]` attribute describing at least its short name. We will likely make some link attribute fields mandatory for future inclusion in cargo -- possibly the `uuid` field or `vers` for version numbers -- so it's good to include those as well. If your package is a library, you will need to add `#[crate_type = "lib"];` to the `<yourpackage>.rc` file.
+  * Push your package to a git repository somewhere. Make sure your package contains a crate file somewhere in its directory structure called `<yourpackage>.rc`, that contains a suitably detailed `#[link ...]` attribute describing at least its short name. We will likely make some link attribute fields mandatory for future inclusion in cargo -- possibly the `uuid` field or `vers` for version numbers -- so it's good to include those as well. If your package is a library, you will need to add `#[crate_type = "lib"];` to the `<yourpackage>.rc` file.
   * fork the `cargo-central` repository and add a new entry to the `packages.json` file, for example (including a uuid from the `uuidgen` tool):
 
         {
