@@ -20,3 +20,4 @@ When you're done with a bikeshed page, please either abandon it or move it to a 
 
 * [[Bikeshed extracted documentation]]
 * [[Bikeshed disjoint union types]]
+* [[Bikeshed impl method extraction]]
