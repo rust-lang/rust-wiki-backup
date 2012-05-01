@@ -6,6 +6,7 @@ Notes taken at rust work week, 2011/06/23
  * list, hash, deque, vec, stack, queue, prioque, trees, set, bitv
  * bitv
  * iteration
+ * pure collections
 * IO
  * AIO, SIO, stdio
  * filesystem
@@ -22,7 +23,11 @@ Notes taken at rust work week, 2011/06/23
 * math, random
 * [compression](https://github.com/elly/rustzlib)
 * libicu
-* serialization (protobuf / thrift / [json](https://github.com/mozilla/rust/blob/master/src/libstd/json.rs))
+* serialization
+ * protobuf
+ * thrift
+ * [json](https://github.com/mozilla/rust/blob/master/src/libstd/json.rs)
+ * [tnetstring](https://github.com/erickt/rust-tnetstring)
 * xml
 * [crypto](https://github.com/elly/rustcrypto)
 * concurrency
@@ -40,7 +45,7 @@ Notes taken at rust work week, 2011/06/23
 
 ## Things that do not belong in std
 * DB API
-* [ZeroMQ](http://github.com/erickt/rust-zmq)
+* [ZeroMQ](https://github.com/erickt/rust-zmq)
  * How will libs like this be integrated with regular nonblocking io?
  * ZeroMQ sockets need to be used from a fixed thread, can we do this in rust?
 * GUI
