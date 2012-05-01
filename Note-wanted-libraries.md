@@ -26,9 +26,9 @@ Notes taken at rust work week, 2011/06/23
 * serialization
  * protobuf
  * thrift
+ * xml
  * [json](https://github.com/mozilla/rust/blob/master/src/libstd/json.rs)
  * [tnetstring](https://github.com/erickt/rust-tnetstring)
-* xml
 * [crypto](https://github.com/elly/rustcrypto)
 * concurrency
  * task management, actor, OTP, [[Bikeshed mapreduce]], pools
