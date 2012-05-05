@@ -29,7 +29,7 @@ Notes taken at rust work week, 2011/06/23
  * xml
  * [json](https://github.com/mozilla/rust/blob/master/src/libstd/json.rs)
  * [tnetstring](https://github.com/erickt/rust-tnetstring)
-* databases
+* database interface (sql, nosql)
   * postgres
   * mongodb
   * redis
