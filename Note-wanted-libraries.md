@@ -29,10 +29,6 @@ Notes taken at rust work week, 2011/06/23
  * xml
  * [json](https://github.com/mozilla/rust/blob/master/src/libstd/json.rs)
  * [tnetstring](https://github.com/erickt/rust-tnetstring)
-* database interface (sql, nosql)
-  * postgres
-  * mongodb
-  * redis
 * [crypto](https://github.com/elly/rustcrypto)
 * concurrency
  * task management, actor, OTP, [[Bikeshed mapreduce]], pools
@@ -48,7 +44,10 @@ Notes taken at rust work week, 2011/06/23
 * reflection
 
 ## Things that do not belong in std
-* DB API
+* DB API (sql, nosql)
+  * postgres
+  * mongodb
+  * redis
 * [ZeroMQ](https://github.com/erickt/rust-zmq)
  * How will libs like this be integrated with regular nonblocking io?
  * ZeroMQ sockets need to be used from a fixed thread, can we do this in rust?
