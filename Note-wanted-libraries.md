@@ -16,7 +16,7 @@ Notes taken at rust work week, 2011/06/23
 * string manipulation
  * slicing w/o copy, stringref
  * [regexp](https://github.com/elly/rustpcre)
- * ropes
+ * [ropes](https://github.com/mozilla/rust/blob/master/src/libstd/rope.rs)
 * networking
  * HTTP client / server
 * date / time
