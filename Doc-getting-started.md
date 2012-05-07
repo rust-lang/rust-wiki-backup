@@ -55,7 +55,7 @@ The gcc included with FreeBSD is old, so your best bet is to run the `configure`
 
 This will build and test the compiler, standard libraries, and supporting tools.
 
-*Note:* You can use `make -j8` (if you have an 8-core machine) to speed up the build. On Linux or OS X, if you have Valgrind installed, the tests will run slowly because they are running under Valgrind. If you define `CFG_DISABLE_VALGRIND=1` in your build environment or run configure with the `--disable-valgrind` flag, you can see the tests running at full speed.
+*Note:* You can use `make -j8` (if you have an 8-core machine) to speed up the build (at least the LLVM part and the tests). On Linux or OS X, if you have Valgrind installed, the tests will run slowly because they are running under Valgrind. If you define `CFG_DISABLE_VALGRIND=1` in your build environment or run configure with the `--disable-valgrind` flag, you can see the tests running at full speed.
 
 If you are going to be hacking on the Rust compiler itself then it is recommended that you configure with `--disable-optimize`, since this will greatly speed up your compilation. If you use `--enable-debug`, expect some test failures in class-related tests ([bug #2194](https://github.com/mozilla/rust/issues/2194)).
 
