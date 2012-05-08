@@ -11,6 +11,7 @@ Listing of notes for developers
 * [[Note git workflow]]
 * [[Note style guide]]
 * [[Note testsuite]]
+* [[Note rustc hacking guide]]
 
 ## Language and implementation notes
 
