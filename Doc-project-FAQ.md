@@ -52,7 +52,7 @@ No. The Mozilla Corporation's involvement is at the _labs_ level: the group conc
 
 ### What will Mozilla use Rust for?
 
-Mozilla intends to use Rust as a platform for prototyping experimental browser architectures. Specifically, the hope is to develop a browser that is more amenable to parallelization then existing ones, while also being less prone to common C++ coding errors. The name of that project is _Servo_.
+Mozilla intends to use Rust as a platform for prototyping experimental browser architectures. Specifically, the hope is to develop a browser that is more amenable to parallelization than existing ones, while also being less prone to common C++ coding errors. The name of that project is _Servo_.
 
 ### Why GitHub rather than the normal Mozilla setup (Mercurial / Bugzilla / Tinderbox)?
 
