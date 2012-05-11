@@ -10,7 +10,6 @@ One or more core developers spend one day per week mopping up accumulated mess i
 ## Janitors by day:
 
   - Monday: @brson
-  - Tuesday: @marijnh
   - Wednesday: @graydon
   - Thursday: @catamorphism (tjc on IRC)
   - Friday: @pcwalton / @nikomatsakis
