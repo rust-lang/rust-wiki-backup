@@ -24,6 +24,7 @@ Listing of minutes from meetings
 * [[Meeting weekly 2012-04-17]] (alt syntax; clang integration; lint changes; labels; crate files; build logic; vector changes; resolve rewrite)
 * [[Meeting weekly 2012-04-24]] (status updates)
 * [[Meeting weekly 2012-05-08]] (dynamic-size types, borrowing, GC, globals, documentation, versioning)
+* [[Meeting weekly 2012-05-15]] (resolve, dvecs, macros, reflection API, stability, crates)
 
 ## In-person meetings:
 
