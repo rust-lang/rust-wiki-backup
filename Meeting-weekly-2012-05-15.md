@@ -64,7 +64,9 @@ Graydon, Tim, Patrick, Paul, Niko, Eric, Lindsey, Dave, Brian
   * **Paul**: I don't like having the option of having a different lexer
   * **Patrick**: lisp has reader macros
   * **Paul**: if you want your thing to be string-aware, you won't be able to write this:
+```
 <<[ "]>>"
+```
 without having to write a special string-lexer
   * **Paul**: and you want to be able to syntax-highlight etc and have some measure of consistency inside these things
   * **Niko**: kind of violates the macro abstraction in a way
