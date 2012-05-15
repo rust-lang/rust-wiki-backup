@@ -32,6 +32,8 @@ Macros will need to be able to take various different kinds of nonterminals.
 At the moment, macros can only destructure `#<>`, `#{}`, and `[]`. It suffices, but we might like to be able to pun on existing expression syntax. 
 
 ## Proposed
+See https://github.com/mozilla/rust/issues/2387
+
     Expr → "#" Path BalancedLexemes
     BalancedLexemes → "(" BalancedLexemes * ")"
     BalancedLexemes → "[" BalancedLexemes * "]"
