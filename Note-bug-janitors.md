@@ -10,9 +10,10 @@ One or more core developers spend one day per week mopping up accumulated mess i
 ## Janitors by day:
 
   - Monday: @brson
+  - Tuesday: @nikomatsakis
   - Wednesday: @graydon
   - Thursday: @catamorphism (tjc on IRC)
-  - Friday: @pcwalton / @nikomatsakis
+  - Friday: @pcwalton
 
 ## Log:
   - Thursday 5/10, tjc reviewed open issues 2352-2374.
