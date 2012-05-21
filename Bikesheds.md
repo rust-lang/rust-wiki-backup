@@ -15,6 +15,7 @@ When you're done with a bikeshed page, please either abandon it or move it to a 
 * [[Bikeshed pattern matching syntax]]
 * [[Bikeshed note]]
 * [[Bikeshed mapreduce]]
+* [[Bikeshed function subtyping wrt regions]]
 
 ## Abandoned
 
