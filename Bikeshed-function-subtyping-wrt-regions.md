@@ -64,13 +64,11 @@ skolemization as I understand it (basically, getting rid of
 existential quantifiers and creating new terms to replace them), it
 occurred to me that maybe there's an implicit *existential* binder
 around the types that have free region variables above.  So, if y is
-one such, then maybe this is the optimization discussed on wikipedia
-here
-(https://en.wikipedia.org/wiki/Skolem_normal_form#Uses_of_Skolemization)
+one such, then maybe this is the optimization discussed [here](https://en.wikipedia.org/wiki/Skolem_normal_form#Uses_of_Skolemization),
 where "only variables that are free in the formula are placed in the
-skolem term".  Not sure.  *handwaving*
+skolem term".  I'm not really sure yet.
 
-Anyway!  In the third example above, there are no bound regions in the
+Anyway, in the third example above, there are no bound regions in the
 subtype, and there's a bound region in the supertype.  So we get:
 
     fn(&x.T) -> T' <: fn(&y'.S) -> S'
@@ -81,12 +79,12 @@ other.
 
 ## Skolemization
 
-Information from Wikipedia:
+This section is more or less a gloss of the [Wikipedia article](https://en.wikipedia.org/wiki/Skolem_normal_form).
 
-Skolemization is getting rid of existential quantifiers, and creating
+Skolemization is the process of getting rid of existential quantifiers and creating
 new terms to replace them.  In the simplest case (if there aren't any
 universal quantifiers to contend with), `exists x. P(x)` can change to
-simply `P(c)` where c is a new constant.  This makese sense -- c is
+simply `P(c)` where c is a new constant.  This makes sense -- c is
 just the x that we know exists.
 
 If there are some universal quantifiers around the thing -- say,
