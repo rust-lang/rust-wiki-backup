@@ -1,13 +1,10 @@
-So, this subtyping relationship should hold:
+This subtyping relationship should hold:
 
     fn<&x>(&x.T) -> T' <: fn<&y>(&y.S) -> S'
 
-Here, x and y are two regions being introduced for the first time in
-these types, and it's irrelevant what the types T, T', S, and S' are.
-(TODO: make sure the part about T, T', S, and S' being
-irrelevant is really true.)
+Here, x and y are two region variables being introduced for the first time, and it's irrelevant what the types T, T', S, and S' are.
 
-And this relationship:
+This relationship:
 
     fn<&x>(&x.T) -> T' <: fn(&y.S) -> S'
 
