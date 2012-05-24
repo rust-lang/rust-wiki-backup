@@ -10,6 +10,7 @@ Listing of proposals
 * [[Proposal for fixits]]
 * [[Proposal to address Dan's bug]]
 * [[Proposal for all-or-nothing mut]]
+* [[Proposal for const kind]]
 
 ## Accepted
 
