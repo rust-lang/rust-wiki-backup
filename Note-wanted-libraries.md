@@ -19,6 +19,7 @@ Notes taken at rust work week, 2011/06/23
  * [ropes](https://github.com/mozilla/rust/blob/master/src/libstd/rope.rs)
 * networking
  * HTTP client / server
+ * [UUID](https://github.com/erickt/rust-uuid), GUID
 * date / time
 * math, random
 * [compression](https://github.com/elly/rustzlib)
