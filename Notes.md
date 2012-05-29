@@ -12,7 +12,6 @@ Listing of notes for developers
 * [[Note style guide]]
 * [[Note testsuite]]
 * [[Note rustc hacking guide]]
-* [[Note issue labels]]
 
 ## Language and implementation notes
 
