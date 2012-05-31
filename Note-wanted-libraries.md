@@ -23,7 +23,7 @@ Notes taken at rust work week, 2011/06/23
 * date / time
 * math, random
 * [compression](https://github.com/elly/rustzlib)
-* libicu
+* [libicu](https://github.com/mozilla/rust/blob/master/src/libstd/unicode.rs)
 * serialization
  * protobuf
  * thrift
