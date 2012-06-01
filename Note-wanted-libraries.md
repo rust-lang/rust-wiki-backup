@@ -25,12 +25,14 @@ Notes taken at rust work week, 2011/06/23
 * math, random
 * [compression](https://github.com/elly/rustzlib)
 * [libicu](https://github.com/mozilla/rust/blob/master/src/libstd/unicode.rs)
-* serialization
+* serialization/encoding
+ * [base64](https://github.com/erickt/mre/blob/master/base64.rs)
+ * [CSV](https://github.com/grahame/rust-csv)
+ * [json](https://github.com/mozilla/rust/blob/master/src/libstd/json.rs)
  * protobuf
  * thrift
- * xml
- * [json](https://github.com/mozilla/rust/blob/master/src/libstd/json.rs)
  * [tnetstring](https://github.com/erickt/rust-tnetstring)
+ * xml
 * [crypto](https://github.com/elly/rustcrypto)
 * concurrency
  * task management, actor, OTP, [[Bikeshed mapreduce]], pools
