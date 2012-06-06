@@ -132,8 +132,8 @@ T elts[N];
   * **Brian**: this has something to do with self-describing uniques; we have unique boxes now with a hole in them for type descriptors, and that hole is a thing with an unknown size
   * **Niko**: problem with syntax above, so I proposed instead:
    * `@vec<m T>`
-   * `~vec<~T>`
-   * `&vec<~T>`
+   * `~vec<m T>`
+   * `&vec<m T>`
    * `[T]` - slice
    * `(T * n)` - fixed length
   * **Dave**: one problem is it's using common array syntax for a thing that is not quite an array (slice)
