@@ -17,7 +17,8 @@ $ git fetch mozilla
 $ git rebase mozilla/master
 ```
 
-> If rebasing will cause some of your commits to not build or otherwise make less sense then don't do it.
+> Sometimes there are conflicts during rebasing. If rebasing will cause some of your commits to not
+> build or otherwise make less sense then don't do it.
 > Instead finish the work on the current branch and submit the pull request without merging or rebasing.
 > Do not repeatedly merge master into your branch.
 
