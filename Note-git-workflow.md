@@ -1,4 +1,4 @@
-When submitting pull requests it is important to know that the rust developers make heavy use of rebasing. Branches that you submit for integration may be rebased, which will change their history and make your branch's history invalid.
+When submitting pull requests it is important to know your branch may be rebased, which will change its history and make your branch's history invalid.
 
 One possible workflow that has worked for developers on the project is outlined below. This assumes that you have an 'origin' remote that represents your remote github repo, and a 'mozilla' remote that represents Mozilla's. To create the latter, you can execute:
 ```
