@@ -18,6 +18,8 @@ $ git merge mozilla/master
 $ git rebase master mybranch
 ```
 
+> If rebasing will cause some of your commits to not build or otherwise make less sense then don't do it.
+> Instead finish the work on the current branch. Do not repeatedly merge master into your branch.
 
 3. When done, push your work up to github:
 ```
