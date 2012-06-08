@@ -12,10 +12,9 @@ $ git checkout master -b mybranch
 
 2. While working, rebase your branch forwards regularly:
 ```
-$ git checkout master
+$ git checkout mybranch
 $ git fetch mozilla
-$ git merge mozilla/master
-$ git rebase master mybranch
+$ git rebase mozilla/master
 ```
 
 > If rebasing will cause some of your commits to not build or otherwise make less sense then don't do it.
