@@ -101,9 +101,9 @@ mismatch and the undefined variable `b`.
 
 Sometimes it is not possible or not convenient to place the `//!`
 comment on precisely the line where the error occurs. For those cases,
-you may make a comment of the form `//!^` where the carrot `^`
+you may make a comment of the form `//!^` where the caret `^`
 indicates that the error is expected to appear on the line above.  You
-may have as many carrots as you like, so `//!^^^ ERROR foo` indicates
+may have as many caret as you like, so `//!^^^ ERROR foo` indicates
 that the error message `foo` is expected to be reported 3 lines above
 the comment.  We could therefore correct the above test like so:
 ```
