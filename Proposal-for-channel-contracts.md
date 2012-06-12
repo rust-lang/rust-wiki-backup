@@ -1,6 +1,8 @@
 Channel contracts for Rust
 ==========
 
+*** This is still a work in progress ***
+
 This document presents a design for implementing communication using Singularity-style channel contracts for Rust. There are several important features:
 
 * Backwards compatability with the existing communication system.
