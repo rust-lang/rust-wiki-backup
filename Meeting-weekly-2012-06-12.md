@@ -23,7 +23,7 @@ Ben, Tim, Patrick, Brian, Sully, Niko, Eric, Lindsey, Paul, Dave, Graydon
   * **Niko**: tried to make that work many times but failed to make it work; I'm not opposed
   * **Graydon**: does anyone object to the concept of dynamically sized types?
 
-<<crickets>>
+(crickets)
 
   * **Graydon**: ok, so it's mostly just a syntax question; we'll fuss around with that later
 
@@ -70,7 +70,7 @@ Ben, Tim, Patrick, Brian, Sully, Niko, Eric, Lindsey, Paul, Dave, Graydon
   * **Patrick**: I think this is nice because it reduces number of moving parts in the language; wanted to get people's reactions
   * **Eric**: the one thing I really like is you can move out of the self-pointer
   * **Patrick**: yes, flexibility of the self-pointer; not tied to the class but the individual method
-  * **Niko**: <<explained what the central difference is, Dave still didn't get it>>
+  * **Niko**: (explained what the central difference is, Dave still didn't get it)
   * **Brian**: maxmin classes is about turning classes into something closer to our existing impls, right?
   * **Patrick**: actually about turning classes into nominal records and then using impls to add methods to them
 
@@ -78,7 +78,7 @@ Ben, Tim, Patrick, Brian, Sully, Niko, Eric, Lindsey, Paul, Dave, Graydon
 
   * **Graydon**: broader strategic question: is there anyone who doesn't think we're gonna eliminate modes and use region pointers for that task?
 
-<<crickets>>
+(crickets)
 
   * **Graydon**: ok, scheduled for demolition and you can just assume that
   * **Dave**: Graydon, what's your feeling about maxmin classes?
@@ -87,7 +87,7 @@ Ben, Tim, Patrick, Brian, Sully, Niko, Eric, Lindsey, Paul, Dave, Graydon
   * **Niko**: soon; I have a plan for how to go about it
   * **Graydon**: just a plan of attack problem; is there substantial remaining proof that you can do it?
   * **Niko**: no, I'm positive; the fact that borrowck is in convinces me we can do it
-  * **Dave**: <<rejoices internally>>
+  * **Dave**: (rejoices internally)
   * **Patrick**: what do we do about ++ mode?
   * **Graydon**: I don't even remember what it means
   * **Patrick**: it's unsound; doesn't run destructors or copy constructors properly so it can crash
