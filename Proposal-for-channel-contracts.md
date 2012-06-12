@@ -6,7 +6,7 @@ This document presents a design for implementing communication using Singularity
 * Backwards compatability with the existing communication system.
 * A lock-free fast path that allocates no memory and requires only two atomic swaps.
 * Slow paths are no more expensive than the current message passing system.
-* No additional language support is required, other than a syntax extension.
+* This entire system can probably be implemented as a syntax extension.
 
 Design
 ----------
