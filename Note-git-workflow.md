@@ -1,9 +1,11 @@
 Incoming
 --------
 
-* Please do not push to master. Please push to incoming instead.
-
-* The sheriff will pull the last green commit from incoming to master daily.
+* The integration branch is `incoming`. Only the sheriff should push to `master`.
+  * If you have push access and are not the sheriff today, please push to `incoming`, not `master`.
+  * If you are filing pull requests, please file them against `incoming`, not `master`.
+* The sheriff will pull the last green commit from `incoming` to `master` daily.
+* The current sheriff will be listed in the IRC channel title.
 
 General
 -------
@@ -15,12 +17,12 @@ One possible workflow that has worked for developers on the project is outlined 
 $ git remote add mozilla git://github.com/mozilla/rust.git
 ```
 
-1. Whenever you start working on anything new, create a new branch:
+1. Whenever you start working on anything new, create a new branch derived from mozilla's `master` branch:
 ```
 $ git checkout master -b mybranch
 ```
 
-2. While working, rebase your branch forwards regularly:
+2. While working, rebase your branch forwards regularly against the (daily) updates to `master`:
 ```
 $ git checkout mybranch
 $ git fetch mozilla
@@ -30,23 +32,30 @@ $ git rebase mozilla/master
 > Sometimes there are conflicts during rebasing. If rebasing will cause some of your commits to not
 > build or otherwise make less sense then don't do it (`git rebase --abort`).
 > Instead finish the work on the current branch and submit the pull request without merging or rebasing.
-> Do not repeatedly merge master into your branch.
+> Do not repeatedly merge `master` into your branch. We will ask you to rewrite any pull request that
+> contains unnecessary merge nodes.
 
-3. When done, push your work up to github:
+3. When done, rebase one final time to the `incoming` branch of `mozilla/rust`, and push your work up to github:
 ```
+$ git fetch mozilla
+$ git rebase mozilla/incoming
+$ <re-run local tests, make sure it still works>
 $ git push origin mybranch
 ```
 
-4. Make a pull request to Mozilla.  In the meantime, you can create a new branch and do something else.
+4. File a pull request against `mozilla/rust`. Target the pull request to the `incoming` integration branch in `mozilla/rust`, not `master`. Incoming changes target the `incoming` branch only. Once your pull request is filed, you can create a new branch and do something else.
 
-5. After Mozilla integrates your stuff, pull that master branch into your local repo:
+5. After Mozilla merges your stuff to `incoming`, tests that it's green, and merges it over (semi-regularly) to `master`, it is integrated. Watch this process to ensure your change integrates. Address any test-breakage reported in the bots during integration.
+
+6. Pull `master` into your local repo and verify that it contains your changes:
 ```
 $ git checkout master
-$ git fetch mozilla
-$ git merge mozilla/master
+$ git pull
+$ git log
+  ... <look for your changes, confirm they arrived> ...
 ```
 
-6. Verify that master contains your changes, then delete 'mybranch' from both local and remote repos:
+6. It is now safe to delete 'mybranch' from both local and remote repos:
 ```
 $ git branch -D mybranch
 $ git push origin :mybranch
