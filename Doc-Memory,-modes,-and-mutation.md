@@ -58,5 +58,5 @@ The left-hand side of an `=` must designate a mutable slot. The right-hand side 
 ## Transferring things around by reference: `let`, `alt`, and function invocations
 
 ## Copying: `copy`
-
+If you are handling a piece of data that might potentially be passed by reference, and you want to avoid that (either because `~` forbids it, or because you want to restrict the visibility of mutations), you can write `copy`. Copy is "as shallow as possible", which means that it descends through `~`s, but stops at `@`, merely copying the reference.
 
