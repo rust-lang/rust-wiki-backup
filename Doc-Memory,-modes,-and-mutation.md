@@ -7,7 +7,9 @@ _Do you find yourself writing random punctuation marks in front of types in hope
 Slots are places where a value can live in memory, like the `x` in `let x = 4` or `{y: 3, x: 2}`.
 
 ## References
-References are values that "point to" slots. Like all values, they live in (presumably different) slots.
+References are values that "point to" slots. As they are also values, they live in (presumably different) slots.
+
+There is no way to ask for the "address of" a slot, in order to generate a reference to it. If you want a reference, you need to generate it in the heap with `@` or `~`, ensuring that it lives long enough to prevent dangling references. (This doesn't apply to the reference mode of parameters, `let`s, etc., described below. Because they have known, limited lifespans, the compiler can tell when it is safe for them to reference slots on the stack or inside structures.)
 
 ## Mutability
 If a slot is mutable, its contents may change:
