@@ -12,6 +12,7 @@ Listing of documentation for users
 * [[Doc getting started]]
 * [[Doc using cargo to manage packages]]
 * [[Doc using rustdoc]]
+* [[Doc Memory, modes, and mutation]], _a guide for the perplexed_
 
 ## FAQs
 
