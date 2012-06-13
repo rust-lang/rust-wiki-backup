@@ -28,14 +28,15 @@ The name is perhaps a little misleading; in Rust, it is possible for a slot to b
 ## Modes
 Rust currently supports parameter-passing modes. There are five or six of them: `+`, `-`, `++`, `&`, `&&`, and one that you get if you don't write any funny symbols. What do they mean? It is a mystery.
 
-# `@`
+# Data/types
+## Boxes: `@`
 The expression `@2` produces a reference to a immutable slot in the heap. Executing that expression will result in an allocation, but no visible side-effects. Its type is `@int`. 
 
 If you want mutability (which is pretty much the only reason for putting integers into the heap), `@mut 2` has the type `@mut int`. If you have a variable `x` with that value and type, you can change it with `*x = 3`.
-# `~`
+## Uniquely-referenced boxes: `~`
 Locally, `~2` is the same as `@2`, but it also means that no other references to that slot exist. So, the following function:
 ````Ruby
-fn f(x: ~int) -> {
+fn f(x: ~int) -> int {
   *x = 8;
   do_lots_of_complicated_stuff_with_callbacks_and_mutations_aplenty();
   ret *x
@@ -43,7 +44,19 @@ fn f(x: ~int) -> {
 ````
 ...always returns `8`, because no one else has a reference to that slot to change it.
 
-To enforce this, the compiler will give you errors any time you attempt to copy a reference with `~` type.
-# `copy`
+To enforce this, the compiler will give you errors if you attempt to implicitly copy a value with `~` as a type. Explicit copies will also recursively copy through `~`s, to avoid duplication.
 
-# `[]`
+## `[]`
+
+# Manipulating things
+## Binding: `let`
+The statement `let x: int = 3` introduces an immutable slot, named `x`, and initializes it with `3`. You can use arbitrary patterns on the left of a `let`, and it will destructure the given value.
+
+## Assignment: `=`
+The left-hand side of an `=` must designate a mutable slot. The right-hand side indicates what to put in that slot. 
+
+## Transferring things around by reference: `let`, `alt`, and function invocations
+
+## Copying: `copy`
+
+
