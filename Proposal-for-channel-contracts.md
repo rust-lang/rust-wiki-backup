@@ -50,7 +50,39 @@ fn main() {
 }
 ```
 
-The protocol compiler must generate two views of the protocol, one for the client and one for the server. Each protocol has an `init` function, which returns the two endpoints of the appropriate types needed to start the protocol.
+The protocol compiler must generate two views of the protocol, one for the client and one for the server. Each protocol has an `init` function, which returns the two endpoints of the appropriate types needed to start the protocol. The protocol compiler would use the above protocol description to generate an implementation similar to the following.
+
+```
+mod pingpong {
+    fn init() -> (client::ping, server::ping) { ... }
+    
+    mod client {
+        resource ping_(...) { ... };
+        type ping = ping_;
+        
+        resource pong_(...) { ... };
+        type pong = pong_;
+        
+        fn ping(-c: ping) -> pong { ... }
+        
+        fn pong(-c: pong) -> ping { ... }
+    }
+    
+    mod server {
+        resource ping_(...) { ... };
+        type ping = ping_;
+        
+        resource pong_(...) { ... };
+        type pong = pong_;
+        
+        fn ping(-c: ping) -> (pong, ()) { ... }
+        
+        fn pong(-c: pong) -> ping { ... }       
+    }
+}
+```
+
+The actually concrete types for each of the states has some flexibility. The important part is that it be sendable but noncopyable. Also, protocols that allow for multiple messages, and different payloads will be someone more complex. Messages and data, however, should be represented simply as enums.
 
 # Select, etc #
 
@@ -59,9 +91,14 @@ Still to come...
 Here I need to answer these questions:
 
 3. How does select work? What is its type?
-4. How do I do patterns like 1:1, N:1, 1:M, N:M?
 
 * Select - working out the types is kind of tricky, since one endpoint will be consumed, but we don't know which. It will probably have to give you your data, as well as a vector of endpoints with the one that received replaced.
+
+# Common patterns #
+
+Still to come...
+
+4. How do I do patterns like 1:1, N:1, 1:M, N:M?
 
 Implementation
 ----------
