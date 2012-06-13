@@ -1,3 +1,5 @@
+**A guide for the perplexed.**
+
 _Do you find yourself writing random punctuation marks in front of types in hopes of making the errors go away? I sure do. So I decided to write some documentation by randomly hitting keys on the keyboard, and having other people fix the errors._
 
 # Concepts
