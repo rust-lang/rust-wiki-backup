@@ -62,3 +62,17 @@ The left-hand side of an `=` must designate a mutable slot. The right-hand side 
 ## Copying: `copy`
 If you are handling a piece of data that might potentially be passed by reference, and you want to avoid that (either because `~` forbids it, or because you want to restrict the visibility of mutations), you can write `copy`. Copy is "as shallow as possible", which means that it descends through `~`s, but stops at `@`, merely copying the reference.
 
+## Moving: `<-`
+_I'll figure out what is going on here later:_
+````
+<pauls> It's not possible to move out only one field of a record, right?
+ Is there any workaround other than recreating the whole record?
+<eholk> pauls: if it's the last use, possibly
+<eholk> you can also swap a mutable option with none
+<nmatsakis> pauls: actually
+<nmatsakis> it is possible
+ in some cases
+ e.g., if you have let x = {f: ~3};
+ you can then write let {f: f} <- x;
+ but this only works if the record itself is movable, of course.
+````
