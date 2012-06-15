@@ -2,6 +2,7 @@ One or more core developers spend one day per week mopping up accumulated mess i
 
   - Initial triage: tagging, assigning, setting milestones, and eliminating incoming duplicates.
   - Source alignment: making FIXMEs in code correspond to bug numbers and vice versa.
+  - - As of 2012-06-14, almost all FIXMEs in the code have bug numbers. It's still worth re-checking the invariant occasionally.
   - Reproduction: checking locally to see if bugs are still valid.
   - Followup: requesting clarification, testcases, etc. from reporters of unclear bugs. 
   - Actual fixing: if there's any time left, pick some work off that seems fixable in short order.
