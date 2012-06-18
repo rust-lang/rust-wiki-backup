@@ -9,8 +9,8 @@ Notes taken at rust work week, 2011/06/23
  * pure collections
 * IO
  * AIO, SIO, stdio
- * filesystem
- * path manipulation
+ * [filesystem](https://github.com/mozilla/rust/blob/master/src/libcore/os.rs)
+ * [path manipulation](https://github.com/mozilla/rust/blob/master/src/libcore/path.rs)
  * <> or fileinput
  * timers
 * string manipulation
