@@ -1,8 +1,6 @@
 Channel contracts for Rust
 ==========
 
-*** This is still a work in progress ***
-
 This document presents a design for implementing communication using Singularity-style channel contracts for Rust. There are several important features:
 
 * Backwards compatability with the existing communication system.
@@ -201,10 +199,18 @@ For many protocols, however, it is possible to statically determine the maximum 
 Conclusion
 ----------
 
-Still to come...
+This describes a proposal for adding pipes to Rust. Pipes are communication pathways with two endpoints, governed by a communication protocol that enforces when what messages can travel in which direction. The communication protocol (or contract) is encoded into Rust's type system, which provides strong compile-time correctness guarantees. The system provides the following advantages.
 
-* Strengths and weaknesses
-  * Non-blocking fast path
-  * Not zero-copy. It looks like at least two copies in general. We might be able to get down to one copy using region pointers. For types that move by-pointer, we effectively get zero-copy.
+* A fast path that involves no locks on either the send or receive side.
+* Easy detection of either endpoint closing the pipe.
+* The single-use nature of endpoints makes the synchronization protocols easier to reason about and get correct.
+* Bounded protocols can preallocate all buffer space and thus incur no allocation cost for sending messages.
+* Many existing communication patterns can be described in terms of pipes and protocols.
+* This proposal requires few language changes. It can be implemented using a syntax extension and some library/runtime changes.
 
-expressivity.. other things.
+There are, however, some shortcomings.
+
+* The added safety and performance potential imposes a higher annotation burden on the programmer. This can be mitigated by providing a library of standard protocols, such as traditional port and chan system.
+* The many to one nature of today's channels and ports isn't really possible, as pipe endpoints are noncopyable. Something like copy constructors could help us get around this, but it will not solve all the problems.
+
+This system provides important performance and safety improvements, and yet will likely be able to express many of the patterns that occur in practice. This system is very similar to the one that was used in the Singularity operating system, and this provides evidence that it could serve Rust's needs well too.
