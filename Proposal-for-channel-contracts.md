@@ -94,6 +94,8 @@ Here I need to answer these questions:
 
 * Select - working out the types is kind of tricky, since one endpoint will be consumed, but we don't know which. It will probably have to give you your data, as well as a vector of endpoints with the one that received replaced.
 
+How hard would it be to do many-to-one as the native channel arrangement? Then we could get select by just sending to many channels to one port.
+
 # Common patterns #
 
 Still to come...
@@ -162,23 +164,36 @@ If the receiver wishes to destroy a channel without receiving, it simply swaps t
 
 Still to come...
 
+# Integration with Rust #
+
+They are a couple of strategies for how to integrate this system into Rust. The basic idea is that we need way to take a channel contract and compile it into a pair of modules that encode the protocols into the type system.
+
+The least risky approach is to build a tool that works sort of like an RPC compiler. You specify a channel contract in a separate file, and then run it through a contract compiler, which will generate an appropraite `.rs` file.
+
+Alternately, we could integrate this into the compiler. An easier way to do this is to make a syntax extension, or perhaps a macro if our macro system is powerful enough. The other option is to integrate it into Rust. This approach will involve adding a lot of typechecking and trans code, so this would not be my first choice.
+
+It makes sense to first build this as a message passing system that runs alongside the existing one. Once it has proven itself, we have the option of trying to reimplement the existing message passing system in terms of channel contracts. The following contract would give us a starting point for implementing ports and chans like we have now.
+
+```
+#proto portchan<T: send> {
+    portchan {
+        send data(T) -> portchan;
+    }
+}
+```
+
+This contract could be wrapped with some other data structures and functions to provide pretty much the same interface as the existing ports and channels.
+
+This system will require some runtime support in order to handle synchronization where the scheduler must be involved (that is, on the slow paths). Hopefully we already have most of the pieces in place.
 
 Optimizations
 ----------
 
-Still to come...
+In the most general case, the sender is always responsible for allocating space for the next message in the protocol. This means that every send will incur a memory allocation. There are several things we can do to avoid much of this cost.
 
-This describes what the compiler can do in the case of bounded protocols, and also using queues to amortize or avoid the cost of memory allocation.
+The first thing is to pre-allocate space for several messages, so that allocation will be more infrequent. This makes memory accounting a little trickier, but not insurmountable.
 
-* Pre-allocating buffers for bounded protocols
-* Allocating buffers in chunks for unbounded protocols, reusing chunks to amortize or completely remove `malloc` latency
-
-Backwards Compatibility
-----------
-
-Still to come...
-
-* Show a contract for ports/channels.
+For many protocols, however, it is possible to statically determine the maximum amount of buffer space that will ever be needed. In this case, we can simply allocate all of this space up front, and then sending never incurs an allocation cost. The key characteristic is whether a protocol is bounded. Bounded protocols are ones in which every loop in the state machine has both a send operation and a receive operation. This property puts a bound on how much data can ever be in flight without the receiver acknowledging it. The `pingpong` protocol above is an example of a bounded protocol. On the other hand, the `portchan` protocol is unbounded.
 
 Conclusion
 ----------
