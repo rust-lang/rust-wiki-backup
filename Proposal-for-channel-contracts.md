@@ -8,7 +8,7 @@ This document presents a design for implementing communication using Singularity
 * Backwards compatability with the existing communication system.
 * A lock-free fast path that allocates no memory and requires only two atomic swaps.
 * Slow paths are no more expensive than the current message passing system.
-* This entire system can probably be implemented as a syntax extension.
+* This entire system can probably be implemented as a syntax extension and some small runtime and libcore changes.
 
 Design
 ----------
@@ -84,23 +84,18 @@ mod pingpong {
 
 The actually concrete types for each of the states has some flexibility. The important part is that it be sendable but noncopyable. Also, protocols that allow for multiple messages, and different payloads will be someone more complex. Messages and data, however, should be represented simply as enums.
 
-# Select, etc #
+# Select #
 
-Still to come...
+For simplicity, we'll only consider `select2` for now. Select is harder under this system due to the linear nature of pipe endpoints. We can special case select for small numbers, but a fully general select will probably require a macro at least. `select2` will be written something like this:
 
-Here I need to answer these questions:
+```
+fn select2<P1, P1_, M1, P2, P2_, M2>(
+    -pipe1: P1, trans1: fn(-P1) -> (P1_, M1),
+    -pipe2: P2, trans2: fn(-P2) -> (P2_, M2)) 
+    -> either<(P1_, P2, M1), (P1, P2_, M2)> { ... }
+```
 
-3. How does select work? What is its type?
-
-* Select - working out the types is kind of tricky, since one endpoint will be consumed, but we don't know which. It will probably have to give you your data, as well as a vector of endpoints with the one that received replaced.
-
-How hard would it be to do many-to-one as the native channel arrangement? Then we could get select by just sending to many channels to one port.
-
-# Common patterns #
-
-Still to come...
-
-4. How do I do patterns like 1:1, N:1, 1:M, N:M?
+Select must consume both of its endpoints, and it will return the next endpoint for the pipe that yielded data, and the old endpoint unchanged for the pipe that did not receive data.
 
 Implementation
 ----------
@@ -162,7 +157,15 @@ If the receiver wishes to destroy a channel without receiving, it simply swaps t
 
 # Implementing select #
 
-Still to come...
+Select is a somewhat tricky synchronization problem, that involves some changes to the scheduler. The basic idea is that a receiver will first swap itself as blocked in the status fields for each of the endpoints it wishes to select on. If any of these were full, it can simply cancel the select and return the pre-existing data. If it gets through all of the ports and finds no data, then it tells the scheduler to put it to sleep.
+
+Once one of the senders wakes up the task, the receiver will go back through all of the endpoints it is blocked on and first swap in `empty` as the status. If the previous status was `full`, then it will set the status back to `full` so that future receives on that endpoint will work correctly.
+
+There are a few changes to the scheduler that are necessary to make this safe. Currently, tasks block on only one port (or port group), so it always knows why it was woken up. We need to reverse this relationship. Instead, the task is woken up and it is provided with the ID of the endpoint or possibly other entity that woke it up. The tasks uses this to know which port to respond with.
+
+More importantly, we need to make sure that sends that happen while the task is setting up a select operation still work correctly. To do this, the scheduler will gain a new `block_pending` state. Tasks set this to indicate to the scheduler that they might block soon, but need to do some more processing. Thus, the first thing a task does when setting up a select is to set its state to `block_pending`. If any data is already available, the task sets its state back to `running` before returning. Otherwise, it goes all the way to sleep, and its state becomes `blocked`.
+
+The wakeup path changes slightly as well. If the target was already in the `running` state, wakeup is just a no-op. If it is `block_pending` or `blocked`, the target transitions back into `running`. However, when a task goes to transition itself from `block_pending` to `blocked`, if another task has already transitioned it back to `running`, it simply behaves as if it has already been woken up. Waking up a task in the `block_pending` state simply cancels the block.
 
 # Integration with Rust #
 
@@ -203,3 +206,5 @@ Still to come...
 * Strengths and weaknesses
   * Non-blocking fast path
   * Not zero-copy. It looks like at least two copies in general. We might be able to get down to one copy using region pointers. For types that move by-pointer, we effectively get zero-copy.
+
+expressivity.. other things.
