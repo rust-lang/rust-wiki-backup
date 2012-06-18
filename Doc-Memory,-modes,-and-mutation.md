@@ -30,6 +30,9 @@ The name is perhaps a little misleading; in Rust, it is possible for a slot to b
 ## Modes
 Rust currently supports parameter-passing modes. There are five or six of them: `+`, `-`, `++`, `&`, `&&`, and one that you get if you don't write any funny symbols. What do they mean? It is a mystery.
 
+## Regions
+A region is a space in memory with a shared lifetime. That is, everything gets deallocated together.
+
 # Data/types
 ## Boxes: `@`
 The expression `@2` produces a reference to a immutable slot in the heap. Executing that expression will result in an allocation, but no visible side-effects. Its type is `@int`. 
