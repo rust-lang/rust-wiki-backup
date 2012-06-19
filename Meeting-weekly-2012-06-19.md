@@ -9,6 +9,7 @@
 - resolve status update/0.3
 - suffix inference is ready to land
 - future typestate directions    
+
 # Last-use Analysis
 - tjc: #2633 discusses repurposing last-use to solely 
 - ndm: current scenario: liveness computes last-use, borrowck removes entries
@@ -22,6 +23,7 @@
 - graydon: when it comes down to the ABI, a lot of the "by value" things are actually passed by reference anyhow.  So there many layers down below.  We don't need to tailor the language for that.
 - ndm: goes together with unary move
 - everyone who agrees raise hand? *all hands raised*
+
 # Case Classes
 - pcwalton: 
     - Case classes unifies enums and classes into one more general entity (see Scala)
@@ -54,6 +56,7 @@
 - graydon: People will want it
 - pcwalton: well if you're not opposed, we have thoughts on it, I can sketch it out
 - graydon: we don't have to impl form get go, but maybe good to reserve syntax
+
 # Class vs struct
 - pcwalton: `class` is unsexy keyword nowadays but maybe `struct` has retro appeal
 - pcwalton: but also our classes are more like structs, really, because they lack many of the OO features
@@ -61,6 +64,7 @@
 - graydon: I don't care
 - ndm: also been proposed to make struct pub by default vs class priv by default
 - graydon: a weird C++-ism in any case
+
 # Out-of-line methods
 - pcwalton: classes give rightward drift, but more serious problem is that with our menangerie of pointer types we want to be able to designate methods of type `@T` and others of type `&T` or `~T`
 - pcwalton: also conceivably we might want to `move self`
@@ -80,6 +84,7 @@
     - existing impl syntax is not so bad and the rightward drift isn't so bad, worth it if it saves repeating type parameters too often
 - pcwalton: another interaction, "static methods" in impls
 - pcwalton: this is something I've been wanting, generally to have "ifaces" that enable you to "build an instance of this type", like `fn read() -> T`
+
 # Coherence
 - pcwalton:
     - Coherence == guarantee of only one instance of an impl per type
@@ -106,6 +111,7 @@
 - ndm: sounds like C#'s static fns that you get to write with a.b() syntax
 - graydon: current resolve rules seems too complex to publish, too complex to have more than one impl—perhaps too complex to even have one impl
 - graydon: by far in favor of shipping a language with simpler rules that actually work
+
 # Resolve Status Update
 - pcwalton: About 3/4 of the test suite passes
 - pcwalton: remaining major item: impls
@@ -122,6 +128,7 @@
 - graydon: more VM hosts also available
 - brson: can I get into those new machines yet?
 - graydon: I think this is a problem where python script goes into infinite loop, not sure why
+
 # Suffix inference
 - lkuper: seems to be passing tests but for one failure
 - lkuper: basically seems ok
@@ -148,6 +155,7 @@
 - eholk: sounds strictly better than what we have
 - graydon: lint passes seem like a reasonable solution
 - ndm: good point, we can use lint passes also to detect constants that get resolved to unreasonable ranges (512 as i8 and so forth)
+
 # Typestate
 - graydon: How many people are in favor of keeping a strong typestate system?
 *tjc raises hand*
@@ -175,6 +183,7 @@
 - eholk: can we ever use type state to remove safety checks?
 - ndm:  yes in some simple cases but can be modeled with types too
 - graydon: not hearing a lot of pushback that we must maintain current system I'm comfortable moving in more limited direction
+
 # Other topics
 - lkuper: 0.3 timeline?
 - pcwalton: when resolve is done
