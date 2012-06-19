@@ -178,7 +178,7 @@ mod test {
 
 ## Documentation tests
 
-The build system is able to extract Rust code snippets from documentation and run them using the compiletest driver. Currently only the tutorial is tested this way. The target is `make check-stage[N]-doc-tutorial`.
+The build system is able to extract Rust code snippets from documentation and run them using the compiletest driver. Currently the tutorial and reference manual are tested this way. The targets are `make check-stage[N]-doc-tutorial` and `make check-stage[N]-doc-ref`, respectively.
 
 ## Fast check
 
