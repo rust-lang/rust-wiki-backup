@@ -11,7 +11,7 @@ This document presents a design for implementing communication using Singularity
 Design
 ----------
 
-This proposal introduces point to point channels as the fundamental building block for Rust's communication. A channel consists of two endpoints, which are not copyable but may transfered between tasks. Each channel is governed by a contract, which specifies which messages are legal in which state. The type system is used to enforce that only legal messages are sent in each state. We can remain compatible with existing Rust message passing code by providing a library of common contracts. A simple ping-pong protocol would be specified as follows:
+This proposal introduces point to point pipes to serve as the foundation for Rust's communication. A pipe consists of two endpoints, which are not copyable but may transfered between tasks. Each pipe is governed by a contract (or protocol), which specifies what messages are legal in which state. The type system is used to enforce that only legal messages are sent in each state. We can remain compatible with existing Rust message passing code by providing a library of common contracts. As an example, a simple ping-pong protocol would be specified as follows:
 
 ```
 #proto pingpong {
@@ -25,7 +25,7 @@ This proposal introduces point to point channels as the fundamental building blo
 }
 ```
 
-Protocols (or contracts) are specified from client's perspective. This protocol has two states: `ping` and `pong`. From the `ping` state, the client may send a `ping` message, and the protocol will then transition to the `pong` state. At this point, the client can only receive a `pong` message from the server.
+Protocols are specified from client's perspective. This protocol has two states: `ping` and `pong`. From the `ping` state, the client may send a `ping` message, and the protocol will then transition to the `pong` state. At this point, the client can only receive a `pong` message from the server.
 
 This syntax extension would go through a protocol compiler which basically translates states into noncopyable, sendable types and messages into functions that consume a state and any message payloads and return a new state. The protocol can be used as follows.
 
@@ -80,7 +80,9 @@ mod pingpong {
 }
 ```
 
-The actually concrete types for each of the states has some flexibility. The important part is that it be sendable but noncopyable. Also, protocols that allow for multiple messages, and different payloads will be someone more complex. Messages and data, however, should be represented simply as enums.
+Note that each operation on an endpoint consumes the endpoint and returns a new one. This is how Rust's type system is used to enforce that only legal messages are sent at any given time.
+
+The actual concrete types for each of the states have some flexibility. The important part is that they be sendable but noncopyable. Protocols that allow for multiple messages, and different payloads will be more complex, but these can be handled by using an enum describing the legal messages.
 
 # Select #
 
@@ -98,7 +100,7 @@ Select must consume both of its endpoints, and it will return the next endpoint 
 Implementation
 ----------
 
-Channels will be represented in memory as a status field and a payload. The payload is basically an enum of all the legal messages in the current state. It is initial empty (that is, full of invalid data), but it will be filled in by the sender. The status field is used to synchronize between senders and receivers.
+Pipes are represented in memory as a status field and a payload. The payload is basically an enum of all the legal messages in the current state. It is initial empty (that is, full of invalid data), but it will be filled in by the sender. The status field is used to synchronize between senders and receivers.
 
 The status field indicates one of the following states:
 
@@ -109,9 +111,11 @@ The status field indicates one of the following states:
 
 Ideally, these four states (including the task identifier/pointer) could be packed into a single word-sized value.
 
-Channels initially start out as empty. Now we discuss the various channel operations.
+Channels initially start out in the `empty` state, and states evolve based on various channel operations.
 
 # Channel Operations #
+
+This section provides algorithms for how to send to, receive from, and terminate a pipe endpoint.
 
 ## Send ##
 
@@ -133,11 +137,11 @@ At this point, the sender relinquishes ownership of the channel and no longer be
    3. If it was `blocked(task)`, something has gone wrong. Fail.
    4. If it was `terminated`, the sender has destroyed its endpoint. Thus, no data will ever arrive. Return, informing the caller that the sender has closed the endpoint.
 
-If the task ended up going to sleep, when the scheduler wakes the task again, we know that either there is data available, or the endpoint has been shutdown. Upon being woken up, the task should check the status field. It is either `terminated` or `full`. If `terminated`, the receiver simply tears down the channel and informs the caller that the sender closed the endpoint. Otherwise, the receiver tears down the endpoint and returns the message payload to the caller.
+If the task ended up going to sleep, when the scheduler wakes the task again, we know that either there is data available, or the endpoint has been terminated. Upon being woken up, the task should check the status field. It is either `terminated` or `full`. If `terminated`, the receiver simply tears down the channel and informs the caller that the sender closed the endpoint. Otherwise, the receiver tears down the endpoint and returns the message payload to the caller.
 
 ## Terminate (Sender side) ##
 
-The sender may instead destroy its channel without shutting it down. To do this, it swaps `terminated` into the channel's status field. The sender now takes the following action based on the previous state:
+The sender may instead destroy its channel sending any data. To do this, it swaps `terminated` into the channel's status field. The sender now takes the following action based on the previous state:
 
 * `empty` - The receiver hasn't run yet, so do nothing. The receiver now has cleanup responsibility.
 * `full` - This shouldn't happen. Fail.
@@ -155,11 +159,11 @@ If the receiver wishes to destroy a channel without receiving, it simply swaps t
 
 # Implementing select #
 
-Select is a somewhat tricky synchronization problem, that involves some changes to the scheduler. The basic idea is that a receiver will first swap itself as blocked in the status fields for each of the endpoints it wishes to select on. If any of these were full, it can simply cancel the select and return the pre-existing data. If it gets through all of the ports and finds no data, then it tells the scheduler to put it to sleep.
+Select is a somewhat tricky synchronization problem that will require some changes to the scheduler. The basic idea is that a receiver will first swap itself as blocked in the status fields for each of the endpoints it wishes to select on. If any of these were full, it can simply cancel the select and return the pre-existing data. If it gets through all of the ports and finds no data, then it tells the scheduler to put it to sleep.
 
 Once one of the senders wakes up the task, the receiver will go back through all of the endpoints it is blocked on and first swap in `empty` as the status. If the previous status was `full`, then it will set the status back to `full` so that future receives on that endpoint will work correctly.
 
-There are a few changes to the scheduler that are necessary to make this safe. Currently, tasks block on only one port (or port group), so it always knows why it was woken up. We need to reverse this relationship. Instead, the task is woken up and it is provided with the ID of the endpoint or possibly other entity that woke it up. The tasks uses this to know which port to respond with.
+There are a few changes to the scheduler that are necessary to make this safe. Currently, tasks block on only one port (or port group), so it always knows why it was woken up. We need to reverse this relationship. Instead, the task is woken up and it is provided with the ID of the endpoint or possibly other entity that woke it up.
 
 More importantly, we need to make sure that sends that happen while the task is setting up a select operation still work correctly. To do this, the scheduler will gain a new `block_pending` state. Tasks set this to indicate to the scheduler that they might block soon, but need to do some more processing. Thus, the first thing a task does when setting up a select is to set its state to `block_pending`. If any data is already available, the task sets its state back to `running` before returning. Otherwise, it goes all the way to sleep, and its state becomes `blocked`.
 
@@ -167,11 +171,11 @@ The wakeup path changes slightly as well. If the target was already in the `runn
 
 # Integration with Rust #
 
-They are a couple of strategies for how to integrate this system into Rust. The basic idea is that we need way to take a channel contract and compile it into a pair of modules that encode the protocols into the type system.
+They are a couple of strategies for how to integrate this system into the Rust compiler. The basic idea is that we need way to take a channel contract and compile it into a pair of modules that encode the protocols into the type system.
 
 The least risky approach is to build a tool that works sort of like an RPC compiler. You specify a channel contract in a separate file, and then run it through a contract compiler, which will generate an appropraite `.rs` file.
 
-Alternately, we could integrate this into the compiler. An easier way to do this is to make a syntax extension, or perhaps a macro if our macro system is powerful enough. The other option is to integrate it into Rust. This approach will involve adding a lot of typechecking and trans code, so this would not be my first choice.
+Alternately, we could integrate this into the compiler. A good way to do this is to make a syntax extension, or perhaps a macro if our macro system is powerful enough. The other option is to integrate it into Rust. This approach will involve adding a lot of typechecking and trans code, so this would not be my first choice.
 
 It makes sense to first build this as a message passing system that runs alongside the existing one. Once it has proven itself, we have the option of trying to reimplement the existing message passing system in terms of channel contracts. The following contract would give us a starting point for implementing ports and chans like we have now.
 
@@ -185,7 +189,7 @@ It makes sense to first build this as a message passing system that runs alongsi
 
 This contract could be wrapped with some other data structures and functions to provide pretty much the same interface as the existing ports and channels.
 
-This system will require some runtime support in order to handle synchronization where the scheduler must be involved (that is, on the slow paths). Hopefully we already have most of the pieces in place.
+This system will require some runtime support in order to handle synchronization where the scheduler must be involved (that is, on the slow paths).
 
 Optimizations
 ----------
@@ -213,4 +217,4 @@ There are, however, some shortcomings.
 * The added safety and performance potential imposes a higher annotation burden on the programmer. This can be mitigated by providing a library of standard protocols, such as traditional port and chan system.
 * The many to one nature of today's channels and ports isn't really possible, as pipe endpoints are noncopyable. Something like copy constructors could help us get around this, but it will not solve all the problems.
 
-This system provides important performance and safety improvements, and yet will likely be able to express many of the patterns that occur in practice. This system is very similar to the one that was used in the Singularity operating system, and this provides evidence that it could serve Rust's needs well too.
+This system provides important performance and safety improvements, and yet will likely be able to express many of the patterns that occur in practice. This system is very similar to the one that was used in the Singularity operating system, and this provides evidence that it could also serve Rust's needs.
