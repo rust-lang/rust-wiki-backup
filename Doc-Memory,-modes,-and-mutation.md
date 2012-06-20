@@ -31,7 +31,7 @@ The name is perhaps a little misleading; in Rust, it is possible for a slot to b
 Rust currently supports parameter-passing modes. There are five or six of them: `+`, `-`, `++`, `&`, `&&`, and one that you get if you don't write any funny symbols. What do they mean? It is a mystery.
 
 ## Regions
-A region is a space in memory with a shared lifetime. That is, everything gets deallocated together.
+A region is basically a name for a lifetime of some data. Regions are used to ensure that data outlives any references to it.
 
 # Data/types
 ## Boxes: `@`
