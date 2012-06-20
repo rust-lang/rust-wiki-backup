@@ -8,7 +8,15 @@ The rust test suite has several sets of tests for different purposes. As the com
 * Run only xfailed (ignored) tests: `make check CHECK_XFAILS=1`
 * Run with verbose output: `make check VERBOSE=1`. This will print useful information like the exact commands being run.
 * Run without valgrind: `make check CFG_DISABLE_VALGRIND=1`
-* Run a specific test: `make check TESTNAME=[...]` - Note that while this will run only tests matching the given pattern, it will still execute all test runners - most of them will just not execute any tests. For more precise control, call make on one of the targets below.
+* Run a specific test: `make check TESTNAME=[...]`
+  * The pattern `[...]` can be a complete path to a test, such as
+    `test/run-pass/foobar.rs`; it can also be any substring of a path.
+    For instance, `make check TESTNAME=foo` will run all tests that
+    have `foo` in some part of their filename.
+  * Note that while this will run only tests matching the given
+    pattern, it will still execute all test runners - most of them
+    will just not execute any tests. For more precise control, call
+    `make` on one of the targets below.
 * Run without parallelism: `RUST_THREADS=1 make check` - This can make it easier to understand failure output.
 
 These options can be combined.  For instance, `make check CHECK_XFAILS=1 TESTNAME=test/run-pass/foobar.rs` runs the xfailed test `foobar.rs` in the `run-pass` directory.
@@ -93,9 +101,9 @@ mismatch and the undefined variable `b`.
 
 Sometimes it is not possible or not convenient to place the `//!`
 comment on precisely the line where the error occurs. For those cases,
-you may make a comment of the form `//!^` where the carrot `^`
+you may make a comment of the form `//!^` where the caret `^`
 indicates that the error is expected to appear on the line above.  You
-may have as many carrots as you like, so `//!^^^ ERROR foo` indicates
+may have as many caret as you like, so `//!^^^ ERROR foo` indicates
 that the error message `foo` is expected to be reported 3 lines above
 the comment.  We could therefore correct the above test like so:
 ```
@@ -170,7 +178,7 @@ mod test {
 
 ## Documentation tests
 
-The build system is able to extract Rust code snippets from documentation and run them using the compiletest driver. Currently only the tutorial is tested this way. The target is `make check-stage[N]-doc-tutorial`.
+The build system is able to extract Rust code snippets from documentation and run them using the compiletest driver. Currently the tutorial and reference manual are tested this way. The targets are `make check-stage[N]-doc-tutorial` and `make check-stage[N]-doc-ref`, respectively.
 
 ## Fast check
 

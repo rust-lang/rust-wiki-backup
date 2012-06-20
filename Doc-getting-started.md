@@ -15,7 +15,7 @@ Version numbers listed here are "what we're using"; the code may well work with 
 
 You can install all the prerequisites you need to build Rust by running
 
-    sudo apt-get install python3 make git g++ curl valgrind pandoc texlive-latex-recommended
+    sudo apt-get install python make git g++ curl valgrind pandoc texlive-latex-recommended
 
 ### Windows
 
@@ -28,13 +28,6 @@ For Git, we recommend [MsysGit](http://code.google.com/p/msysgit/) and if you us
 If while building you receive an error that `libpthread-2.dll` is not found, you need to install the [libpthread-2.8.0-3-mingw32-dll-2.tar.lzma package](http://sourceforge.net/projects/mingw/files/MinGW/Base/pthreads-w32/pthreads-w32-2.8.0-3/).  It seems this must be installed by hand, as far as I can tell:
 
     cd /mingw; lzma -d -c /path/to/downloaded/libpthread-2.8.0-3-mingw32-dll-2.tar.lzma | tar xf -
-
-If you are installing the 0.1 snapshot, note that there was a bug in the `install.mk` file that means that the `make install` target will put some files in the wrong place on windows. This can be fixed as follows, assuming that `$prefix` is where you installed to and you're on an `i686-pc-mingw32` host (the only type supported by this release):
-
-    mv $prefix/lib/*.dll  $prefix/bin/ ;
-    mv $prefix/lib/rustc/i686-pc-mingw32/lib  $prefix/lib/rustc/i686-pc-mingw32/bin ;
-    mv $prefix/lib/rustc  $prefix/bin/ ;
-
 
 ### FreeBSD
 

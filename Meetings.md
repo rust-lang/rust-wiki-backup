@@ -25,6 +25,10 @@ Listing of minutes from meetings
 * [[Meeting weekly 2012-04-24]] (status updates)
 * [[Meeting weekly 2012-05-08]] (dynamic-size types, borrowing, GC, globals, documentation, versioning)
 * [[Meeting weekly 2012-05-15]] (resolve, dvecs, macros, reflection API, stability, crates)
+* [[Meeting weekly 2012-05-29]] ()
+* [[Meeting weekly 2012-06-05]] (Patrick's vision for upcoming language changes)
+* [[Meeting weekly 2012-06-12]] (dynamically sized types; patterns; maxmin classes; eliminating modes; 0.3; roadmap; repo policy)
+* [[Meeting weekly 2012-06-19]] (last-use; classes; literal inference; typestate)
 
 ## In-person meetings:
 

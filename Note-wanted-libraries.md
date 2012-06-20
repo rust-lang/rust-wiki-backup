@@ -9,8 +9,8 @@ Notes taken at rust work week, 2011/06/23
  * pure collections
 * IO
  * AIO, SIO, stdio
- * filesystem
- * path manipulation
+ * [filesystem](https://github.com/mozilla/rust/blob/master/src/libcore/os.rs)
+ * [path manipulation](https://github.com/mozilla/rust/blob/master/src/libcore/path.rs)
  * <> or fileinput
  * timers
 * string manipulation
@@ -19,16 +19,20 @@ Notes taken at rust work week, 2011/06/23
  * [ropes](https://github.com/mozilla/rust/blob/master/src/libstd/rope.rs)
 * networking
  * HTTP client / server
+ * [URI](https://github.com/erickt/rust-uri)
+ * [UUID](https://github.com/erickt/rust-uuid), GUID
 * date / time
 * math, random
 * [compression](https://github.com/elly/rustzlib)
-* libicu
-* serialization
+* [libicu](https://github.com/mozilla/rust/blob/master/src/libstd/unicode.rs)
+* serialization/encoding
+ * [base64](https://github.com/erickt/mre/blob/master/base64.rs)
+ * [CSV](https://github.com/grahame/rust-csv)
+ * [json](https://github.com/mozilla/rust/blob/master/src/libstd/json.rs)
  * protobuf
  * thrift
- * xml
- * [json](https://github.com/mozilla/rust/blob/master/src/libstd/json.rs)
  * [tnetstring](https://github.com/erickt/rust-tnetstring)
+ * xml
 * [crypto](https://github.com/elly/rustcrypto)
 * concurrency
  * task management, actor, OTP, [[Bikeshed mapreduce]], pools
@@ -48,10 +52,12 @@ Notes taken at rust work week, 2011/06/23
   * postgres
   * mongodb
   * redis
+  * [sqlite](https://github.com/linuxfood/rustsqlite)
 * [ZeroMQ](https://github.com/erickt/rust-zmq)
  * How will libs like this be integrated with regular nonblocking io?
  * ZeroMQ sockets need to be used from a fixed thread, can we do this in rust?
 * GUI
+ * [Cocoa](https://github.com/pcwalton/rust-cocoa)
 
 ## Missing language features
 * big
