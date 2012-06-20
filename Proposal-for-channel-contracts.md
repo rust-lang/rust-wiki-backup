@@ -218,3 +218,16 @@ There are, however, some shortcomings.
 * The many to one nature of today's channels and ports isn't really possible, as pipe endpoints are noncopyable. Something like copy constructors could help us get around this, but it will not solve all the problems.
 
 This system provides important performance and safety improvements, and yet will likely be able to express many of the patterns that occur in practice. This system is very similar to the one that was used in the Singularity operating system, and this provides evidence that it could also serve Rust's needs.
+
+Feedback
+----------
+
+* pcwalton pointed out that this would make it easy to do send-and-yield-to-target, since the status field includes the target. Since the sender has to preallocate response space, it could go ahead and mark itself as blocked on the response, and thus the ping-pong could be super fast. We could make `sendrecv` a primitive.
+* graydon
+  * says this looks good for what it's designed for, and likes how it teases out protocol boundedness as an optimization criterion.
+  * suggests talking to the XPIDL people, and maybe making a promela (or similar) model to help track down corner cases.
+  * likes that I handled ownership of data in flight, and is happy if I keep experimenting with this. He suggests a syntax extension.
+  * how to do many-to-one? Maybe with exclusive arc? 
+  * for N:1, make sure the actions of each of the N don't interfere besides contending for attention of the one.
+  * bounded buffer size ≅ bounded number of clients
+* From talking with Graydon, I realized selecting among many pipes with uniform types is really easy. This simplifies N:1 or 1:M a lot, I would guess.
