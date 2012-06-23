@@ -55,6 +55,7 @@ Expansion should be outside-in. This means that macros will need to expand code 
 * declarative data struture
 * fixed-length arrays
 * `cut`, from [SRFI 26](http://srfi.schemers.org/srfi-26/srfi-26.html).
+* a variation on `alt`, for when moves from the alted-over object are desired.
 
 # Super-simple syntax extension structure
 
