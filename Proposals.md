@@ -11,6 +11,7 @@ Listing of proposals
 * [[Proposal to address Dan's bug]]
 * [[Proposal for all-or-nothing mut]]
 * [[Proposal for const kind]]
+* [[Proposal for unifying traits and interfaces]]
 
 ## Accepted
 
