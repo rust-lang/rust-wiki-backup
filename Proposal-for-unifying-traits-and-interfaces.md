@@ -136,17 +136,16 @@ an interface as the composition of more than one interface.  Under
 this proposal, it would be possible to write:
 
 ```
-iface add { fn plus(n: int) -> int; }
-
-iface subtract { fn minus(n: int) -> int; }
-
 iface arithmetic: add, subtract {
     ... // more methods here, if we want
 }
 ```
 
-Then, adding the ability to put default impls in ifaces and change the
-keyword to `trait`, we get:
+The `add, subtract` part of the signature amounts to a set of required
+methods, in terms of which additional methods can be written.
+
+Then, adding the ability to put default impls in ifaces (and changing
+the keyword from `iface` to `trait`), we get:
 
 ```
 trait add { 
@@ -167,11 +166,12 @@ fn main() { assert 3.plus(1) == 5.minus(1); }
 
 ```
 
-Traditional traits do some cool conflict resolution stuff (when more
-than one method has the same name, but we can punt on that for now,
-and just do what Rust already does if a type implements multiple
-interfaces that define a method with the same name, i.e., raise a
-compile-time "multiple applicable methods in scope" error.
+Traditional traits do some cool conflict resolution stuff when the
+traits being combined have methods with the same name, and we might
+want to do that eventually, but we can punt for now and just do what
+Rust already does if a type implements multiple interfaces that define
+a method with the same name, that is, raise a compile-time "multiple
+applicable methods in scope" error.
 
 ## Instance coherence
 
