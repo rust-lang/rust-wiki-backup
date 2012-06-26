@@ -3,8 +3,10 @@
 There are three parts to this proposal:
 
   * Adding default impls to ifaces
-  * Allowing iface inheritance
-  * Instance coherence
+  * Allowing iface composability
+  * Instance coherence: only one impl per iface/type pair
+
+Then, rename `iface` to `trait` and that's it!
 
 ### Adding default impls to ifaces: a real example
 
@@ -92,16 +94,87 @@ impl of combine for glb {
     ... // only methods for which the default impl isn't enough
 }
 ```
-The only other thing that we changed in this code was to change the keyword `iface` to `trait`.
 
-## Allowing iface inheritance
+The only other thing that we changed in this code was to change the
+keyword `iface` to `trait`.
 
-Traits and interfaces have the common characteristic that they're
-_composable_ and _order-independent_: a class can derive from traits A
-and B (in either order), and a class can implement interfaces A and B.
+## Allowing iface composability
 
-TODO.
+Traits, as they appear in the literature, have a set of _provided_
+methods, implementing the behavior that it provides, and a (possibly
+empty) set of _required_ methods that the provided methods can be
+written in terms of.  For the required methods, only the names and
+types are specified, not the implementation.  That suggests that in
+Rust, a trait's set of required methods could be specified using an
+iface.  But if traits themselves _are_ ifaces, then that means that
+ifaces can require ifaces.  This goes along with the idea that traits,
+are _composable_ and _order-independent_: a trait can extend traits A
+and B (in either order).
+
+In today's Rust, a class or a type can implement interfaces A and B
+(in either order).  For instance, in today's Rust you can write:
+
+```
+iface add { fn plus(n: int) -> int; }
+iface subtract { fn minus(n: int) -> int; }
+
+impl of add for int {
+    fn plus(n: int) -> int { self + n }
+}
+
+impl of subtract for int {
+    fn minus(n: int) -> int { self - n }
+}
+
+// int implements both add and subtract; order doesn't matter
+fn main() { assert 3.plus(1) == 5.minus(1); }
+
+```
+
+But interfaces themselves aren't composable: we can't currently define
+an interface as the composition of more than one interface.  Under
+this proposal, it would be possible to write:
+
+```
+iface add { fn plus(n: int) -> int; }
+
+iface subtract { fn minus(n: int) -> int; }
+
+iface arithmetic: add, subtract {
+    ... // more methods here, if we want
+}
+```
+
+Then, adding the ability to put default impls in ifaces and change the
+keyword to `trait`, we get:
+
+```
+trait add { 
+    fn plus(n: int) -> int { self + n }
+}
+
+trait subtract {
+    fn minus(n: int) -> int { self - n }
+}
+
+trait arithmetic: add, subtract {
+    ... // more methods here, if we want
+}
+
+impl int: arithmetic; // or something like this
+
+fn main() { assert 3.plus(1) == 5.minus(1); }
+
+```
+
+Traditional traits do some cool conflict resolution stuff (when more
+than one method has the same name, but we can punt on that for now,
+and just do what Rust already does if a type implements multiple
+interfaces that define a method with the same name, i.e., raise a
+compile-time "multiple applicable methods in scope" error.
 
 ## Instance coherence
+
+One impl of an iface per type
 
 TODO.
