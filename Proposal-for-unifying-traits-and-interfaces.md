@@ -2,19 +2,18 @@
 
 ## A real example of how we could use traits
 
-In middle::typeck::infer (henceforth "infer"), there's a `combine`
-interface, and impls of that interface for the three "type combiners"
-`lub`, `sub`, and `glb`.  Each of these impls is required to implement
-all of the methods in the `combine` interface, even though some of the
-implementations are identical in two (or in all three!) of the .  The
-way that infer deals with this now is that for each method `foo` that
-has identical implementations, there's an out-of-line method
-`super_foo`.
+In the `middle::typeck::infer` module (henceforth "infer"), there's a
+`combine` interface, and implementations of that interface for the
+three "type combiners" `lub`, `sub`, and `glb`.  All three `impl`s are
+required to implement all of the methods in the `combine` interface,
+even though some of the implementations are identical in two (or in
+all three!) of the type combiners.  Right now, "infer" deals with this
+by defining an out-of-line method `super_foo` for each method `foo`
+for which there are multiple identical implementations.
 
-For example, here's how it works for the `modes` method.  This is all
-code taken directly from infer.  In fact, there are **nine** methods
-in infer that are this way.  I'm just picking `modes` as a
-representative example.
+For example, here's what it looks like for the `modes` method.  In
+fact, there are **nine** methods in infer that are this way -- `modes`
+is just a representative example.
 
 ```
 iface combine {
