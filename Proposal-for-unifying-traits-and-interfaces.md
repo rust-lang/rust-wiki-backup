@@ -35,10 +35,6 @@ impl of combine for sub {
     fn modes(a: ast::mode, b: ast::mode) -> cres<ast::mode> {
         super_modes(self, a, b)
     }
-
-    fn args(a: ty::arg, b: ty::arg) -> cres<ty::arg> {
-        super_args(self, a, b)
-    }
     ...
 }
 
