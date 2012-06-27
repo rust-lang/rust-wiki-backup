@@ -103,7 +103,7 @@ written in terms of.  For the required methods, only the names and
 types are specified, not the implementation.  That suggests that in
 Rust, a trait's set of required methods could be specified using an
 iface.  But if traits themselves _are_ ifaces, then that means that
-ifaces can require ifaces.  This goes along with the idea that traits,
+ifaces can require ifaces.  This goes along with the idea that traits
 are _composable_ and _order-independent_: a trait can extend traits A
 and B (in either order).
 
