@@ -93,17 +93,17 @@ impl of combine for glb {
 }
 ```
 
-The only other thing that we changed in this code was to change the
-keyword `iface` to `trait`.
+The only other thing that changed in this code was that the keyword
+`iface` changed to `trait`.
 
 ## Allowing iface composability
 
 Traits, as they appear in the literature, have a set of _provided_
-methods, implementing the behavior that it provides, and a (possibly
-empty) set of _required_ methods that the provided methods can be
-written in terms of.  For the required methods, only the names and
-types are specified, not the implementation.  That suggests that in
-Rust, a trait's set of required methods could be specified using an
+methods, implementing the behavior that a trait provides, and a
+(possibly empty) set of _required_ methods that the provided methods
+can be written in terms of.  For the required methods, only the names
+and types are specified, not the implementation.  That suggests that
+in Rust, a trait's set of required methods could be specified using an
 iface.  But if traits themselves _are_ ifaces, then that means that
 ifaces can require ifaces.  This goes along with the idea that traits/ifaces
 should be _composable_ and _order-independent_: a trait C can extend traits A
