@@ -8,7 +8,9 @@ There are three parts to this proposal:
 
 Then, rename `iface` to `trait` and that's it!
 
-### Adding default impls to ifaces: a real example
+## Adding default impls to ifaces
+
+### An example
 
 In the `middle::typeck::infer` module (henceforth `infer`), there's a
 `combine` interface, and implementations of that interface for the
