@@ -161,6 +161,9 @@ impl int: arithmetic; // or something like this
 fn main() { assert 3.plus(1) == 5.minus(1); }
 
 ```
+One place that could benefit from this so-called 'interface inheritance' is called out by a FIXME for issue #2616 in `core::num`.  Although I have to think about it some more, I _think_ we could clean up duplicated code between `core/int_template.rs` and `core/uint_template.rs` with this kind of strategy.
+
+### Conflict resolution
 
 Traditional traits do some cool conflict resolution stuff when the
 traits being combined have methods with the same name, and we might
