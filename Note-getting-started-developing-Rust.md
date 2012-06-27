@@ -1,7 +1,8 @@
 This page describes how to download and build the Rust compiler and
 associated tools and libraries from the current git sources.  If
 you're more interested in _using_ Rust than in hacking on the Rust
-compiler, you might prefer to install a released version.
+compiler, you might prefer to install a released version instead of
+following these instructions.
 
 ## Prerequisites
 
@@ -12,16 +13,23 @@ Version numbers listed here are "what we're using"; the code may well work with 
 * [Python 2.x](http://www.python.org/download/) (version 2.7 is known to work)
 * GNU make 3.81
 * git 1.7
-* g++ 4.4 at least on linux, 4.5 on win32, and the 4.x gcc in Apple's SDK for OS X.
+* g++ 4.4 at least on Linux, 4.5 on Windows, and the 4.x gcc in Apple's SDK for OS X.
 * curl
 * Valgrind 3.5 (recommended, but not required for Linux)
-* Pandoc and pdflatex commands (optional), if you wish to build HTML or PDF docs, respectively
+* [pandoc](http://johnmacfarlane.net/pandoc/) 1.8 at least (optional, if you wish to build HTML docs)
+* pdflatex (optional, if you wish to build PDF docs)
 
 ### Debian-based Linux distributions
 
 You can install all the prerequisites you need to build Rust by running
 
     sudo apt-get install python make git g++ curl valgrind pandoc texlive-latex-recommended
+
+Incidentally, the pandoc that's packaged for certain Linux
+distributions (Ubuntu, for instance) is older than 1.8, so in order to
+build HTML docs on Ubuntu, you'll need to install pandoc manually
+according to the [installation
+instructions](http://johnmacfarlane.net/pandoc/installing.html).
 
 ### Windows
 
@@ -60,18 +68,18 @@ If you are going to be hacking on the Rust compiler itself then it is recommende
 
 ## Packages
 
-Rust is also packaged for various systems by community members
+Rust is also packaged for various systems by community members:
 
 * [Ubuntu PPA](https://launchpad.net/~kevincantu/+archive/rust/) - maintained by kcantu
 * [FreeBSD Port](http://www.freebsd.org/cgi/cvsweb.cgi/ports/lang/rust/) - maintained by jyyou
 
 ## Navigating
 
-There's a quick guide to the source of the compiler in [src/rustc/README.txt](https://github.com/mozilla/rust/blob/master/src/rustc/README.txt). You should probably look through it if you're going to be contributing.
+There's a quick guide to the source of the compiler in [src/rustc/README.txt](https://github.com/mozilla/rust/blob/master/src/rustc/README.txt). You should look through it if you're going to be contributing.
 
 ## Editor support
 
-Syntax highlighting for vim is included in the Rust repository, under `src/etc/vim` and for emacs under `src/etc/emacs`. Support for other editors can be found on [[Note Related Projects]].
+Syntax highlighting for vim is included in the Rust repository, under `src/etc/vim` and for emacs under `src/etc/emacs`. Support for other editors can be found on [[Note related projects]].
 
 ## The issue tracker
 
