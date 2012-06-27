@@ -1,3 +1,8 @@
+This page describes how to download and build the Rust compiler and
+associated tools and libraries from the current git sources.  If
+you're more interested in _using_ Rust than in hacking on the Rust
+compiler, you might prefer to install a released version.
+
 ## Prerequisites
 
 Version numbers listed here are "what we're using"; the code may well work with earlier versions of these tools, but we don't know minimum version requirements.
