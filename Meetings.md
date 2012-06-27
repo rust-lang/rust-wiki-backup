@@ -29,6 +29,7 @@ Listing of minutes from meetings
 * [[Meeting weekly 2012-06-05]] (Patrick's vision for upcoming language changes)
 * [[Meeting weekly 2012-06-12]] (dynamically sized types; patterns; maxmin classes; eliminating modes; 0.3; roadmap; repo policy)
 * [[Meeting weekly 2012-06-19]] (last-use; classes; literal inference; typestate)
+* [[Meeting weekly 2012-06-26]] (vectors; resolve; 0.3; traits; coherence; linked failure)
 
 ## In-person meetings:
 
