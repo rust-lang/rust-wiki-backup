@@ -2,9 +2,10 @@ Listing of notes for developers
 
 ## Process and workflow notes
 
-* [[Note wiki conventions]]
+* [[Note getting started developing Rust]]
 * [[Note development policy]] -- **please read this**
 * [[Note RFC process]] -- **read this for larger changes**
+* [[Note wiki conventions]]
 * [[Note bug janitors]]
 * [[Note development roadmap]]
 * [[Note compiler snapshots]]
