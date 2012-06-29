@@ -170,6 +170,14 @@ impl int: arithmetic; // or something like this
 fn main() { assert 3.plus(1) == 5.minus(1); }
 
 ```
+
+The `impl int: arithmetic;` line is what associates the `int` type
+with the `arithmetic` trait.  Syntax for this is still up in the air
+-- we could say `int impls arithmetic;` instead, or something else.
+(`impl` in this case is short for "implements", not short for
+"implementation", since now all implementation is happening in the
+traits!)
+
 One place that could benefit from this so-called 'interface inheritance' is called out by a FIXME for issue #2616 in `core::num`.  Although I have to think about it some more, I _think_ we could clean up duplicated code between `core/int_template.rs` and `core/uint_template.rs` with this kind of strategy.
 
 ### Conflict resolution
@@ -181,28 +189,93 @@ Rust already does if a type implements multiple interfaces that define
 a method with the same name, that is, raise a compile-time "multiple
 applicable methods in scope" error.
 
-## Instance coherence: "one impl of an iface per type"
+## Instance coherence
 
-Instance coherence means that there can be at most one implementation
-of a trait for a particular type.  Two rules, originally suggested by
-pcwalton, are sufficient to enforce this:
-  
-  1. The default implementations defined within a trait must be
-     non-overlapping (i.e., there can’t be any types that match
-     multiple implementations).
+In Rust, if you have an `iface` presenting a group of functions and
+not mandating any particular implementation -- as `iface`s in Rust
+currently do -- then you can end up with the problem of different
+conflicting implementations for a particular type.  This is known as
+the "instance coherence" problem (although in Rust perhaps we should
+call it the "implementation coherence"), or just the "coherence"
+problem for short.
 
-  2. A class can’t derive from a trait that defines a default
-     implementation that might itself match an instance of that class.
+Consider the following program, which compiles and runs in Rust today:
 
-It offers coherence because there can be only one implementation of an
-trait for each type. For the implementations provided within the trait
-itself, we can check that they’re nonoverlapping. For the
-implementations defined within a class, we can check to ensure that
-the implementations defined in any trait that the class derives from
-don’t overlap with the implementations that the interface itself
-defined. Either way, the checks involved are simple and ensure that we
-meet the criterion for coherence.
+```
+use std;
 
+mod ht {
+    iface hash {
+        fn hash() -> uint;
+        fn tostr() -> str;  // putting this into the interface is just
+                            // a hack to give us a way to print
+                            // keys. This doesn't go here at all.
+    }
 
+    type t<K,V> = [(K, V)];  // doesn't matter, we don't use it
 
-TODO.
+    fn create<K:hash,V>() -> @t<K,V> {
+        @[]/~
+    }
+
+    fn put<K:hash,V>(ht: @t<K,V>, k: K, v: V) {
+        io::println(#fmt("ht put: %s hash to %ud", k.tostr(), k.hash()));
+    }
+}
+
+mod Module1 {
+    impl of ht::hash for uint {
+        fn hash() -> uint { ret self; }
+        fn tostr() -> str { ret #fmt("%ud", self); }  
+    }
+    fn foo() {
+        let h = ht::create::<uint, str>();
+        ht::put(h, 3u, "hi"); // 3u.hash() == 3u here
+        Module2::bar(h);
+    }
+}
+
+mod Module2 {
+    impl of ht::hash for uint {
+        fn hash() -> uint { ret self / 2; }
+        fn tostr() -> str { ret #fmt("%ud", self); }
+    }
+    fn bar(h: @ht::t<uint, str>) {
+        ht::put(h, 3u, "ho"); // 3u.hash() == 1u here
+    }
+}
+
+fn main() {
+    Module1::foo();
+}
+```
+
+The output of this program is:
+```
+ht put: 3d hash to 3d
+ht put: 3d hash to 1d
+```
+
+If `put` had really been inserting into a hash table instead of just
+printing, the table would end up with both `"hi"` and `"ho"` in it,
+even though we thought we were storing them under the same key, and
+`"ho"` should have overwritten `"hi"`.  The problem arises because
+there are conflicting implementations of the `hash` iface in `Module1`
+and `Module2`.  Neither one is wrong by itself, but when compiled
+together we get unexpected behavior.
+
+To prevent this situation, we could do one of the following:
+
+  * Forbid method implementations anywhere except in traits (and in
+    classes, maybe).  The `iface` in the `ht` module would become a
+    trait.  The `impl` language form would become merely a way to
+    associate types or classes with traits.  We would add a line to
+    each module like `impl uint: ht::hash;`.
+
+  * Keep `impl` around in its current form, but only allow an impl of
+    a type for a particular trait to appear in the same crate as that
+    trait.
+
+To me, the first option is better, because the language is simpler if
+there are only one or two places where method implementations can
+appear, intead of two or three places.
