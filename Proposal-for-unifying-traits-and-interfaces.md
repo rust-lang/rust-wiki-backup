@@ -80,8 +80,6 @@ interface, so, instead of all of the above, we could just write:
 trait combine {
     fn infcx() -> infer_ctxt { *self }
     ...
-    fn infcx() -> ty_ctxt; // required method
-
     fn modes(a: ast::mode, b: ast::mode) -> cres<ast::mode> {
         let tcx = self.infcx().tcx;
     	ty::unify_mode(tcx, a, b)
