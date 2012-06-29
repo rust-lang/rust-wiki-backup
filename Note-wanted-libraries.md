@@ -15,25 +15,27 @@ Notes taken at rust work week, 2011/06/23
  * timers
 * string manipulation
  * slicing w/o copy, stringref
- * [regexp](https://github.com/elly/rustpcre)
+ * [regexp](https://github.com/elly/rustpcre) (external)
  * [ropes](https://github.com/mozilla/rust/blob/master/src/libstd/rope.rs)
 * networking
  * HTTP client / server
- * [URI](https://github.com/erickt/rust-uri)
- * [UUID](https://github.com/erickt/rust-uuid), GUID
+ * [URI](https://github.com/erickt/rust-uri) (external)
+ * [UUID](https://github.com/erickt/rust-uuid) (external)
+ * GUID
 * date / time
-* math, random
-* [compression](https://github.com/elly/rustzlib)
+* [math](https://github.com/z0w0/rusty-math) (external)
+* [random](https://github.com/mozilla/rust/blob/master/src/libcore/rand.rs)
+* [compression](https://github.com/elly/rustzlib) (external)
 * [libicu](https://github.com/mozilla/rust/blob/master/src/libstd/unicode.rs)
 * serialization/encoding
- * [base64](https://github.com/erickt/mre/blob/master/base64.rs)
- * [CSV](https://github.com/grahame/rust-csv)
+ * [base64](https://github.com/erickt/mre/blob/master/base64.rs) (external)
+ * [CSV](https://github.com/grahame/rust-csv) (external)
  * [json](https://github.com/mozilla/rust/blob/master/src/libstd/json.rs)
  * protobuf
  * thrift
- * [tnetstring](https://github.com/erickt/rust-tnetstring)
+ * [tnetstring](https://github.com/erickt/rust-tnetstring) (external)
  * xml
-* [crypto](https://github.com/elly/rustcrypto)
+* [crypto](https://github.com/elly/rustcrypto) (external)
 * concurrency
  * task management, actor, OTP, [[Bikeshed mapreduce]], pools
 * low-level OS services
@@ -52,12 +54,12 @@ Notes taken at rust work week, 2011/06/23
   * postgres
   * mongodb
   * redis
-  * [sqlite](https://github.com/linuxfood/rustsqlite)
-* [ZeroMQ](https://github.com/erickt/rust-zmq)
+  * [sqlite](https://github.com/linuxfood/rustsqlite) (external)
+* [ZeroMQ](https://github.com/erickt/rust-zmq) (external)
  * How will libs like this be integrated with regular nonblocking io?
  * ZeroMQ sockets need to be used from a fixed thread, can we do this in rust?
 * GUI
- * [Cocoa](https://github.com/pcwalton/rust-cocoa)
+ * [Cocoa](https://github.com/pcwalton/rust-cocoa) (external)
 
 ## Missing language features
 * big
