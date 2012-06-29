@@ -23,7 +23,8 @@ Notes taken at rust work week, 2011/06/23
  * [UUID](https://github.com/erickt/rust-uuid) (external)
  * GUID
 * date / time
-* math, random
+* [math](https://github.com/z0w0/rusty-math) (external)
+* random
 * [compression](https://github.com/elly/rustzlib) (external)
 * [libicu](https://github.com/mozilla/rust/blob/master/src/libstd/unicode.rs)
 * serialization/encoding
