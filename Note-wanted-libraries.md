@@ -54,12 +54,12 @@ Notes taken at rust work week, 2011/06/23
   * postgres
   * mongodb
   * redis
-  * [sqlite](https://github.com/linuxfood/rustsqlite)
-* [ZeroMQ](https://github.com/erickt/rust-zmq)
+  * [sqlite](https://github.com/linuxfood/rustsqlite) (external)
+* [ZeroMQ](https://github.com/erickt/rust-zmq) (external)
  * How will libs like this be integrated with regular nonblocking io?
  * ZeroMQ sockets need to be used from a fixed thread, can we do this in rust?
 * GUI
- * [Cocoa](https://github.com/pcwalton/rust-cocoa)
+ * [Cocoa](https://github.com/pcwalton/rust-cocoa) (external)
 
 ## Missing language features
 * big
