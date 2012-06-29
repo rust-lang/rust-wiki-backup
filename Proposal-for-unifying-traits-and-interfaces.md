@@ -18,21 +18,26 @@ three "type combiners" `lub`, `sub`, and `glb`.  All three `impl`s are
 required to implement all of the methods in the `combine` interface,
 even though some of the implementations are identical in two (or in
 all three!) of the type combiners.  Right now, `infer` deals with this
-by defining an out-of-line method `super_foo` for each method `foo`
-for which there are multiple identical implementations.
+by defining an out-of-line method for each method for which there are
+multiple identical implementations, and having all the different
+implementations call the out-of-line-method.
 
 For example, here's what it looks like for the `modes` method.  In
 fact, there are _nine_ methods in `infer` that are this way -- `modes`
-is just a representative example.
+is just a representative example.  The `infcx` method is also
+identical in all three, but since all it does is return `*self`, it's
+just identically implemented in all three.
 
 ```
 iface combine {
+    fn infcx() -> infer_ctxt;
     ...
     fn modes(a: ast::mode, b: ast::mode) -> cres<ast::mode>;
     ...
 }
 
 impl of combine for sub {
+    fn infcx() -> infer_ctxt { *self }
     ...
     fn modes(a: ast::mode, b: ast::mode) -> cres<ast::mode> {
         super_modes(self, a, b)
@@ -41,6 +46,7 @@ impl of combine for sub {
 }
 
 impl of combine for sub {
+    fn infcx() -> infer_ctxt { *self }
     ...
     fn modes(a: ast::mode, b: ast::mode) -> cres<ast::mode> {
         super_modes(self, a, b)
@@ -49,6 +55,7 @@ impl of combine for sub {
 }
 
 impl of combine for glb {
+    fn infcx() -> infer_ctxt { *self }
     ...
     fn modes(a: ast::mode, b: ast::mode) -> cres<ast::mode> {
         super_modes(self, a, b)
@@ -71,6 +78,7 @@ interface, so, instead of all of the above, we could just write:
 
 ```
 trait combine {
+    fn infcx() -> infer_ctxt { *self }
     ...
 
     fn modes(a: ast::mode, b: ast::mode) -> cres<ast::mode> {
@@ -174,8 +182,28 @@ Rust already does if a type implements multiple interfaces that define
 a method with the same name, that is, raise a compile-time "multiple
 applicable methods in scope" error.
 
-## Instance coherence
+## Instance coherence: "one impl of an iface per type"
 
-One impl of an iface per type
+Instance coherence means that there can be at most one implementation
+of a trait for a particular type.  Two rules, originally suggested by
+pcwalton, are sufficient to enforce this:
+  
+  1. The default implementations defined within a trait must be
+     non-overlapping (i.e., there can’t be any types that match
+     multiple implementations).
+
+  2. A class can’t derive from a trait that defines a default
+     implementation that might itself match an instance of that class.
+
+It offers coherence because there can be only one implementation of an
+trait for each type. For the implementations provided within the trait
+itself, we can check that they’re nonoverlapping. For the
+implementations defined within a class, we can check to ensure that
+the implementations defined in any trait that the class derives from
+don’t overlap with the implementations that the interface itself
+defined. Either way, the checks involved are simple and ensure that we
+meet the criterion for coherence.
+
+
 
 TODO.
