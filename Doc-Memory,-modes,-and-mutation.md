@@ -28,7 +28,14 @@ If a slot is uninitialized, you may not read it. For example, if you have `let x
 The name is perhaps a little misleading; in Rust, it is possible for a slot to become uninitialized if it loses the "right" to access its contents, via moving.
 
 ## Modes
-Rust currently supports parameter-passing modes. There are five or six of them: `+`, `-`, `++`, `&`, `&&`, and one that you get if you don't write any funny symbols. What do they mean? It is a mystery.
+Rust currently supports parameter-passing modes. They are:
+* `&&`: pass by immutable reference
+* `&`: pass by mutable reference
+* `-`: pass by move
+* `+`: pass by copy... but move instead if last-use analysis says it's okay.
+* `++`: pass by copy. Opinion is divided about whether this is safe.
+* If you leave off the mode, you get `++` if the value is small, and `&&` if it's large.
+
 
 ## Regions
 A region is basically a name for a lifetime of some data. Regions are used to ensure that data outlives any references to it.
