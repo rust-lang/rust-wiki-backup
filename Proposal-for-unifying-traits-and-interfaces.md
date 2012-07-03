@@ -105,6 +105,8 @@ The only other thing that changed in this code was that the keyword
 
 ## Allowing iface composability
 
+(Note: the design in this section is broken.  Fix forthcoming.)
+
 Traits, as they appear in the literature, have a set of _provided_
 methods, implementing the behavior that a trait provides, and a
 (possibly empty) set of _required_ methods that the provided methods
@@ -190,6 +192,8 @@ a method with the same name, that is, raise a compile-time "multiple
 applicable methods in scope" error.
 
 ## Instance coherence
+
+(Note: the design in this section is broken.  Fix forthcoming.)
 
 In Rust, if you have an `iface` presenting a group of functions and
 not mandating any particular implementation -- as `iface`s in Rust
