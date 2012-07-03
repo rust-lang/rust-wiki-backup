@@ -16,7 +16,7 @@ The `$HOME/.cargo/lib` directory is part of the default library search path used
 
 ## Registering your own packages
 
-We encourage all users to register their packages with [cargo central](http://github.com/mozilla/cargo-central), the source that is fetched by default, by any new cargo user. This will give the widest visibility to your package and make it easiest for other developers to find and fix packages that might have fallen behind changes to the language, upstream.
+We encourage all users to register their packages with [cargo central](http://github.com/mozilla/cargo-central), the source that is fetched by default, by any new cargo user. This will give the widest visibility to your package and make it easiest for other developers to find and fix packages that might have fallen behind changes to the language, upstream. **N.B. Your package entry's `name` field may only contain alpha-numeric characters, dashes or underscores.**
 
 To "register" a package, the easiest approach is the following:
 
