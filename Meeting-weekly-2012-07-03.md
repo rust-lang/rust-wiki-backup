@@ -8,7 +8,7 @@ Ben, Brian, Eric, Graydon, Lindsey, Patrick, Paul, Sully, Tim
   * **Graydon**: don't want to switch to bugzilla yet, but perhaps eventually
   * **Eric**: github's is more lightweight
   * **Graydon**: is the bug janitor schedule working?
-  * **Interns: *look at fulltimers*
+  * Interns: *look at fulltimers*
   * **Graydon**: perhaps the interns should take on bug janitorial work
 
 ## 0.3 status
@@ -23,13 +23,13 @@ Ben, Brian, Eric, Graydon, Lindsey, Patrick, Paul, Sully, Tim
 ## Macro sigil change
 
   * **Patrick**: removing the sigil: no
-  * **Patrick**: Hash is heavyweight, prefix is weird especially if your macro is module-qualified ( io::#println, #io::println
+  * **Patrick**: Hash is heavyweight, prefix is weird especially if your macro is module-qualified (`io::#println` vs. `#io::println`)
   * **Patrick**: Postfix-! has problems with assert
   * **Patrick**: but it looks lightweight; since there's one on the frontpage it should look lightweight
-  * **Graydon**: who likes #? (**Ben**, **Lindsey**)
-  * **Graydon**: who likes !? [...]
+  * **Graydon**: who likes `#`? (**Ben**, **Lindsey**)
+  * **Graydon**: who likes `!`?
   * **Patrick**: I definitely think macros should be the last resort, what you reach for when nothing else works
-  * **Patrick**: I'm mostly concerned with the front page, #fmt looks like a dead spider (https://gist.github.com/3040867)
+  * **Patrick**: I'm mostly concerned with the front page, `#fmt` looks like a dead spider (https://gist.github.com/3040867)
   * **Ben**: postfix-$?
   * **Graydon**: I wanted to hold on to $ for interpolation, and isn't it reserved already?
   * **Graydon**: lexeme balancing - simple version of macros that gives balanced token trees, that's it
@@ -47,7 +47,7 @@ Ben, Brian, Eric, Graydon, Lindsey, Patrick, Paul, Sully, Tim
   * **Graydon**: that will probably happen; fail is probably going to become a library call too
   * **Graydon**: so how do we decide which sigil to use?
   * **Sully**: I have dice...
-  * **general laughter*
+  * *general laughter*
   * **Graydon**: so writing balanced tokens between brackets... is "select! {...}" going to be legal?
   * **Paul**: long-term goal: we'll have a set of expressions surrounded by parens beforehand
   * **Graydon**: ok, so a macro invocation is a macro name followed by a balanced token tree
@@ -62,8 +62,8 @@ Ben, Brian, Eric, Graydon, Lindsey, Patrick, Paul, Sully, Tim
 ## Buildbot
 
   * **Graydon**: I spent the last few days fighting; convinced that it will work as a replacement
-  * **Graydon**: it has five abstractions that all line up together; you have to figure out ....
-  * **machines can be thrown into a pool
+  * **Graydon**: it has five abstractions that all line up together
+  * **Graydon**: machines can be thrown into a pool
   * **Graydon**: we'll do 0.3 and then move to the new one
   * **Sully**: does this mean that rustbot stuff is all going away?
   * **Graydon**: yes. rustbot is old & not as good; there will be a new irc bot
@@ -77,7 +77,7 @@ Ben, Brian, Eric, Graydon, Lindsey, Patrick, Paul, Sully, Tim
   * **Eric**: graph500 20% speed increase
   * **Sully**: what makes them faster?
   * **Eric**: no locks on the fastpath
-  * **lkuper: and this is possible because the protocol is typechecked?
+  * **Lindsey**: and this is possible because the protocol is typechecked?
   * **Eric**: yeah, also 1-sender 1-receiver
   * **Eric**: what do people think of me landing & transitioning?
   * **Sully**: syntax?
@@ -88,7 +88,7 @@ Ben, Brian, Eric, Graydon, Lindsey, Patrick, Paul, Sully, Tim
   * **Eric**: there's some gymnastics each time you spawn a task: `~mut option<...>`
   * **Eric**: copying isn't a big deal because of two endpoints, but if you want to do many-to-one...
   * **Eric**: we might end up needing copy constructors in the language to do this nicely
-  * **[**Graydon**'s face looms on the camera...]
+  * [**Graydon**'s face looms on the camera...]
   * **Graydon**: can you get the current awkwardness into syntaxext form and then land it? are expressivity problems preventing it from being usable?
   * **Eric**: getting a pipe across a task boundary requires 6 loc
   * **Eric**: going to need some help from the language to make it usable
@@ -100,7 +100,7 @@ Ben, Brian, Eric, Graydon, Lindsey, Patrick, Paul, Sully, Tim
   * **Ben**: already added doubly-linked list in libcore to make this possible
   * **Brian**: I would prefer to have it in libstd
   * **Ben**: actually, I suggest moving task.rs to libstd
-  * **Everyone: hmm...
+  * everyone: hmm...
   * **Graydon**: the original justification for the libstd/libcore split was that libstd would be the library that it's ok to have be big, and libcore has to stay small for e.g. embedded systems (and so that you don't have to put `use std;` at the beginning of a trivial program)
   * **Graydon**: my feeling is that data structure code isn't huge, so more common data structures should be in libcore, particularly if frequently used
   * **Sully**: is there an issue wrt snapshotting?
