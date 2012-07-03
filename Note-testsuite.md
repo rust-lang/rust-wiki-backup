@@ -33,7 +33,7 @@ A typical test might look like:
 // Regression test for issue #XXX
 
 fn main() {
-   let a: bool = 10; //! ERROR mismatched types
+   let a: bool = 10; //~ ERROR mismatched types
 }
 ```
 
@@ -82,7 +82,7 @@ And finally, build targets:
 
 When writing a compile-fail test, you must specify at least one
 expected error or warning message.  The preferred way to do this is to
-place a comment with the form `//! ERROR msg` or `//! WARNING msg` on
+place a comment with the form `//~ ERROR msg` or `//~ WARNING msg` on
 the line where the error or warning is expected to occur.  You may
 have as many of these comments as you like.  The test harness will
 verify that the compiler reports precisely the errors/warnings that are
@@ -92,27 +92,27 @@ messages is:
 // Regression test for issue #XXX
 
 fn main() {
-   let a: bool = 10; //! ERROR mismatched types
+   let a: bool = 10; //~ ERROR mismatched types
    log (debug, b);
 }
 ```
 In fact, this test would fail, because there are two errors: the type
 mismatch and the undefined variable `b`.  
 
-Sometimes it is not possible or not convenient to place the `//!`
+Sometimes it is not possible or not convenient to place the `//~`
 comment on precisely the line where the error occurs. For those cases,
-you may make a comment of the form `//!^` where the caret `^`
+you may make a comment of the form `//~^` where the caret `^`
 indicates that the error is expected to appear on the line above.  You
-may have as many caret as you like, so `//!^^^ ERROR foo` indicates
+may have as many caret as you like, so `//~^^^ ERROR foo` indicates
 that the error message `foo` is expected to be reported 3 lines above
 the comment.  We could therefore correct the above test like so:
 ```
 // Regression test for issue #XXX
 
 fn main() {
-   let a: bool = 10; //! ERROR mismatched types
+   let a: bool = 10; //~ ERROR mismatched types
    log (debug, b);
-   //!^ ERROR undefined variable `b`
+   //~^ ERROR undefined variable `b`
 }
 ```
 
