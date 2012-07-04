@@ -42,6 +42,26 @@ The resource type has been removed in favor of class destructors.
         }
     }
 
+### New closure syntax, new `do` syntax for control-structure-like calls
+
+Closures have a more compact syntax: `foo.map( |i| i + 1)`
+
+They work with the overhauled `for` loops and the new `do` expressions to
+provide nice sugar for higher-order functions.
+
+    for foo.each |i| {
+        println(#fmt("%?", i));
+    }
+
+With no arguments these forms are quite minimal.
+
+    do spawn {
+    }
+
+Read [full discussion][closures].
+
+[closures]: https://mail.mozilla.org/pipermail/rust-dev/2012-July/002000.html
+
 ### *-patterns
 
 We have a new syntax for matching on enum variants when you don't care about any of
@@ -71,26 +91,6 @@ is on the outside or the inside of the thing its documenting.
     fn i() {
         //! Inner doc comment
     }
-
-### New closure syntax, new `do` syntax for control-structure-like calls
-
-Closures have a more compact syntax: `foo.map( |i| i + 1)`
-
-They work with the overhauled `for` loops and the new `do` expressions to
-provide nice sugar for higher-order functions.
-
-    for foo.each |i| {
-        println(#fmt("%?", i));
-    }
-
-With no arguments these forms are quite minimal.
-
-    do spawn {
-    }
-
-Read [full discussion][closures].
-
-[closures]: https://mail.mozilla.org/pipermail/rust-dev/2012-July/002000.html
 
 ### Per item control over warnings and errors
 
@@ -181,6 +181,15 @@ The first line of a Rust source file can contain a shebang, for use with tools
 that want to treat Rust a scripts.
 
     #! /usr/local/bin/rustx
+
+### Removed features
+
+`be`, `prove`, `syntax`, `note` were unimplemented and removed from
+the language.  `mutable` is now written `mut`. `bind` had too much
+overlap with other closure forms while providing subtly different
+semantics so was removed. `do` loops were rarely used, so the `do`
+keyword was repurposed. Resources were removed in favor of class
+destructors.
 
 ## 0.2 March 2012
 
