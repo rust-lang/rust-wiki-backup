@@ -1,0 +1,1 @@
+This page covers releases in more detail than the bullet-point list given in the RELEASES.txt file in the source distribution. It is intended to hold copied, cleaned-up versions of entries from [[Note development roadmap]] as they are completed, to help users plan migration on their own code.
