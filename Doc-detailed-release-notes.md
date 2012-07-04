@@ -61,9 +61,6 @@ by default or entirely disallowed by the typesystem in the future.
                                      have the `copy` kind with a type that
 				     is not implicitly copyable
 
-Many of these are only temporary for transitioning the language between
-major feature changes.
-
 ## 0.2 March 2012
 
 ### Region pointers
