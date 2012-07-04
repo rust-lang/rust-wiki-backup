@@ -16,6 +16,41 @@ Read the detailed [announcement on the mailing list][inference].
 
 [inference]: https://mail.mozilla.org/pipermail/rust-dev/2012-July/002002.html
 
+### Classes
+
+Classes are ready for use now, and can contain destructors and implement ifaces.
+
+    iface talky {
+        fn speak();
+    }
+
+    class talker: talky {
+
+        let word: str;
+
+        new(word: str) {
+            self.word = word;
+        }
+
+        drop {
+            self.speak();
+        }
+
+        fn speak() {
+            println(self.word);
+        }
+    }
+
+### *-patterns
+
+We have a new syntax for matching on enum variants when you don't care about any of
+the fields.
+
+    alt my_enum {
+        variant_with_lots_of_fields(*) {
+        }
+    }
+
 ### Doc comments
 
 Rust now has a form of attribute specifically for doc comments. Like other
@@ -100,6 +135,51 @@ by default or entirely disallowed by the typesystem in the future.
 * non_implicitly_copyable_typarams - use of generics whose type parameters
                                      have the `copy` kind with a type that
 				     is not implicitly copyable
+
+### New vector types
+
+Until now all vectors have been unique types allocated on the exchange
+heap, but accidental copying of and allocation of vectors turned out
+to be a major performance hazard.
+
+0.3 features the full complement of vector types demanded by Rust's
+memory model - in other words you can put vectors on the stack, the
+local heap or the exchange heap.
+
+    // A unique vector, allocated on the exchange heap
+    let x: ~[int] = ~[0];
+    // A shared vector, allocated on the local heap
+    let y: @[int] = @[0];
+    // A stack vector, allocated on the stack
+    let z: &[int] = &[0];
+
+The libraries have not fully caught up to the new vector types.
+
+Some posts on vectors that have varying relationships to the final implementation:
+
+* [Arrays, vectors](https://mail.mozilla.org/pipermail/rust-dev/2012-March/001467.html)
+* [Arrays, vectors, redux](https://mail.mozilla.org/pipermail/rust-dev/2012-March/001476.html)
+* [A Vision for Vectors](https://mail.mozilla.org/pipermail/rust-dev/2012-June/001951.html)
+* [Vectors, Slices and Functions, Oh My](http://smallcultfollowing.com/babysteps/blog/2012/05/14/vectors/)
+
+### Region progress
+
+There has been a lot of progress in converting Rust to a region-based memory model.
+Although region pointers are not yet ready for use, internally many of rust's
+analyses have been rewritten in terms of regions.
+
+See Niko's blog posts about regions:
+
+* [References](http://smallcultfollowing.com/babysteps/blog/2012/04/25/references/)
+* [Borrowing](http://smallcultfollowing.com/babysteps/blog/2012/05/01/borrowing/)
+* [Borrowing errors](http://smallcultfollowing.com/babysteps/blog/2012/05/05/borrowing-errors/)
+
+### Shebang
+
+The first line of a Rust source file can contain a shebang, for use with tools
+that want to treat Rust a scripts.
+
+    #! /usr/local/bin/rustx
 
 ## 0.2 March 2012
 
