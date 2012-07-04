@@ -16,6 +16,26 @@ Read the detailed [announcement on the mailing list][inference].
 
 [inference]: https://mail.mozilla.org/pipermail/rust-dev/2012-July/002002.html
 
+### Per item control over warnings and errors
+
+Rust is in a transitional phase and currently emits warnings for constructs
+whose behavior is changing or is being deprecated. Now you can disable (or
+enable) these warnings on a per-item basis.
+
+    #[warn(no_non_implicitly_copyable_typarams)]
+    fn implicitly() -> ~[str] {
+        import std::sort::merge_sort;
+
+        merge_sort(str::eq, ~["not_implicitly_copyable"])
+    }
+
+In this example, `merge_sort` will copy the elements of the vector during
+sorting, and strings may not be copied without writing `copy`. As there
+is no language-level mechanism yet to authorize the copy, sometimes you
+just have to turn the warning off. Note that the current syntax for disabling
+warnings by prefixing "no_" to the naming of the warning is confusing and
+will change.
+
 ## 0.2 March 2012
 
 ### Region pointers
