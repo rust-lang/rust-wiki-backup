@@ -18,9 +18,8 @@ Read the detailed [announcement on the mailing list][inference].
 
 ### Per item control over warnings and errors
 
-Rust is in a transitional phase and currently emits warnings for constructs
-whose behavior is changing or is being deprecated. Now you can disable (or
-enable) these warnings on a per-item basis.
+Certain warnings can be disabled (or enabled or elevated to errors)
+on a per-item basis.
 
     #[warn(no_non_implicitly_copyable_typarams)]
     fn implicitly() -> ~[str] {
