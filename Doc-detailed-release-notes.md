@@ -16,6 +16,46 @@ Read the detailed [announcement on the mailing list][inference].
 
 [inference]: https://mail.mozilla.org/pipermail/rust-dev/2012-July/002002.html
 
+### Doc comments
+
+Rust now has a form of attribute specifically for doc comments. Like other
+attributes there are different forms depending on whether the documentation
+is on the outside or the inside of the thing its documenting.
+
+    /** Outer doc comment */
+    fn f() {
+
+    /// Outer doc comment
+    fn g() { }
+
+    fn h() {
+        /*! Inner doc comment */
+    }
+
+    fn i() {
+        //! Inner doc comment
+    }
+
+### New closure syntax, new `do` syntax for control-structure-like calls
+
+Closures have a more compact syntax: `foo.map( |i| i + 1)`
+
+They work with the overhauled `for` loops and the new `do` expressions to
+provide nice sugar for higher-order functions.
+
+    for foo.each |i| {
+        println(#fmt("%?", i));
+    }
+
+With no arguments these forms are quite minimal.
+
+    do spawn {
+    }
+
+Read [full discussion][closures].
+
+[closures]: https://mail.mozilla.org/pipermail/rust-dev/2012-July/002000.html
+
 ### Per item control over warnings and errors
 
 Warnings can be disabled (or enabled or elevated to errors)
