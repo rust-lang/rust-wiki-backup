@@ -16,9 +16,10 @@ Read the detailed [announcement on the mailing list][inference].
 
 [inference]: https://mail.mozilla.org/pipermail/rust-dev/2012-July/002002.html
 
-### Classes
+### Class stabilization, removal of resources
 
 Classes are ready for use now, and can contain destructors and implement ifaces.
+The resource type has been removed in favor of class destructors.
 
     iface talky {
         fn speak();
