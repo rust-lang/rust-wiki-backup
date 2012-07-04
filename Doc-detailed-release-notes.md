@@ -2,6 +2,20 @@ This page covers releases in more detail than the bullet-point list given in the
 
 ## 0.3 July 2012
 
+### Integer-literal suffix inference
+
+Rust has no coercion between integral types, so until this release
+literals always required an appropriate suffix for types other than
+`int`, e.g. `12_u8`. This was widely considered an eye-sore.  Now
+these suffixes can be left off in most situations and their type will
+be correctly inferred.
+
+    let random_digits: [u8] = [1, 4, 1, 5, 9, 2, 6];
+
+Read the detailed [announcement on the mailing list][inference].
+
+[inference]: https://mail.mozilla.org/pipermail/rust-dev/2012-July/002002.html
+
 ## 0.2 March 2012
 
 ### Region pointers
