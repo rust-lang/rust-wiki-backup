@@ -36,7 +36,7 @@ Closures have to encode their kind (whether they copy their environment, uniquel
 
 ### `alt` syntax changes
 
-The `alt` form requires braces, which is too heavyweight for some use cases. There is mostly consensus on moving to `=>` to separate patterns and dropping the braces. There is also the possibility (no consensus) that the name `alt` will change to `match`, to better match other languages.
+The `alt` form requires braces, which is too heavyweight for some use cases. There is mostly consensus on moving to `=>` to separate patterns from expressions and dropping the braces. There is also the possibility (no consensus) that the name `alt` will change to `match`, to better match other languages.
 
 ### Semicolons and return values
 
