@@ -91,11 +91,12 @@ Some posts on vectors that have varying relationships to the final implementatio
 
 ### *-patterns
 
-We have a new syntax for matching on enum variants when you don't care about any of
-the fields.
+We have a new syntax for ignoring variant fields in patterns
 
     alt my_enum {
-        variant_with_lots_of_fields(*) {
+        i_could_match_like_this(_, _, _, _, _, _) {
+        }
+        but_would_rather_lik_this(*) {
         }
     }
 
@@ -204,8 +205,7 @@ See Niko's blog posts about regions:
 
 ### Shebang
 
-The first line of a Rust source file can contain a shebang, for use with tools
-that want to treat Rust a scripts.
+The first line of a Rust source file can contain a shebang
 
     #! /usr/local/bin/rustx
 
