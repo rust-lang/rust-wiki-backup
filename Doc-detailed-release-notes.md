@@ -56,6 +56,7 @@ provide nice sugar for higher-order functions.
 With no arguments these forms are quite minimal.
 
     do spawn {
+        // this is the body of a closure
     }
 
 Read [full discussion][closures].
