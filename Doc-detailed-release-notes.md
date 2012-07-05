@@ -191,6 +191,16 @@ semantics so was removed. `do` loops were rarely used, so the `do`
 keyword was repurposed. Resources were removed in favor of class
 destructors.
 
+### TODO
+
+Need to write about:
+
+* eliminating copies
+* FFI changes
+* Syntax extensions
+* Time functions
+* UV-related APIs
+
 ## 0.2 March 2012
 
 ### Region pointers
