@@ -32,9 +32,29 @@ We will likely change the region-pointer sigil from `&` to `^` (still some discu
 
 Closures have to encode their kind (whether they copy their environment, uniquely copy the unique parts, or only hold a safe reference to it). Currently this is indicated by a sigil: `fn@` or `fn~` or `fn&` or such. We're likely to change this to one of the kind names trailing the word `fn`. That is, call it `fn:copy` or `fn:send`.
 
+## OO-system changes
+
+### Extend interfaces to full traits
+
+Traits are interfaces that carry method implementations and requirements on the self-type; they can be used to achieve code reuse without introducing much of the pain that comes from conventional inheritance: they can be mixed in any order, can be declared independent from the type they affect, and are compiled independently for each type that implements them (indeed, will inline and specialize exactly as any other method will). This work will replace the `iface` keyword with `trait` and provide (hopefully) most of what people miss when writing rust in OO style.
+
+### Minimize classes
+
+Along with introducing traits for code-reuse, we will likely trim down the `class` construct in the current version of rust to carry only the minimum necessary to complement traits: a nominal record type with some form of access control on its fields. This may subsume some or all of the space currently occupied by `class`, record types or `enums`; discussion here is still ongoing.
+
+### Enforce implementation coherence
+
+Currently when a user calls a method defined by an `impl`, the code selected is chosen based on the `impl`s that are imported into the _client code_'s scope. This was chosen as a way to be unambiguous about selecting implementations -- a problem in any typeclass system -- but in practice it has been very confusing for users: many are unable to tell why a method can or cannot be seen due to the presence or absence of imports. It also leaves open a few "gotchas" to do with passing data values between modules with different visible imports, apparently calling the same methods or instantiating the same `iface`s, but selecting different `impl`s.
+
+One way or another (there are at least 2, maybe 3 ways in discussion) we will be enforcing that only one implementation of an interface (or trait) exists per type, and removing the relationship between `impl` selection and imported symbols altogether. This may happen by a per-crate static check during compile time, or it may happen by construction (making it impossible to declare implementations outside traits).
+
+### Destructors change to an iface
+
+Currently we have a full "language level" construct for a value-with-a-destructor: a `drop` block inside a class. This is still more machinery than strictly necessary, and we wish to transition to merely interpreting the presence of a distinguished interface (`intrinsic::drop`) as indicative of a value having a destructor. All the same kind-related rules will apply, this is just a matter of removing surface machinery from the language.
+
 ## Memory model changes
 
-### Remove modes and last-use analysis, use unary `move` and borrowed (region) pointers
+### Remove argument modes and last-use analysis, use unary `move` and borrowed (region) pointers
 
 This is simply removing code that has proven too difficult to predict and control in practice, and is now redundant with first class borrowed pointers.
 
@@ -62,6 +82,10 @@ This just gets rid of a couple keywords and feeds into the third item. When an i
 
 This has to do with making the resolve pass coherent. In the old resolve code, resolving modules and resolving items glob-imported _from_ modules was intermixed, and could lead to incoherence of the algorithm. In the new resolve code (landing in 0.3) there is a separation of passes: module-imports are not run through globs, only module-to-module renamings, and are resolved _first_, and then all imports through modules (including glob-imports) are resolved _after_. The module-import syntax changes to `mod foo = bar;` to reflect this change.
 
+### Change `export` to `pub`, move it from top-of-module to individual items.
+
+There's some tension in readability between "ease of scanning a module's exports" and "ease of reading the code and knowing which item is exported when you're looking at it." Ultimately we came down on the side of maintainability: that it's less work for a maintainer to mark the items where they occur, rather than scrolling back and forth between export-list and item definitions. Along with moving exports to the items themselves, we'll be changing the terms to use the same keywords used for access control in classes: `pub` and `priv`.
+
 ### Change `use` to mean `import`, remove `import`, make crate-linkage use `extern mod foo = (...);`
 
 Many Rust programmers stub their toes on the difference between `import` and `use`; both "read like" they should somehow make-available the elements in the target module. Since we are getting rid of `export` (see below) there is an asymmetry in the keywords anyways, so we remove the keyword `import`, switch `use` to mean what `import` currently means, and denote crate-linkage through `extern mod foo = (...)`.
@@ -69,6 +93,10 @@ Many Rust programmers stub their toes on the difference between `import` and `us
 ### Remove the distinction between crate files and source files
 
 Crate files are at this point mostly an artefact of earlier beliefs that turned out not to be true (or convenient) in the compilation model. We believe they are now doing more harm than good, and their features can be presented as an "early pass" in the compilation model of a single tree of source files. Inter-file linkages will be given (within a crate) by the form `mod foo = "path.rs"`.
+
+### Doc-comments
+
+Even with the smallest in-attribute syntax we could come up with, `#[doc="..."]`, we are still finding the documentation-attribute system a little too ugly to read. We will therefore support an auxiliary form of comment that is interpreted _as_ a `doc` attribute, presented in a different form but identical in semantics. Both will remain legal but we expect most users to prefer the doc-comment form, longer-term.
 
 ### Generalized variables and conditionals in the attribute system.
 
