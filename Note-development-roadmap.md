@@ -32,6 +32,24 @@ We will likely change the region-pointer sigil from `&` to `^` (still some discu
 
 Closures have to encode their kind (whether they copy their environment, uniquely copy the unique parts, or only hold a safe reference to it). Currently this is indicated by a sigil: `fn@` or `fn~` or `fn&` or such. We're likely to change this to one of the kind names trailing the word `fn`. That is, call it `fn:copy` or `fn:send`.
 
+## Memory model changes
+
+### Remove modes and last-use analysis, use unary `move` and borrowed (region) pointers
+
+This is simply removing code that has proven too difficult to predict and control in practice, and is now redundant with first class borrowed pointers.
+
+### Turn `mut` into a full type constructor
+
+We have tried this several times in the past to little success, but Niko believes there is a reasonably good chance that `mut` will work better as a full type constructor rather than a slot-qualifier. This is one of the larger unknowns in the current roadmap.
+
+### Add a `const` kind and freeze/thaw operations
+
+The `const` kind should be arriving in 0.3 (it represents types with no mutable substructure, anywhere inside them, and no `@`-boxes; these are "as good as" held in read-only memory, form the perspective of concurrent access). Freezing and thawing values into and out of the `const` kind should be possible, so long as they are of type `send` (that is, fully owned during the freeze or thaw process).
+
+### Type-reflection system
+
+A very preliminary form of this should arrive in 0.3: type descriptors contain a compiler-generated function that calls visitor-methods on a predefined intrinsic visitor interface. This enables reflecting on a value without knowing its type (with some supporting library work). Much existing code will gradually shift over to this interface, as it subsumes a number of other tasks the compiler and runtime are currently doing as special cases.
+
 ## Compilation and linkage-model changes
 
 There are a bunch of changes in here, all inter-related. They're mostly agreed-on though.
