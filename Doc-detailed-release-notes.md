@@ -19,17 +19,21 @@ Read the detailed [announcement on the mailing list][inference].
 ### Class stabilization, removal of resources
 
 Classes are ready for use now, and can contain destructors and implement ifaces.
-The resource type has been removed in favor of class destructors.
+The resource type has been removed in favor of class destructors. In addition, both classes and class methods can have type parameters.
 
     iface talky {
         fn speak();
     }
 
-    class talker: talky {
+    iface printable {
+        fn print();
+    }
 
-        let word: str;
+    class talker<T: printable> : talky {
 
-        new(word: str) {
+        let word: T;
+
+        new(word: T) {
             self.word = word;
         }
 
@@ -38,7 +42,7 @@ The resource type has been removed in favor of class destructors.
         }
 
         fn speak() {
-            println(self.word);
+            self.word.print();
         }
     }
 
