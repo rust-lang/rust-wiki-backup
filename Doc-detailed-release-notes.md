@@ -192,13 +192,35 @@ semantics so was removed. `do` loops were rarely used, so the `do`
 keyword was repurposed. Resources were removed in favor of class
 destructors.
 
+### New syntax extensions
+
+    import io::println;
+
+    // Typical file info
+    println(#fmt("%?", #line()));
+    println(#fmt("%?", #col()));
+    println(#fmt("%?", #file()));
+
+    // The name of the current module, or empty
+    println(#fmt("%?", #mod()));
+
+    let x = 10, y = 15;
+
+    // Turn a Rust expression into a string
+    println(#fmt("%?", #stringify[x + y]));
+    // Include the contents of a file as a Rust expression
+    println(#fmt("%?", #include("x_plus_y.rs")));
+    // Include the contents of a file as a string
+    println(#fmt("%?", #include_str("x_plus_y.rs")));
+    // Include the contents of a file as a byte vector
+    println(#fmt("%?", #include_bin("x_plus_y.rs")));
+
 ### TODO
 
 Need to write about:
 
 * eliminating copies
 * FFI changes
-* Syntax extensions
 * Time functions
 * UV-related APIs
 
