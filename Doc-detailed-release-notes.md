@@ -226,6 +226,7 @@ Need to write about:
 * FFI changes
 * Time functions
 * UV-related APIs
+* Const kind
 
 ## 0.2 March 2012
 
