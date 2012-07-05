@@ -96,7 +96,7 @@ We have a new syntax for ignoring variant fields in patterns
     alt my_enum {
         i_could_match_like_this(_, _, _, _, _, _) {
         }
-        but_would_rather_lik_this(*) {
+        but_would_rather_like_this(*) {
         }
     }
 
