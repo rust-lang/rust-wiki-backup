@@ -131,12 +131,15 @@ on a per-item basis, whereas before it was per-crate.
         merge_sort(str::eq, ~["not_implicitly_copyable"])
     }
 
-In this example, `merge_sort` will copy the elements of the vector during
-sorting, and strings may not be copied without writing `copy`. As there
-is no language-level mechanism yet to authorize the copy, sometimes you
-just have to turn the warning off. Note that the current syntax for disabling
-warnings by prefixing "no_" to the naming of the warning is confusing and
-will change.
+In this example, `merge_sort` will copy the elements of the vector
+during sorting, but strings may not be copied without writing `copy`
+(because they are unique types and copying them involves
+allocation). In this situation rustc currently emits a warning. As
+there is no language-level mechanism yet to authorize the copy,
+sometimes you just have to turn the warning off.
+
+Note that the current syntax for disabling warnings by prefixing "no_"
+to the naming of the warning is confusing and will change.
 
 The warnings (and their default setting) understood by rustc are:
 
@@ -153,7 +156,7 @@ The warnings (and their default setting) understood by rustc are:
 
 The following are all related to the in-progress effort to eliminate expensive,
 implicit copies from the language. The current rule is that types that require
-allocation to copy (shared or unique boxes) or that contain mutable fields
+allocation to copy (unique boxes) or that contain mutable fields
 are not implicitly copyable. These are warnings now but will be either errors
 by default or entirely disallowed by the typesystem in the future.
 
