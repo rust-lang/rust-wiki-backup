@@ -2,7 +2,31 @@ This page used to cover early (pre-0.1) tasks on the development roadmap for Rus
 
 Items on this page will move to the [[Doc detailed release notes]] page as they are completed.
 
-## Miscellaneous cleanups
+## Miscellaneous cleanups, mostly syntax
+
+### Module-separator change (possible)
+
+We may change the module-separator from `::` back to `.`. There's little consensus on this at the moment.
+
+### Labeled loops
+
+Loops currently cannot carry labels, which makes breaking from deep within a loop difficult. There's a pretty clear way to implement this, it just requires some care to avoid clashing with nearby syntax.
+
+### Removing the `cont` keyword in favour of something else
+
+Either `next`, `loop`, `again`, or similar. Unlikely to go with `continue` since all other syntax changes are converging once more on sub-5-letter keywords. Totally cosmetic change.
+
+### Macro-invocation change, general macro-system rewrite
+
+Macros are changing to work on uniform balanced token-trees -- much like s-expressions -- rather than the existing system which is based on expressions (with separate quoters for type, item and pattern grammars). Concurrently, we are likely to introduce the "new" macro system with a new syntax that is a bit easier on the eyes: `macro_name! args`, where args is a balanced token-tree. There's still some disagreement on whether this reads better than `#macro_name(...)` but we'll decide at some point and stick with one or the other.
+
+### Raw-strings rather than balanced-character custom lexemes
+
+This is a minor change that should effect no code presently; we'll be introducing a "raw string" form (possibly with a variety of legal delimiters) that does _not_ balance the delimiter characters, so requires internal escaping of only the delimiter. This will replace the proposed (but never implemented) character-balanced custom lexeme syntax in the syntax-extension system. The cost of having a non-regular token grammar was deemed not worth the benefit, and most of the use cases for the latter are easily handled by the former.
+
+### Terminology and syntax change on region pointers
+
+We will likely change the region-pointer sigil from `&` to `^` (still some discussion) and change to referring to them as "borrowed pointers". There is no semantic change here, just a clarification one. The sigil change is motivated by a desire to differentiate a by-reference capture in a pattern (likely to use the `&` operator) from a borrowed pointer constructor in the pattern itself.
 
 ### Change closure-kind syntax
 
