@@ -6,9 +6,9 @@ This page covers releases in more detail than the bullet-point list given in the
 
 Rust has no coercion between integral types, so until this release
 literals always required an appropriate suffix for types other than
-`int`, e.g. `12_u8`. This was widely considered an eye-sore.  Now
-these suffixes can be left off in most situations and their type will
-be correctly inferred.
+`int`, e.g. `12_u8`. This was widely considered an eye-sore and
+inconvenience.  Now these suffixes can be left off in most situations
+and their type will be correctly inferred.
 
     let random_digits: [u8] = [1, 4, 1, 5, 9, 2, 6];
 
