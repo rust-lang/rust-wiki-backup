@@ -34,6 +34,22 @@ We may change the module-separator from `::` back to `.`. There's little consens
 
 Closures have to encode their kind (whether they copy their environment, uniquely copy the unique parts, or only hold a safe reference to it). Currently this is indicated by a sigil: `fn@` or `fn~` or `fn&` or such. We're likely to change this to one of the kind names trailing the word `fn`. That is, call it `fn:copy` or `fn:send`.
 
+### `alt` syntax changes
+
+The `alt` form requires braces, which is too heavyweight for some use cases. There is mostly consensus on moving to `=>` to separate patterns and dropping the braces. There is also the possibility (no consensus) that the name `alt` will change to `match`, to better match other languages.
+
+### Semicolons and return values
+
+There is the possibility that return values will need to be explicitly ignored if the programmer desires this; with this change we can make trailing semicolons optional, eliminating a frequent source of toe-stubbing.
+
+### Floating point literals
+
+There is general consensus that floating point literals are too long; `1.0f` will likely become sugar for `1.0f32`. This is purely a backwards-compatible change.
+
+### Capitalization
+
+Some Rust projects are beginning to capitalize types. We will need to come to a consensus on the house style.
+
 ## OO-system changes
 
 ### Extend interfaces to full traits
