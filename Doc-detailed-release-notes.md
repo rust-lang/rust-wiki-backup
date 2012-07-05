@@ -176,22 +176,6 @@ See Niko's blog posts about regions:
 * [Borrowing](http://smallcultfollowing.com/babysteps/blog/2012/05/01/borrowing/)
 * [Borrowing errors](http://smallcultfollowing.com/babysteps/blog/2012/05/05/borrowing-errors/)
 
-### Shebang
-
-The first line of a Rust source file can contain a shebang, for use with tools
-that want to treat Rust a scripts.
-
-    #! /usr/local/bin/rustx
-
-### Removed features
-
-`be`, `prove`, `syntax`, `note` were unimplemented and removed from
-the language.  `mutable` is now written `mut`. `bind` had too much
-overlap with other closure forms while providing subtly different
-semantics so was removed. `do` loops were rarely used, so the `do`
-keyword was repurposed. Resources were removed in favor of class
-destructors.
-
 ### New syntax extensions
 
     import io::println;
@@ -214,6 +198,22 @@ destructors.
     println(#fmt("%?", #include_str("x_plus_y.rs")));
     // Include the contents of a file as a byte vector
     println(#fmt("%?", #include_bin("x_plus_y.rs")));
+
+### Shebang
+
+The first line of a Rust source file can contain a shebang, for use with tools
+that want to treat Rust a scripts.
+
+    #! /usr/local/bin/rustx
+
+### Removed features
+
+`be`, `prove`, `syntax`, `note` were unimplemented and removed from
+the language.  `mutable` is now written `mut`. `bind` had too much
+overlap with other closure forms while providing subtly different
+semantics so was removed. `do` loops were rarely used, so the `do`
+keyword was repurposed. Resources were removed in favor of class
+destructors.
 
 ### TODO
 
