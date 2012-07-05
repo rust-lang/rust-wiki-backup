@@ -63,6 +63,32 @@ Read [full discussion][closures].
 
 [closures]: https://mail.mozilla.org/pipermail/rust-dev/2012-July/002000.html
 
+### New vector types
+
+Until now all vectors have been unique types allocated on the exchange
+heap, but accidental copying of and allocation of vectors turned out
+to be a major performance hazard.
+
+0.3 features the full complement of vector types demanded by Rust's
+memory model - in other words you can put vectors on the stack, the
+local heap or the exchange heap.
+
+    // A unique vector, allocated on the exchange heap
+    let x: ~[int] = ~[0];
+    // A shared vector, allocated on the local heap
+    let y: @[int] = @[0];
+    // A stack vector, allocated on the stack
+    let z: &[int] = &[0];
+
+The libraries have not fully caught up to the new vector types.
+
+Some posts on vectors that have varying relationships to the final implementation:
+
+* [Arrays, vectors](https://mail.mozilla.org/pipermail/rust-dev/2012-March/001467.html)
+* [Arrays, vectors, redux](https://mail.mozilla.org/pipermail/rust-dev/2012-March/001476.html)
+* [A Vision for Vectors](https://mail.mozilla.org/pipermail/rust-dev/2012-June/001951.html)
+* [Vectors, Slices and Functions, Oh My](http://smallcultfollowing.com/babysteps/blog/2012/05/14/vectors/)
+
 ### *-patterns
 
 We have a new syntax for matching on enum variants when you don't care about any of
@@ -137,32 +163,6 @@ by default or entirely disallowed by the typesystem in the future.
 * non_implicitly_copyable_typarams - use of generics whose type parameters
                                      have the `copy` kind with a type that
 				     is not implicitly copyable
-
-### New vector types
-
-Until now all vectors have been unique types allocated on the exchange
-heap, but accidental copying of and allocation of vectors turned out
-to be a major performance hazard.
-
-0.3 features the full complement of vector types demanded by Rust's
-memory model - in other words you can put vectors on the stack, the
-local heap or the exchange heap.
-
-    // A unique vector, allocated on the exchange heap
-    let x: ~[int] = ~[0];
-    // A shared vector, allocated on the local heap
-    let y: @[int] = @[0];
-    // A stack vector, allocated on the stack
-    let z: &[int] = &[0];
-
-The libraries have not fully caught up to the new vector types.
-
-Some posts on vectors that have varying relationships to the final implementation:
-
-* [Arrays, vectors](https://mail.mozilla.org/pipermail/rust-dev/2012-March/001467.html)
-* [Arrays, vectors, redux](https://mail.mozilla.org/pipermail/rust-dev/2012-March/001476.html)
-* [A Vision for Vectors](https://mail.mozilla.org/pipermail/rust-dev/2012-June/001951.html)
-* [Vectors, Slices and Functions, Oh My](http://smallcultfollowing.com/babysteps/blog/2012/05/14/vectors/)
 
 ### Region progress
 
