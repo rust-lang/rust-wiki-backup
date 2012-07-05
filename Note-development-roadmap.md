@@ -1,5 +1,7 @@
 This page used to cover early (pre-0.1) tasks on the development roadmap for Rust. It is now an outline of where we plan to take the compiler over the course of the next several releases, ending in a 1.0 release that we commit to supporting over an extended time period. Where possible, we will link to bugs in the issue tracker.
 
+Please note: when we do stabilize for a 1.0 release, it will _not_ mean we are freezing the language for all time; it means we'll be branching and supporting a stable branch and a versioning strategy that "works" for an extended period (i.e. "years"), as well as committing to providing tools to help migrate code forward, when and if breaking changes are made in future versions.
+
 Items on this page will move to the [[Doc detailed release notes]] page as they are completed.
 
 ## Miscellaneous cleanups, mostly syntax
@@ -64,7 +66,11 @@ We have tried this several times in the past to little success, but Niko believe
 
 ### Add a `const` kind and freeze/thaw operations
 
-The `const` kind should be arriving in 0.3 (it represents types with no mutable substructure, anywhere inside them, and no `@`-boxes; these are "as good as" held in read-only memory, form the perspective of concurrent access). Freezing and thawing values into and out of the `const` kind should be possible, so long as they are of type `send` (that is, fully owned during the freeze or thaw process).
+Rust types are stratified into different "kinds": the `copy` kind or the `send` kind, for example. These appear in the type system as special interfaces but their existence and the conformance of a type to the interface is implemented by the compiler, by analyzing the structure of the type. For example, the compiler will not make a type with a destructor, or a function that captures its environment by reference, a member of the `copy` kind, as it cannot be sensibly copied; likewise a type with `@`-values in its substructure cannot be safely sent between tasks, so will not be put in the `send` kind.
+
+A new kind is appearing in 0.3, called `const`, that applies to `send`-kind types that additionally have no `mut` fields anywhere in their substructure. These types are, for the sake of concurrent access, _read only_ values that can be safely read by multiple threads at the same time. They're as good as values held in the read-only segment of a program.
+
+The kind exists to support various library functions, for example a reference-counted multi-reader variable (called `core::arc`) as well as, in the future, a function `freeze` that can be used to convert a `send` value to a `const` value by casting it to a type with all `mut` type modifiers removed. We expect this to be useful when implementing publish/subscribe patterns between concurrent tasks.
 
 ### Type-reflection system
 
@@ -109,3 +115,17 @@ For long-term source compatibility, we wish to make it possible (and in the case
 ### Version attribute, API versioning
 
 Currently a crate has a single version, which is mangled into all the symbols in the crate as well as the crate filename. This is not quite correct. What we want is a per-item version attribute (with a per-crate _default_) that is mangled into each symbol, but _not_ the output filename, such that the compiler can tolerate compiling multiple versions of the same API inside a single output file. This should be mostly invisible to users.
+
+## Library work
+
+### Condition-handler system
+
+0.3 will introduce an API for setting and retrieving task-local data. We'll build on top of this to provide dynamic-scoped variables (keyed by global constants), on top of that, condition-handlers that can be used to recover from errors at the site of the error, or else fail. This should hopefully address many of the remaining use-cases people have in mind for catchable exceptions.
+
+### IO library update
+
+The `core::io` library is due for a careful refactoring in terms of traits, condition handlers, and similar "new" abstractions that the language and libraries support. While this is true of the entire core and standard libraries, `io` is particularly important in our work due to its pervasive use and numerous implementation variants.
+
+### New serialization backends
+
+Once `core::io` is refactored, the `std::serialization` library will grow several more implementations, and once we decide on a preferred backend we'll migrate the compiler metadata tables to use it. This should be reasonably unnoticed by users, but will break binary compatibility between versions when we make the change.
