@@ -108,21 +108,19 @@ Data values in the language can only be constructed through a fixed set of initi
 
 ### Why is failure unwinding non-recoverable within a task? Why not try to "catch exceptions"?
 
-In short, because too few guarantees could be statically made about the dynamic environment of the catch block to be able to safely resume.
-
-In more detail: the origin-state of a failure is unknown by definition, therefore catching it would result in dropping the static typestate of the "catch block" to the lowest initialization typestate in the containing block, as well as dropping all user-defined conditions at any statements in the task. The set of operations that would be legal to perform in such a catch block would be minimal at a local level, and intractable at a task level: there would be no way to tell how much of the typestate assumed by the caller of the catch -- or any other functions in the task -- still holds. This sort of "resume in an arbitrarily damaged state" construct would defeat most of the other static rules in the language.
+In short, because too few guarantees could be made about the dynamic environment of the catch block, as well as invariants holding in the unwound heap, to be able to safely resume; we believe that other methods of signalling and logging errors are more appropriate, with tasks playing the role of a "hard" isolation boundary between separate heaps.
 
 Rust provides, instead, three predictable and well-defined options for handling any combination of the three main categories of "catch" logic:
 
-* Failure _logging_ is done by the integrated `note` statement.
-* _Recovery_ after a failure is done by trapping a task failure from _outside_ the task, where the typestate of other tasks is known to be unaffected.
+* Failure _logging_ is done by the integrated logging subsystem.
+* _Recovery_ after a failure is done by trapping a task failure from _outside_ the task, where other tasks are known to be unaffected.
 * _Cleanup_ of resources is done by RAII-style objects with destructors.
 
 Cleanup through RAII-style destructors  is more likely to work than in catch blocks anyways, since it will be better tested (part of the non-error control paths, so executed all the time).
 
 ### Why aren't modules type-parametric?
 
-Doing so would likely require that type-parametric code  is statically expanded, duplicating code. It would also require a complex mechanism inside crates for maintaining uninstantiated module-bodies. While this is a possible implementation approach for parametric code, we don't want to mandate it. We want to maintain the option to parametrize at runtime (this is the default implementation).
+We want to maintain the option to parametrize at runtime. We may make eventually change this limitation, but initially this is how type parameters were implemented.
 
 ### Why aren't values type-parametric? Why only items?
 
@@ -174,7 +172,7 @@ Yes. Since C code typically expects a larger stack than Rust code does, the stac
 
 ### Can C code call Rust code?
 
-Not directly. We expect to develop a mechanism for C code to transmit messages into Rust channels, but a direct call would not make much sense since all Rust code runs in a task -- which may deschedule and switch to another task mid-call -- whereas C code does not, and will not behave well if "switched away" from.
+Yes. The Rust code has to be exposed via an `extern` declaration, which makes it C-ABI compatible. Its address can then be taken and passed to C code. When C calls Rust back, the callback occurs in very restricted circumstances.
 
 ### How do Rust's task stacks work?
 
@@ -192,8 +190,3 @@ They start very small (a few hundred bytes) and expand dynamically by calling th
 * Mechanically, it simplifies the inference algorithm; inference only requires looking at one function at a time.
 * The same simplification goes double for human readers. A reader does not need an IDE running an inference algorithm across an entire crate to be able to guess at a function's argument types; it's always explicit and nearby.
 * Parameters in Rust can be passed by reference or by value. We can't automatically infer which one the programmer means.
-
-### Why isn't `let i: uint = 0` valid Rust?
-
-Rust provides no coercion or overloading for literals so the `0` is _always_ type int. To create a uint the literal must be suffixed with `u`. Implicit conversions are a common source of errors in C-like languages, so there is a strong desire to not let such problems creep into the language. That said, this is feature is often frustrating, so a limited form of literal overloading may be introduced in the future.
-

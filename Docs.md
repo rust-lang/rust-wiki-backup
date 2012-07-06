@@ -6,6 +6,7 @@ Listing of documentation for users
 * [Manual](http://doc.rust-lang.org/doc/rust.html) ([PDF](http://doc.rust-lang.org/doc/rust.pdf))
 * [Core library](http://doc.rust-lang.org/doc/core/index.html)
 * [Standard library](http://doc.rust-lang.org/doc/std/index.html)
+* [[Doc detailed release notes]]
 
 ## General instructions
 

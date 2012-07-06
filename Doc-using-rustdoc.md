@@ -28,53 +28,53 @@ Rustdocs can be as simple as `Returns a slice` or they can be more involved:
 
 ### Where the rustdocs live
 
-Rustdocs must be put inside `doc` attributes, which are name-value
-attributes called "doc" with a string value.
+Rustdocs must be put inside doc-comments, which are comments that start with
+`/**` (one more star than for a normal comment) or `///` (one more slash) or,
+for inner-doc-comments, `/*!` or `//!`.
+
+    /// Engage thrusters
+    fn thrusters_on() { ... }
+
+Or:
+
+    /**
+     * Engage thrusters
+     *
+     * Begin heating toast at the temperature specified by the temperature dial
+     */
+    fn thrusters_on() { ... }
+
+The line of `*` on the left of a multi-line doc comment is not considered to be
+part of the comment text.
+
+Doc-comments can be placed anywhere that attributes can be placed. It is possible
+to write function documentation inside the function definition by using the `//!`
+ or `/*!` syntax:
+
+    fn thrusters_on() {
+        //! Engage thrusters
+        ...
+    }
+
+It is also possible to specify rustdocs using `doc` attributes:
 
     #[doc = "Engage thrusters"]
     fn thrusters_on() { ... }
 
-To write a more involved rustdoc you just use a multiline string:
-
-    #[doc = "
-    Engage thrusters
-
-    Begin heating toast at the temperature specified by the temperature dial
-    "]
-    fn thrusters_on() { ... }
-
-Because rustdocs can go anywhere attributes can go it is also possible
-to write function documentation inside the function definition by
-terminating the `doc` attribute with a semicolon.
+Like other attributes they can also be placed inside of items by
+using a trailing semi-colon.
 
     fn thrusters_on() {
         #[doc = "Engage thrusters"];
         ...
     }
 
-Putting rustdocs inside strings works fairly well most of the time,
-but does result in some quirks. In particular you must remember to
-escape double quotes. Because of this limitation I usually end up
-using single quotes for quoted text. For writing code examples inside
-of rustdocs there's no way to avoid double-quotes though. Here's a
-particularly heinous example from `core`:
+It is suggested that doc-comments are normally used instead instead
+of doc-attributes, which may be removed in the future.
 
-    Splits a string into a vector of the substrings separated by a given string
-
-    # Example
-
-    ~~~
-    assert [\"\", \"XXX\", \"YYY\", \"\"] == split_str(\".XXX.YYY.\", \".\")
-    ~~~
-
-The `rustdoc` tool understands what to do with `doc` attributes on crates,
-items, enum variants, iface methods and impl methods. `doc` attributes found
+The `rustdoc` tool understands what to do with doc-comments on crates,
+items, enum variants, iface methods and impl methods. doc-comments found
 in other places are silently ignored.
-
-In future versions there will likely be other places to put rustdocs, like
-inside comments or [here docs][1].
-
-[1]: https://en.wikipedia.org/wiki/Here_document
 
 ### The rules of rustdoc
 

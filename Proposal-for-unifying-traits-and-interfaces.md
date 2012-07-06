@@ -108,6 +108,8 @@ probably no need for the compiler to enforce that convention.)
 
 ### Required and provided methods
 
+(Note: the design in this section is broken.  Fix forthcoming.)
+
 Traits, as they appear in the literature, have a set of _provided_
 methods, implementing the behavior that a trait provides, and a
 (possibly empty) set of _required_ methods that the provided methods

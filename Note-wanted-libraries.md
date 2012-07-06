@@ -28,7 +28,7 @@ Notes taken at rust work week, 2011/06/23
 * [compression](https://github.com/elly/rustzlib) (external)
 * [libicu](https://github.com/mozilla/rust/blob/master/src/libstd/unicode.rs)
 * serialization/encoding
- * [base64](https://github.com/erickt/mre/blob/master/base64.rs) (external)
+ * [base64](https://github.com/mozilla/rust/blob/master/src/libstd/base64.rs)
  * [CSV](https://github.com/grahame/rust-csv) (external)
  * [json](https://github.com/mozilla/rust/blob/master/src/libstd/json.rs)
  * protobuf
