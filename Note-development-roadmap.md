@@ -16,7 +16,7 @@ We may change the module-separator from `::` back to `.`. There's little consens
 
 ### Removing the `cont` keyword in favour of something else
 
-([#2229](https://github.com/mozilla/rust/issues/2229)) Either `next`, `loop`, `skip`, `again`, or similar. Unlikely to go with `continue` since all other syntax changes are converging once more on sub-5-letter keywords. Totally cosmetic change.
+([#2229](https://github.com/mozilla/rust/issues/2229)) Renaming to `again` (not `continue` since all other syntax changes are converging once more on sub-5-letter keywords). Totally cosmetic change.
 
 ### Macro-invocation change, general macro-system rewrite
 
@@ -28,7 +28,7 @@ We may change the module-separator from `::` back to `.`. There's little consens
 
 ### Terminology and syntax change on region pointers
 
-(motivated by [nmatsakis:region-patterns](http://smallcultfollowing.com/babysteps/blog/2012/06/10/unifying-patterns-in-alts-and-lets/)) We will likely change the region-pointer sigil from `&` to `^` (still some discussion) and change to referring to them as "borrowed pointers". There is no semantic change here, just a clarification one. The sigil change is motivated by a desire to differentiate a by-reference capture in a pattern (likely to use the `&` operator) from a borrowed pointer constructor in the pattern itself.
+(motivated by [nmatsakis:region-patterns](http://smallcultfollowing.com/babysteps/blog/2012/06/10/unifying-patterns-in-alts-and-lets/)) We will likely change the unsafe-pointer sigil from `*` to `^` and the region-pointer sigil from `&` to `*`, and change to referring to them as "borrowed pointers". There is no semantic change here, just a clarification one. The sigil change is motivated by a desire to differentiate a by-reference capture in a pattern (likely to use the `&` operator) from a borrowed pointer constructor in the pattern itself. Also due to the fact that, like C pointers (and unlike C++ `&`-references), region pointers can be independently copied and assigned _as first-class values_, not just initialized.
 
 ### Change closure-kind syntax
 
