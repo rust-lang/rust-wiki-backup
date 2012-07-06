@@ -145,3 +145,7 @@ The `core::io` library is due for a careful refactoring in terms of traits, cond
 ### New serialization backends
 
 Once `core::io` is refactored, the `std::serialization` library will grow several more implementations, and once we decide on a preferred backend we'll migrate the compiler metadata tables to use it. This should be reasonably unnoticed by users, but will break binary compatibility between versions when we make the change.
+
+### Task management
+
+The task creation interface will be enhanced, adding more flexibility for grouping tasks according to which should die when a single task fails. There will be options to spawn tasks with bidirectionally-linked failure propagation (i.e., all tasks in a group dies if one dies), no failure propagation (failure status can be sent via ports), and perhaps also unidirectional failure propagation (a failing parent task takes its children with it).

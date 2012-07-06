@@ -245,6 +245,26 @@ type.
         log(info, arc_v);
     }
 
+### FFI changes
+
+The word 'native' is being expunged from the language since it implies
+that Rust is not native. Native modules are now declared with the
+`extern` keyword.
+
+    extern mod cairo {
+
+Rust functions that can be called from native code with the CDECL ABI,
+previously called 'crust', are now also declared with the `extern'
+keyword.
+
+    extern fn a_native_callback(user_data: *c_void) {
+         do_some_crusty_stuff(user_data);
+    }
+
+These changes are part of a [larger plan][crust] to overhaul the terminology
+and syntax around linking.
+
+[crust]: https://github.com/mozilla/rust/issues/2082#issuecomment-6521683
 
 ### Shebang
 
@@ -266,10 +286,8 @@ destructors.
 Need to write about:
 
 * eliminating copies
-* FFI changes
 * Time functions
 * UV-related APIs
-* Const kind
 
 ## 0.2 March 2012
 
