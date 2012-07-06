@@ -1,6 +1,10 @@
 # Unifying traits and interfaces
 
-There are three parts to this proposal:
+A high-level description of the changes proposed here already appears
+on the [[Note development roadmap]] page under the headings ``Extend
+interfaces to full traits'' and ``Enforce implementation coherence''.
+What follows is a more detailed explanation of the proposal.  There
+are three parts:
 
   * Adding default impls to ifaces
   * Allowing iface composability
@@ -75,9 +79,7 @@ fn super_modes<C:combine>(
 ```
 
 Under this proposal, we could put the default implementation in the
-interface, and instead of all of the above, we could just write the
-following (having changed the `iface` keyword to `trait` tweaked the
-`impl` syntax slightly):
+interface, and the above code becomes the following
 
 ```
 trait Combine {
@@ -103,12 +105,14 @@ impl glb: Combine {
 }
 ```
 
-(Although we're capitalizing trait names in this document, there's
-probably no need for the compiler to enforce that convention.)
+This code also makes three superficial syntax changes: first, changing
+the `iface` keyword to `trait`, second, changing `impl of X for Y` to
+`impl Y: X`, and third, capitalizing the trait name (with this last
+change intended just as a programming convention, not as something
+that the compiler will enforce).  We'll stick to this syntax for the
+rest of the proposal.
 
 ### Required and provided methods
-
-(Note: the design in this section is broken.  Fix forthcoming.)
 
 Traits, as they appear in the literature, have a set of _provided_
 methods, implementing the behavior that a trait provides, and a
@@ -135,10 +139,11 @@ trait Eq {
 
 ## Allowing iface composability
 
-Traits are _composable_ and _order-independent_: a trait C can extend
-multiple other traits, and order doesn't matter.  Here, the `Ord`
-trait extends `Eq`.  (The `<` is pronounced `extends`.  Also under
-consideration is `<:`.)
+A defining characteristic of traits is that they are _composable_ and
+_order-independent_: a trait C can extend multiple other traits, and
+order doesn't matter.  In this example, the `Ord` trait extends `Eq`.
+(The `<` is pronounced `extends`.  This syntax isn't set in stone yet;
+also under consideration is `<:`.)
 
 ```
 trait Ord < Eq {
@@ -264,18 +269,3 @@ there are conflicting implementations of the `hash` iface in `Module1`
 and `Module2`.  Neither one is wrong by itself, but when compiled
 together we get unexpected behavior.
 
-To prevent this situation, we could do one of the following:
-
-  * Forbid method implementations anywhere except in traits (and in
-    classes, maybe).  The `iface` in the `ht` module would become a
-    trait.  The `impl` language form would become merely a way to
-    associate types or classes with traits.  We would add a line to
-    each module like `impl uint: ht::hash;`.
-
-  * Keep `impl` around in its current form, but only allow an impl of
-    a type for a particular trait to appear in the same crate as that
-    trait.
-
-To me, the first option is better, because the language is simpler if
-there are only one or two places where method implementations can
-appear, intead of two or three places.
