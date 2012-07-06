@@ -10,7 +10,7 @@ Then, rename `iface` to `trait` and that's it!
 
 ## Adding default impls to ifaces
 
-### An example
+### Motivating example
 
 In the `middle::typeck::infer` module (henceforth `infer`), there's a
 `combine` interface, and implementations of that interface for the
@@ -24,9 +24,10 @@ implementations call the out-of-line-method.
 
 For example, here's what it looks like for the `modes` method.  In
 fact, there are _nine_ methods in `infer` that are this way -- `modes`
-is just a representative example.  The `infcx` method is also
+is just a representative example.  (The `infcx` method is also
 identical in all three, but since all it does is return `*self`, it's
-just identically implemented in all three.
+just identically implemented directly in all three instead of calling
+off to an out-of-line method.)
 
 ```
 iface combine {
@@ -74,10 +75,12 @@ fn super_modes<C:combine>(
 ```
 
 Under this proposal, we could put the default implementation in the
-interface, so, instead of all of the above, we could just write:
+interface, and instead of all of the above, we could just write the
+following (having changed the `iface` keyword to `trait` tweaked the
+`impl` syntax slightly):
 
 ```
-trait combine {
+trait Combine {
     fn infcx() -> infer_ctxt { *self }
     ...
     fn modes(a: ast::mode, b: ast::mode) -> cres<ast::mode> {
@@ -87,119 +90,114 @@ trait combine {
     ...
 }
 
-impl of combine for sub {
+impl sub: Combine {
     ... // only methods for which the default impl isn't enough
 }
 
-impl of combine for sub {
+impl sub: Combine {
     ... // only methods for which the default impl isn't enough
 }
 
-impl of combine for glb {
+impl glb: Combine {
     ... // only methods for which the default impl isn't enough
 }
 ```
 
-The only other thing that changed in this code was that the keyword
-`iface` changed to `trait`.
+(Although we're capitalizing trait names in this document, there's
+probably no need for the compiler to enforce that convention.)
 
-## Allowing iface composability
+### Required and provided methods
 
 Traits, as they appear in the literature, have a set of _provided_
 methods, implementing the behavior that a trait provides, and a
 (possibly empty) set of _required_ methods that the provided methods
 can be written in terms of.  For the required methods, only the names
-and types are specified, not the implementation.  That suggests that
-in Rust, a trait's set of required methods could be specified using an
-iface.  But if traits themselves _are_ ifaces, then that means that
-ifaces can require ifaces.  This goes along with the idea that traits/ifaces
-should be _composable_ and _order-independent_: a trait C can extend traits A
-and B (in either order).
+and types are specified, not the implementation.
 
-In today's Rust, a class or a type can implement interfaces A and B
-(in either order).  For instance, in today's Rust you can write:
+In Rust, methods with no implementation will be considered required,
+and methods with an implementation will be considered provided.  This
+removes the need for something like a `req` keyword, and required and
+provided methods can be intermingled and appear in any order in the
+trait definition.
 
 ```
-iface add { fn plus(n: int) -> int; }
-iface subtract { fn minus(n: int) -> int; }
+// eq is required; neq is provided
+trait Eq {
+    fn eq(a: self) -> bool;
 
-impl of add for int {
-    fn plus(n: int) -> int { self + n }
-}
-
-impl of subtract for int {
-    fn minus(n: int) -> int { self - n }
-}
-
-// int implements both add and subtract; order doesn't matter
-fn main() { assert 3.plus(1) == 5.minus(1); }
-
-```
-
-But interfaces themselves aren't composable: we can't currently define
-an interface as the composition of more than one interface.  Under
-this proposal, it would be possible to write:
-
-```
-iface arithmetic: add, subtract {
-    ... // more methods here, if we want
+    fn neq(a: self) -> bool {
+        !self.neq(a)
+    }
 }
 ```
 
-The `add, subtract` part of the signature amounts to a set of required
-methods, in terms of which additional methods can be written.
+## Allowing iface composability
 
-Then, adding the ability to put default impls in ifaces (and changing
-the keyword from `iface` to `trait`), we get:
-
-```
-trait add { 
-    fn plus(n: int) -> int { self + n }
-}
-
-trait subtract {
-    fn minus(n: int) -> int { self - n }
-}
-
-trait arithmetic: add, subtract {
-    ... // more methods here, if we want
-}
-
-impl int: arithmetic; // or something like this
-
-fn main() { assert 3.plus(1) == 5.minus(1); }
+Traits are _composable_ and _order-independent_: a trait C can extend
+multiple other traits, and order doesn't matter.  Here, the `Ord`
+trait extends `Eq`.  (The `<` is pronounced `extends`.  Also under
+consideration is `<:`.)
 
 ```
+trait Ord < Eq {
 
-The `impl int: arithmetic;` line is what associates the `int` type
-with the `arithmetic` trait.  Syntax for this is still up in the air
--- we could say `int impls arithmetic;` instead, or something else.
-(`impl` in this case is short for "implements", not short for
-"implementation", since now all implementation is happening in the
-traits!)
+    fn lt(a: self) -> bool;
 
-One place that could benefit from this so-called 'interface inheritance' is called out by a FIXME for issue #2616 in `core::num`.  Although I have to think about it some more, I _think_ we could clean up duplicated code between `core/int_template.rs` and `core/uint_template.rs` with this kind of strategy.
+    fn lte(a: self) -> bool {
+        self.lt(a) || self.eq(a)
+    }
+
+    fn gt(a: self) -> bool {
+        !self.lt(a) && !self.eq(a)
+    }
+
+    fn gte(a: self) -> bool {
+        !self.lt(a)
+    }
+}
+
+impl int: Ord {
+    fn lt(a: self) -> bool {
+        self < a
+    }
+
+    fn eq(a: self) -> bool {
+        self == a
+    }
+}
+```
+
+Because `Ord` extends `Eq`, the impl of `Ord` for the `int` type has
+to implement the required methods of both `Ord` and `Eq` -- in this
+case, `lt` and `eq`.
+
+One place in the Rust compiler that could benefit from this so-called
+'interface inheritance' is called out by a FIXME for issue #2616 in
+`core::num`.  We might be able to clean up duplicated code between
+`core/int_template.rs` and `core/uint_template.rs` with this kind of
+strategy.
 
 ### Conflict resolution
 
-Traditional traits do some cool conflict resolution stuff when the
-traits being combined have methods with the same name, and we might
-want to do that eventually, but we can punt for now and just do what
-Rust already does if a type implements multiple interfaces that define
-a method with the same name, that is, raise a compile-time "multiple
+Traditional traits do some cool conflict resolution stuff when traits
+being combined have methods with the same name, and we might want to
+do that eventually, but we can punt for now and just do what Rust
+already does if a type implements multiple interfaces that define a
+method with the same name -- that is, raise a compile-time "multiple
 applicable methods in scope" error.
 
 ## Instance coherence
 
-In Rust, if you have an `iface` presenting a group of functions and
-not mandating any particular implementation -- as `iface`s in Rust
-currently do -- then you can end up with the problem of different
-conflicting implementations for a particular type.  This is known as
-the "instance coherence" problem (although in Rust perhaps we should
-call it the "implementation coherence"), or just the "coherence"
-problem for short.
+An `iface` that presents a group of functions without mandating any
+particular implementation -- as is the case with all `iface`s in Rust
+as it stands -- leaves open the possibility of different conflicting
+implementations for a particular type.  This is known as the "instance
+coherence" problem (although in Rust perhaps we should call it
+"implementation coherence"), or just the "coherence" problem for
+short.
 
-Consider the following program, which compiles and runs in Rust today:
+Consider the following program (due to gwillen), which compiles and
+runs in Rust today:
 
 ```
 use std;
