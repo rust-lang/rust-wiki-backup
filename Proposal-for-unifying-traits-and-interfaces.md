@@ -1,8 +1,8 @@
 # Unifying traits and interfaces
 
 A high-level description of the changes proposed here already appears
-on the [[Note development roadmap]] page under the headings ``Extend
-interfaces to full traits'' and ``Enforce implementation coherence''.
+on the [[Note development roadmap]] page under the headings "Extend
+interfaces to full traits" and "Enforce implementation coherence".
 What follows is a more detailed explanation of the proposal.  There
 are three parts:
 
@@ -139,11 +139,10 @@ trait Eq {
 
 ## Allowing iface composability
 
-A defining characteristic of traits is that they are _composable_ and
-_order-independent_: a trait C can extend multiple other traits, and
-order doesn't matter.  In this example, the `Ord` trait extends `Eq`.
-(The `<` is pronounced `extends`.  This syntax isn't set in stone yet;
-also under consideration is `<:`.)
+A defining characteristic of traits is that they are _composable_: a
+trait C can extend other traits: In this example, the `Ord` trait
+extends `Eq`.  (The `<` is pronounced `extends`.  This syntax isn't
+set in stone yet; also under consideration is `<:`.)
 
 ```
 trait Ord < Eq {
@@ -184,14 +183,36 @@ One place in the Rust compiler that could benefit from this so-called
 `core/int_template.rs` and `core/uint_template.rs` with this kind of
 strategy.
 
+### Order-independence
+
+Trait composition is also _order-independent_: the trait `Ord` could
+extend multiple traits at once, with the order being irrelevant.  For
+instance, the trait
+
+```
+trait Ord < Foo, Bar {
+    ...
+}
+```
+
+is the same as
+
+```
+trait Ord < Bar, Foo {
+    ...
+}
+```
 ### Conflict resolution
 
-Traditional traits do some cool conflict resolution stuff when traits
-being combined have methods with the same name, and we might want to
-do that eventually, but we can punt for now and just do what Rust
-already does if a type implements multiple interfaces that define a
-method with the same name -- that is, raise a compile-time "multiple
-applicable methods in scope" error.
+In the literature, traits do some cool conflict resolution stuff when
+traits being combined have methods with the same name, and we might
+want to do that eventually, but we can punt for now and just do what
+Rust already does if a type implements multiple interfaces that define
+a method with the same name -- that is, raise a compile-time "multiple
+applicable methods in scope" error.  In the case of the `Ord < Foo,
+Bar` example above, for instance, we could (for now) raise an
+compile-time error if `Foo` and `Bar` have methods with conflicting
+names.
 
 ## Instance coherence
 
