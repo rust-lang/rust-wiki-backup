@@ -261,6 +261,11 @@ keyword.
          do_some_crusty_stuff(user_data);
     }
 
+These changes are part of a [larger plan][crust] to overhaul the terminology
+and syntax around linking.
+
+[crust]: https://github.com/mozilla/rust/issues/2082
+
 ### Shebang
 
 The first line of a Rust source file can contain a shebang
