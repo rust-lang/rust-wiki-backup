@@ -207,6 +207,46 @@ See Niko's blog posts about regions:
     // Include the contents of a file as a byte vector
     println(#fmt("%?", #include_bin("x_plus_y.rs")));
 
+### Const kind
+
+Rust has a new kind, `const`, that can be used as a bounds on type
+parameters. A type that is const contains only const fields that are
+not mutable. A type that is both `const` and `send` is appropriate for
+using in shared-memory concurrency patterns because it is deeply
+immutable and does not contain local box pointers.
+
+This is currently used by core::arc which provides an atomically
+reference counted, sendable type that encapsulates a `const` + `send`
+type.
+
+    #[test]
+    fn manually_share_arc() {
+        // unique vectors are const and send kinds
+        let v = ~[1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        let arc_v = arc::arc(v);
+
+        let p = port();
+        let c = chan(p);
+
+        do task::spawn() {
+            let p = port();
+            c.send(chan(p));
+
+            let arc_v = p.recv();
+
+            let v = *arc::get::<~[int]>(&arc_v);
+            assert v[3] == 4;
+        };
+
+        let c = p.recv();
+        c.send(arc::clone(&arc_v));
+
+        assert (*arc::get(&arc_v))[2] == 3;
+
+        log(info, arc_v);
+    }
+
+
 ### Shebang
 
 The first line of a Rust source file can contain a shebang
