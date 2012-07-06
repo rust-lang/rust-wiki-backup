@@ -264,7 +264,7 @@ keyword.
 These changes are part of a [larger plan][crust] to overhaul the terminology
 and syntax around linking.
 
-[crust]: https://github.com/mozilla/rust/issues/2082
+[crust]: https://github.com/mozilla/rust/issues/2082#issuecomment-6521683
 
 ### Shebang
 
