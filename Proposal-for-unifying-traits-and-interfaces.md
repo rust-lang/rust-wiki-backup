@@ -79,7 +79,7 @@ fn super_modes<C:combine>(
 ```
 
 Under this proposal, we could put the default implementation in the
-interface, and the above code becomes the following
+interface, and the above code becomes the following:
 
 ```
 trait Combine {
@@ -106,8 +106,8 @@ impl glb: Combine {
 ```
 
 This code also makes three superficial syntax changes: first, changing
-the `iface` keyword to `trait`, second, changing `impl of X for Y` to
-`impl Y: X`, and third, capitalizing the trait name (with this last
+the `iface` keyword to `trait`; second, changing `impl of X for Y` to
+`impl Y: X`; and third, capitalizing the trait name (with this last
 change intended just as a programming convention, not as something
 that the compiler will enforce).  We'll stick to this syntax for the
 rest of the proposal.
@@ -141,7 +141,7 @@ trait Eq {
 
 A defining characteristic of traits is that they are _composable_: a
 trait C can extend other traits: In this example, the `Ord` trait
-extends `Eq`.  (The `<` is pronounced `extends`.  This syntax isn't
+extends `Eq`.  (The `<` is pronounced "extends".  This syntax isn't
 set in stone yet; also under consideration is `<:`.)
 
 ```
@@ -178,12 +178,11 @@ to implement the required methods of both `Ord` and `Eq` -- in this
 case, `lt` and `eq`.
 
 One place in the Rust compiler that could benefit from this so-called
-'interface inheritance' is called out by a FIXME for issue #2616 in
-`core::num`.  We might be able to clean up duplicated code between
+"interface inheritance" is called out by a FIXME for (issue
+#2616)[[https://github.com/mozilla/rust/issues/2616]] in `core::num`.
+We might be able to clean up duplicated code between
 `core/int_template.rs` and `core/uint_template.rs` with this kind of
 strategy.
-
-### Order-independence
 
 Trait composition is also _order-independent_: the trait `Ord` could
 extend multiple traits at once, with the order being irrelevant.  For
@@ -306,6 +305,7 @@ is not a problem for expressivity, because it is always possible for
 impl for _that_ type.  Alternatively, both the trait and the impl
 could be defined in `C1`.  Here's a sketch of how it would work:
 
+```
 // Instance coherence enforcement should forbid this situation
 // (assuming each module is a separate crate)
 
@@ -348,3 +348,4 @@ mod C3v2 {
     import C1v2; // imports the trait as well as its impl; can't
                  // accidentally use a conflicting impl
 }
+```
