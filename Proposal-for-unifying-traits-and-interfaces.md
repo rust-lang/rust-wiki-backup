@@ -199,9 +199,8 @@ An `iface` that presents a group of functions without mandating any
 particular implementation -- as is the case with all `iface`s in Rust
 as it stands -- leaves open the possibility of different conflicting
 implementations for a particular type.  This is known as the "instance
-coherence" problem (although in Rust perhaps we should call it
-"implementation coherence"), or just the "coherence" problem for
-short.
+coherence" problem (although in Rust we could call it "implementation
+coherence"), or just the "coherence" problem for short.
 
 Consider the following program (due to gwillen), which compiles and
 runs in Rust today:
@@ -269,3 +268,62 @@ there are conflicting implementations of the `hash` iface in `Module1`
 and `Module2`.  Neither one is wrong by itself, but when compiled
 together we get unexpected behavior.
 
+Under instance coherence, only one implementation of a trait per type
+is allowed.  Haskell enforces this property at link time, because
+conflicting implementations might only be discovered when separate
+compilation units are linked.  However, in Rust we're interested in
+forbidding conflicting implementations sooner.
+
+Consider a program consisting of four interlinked crates `C1`, `C2`,
+`C3`, and `C4`, where `C1` defines the trait `C1Trait` and `C2`
+defines the type `C2Type`.  Under instance coherence, crate `C3` would
+not be allowed to directly define an impl of `C2Type` for `C1Trait`,
+because this leaves us open to the possibility of crate `C4` doing the
+same thing, resulting in conflicting implementations.  However, this
+is not a problem for expressivity, because it is always possible for
+`C3` to create a new nominal alias for `C2Type` and then define an
+impl for _that_ type.  Alternatively, both the trait and the impl
+could be defined in `C1`.  Here's a sketch of how it would work:
+
+// Instance coherence enforcement should forbid this situation
+// (assuming each module is a separate crate)
+
+mod C1 {
+    trait C1Trait { ... }
+}
+
+mod C2 {
+    type C2Type = int;
+}
+
+mod C3 {
+    import C1;
+    import C2;
+    
+    // conflicts with potential other impls
+    impl C2Type: C1Trait { ... } 
+}
+
+// But this should be OK:
+
+mod C3v2 {
+    import C1;
+    import C2;
+    
+    enum local_myType = myType;
+    impl local_myType: C1Trait { ... }
+}
+
+// As should this:
+
+mod C1v2 {
+    import C2;
+
+    trait C1Trait { ... }
+    impl C2Type: C1Trait { ... }
+}
+
+mod C3v2 {
+    import C1v2; // imports the trait as well as its impl; can't
+                 // accidentally use a conflicting impl
+}
