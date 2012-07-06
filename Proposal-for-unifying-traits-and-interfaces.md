@@ -178,8 +178,8 @@ to implement the required methods of both `Ord` and `Eq` -- in this
 case, `lt` and `eq`.
 
 One place in the Rust compiler that could benefit from this so-called
-"interface inheritance" is called out by a FIXME for (issue
-#2616)[[https://github.com/mozilla/rust/issues/2616]] in `core::num`.
+"interface inheritance" is called out by a FIXME for [[issue
+2616]](https://github.com/mozilla/rust/issues/2616) in `core::num`.
 We might be able to clean up duplicated code between
 `core/int_template.rs` and `core/uint_template.rs` with this kind of
 strategy.
