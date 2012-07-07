@@ -2,6 +2,8 @@ When you run `make install` or install rust from a package, you will get a tool 
 
 Cargo is a decentralized system for registering, finding, installing, updating and otherwise "managing" collections of rust source code, libraries, and similar "packages". The definitions here are all somewhat loose since the conventions of use for cargo are still evolving; we encourage new rust users to register any rust code they publish by name with [cargo central](http://github.com/mozilla/cargo-central), our central cargo package list, so that other users can find your work and easily install it.
 
+Although Cargo has the basic functionalities of a package manager, it is very young and constantly evolving, just like Rust. It's still missing a few features that you'll be familiar with from other package managers. For example, at the moment Cargo is rolling-release, which is not intended, the version system is just not yet implemented. Cargo also automatically solves dependencies from crate files, however cyclic dependencies are not yet handled. Cargo may also be potentially removed in the future for a single, united Rust tool that both builds and installs packages/dependencies.
+
 ## How it works
 
 Cargo keeps a list of "sources" from which it loads "package lists". Sources are described in a "sources file" kept in `$HOME/.cargo/sources.json`, a JSON file listing named URLs for package lists. Package lists are, themselves, JSON files called `packages.json`, loaded from the URLs specified in a sources file.
@@ -23,7 +25,39 @@ $ cargo init
 info: initialized .cargo in /home/phosphorus/.cargo
 ```
 
-### install \<name
+### install [options..] [args..]
+
+The install command accepts a variety of installation methods. By default, Cargo will install locally in the current working directory (`./.cargo/lib`). You can provide the `-g` option to install to the user's home (`$HOME/.cargo/lib`) and the `-G` option to install to the system directory (`/usr/local/lib/cargo/lib`). You can also provide the `--test` option to [run a crate's tests](https://github.com/mozilla/rust/wiki/Note-unit-testing) before installing.
+
+#### install \[source\/\]\<name | uuid\>
+
+Install a package by `uuid` or `name`. You may also provide a specific `source`.
+
+#### install \<git url\> \[ref\]
+
+Install a package via Git from `git url`. You can also optionally provide `ref`, which will be checked out before installing.
+
+#### install \<tarball url\>
+
+Install a package via curl and a tarball. 
+
+#### install \<tarball path\>
+
+Install a package from a locally-available tarball.
+
+#### install
+
+Install a package from the current working directory.
+
+#### Example
+
+```sh
+$ cargo install # installs from the cwd
+$ cargo install sdl
+$ cargo install central/sdl
+$ cargo install git://github.com/brson/rust-sdl
+$ cargo install http://example.com/pkg.tar.gz
+```
 
 ### list [sources..]
 
