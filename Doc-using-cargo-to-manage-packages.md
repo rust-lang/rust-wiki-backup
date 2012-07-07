@@ -29,11 +29,11 @@ info: initialized .cargo in /home/phosphorus/.cargo
 
 The install command accepts a variety of installation methods. By default, Cargo will install locally in the current working directory (`./.cargo/lib`). You can provide the `-g` option to install to the user's home (`$HOME/.cargo/lib`) and the `-G` option to install to the system directory (`/usr/local/lib/cargo/lib`). You can also provide the `--test` option to [run a crate's tests](https://github.com/mozilla/rust/wiki/Note-unit-testing) before installing.
 
-#### install \[source\/\]\<name | uuid\>
+#### install \[source/]\<name | uuid\>
 
 Install a package by `uuid` or `name`. You may also provide a specific `source`.
 
-#### install \<git url\> \[ref\]
+#### install \<git url\> \[ref]
 
 Install a package via Git from `git url`. You can also optionally provide `ref`, which will be checked out before installing.
 
