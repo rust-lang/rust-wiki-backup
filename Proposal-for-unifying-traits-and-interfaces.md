@@ -132,7 +132,7 @@ trait Eq {
     fn eq(a: self) -> bool;
 
     fn neq(a: self) -> bool {
-        !self.neq(a)
+        !self.eq(a)
     }
 }
 ```
