@@ -6,13 +6,114 @@ Cargo is a decentralized system for registering, finding, installing, updating a
 
 Cargo keeps a list of "sources" from which it loads "package lists". Sources are described in a "sources file" kept in `$HOME/.cargo/sources.json`, a JSON file listing named URLs for package lists. Package lists are, themselves, JSON files called `packages.json`, loaded from the URLs specified in a sources file.
 
-* `cargo help` will give you a list of commands.
-* `cargo init` will set up a `$HOME/.cargo` directory in which packages and package-lists will reside.
-* `cargo sync` will fetch package lists from the "sources" configured into the `$HOME/.cargo` directory.
-* `cargo list` will list packages registered with existing sources
-* `cargo install <package>` will install a package by name into the `$HOME/.cargo/lib` directory
+The `$HOME/.cargo/lib`, `./.cargo/lib` and `$INSTALL_DIR/cargo/lib` (e.g. `/usr/local/lib/cargo/lib` on Unix systems) directories are in the default library search path used by `rustc`, so you should be able to `use` a library crate directly after successfully installing with cargo locally, globally or to the user's home.
 
-The `$HOME/.cargo/lib` directory is part of the default library search path used by `rustc`, so you should be able to `use` a library crate directly after successfully installing with cargo.
+## Commands
+
+All Cargo commands are run using `cargo <cmd>`, where `cmd` is a specific operation/command you want to use. Not passing any command to Cargo will display a list of commands and general help information.
+
+### init
+
+The init command will initialize Cargo in the user's home directory (i.e. `$HOME/.cargo`). Cargo automatically initializes itself. This command will download the official source manifest from the Rust website and add them to cargo. *All previously added custom sources will be lost.*
+
+#### Example
+
+```sh
+$ cargo init
+info: initialized .cargo in /home/phosphorus/.cargo
+```
+
+### install \<name
+
+### list [sources..]
+
+The list command will list all sources and their packages, where packages are listed lexicographically. If you provide a list of source names, it  will only list packages from those sources.
+
+#### Example
+
+```sh
+$ cargo list
+info: syncing source: central...
+info: synced source: central
+info: central (https://raw.github.com/mozilla/cargo-central/master/packages.json)
+   >> bloomfilter, cairo, crypto, csv, elasticsearch, glfw, llvm, mecab, mongrel2, 
+   >> mre, mustache, pcre, rparse, rust-hello, rustgl_4_2_core, rustic, rustray, 
+   >> rustx, sdl, socket, sqlite, time, tnetstring, uri, uuid, zlib, zmq
+```
+
+### search <query | '*'> [tags..]
+
+The search command will search through every source for a specific package with credentials you are looking for.
+
+#### Example
+
+```sh
+$ cargo search gl
+info: syncing source: central...
+info: synced source: central
+info: central/glfw (a1848f17-c60e-469d-8b12-8f1b45d2c31f) [opengl, graphics]
+   >> glfw bindings for Rust.
+
+info: central/rustgl_4_2_core (72589cd3-f56b-40c3-b944-db257ed8b36c) [opengl, graphics]
+   >> Opengl 4.2 bindings for Rust.
+
+info: found 2 packages
+```
+
+### sources
+
+List your personal sources.
+
+#### Example
+
+```sh
+$ cargo sources
+info: central (https://raw.github.com/mozilla/cargo-central/master/packages.json) via curl
+```
+
+### sources add \<name\> \<url\>
+
+Add a source with `name` located at `url`. Cargo will figure out how to fetch the source from the URL.
+
+#### Example
+
+```sh
+$ cargo sources add central2 git://github.com/mozilla/cargo-central
+info: added source: central2
+```
+
+### sources remove \<name\>
+
+Remove a source by `name`.
+
+#### Example
+
+```sh
+$ cargo sources remove central2
+info: removed source: central2
+```
+
+### sources rename \<name\> \<new\>
+
+Rename a source from `name` to `new`.
+
+#### Example
+
+```sh
+$ cargo sources rename central2 central3
+info: renamed source: central2 to central3
+```
+
+### sources set-url \<name\> \<url\>
+
+Set a source by `name`'s url to `url`. It will re-calculate the method to use to fetch the source.
+
+#### Example
+
+```sh
+$ cargo sources set-url central git://github.com/mozilla/cargo-central
+info: changed source url: 'https://raw.github.com/mozilla/cargo-central/master/packages.json' to 'git://github.com/mozilla/cargo-central'
+```
 
 ## Registering your own packages
 
