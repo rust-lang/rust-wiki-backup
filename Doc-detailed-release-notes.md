@@ -86,6 +86,9 @@ local heap or the exchange heap.
 
 The libraries have not fully caught up to the new vector types.
 
+> Note: `[]` is currently a synonym for `~[]`. It's not clear what the former syntax will end up meaning,
+> possibly a slice or fixed-length vector.
+
 Some posts on vectors that have varying relationships to the final implementation:
 
 * [Arrays, vectors](https://mail.mozilla.org/pipermail/rust-dev/2012-March/001467.html)
