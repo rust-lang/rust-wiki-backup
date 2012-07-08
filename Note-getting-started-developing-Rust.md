@@ -15,7 +15,7 @@ Version numbers listed here are "what we're using"; the code may well work with 
 * git 1.7
 * g++ 4.4 at least on Linux, 4.5 on Windows, and the 4.x gcc in Apple's SDK for OS X.
 * curl
-* Valgrind 3.5 (recommended, but not required for Linux)
+* Valgrind 3.5 or later (recommended, but not required for Linux)
 * [pandoc](http://johnmacfarlane.net/pandoc/) 1.8 at least (optional, if you wish to build HTML docs)
 * pdflatex (optional, if you wish to build PDF docs)
 
