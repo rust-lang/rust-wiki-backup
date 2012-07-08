@@ -284,12 +284,29 @@ semantics so was removed. `do` loops were rarely used, so the `do`
 keyword was repurposed. Resources were removed in favor of class
 destructors.
 
+### Library improvements
+
+There are more methods available on more basic and core types by
+default now. Methods are generally preferred over functions
+now when there is a clear 'self' type.
+
+The standard library has a new `time` module contributed by Erick
+Tryzelaar.
+
+    let time: tm = now();
+
+    // Convert to a string
+    println(time.strftime("%D/%M/%Y"));
+
+    // tm has some built in conversions
+    println(time.ctime());   // "Thu Jan  1 00:00:00 1970"
+    println(time.rfc822());  // "Thu Jan  1 00:00:00 1970"
+    println(time.rfc3339()); // "2012-02-22T07:53:18-07:00"
+
 ### TODO
 
 Need to write about:
 
-* eliminating copies
-* Time functions
 * UV-related APIs
 
 ## 0.2 March 2012
