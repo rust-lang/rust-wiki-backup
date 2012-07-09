@@ -222,32 +222,6 @@ This is currently used by `core::arc` which provides an atomically
 reference counted, sendable type that encapsulates a `const` + `send`
 type.
 
-    fn manually_share_arc() {
-        // unique vectors are const and send kinds
-        let v = ~[1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-        let arc_v = arc::arc(v);
-
-        let p = port();
-        let c = chan(p);
-
-        do task::spawn() {
-            let p = port();
-            c.send(chan(p));
-
-            let arc_v = p.recv();
-
-            let v = *arc::get::<~[int]>(&arc_v);
-            assert v[3] == 4;
-        };
-
-        let c = p.recv();
-        c.send(arc::clone(&arc_v));
-
-        assert (*arc::get(&arc_v))[2] == 3;
-
-        log(info, arc_v);
-    }
-
 ### FFI changes
 
 The word 'native' is being expunged from the language since it implies
