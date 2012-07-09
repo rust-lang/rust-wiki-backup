@@ -264,8 +264,7 @@ There are more methods available on more basic and core types by
 default now. Methods are generally preferred over functions
 now when there is a clear 'self' type.
 
-The standard library has a new `time` module contributed by Erick
-Tryzelaar.
+The standard library has a new `time` module.
 
     let time: tm = now();
 
