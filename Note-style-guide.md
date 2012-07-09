@@ -18,6 +18,12 @@ Examples:
 
 * ```found `int` but expected `str` ```
 
+Error messages should use the word "allowed", rather than "permitted" or other synonyms.
+
+Examples:
+
+* ```type parameters are not allowed on this type```
+
 ## Interfaces
 
 [Interface](Note Interfaces) names should be verbs.
