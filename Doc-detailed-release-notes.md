@@ -252,11 +252,20 @@ The first line of a Rust source file can contain a shebang
 ### Removed features
 
 `be`, `prove`, `syntax`, `note` were unimplemented and removed from
-the language.  `mutable` is now written `mut`. `bind` had too much
-overlap with other closure forms while providing subtly different
-semantics so was removed. `do` loops were rarely used, so the `do`
-keyword was repurposed. Resources were removed in favor of class
-destructors.
+the language.  `mutable` is now written `mut`. `cont` was renamed
+to `again`. `bind` had too much overlap with other closure forms 
+while providing subtly different semantics so was removed. `do` 
+loops were rarely used, so the `do` keyword was repurposed. Resources
+were removed in favor of class destructors.
+
+### Reflection system
+
+A preliminary reflection system now exists. Type descriptors contain 
+a compiler-generated function that calls visitor-methods on a predefined
+intrinsic visitor interface. This enables reflecting on a value without
+knowing its type (with some supporting library work). Much existing code
+will gradually shift over to this interface, as it subsumes a number of
+other tasks the compiler and runtime are currently doing as special cases.
 
 ### Library improvements
 
