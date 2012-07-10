@@ -14,10 +14,6 @@ We may change the module-separator from `::` back to `.`. There's little consens
 
 ([#2216](https://github.com/mozilla/rust/issues/2216)) Loops currently cannot carry labels, which makes breaking from deep within a loop difficult. There's a pretty clear way to implement this, it just requires some care to avoid clashing with nearby syntax.
 
-### Removing the `cont` keyword in favour of something else
-
-([#2229](https://github.com/mozilla/rust/issues/2229)) Renaming to `again` (not `continue` since all other syntax changes are converging once more on sub-5-letter keywords). Totally cosmetic change.
-
 ### Macro-invocation change, general macro-system rewrite
 
 ([#2387](https://github.com/mozilla/rust/issues/2387)) Macros are changing to work on uniform balanced token-trees -- much like s-expressions -- rather than the existing system which is based on expressions (with separate quoters for type, item and pattern grammars). Concurrently, we are likely to introduce the "new" macro system with a new syntax that is a bit easier on the eyes: `macro_name! args`, where args is a balanced token-tree. There's still some disagreement on whether this reads better than `#macro_name(...)` but we'll decide at some point and stick with one or the other.
@@ -25,10 +21,6 @@ We may change the module-separator from `::` back to `.`. There's little consens
 ### Raw-strings rather than balanced-character custom lexemes
 
 ([#2755](https://github.com/mozilla/rust/issues/2755)) This is a minor change that should effect no code presently; we'll be introducing a "raw string" form (possibly with a variety of legal delimiters) that does _not_ balance the delimiter characters, so requires internal escaping of only the delimiter. This will replace the proposed (but never implemented) character-balanced custom lexeme syntax in the syntax-extension system. The cost of having a non-regular token grammar was deemed not worth the benefit, and most of the use cases for the latter are easily handled by the former.
-
-### Terminology and syntax change on region pointers
-
-(motivated by [nmatsakis:region-patterns](http://smallcultfollowing.com/babysteps/blog/2012/06/10/unifying-patterns-in-alts-and-lets/)) We will likely change the unsafe-pointer sigil from `*` to `^` and the region-pointer sigil from `&` to `*`, and change to referring to them as "borrowed pointers". There is no semantic change here, just a clarification one. The sigil change is motivated by a desire to differentiate a by-reference capture in a pattern (likely to use the `&` operator) from a borrowed pointer constructor in the pattern itself. Also due to the fact that, like C pointers (and unlike C++ `&`-references), region pointers can be independently copied and assigned _as first-class values_, not just initialized.
 
 ### Change closure-kind syntax
 
@@ -90,15 +82,11 @@ The kind exists to support various library functions, for example a reference-co
 
 ### Type-reflection system
 
-([#1498](https://github.com/mozilla/rust/issues/1498)) A very preliminary form of this should arrive in 0.3: type descriptors contain a compiler-generated function that calls visitor-methods on a predefined intrinsic visitor interface. This enables reflecting on a value without knowing its type (with some supporting library work). Much existing code will gradually shift over to this interface, as it subsumes a number of other tasks the compiler and runtime are currently doing as special cases.
+([#1498](https://github.com/mozilla/rust/issues/1498)) A very preliminary form of will arrive in 0.3 and be extended over time to cover many tasks: type descriptors contain a compiler-generated function that calls visitor-methods on a predefined intrinsic visitor interface. This enables reflecting on a value without knowing its type (with some supporting library work). Much existing code will gradually shift over to this interface, as it subsumes a number of other tasks the compiler and runtime are currently doing as special cases.
 
 ## Compilation and linkage-model changes
 
 There are a bunch of changes in here, all inter-related. They're mostly agreed-on though.
-
-### Change `crust` and `native` to `extern`
-
-([#2082](https://github.com/mozilla/rust/issues/2082)) This just gets rid of a couple keywords and feeds into the third item. When an item is marked with `extern`, if it does not have a body it is a declaration of code-written-in-C (or some other foreign language) linked to rust; if it has a body it is a declaration of code-written-in-rust that should be exposed via some foreign ABI.
 
 ### Separate form of module import: `mod foo = bar;`
 
@@ -115,10 +103,6 @@ There are a bunch of changes in here, all inter-related. They're mostly agreed-o
 ### Remove the distinction between crate files and source files
 
 ([#2176](https://github.com/mozilla/rust/issues/2176)) Crate files are at this point mostly an artefact of earlier beliefs that turned out not to be true (or convenient) in the compilation model. We believe they are now doing more harm than good, and their features can be presented as an "early pass" in the compilation model of a single tree of source files. Inter-file linkages will be given (within a crate) by the form `mod foo = "path.rs"`.
-
-### Doc-comments
-
-([#2498](https://github.com/mozilla/rust/issues/2498)) Even with the smallest in-attribute syntax we could come up with, `#[doc="..."]`, we are still finding the documentation-attribute system a little too ugly to read. We will therefore support an auxiliary form of comment that is interpreted _as_ a `doc` attribute, presented in a different form but identical in semantics. Both will remain legal but we expect most users to prefer the doc-comment form, longer-term.
 
 ### Generalized variables and conditionals in the attribute system.
 
