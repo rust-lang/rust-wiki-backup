@@ -1,26 +1,38 @@
 # Rust Weekly Meeting 2012-07-10
+
 ## In attendance:
+
 - graydon
 - tjc
 - bblum, lkuper, sully, elliott, niko, brian, eholk, pauls
+
 ## Agenda:
+
 - Release soon / next day or two
 - Default branch = incoming?
 - Not doing the pointer-sigil change
 - Hygiene
+
 ## HR Notes
+
 - FYI, lkuper and sully going to be gone the 16th-28th (doesn't need to be an agenda item, really; this is just the easiest way to let everyone know :) )
 - brson will be on vacation next week and a half-ish
 - tjc gone week of july 31
+
 ## Idle chit chat
+
 - macros are kind of in but only in very experimental form
+
 ## Release soon / next day or two
+
 - Graydon: everything keeps bouncing in and out... but I think that everything we wanted for 0.3 is now in.  Some reflection code still to come but it's not crucial.
 - Graydon: is there anything that must go in which is not in yet?
 - *crickets*
 - Graydon: I will have to disappear into release engineering (S3, buildbot, etc).  I am going to have to ask everyone to stop pushing stop for a while because automation gets overwhelmed and we don't have a way to make it stop building.
 - Graydon: Now is a good time to do Fun Experimental Background Work (tm).
+
 ## Default branch = incoming?
+
 - Graydon: someone (Eric?) was filing a pull request the other day against the wrong branch, and the question came up, "Why does github point us to master if we should be working against incoming?"
     - There is a setting called the default branch which is also reflected in git
     - It's the one that gets displayed on UI, etc
@@ -38,11 +50,15 @@
 - graydon: I think I'll just set it back for now 
 - graydon: maybe just educate those who do have pull requests to target them appropriately
 - conclusion: will reset default to master
+
 ## Not doing pointer sigil change
+
 - graydon: per discussion on IRC towards end of day yesterday, we discussed changing pointer sigils.  Change was motivated by a problem in pattern matching, we wanted to differentiate between by-ref taking.
 - graydon: Short story: keep sigils same and muck around with pattern syntax instead.
 - graydon: & == borrowed ptr, * == unsafe ptr
+
 ## Hygiene
+
 - pauls: now that token tree stuff has landed want to work on hygiene
 - pauls: big things are hygiene, import/export
 - pauls: hygiene seems like something you don't want to put off forever
