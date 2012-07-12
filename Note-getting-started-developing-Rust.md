@@ -33,7 +33,7 @@ instructions](http://johnmacfarlane.net/pandoc/installing.html).
 
 ### Windows
 
-We recommend developing under [MSYS and MinGW](http://www.mingw.org) using their auto-installer. Be careful with versions: the version dated [20110802](http://sourceforge.net/projects/mingw/files/Installer/mingw-get-inst/mingw-get-inst-20110802/mingw-get-inst-20110802.exe/download) is known to work _so long as you use the build-in package list_, and wind up with gcc 4.5; later versions including gcc 4.7 are known _not_ to work due to a [bug with LLVM](https://github.com/mozilla/rust/issues/2641), and possibly other reasons; we're unclear on the cause.
+We recommend developing under [MSYS and MinGW](http://www.mingw.org) using their auto-installer. Be careful with versions: the version dated [20110802](http://sourceforge.net/projects/mingw/files/Installer/mingw-get-inst/mingw-get-inst-20110802/mingw-get-inst-20110802.exe/download) is known to work _so long as you use the built-in package list_, and wind up with gcc 4.5; later versions including gcc 4.7 are known _not_ to work due to a [bug with LLVM](https://github.com/mozilla/rust/issues/2641), and possibly other reasons; we're unclear on the cause.
 
 Once installed, we tend to work inside the MSYS shell.
 
