@@ -33,7 +33,7 @@ instructions](http://johnmacfarlane.net/pandoc/installing.html).
 
 ### Windows
 
-We recommend developing under the newest [MSYS and MinGW](http://www.mingw.org) using their auto-installer (the version dated 20110802 is known to work), and performing the build in the MSYS Shell.
+We recommend developing under [MSYS and MinGW](http://www.mingw.org) using their auto-installer. Be careful with versions: the version dated [20110802](http://sourceforge.net/projects/mingw/files/Installer/mingw-get-inst/mingw-get-inst-20110802/mingw-get-inst-20110802.exe/download) is known to work; later versions including gcc 4.7 are known _not_ to work. Once installed, we tend to work inside the MSYS shell.
 
 For Git, we recommend [MsysGit](http://code.google.com/p/msysgit/) and if you use that you will want to put the git binary path *after* the MinGW path. So add a line like the following to your `.bashrc`:
 
