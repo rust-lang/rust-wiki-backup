@@ -16,13 +16,17 @@ Rust code in error messages should be enclosed in backquotes.
 
 Examples:
 
-* ```found `int` but expected `str` ```
+* ```found `true` in restricted position```
 
 Error messages should use the word "allowed", rather than "permitted" or other synonyms.
 
 Examples:
 
 * ```type parameters are not allowed on this type```
+
+Error messages should use the pattern "expected `X`, found `Y`".  (Note: right now, we're inconsistent about this; most of the compiler uses "expected `X` but found `Y`".  Still, we consistently use the backquotes and the words "expected" and "found", rather than, say, "expecting" and "got".
+
+* ```mismatched types: expected `u16`, found `u8````
 
 ## Interfaces
 
