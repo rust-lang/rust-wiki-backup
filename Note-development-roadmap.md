@@ -98,7 +98,7 @@ There are a bunch of changes in here, all inter-related. They're mostly agreed-o
 
 ### Change `use` to mean `import`, remove `import`, make crate-linkage use `extern mod foo = (...);`
 
-(also [#2082](https://github.com/mozilla/rust/issues/2082)) Many Rust programmers stub their toes on the difference between `import` and `use`; both "read like" they should somehow make-available the elements in the target module. Since we are getting rid of `export` (see below) there is an asymmetry in the keywords anyways, so we remove the keyword `import`, switch `use` to mean what `import` currently means, and denote crate-linkage through `extern mod foo = (...)`.
+(also [#2082](https://github.com/mozilla/rust/issues/2082)) Many Rust programmers stub their toes on the difference between `import` and `use`; both "read like" they should somehow make-available the elements in the target module. Since we are getting rid of `export` (see above) there is an asymmetry in the keywords anyways, so we remove the keyword `import`, switch `use` to mean what `import` currently means, and denote crate-linkage through `extern mod foo = (...)`.
 
 ### Remove the distinction between crate files and source files
 
