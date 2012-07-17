@@ -32,6 +32,7 @@ Listing of minutes from meetings
 * [[Meeting weekly 2012-06-26]] (vectors; resolve; 0.3; traits; coherence; linked failure)
 * [[Meeting weekly 2012-07-03]] (bug tracking; macro sigil change; buildbot;channel contracts/pipes; libcore/libstd blurring)
 * [[Meeting weekly 2012-07-10]] (procedural things related to 0.3, macros)
+* [[Meeting weekly 2012-07-17]] (IFCP contest; purity inference; any type; incremental recompilation; bug policy; updates)
 
 ## In-person meetings:
 
