@@ -168,7 +168,7 @@ allocation to copy (unique boxes) or that contain mutable fields
 are not implicitly copyable. These are warnings now but will be either errors
 by default or entirely disallowed by the typesystem in the future.
 
-* implicit_copys - performing a copy of a non-implicitly copyable type without
+* implicit_copies - performing a copy of a non-implicitly copyable type without
                    the `copy` keyword
 * vecs_not_implicitly_copyable - same as above but for vectors
 * non_implicitly_copyable_typarams - use of generics whose type parameters
