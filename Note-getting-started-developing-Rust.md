@@ -17,7 +17,7 @@ Version numbers listed here are "what we're using"; the code may well work with 
 * curl
 * Valgrind 3.5 or later (recommended, but not required for Linux)
 * [pandoc](http://johnmacfarlane.net/pandoc/) 1.8 at least (optional, if you wish to build HTML docs)
-* pdflatex (optional, if you wish to build PDF docs) (there may be conflicts on older Ubuntu systems, per #1692)
+* pdflatex (optional, if you wish to build PDF docs) (there may be conflicts on older Ubuntu systems, per [#1692](https://github.com/mozilla/rust/issues/1692))
 
 ### Debian-based Linux distributions
 
