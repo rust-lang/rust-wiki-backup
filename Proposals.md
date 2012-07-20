@@ -12,6 +12,7 @@ Listing of proposals
 * [[Proposal for all-or-nothing mut]]
 * [[Proposal for const kind]]
 * [[Proposal for unifying traits and interfaces]]
+* [[Proposal for linked task failure]]
 
 ## Accepted
 
