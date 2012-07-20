@@ -7,7 +7,6 @@
 * Memory safe. No null pointers, wild pointers, etc. Automatic storage management.
 * Mutability control. Immutable by default. No shared mutable state across tasks.
 * Dynamic execution safety: task failure / unwinding, trapping, logging. RAII / dtors.
-* Typestate system: ability to define complex invariants that hold over data structures.
 
 #### Concurrency and efficiency oriented:
 
@@ -66,7 +65,7 @@ Yes. All development happens in lock-step on all 3 target platforms. Using mingw
 
 ### Are there any big programs written in it yet? I want to read big samples.
 
-The Rust compiler, 40,000+ lines at the time of writing, is written in Rust. See the `src/comp/` directory.
+The Rust compiler, 40,000+ lines at the time of writing, is written in Rust. See the `src/rustc/` directory.
 
 ### Have you seen this Google language, Go? How does Rust compare?
 
