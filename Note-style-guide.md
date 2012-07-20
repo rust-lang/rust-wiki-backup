@@ -18,7 +18,7 @@ Examples:
 
 * ```found `true` in restricted position```
 
-Error messages should use the word "allowed", rather than "permitted" or other synonyms.
+Error messages should use the word "allowed", rather synonyms like "permitted" or antonyms like "prohibited".
 
 Examples:
 
