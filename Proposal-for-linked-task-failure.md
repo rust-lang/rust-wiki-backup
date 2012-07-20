@@ -111,6 +111,7 @@ The reason/blocker for the current implementation is the need for each task to k
     enum ancestors {
         nil,
         cons(exclusive<{
+            generation:   uint,
             parent_group: taskgroup_arc,
             ancestors:    ancestors
         }>)
@@ -122,3 +123,5 @@ The reason/blocker for the current implementation is the need for each task to k
         ancestors: ancestors,
         is_main:   bool
     }
+
+The generation counter in the cons-list can be asserted on to make sure the list never gets circular. This would be a good idea because having circular exclusive ARC references would make the world end (deadlock & memory leak both).
