@@ -1,4 +1,6 @@
-_This document corresponds to https://github.com/Havvy/rust-docs/blob/master/doc/readwrite.md so if you make edits, please notify Havvy or send a pull request there._
+_This document corresponds to 
+https://github.com/Havvy/rust-docs/blob/master/doc/readwrite.md so if you
+make edits, please notify Havvy or send a pull request there._
 
 Writing and reading files. Important in any language. Here's how to do so in
 Rust. This page will focus on the API and not on the language constructs.
@@ -44,8 +46,10 @@ used, but for the programs on this page, I will first assert that they are ok.
 The following three functions will be used from core::result(2).
 
 1. is_err<T, E>(result<T, E>) -> bool: True iff result<T, E> is err(E).
-2. unpack<T, E>(result<T, E>) -> T: Return T in ok(T) if result is ok(T).
-Otherwise, fails.
+2. get_err<T, E>(result<T, E>) -> E: Returns E in err(E) if result is err(e).
+Otherwise fails.
+3. unpack<T, E>(result<T, E>) -> T: Return T in ok(T) if result is ok(T).
+Otherwise, fails. Consumes the result<T, E>.
 
 More functions, including methods for chaining and iterating can be found in
 the module. They will not be used here.
@@ -55,15 +59,15 @@ the module. They will not be used here.
 The code shown here are all tests, or helper functions for tests. As such,
 assertions will test for expected results of running the test. The tests are
 also written expecting that the program is at /home/havvy and that there is a
-file test.txt containing the contents "success" in the same directory.
+file read.txt containing the contents "success" in the same directory.
 
 The io and result functions, traits, and types are imported in the header.
 
-### Reading Files
+## Reading Files
 
-To begin, let us read bytes from test.txt.
+To begin, let us read bytes from read.txt.
 
-## The Testing Function
+### The Testing Function
 
 ~~~~
 fn is_success (-path: str) {
@@ -72,7 +76,7 @@ fn is_success (-path: str) {
 
     // [2]
     if is_err::<reader, str>(maybe_test_reader) {
-        io::println(result::get_err(maybe_test_reader));
+        #warn(result::get_err(maybe_test_reader));
         assert false;
     }
     let test_reader: reader = result::unwrap(maybe_test_reader);
@@ -135,7 +139,7 @@ An absolute URL begins with the root directory, '/'.
 ~~~~
 #[test]
 fn read_absolute_file () {
-    is_success("/home/havvy/test.txt");
+    is_success("/home/havvy/read.txt");
 }
 ~~~~
 
@@ -149,24 +153,127 @@ program is called from /home/havvy/, then a path of test.txt will read from
 Directories named '.' and '..' has special meaning. '.' will go to the current
 directory, while '..' goes one directory up.
 
-The paths test.txt and ./test.txt are equivelent. The following two tests will
-either both pass or both fail, depending on whether or not the file exists in
-the directory the program is ran from and whether or not the file contains the
-contents "success".
+The paths test.txt and ./test.txt are equivelent. This test will pass or fail,
+depending on whether or not the file exists in the directory the program is
+ran from and whether or not the file contains the contents "success".
 
 ~~~~
 #[test]
 fn read_relative_file () {
-    is_success("./test.txt");
-}
-
-#[test]
-fn read_relative_file_2 () {
-    is_success("test.txt");
+    is_success("./read.txt");
+    is_success("read.txt");
 }
 ~~~~
 
+## Interlude: Some helper methods
+
+Unpacking the reader, and in the next section, the writer follows the same
+steps each time. Since we don't want to see the same algorithm over and over
+again, the functions freader and fwriter are defined that return readers and
+writers unpacked already.
+
+~~~~
+fn freader (-path: str) -> reader {
+    let maybe_reader = file_reader(path);
+
+    if is_err::<reader, str>(maybe_reader) {
+        #info("%s", get_err(maybe_reader));
+        assert false;
+    }
+
+    unwap(maybe_reader)
+}
+
+fn fwriter (-path: str) -> writer {
+    let maybe_writer = file_writer(path);
+
+    if is_err::<writer, str>(maybe_writer) {
+        #warn("%s", get_err(maybe_writer));
+        assert false;
+    }
+
+    unwap(maybe_writer)
+}
+~~~~
+
+In the writer section, there needs to be a guarantee that the file being 
+written to is empty. An empty file will return EOF as the first byte, and as 
+such, the is_empty function will return whether or not this is true.
+
+~~~~
+fn is_empty (-path: str) -> bool {
+    freader(path).read_byte() == -1
+}
+~~~~
+
+## Better Reader Methods
+
+Reading one byte at a time is silly. And the reader trait has another trait
+built off it containing a lot more methods. Here are some of these methods:
+
+* fn read_line() -> ~str
+* fn read_whole_stream() -> ~[u8]
+* fn each_char(iterator: fn(char) -> bool)
+* fn each_line(iterator: fn(~str) -> bool)
+
+Note that reading one line gives a string while reading the whole stream gives
+a u8 vector.
+
+You can get these methods with `import io::reader_util;`.
+
+If you have not seen iterators in rust before, they do something with the
+contents given them and then return true to keep continuing through iteration
+or false to break the loop. It could be useful for a generator.
+
+The other three can be used for reading read.txt and getting its contents. The
+test method below demonstrates this.
+
+~~~~
+fn is_success2 (-path: str) {
+    let reader = freader(path);
+    assert reader.read_line() == "success";
+    assert reader.eof();
+}
+
+#[test]
+fn utility_read_fns () {
+    is_success2("read.txt");
+    assert freader("read.txt").read_whole_stream() == 
+        ~[115, 117, 99, 99, 101, 115, 115]
+    
+    freader("read.txt").each_line(fn@ (line: str) -> bool {
+        assert line == "success"; true
+    });
+}
+~~~~
+
+The rest of this guide will be using is_success2 over is_success.
+
 ## Writing Files
+
+Writing files is slightly harder, since we need to undo any changes that are
+made afterwards. As such, the first test will write a few bytes, and the next
+test will then remove those bytes.
+
+### Setup
+
+The file being worked on will be /home/havvy/write.txt. The tests assume that
+the file already exists and is 0 bytes. Such a file can be made on a unix
+system with the command `touch /home/havvy/write.txt`.
+
+To make sure the file is empty, the following test case is ran.
+
+~~~~
+#[test]
+fn write_dot_txt_is_empty () {
+    assert is_empty("write.txt");
+}
+~~~~
+
+### Write Success
+
+
+
 
 ## References
 
