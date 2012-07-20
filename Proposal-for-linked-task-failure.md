@@ -28,7 +28,7 @@ In addition to the three spawn modes, there will be a special interface to expli
     do task::task().in_group(g).spawn { ... }
     do task::task().in_group(g).spawn { ... }
 
-## Taskgroup tree and failure propagation.
+## Taskgroup tree and failure propagation
 
 Spawning parented tasks results in a task tree much like that of the UNIX process model. Failure propagates downwards; if task A parents B which parents C, and A fails, both B and C will be killed.
 
@@ -62,6 +62,7 @@ Each task keeps a taskgroup data structure in task-local storage. These each hav
 ### Current
 
 I use dvec for the lists, because it's the best sendable data structure we have (see issue #2816). Tasks know their own index into the list. By keeping an additional list of empty slots in the dvec, both addition and removal become O(1).
+
     type taskgroup_arc = exclusive<{
         refcount:             uint,
         tasks:                dvec<option<rust_task *>>,
