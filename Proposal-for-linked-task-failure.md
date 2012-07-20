@@ -55,6 +55,22 @@ Another interaction arises from being able to spawn into other groups. In this e
         fail;
     }
 
+A problem with this feature is it'd be a huge hassle to implement support for multi-parented groups. Something like this:
+
+    let g = task::group();
+    do task::task().parented().in_group(g).spawn {
+        loop { task::yield(); } // A
+    }
+    do task::spawn_unlinked { // B
+        do task::task().parented().in_group(g).spawn { // C
+        }
+        fail;
+    }
+
+Does B's failure propagate to A even after C has gone?
+
+As such, I'm not sure if I'm going to add this option.
+
 ## Implementation
 
 Each task keeps a taskgroup data structure in task-local storage. These each have references to exclusive ARCs, one per taskgroup, which contain a list of all tasks in the group. When a task exits cleanly, it removes itself from the shared list. When a task fails, it iterates over the shared list and kills each task on the list. (A task's presence on the list indicates that it's still alive, and safe to be killed.)
