@@ -14,6 +14,9 @@ Listing of documentation for users
 * [[Doc using rustdoc]]
 * [[Doc Memory, modes, and mutation]], _a guide for the perplexed_
 
+### Library tutorials
+* [[Doc Reading and writing files]]
+
 ## FAQs
 
 * [[Doc language FAQ]]
