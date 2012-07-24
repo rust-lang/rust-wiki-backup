@@ -4,12 +4,12 @@ Development policy for Rust.
 
 If you are already have <a href="http://www.mozilla.org/hacking/commit-access-policy/">Level 1 Access</a> to commit within the Mozilla project you may commit directly to this repository. Email one of the existing authors and ask for commit access if you want to be contributing quickly and regularly this way.
 
-More likely is a fork and pull request, for which you will need a Github account; if you're unclear on this process, see Github's documentation on [forking](https://help.github.com/articles/fork-a-repo) and [pull requests](https://help.github.com/articles/using-pull-requests). Pull requests should be targeted at Rust's `incoming` branch (note that by default Github will aim them at the `master` branch). Before pushing to your Github repo and issuing the pull request, please do two things:
+More likely is a fork and pull request, for which you will need a Github account; if you're unclear on this process, see Github's documentation on [forking](https://help.github.com/articles/fork-a-repo) and [pull requests](https://help.github.com/articles/using-pull-requests). Pull requests should be targeted at Rust's `incoming` branch (note that by default Github will aim them at the `master` branch) -- see "Changing The Commit Range and Destination Repository" in Github's documentation on [pull requests](https://help.github.com/articles/using-pull-requests). Before pushing to your Github repo and issuing the pull request, please do two things:
 
 1. [Rebase](http://git-scm.com/book/en/Git-Branching-Rebasing) your local changes against the `incoming` branch. Resolve any conflicts that arise.
 2. Run the full Rust test suite with the `make check` command. You're not off the hook even if you just stick to documentation; code examples in the docs are tested as well!
 
-Pull requests will be treated as "review requests", and we will give feedback we expect to see corrected on [style](https://github.com/mozilla/rust/wiki/Note-style-guide) and substance before pulling. Changes contributed via pull request should focus on a single issue at a time, like any other. Do not try to use pull-requests as a way to "sneak" unrelated changes in.
+Pull requests will be treated as "review requests", and we will give feedback we expect to see corrected on [style](https://github.com/mozilla/rust/wiki/Note-style-guide) and substance before pulling. Changes contributed via pull request should focus on a single issue at a time, like any other. We will not look kindly on pull-requests that try to "sneak" unrelated changes in.
 
 Regular contributors who do not have Level 1 Access within the Mozilla project may request commit access, whereupon they will be required to sign a <a href="http://www.mozilla.org/hacking/notification/">Committer's Agreement</a> with the Mozilla Foundation.
 
