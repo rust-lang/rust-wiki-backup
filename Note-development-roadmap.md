@@ -24,7 +24,7 @@ We may change the module-separator from `::` back to `.`. There's little consens
 
 ### Change closure-kind syntax
 
-Closures have to encode their kind (whether they copy their environment, uniquely copy the unique parts, or only hold a safe reference to it). Currently this is indicated by a sigil: `fn@` or `fn~` or `fn&` or such. We're likely to change this to one of the kind names trailing the word `fn`. That is, call it `fn:copy` or `fn:send`.
+([#3056](https://github.com/mozilla/rust/issues/3056)) Closures have to encode their kind (whether they copy their environment, uniquely copy the unique parts, or only hold a safe reference to it). Currently this is indicated by a sigil: `fn@` or `fn~` or `fn&` or such. We're likely to change this to one of the kind names trailing the word `fn`. That is, call it `fn:copy` or `fn:send`.
 
 ### `alt` syntax changes
 
