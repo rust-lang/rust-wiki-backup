@@ -36,7 +36,7 @@ We may change the module-separator from `::` back to `.`. There's little consens
 
 ### Floating point literals
 
-There is general consensus that floating point literals are too long; `1.0f` will likely become sugar for `1.0f32`. This is purely a backwards-compatible change.
+([#3059](https://github.com/mozilla/rust/issues/3059)) There is general consensus that floating point literals are too long; `1.0f` will likely become sugar for `1.0f32`. This is purely a backwards-compatible change.
 
 ### Capitalization
 
