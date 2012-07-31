@@ -32,7 +32,7 @@ We may change the module-separator from `::` back to `.`. There's little consens
 
 ### Semicolons and return values
 
-There is the possibility that return values will need to be explicitly ignored if the programmer desires this; with this change we can make trailing semicolons optional, eliminating a frequent source of toe-stubbing.
+([#2974](https://github.com/mozilla/rust/issues/2974)) ([#3058](https://github.com/mozilla/rust/issues/3058)) There is the possibility that return values will need to be explicitly ignored if the programmer desires this; with this change we can make trailing semicolons optional, eliminating a frequent source of toe-stubbing.
 
 ### Floating point literals
 
