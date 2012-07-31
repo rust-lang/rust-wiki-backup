@@ -40,7 +40,7 @@ We may change the module-separator from `::` back to `.`. There's little consens
 
 ### Capitalization
 
-Some Rust projects are beginning to capitalize types. We will need to come to a consensus on the house style.
+([#3060](https://github.com/mozilla/rust/issues/3060)) Some Rust projects are beginning to capitalize types. We will need to come to a consensus on the house style.
 
 ## OO-system changes
 
