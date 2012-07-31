@@ -58,9 +58,9 @@ We may change the module-separator from `::` back to `.`. There's little consens
 
 One way or another (there are at least 2, maybe 3 ways in discussion) we will be enforcing that only one implementation of an interface (or trait) exists per type, and removing the relationship between `impl` selection and imported symbols altogether. This may happen by a per-crate static check during compile time, or it may happen by construction (making it impossible to declare implementations outside traits).
 
-### Destructors change to an iface
+### Destructors change to a trait
 
-Currently we have a full "language level" construct for a value-with-a-destructor: a `drop` block inside a class. This is still more machinery than strictly necessary, and we wish to transition to merely interpreting the presence of a distinguished interface (`intrinsic::drop`) as indicative of a value having a destructor. All the same kind-related rules will apply, this is just a matter of removing surface machinery from the language.
+([#3061](https://github.com/mozilla/rust/issues/3061)) Currently we have a full "language level" construct for a value-with-a-destructor: a `drop` block inside a class. This is still more machinery than strictly necessary, and we wish to transition to merely interpreting the presence of a distinguished interface (`intrinsic::drop`) as indicative of a value having a destructor. All the same kind-related rules will apply, this is just a matter of removing surface machinery from the language.
 
 ## Memory model changes
 
