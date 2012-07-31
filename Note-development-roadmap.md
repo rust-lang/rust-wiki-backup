@@ -6,6 +6,10 @@ Items on this page will move to the [[Doc detailed release notes]] page as they 
 
 ## Miscellaneous cleanups, mostly syntax
 
+### Module-separator change (possible)
+
+We may change the module-separator from `::` back to `.`. There's little consensus on this at the moment.
+
 ### Labeled loops
 
 ([#2216](https://github.com/mozilla/rust/issues/2216)) Loops currently cannot carry labels, which makes breaking from deep within a loop difficult. There's a pretty clear way to implement this, it just requires some care to avoid clashing with nearby syntax.
