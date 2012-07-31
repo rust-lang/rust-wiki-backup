@@ -1,3 +1,8 @@
+#### Impls on structural types under new coherence rules
+
+* 2012-07-28 - dretch
+* 2012-07-30 - bjz
+
 #### Trailing semis
 
 * 2012-06-19 - donpdonp
