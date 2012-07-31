@@ -74,7 +74,7 @@ One way or another (there are at least 2, maybe 3 ways in discussion) we will be
 
 ### Add a `const` kind and freeze/thaw operations
 
-Rust types are stratified into different "kinds": the `copy` kind or the `send` kind, for example. These appear in the type system as special interfaces but their existence and the conformance of a type to the interface is implemented by the compiler, by analyzing the structure of the type. For example, the compiler will not make a type with a destructor, or a function that captures its environment by reference, a member of the `copy` kind, as it cannot be sensibly copied; likewise a type with `@`-values in its substructure cannot be safely sent between tasks, so will not be put in the `send` kind.
+([#2941](https://github.com/mozilla/rust/issues/2941)) Rust types are stratified into different "kinds": the `copy` kind or the `send` kind, for example. These appear in the type system as special interfaces but their existence and the conformance of a type to the interface is implemented by the compiler, by analyzing the structure of the type. For example, the compiler will not make a type with a destructor, or a function that captures its environment by reference, a member of the `copy` kind, as it cannot be sensibly copied; likewise a type with `@`-values in its substructure cannot be safely sent between tasks, so will not be put in the `send` kind.
 
 A new kind is appearing in 0.3, called `const`, that applies to `send`-kind types that additionally have no `mut` fields anywhere in their substructure. These types are, for the sake of concurrent access, _read only_ values that can be safely read by multiple threads at the same time. They're as good as values held in the read-only segment of a program.
 
