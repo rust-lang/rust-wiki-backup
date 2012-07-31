@@ -34,6 +34,7 @@ Listing of minutes from meetings
 * [[Meeting weekly 2012-07-10]] (procedural things related to 0.3, macros)
 * [[Meeting weekly 2012-07-17]] (IFCP contest; purity inference; any type; incremental recompilation; bug policy; updates)
 * [[Meeting weekly 2012-07-24]] (mutability; linked-failure)
+* [[Meeting weekly 2012-07-31]] (macros; hashing; parentheses; structural records; explicit self; static methods; KEYWORDS!)
 
 ## In-person meetings:
 
