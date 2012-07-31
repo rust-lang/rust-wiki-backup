@@ -8,7 +8,7 @@ Items on this page will move to the [[Doc detailed release notes]] page as they 
 
 ### Module-separator change (possible)
 
-We may change the module-separator from `::` back to `.`. There's little consensus on this at the moment.
+We may change the module-separator from `::` back to `.`. There's little consensus on this at the moment. (This is probably not going to happen).
 
 ### Labeled loops
 
