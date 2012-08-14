@@ -28,13 +28,13 @@ Error messages should use the pattern "expected \`X\`, found \`Y\`".  (Note: rig
 
 * ```mismatched types: expected `u16`, found `u8` ```
 
-## Interfaces
+## Trait
 
-[Interface](Note Interfaces) names should be verbs.
+[Trait](http://dl.rust-lang.org/doc/tutorial.html#traits) names should be capitalized and should follow the pattern of `Verb` or `Verber`, except in cases where no verb seems sensible.
 
 Examples:
 
-* ```iterate```
+* ```Iterate```
 
 ## Predicates
 
