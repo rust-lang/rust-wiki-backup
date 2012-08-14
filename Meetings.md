@@ -36,6 +36,7 @@ Listing of minutes from meetings
 * [[Meeting weekly 2012-07-24]] (mutability; linked-failure)
 * [[Meeting weekly 2012-07-31]] (macros; hashing; parentheses; structural records; explicit self; static methods; KEYWORDS!)
 * [[Meeting weekly 2012-08-07]] (Case classes; syntax)
+* [[Meeting weekly 2012-08-14]] (labels; common fields in enums; trait-with-impl syntax; macros and crate dependencies; default methods)
 
 ## In-person meetings:
 
