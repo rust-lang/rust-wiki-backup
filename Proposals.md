@@ -12,7 +12,6 @@ Listing of proposals
 * [[Proposal for all-or-nothing mut]]
 * [[Proposal for const kind]]
 * [[Proposal for unifying traits and interfaces]]
-* [[Proposal for linked task failure]]
 
 ## Accepted
 
@@ -23,6 +22,7 @@ Listing of proposals
 * [[Proposal for logging]]
 * [[Proposal for crate format]]
 * [[Proposal for Lightweight RFC Process]]
+* [[Proposal for linked task failure]]
 
 ## Withdrawn
 
