@@ -18,6 +18,7 @@ This is a compendium of ```match check``` expressions in libraries and rustc. My
   * code dealing with expr_log things (made log_level an enum instead of an int)
   * matching on optimization levels in ```back::link``` and ```driver::driver``` (make optimization level an enum)
   * Log levels in ```expr_log``` (make it an enum rather than a uint)
+  * ```syntax::attrs::find_linkage_metas``` (addressed by inlining ```find_linkage_attrs```, which didn't really need to be a separate function, into ```find_linkage_metas```)
 1. Addressed by non-trivial refactoring (see send_map for an example)
   * core::send_map (several)
   * matches on ```ast::expr_loop_body``` and ```ast::expr_do_body``` things (refactoring the AST to eliminate junk -- this could have been also addressed with subsets-of-enums)
