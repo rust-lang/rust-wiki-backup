@@ -29,6 +29,7 @@ This is a compendium of ```match check``` expressions in libraries and rustc. My
   * ```encoder::encode_info_for_items```: item might map to a non-item node in the AST map
   * ```attr_pass``` and ```tystr_pass``` in rustdoc: lots of table lookups where an ID might map to the wrong type of item. Could address this by having more maps.
   * ```check_alt::check_exhaustive```: also some table lookups (dependency between a thing's type and the form of a ```ctor```) (```ctor_arity``` and ```specialize``` in the same file too)
+  * ```check_const::check_item_recursion``` (const must be bound to an item)
 1. Results of metadata lookup (not much we can do here except add an error case, as in 1.)
   * trans::base::monomorphic_fn::maybe_instantiate_inline
   * ```decoder::item_to_def_like``` (the ```Variant``` case; ```item_parent_item``` returns an option)
