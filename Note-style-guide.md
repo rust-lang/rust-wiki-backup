@@ -39,3 +39,7 @@ The notable exception are generally established predicate names like "lt", "ge",
 Examples:
 
 * ```is_not_empty```
+
+## Loops
+
+A ```for``` loops is always preferable to a ```while``` loop unless the loop counts in a non-uniform way (making it difficult to express as a ```for```).
