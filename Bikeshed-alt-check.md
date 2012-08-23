@@ -13,6 +13,7 @@ This is a compendium of ```match check``` expressions in libraries and rustc. My
   * ```encoder::purity_static_method_family``` (we currently can't encode that static methods can never have purity ```extern_fn```)
 1. Difficult stuff (example: ```match len % 3 { ...``` where you know where will only be three cases. We will probably never have a fancy enough type system to make this exhaustive)
   * std::base64 impl of to_base64 for ~[u8]
+  * ```const_eval::eval_const_expr``` (relies on type soundness)
 1. Easily rewritten (for example, when you only handle a specific variant and you can just pass its components instead)
   * trans::base::make_mono_id (a vec of mono_ids all constructed with mono_precise gets consumed immediately)
   * trans::base::llvm_type_name (only called on obvious enum and class types, so just pass the def_id and substs)
