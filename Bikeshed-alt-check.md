@@ -9,6 +9,7 @@ This is a compendium of ```match check``` expressions in libraries and rustc. My
 1. Subsets of enums (hopefully will be addressed in the future with case classes / refinement types)
   * trans::base::trans_lval (type of a unary operation -- would be great if typeck could produce something with a refined type...)
   * std::list::head (great argument for refinements)
+  * ```encoder::purity_static_method_family``` (we currently can't encode that static methods can never have purity ```extern_fn```)
 1. Difficult stuff (example: ```match len % 3 { ...``` where you know where will only be three cases. We will probably never have a fancy enough type system to make this exhaustive)
   * std::base64 impl of to_base64 for ~[u8]
 1. Easily rewritten (for example, when you only handle a specific variant and you can just pass its components instead)
