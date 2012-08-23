@@ -27,6 +27,7 @@ This is a compendium of ```match check``` expressions in libraries and rustc. My
   * ```lint::check_fn``` -- there's currently no constraint that a function must have a function type (in the type context)
   * only some combinations of types are supported in a cast in ```middle::trans::consts```
   * ```encoder::encode_info_for_items```: item might map to a non-item node in the AST map
+  * ```attr_pass``` and ```tystr_pass``` in rustdoc: lots of table lookups where an ID might map to the wrong type of item. Could address this by having more maps.
 1. Results of metadata lookup (not much we can do here except add an error case, as in 1.)
   * trans::base::monomorphic_fn::maybe_instantiate_inline
   * ```decoder::item_to_def_like``` (the ```Variant``` case; ```item_parent_item``` returns an option)
