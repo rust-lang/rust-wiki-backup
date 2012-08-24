@@ -33,6 +33,7 @@ This is a compendium of ```match check``` expressions in libraries and rustc. My
   * ```check_alt::check_exhaustive```: also some table lookups (dependency between a thing's type and the form of a ```ctor```) (```ctor_arity``` and ```specialize``` in the same file too)
   * ```check_const::check_item_recursion``` (const must be bound to an item)
   * ```trans::base::trans_rec``` (expects an ```expr_rec``` to have a ```ty_rec``` type)
+  * ```trans::base::trans_expr::unrooted```: ```expr_rec``` case requires that the dest is not ```by_val```. I don't know how this invariant is guaranteed.
 1. Results of metadata lookup (not much we can do here except add an error case, as in 1.)
   * trans::base::monomorphic_fn::maybe_instantiate_inline
   * ```decoder::item_to_def_like``` (the ```Variant``` case; ```item_parent_item``` returns an option)
