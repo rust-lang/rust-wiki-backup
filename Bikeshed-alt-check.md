@@ -42,10 +42,12 @@ This is a compendium of ```match check``` expressions in libraries and rustc. My
   * ```trans::alt::extract_variant_args``` (depends on table lookup: pattern ID must have an enum type)
   * ```trans::alt::compile_submatch``` (table lookup: in one case, ```trans_opt``` is constrained to return a ```single_result```, but I don't know how that's guaranteed)
   * ```trans::base::trans_arg_expr``` (if ```ret_flag``` is a ```some```, then the expr must be a ```loop_body```, but it's hard to express this constraint)
-  * ```trans::base::trans_item``` (depends on a table lookup and fails if ```item``` isn't bound to an item in the AST map; might want to split up the AST map to avoid checks like this) (```item_path``` and ```get_item_val```, ```crate_ctxt_to_encode_parms```, ```impl::trans_static_method_callee```, ```impl::method_with_name``` have similar checks)
+  * ```trans::base::trans_item``` (depends on a table lookup and fails if ```item``` isn't bound to an item in the AST map; might want to split up the AST map to avoid checks like this) (```item_path``` and ```get_item_val```, ```crate_ctxt_to_encode_parms```, ```impl::trans_static_method_callee```, ```impl::method_with_name```, ```typeck::check::method::{report_static_candidate, ty_from_did}```, ```typeck::check::vtable::{fixup_substs, lookup_vtable, connect_trait_tps}``` have similar checks)
+  * * in the last case, changing ```bound_trait``` to take a ```def_id``` and substs instead of a ```t``` might help
   * ```trans::impl::trans_method_callee``` (requires that ```param_substs``` in the function context be non-```none```); similarly, ```resolve_vtable_in_fn_ctxt```
   * ```trans::impl::get_vtable``` (complicated invariant involving a table lookup: if ```origin```'s id is not in the table, then it must be a ```vtable_static```)
   * ```ty::get_field``` (not sure how we know that we only call this when the field is in the list)
+  * ```typeck::check::check_bare_fn``` (depends on a table lookup)
 1. Results of metadata lookup (not much we can do here except add an error case, as in 1.)
   * trans::base::monomorphic_fn::maybe_instantiate_inline
   * ```decoder::item_to_def_like``` (the ```Variant``` case; ```item_parent_item``` returns an option)
