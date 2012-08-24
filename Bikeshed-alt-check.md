@@ -44,6 +44,8 @@ This is a compendium of ```match check``` expressions in libraries and rustc. My
   * ```trans::base::trans_arg_expr``` (if ```ret_flag``` is a ```some```, then the expr must be a ```loop_body```, but it's hard to express this constraint)
   * ```trans::base::trans_item``` (depends on a table lookup and fails if ```item``` isn't bound to an item in the AST map; might want to split up the AST map to avoid checks like this) (```item_path``` and ```get_item_val```, ```crate_ctxt_to_encode_parms```, ```impl::trans_static_method_callee```, ```impl::method_with_name``` have similar checks)
   * ```trans::impl::trans_method_callee``` (requires that ```param_substs``` in the function context be non-```none```); similarly, ```resolve_vtable_in_fn_ctxt```
+  * ```trans::impl::get_vtable``` (complicated invariant involving a table lookup: if ```origin```'s id is not in the table, then it must be a ```vtable_static```)
+  * ```ty::get_field``` (not sure how we know that we only call this when the field is in the list)
 1. Results of metadata lookup (not much we can do here except add an error case, as in 1.)
   * trans::base::monomorphic_fn::maybe_instantiate_inline
   * ```decoder::item_to_def_like``` (the ```Variant``` case; ```item_parent_item``` returns an option)
