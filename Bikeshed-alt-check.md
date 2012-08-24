@@ -12,6 +12,9 @@ This is a compendium of ```match check``` expressions in libraries and rustc. My
   * std::list::head (great argument for refinements)
   * ```encoder::purity_static_method_family``` (we currently can't encode that static methods can never have purity ```extern_fn```)
   * ```trans::base::trans_lval``` (can't encode the refinement on the type of a unary operand)
+  * ```trans::base::trans_rec``` -- ```dest``` may not be a ```by_val``` (I faked this by changing the ```dest``` argument to an option that represents the subset we want)
+  * * In the same function, the expr's type must be a record type (but this depends on a table lookup)
+  * ```trans::base::trans_enum_variant``` (relies on the invariant that its argument is bound to a ```local_mem``` thing in the ```llargs``` table, but I'm not sure how that's guaranteed)
 1. Difficult stuff (example: ```match len % 3 { ...``` where you know where will only be three cases. We will probably never have a fancy enough type system to make this exhaustive)
   * std::base64 impl of to_base64 for ~[u8]
   * ```const_eval::eval_const_expr``` (relies on type soundness)
@@ -23,6 +26,8 @@ This is a compendium of ```match check``` expressions in libraries and rustc. My
   * matching on optimization levels in ```back::link``` and ```driver::driver``` (make optimization level an enum)
   * Log levels in ```expr_log``` (make it an enum rather than a uint)
   * ```syntax::attrs::find_linkage_metas``` (addressed by inlining ```find_linkage_attrs```, which didn't really need to be a separate function, into ```find_linkage_metas```)
+  * ```trans::base::trans_block_cleanups``` (take a list of cleanups instead of a block)
+  * ```trans::base::trans_loop_body``` (take the contents of an ```expr_fn_block``` instead of a general ```expr```; this could be improved even further by changing the AST)
 1. Addressed by non-trivial refactoring (see send_map for an example)
   * core::send_map (several)
   * matches on ```ast::expr_loop_body``` and ```ast::expr_do_body``` things (refactoring the AST to eliminate junk -- this could have been also addressed with subsets-of-enums)
@@ -34,6 +39,9 @@ This is a compendium of ```match check``` expressions in libraries and rustc. My
   * ```check_const::check_item_recursion``` (const must be bound to an item)
   * ```trans::base::trans_rec``` (expects an ```expr_rec``` to have a ```ty_rec``` type)
   * ```trans::base::trans_expr::unrooted```: ```expr_rec``` case requires that the dest is not ```by_val```. I don't know how this invariant is guaranteed.
+  * ```trans::alt::extract_variant_args``` (depends on table lookup: pattern ID must have an enum type)
+  * ```trans::alt::compile_submatch``` (table lookup: in one case, ```trans_opt``` is constrained to return a ```single_result```, but I don't know how that's guaranteed)
+  * ```trans::base::trans_arg_expr``` (if ```ret_flag``` is a ```some```, then the expr must be a ```loop_body```, but it's hard to express this constraint)
 1. Results of metadata lookup (not much we can do here except add an error case, as in 1.)
   * trans::base::monomorphic_fn::maybe_instantiate_inline
   * ```decoder::item_to_def_like``` (the ```Variant``` case; ```item_parent_item``` returns an option)
