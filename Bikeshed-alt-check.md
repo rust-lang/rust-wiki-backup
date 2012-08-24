@@ -37,3 +37,4 @@ This is a compendium of ```match check``` expressions in libraries and rustc. My
   * ```decoder::item_to_def_like``` (the ```Variant``` case; ```item_parent_item``` returns an option)
   * ```get_trait_methods``` (doc for method might have an item_family that's not a purity value)
   * ```decoder::family_to_visibility``` (similar)
+  * ```trans::base::maybe_instantiate_inline```, ```found_parent``` case (item could have a non-enum parent)
