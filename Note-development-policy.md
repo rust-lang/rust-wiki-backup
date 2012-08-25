@@ -11,6 +11,8 @@ More likely is a fork and pull request, for which you will need a Github account
 
 Pull requests will be treated as "review requests", and we will give feedback we expect to see corrected on [style](https://github.com/mozilla/rust/wiki/Note-style-guide) and substance before pulling. Changes contributed via pull request should focus on a single issue at a time, like any other. We will not look kindly on pull-requests that try to "sneak" unrelated changes in.
 
+Normally, all pull requests must include regression tests (see [[Note-testsuite]]) that test your change. Occasionally, a change will be very difficult to test for. In those cases, please include a note in your commit message explaining why.
+
 Regular contributors who do not have Level 1 Access within the Mozilla project may request commit access, whereupon they will be required to sign a <a href="http://www.mozilla.org/hacking/notification/">Committer's Agreement</a> with the Mozilla Foundation.
 
 ## Getting involved: how to pick your first bug
