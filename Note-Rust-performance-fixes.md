@@ -45,6 +45,14 @@ oh yeah, another thing I was thinking: stop making so many basic blocks
 pcwalton:
 especially when optimization is off, LLVM goes basic-block-by-basic-block in codegen
 
+pcwalton: oh yeah, we should also see if we can get away with not zeroing out memory when we allocate it
+
+pcwalton:
+that's like 5% of our performance right there
+
+pcwalton:
+in some profiles anyway
+
 ## Memory moves
 
 If you see large sequences of "mov" instructions, use `call_memmove` or `memzero` in trans, as appropriate. This is usually a symptom of code like `Store(bcx, Load(bcx, foo, bar), baz);`, which is *not* an efficient way to move large structural types around.
