@@ -39,6 +39,12 @@ pcwalton:
 pcwalton:
 also ty::sty comparison in the ty hashtable is calling into the shape glue. I'm going to try to fix that this week
 
+pcwalton:
+oh yeah, another thing I was thinking: stop making so many basic blocks
+
+pcwalton:
+especially when optimization is off, LLVM goes basic-block-by-basic-block in codegen
+
 ## Memory moves
 
 If you see large sequences of "mov" instructions, use `call_memmove` or `memzero` in trans, as appropriate. This is usually a symptom of code like `Store(bcx, Load(bcx, foo, bar), baz);`, which is *not* an efficient way to move large structural types around.
