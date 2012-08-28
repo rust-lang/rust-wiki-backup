@@ -38,6 +38,7 @@ Listing of minutes from meetings
 * [[Meeting weekly 2012-08-07]] (Case classes; syntax)
 * [[Meeting weekly 2012-08-14]] (labels; common fields in enums; trait-with-impl syntax; macros and crate dependencies; default methods)
 * [[Meeting weekly 2012-08-21]] (one-shot closures; type/module unification; region meta-design question; license; serialization of metadata; unsafe exports in core)
+* [[Meeting weekly 2012-08-28]] (extern; equality; method calls; enum refinements; release status; metadata)
 
 ## In-person meetings:
 
