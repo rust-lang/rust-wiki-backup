@@ -1,6 +1,6 @@
 ## 0.3.1
 
-* [Release notes](0.3.1-notes]
+* [Release notes][0.3.1-notes]
 * [Source code][0.3.1-tar] ([signature][0.3.1-tar-sig])
 
 [0.3.1-notes]: https://github.com/mozilla/rust/blob/release-0.3.1/RELEASES.txt
@@ -11,7 +11,7 @@ This was an OS X bugfix release.
 
 ## 0.3
 
-* [Release notes](0.3-notes]
+* [Release notes][0.3-notes]
 * [Source code][0.3-tar] ([signature][0.3-tar-sig])
 * [Windows installer][0.3-exe] ([signature][0.3-exe-sig])
 * [Tutorial][0.3-tutorial]
@@ -32,7 +32,7 @@ This was an OS X bugfix release.
 
 ## 0.2
 
-* [Release notes](0.2-notes]
+* [Release notes][0.2-notes]
 * [Source code][0.2-tar] ([signature][0.2-tar-sig])
 * [Windows installer][0.2-exe] ([signature][0.2-exe-sig])
 
