@@ -18,11 +18,11 @@ Listing of documentation for users
 
 ## Other documentation
 
-* [[Doc releases]]
-* [[Doc detailed release notes]]
-* [[Doc unit testing]]
+* [[Doc releases]] - Links to current and old releases and documentation
+* [[Doc detailed release notes]] - Further explanation of language changes
+* [[Doc unit testing]] - Writing tests using the build-in test driver
 * [[Doc using cargo to manage packages]]
-* [[Doc using rustdoc]]
+* [[Doc using rustdoc]] - How to extract Markdown and HTML documentation from code
 * [[Doc Memory, modes, and mutation]], _a guide for the perplexed_
 * [[Doc Reading and writing files]]
 
