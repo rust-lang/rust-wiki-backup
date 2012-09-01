@@ -16,7 +16,7 @@ Listing of documentation for users
 * [Core library](http://doc.rust-lang.org/doc/core/index.html)
 * [Standard library](http://doc.rust-lang.org/doc/std/index.html)
 
-## General instructions
+## Other documentation
 
 * [[Doc detailed release notes]]
 * [[Doc unit testing]]
