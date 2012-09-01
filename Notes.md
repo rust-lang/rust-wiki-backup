@@ -16,7 +16,6 @@ Listing of notes for developers
 
 ## Language and implementation notes
 
-* [[Note unit testing]]
 * [[Note interfaces]]
 * [[Note attributes]]
 * [[Note defined attributes]]
