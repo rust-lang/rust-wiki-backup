@@ -22,8 +22,6 @@ Listing of documentation for users
 * [[Doc using cargo to manage packages]]
 * [[Doc using rustdoc]]
 * [[Doc Memory, modes, and mutation]], _a guide for the perplexed_
-
-### Library tutorials
 * [[Doc Reading and writing files]]
 
 ## FAQs
