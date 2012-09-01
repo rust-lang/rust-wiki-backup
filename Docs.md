@@ -18,6 +18,7 @@ Listing of documentation for users
 
 ## Other documentation
 
+* [[Doc releases]
 * [[Doc detailed release notes]]
 * [[Doc unit testing]]
 * [[Doc using cargo to manage packages]]
