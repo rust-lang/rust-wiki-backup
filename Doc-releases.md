@@ -46,10 +46,7 @@ This was an OS X bugfix release.
 
 * [Release notes][0.1-notes]
 * [Source code][0.1-tar] ([signature][0.1-tar-sig])
-* [Windows installer][0.1-exe] ([signature][0.1-exe-sig])
 
 [0.1-notes]: https://github.com/mozilla/rust/blob/release-0.1/RELEASES.txt
 [0.1-tar]: http://dl.rust-lang.org/dist/rust-0.1.tar.gz
 [0.1-tar-sig]: http://dl.rust-lang.org/dist/rust-0.1.tar.gz.asc
-[0.1-exe]: http://dl.rust-lang.org/dist/rust-0.1-install.exe
-[0.1-exe-sig]: http://dl.rust-lang.org/dist/rust-0.1-install.exe.asc
