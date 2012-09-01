@@ -1,7 +1,9 @@
 ## 0.3.1
 
+* [Release notes](0.3.1-notes]
 * [Source code][0.3.1-tar] ([signature][0.3.1-tar-sig])
 
+[0.3.1-notes]: https://github.com/mozilla/rust/blob/release-0.3.1/RELEASES.txt
 [0.3.1-tar]: http://dl.rust-lang.org/dist/rust-0.3.1.tar.gz
 [0.3.1-tar-sig]: http://dl.rust-lang.org/dist/rust-0.3.1.tar.gz.asc
 
@@ -9,6 +11,7 @@ This was an OS X bugfix release.
 
 ## 0.3
 
+* [Release notes](0.3-notes]
 * [Source code][0.3-tar] ([signature][0.3-tar-sig])
 * [Windows installer][0.3-exe] ([signature][0.3-exe-sig])
 * [Tutorial][0.3-tutorial]
@@ -16,6 +19,7 @@ This was an OS X bugfix release.
 * [Core library docs][0.3-core]
 * [Standard library docs][0.3-std]
 
+[0.3-notes]: https://github.com/mozilla/rust/blob/release-0.3/RELEASES.txt
 [0.3-tar]: http://dl.rust-lang.org/dist/rust-0.3.tar.gz
 [0.3-tar-sig]: http://dl.rust-lang.org/dist/rust-0.3.tar.gz.asc
 [0.3-exe]: http://dl.rust-lang.org/dist/rust-0.3-install.exe
@@ -28,9 +32,11 @@ This was an OS X bugfix release.
 
 ## 0.2
 
+* [Release notes](0.2-notes]
 * [Source code][0.2-tar] ([signature][0.2-tar-sig])
 * [Windows installer][0.2-exe] ([signature][0.2-exe-sig])
 
+[0.2-notes]: https://github.com/mozilla/rust/blob/release-0.2/RELEASES.txt
 [0.2-tar]: http://dl.rust-lang.org/dist/rust-0.2.tar.gz
 [0.2-tar-sig]: http://dl.rust-lang.org/dist/rust-0.2.tar.gz.asc
 [0.2-exe]: http://dl.rust-lang.org/dist/rust-0.2-install.exe
