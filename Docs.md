@@ -2,7 +2,7 @@ Listing of documentation for users
 
 ## Reference documentation
 
-### Current release (0.3):
+### Current release (0.3)
 
 * [Tutorial](http://doc.rust-lang.org/doc/0.3/tutorial.html)
 * [Manual](http://doc.rust-lang.org/doc/0.3/rust.html) ([PDF](http://doc.rust-lang.org/doc/0.3/rust.pdf))
