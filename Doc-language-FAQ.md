@@ -32,28 +32,26 @@
 The syntax is still evolving, but here's a snippet from cargo, the Rust package manager:
 
 ```none
-fn install_source(c: cargo, path: str) {
-    #debug("source: %s", path);
+fn install_source(c: cargo, path: ~str) {
+    debug!("source: %s", path);
     fs::change_dir(path);
     let contents = fs::list_dir(".");
 
-    #debug("contents: %s", str::connect(contents, ", "));
+    debug!("contents: %s", str::connect(contents, ", "));
 
-    let cratefiles = vec::filter(contents) { |n|
+    let cratefiles = contents.filter |n| {
         str::ends_with(n, ".rc")
     };
 
-    if vec::is_empty(cratefiles) {
+    if cratefiles.is_empty() {
         fail "This doesn't look like a rust package (no .rc files).";
     }
 
-    for cf in cratefiles {
+    for cratefiles.each |cf| {
         let p = load_pkg(cf);
-        alt p {
-            none. { cont; }
-            some(_p) {
-                install_one_crate(c, path, cf, _p);
-            }
+        match p {
+            None => again
+            Some(p) => install_one_crate(c, path, cf, p)
         }
     }
 }
@@ -83,7 +81,7 @@ Yes.
 
 ### I like the language but it really needs _$somefeature_.
 
-At this point we are focusing on removing and stabilizing features rather than adding them. File a bug if you think it's important in terms of meeting the existing goals or making the language passably usable. Reductions are more interesting than additions though.
+At this point we are focusing on removing and stabilizing features rather than adding them. File a bug if you think it's important in terms of meeting the existing goals or making the language passably usable. Reductions are more interesting than additions, though.
 
 ## Specific language issues
 
@@ -93,7 +91,7 @@ It is multi-paradigm. Not everything is shoe-horned into a single abstraction. M
 
 ### How do you get away with "no null pointers"?
 
-Data values in the language can only be constructed through a fixed set of initializer forms. Each of those forms requires that its inputs already be initialized. A dataflow analysis (the typestate system used elsewhere) ensures that local variables are initialized before use.
+Data values in the language can only be constructed through a fixed set of initializer forms. Each of those forms requires that its inputs already be initialized. A liveness analysis ensures that local variables are initialized before use.
 
 ### What is the relationship between a module and a crate?
 
@@ -115,7 +113,7 @@ Rust provides, instead, three predictable and well-defined options for handling 
 * _Recovery_ after a failure is done by trapping a task failure from _outside_ the task, where other tasks are known to be unaffected.
 * _Cleanup_ of resources is done by RAII-style objects with destructors.
 
-Cleanup through RAII-style destructors  is more likely to work than in catch blocks anyways, since it will be better tested (part of the non-error control paths, so executed all the time).
+Cleanup through RAII-style destructors is more likely to work than in catch blocks anyways, since it will be better tested (part of the non-error control paths, so executed all the time).
 
 ### Why aren't modules type-parametric?
 
@@ -135,7 +133,7 @@ There's a lot of debate on this topic; it's easy to find a proponent of default-
 
 * Part of the point of isolating tasks is to decouple tasks from one another, such that assumptions in one task do not cause undue constraints (or bugs, if violated!) in another. Temporal coupling is as real as any other kind; async-by-default relaxes the default case to only _causal_ coupling.
 * Default-async supports buffering and batching communication, reducing the frequency and severity of task-switching and inter-task / inter-domain synchronization.
-* Default-async with transmittable channels is the lowest-level building block on which more-complex synchronization topologies and strategies can be built; it is not clear to us that the majority of cases fit the 2-party full-synchronization pattern rather than some more complex multi-party or multi-stage scenario. We did not want to force all programs to pay for wiring the former assumption in to all communications.
+* Default-async with transmittable channels is the lowest-level building block on which more-complex synchronization topologies and strategies can be built; it is not clear to us that the majority of cases fit the 2-party full-synchronization pattern rather than some more complex multi-party or multi-stage scenario. We did not want to force all programs to pay for wiring the former assumption into all communications.
 
 ### Why are channels half-duplex (one-way)?
 
@@ -157,13 +155,11 @@ This does mean that indexed access to a Unicode codepoint inside a `str` value i
 
 ### Why is `log` an expression rather than library function?
 
-We wish to integrate logging with the language at multiple levels: in terms of filtering by module path and task, with type-specific logging variants, with lazy evaluation of the arguments such that inactive logging statements are very cheap, and also integrated with the `note` expression for logging during failure. It's possible we could replicate these features via a mixture of compiler-provided hooks, syntax-extensions and library calls, but it's neither clear that this would be possible nor whether the interface would be syntactically cumbersome: the best logging, after all, is the kind that's light enough that you regularly use it!
+We made this decision at a time when the syntax extension system was less mature. We plan to change `log` to be a macro (see #554).
 
-If someone manages to cook up a useful version that seems light and usable and hits all the same use-cases, without requiring a dedicated statement, we'll consider replacing it.
+### Why are strings, vectors etc. built-in types rather than (say) special kinds of trait/impl?
 
-### Why are strings, vectors etc. built-in types rather than (say) special kinds of iface/impl?
-
-In each case there is one or more operator, literal constructor, overloaded use or integration with a built-in control structure that makes us think it would be awkward to phrase the type in terms of more-general type constructors. Same as, say, with numbers! But this is partly an aesthetic call and, similarly to with the `log` expression, we'd be willing to look at a worked-out proposal for eliminating or rephrasing these special cases.
+In each case there is one or more operator, literal constructor, overloaded use or integration with a built-in control structure that makes us think it would be awkward to phrase the type in terms of more-general type constructors. Same as, say, with numbers! But this is partly an aesthetic call, and we'd be willing to look at a worked-out proposal for eliminating or rephrasing these special cases.
 
 ### Can Rust code call C code?
 
