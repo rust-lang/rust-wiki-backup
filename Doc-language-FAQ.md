@@ -189,3 +189,7 @@ They start very small (a few hundred bytes) and expand dynamically by calling th
 * Mechanically, it simplifies the inference algorithm; inference only requires looking at one function at a time.
 * The same simplification goes double for human readers. A reader does not need an IDE running an inference algorithm across an entire crate to be able to guess at a function's argument types; it's always explicit and nearby.
 * Parameters in Rust can be passed by reference or by value. We can't automatically infer which one the programmer means.
+
+### Will Rust implement automatic semicolon insertion, like in Go?
+
+For simplicity, we do not plan to do so. Implementing automatic semicolon insertion for Rust would be tricky because the absence of a trailing semicolon means "return a value".
