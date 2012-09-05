@@ -18,7 +18,7 @@ Notes taken at rust work week, 2011/06/23
  * [regexp](https://github.com/elly/rustpcre) (external)
  * [ropes](https://github.com/mozilla/rust/blob/master/src/libstd/rope.rs)
 * networking
- * HTTP client / server
+ * HTTP [client](https://github.com/brson/rust-http-client) / server
  * [URI](https://github.com/erickt/rust-uri) (external)
  * [UUID](https://github.com/erickt/rust-uuid) (external)
  * GUID
