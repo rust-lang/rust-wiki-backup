@@ -21,7 +21,7 @@ Notes taken at rust work week, 2011/06/23
  * HTTP
   * [client](https://github.com/brson/rust-http-client) (external)
   * server
- * [URI](https://github.com/erickt/rust-uri) (external)
+ * [URI/URL](https://github.com/mozilla/rust/blob/master/src/libstd/net_url.rs)
  * [UUID](https://github.com/erickt/rust-uuid) (external)
  * GUID
 * date / time
