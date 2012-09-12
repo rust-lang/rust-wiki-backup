@@ -13,6 +13,7 @@ Listing of documentation for users
 
 * [Tutorial](http://doc.rust-lang.org/doc/tutorial.html)
 * [Tutorial-Macros](http://doc.rust-lang.org/doc/tutorial-macros.html)
+* [Tutorial-FFI](http://doc.rust-lang.org/doc/tutorial-ffi.html)
 * [Manual](http://doc.rust-lang.org/doc/rust.html) ([PDF](http://doc.rust-lang.org/doc/rust.pdf))
 * [Core library](http://doc.rust-lang.org/doc/core/index.html)
 * [Standard library](http://doc.rust-lang.org/doc/std/index.html)
