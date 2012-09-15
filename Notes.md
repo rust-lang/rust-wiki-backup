@@ -17,7 +17,6 @@ Listing of notes for developers
 ## Language and implementation notes
 
 * [[Note interfaces]]
-* [[Note attributes]]
 * [[Note defined attributes]]
 * [[Note tasks and communication]]
 * [[Note metadata format]]
