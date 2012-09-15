@@ -1,6 +1,6 @@
 # The many uses of attributes
 
-Attributes are everywhere. Let us explore what they are all about and discover how they are affecting us in our Rustic journey. First we're gonna teach you how to build them, then we're going to give you the tools to really unleash your Rust.
+Attributes are everywhere. Let us explore what they are all about and discover how they are affecting us in our Rustic journey. First we're going to teach you how to write them, then we will give you the tools to really unleash your Rust.
 
 ## Meta items
 
