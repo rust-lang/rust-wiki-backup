@@ -97,15 +97,13 @@ Both of these are just informational, and no tool actually uses them yet.
 
 ## Rustdoc
 
-[Rustdocs](Doc using Rustdoc) are usually provided in documentation comments
+[Rustdocs](Doc using Rustdoc) are usually provided in documentation comments, but this is just sugar for doc attributes.
 
     /// Description
-    fn foo() { }
-
-But this is just sugar for doc attributes
+    fn oof() { }
 
     #[doc = "Description"]
-    fn foo() { }
+    fn rab() { }
 
 ## Control compiler warnings
 
