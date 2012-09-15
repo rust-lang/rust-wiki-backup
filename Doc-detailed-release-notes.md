@@ -1,5 +1,26 @@
 This page covers releases in more detail than the bullet-point list given in the RELEASES.txt file in the source distribution, in particular focusing on _language level changes_ that will be immediately visible and/or disruptive to users trying to keep their Rust code compiling and working right between releases. It is intended to hold copied, cleaned-up versions of entries from [[Note development roadmap]] as they are completed, to help users plan migration on their own code.
 
+## 0.4 September 2012
+
+### Class dismemberment
+
+### Camel cased types
+
+### Macro improvements
+
+### Import/export
+
+### Smaller syntax changes
+
+* alt -> match
+* use -> extern mod
+
+### Implementation coherence
+
+### Library demoding
+
+### Pipes
+
 ## 0.3 July 2012
 
 ### Integer-literal suffix inference
