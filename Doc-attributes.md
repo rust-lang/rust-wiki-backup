@@ -1,25 +1,22 @@
-General information about attributes.
+# The many uses of attributes
+
+Attributes are everywhere. Let us explore what they are all about and discover how they are affecting us in our Rustic journey. First we're gonna teach you how to build them, then we're going to give you the tools to really unleash your Rust.
 
 ## Meta items
 
-Several places in the Rust language allow the specification of metadata about code, called _meta items_, primarily in relation to _attributes_. Meta items have three forms: the simple _word_ meta item, which is just an identifier; the _name-value_ meta item, an ident/literal pair; and the _list_ meta item, a named list of additional meta items.
+Attributes are built from _meta items_, which have three forms:
 
-Examples:
+* the simple _word_ meta item, which is just an identifier, as in `test`
+* the _name-value_ meta item, an ident/literal pair, as in `target_os = "win32"`
+* the _list_ meta item, a named list of additional meta items, as in `names(fred, barney, wilma)`
 
-    // a word meta item, must be a valid identifier
-    test
+In _name-value_ items the literal may be any Rust literal type, though strings are seen most often.Meta items may nest arbitrarily: `args(yes, count = 10, names(fred, barny, wilma))`
 
-    // name/value meta items
-    target_os = "win32"
-    index = 10
-
-    // list meta items
-    cfg(target_os = "win32")
-    names(fred, barney, wilma)
+Meta items occasionally show up outside of attributes, particularly in crate linkage specifications.
 
 ## Attributes
 
-The primary use of meta items is for applying attributes to items and crates. Attributes provide additional information to the compiler and may also be accessed via reflection at runtime. An attribute is simply a meta item wrapped in attribute syntax - a preceding _pound_ sigil and enclosing _brackets_:
+The primary use of meta items is for applying attributes to items, crates, methods, fields, and potentially other bits of code. Attributes provide additional information to the compiler and may also be accessed via reflection at runtime. An attribute is simply a meta item wrapped in attribute syntax - a preceding _pound_ sigil and enclosing _brackets_:
 
     #[test]
 
@@ -86,9 +83,11 @@ Rust includes a built-in [unit testing](Note unit testing) facility which makes 
 
 ## Other crate attributes
 
-`crate_type` can be either "bin" or "lib" and specifies the default output type.
-
+    // Tell the compiler to output a library by default
     #[crate_type = "lib"];
+
+    // Don't link to core by default
+    #[no_core];
 
 Both of these are just informational, and no tool actually uses them yet.
 
@@ -96,20 +95,59 @@ Both of these are just informational, and no tool actually uses them yet.
     #[comment = "The Rust core library"];
     #[license = "MIT"];
 
-## Yet more uses of attributes
+## Rustdoc
 
-Attributes are all around us!. Here are even more you may not know about.
+[Rustdocs](Doc using Rustdoc) are usually provided in documentation comments
 
-### Specifying the ABI of foreign functions
+    /// Description
+    fn foo() { }
 
+But this is just sugar for doc attributes
+
+    #[doc = "Description"]
+    fn foo() { }
+
+## Control compiler warnings
+
+Compiler warnings and errors can be controlled to a very fine level with attributes.
+
+    // I don't want to see any camel cased types
+    #[deny(non_camel_case_types)]
+    mod {
+        type Foo = Bar;
+        // Oh, but just this once
+        #[allow(non_camel_case_types)]
+        type baz = Foo;
+        // No, I'm serious. I'm going to completely forbid those camel case
+        // shenanigans so they can't be turned back on
+        #[forbid(non_camel_case_types)]
+        mod quux {
+            ...
+        }
+    }
+
+Also, `warn` works too. The complete list of lint warnings can be requested from `rustc` on the command line ... somehow, ask him.
+
+## Foreign functions
+
+    // Specify the calling convention used by foreign code
     #[abi = "cdecl"] extern { ... }
     #[abi = "stdcall"] extern { ... }
 
-### Inlining
+    // Don't try to link this library automatically
+    #[nolink] extern mod foo { }
+
+## Inlining
 
     #[inline] fn foo() { }
     #[inline(always)] fn bar() { }
     #[inline(never)] fn baz() { }
+
+## Overriding the path to module files
+
+    // Load our raygun module from flowerpot.rs instead of raygun.rs
+    #[path = "flowerpot.rs"]
+    mod raygun;
 
 ## Relationship with macros
 Please see [[Bikeshed syntax extension]]
