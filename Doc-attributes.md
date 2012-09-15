@@ -44,20 +44,22 @@ Similarly, to apply attributes to a crate, they should be specified at the begin
 
 ## Crate Linkage Attributes
 
-A crate's version is determined by the _link_ attribute, which is a list meta item containing metadata about the crate. This metadata can, in turn, be used in providing partial matching parameters to syntax extension loading and crate importing directives, denoted by the *syntax* and *use* keywords respectively.
+A crate's version is determined by the _link_ attribute, which is a list meta item containing metadata about the crate. This metadata can, in turn, be used in providing partial matching parameters to crate importing directives, denoted by the *extern mod* keyword.
 
 All meta items within a link attribute contribute to the versioning of a crate, and two meta items, _name_ and _vers_, have special meaning and must be present in all crates compiled as shared libraries.
 
-An example of a typical crate link attribute:
+An example of a typical crate link attribute and linking to another crate:
 
     #[link(name = "std",
            vers = "0.1",
            uuid = "122bed0b-c19b-4b82-b0b7-7ae8aead7297",
            url = "http://rust-lang.org/src/std")];
 
+    extern mod core(vers = "0.1");
+
 ## Build Configuration
 
-Each time the compiler is run, it defines a set of meta items describing the compilation environment, called the build configuration. Several meta items are defined by default while others may be user-defined. The default items are:
+Each time the compiler is run, it defines a set of meta items describing the compilation environment, called the _build configuration_. Several meta items are defined by default while others may be user-defined. The default items are:
 
 * target_os - A name/value item with the value set to a string representing the target operating system, either "linux", "macos", or "win32".
 * target_arch - A name/value item with the value set to a string representing the target architecture, currently always "x86".
@@ -75,12 +77,12 @@ An example of using conditional compilation to build different methods on differ
     #[cfg(unix)]
     fn f() { ... }
 
-    #[cfg(windows)]
+    #[cfg(target_arch = "x86")]
     fn f() { ... }
 
 ## Unit testing
 
-Rust includes a built-in unit testing facility which makes use of attributes and conditional compilation. See [[Note unit testing]].
+Rust includes a built-in [unit testing](Note unit testing) facility which makes use of attributes and conditional compilation.
 
 ## Relationship with macros
 Please see [[Bikeshed syntax extension]]
