@@ -84,5 +84,20 @@ An example of using conditional compilation to build different methods on differ
 
 Rust includes a built-in [unit testing](Note unit testing) facility which makes use of attributes and conditional compilation.
 
+## Yet more uses of attributes
+
+Attributes are all around these days. Here are even more3
+
+### Specifying the ABI of foreign functions
+
+    #[abi = "cdecl"] extern { ... }
+    #[abi = "stdcall"] extern { ... }
+
+### Inlining
+
+    #[inline] fn foo() { }
+    #[inline(always)] fn bar() { }
+    #[inline(never)] fn baz() { }
+
 ## Relationship with macros
 Please see [[Bikeshed syntax extension]]
