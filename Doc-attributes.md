@@ -149,5 +149,9 @@ Also, `warn` works too. The complete list of lint warnings can be requested from
     #[path = "flowerpot.rs"]
     mod raygun;
 
+## Auto-serialization
+
+The `auto_serialize` attribute can be used to automatically generate serializers for types.
+
 ## Relationship with macros
 Please see [[Bikeshed syntax extension]]
