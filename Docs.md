@@ -27,7 +27,7 @@ Listing of documentation for users
 * [[Doc using rustdoc]] - How to extract Markdown and HTML documentation from code
 * [[Doc Memory, modes, and mutation]], _a guide for the perplexed_
 * [[Doc Reading and writing files]]
-* [[Doc attributes]] - The role of metadata in Rust code
+* [[Doc attributes]] - The role of metadata in Rust code, with descriptions of many applications
 
 ## FAQs
 
