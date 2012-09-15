@@ -14,6 +14,7 @@ This page covers releases in more detail than the bullet-point list given in the
 
 * alt -> match
 * use -> extern mod
+* Region names are specified as `&r/T` instead of `&r.T`
 
 ### Implementation coherence
 
