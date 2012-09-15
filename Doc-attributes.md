@@ -84,9 +84,21 @@ An example of using conditional compilation to build different methods on differ
 
 Rust includes a built-in [unit testing](Note unit testing) facility which makes use of attributes and conditional compilation.
 
+## Other crate attributes
+
+`crate_type` can be either "bin" or "lib" and specifies the default output type.
+
+    #[crate_type = "lib"];
+
+Both of these are just informational, and no tool actually uses them yet.
+
+    // A very short description of the crate
+    #[comment = "The Rust core library"];
+    #[license = "MIT"];
+
 ## Yet more uses of attributes
 
-Attributes are all around these days. Here are even more3
+Attributes are all around us!. Here are even more you may not know about.
 
 ### Specifying the ABI of foreign functions
 
