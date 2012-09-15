@@ -63,6 +63,8 @@ Each time the compiler is run, it defines a set of meta items describing the com
 * target_arch - A name/value item with the value set to a string representing the target architecture, currently always "x86".
 * target_libc - A name/value item with the value set to a string naming the libc dynamic library.
 * build_compiler - A name/value item with the value set to the name of the compiler.
+* windows - A word item that is defined when building for Windows
+* unix - A word item that is defined when building for Linux, OS X, or FreeBSD
 
 ## Conditional Compilation
 
@@ -70,10 +72,10 @@ The build configuration can be used to conditionally compile items, using the _c
 
 An example of using conditional compilation to build different methods on different platforms:
 
-    #[cfg(target_os = "linux")]
+    #[cfg(unix)]
     fn f() { ... }
 
-    #[cfg(target_os = "macos")]
+    #[cfg(windows)]
     fn f() { ... }
 
 ## Unit testing
