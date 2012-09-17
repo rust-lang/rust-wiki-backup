@@ -64,6 +64,8 @@ impl MyStruct : Drop {
 * use -> extern mod
 * Region names are specified as `&r/T` instead of `&r.T`
 
+### Kinds become traits
+
 ### Implementation coherence
 
 ### Library demoding
