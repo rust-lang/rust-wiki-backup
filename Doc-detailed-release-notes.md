@@ -23,8 +23,9 @@ While the rational is mostly detailed elsewhere, keyword changes this time inclu
 The current keywords are as follows.
 
 ```none
-as, assert, break, const, copy, do, drop, else, enum, export, extern,
-fail, false, fn, for, if, impl, let, log, loop, match, mod, move, mut,
+as, assert, break, const, copy, do, drop,
+else, enum, export, extern, fail, false, fn, for,
+if, impl, let, log, loop, match, mod, move, mut,
 priv, pub, pure, ref, return, struct, true, trait, type,
 unchecked, unsafe, use, while
 ```
