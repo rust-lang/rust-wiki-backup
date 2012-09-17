@@ -45,7 +45,7 @@ struct MyStruct {
   }
 }
 
-// How to write a destructor in the next version
+// How to write a destructor in hypothetical future-Rust
 impl MyStruct : Drop {
   fn drop() {
   }
