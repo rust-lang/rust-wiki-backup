@@ -9,9 +9,9 @@ Borrowed pointers matured and replaced argument modes in some of the libraries. 
 ### Camel cased types
 
 
-### Classes dismantled
+### Structs replace classes
 
-Classes are undergoing a major overhaul and have been removed from the language, in favor of method-less `structs` combined with `impls`. The new `struct` syntax is very simple:
+Classes are undergoing a major overhaul and have been removed from the language, in favor of method-less `structs` combined with method-bearing `impls`. The new `struct` syntax is very simple:
 
 ```
 struct MyStruct {
@@ -41,7 +41,7 @@ struct MyStruct {
   field1: Field1Type,
 
   drop {
-    // Run destructish code here
+    // Run destructory code here
   }
 }
 
