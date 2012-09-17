@@ -12,7 +12,7 @@ Borrowed pointers matured and replaced argument modes in some of the libraries. 
 
 This release tried to narrow down the set of keywords and the current keywords are expected to be close to final.
 
-While the rational is mostly detailed elsewhere, keyword changes this time included
+Keyword changes:
 
 * `iface` became `trait`
 * `ret` became `return`
