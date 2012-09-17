@@ -8,6 +8,30 @@ Borrowed pointers matured and replaced argument modes in some of the libraries. 
 
 ### Camel cased types
 
+### Keywords
+
+This release tried to narrow down the set of keywords and the current keywords are expected to be close to final.
+
+While the rational is mostly detailed elsewhere, keyword changes this time included
+
+* `iface` became `trait`
+* `ret` became `return`
+* `alt` became `match`
+* `again` was removed in favor of reusing `loop` to continue, i.e. `loop { if foo { loop; } }`
+* TODO
+
+The current keywords are as follows.
+
+```
+as, assert, break, const, copy, do, drop, else, enum, export, extern,
+fail, false, fn, for, if, impl, let, log, loop, match, mod, move, mut,
+priv, pub, pure, ref, return, struct, true, trait, type,
+unchecked, unsafe, use, while
+```
+
+Additionally `be` is reserved. Additionally, `self` and `static` are currently parsed as contextual keywords, but are expected to not be keywords in the future.
+
+`export` will be removed in favor of `pub` and `priv` item-level visibility, and `assert`, `log`, and `fail` are likely to be converted to macros.
 
 ### Structs replace classes
 
@@ -52,7 +76,15 @@ impl MyStruct : Drop {
 }
 ```
 
-### Trait improvements
+### Traits
+
+iface -> trait
+implementation coherence
+
+### Static methods and explicit self types
+
+static methods
+explicit self types
 
 ### Transitioning import/export to pub/priv/use
 
@@ -65,8 +97,6 @@ impl MyStruct : Drop {
 * Region names are specified as `&r/T` instead of `&r.T`
 
 ### Kinds become traits
-
-### Implementation coherence
 
 ### Library demoding
 
