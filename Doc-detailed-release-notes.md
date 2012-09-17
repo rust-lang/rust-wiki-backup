@@ -27,7 +27,7 @@ Methods are provided by impls, as with other types, and there is no explicit con
 ```
 fn MyStruct() -> {
   MyStruct {
-    field1: ()
+    field1: (),
     field2: ()
   }
 }
