@@ -25,7 +25,7 @@ let s = MyStruct { field1: foo, field2: bar };
 Methods are provided by impls, as with other types, and there is no explicit constructor syntax. The current, and likely temporary, convention for constructors is to create a function with the same name as the type, as in:
 
 ```
-fn MyStruct() -> {
+fn MyStruct() -> MyStruct {
   MyStruct {
     field1: (),
     field2: ()
