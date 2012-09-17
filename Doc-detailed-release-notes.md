@@ -39,26 +39,53 @@ Additionally `be` is reserved. Additionally, `self` and `static` are currently p
 Classes are undergoing a major overhaul and have been removed from the language, in favor of method-less `structs` combined with method-bearing `impls`. The new `struct` syntax is very simple:
 
 ```
-struct MyStruct {
-  field1: Field1Type,
-  field2: Field2Type
+struct Cat {
+  name: ~str,
+  tail_color: KittyColor 
 }
 
-let s = MyStruct { field1: foo, field2: bar };
+let my_cat = Cat {
+  name: ~"Morton",
+  tail_color: KittyColorBlack
+};
+
+// Methods for all types are defined in impls
+impl Cat {
+  fn meow() { }
+}
+
+my_cat.meow();
 ```
 
-Methods are provided by impls, as with other types, and there is no explicit constructor syntax. The current, and likely temporary, convention for constructors is to create a function with the same name as the type, as in:
+There is no explicit constructor syntax. The current, and likely temporary, convention for constructors is to create a function with the same name as the type. In the future constructors will probably be defined with static `new` methods.
 
 ```
+// Current convention for defining constructors
 fn MyStruct() -> MyStruct {
   MyStruct {
-    field1: (),
-    field2: ()
+    field1: initial_value_of_field1(),
+    field2: initial_value_of_field2()
   }
+}
+
+let m = MyStruct();
+
+// Future convention for defining constructors
+impl MyStruct {
+  // Here, the staticness of the function is indicated by the lack of
+  // an explicit self-type, another in-progress change.
+  fn new() -> MyStruct {
+    MyStruct {
+      field1: initial_value_of_field(),
+      field2: initial_value_of_field()
+    }
+  }
+
+  ...
 }
 ```
 
-In future versions constructors will likely be implemented as static methods called `new`. The last remnants of classes, destructors are temporarily implemented with `drop` blocks on structs. In future releases destructors will be implementations of a `Drop` trait.
+The last remnants of classes, destructors are temporarily implemented with `drop` blocks on structs. In future releases destructors will be implementations of a `Drop` trait.
 
 ```
 // How to write a destructor today
