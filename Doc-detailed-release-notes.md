@@ -33,7 +33,7 @@ fn MyStruct() -> {
 }
 ```
 
-In future versions constructors will likely be implemented as static methods called `new`. The last remnants of classes, destructors are temporarily implemented with `drop` blocks on structs. In future releases destructors will be implementations of the `Drop` trait.
+In future versions constructors will likely be implemented as static methods called `new`. The last remnants of classes, destructors are temporarily implemented with `drop` blocks on structs. In future releases destructors will be implementations of a `Drop` trait.
 
 ```
 // How to write a destructor today
