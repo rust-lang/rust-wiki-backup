@@ -2,9 +2,57 @@ This page covers releases in more detail than the bullet-point list given in the
 
 ## 0.4 September 2012
 
-### Class dismemberment
+This version was focused on completing as many disruptive syntax changes as possible, including changing and reducing keywords, beefing up traits and removing classes, changing how imports and exports are handled, and moving to a camel case convention for types.
+
+Borrowed pointers matured and replaced argument modes in some of the libraries. A number of new concurrency features were added.
 
 ### Camel cased types
+
+
+### Classes dismantled
+
+Classes are undergoing a major overhaul and have been removed from the language, in favor of method-less `structs` and `impls`. The new `struct` syntax is very simple:
+
+```
+struct MyStruct {
+  field1: Field1Type,
+  field2: Field2Type
+}
+
+let s = MyStruct { field1: foo, field2: bar };
+```
+
+Methods are provided by impls, as with other types, and there is no explicit constructor syntax. The current, and likely temporary, convention for constructors is to create a function with the same name as the type, as in:
+
+```
+fn MyStruct() -> {
+  MyStruct {
+    field1: ()
+    field2: ()
+  }
+}
+```
+
+In future versions constructors will likely be implemented as static methods called `new`. The last remnants of classes, destructors are temporarily implemented with `drop` blocks on structs. In future releases destructors will be implementations of the `Drop` trait.
+
+```
+// How to write a destructor today
+struct MyStruct {
+  field1: Field1Type,
+
+  drop {
+    // Run destructish code here
+  }
+}
+
+// How to write a destructor in the next version
+impl MyStruct : Drop {
+  fn drop() {
+  }
+}
+```
+
+### Trait improvements
 
 ### Macro improvements
 
