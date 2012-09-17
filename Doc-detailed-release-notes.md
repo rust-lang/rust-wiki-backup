@@ -11,7 +11,7 @@ Borrowed pointers matured and replaced argument modes in some of the libraries. 
 
 ### Classes dismantled
 
-Classes are undergoing a major overhaul and have been removed from the language, in favor of method-less `structs` and `impls`. The new `struct` syntax is very simple:
+Classes are undergoing a major overhaul and have been removed from the language, in favor of method-less `structs` combined with `impls`. The new `struct` syntax is very simple:
 
 ```
 struct MyStruct {
