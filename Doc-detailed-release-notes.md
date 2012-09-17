@@ -70,7 +70,7 @@ fn MyStruct() -> MyStruct {
 
 let m = MyStruct();
 
-// Future convention for defining constructors
+// Potential future convention for defining constructors
 impl MyStruct {
   // Here, the staticness of the function is indicated by the lack of
   // an explicit self-type, another in-progress change.
@@ -83,6 +83,8 @@ impl MyStruct {
 
   ...
 }
+
+let n = MyStruct::new();
 ```
 
 The last remnants of classes, destructors are temporarily implemented with `drop` blocks on structs. In future releases destructors will be implementations of a `Drop` trait.
