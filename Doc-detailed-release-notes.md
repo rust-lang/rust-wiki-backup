@@ -54,9 +54,9 @@ impl MyStruct : Drop {
 
 ### Trait improvements
 
-### Macro improvements
+### Transitioning import/export to pub/priv/use
 
-### Import/export
+### Macro improvements
 
 ### Smaller syntax changes
 
