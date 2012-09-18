@@ -1,0 +1,93 @@
+# Topics of discussion
+
+- extern mod
+- 0.4
+
+# Extern Mod
+
+- graydon: I am sympathetic to the notion that "extern mod" doesn't read well
+- pcwalton: I think we should reserve the word "extern" for FFI
+- brson: I agree
+- graydon: it doesn't in C and C++ and that doesn't seem to be a big deal
+- pcwalton: yes but C and C++ don't really require "FFI"
+- graydon: C++ uses it for the FFI---that is, to declare the linking conventions---but also for symbols that it will find later
+- pcwalton: that's true but I see that as a historical use of extern
+- pcwalton: I think it is useful to have a keyword that suggests FFI and extern seems like a good one.  Java has native for this.  C# uses extern.
+- graydon: I thought we had a nice set of symmetries setup but it seems like it's falling apart.
+- graydon: there is also this issue that control over what gets exported from a crate could be a separate thing from pub/priv
+- graydon: in the mailing list thread, the use of extern for crust is also surprising
+- brson: I've found that with the extern qualifier it is difficult to talk about crust fns and linkage because they all share the same word
+- nmatsakis: crust fns are dead men walking anyhow, right? we discussed a plan to get rid of that concept
+- pcwalton: I think there is a reasonable story for using `extern` for both crust and ffi functions, because they are both functions with C abi
+- graydon: what I find weird is that extern is definitely a linkage directive, and yet there is this thread where everyone is frustrated that extern is being used to control linkage
+- brson: if that's true then isn't just any old fn def'n a linkage directive?
+- graydon: well, no, because local fns might get inlined away etc but don't come from the linker
+- ...
+- pcwalton: I forgot crust fns are deprecated... since crust fns are deprecated, maybe we can use the keyword "ABI" or something
+- graydon: the word we've been using in the compiler is foreign
+- graydon: maybe the problem is that we are overloading extern to mean both crate-to-crate and foreign
+- pcwalton: that's precisely the difficulty
+- graydon: is this actually confusing confusing? like, you write "extern" and you don't know what you just said?
+- pcwalton: I'm not confused, but I'm not sure I'm representative
+- nmatsakis: should we put the string back in as in C++?  In principle, it will be part of the type as some point (so you will write `extern "C" fn(uint)`).  So maybe you should write `extern "C" {...} mod` as well.
+- pcwalton: actually it'll just be `extern "C" {...}` because mod is deprecated
+- brson: does that mean we will stop doing the automatic linkage thing where we derive the name of the library from the name of the module?
+- pcwalton: yes.
+- brson: I am in favor of that.
+- graydon: imagine the overloaded version of extern is too confusing to live
+- graydon: would it make things clearer to have `link crate` and `foreign` (in place of extern)
+- nmatsakis: would `link` be applicable to C libraries? or only to Rust crates?
+- graydon: we could plausibly use `link` for that too
+- brson: we need to improve the way we bind to C libraries anyhow, right now you end up embedding small amounts of linker strings, we need something more powerful
+- graydon: suppose we get a declaration type called `link`, it could be qualified with `foreign` to refer to C code
+- brson: in Rust code it would create a mount point... does it for foreign code?
+- pcwalton: oh there is an issue about two-level namespaces, sometimes the link point has to be associated with the names that are coming with it, `extern` blocks still need to be annotatable with the library
+- graydon: I think there's something there potentially, partially a matter of shoving the syntax around till we find something that connects nicely
+- graydon: there is this other but related issue where people want to be able to specify crate-level visibility
+- graydon: that's a reasonable default for unqualified names
+- brson: so if I don't annotate things with visibility... everything would be visible across the crate?
+- graydon: I don't know.
+- nmatsakis: wasn't the goal of pub/priv to not have crate-level as a separate concept?
+- graydon: yes, and part of the goal for extern was to not distinguish foreign, but maybe it went too far
+- pcwalton: too few keywords can be a danger too if you overload too much
+- nmatsakis: I kind of thought we were going to solve this exporting thing by setting up a pattern like a top-level module, called contents say, and then pub use the things you want to export
+- brson: I think that does work now
+- graydon: maybe there is no issue here
+- nmatsakis: I don't know, maybe that top-level module thing is kind of a lot of work
+- graydon: anyway, let's get back to `link` 
+- brson: my hesitation is that the name `link` doesn't suggest the creation of a module
+- pcwalton: that's why I like `require`, it has precedent in other languages
+- graydon: someone mentioned comining use/extern
+- pcwalton: I think it's not such a good idea, contrary to my original proposal, because you can't hang the version data off of it
+- pcwalton: I'm personally totally fine with link, it reads nicer, clearly says what's going on
+- brson: I think I prefer it to extern mod but am a little unsatisfied all around
+- graydon: ok, well, no conclusion exactly, I'll chime in on the thread
+- pcwalton: we do need to make a decision before 0.4 since this will impact every program
+- graydon: there aren't that many uses of extern mod so this feels like a mountain out of a molehill
+- pcwalton: another weird idea is you drop the keyword mod (`extern std`).
+- nmatsakis: why drop the keyword `mod`?
+- pcwalton: I just don't like how `extern mod` looks, especially at the top of every file
+- graydon: all right, let's try link.
+- pcwalton: then do want `extern "C"` on the block?
+- brson: can it be optional?
+- nmatsakis: I don't see why not
+
+# 0.4
+
+- graydon: we're a bit over the arbitrary deadline we imposed on ourselves
+- graydon: I'm ok with that but let's triage
+- brson: I can defer all my bugs at any moment and I'm fine with that
+- pcwalton: most of mine are big things I don't really plan to do before 0.4
+- graydon: it's possible that what we had before last triage was to aspirational
+- pcwalton: I actually think we're basically ready for 0.4
+- nmatsakis: we should at least make the bots green :)
+- graydon: I would really like to get the mode stuff as done as possible
+- graydon: #3323 and #3315
+- nmatsakis: I was wondering whether 0.4 was supposed to be "here's where we are this week" or some more meaningful milestone.  If we don't finish the mode stuff in the libraries, it's definitely the former.
+- graydon: yes it would be nice if we didn't have people showing up saying "all the examples don't work anymore with 0.4"
+- nmatsakis: I do think the libraries are going to shift whatever we do, I think the best practices are still being developed, e.g. I'm not at all sure we should pass map keys/values by-value
+- pcwalton: two issues, Eq and Ord, requires a bit of massaging
+- nmatsakis: at worst we need an Eq2 for one snapshot cycle
+- pcwalton: another issue is the args to main, we can do sys::args()
+- graydon: can we just do a triage pass over the bug list and reduce it to the bare minimum?
+- *triage pass ensues*
