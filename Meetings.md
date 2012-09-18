@@ -41,6 +41,7 @@ Listing of minutes from meetings
 * [[Meeting weekly 2012-08-28]] (extern; equality; method calls; enum refinements; release status; metadata)
 * [[Meeting weekly 2012-09-04]] (nothing of import)
 * [[Meeting weekly 2012-09-11]] (minor syntactic cleanup; monomorphic explosion; tweak impl syntax; unchecked vs unsafe; moves; docs)
+* [[Meeting weekly 2012-09-18]] (extern mod; 0.4)
 
 ## In-person meetings:
 
