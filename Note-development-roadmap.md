@@ -22,10 +22,6 @@ Items on this page will move to the [[Doc detailed release notes]] page as they 
 
 ([#3059](https://github.com/mozilla/rust/issues/3059)) There is general consensus that floating point literals are too long; `1.0f` will likely become sugar for `1.0f32`. This is purely a backwards-compatible change. Alternately, we may extend integer literal inference to floats ([#3059](https://github.com/mozilla/rust/issues/3059))
 
-### Capitalization
-
-([#3060](https://github.com/mozilla/rust/issues/3060)) Some Rust projects are beginning to capitalize types. We will need to come to a consensus on the house style.
-
 ## OO-system changes
 
 ### Extend interfaces to full traits
