@@ -6,10 +6,6 @@ Items on this page will move to the [[Doc detailed release notes]] page as they 
 
 ## Miscellaneous cleanups, mostly syntax
 
-### Module-separator change (possible)
-
-We may change the module-separator from `::` back to `.`. There's little consensus on this at the moment. (This is probably not going to happen).
-
 ### Labeled loops
 
 ([#2216](https://github.com/mozilla/rust/issues/2216)) Loops currently cannot carry labels, which makes breaking from deep within a loop difficult. There's a pretty clear way to implement this, it just requires some care to avoid clashing with nearby syntax.
@@ -21,12 +17,6 @@ We may change the module-separator from `::` back to `.`. There's little consens
 ### Change closure-kind syntax
 
 ([#3056](https://github.com/mozilla/rust/issues/3056)) Closures have to encode their kind (whether they copy their environment, uniquely copy the unique parts, or only hold a safe reference to it). Currently this is indicated by a sigil: `fn@` or `fn~` or `fn&` or such. We're likely to change this to one of the kind names trailing the word `fn`. That is, call it `fn:copy` or `fn:send`.
-
-### Semicolons and return values
-
-([#2974](https://github.com/mozilla/rust/issues/2974)) ([#3058](https://github.com/mozilla/rust/issues/3058)) There is the possibility that return values will need to be explicitly ignored if the programmer desires this; with this change we can make trailing semicolons optional, eliminating a frequent source of toe-stubbing.
-
-(This proposal was received poorly on the mailing list and will likely not happen).
 
 ### Floating point literals
 
