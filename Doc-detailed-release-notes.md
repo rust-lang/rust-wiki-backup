@@ -115,6 +115,29 @@ impl MyStruct : Drop {
 iface -> trait
 implementation coherence
 
+### Match arms
+
+The arms of `match` (previously `alt`) expressions have a new syntax. Each case is now followed by a fat arrow, `=>`, and the block is optional. Cases are separated by commas.
+
+```
+// The new syntax is quite compact for one-line cases
+match foo {
+  bar => baz,
+  quux => fail
+}
+
+match foo {
+  bar => {
+    baz
+  } // Note: no comma needed when using braces
+  quux => {
+    fail
+  }
+}
+```
+
+See also [#3057](https://github.com/mozilla/rust/issues/3057).
+
 ### Static methods and explicit self types
 
 static methods
