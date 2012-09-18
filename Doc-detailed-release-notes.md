@@ -36,7 +36,7 @@ unchecked, unsafe, use, while
 
 Additionally `be` is reserved. Additionally, `self` and `static` are currently parsed as contextual keywords, but are expected to not be keywords in the future.
 
-`export` will be removed in favor of `pub` and `priv` item-level visibility, and `assert`, `log`, and `fail` are likely to be converted to macros.
+`export` will be removed in favor of `pub` and `priv` item-level visibility (see below), and `assert`, `log`, and `fail` are likely to be converted to macros.
 
 ### Structs replace classes
 
@@ -114,10 +114,17 @@ See also pcwalton's [proposal][minmaxclasses].
 
 [minmaxclasses]: http://pcwalton.github.com/blog/2012/06/03/maximally-minimal-classes-for-rust/
 
-### Traits
+### Interfaces extended to full traits
 
-iface -> trait
-implementation coherence
+([#2794](https://github.com/mozilla/rust/issues/2794)) Traits are interface-like units of behavior that carry method implementations and requirements on the self-type; they can be used to achieve code reuse without introducing much of the pain that comes from conventional inheritance: they can be mixed in any order, can be declared independent from the type they affect, and are compiled independently for each type that implements them (indeed, will inline and specialize exactly as any other function will).
+
+This work involved replacing the `iface` keyword with `trait` and supporting full method implementations within traits, not just signatures. The terms employed by Rust's OO system are therefore now `struct`, `trait` and `impl`. We believe this will be the final set of terms.
+
+### Implementation coherence enforced
+
+([pcwalton:impl-coherence](http://pcwalton.github.com/blog/2012/05/28/coherence/)) Previously each `impl` had a name and when a client called a method on an `impl`, the code dispatched-to was chosen based on the `impl` imported into the _client code_'s scope. This was chosen as a way to be unambiguous about selecting implementations -- a problem in any typeclass system -- but in practice it has been very confusing for users: many are unable to tell why a method can or cannot be seen due to the presence or absence of imports.
+
+Now every type can have at most one `impl` defined for each `trait`, and that definition must occur either in the crate defining the type or the crate defining the `trait`.
 
 ### Match arms
 
@@ -147,7 +154,17 @@ See also [#3057](https://github.com/mozilla/rust/issues/3057).
 static methods
 explicit self types
 
-### Transitioning import/export to pub/priv/use
+### Transitioning import/export to pub/priv
+
+([#2300](https://github.com/mozilla/rust/issues/2300)) There was some tension in readability between "ease of scanning a module's exports" and "ease of reading the code and knowing which item is exported when you're looking at it." Ultimately we came down on the side of maintainability: that it's less work for a maintainer to mark the items where they occur, rather than scrolling back and forth between export-list and item definitions. Along with moving exports to the items themselves, we changed the terms to use the same keywords used for access control in structs: `pub` and `priv`.
+
+### Change `use` to mean `import`, remove `import`, make crate-linkage use `extern mod foo = (...);`
+
+(also [#2082](https://github.com/mozilla/rust/issues/2082)) Many Rust programmers stub their toes on the difference between `import` and `use`; both "read like" they should somehow make-available the elements in the target module. Since removing `export` (see above) there is an asymmetry in the keywords anyways, so we removed the keyword `import`, switched `use` to mean what `import` previously meant, and now denote crate-linkage through `extern mod foo = (...)`.
+
+### Separate form of module import: `use mod foo = bar;`
+
+(also [#2082](https://github.com/mozilla/rust/issues/2082)) This has to do with making the resolve pass coherent. In the old resolve code, resolving modules and resolving items glob-imported _from_ modules was intermixed, and could lead to incoherence of the algorithm. In the new resolve code (landed in 0.3) there is a separation of passes: module-imports are not run through globs, only module-to-module renamings, and are resolved _first_, and then all imports through modules (including glob-imports) are resolved _after_. The module-import syntax is therefore separate, written as `use mod foo = bar;` to reflect this algorithmic separation.
 
 ### Macro changes
 
@@ -167,7 +184,15 @@ See also [the macro tutorial][macros].
 
 ### Kinds become traits
 
-### Library demoding
+### Deprecation / removal of argument modes
+
+([#2030](https://github.com/mozilla/rust/issues/2030))  Previous versions of Rust attempted to select optimal default argument-passing behavior (by-reference or by-value) based on type-directed heuristics, with sigils available to override the defaults. This system (called "modes" or "argument modes") was responsible for the presence of the sigils `+`, `-`, `&` and `&&` on function parameters.
+
+In practice this system was simultaneously too confusing to use and too inflexible with respect to scenarios where first-class borrowed pointers were desired (returning by reference, storing non-escaping pointers into structured values, etc.) Therefore in 0.4, as first-class borrowed pointers (the other, more pervasive use of the syntax `&T`) have matured to be a better alternative in almost all cases, and many of the residual motives for modes made redundant by full monomorphization, we have deprecated (and removed in as much code as possible) the mode system; it should not be visible to users and support for it is only available through opt-in attributes to help transition code off that system.
+
+### Inherited mutability
+
+([nmatsakis:mut](http://smallcultfollowing.com/babysteps/blog/2012/05/31/mutability/)) After several repeated attempts to treat mutability as a full type constructor, we have settled on treatment as an _inherited_ storage-qualifier. That is, while the `mut` keyword can still only be used to qualify storage locations (the referents of pointers, variables, fields in structures), by placing `mut` on a storage location you now implicitly `mut`-qualify all of the _directly-contained sub-locations_ within the mutable location. This makes sense if you consider that an "outer" `mut` qualification could always _effectively_ mutate an inner "immutable" qualification by simply overwriting the entire containing location. This change therefore only makes the rule explicit in the type system; it is in other words a matter of improving the type system's soundness with respect to mutability.
 
 ### Pipes
 
