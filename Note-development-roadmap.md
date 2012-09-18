@@ -22,13 +22,11 @@ We may change the module-separator from `::` back to `.`. There's little consens
 
 ([#3056](https://github.com/mozilla/rust/issues/3056)) Closures have to encode their kind (whether they copy their environment, uniquely copy the unique parts, or only hold a safe reference to it). Currently this is indicated by a sigil: `fn@` or `fn~` or `fn&` or such. We're likely to change this to one of the kind names trailing the word `fn`. That is, call it `fn:copy` or `fn:send`.
 
-### `alt` syntax changes
-
-([#3057](https://github.com/mozilla/rust/issues/3057)) The `alt` form requires braces, which is too heavyweight for some use cases. There is mostly consensus on moving to `=>` to separate patterns from expressions and dropping the braces. There is also the possibility (no consensus) that the name `alt` will change to `match`, to better match other languages.
-
 ### Semicolons and return values
 
 ([#2974](https://github.com/mozilla/rust/issues/2974)) ([#3058](https://github.com/mozilla/rust/issues/3058)) There is the possibility that return values will need to be explicitly ignored if the programmer desires this; with this change we can make trailing semicolons optional, eliminating a frequent source of toe-stubbing.
+
+(This proposal was received poorly on the mailing list and will likely not happen).
 
 ### Floating point literals
 
