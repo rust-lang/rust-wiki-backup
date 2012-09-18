@@ -110,6 +110,10 @@ impl MyStruct : Drop {
 }
 ```
 
+See also: pcwalton's [proposal][minmaxclasses]
+
+[minmaxclasses]: http://pcwalton.github.com/blog/2012/06/03/maximally-minimal-classes-for-rust/
+
 ### Traits
 
 iface -> trait
