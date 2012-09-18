@@ -110,7 +110,7 @@ impl MyStruct : Drop {
 }
 ```
 
-See also: pcwalton's [proposal][minmaxclasses]
+See also pcwalton's [proposal][minmaxclasses].
 
 [minmaxclasses]: http://pcwalton.github.com/blog/2012/06/03/maximally-minimal-classes-for-rust/
 
@@ -155,7 +155,7 @@ Macros are now invoked with a postfix `!` instead of prefix `#`, as in `debug!("
 
 We also have a powerful new way to define macros with the `macro_rules!` syntax extension. Macros are now based on trees of tokens with balanced braces instead of the full AST expressions the old macro implementation used.
 
-See [the macro tutorial][macros] for details.
+See also [the macro tutorial][macros].
 
 [macros]: http://dl.rust-lang.org/doc/tutorial-macros.html
 
