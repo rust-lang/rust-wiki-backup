@@ -14,10 +14,6 @@ We may change the module-separator from `::` back to `.`. There's little consens
 
 ([#2216](https://github.com/mozilla/rust/issues/2216)) Loops currently cannot carry labels, which makes breaking from deep within a loop difficult. There's a pretty clear way to implement this, it just requires some care to avoid clashing with nearby syntax.
 
-### Macro-invocation change, general macro-system rewrite
-
-([#2387](https://github.com/mozilla/rust/issues/2387)) Macros are changing to work on uniform balanced token-trees -- much like s-expressions -- rather than the existing system which is based on expressions (with separate quoters for type, item and pattern grammars). Concurrently, we are likely to introduce the "new" macro system with a new syntax that is a bit easier on the eyes: `macro_name! args`, where args is a balanced token-tree. There's still some disagreement on whether this reads better than `#macro_name(...)` but we'll decide at some point and stick with one or the other.
-
 ### Raw-strings rather than balanced-character custom lexemes
 
 ([#2755](https://github.com/mozilla/rust/issues/2755)) This is a minor change that should effect no code presently; we'll be introducing a "raw string" form (possibly with a variety of legal delimiters) that does _not_ balance the delimiter characters, so requires internal escaping of only the delimiter. This will replace the proposed (but never implemented) character-balanced custom lexeme syntax in the syntax-extension system. The cost of having a non-regular token grammar was deemed not worth the benefit, and most of the use cases for the latter are easily handled by the former.
