@@ -8,6 +8,8 @@ Borrowed pointers matured and replaced argument modes in some of the libraries. 
 
 ### Camel cased types
 
+We have a new convention that requires that types (and enum variants, which are not yet types) be camel cased. The entire core and standard libraries have been converted. We generally prefer that acronyms not be written with all caps, so e.g. the standard URL type is written `Url`.
+
 ### Keywords
 
 This release tried to narrow down the set of keywords and the current keywords are expected to be close to final.
@@ -118,7 +120,15 @@ explicit self types
 
 ### Transitioning import/export to pub/priv/use
 
-### Macro improvements
+### Macro changes
+
+Macros are now invoked with a postfix `!` instead of prefix `#`, as in `debug!("foo")`.
+
+We also have a powerful new way to define macros with the `macro_rules!` syntax extension. Macros are now based on trees of tokens with balanced braces instead of the full AST expressions the old macro implementation used.
+
+See [the macro tutorial][macros] for details.
+
+[macros]: http://dl.rust-lang.org/doc/tutorial-macros.html
 
 ### Smaller syntax changes
 
