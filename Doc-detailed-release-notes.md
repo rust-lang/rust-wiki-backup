@@ -31,12 +31,15 @@ as, assert, break, const, copy, do, drop,
 else, enum, export, extern, fail, false, fn, for,
 if, impl, let, log, loop, match, mod, move, mut,
 priv, pub, pure, ref, return, struct, true, trait, type,
-unchecked, unsafe, use, while
+unsafe, use, while
 ```
 
-Additionally `be` is reserved. Additionally, `self` and `static` are currently parsed as contextual keywords, but are expected to not be keywords in the future.
-
-`export` will be removed in favor of `pub` and `priv` item-level visibility (see below), and `assert`, `log`, and `fail` are likely to be converted to macros.
+Notes:
+* `be` is not a keyword, but is reserved for [possible future use](https://github.com/mozilla/rust/issues/217).
+* `self` and `static` are currently parsed as contextual keywords, but are expected to not be keywords in the future.
+* `export` will be removed in favor of `pub` and `priv` item-level visibility (see below).
+* [`assert`](https://github.com/mozilla/rust/issues/2228), [`log`](https://github.com/mozilla/rust/issues/554), and [`fail`](https://github.com/mozilla/rust/issues/2232) are likely to be converted to macros.
+* `drop` may [become a trait](https://github.com/mozilla/rust/issues/3061).
 
 ### Structs replace classes
 
