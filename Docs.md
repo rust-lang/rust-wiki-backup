@@ -4,37 +4,37 @@ Listing of documentation for users
 
 ### Current release (0.3)
 
-* [Tutorial](http://doc.rust-lang.org/doc/0.3/tutorial.html)
-* [Manual](http://doc.rust-lang.org/doc/0.3/rust.html) ([PDF](http://doc.rust-lang.org/doc/0.3/rust.pdf))
-* [Core library](http://doc.rust-lang.org/doc/0.3/core/index.html)
-* [Standard library](http://doc.rust-lang.org/doc/0.3/std/index.html)
+[Tutorial](http://doc.rust-lang.org/doc/0.3/tutorial.html)  
+[Manual](http://doc.rust-lang.org/doc/0.3/rust.html) ([PDF](http://doc.rust-lang.org/doc/0.3/rust.pdf))  
+[Core library](http://doc.rust-lang.org/doc/0.3/core/index.html)  
+[Standard library](http://doc.rust-lang.org/doc/0.3/std/index.html)  
 
 ### In-development (git master)
 
-* [Tutorial](http://doc.rust-lang.org/doc/tutorial.html)
-* [Tutorial on borrowed pointers](http://doc.rust-lang.org/doc/tutorial-borrowed-ptr.html)
-* [Tutorial on macros](http://doc.rust-lang.org/doc/tutorial-macros.html)
-* [Tutorial on FFI](http://doc.rust-lang.org/doc/tutorial-ffi.html)
-* [Manual](http://doc.rust-lang.org/doc/rust.html) ([PDF](http://doc.rust-lang.org/doc/rust.pdf))
-* [Core library](http://doc.rust-lang.org/doc/core/index.html)
-* [Standard library](http://doc.rust-lang.org/doc/std/index.html)
+[Tutorial](http://doc.rust-lang.org/doc/tutorial.html)  
+[Tutorial on borrowed pointers](http://doc.rust-lang.org/doc/tutorial-borrowed-ptr.html)  
+[Tutorial on macros](http://doc.rust-lang.org/doc/tutorial-macros.html)  
+[Tutorial on FFI](http://doc.rust-lang.org/doc/tutorial-ffi.html)  
+[Manual](http://doc.rust-lang.org/doc/rust.html) ([PDF](http://doc.rust-lang.org/doc/rust.pdf))  
+[Core library](http://doc.rust-lang.org/doc/core/index.html)  
+[Standard library](http://doc.rust-lang.org/doc/std/index.html)  
 
 ## Other documentation
 
-* [[Releases|Doc releases]] - Links to current and old releases and documentation
-* [[Detailed release notes|Doc detailed release notes]] - Further explanation of language changes
-* [[Unit testing|Doc unit testing]] - Writing tests and running them with the built-in test driver
-* [[Using cargo|Doc using cargo to manage packages]] - Managing and distributing Rust crates
-* [[Using rustdoc|Doc using rustdoc]] - How to extract Markdown and HTML documentation from code
-* [[Memory, modes, and mutation|Doc memory, modes, and mutation]], _a guide for the perplexed_
-* [[Reading and writing files|Doc Reading and writing files]]
-* [[Attributes|Doc attributes]] - The role of metadata in Rust code, with descriptions of many applications
+[[Releases|Doc releases]] - Links to current and old releases and documentation  
+[[Detailed release notes|Doc detailed release notes]] - Further explanation of language changes  
+[[Unit testing|Doc unit testing]] - Writing tests and running them with the built-in test driver  
+[[Using cargo|Doc using cargo to manage packages]] - Managing and distributing Rust crates  
+[[Using rustdoc|Doc using rustdoc]] - How to extract Markdown and HTML documentation from code  
+[[Memory, modes, and mutation|Doc memory, modes, and mutation]], _a guide for the perplexed_  
+[[Reading and writing files|Doc Reading and writing files]]  
+[[Attributes|Doc attributes]] - The role of metadata in Rust code, with descriptions of many applications  
 
 ## FAQs
 
-* [[Language FAQ|Doc language FAQ]]
-* [[Project FAQ|Doc project FAQ]]
-* [[Usage FAQ|Doc usage FAQ]]
+[[Language FAQ|Doc language FAQ]]  
+[[Project FAQ|Doc project FAQ]]  
+[[Usage FAQ|Doc usage FAQ]]  
 
 ## Blogs
 
