@@ -1,4 +1,4 @@
-This is an archive of all the existing Rust release artifacts. Releases are signed with the Rust [GPG signing key][key]. See also the [[detailed release notes|Doc detailed release notes]].
+This is an archive of all the existing Rust release artifacts. Each release is signed with the Rust [GPG signing key][key]. In addition to the included short-form release notes there is also a longer explanation of the changes in each release in the [[detailed release notes|Doc detailed release notes]].
 
 [key]: http://www.rust-lang.org/rust-key.gpg.ascii
 
