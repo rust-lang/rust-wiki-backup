@@ -23,6 +23,7 @@ Listing of documentation for users
 
 * [[Doc releases]] - Links to current and old releases and documentation
 * [[Doc detailed release notes]] - Further explanation of language changes
+* [[Doc blogs]] - Blogs and other such things related to Rust
 * [[Doc unit testing]] - Writing tests using the built-in test driver
 * [[Doc using cargo to manage packages]]
 * [[Doc using rustdoc]] - How to extract Markdown and HTML documentation from code
