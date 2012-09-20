@@ -4,6 +4,6 @@ This is alpha-level software with many known bugs, incomplete features and plann
 
 You should check out the [[docs|Docs]].
 
-Also, join #rust on irc.mozilla.org. People there are very helpful.
+Also, join #rust on irc.mozilla.org. It is a friendly place.
 
 If you intend to edit this wiki, please follow some [[conventions|Note wiki conventions]].
