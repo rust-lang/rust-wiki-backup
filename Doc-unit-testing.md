@@ -1,5 +1,7 @@
 # Unit testing in Rust
 
+> **Note:** rustc currently has a limitation that only crates linking to `std` can be tested. It will emit difficult-to-interpret errors if `extern mod std;` isn't written somewhere.
+
 Rust has built in support for simple unit testing. Functions can be marked as unit tests using the 'test' attribute.
 
 ```
