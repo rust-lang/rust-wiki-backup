@@ -23,7 +23,7 @@ Listing of documentation for users
 
 * [[Releases|Doc releases]] - Links to current and old releases and documentation
 * [[Detailed release notes|Doc detailed release notes]] - Further explanation of language changes
-* [[Unit testing|Doc unit testing]] - Writing tests using the built-in test driver
+* [[Unit testing|Doc unit testing]] - Writing tests and running them with the built-in test driver
 * [[Using cargo|Doc using cargo to manage packages]] - Managing and distributing Rust crates
 * [[Using rustdoc|Doc using rustdoc]] - How to extract Markdown and HTML documentation from code
 * [[Memory, modes, and mutation|Doc memory, modes, and mutation]], _a guide for the perplexed_
