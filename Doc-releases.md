@@ -4,9 +4,11 @@ This is an archive of all the existing Rust release artifacts. Each release is s
 
 ## 0.3.1
 
+* [Announcement][0.3.1-announce]
 * [Release notes][0.3.1-notes]
 * [Source code][0.3.1-tar] ([signature][0.3.1-tar-sig])
 
+[0.3.1-announce]: https://mail.mozilla.org/pipermail/rust-dev/2012-July/002152.html
 [0.3.1-notes]: https://github.com/mozilla/rust/blob/release-0.3.1/RELEASES.txt
 [0.3.1-tar]: http://dl.rust-lang.org/dist/rust-0.3.1.tar.gz
 [0.3.1-tar-sig]: http://dl.rust-lang.org/dist/rust-0.3.1.tar.gz.asc
@@ -15,6 +17,7 @@ This was an OS X bugfix release.
 
 ## 0.3
 
+* [Announcement][0.3-announce]
 * [Release notes][0.3-notes]
 * [Source code][0.3-tar] ([signature][0.3-tar-sig])
 * [Windows installer][0.3-exe] ([signature][0.3-exe-sig])
@@ -23,6 +26,7 @@ This was an OS X bugfix release.
 * [Core library docs][0.3-core]
 * [Standard library docs][0.3-std]
 
+[0.3-announce]: https://mail.mozilla.org/pipermail/rust-dev/2012-July/002087.html
 [0.3-notes]: https://github.com/mozilla/rust/blob/release-0.3/RELEASES.txt
 [0.3-tar]: http://dl.rust-lang.org/dist/rust-0.3.tar.gz
 [0.3-tar-sig]: http://dl.rust-lang.org/dist/rust-0.3.tar.gz.asc
@@ -36,10 +40,12 @@ This was an OS X bugfix release.
 
 ## 0.2
 
+* [Announcement][0.2-announce]
 * [Release notes][0.2-notes]
 * [Source code][0.2-tar] ([signature][0.2-tar-sig])
 * [Windows installer][0.2-exe] ([signature][0.2-exe-sig])
 
+[0.2-announce]: https://mail.mozilla.org/pipermail/rust-dev/2012-March/001511.html
 [0.2-notes]: https://github.com/mozilla/rust/blob/release-0.2/RELEASES.txt
 [0.2-tar]: http://dl.rust-lang.org/dist/rust-0.2.tar.gz
 [0.2-tar-sig]: http://dl.rust-lang.org/dist/rust-0.2.tar.gz.asc
@@ -48,9 +54,11 @@ This was an OS X bugfix release.
 
 ## 0.1
 
+* [Announcement][0.1-announce]
 * [Release notes][0.1-notes]
 * [Source code][0.1-tar] ([signature][0.1-tar-sig])
 
+[0.1-announce]: https://mail.mozilla.org/pipermail/rust-dev/2012-January/001256.html
 [0.1-notes]: https://github.com/mozilla/rust/blob/release-0.1/RELEASES.txt
 [0.1-tar]: http://dl.rust-lang.org/dist/rust-0.1.tar.gz
 [0.1-tar-sig]: http://dl.rust-lang.org/dist/rust-0.1.tar.gz.asc
