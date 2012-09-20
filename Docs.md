@@ -21,20 +21,20 @@ Listing of documentation for users
 
 ## Other documentation
 
-* [[Doc releases]] - Links to current and old releases and documentation
-* [[Doc detailed release notes]] - Further explanation of language changes
-* [[Doc unit testing]] - Writing tests using the built-in test driver
-* [[Doc using cargo to manage packages]]
-* [[Doc using rustdoc]] - How to extract Markdown and HTML documentation from code
-* [[Doc Memory, modes, and mutation]], _a guide for the perplexed_
-* [[Doc Reading and writing files]]
-* [[Doc attributes]] - The role of metadata in Rust code, with descriptions of many applications
+* [[Releases|Doc releases]] - Links to current and old releases and documentation
+* [[Detailed release notes|Doc detailed release notes]] - Further explanation of language changes
+* [[Unit testing|Doc unit testing]] - Writing tests using the built-in test driver
+* [[Using cargo|Doc using cargo to manage packages]] - Managing and distributing Rust crates
+* [[Using rustdoc|Doc using rustdoc]] - How to extract Markdown and HTML documentation from code
+* [[Memory, modes, and mutation|Doc memory, modes, and mutation]], _a guide for the perplexed_
+* [[Reading and writing files|Doc Reading and writing files]]
+* [[Attributes|Doc attributes]] - The role of metadata in Rust code, with descriptions of many applications
 
 ## FAQs
 
-* [[Doc language FAQ]]
-* [[Doc project FAQ]]
-* [[Doc usage FAQ]]
+* [[Language FAQ|Doc language FAQ]]
+* [[Project FAQ|Doc project FAQ]]
+* [[Usage FAQ|Doc usage FAQ]]
 
 ## Blogs
 
