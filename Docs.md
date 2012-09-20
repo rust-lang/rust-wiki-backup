@@ -42,6 +42,8 @@ People sometimes write about Rust.
 
 [Niko], [Patrick], [Graydon], [Brian], [Tim], [Ben], [Eric Holk], [Erick Tryzelaar], [Zack]
 
+You may also [Reddit].
+
 [Ben]: http://winningraceconditions.blogspot.com/
 [Brian]: http://brson.github.com/
 [Eric Holk]: http://theincredibleholk.wordpress.com/
@@ -51,3 +53,5 @@ People sometimes write about Rust.
 [Patrick]: http://pcwalton.github.com/
 [Tim]: http://tim.dreamwidth.org/
 [Zack]: http://blog.z0w0.me/
+
+[Reddit]: http://reddit.com/r/rust
