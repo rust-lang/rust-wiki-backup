@@ -1,3 +1,5 @@
+This is an archive of all the existing Rust release artifacts. See also the [[detailed release notes|Doc detailed release notes]].
+
 ## 0.3.1
 
 * [Release notes][0.3.1-notes]
