@@ -42,7 +42,7 @@ People sometimes write about Rust.
 
 [Niko], [Patrick], [Graydon], [Brian], [Tim], [Ben], [Eric Holk], [Erick Tryzelaar], [Zack]
 
-You may also [Reddit].
+Interesting stuff usually appears on [r/rust].
 
 [Ben]: http://winningraceconditions.blogspot.com/
 [Brian]: http://brson.github.com/
