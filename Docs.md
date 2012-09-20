@@ -23,7 +23,6 @@ Listing of documentation for users
 
 * [[Doc releases]] - Links to current and old releases and documentation
 * [[Doc detailed release notes]] - Further explanation of language changes
-* [[Doc blogs]] - Blogs and other such things related to Rust
 * [[Doc unit testing]] - Writing tests using the built-in test driver
 * [[Doc using cargo to manage packages]]
 * [[Doc using rustdoc]] - How to extract Markdown and HTML documentation from code
@@ -36,3 +35,17 @@ Listing of documentation for users
 * [[Doc language FAQ]]
 * [[Doc project FAQ]]
 * [[Doc usage FAQ]]
+
+## Blogs
+
+People sometimes write about Rust: [Niko], [Patrick], [Graydon], [Brian], [Tim], [Ben], [Eric Holk], [Erick Tryzelaar], [Zack]
+
+[Ben]: http://winningraceconditions.blogspot.com/
+[Brian]: http://brson.github.com/
+[Eric Holk]: http://theincredibleholk.wordpress.com/
+[Erick Tryzelaar]: http://erickt.github.com/
+[Graydon]: https://blog.mozilla.org/graydon/
+[Niko]: http://smallcultfollowing.com/babysteps/
+[Patrick]: http://pcwalton.github.com/
+[Tim]: http://tim.dreamwidth.org/
+[Zack]: http://blog.z0w0.me/
