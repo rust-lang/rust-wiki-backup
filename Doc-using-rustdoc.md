@@ -56,24 +56,13 @@ to write function documentation inside the function definition by using the `//!
         ...
     }
 
-It is also possible to specify rustdocs using `doc` attributes:
+Doc comments are simply sugar for the `doc` attribute, which you should not use because it looks unsightly.
 
     #[doc = "Engage thrusters"]
     fn thrusters_on() { ... }
 
-Like other attributes they can also be placed inside of items by
-using a trailing semi-colon.
-
-    fn thrusters_on() {
-        #[doc = "Engage thrusters"];
-        ...
-    }
-
-It is suggested that doc-comments are normally used instead instead
-of doc-attributes, which may be removed in the future.
-
-The `rustdoc` tool understands what to do with doc-comments on crates,
-items, enum variants, iface methods and impl methods. doc-comments found
+The `rustdoc` tool understands what to do with doc-comments on crates, mods,
+items, enum variants, structs, trait methods and impl methods. doc-comments found
 in other places are silently ignored.
 
 ### The rules of rustdoc
