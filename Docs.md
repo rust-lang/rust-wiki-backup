@@ -1,11 +1,18 @@
-## Current release (0.3)
+Here are the docs. The documents about Rust. Read the reference docs first, because those are likely to be correct, if incomplete. This wiki also has a number of useful articles of varying ages and accuracy.
+
+The best source of up to date information is #rust on irc.mozilla.org. That is where most discussion about Rust takes place. A lot of decisions are made on [rust-dev]. New developments are often blogged in various places, which usually appear on [r/rust].
+
+[rust-dev]: https://mail.mozilla.org/listinfo/rust-dev
+[r/rust]: http://reddit.com/r/rust
+
+## Current reference docs (0.3)
 
 [Tutorial](http://doc.rust-lang.org/doc/0.3/tutorial.html)  
 [Manual](http://doc.rust-lang.org/doc/0.3/rust.html) ([PDF](http://doc.rust-lang.org/doc/0.3/rust.pdf))  
 [Core library](http://doc.rust-lang.org/doc/0.3/core/index.html)  
 [Standard library](http://doc.rust-lang.org/doc/0.3/std/index.html)  
 
-## In-development (git master)
+## In-development reference docs (git master)
 
 [Tutorial](http://doc.rust-lang.org/doc/tutorial.html)  
 [Tutorial on borrowed pointers](http://doc.rust-lang.org/doc/tutorial-borrowed-ptr.html)  
@@ -38,7 +45,7 @@ People sometimes write about Rust.
 
 [Niko], [Patrick], [Graydon], [Brian], [Tim], [Ben], [Eric Holk], [Erick Tryzelaar], [Zack]
 
-Interesting stuff usually appears on [r/rust][reddit].
+Interesting stuff usually appears on [r/rust].
 
 [Ben]: http://winningraceconditions.blogspot.com/
 [Brian]: http://brson.github.com/
@@ -50,4 +57,4 @@ Interesting stuff usually appears on [r/rust][reddit].
 [Tim]: http://tim.dreamwidth.org/
 [Zack]: http://blog.z0w0.me/
 
-[reddit]: http://reddit.com/r/rust
+[r/rust]: http://reddit.com/r/rust
