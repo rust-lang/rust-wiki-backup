@@ -42,7 +42,7 @@ People sometimes write about Rust.
 
 [Niko], [Patrick], [Graydon], [Brian], [Tim], [Ben], [Eric Holk], [Erick Tryzelaar], [Zack]
 
-Interesting stuff usually appears on [r/rust].
+Interesting stuff usually appears on [r/rust|reddit].
 
 [Ben]: http://winningraceconditions.blogspot.com/
 [Brian]: http://brson.github.com/
@@ -54,4 +54,4 @@ Interesting stuff usually appears on [r/rust].
 [Tim]: http://tim.dreamwidth.org/
 [Zack]: http://blog.z0w0.me/
 
-[Reddit]: http://reddit.com/r/rust
+[reddit]: http://reddit.com/r/rust
