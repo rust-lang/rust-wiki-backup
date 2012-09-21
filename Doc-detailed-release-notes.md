@@ -191,11 +191,57 @@ See also [the macro tutorial][macros].
 
 ([#2030](https://github.com/mozilla/rust/issues/2030))  Previous versions of Rust attempted to select optimal default argument-passing behavior (by-reference or by-value) based on type-directed heuristics, with sigils available to override the defaults. This system (called "modes" or "argument modes") was responsible for the presence of the sigils `+`, `-`, `&` and `&&` on function parameters.
 
-In practice this system was simultaneously too confusing to use and too inflexible with respect to scenarios where first-class borrowed pointers were desired (returning by reference, storing non-escaping pointers into structured values, etc.) Therefore in 0.4, as first-class borrowed pointers (the other, more pervasive use of the syntax `&T`) have matured to be a better alternative in almost all cases, and many of the residual motives for modes made redundant by full monomorphization, we have deprecated (and removed in as much code as possible) the mode system; it should not be visible to users and support for it is only available through opt-in attributes to help transition code off that system.
+In practice this system was simultaneously too confusing to use and too inflexible with respect to scenarios where first-class borrowed pointers were desired (returning by reference, storing non-escaping pointers into structured values, etc.) Therefore in 0.4, as first-class borrowed pointers (the other, more pervasive use of the syntax `&T`) have matured to be a better alternative in almost all cases, and many of the residual motives for modes made redundant by full monomorphization, we have deprecated (and removed in as much code as possible) the mode system; it should not be visible to users and support for it is only available by opting in with the `#[legace_modes]` crate attribute.
 
 ### Inherited mutability
 
-([nmatsakis:mut](http://smallcultfollowing.com/babysteps/blog/2012/05/31/mutability/)) After several repeated attempts to treat mutability as a full type constructor, we have settled on treatment as an _inherited_ storage-qualifier. That is, while the `mut` keyword can still only be used to qualify storage locations (the referents of pointers, variables, fields in structures), by placing `mut` on a storage location you now implicitly `mut`-qualify all of the _directly-contained sub-locations_ within the mutable location. This makes sense if you consider that an "outer" `mut` qualification could always _effectively_ mutate an inner "immutable" qualification by simply overwriting the entire containing location. This change therefore only makes the rule explicit in the type system; it is in other words a matter of improving the type system's soundness with respect to mutability.
+([nmatsakis:mut](http://smallcultfollowing.com/babysteps/blog/2012/05/31/mutability/)) After several repeated attempts to treat mutability as a full type constructor, we have settled on treatment as an _inherited_ storage-qualifier. That is, while the `mut` keyword can still only be used to qualify storage locations (the referents of pointers, variables, fields in structures), by placing `mut` on a storage location you now implicitly deeply `mut`-qualify all of the owned (sendable) types within the mutable location. This makes sense if you consider that an "outer" `mut` qualification could always _effectively_ mutate an inner "immutable" qualification by simply overwriting the entire containing location. This change therefore only makes the rule explicit in the type system; it is in other words a matter of improving the type system's soundness with respect to mutability.
+
+```
+struct S1 {
+  field: ~S2;
+}
+
+struct S2 {
+  intfield: int,
+  boxfield: @int
+}
+
+let mut = S1 { field: S2 { intfield: 1, boxfield: @2 } };
+
+// S1 is in a mutable slot so we can mutate the fields
+S1.field = S2 { intfield: 3, boxfield: @4 };
+
+// We can also reach through owned boxes and mutate their insides
+S1.field.intfield = 5;
+
+// Managed boxes are not owned so their interior is not mutable
+*S1.field.boxfield = 6; // ERROR
+```
+
+At first glance this seems like an odd way to deal with mutability, but it seems to work very well with Rust's ownership semantics, and it enables some fascinating patterns that are particularly useful for concurrency.
+
+```
+// LinearMap is an owned map type in core::send_map
+// While it lives in a mutable slot we can call methods that mutate the map
+let mut map = LinearMap();
+map.insert(foo, bar);
+
+// Move it into an immutable slot and the whole structure becomes 'frozen'
+let map = move map;
+map.insert(foo, bar); // ERROR
+
+// At this point you can do some interesting things like put your entire map
+// into a read-only shared-memory container (ARC - atomically reference counted).
+let arc_map = ARC(move map);
+
+for repeat(50) {
+  let arc_clone = arc::clone(arc_map);
+  do spawn |move arc_clone| {
+    // Do cool things with my immutable shared-memory hash map
+  }
+}
+```
 
 ### Pipes
 
