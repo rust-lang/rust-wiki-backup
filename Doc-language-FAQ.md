@@ -83,8 +83,8 @@ There aren't many large programs yet. The [Rust compiler][rustc], 50,000+ lines 
 
 Some examples that demonstrate different aspects of the language:
 
-* The core library's [LinearMap] - A sendable hash map in an OO style.
-* Servo's [image_cache_task] - An image cache using an actor pattern
+* The core library's [LinearMap] - A sendable hash map in an OO style
+* Servo's [image_cache_task] - An image cache in an actor style
 * [fempeg] - An mpeg-2 decoder that does only stack allocation, no heap, no GC
 * [mre] - A small web framework integrating a number of interesting bindings
 
