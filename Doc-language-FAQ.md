@@ -33,7 +33,7 @@
 
 ### What does it look like?
 
-The syntax is still evolving, but here's a snippet from a map implementation in core::send_map.
+The syntax is still evolving, but here's a snippet from the hash map in core::send_map.
 
 ```none
     struct LinearMap<K:Eq Hash,V> {
@@ -44,36 +44,29 @@ The syntax is still evolving, but here's a snippet from a map implementation in 
         buckets: ~[Option<Bucket<K,V>>],
     }
 
+    enum SearchResult {
+        FoundEntry(uint), FoundHole(uint), TableFull
+    }
+
     fn linear_map_with_capacity<K:Eq Hash,V>(capacity: uint) -> LinearMap<K,V> {
         let r = rand::Rng();
         linear_map_with_capacity_and_keys(r.gen_u64(), r.gen_u64(), capacity)
     }
 
-    priv impl<K:Hash IterBytes Eq, V> LinearMap<K,V> {
-        #[inline(always)]
-        pure fn to_bucket(&const self, h: uint) -> uint {
-            // FIXME(#3041) borrow a more sophisticated technique here from
-            // Gecko, for example borrowing from Knuth, as Eich so
-            // colorfully argues for here:
-            // https://bugzilla.mozilla.org/show_bug.cgi?id=743107#c22
-            h % self.buckets.len()
+    impl<K:Hash IterBytes Eq, V> LinearMap<K,V> {
+
+        pure fn contains_key(&const self, k: &K) -> bool {
+            match self.bucket_for_key(self.buckets, k) {
+                FoundEntry(_) => true,
+                TableFull | FoundHole(_) => false
+            }
         }
 
-        /// Expands the capacity of the array and re-inserts each
-        /// of the existing buckets.
-        fn expand(&mut self) {
-            let old_capacity = self.buckets.len();
-            let new_capacity = old_capacity * 2;
-            self.resize_at = ((new_capacity as float) * 3.0 / 4.0) as uint;
-
-            let mut old_buckets = vec::from_fn(new_capacity, |_i| None);
-            self.buckets <-> old_buckets;
-
-            for uint::range(0, old_capacity) |i| {
-                let mut bucket = None;
-                bucket <-> old_buckets[i];
-                self.insert_opt_bucket(move bucket);
+        fn clear(&mut self) {
+            for uint::range(0, self.buckets.len()) |idx| {
+                self.buckets[idx] = None;
             }
+            self.size = 0;
         }
 
     ...
