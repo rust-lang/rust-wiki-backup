@@ -81,7 +81,7 @@ Yes. All development happens in lock-step on all 3 target platforms. Using MinGW
 
 ### Are there any big programs written in it yet? I want to read big samples.
 
-There aren't many large programs yet. The Rust [compiler][rustc], 50,000+ lines at the time of writing, is written in Rust. As the oldest body of Rust code it has gone through many iterations of the language, and some parts are nicer to look at than others. It may not be the best code to learn from, but [resolve] and [borrowck] were written recently.
+There aren't many large programs yet. The Rust [compiler][rustc], 50,000+ lines at the time of writing, is written in Rust. As the oldest body of Rust code it has gone through many iterations of the language, and some parts are nicer to look at than others. It may not be the best code to learn from, but [borrowck] and [resolve] were written recently.
 
 [rustc]: https://github.com/mozilla/rust/tree/master/src/rustc
 [resolve]: https://github.com/mozilla/rust/blob/master/src/rustc/middle/resolve.rs
