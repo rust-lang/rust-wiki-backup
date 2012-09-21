@@ -79,10 +79,21 @@ Yes. All development happens in lock-step on all 3 target platforms. Using mingw
 
 ### Are there any big programs written in it yet? I want to read big samples.
 
-There aren't many large programs yet, but there are a few. The [Rust compiler][rustc], 50,000+ lines at the time of writing, is written in Rust. A research browser engine called [Servo][servo], 17,000+ lines, is also a large task oriented application, integrating many crates and native library bindings.
+There aren't many large programs yet. The [Rust compiler][rustc], 50,000+ lines at the time of writing, is written in Rust. A research browser engine called [Servo][servo], 17,000+ lines, will be a large task oriented application, integrating many crates and native library bindings (note that it can be difficult to build currently).
+
+Some examples that demonstrate different aspects of the language:
+
+* The core library's `[LinearMap]` - A sendable hash map in an OO style.
+* Servo's `[image_cache_task]` - An image cache using an actor pattern
+* [fempeg] - An mpeg-2 decoder that does only stack allocation, no heap, no GC
+* [mre] - A small web framework integrating a number of interesting bindings
 
 [rustc]: https://github.com/mozilla/rust/tree/master/src/rustc
 [servo]: https://github.com/mozilla/servo
+[LinearMap]: https://github.com/mozilla/rust/blob/master/src/libcore/send_map.rs
+[image_cache_task]: https://github.com/mozilla/servo/blob/master/src/servo/resource/image_cache_task.rs
+[fempeg]: https://github.com/pcwalton/fempeg
+[mre]: https://github.com/erickt/mre
 
 ### Have you seen this Google language, Go? How does Rust compare?
 
