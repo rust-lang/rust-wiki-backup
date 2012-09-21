@@ -33,32 +33,51 @@
 
 ### What does it look like?
 
-The syntax is still evolving, but here's a snippet from cargo, the Rust package manager:
+The syntax is still evolving, but here's a snippet from a map implementation in core::send_map.
 
 ```none
-fn install_source(c: cargo, path: ~str) {
-    debug!("source: %s", path);
-    fs::change_dir(path);
-    let contents = fs::list_dir(".");
-
-    debug!("contents: %s", str::connect(contents, ", "));
-
-    let cratefiles = contents.filter |n| {
-        str::ends_with(n, ".rc")
-    };
-
-    if cratefiles.is_empty() {
-        fail "This doesn't look like a rust package (no .rc files).";
+    struct LinearMap<K:Eq Hash,V> {
+        k0: u64,
+        k1: u64,
+        resize_at: uint,
+        size: uint,
+        buckets: ~[Option<Bucket<K,V>>],
     }
 
-    for cratefiles.each |cf| {
-        let p = load_pkg(cf);
-        match p {
-            None => again
-            Some(p) => install_one_crate(c, path, cf, p)
+    fn linear_map_with_capacity<K:Eq Hash,V>(capacity: uint) -> LinearMap<K,V> {
+        let r = rand::Rng();
+        linear_map_with_capacity_and_keys(r.gen_u64(), r.gen_u64(), capacity)
+    }
+
+    priv impl<K:Hash IterBytes Eq, V> LinearMap<K,V> {
+        #[inline(always)]
+        pure fn to_bucket(&const self, h: uint) -> uint {
+            // FIXME(#3041) borrow a more sophisticated technique here from
+            // Gecko, for example borrowing from Knuth, as Eich so
+            // colorfully argues for here:
+            // https://bugzilla.mozilla.org/show_bug.cgi?id=743107#c22
+            h % self.buckets.len()
         }
+
+        /// Expands the capacity of the array and re-inserts each
+        /// of the existing buckets.
+        fn expand(&mut self) {
+            let old_capacity = self.buckets.len();
+            let new_capacity = old_capacity * 2;
+            self.resize_at = ((new_capacity as float) * 3.0 / 4.0) as uint;
+
+            let mut old_buckets = vec::from_fn(new_capacity, |_i| None);
+            self.buckets <-> old_buckets;
+
+            for uint::range(0, old_capacity) |i| {
+                let mut bucket = None;
+                bucket <-> old_buckets[i];
+                self.insert_opt_bucket(move bucket);
+            }
+        }
+
+    ...
     }
-}
 ```
 
 ### Does it run on Windows?
