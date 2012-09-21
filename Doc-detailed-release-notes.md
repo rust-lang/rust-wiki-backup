@@ -219,7 +219,7 @@ S1.field.intfield = 5;
 *S1.field.boxfield = 6; // ERROR
 ```
 
-At first glance this seems like an odd way to deal with mutability, but it seems to work very well with Rust's ownership semantics, and it enables some fascinating patterns that are particularly useful for concurrency. In particular it allows for dual mode data structures that, under certain circumstances my mutate fields, and under others not, similar to C++ const methods.
+At first glance this seems like an odd way to deal with mutability, but it seems to work very well with Rust's ownership semantics, and it enables some fascinating patterns that are particularly useful for concurrency. In particular, when combined with explicit self types it allows for 'dual mode' data structures that, under certain circumstances my mutate fields, and under others not, similar to C++ const methods.
 
 ```
 struct S {
