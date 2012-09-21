@@ -79,7 +79,10 @@ Yes. All development happens in lock-step on all 3 target platforms. Using mingw
 
 ### Are there any big programs written in it yet? I want to read big samples.
 
-The Rust compiler, 40,000+ lines at the time of writing, is written in Rust. See the `src/rustc/` directory.
+There aren't many large programs yet, but there are a few. The [Rust compiler][rustc], 50,000+ lines at the time of writing, is written in Rust. A research browser engine called [Servo][servo], 17,000+ lines, is also a large task oriented application, integrating many crates and native library bindings.
+
+[rustc]: https://github.com/mozilla/rust/tree/master/src/rustc
+[servo]: https://github.com/mozilla/servo
 
 ### Have you seen this Google language, Go? How does Rust compare?
 
