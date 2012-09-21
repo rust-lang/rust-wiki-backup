@@ -73,12 +73,6 @@ The syntax is still evolving, but here's a snippet from the hash map in core::se
     }
 ```
 
-### Does it run on Windows?
-
-Yes. All development happens in lock-step on all 3 target platforms. Using MinGW, not Cygwin. Note that the windows implementation currently has some limitations: in particular tasks [cannot unwind on windows][unwind], and all Rust executables require a MinGW installation at runtime.
-
-[unwind]: https://github.com/mozilla/rust/issues/908
-
 ### Are there any big programs written in it yet? I want to read big samples.
 
 There aren't many large programs yet. The Rust [compiler][rustc], 50,000+ lines at the time of writing, is written in Rust. As the oldest body of Rust code it has gone through many iterations of the language, and some parts are nicer to look at than others. It may not be the best code to learn from, but [borrowck] and [resolve] were written recently.
@@ -104,6 +98,12 @@ Some examples that demonstrate different aspects of the language:
 [image_cache_task]: https://github.com/mozilla/servo/blob/master/src/servo/resource/image_cache_task.rs
 [fempeg]: https://github.com/pcwalton/fempeg
 [mre]: https://github.com/erickt/mre
+
+### Does it run on Windows?
+
+Yes. All development happens in lock-step on all 3 target platforms. Using MinGW, not Cygwin. Note that the windows implementation currently has some limitations: in particular tasks [cannot unwind on windows][unwind], and all Rust executables require a MinGW installation at runtime.
+
+[unwind]: https://github.com/mozilla/rust/issues/908
 
 ### Have you seen this Google language, Go? How does Rust compare?
 
