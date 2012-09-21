@@ -81,11 +81,14 @@ Yes. All development happens in lock-step on all 3 target platforms. Using MinGW
 
 ### Are there any big programs written in it yet? I want to read big samples.
 
-There aren't many large programs yet. The [Rust compiler][rustc], 50,000+ lines at the time of writing, is written in Rust. A research browser engine called [Servo][servo], 17,000+ lines, will be a large task oriented application, integrating many crates and native library bindings (note that it can be difficult to build currently).
+There aren't many large programs yet. The [Rust compiler][rustc], 50,000+ lines at the time of writing, is written in Rust.
+
+A research browser engine called [Servo][servo], 17,000+ lines across more than a dozen crates, will be a large task-oriented, graphical application, exercising interesting Rust features, and integrating many native libraries (note that it can be difficult to build currently).
 
 Some examples that demonstrate different aspects of the language:
 
 * The core library's [LinearMap] - A sendable hash map in an OO style
+* The std [json] module - Enums and pattern matching
 * Servo's [image_cache_task] - An image cache in an actor style
 * [fempeg] - An mpeg-2 decoder that does only stack allocation, no heap, no GC
 * [mre] - A small web framework integrating a number of interesting bindings
