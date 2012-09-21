@@ -107,7 +107,7 @@ Some examples that demonstrate different aspects of the language:
 
 ### Have you seen this Google language, Go? How does Rust compare?
 
-Rust and Go have similar syntax and task models, but they have very different type systems. Rust is distinguished by greater type safety and memory safety guarantees, more control over memory layout, and robust generics. Rust also tends to be more explicit than Go.
+Rust and Go have similar syntax and task models, but they have very different type systems. Rust is distinguished by greater type safety and memory safety guarantees, more control over memory layout, and robust generics.
 
 Rust has several goals that aren't shared by Go:
 
