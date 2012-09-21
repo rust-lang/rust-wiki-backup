@@ -39,7 +39,7 @@ Notes:
 * `self` and `static` are currently parsed as contextual keywords, but are expected to not be keywords in the future.
 * `export` will be removed in favor of `pub` and `priv` item-level visibility (see below).
 * [`assert`](https://github.com/mozilla/rust/issues/2228), [`log`](https://github.com/mozilla/rust/issues/554), and [`fail`](https://github.com/mozilla/rust/issues/2232) are likely to be converted to macros.
-* `drop` may [become a trait](https://github.com/mozilla/rust/issues/3061).
+* `drop` may [become a trait](https://github.com/mozilla/rust/issues/3061) rather than a keyword, as might `const`.
 
 ### Structs replace classes
 
