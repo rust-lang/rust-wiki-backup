@@ -162,7 +162,7 @@ We want to maintain the option to parametrize at runtime. We may make eventually
 
 ### Why aren't values type-parametric? Why only items?
 
-Doing so would make type inference much more complex, and require the implementation strategy of runtime parametrization. While this is our default implementation strategy, we don't want to mandate it.
+Doing so would make type inference much more complex, and require the implementation strategy of runtime parametrization.
 
 ### Why are enumerations nominal and closed?
 
@@ -179,10 +179,6 @@ There's a lot of debate on this topic; it's easy to find a proponent of default-
 ### Why are channels half-duplex (one-way)?
 
 Similar to the reasoning about default-sync: it wires fewer assumptions into the implementation, that would have to be paid by all use-cases even if they actually require a more complex communication topology.
-
-### Why are channels weak?
-
-To simplify reasoning about resource-ownership and task-lifetime reasoning. This decision may be revisited in the future.
 
 ### Why are strings UTF-8 by default? Why not UCS2 or UCS4?
 
@@ -212,14 +208,24 @@ Yes. The Rust code has to be exposed via an `extern` declaration, which makes it
 
 ### How do Rust's task stacks work?
 
-They start very small (a few hundred bytes) and expand dynamically by calling through special frames that allocate new stack segments. This is known as the "spaghetti stack" approach.
+They start small (ideally in the hundreds of bytes) and expand dynamically by calling through special frames that allocate new stack segments. This is known as the "spaghetti stack" approach.
 
-### What is the difference between a reference and a box pointer?
+### What is the difference between a managed box pointer (`@`) and an owned box pointer (`~`)?
 
-* A box pointer points into a reference-counted heap allocation.
-* A reference points to the interior of a stack _or_ heap allocation, and formation or duplication of an alias does not entail reference counting.
-* References can only be formed when the referent will provably outlive the reference.
-* References can therefore only be declared in function signatures, as parameters.
+* Managed boxes live in the garbage collected task-local heap
+* Owned boxes live in the global exchange heap
+* Managed boxes may be referred to by multiple managed box references
+* Owned boxes have unique ownership and there may only be a single unique pointer to a unique box at a time
+* Managed boxes may not be shared between tasks
+* Owned boxes may be transferred (moved) between tasks
+
+### What is the difference between a borrowed pointer (`&`) and managed and owned boxes?
+
+* Borrowed pointers point to the interior of a stack _or_ heap allocation
+* Borrowed pointers can only be formed when it will provably be outlived by the referent
+* Borrowed pointers to managed box pointers keep the managed boxes alive
+* Borrowed pointers to owned boxes prevent their ownership from being transferred
+* Borrowed pointers employ region-based alias analysis to ensure correctness
 
 ### Why aren't function signatures inferred? Why only local slots?
 
