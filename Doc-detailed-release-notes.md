@@ -219,7 +219,7 @@ S1.field.intfield = 5;
 *S1.field.boxfield = 6; // ERROR
 ```
 
-At first glance this seems like an odd way to deal with mutability, but it seems to work very well with Rust's ownership semantics, and it enables some fascinating patterns that are particularly useful for concurrency. In particular, when combined with explicit self types it allows for 'dual mode' data structures that, under certain circumstances my mutate fields, and under others not, similar to C++ const methods.
+At first glance this might seem like an odd way to deal with mutability, but it seems to work very well with Rust's ownership semantics, and it enables some fascinating patterns that are particularly useful for concurrency. In particular, when combined with explicit self types it allows for 'dual mode' data structures that, under certain circumstances my mutate fields, and under others not, similar to C++ const methods.
 
 ```
 struct S {
@@ -229,7 +229,7 @@ struct S {
 impl S {
   // Method declared with explicit mutable self type
   fn mutate(&mut self) {
-    self.int = 10;
+    self.foo = 10;
   }
 
   fn do_not_mutate(&self) {
@@ -238,7 +238,7 @@ impl S {
 }
 ```
 
-So you can do cool things with this.
+So you can do neat stuff with this.
 
 ```
 // LinearMap is an owned map type in core::send_map
@@ -251,14 +251,14 @@ let map = move map;
 map.insert(foo, bar); // ERROR
 
 // At this point you can do some interesting things like put your entire map
-// into a read-only shared-memory container (ARC - atomically reference counted).
-let arc_map = ARC(move map);
+// into a read-only shared-memory container.
+let arc_map = ARC(move map); // ARC: 'atomically-reference-counted'
 
 for repeat(50) {
   // Create another handle to the same map
   let arc_clone = arc::clone(arc_map);
   do spawn |move arc_clone| {
-    // Do cool things with my immutable shared-memory hash map
+    // Read my immutable, shared hash map in parallel with other tasks
   }
 }
 ```
