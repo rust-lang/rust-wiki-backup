@@ -81,7 +81,7 @@ There aren't many large programs yet. The Rust [compiler][rustc], 50,000+ lines 
 [resolve]: https://github.com/mozilla/rust/blob/master/src/rustc/middle/resolve.rs
 [borrowck]: https://github.com/mozilla/rust/blob/master/src/rustc/middle/borrowck.rs
 
-A research browser engine called [Servo][servo], currently 17,000+ lines across more than a dozen crates, will be exercising a lot of Rust's distinct type-system and concurrency features, and integrating many native libraries. Note that Servo pushes at all the rough edges of Rust, and with the ongoing language changes is regrettably difficult to build for the time being.
+A research browser engine called [Servo][servo], currently 17,000+ lines across more than a dozen crates, will be exercising a lot of Rust's distinctive type-system and concurrency features, and integrating many native libraries. Note that Servo pushes at all the rough edges of Rust, and with the ongoing language changes is regrettably difficult to build for the time being.
 
 [servo]: https://github.com/mozilla/servo
 
