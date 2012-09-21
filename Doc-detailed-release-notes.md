@@ -219,7 +219,26 @@ S1.field.intfield = 5;
 *S1.field.boxfield = 6; // ERROR
 ```
 
-At first glance this seems like an odd way to deal with mutability, but it seems to work very well with Rust's ownership semantics, and it enables some fascinating patterns that are particularly useful for concurrency.
+At first glance this seems like an odd way to deal with mutability, but it seems to work very well with Rust's ownership semantics, and it enables some fascinating patterns that are particularly useful for concurrency. In particular it allows for dual mode data structures that, under certain circumstances my mutate fields, and under others not, similar to C++ const methods.
+
+```
+struct S {
+  foo: int
+}
+
+impl S {
+  // Method declared with explicit mutable self type
+  fn mutate(&mut self) {
+    self.int = 10;
+  }
+
+  fn do_not_mutate(&self) {
+    // Can't mutate fields because we don't have a mutable self pointer
+  }
+}
+```
+
+So you can do cool things with this.
 
 ```
 // LinearMap is an owned map type in core::send_map
