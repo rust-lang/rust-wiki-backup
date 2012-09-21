@@ -89,6 +89,8 @@ There aren't many large programs yet. The Rust [compiler][rustc], 50,000+ lines 
 
 A research browser engine called [Servo][servo], currently 17,000+ lines across more than a dozen crates, will be a large task-oriented, graphical engine, exercising interesting Rust features, and integrating many native libraries (note that it can be difficult to build currently).
 
+[servo]: https://github.com/mozilla/servo
+
 Some examples that demonstrate different aspects of the language:
 
 * The core library's [LinearMap] - A sendable hash map in an OO style
@@ -97,8 +99,8 @@ Some examples that demonstrate different aspects of the language:
 * [fempeg] - An mpeg-2 decoder that does only stack allocation, no heap and no GC
 * [mre] - A small web framework integrating a number of interesting bindings
 
-[servo]: https://github.com/mozilla/servo
 [LinearMap]: https://github.com/mozilla/rust/blob/master/src/libcore/send_map.rs
+[json]: https://github.com/mozilla/rust/blob/master/src/libstd/json.rs
 [image_cache_task]: https://github.com/mozilla/servo/blob/master/src/servo/resource/image_cache_task.rs
 [fempeg]: https://github.com/pcwalton/fempeg
 [mre]: https://github.com/erickt/mre
