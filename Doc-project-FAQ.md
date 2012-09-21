@@ -28,9 +28,9 @@ What exists presently is:
 * A self-hosted (written in Rust) compiler, which uses LLVM as a backend.
 * A runtime library.
 * An evolving standard library.
-* A test suite covering the compiler and libraries.
 * Documentation for the language and libraries.
 * Incomplete tools for packaging and documentation.
+* A test suite covering the compiler and libraries.
 
 ### Is this a completely Mozilla-planned and orchestrated thing?
 
@@ -46,13 +46,13 @@ No. It started as a part-time side project in 2006 and remained so for over 3 ye
 * The design is stable enough. All the major pieces have reached non-imaginary, initial implementation status. It seems to hold together ok.
 * Languages solely implemented and supported by one person _also_ have a poor track record. To survive it'll need help.
 
-### Are you going to use this to suddenly rewrite the browser and change everything? Is the Mozilla Corporation trying to force the community to use a new language?
-
-No. The Mozilla Corporation's involvement is at the _labs_ level: the group concerned with doing _experiments_. The point is to explore ideas. There is currently no plan to incorporate any Rust-based technology into Firefox.
-
 ### What will Mozilla use Rust for?
 
-Mozilla intends to use Rust as a platform for prototyping experimental browser architectures. Specifically, the hope is to develop a browser that is more amenable to parallelization than existing ones, while also being less prone to common C++ coding errors. The name of that project is _Servo_.
+Mozilla intends to use Rust as a platform for prototyping experimental browser architectures. Specifically, the hope is to develop a browser that is more amenable to parallelization than existing ones, while also being less prone to common C++ coding errors. The name of that project is _[Servo](http://github.com/mozilla/servo)_.
+
+### Are you going to use this to suddenly rewrite the browser and change everything? Is the Mozilla Corporation trying to force the community to use a new language?
+
+No. This is a research project. The point is to explore ideas. There is no plan to incorporate any Rust-based technology into Firefox.
 
 ### Why GitHub rather than the normal Mozilla setup (Mercurial / Bugzilla / Tinderbox)?
 
