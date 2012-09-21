@@ -75,7 +75,7 @@ The syntax is still evolving, but here's a snippet from the hash map in core::se
 
 ### Does it run on Windows?
 
-Yes. All development happens in lock-step on all 3 target platforms. Using MinGW, not Cygwin. Note that the windows implementation has some temporary limitations: in particular tasks [cannot unwind on windows][unwind], and all Rust executables require a MinGW installation at runtime.
+Yes. All development happens in lock-step on all 3 target platforms. Using MinGW, not Cygwin. Note that the windows implementation currently has some limitations: in particular tasks [cannot unwind on windows][unwind], and all Rust executables require a MinGW installation at runtime.
 
 [unwind]: https://github.com/mozilla/rust/issues/908
 
