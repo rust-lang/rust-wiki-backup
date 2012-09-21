@@ -90,7 +90,7 @@ Some examples that demonstrate different aspects of the language:
 * The core library's [LinearMap] - A sendable hash map in an OO style
 * The std [json] module - Enums and pattern matching
 * Servo's [ImageCacheTask] - An image cache in an actor style
-* [fempeg] - An mpeg-2 decoder that does only stack allocation, no heap and no GC
+* [fempeg] - An mp2 decoder that does only stack allocation, no heap and no GC
 * [mre] - A small web framework integrating a number of interesting bindings
 
 [LinearMap]: https://github.com/mozilla/rust/blob/master/src/libcore/send_map.rs
