@@ -81,19 +81,22 @@ Yes. All development happens in lock-step on all 3 target platforms. Using MinGW
 
 ### Are there any big programs written in it yet? I want to read big samples.
 
-There aren't many large programs yet. The [Rust compiler][rustc], 50,000+ lines at the time of writing, is written in Rust.
+There aren't many large programs yet. The Rust [compiler][rustc], 50,000+ lines at the time of writing, is written in Rust. As the oldest body of Rust code it has gone through many iterations of the language, and some parts are nicer to look at than others. It may not be the best code to learn from, but [resolve] and [borrowck] were written recently.
 
-A research browser engine called [Servo][servo], 17,000+ lines across more than a dozen crates, will be a large task-oriented, graphical application, exercising interesting Rust features, and integrating many native libraries (note that it can be difficult to build currently).
+[rustc]: https://github.com/mozilla/rust/tree/master/src/rustc
+[resolve]: https://github.com/mozilla/rust/blob/master/src/rustc/middle/resolve.rs
+[borrowck]: https://github.com/mozilla/rust/blob/master/src/rustc/middle/borrowck.rs
+
+A research browser engine called [Servo][servo], 17,000+ lines across more than a dozen crates, will be a large task-oriented, graphical engine, exercising interesting Rust features, and integrating many native libraries (note that it can be difficult to build currently).
 
 Some examples that demonstrate different aspects of the language:
 
 * The core library's [LinearMap] - A sendable hash map in an OO style
 * The std [json] module - Enums and pattern matching
 * Servo's [image_cache_task] - An image cache in an actor style
-* [fempeg] - An mpeg-2 decoder that does only stack allocation, no heap, no GC
+* [fempeg] - An mpeg-2 decoder that does only stack allocation, no heap and no GC
 * [mre] - A small web framework integrating a number of interesting bindings
 
-[rustc]: https://github.com/mozilla/rust/tree/master/src/rustc
 [servo]: https://github.com/mozilla/servo
 [LinearMap]: https://github.com/mozilla/rust/blob/master/src/libcore/send_map.rs
 [image_cache_task]: https://github.com/mozilla/servo/blob/master/src/servo/resource/image_cache_task.rs
