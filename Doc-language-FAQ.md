@@ -101,9 +101,10 @@ Some examples that demonstrate different aspects of the language:
 
 ### Does it run on Windows?
 
-Yes. All development happens in lock-step on all 3 target platforms. Using MinGW, not Cygwin. Note that the windows implementation currently has some limitations: in particular tasks [cannot unwind on windows][unwind], and all Rust executables require a MinGW installation at runtime.
+Yes. All development happens in lock-step on all 3 target platforms. Using MinGW, not Cygwin. Note that the windows implementation currently has some limitations: in particular tasks [cannot unwind on windows][unwind], and all Rust executables [require a MinGW installation at runtime][libgcc].
 
 [unwind]: https://github.com/mozilla/rust/issues/908
+[libgcc]: https://github.com/mozilla/rust/issues/1603
 
 ### Have you seen this Google language, Go? How does Rust compare?
 
