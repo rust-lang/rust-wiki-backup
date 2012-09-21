@@ -95,7 +95,7 @@ Some examples that demonstrate different aspects of the language:
 
 * The core library's [LinearMap] - A sendable hash map in an OO style
 * The std [json] module - Enums and pattern matching
-* Servo's [image_cache_task] - An image cache in an actor style
+* Servo's [ImageCacheTask] - An image cache in an actor style
 * [fempeg] - An mpeg-2 decoder that does only stack allocation, no heap and no GC
 * [mre] - A small web framework integrating a number of interesting bindings
 
@@ -107,17 +107,18 @@ Some examples that demonstrate different aspects of the language:
 
 ### Have you seen this Google language, Go? How does Rust compare?
 
-Yes.
+Rust and Go have similar syntax and task models, but they have very different type systems. Rust is distinguished by greater type safety and memory safety guarantees, more control over memory layout, and robust generics. Rust also tends to be more explicit than Go.
 
-* Rust development was several years underway before Go launched, no direct inspiration.
- * Though Pike's previous languages in the Go family (Newsqueak, Alef, Limbo) were influential.
-* Go adopted semantics (safety and memory model) that are quite unsatisfactory.
- * Shared mutable state.
- * Global GC.
- * Null pointers.
- * No RAII or destructors.
- * No type-parametric user code.
-* There are a number of other fine coroutine / actor languages in development presently. It's an area of focus across the PL community.
+Rust has several goals that aren't shared by Go:
+
+* No shared mutable state - Shared mutable state allows data races, a large class of bad bugs. In Rust there is no sharing of mutable data, but ownership of data can be efficiently transferred between tasks.
+* Minimal GC impact - By not having shared mutable data, Rust can avoid global GC, hence Rust never stops the world to collect garbage. With multiple allocation options, individual tasks can completely avoid GC.
+* No null pointers - Accidentally dereferencing null pointers is a big bummer, so Rust doesn't have them.
+* Type parametric code - Generics prove super useful time and again, though they are inevitably complex to greater or lesser degrees.
+
+These advantages come at the cost of a more intricate type system than Go's.
+
+Go has a great user experience that Rust still lacks.
 
 ### I like the language but it really needs _$somefeature_.
 
