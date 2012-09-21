@@ -255,6 +255,7 @@ map.insert(foo, bar); // ERROR
 let arc_map = ARC(move map);
 
 for repeat(50) {
+  // Create another handle to the same map
   let arc_clone = arc::clone(arc_map);
   do spawn |move arc_clone| {
     // Do cool things with my immutable shared-memory hash map
