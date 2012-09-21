@@ -2,30 +2,34 @@
 
 ### I'm impatient. Can you give a brief summary of the salient features?
 
-#### Safety oriented:
+#### Safety oriented
 
-* Memory safe. No null pointers, wild pointers, etc. Automatic storage management.
-* Mutability control. Immutable by default. No shared mutable state across tasks.
-* Dynamic execution safety: task failure / unwinding, trapping, logging. RAII / dtors.
+* Memory safe. No null pointers, wild pointers, etc. Automatic storage management
+* Expressive mutability control. Immutable by default
+* No shared mutable state across tasks
+* Dynamic execution safety: task failure / unwinding, trapping. RAII / dtors
+* Safe interior pointer types with lifetime analysis
 
-#### Concurrency and efficiency oriented:
+#### Concurrency and efficiency oriented
 
-* Explicit memory control. Layout and allocation control. Interior / value types.
-* Very lightweight tasks (coroutines). Cheap to spawn thousands-to-millions.
-* Static, native compilation. Uses LLVM, including its optimization passes. Emits ELF / PE / Mach-O files.
-* Direct and simple interface to C code.
+* Explicit control over memory layout and allocation
+* Very lightweight tasks (coroutines) with expanding stacks
+* Efficient asynchronous message passing
+* Static, native compilation, using LLVM. Emits ELF / PE / Mach-O files
+* Direct and simple interface to C code
 
-#### Practicality oriented:
+#### Practicality oriented
 
-* Multi-paradigm. Pure-functional, concurrent-actor, imperative-procedural, OO.
- * First-class functions, cheap non-escaping closures.
- * Structural and nominal types.
- * Memory isolation for concurrent tasks, cheap tasks with expanding stacks, async message passing.
- * Typeclass-like interfaces and implementations, "method" definitions on any type.
-* Multi-platform. Developed on Windows, Linux, OS X.
-* UTF-8 strings, assortment of machine-level types.
-* Works with existing native toolchains. GDB / Valgrind / Instruments / etc.
-* Practical rule-breaking: can break safety rules, if explicit about where and how. 
+* Multi-paradigm: pure-functional, concurrent-actor, imperative-procedural, OO
+ * First-class functions, cheap non-escaping closures
+ * Algebraic data types (called enums) with pattern matching
+ * Method implementations on any type
+ * Traits, which share aspects of type classes and interfaces
+* Multiple memory management strategies, including optional garbage collection
+* Multi-platform. Developed on Windows, Linux, OS X
+* UTF-8 strings, assortment of machine-level types
+* Works with existing native toolchains, GDB, Valgrind, Instruments, etc
+* Practical rule-breaking: can break safety rules, if explicit about where and how
 
 ### What does it look like?
 
