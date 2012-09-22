@@ -96,7 +96,7 @@ Some examples that demonstrate different aspects of the language:
 
 [LinearMap]: https://github.com/mozilla/rust/blob/master/src/libcore/send_map.rs
 [json]: https://github.com/mozilla/rust/blob/master/src/libstd/json.rs
-[json]: https://github.com/mozilla/rust/blob/master/src/rustdoc/
+[rustdoc]: https://github.com/mozilla/rust/blob/master/src/rustdoc/
 [ImageCacheTask]: https://github.com/mozilla/servo/blob/master/src/servo/resource/image_cache_task.rs
 [fempeg]: https://github.com/pcwalton/fempeg
 [mre]: https://github.com/erickt/mre
