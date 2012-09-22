@@ -1,6 +1,8 @@
-Here are the docs. The documents about Rust. Read the reference docs first, because those are likely to be correct, if incomplete. This wiki also has a number of useful articles of varying ages and accuracy.
+This page collects most information that can be easily discovered about Rust.
 
-The best source of up to date information is [#rust on irc.mozilla.org][pound-rust]. That is where most discussion about Rust takes place. A lot of decisions are made on [rust-dev]. New developments are often blogged in various places, which usually appear on [r/rust].
+The reference docs are the most reliable source of information, because those are likely to be correct, if incomplete. This wiki also has a number of useful articles of varying ages and accuracy.
+
+For the most up to date information, the best source is often to ask in [#rust on irc.mozilla.org][pound-rust], as that is where most discussion about Rust takes place. A lot of decisions are made on [rust-dev], and new developments are often blogged in various places, which usually appear on [r/rust].
 
 [pound-rust]: http://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust
 [rust-dev]: https://mail.mozilla.org/listinfo/rust-dev
