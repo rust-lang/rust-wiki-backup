@@ -101,7 +101,9 @@ Some examples that demonstrate different aspects of the language:
 [fempeg]: https://github.com/pcwalton/fempeg
 [mre]: https://github.com/erickt/mre
 
-You may also be interested in browsing GitHub's [Rust] page.
+You may also be interested in browsing [GitHub's Rust][github-rust] page.
+
+[github-rust]: https://github.com/languages/Rust
 
 ### Does it run on Windows?
 
