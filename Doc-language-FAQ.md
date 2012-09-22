@@ -91,10 +91,12 @@ Some examples that demonstrate different aspects of the language:
 * The std [json] module - Enums and pattern matching
 * Servo's [ImageCacheTask] - An image cache in an actor style
 * [fempeg] - An mp2 decoder that does only stack allocation, no heap and no GC
+* [rustdoc] - Rust's documentation generator, in a functional, GC-less style with parallel folding and mapping
 * [mre] - A small web framework integrating a number of interesting crates and bindings
 
 [LinearMap]: https://github.com/mozilla/rust/blob/master/src/libcore/send_map.rs
 [json]: https://github.com/mozilla/rust/blob/master/src/libstd/json.rs
+[json]: https://github.com/mozilla/rust/blob/master/src/rustdoc/
 [ImageCacheTask]: https://github.com/mozilla/servo/blob/master/src/servo/resource/image_cache_task.rs
 [fempeg]: https://github.com/pcwalton/fempeg
 [mre]: https://github.com/erickt/mre
