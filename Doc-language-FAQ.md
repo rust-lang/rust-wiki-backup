@@ -101,6 +101,8 @@ Some examples that demonstrate different aspects of the language:
 [fempeg]: https://github.com/pcwalton/fempeg
 [mre]: https://github.com/erickt/mre
 
+You may also be interested in browsing GitHub's [Rust] page.
+
 ### Does it run on Windows?
 
 Yes. All development happens in lock-step on all 3 target platforms. Using MinGW, not Cygwin. Note that the windows implementation currently has some limitations: in particular tasks [cannot unwind on windows][unwind], and all Rust executables [require a MinGW installation at runtime][libgcc].
