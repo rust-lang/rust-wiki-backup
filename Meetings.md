@@ -1,4 +1,4 @@
-Mozilla employees have a weekly Rust planning meeting on Tuesday mornings at 9:00 AM PST. Minutes are recorded on Etherpad (the address of which is often pasted into #rust immediately prior) and then archived here.
+Mozilla employees have a weekly Rust planning meeting on Tuesday mornings at 9:00 AM Pacific (UTC-8). Minutes are recorded on Etherpad (the address of which is often pasted into #rust immediately prior) and then archived here.
 
 ## Weekly meetings:
 
