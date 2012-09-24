@@ -23,7 +23,7 @@ For the most up to date information, the best source is often to ask in [#rust o
 [Tutorial on FFI](http://doc.rust-lang.org/doc/tutorial-ffi.html)  
 [Manual](http://doc.rust-lang.org/doc/rust.html) ([PDF](http://doc.rust-lang.org/doc/rust.pdf))  
 [Core library](http://doc.rust-lang.org/doc/core/index.html)  
-[Standard library](http://doc.rust-lang.org/doc/std/index.html)  d
+[Standard library](http://doc.rust-lang.org/doc/std/index.html)  
 
 ## FAQs
 
