@@ -207,16 +207,16 @@ struct S2 {
   boxfield: @int
 }
 
-let mut = S1 { field: S2 { intfield: 1, boxfield: @2 } };
+let mut s1 = S1 { field: S2 { intfield: 1, boxfield: @2 } };
 
-// S1 is in a mutable slot so we can mutate the fields
-S1.field = S2 { intfield: 3, boxfield: @4 };
+// s1 is in a mutable slot so we can mutate the fields
+s1.field = S2 { intfield: 3, boxfield: @4 };
 
 // We can also reach through owned boxes and mutate their insides
-S1.field.intfield = 5;
+s1.field.intfield = 5;
 
 // Managed boxes are not owned so their interior is not mutable
-*S1.field.boxfield = 6; // ERROR
+*s1.field.boxfield = 6; // ERROR
 ```
 
 At first glance this might seem like an odd way to deal with mutability, but it seems to work very well with Rust's ownership semantics, and it enables some fascinating patterns that are particularly useful for concurrency. In particular, when combined with explicit self types it allows for 'dual mode' data structures that, under certain circumstances my mutate fields, and under others not, similar to C++ const methods.
