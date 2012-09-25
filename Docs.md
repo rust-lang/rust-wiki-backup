@@ -1,4 +1,4 @@
-This page collects most of the useful information that can be easily discovered about Rust.
+This page collects most of the available information about Rust.
 
 The reference docs are the most reliable source of information, because those are likely to be correct, if incomplete. This wiki also has a number of useful articles of varying ages and accuracy.
 
@@ -17,13 +17,14 @@ For the most up to date information, the best source is often to ask in [#rust o
 
 ## In-development reference docs (git master)
 
-[Tutorial](http://doc.rust-lang.org/doc/tutorial.html)  
-[Tutorial on borrowed pointers](http://doc.rust-lang.org/doc/tutorial-borrowed-ptr.html)  
-[Tutorial on macros](http://doc.rust-lang.org/doc/tutorial-macros.html)  
-[Tutorial on FFI](http://doc.rust-lang.org/doc/tutorial-ffi.html)  
+[Tutorial](http://doc.rust-lang.org/doc/tutorial.html) (notes on [borrowed pointers], [macros], the [FFI])  
 [Manual](http://doc.rust-lang.org/doc/rust.html) ([PDF](http://doc.rust-lang.org/doc/rust.pdf))  
 [Core library](http://doc.rust-lang.org/doc/core/index.html)  
 [Standard library](http://doc.rust-lang.org/doc/std/index.html)  
+
+[borrowed pointers]: http://doc.rust-lang.org/doc/tutorial-borrowed-ptr.html
+[macros]: http://doc.rust-lang.org/doc/tutorial-macros.html
+[FFI]: http://doc.rust-lang.org/doc/tutorial-ffi.html
 
 ## FAQs
 
