@@ -58,7 +58,7 @@ Interesting stuff usually appears on [r/rust].
 [Graydon]: https://blog.mozilla.org/graydon/
 [Niko]: http://smallcultfollowing.com/babysteps/
 [Patrick]: http://pcwalton.github.com/
-[Tim]: http://tim.dreamwidth.org/
+[Tim]: http://tim.dreamwidth.org/tag/research
 [Zack]: http://blog.z0w0.me/
 
 [r/rust]: http://reddit.com/r/rust
