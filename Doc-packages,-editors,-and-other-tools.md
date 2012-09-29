@@ -2,6 +2,7 @@
 
 * [Ubuntu PPA](https://launchpad.net/~kevincantu/+archive/rust/) - maintained by kcantu
 * [FreeBSD Port](http://www.freebsd.org/cgi/cvsweb.cgi/ports/lang/rust/) - maintained by jyyou
+* [Homebrew](https://github.com/mxcl/homebrew/blob/master/Library/Formula/rust.rb)
 
 ## Editors
 
