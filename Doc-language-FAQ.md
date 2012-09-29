@@ -123,9 +123,9 @@ Rust has several key features that aren't shared by Go:
 * No shared mutable state - Shared mutable state allows data races, a large class of bad bugs. In Rust there is no sharing of mutable data, but ownership of data can be efficiently transferred between tasks.
 * Minimal GC impact - By not having shared mutable data, Rust can avoid global GC, hence Rust never stops the world to collect garbage. With multiple allocation options, individual tasks can completely avoid GC.
 * No null pointers - Accidentally dereferencing null pointers is a big bummer, so Rust doesn't have them.
-* Type parametric code - Generics prove super useful time and again, though they are inevitably complex to greater or lesser degrees.
+* Type parametric code - Generics prove useful time and again, though they are inevitably complex to greater or lesser degrees.
 
-These advantages come at the cost of a more intricate type system than Go's.
+Some of Rust's advantages come at the cost of a more intricate type system than Go's.
 
 Go has its own strengths and in particular has a great user experience that Rust still lacks.
 
