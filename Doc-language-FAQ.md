@@ -87,7 +87,7 @@ A research browser engine called [Servo][servo], currently 17,000+ lines across 
 
 Some examples that demonstrate different aspects of the language:
 
-* The language's general-purpose [hash] function, SipHash-2-4
+* The language's general-purpose [hash] function, SipHash-2-4. Bit twiddling, OO, macros
 * The core library's [LinearMap], a sendable hash map in an OO style
 * The standard library's [json] module. Enums and pattern matching
 * Servo's [ImageCacheTask], an image cache in an actor style
