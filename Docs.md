@@ -42,7 +42,7 @@ For the most up to date information, the best source is often to ask in [#rust o
 [[Memory, modes, and mutation|Doc memory, modes, and mutation]], _a guide for the perplexed_  
 [[Reading and writing files|Doc Reading and writing files]]  
 [[Attributes|Doc attributes]] - The role of metadata in Rust code, with descriptions of many applications  
-[[Packages, editors, etc|Doc packages, editors, and other tools]]
+[[Packages, editors, and other tools|Doc packages, editors, and other tools]]
 
 ## Blogs
 
