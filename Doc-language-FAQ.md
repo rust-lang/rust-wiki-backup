@@ -87,13 +87,15 @@ A research browser engine called [Servo][servo], currently 17,000+ lines across 
 
 Some examples that demonstrate different aspects of the language:
 
-* The core library's [LinearMap] - A sendable hash map in an OO style
-* The std [json] module - Enums and pattern matching
-* Servo's [ImageCacheTask] - An image cache in an actor style
-* [fempeg] - An mp2 decoder that does only stack allocation, no heap and no GC
-* [rustdoc] - Rust's documentation generator, in a functional, GC-less style with parallel folding and mapping
-* [mre] - A small web framework integrating a number of interesting crates and bindings
+* The language's general-purpose [hash] function, SipHash-2-4
+* The core library's [LinearMap], a sendable hash map in an OO style
+* The standard library's [json] module. Enums and pattern matching
+* Servo's [ImageCacheTask], an image cache in an actor style
+* [fempeg], an mp2 decoder that does only stack allocation, no heap and no GC
+* [rustdoc], Rust's documentation generator, in a functional, GC-less style with parallel folding and mapping
+* [mre], a small web framework integrating a number of interesting crates and bindings
 
+[hash]: https://github.com/mozilla/rust/blob/master/src/libcore/hash.rs
 [LinearMap]: https://github.com/mozilla/rust/blob/master/src/libcore/send_map.rs
 [json]: https://github.com/mozilla/rust/blob/master/src/libstd/json.rs
 [rustdoc]: https://github.com/mozilla/rust/blob/master/src/rustdoc/
