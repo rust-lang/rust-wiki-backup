@@ -102,4 +102,4 @@ Join irc.mozilla.org #rust for real-time discussion of Rust development.  We try
 
 Join the [mailing list](https://mail.mozilla.org/listinfo/rust-dev) for longer conversations.
 
-In both cases, please follow the conduct guidelines on the [development policy|Note development policy]].
+In both cases, please follow the conduct guidelines on the [[development policy|Note development policy]].
