@@ -118,7 +118,7 @@ Yes. All development happens in lock-step on all 3 target platforms. Using MinGW
 
 Rust and Go have similar syntax and task models, but they have very different type systems. Rust is distinguished by greater type safety and memory safety guarantees, more control over memory layout, and robust generics.
 
-Rust has several goals that aren't shared by Go:
+Rust has several key features that aren't shared by Go:
 
 * No shared mutable state - Shared mutable state allows data races, a large class of bad bugs. In Rust there is no sharing of mutable data, but ownership of data can be efficiently transferred between tasks.
 * Minimal GC impact - By not having shared mutable data, Rust can avoid global GC, hence Rust never stops the world to collect garbage. With multiple allocation options, individual tasks can completely avoid GC.
@@ -127,7 +127,7 @@ Rust has several goals that aren't shared by Go:
 
 These advantages come at the cost of a more intricate type system than Go's.
 
-Go has a great user experience that Rust still lacks.
+Go has its own strengths and in particular has a great user experience that Rust still lacks.
 
 ### I like the language but it really needs _$somefeature_.
 
