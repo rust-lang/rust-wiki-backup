@@ -76,11 +76,11 @@ There's a quick guide to the source of the compiler in [src/rustc/README.txt](ht
 
 ## Editor support
 
-Syntax highlighting for vim is included in the Rust repository, under `src/etc/vim` and for emacs under `src/etc/emacs`. Support for other editors can be found on [[Note related projects]].
+Syntax highlighting for vim is included in the Rust repository, under `src/etc/vim` and for emacs under `src/etc/emacs`. Other editors may [[also be supported|Note related projects]].
 
 ## The issue tracker
 
-We use the [GitHub issue tracker](https://github.com/mozilla/rust/issues) to track bugs and feature requests in Rust.  If you prefer not to use the standard GitHub issue tracker, there's a [secondary front-end that is quite a bit more responsive](http://githubissues.heroku.com/#mozilla/rust) and a [tertiary front-end that is pleasantly minimal](http://izs.no.de/mozilla/rust).
+We use the [GitHub issue tracker](https://github.com/mozilla/rust/issues) to track bugs and feature requests in Rust.  If you prefer not to use the standard GitHub issue tracker, there's a [secondary front-end that is quite a bit more responsive](http://githubissues.heroku.com/#mozilla/rust).
 
 ## Picking something interesting to do
 
@@ -102,4 +102,4 @@ Join irc.mozilla.org #rust for real-time discussion of Rust development.  We try
 
 Join the [mailing list](https://mail.mozilla.org/listinfo/rust-dev) for longer conversations.
 
-In both cases, please follow the conduct guidelines on the development policy in [[Note development policy]].
+In both cases, please follow the conduct guidelines on the [development policy|Note development policy]].
