@@ -187,6 +187,8 @@ See also [the macro tutorial][macros].
 
 ### Kinds become traits
 
+### Trait-based operator overloading
+
 ### Deprecation / removal of argument modes
 
 ([#2030](https://github.com/mozilla/rust/issues/2030))  Previous versions of Rust attempted to select optimal default argument-passing behavior (by-reference or by-value) based on type-directed heuristics, with sigils available to override the defaults. This system (called "modes" or "argument modes") was responsible for the presence of the sigils `+`, `-`, `&` and `&&` on function parameters.
