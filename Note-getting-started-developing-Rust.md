@@ -76,7 +76,7 @@ There's a quick guide to the source of the compiler in [src/rustc/README.txt](ht
 
 ## Editor support
 
-Syntax highlighting for vim is included in the Rust repository, under `src/etc/vim` and for emacs under `src/etc/emacs`. Other editors may [[also be supported|Note related projects]].
+Syntax highlighting for vim is included in the Rust repository, under `src/etc/vim` and for emacs under `src/etc/emacs`. Other editors may [[also be supported|Doc packages, editors, and other tools]].
 
 ## The issue tracker
 
@@ -84,7 +84,7 @@ We use the [GitHub issue tracker](https://github.com/mozilla/rust/issues) to tra
 
 ## Picking something interesting to do
 
-To get an idea of where we're going, see the [[Note development roadmap]].
+To get an idea of where we're going, see the [[development roadmap|Note development roadmap]].
 
 The way most people seem to get involved is by simply trying to write Rust code. Inevitably you will hit a bug or missing feature, at which point you may feel compelled to write a patch.
 
