@@ -45,7 +45,7 @@ Including modes, export, structural Records, #-macros, [mut]
 
 Our uv build is very, very far behind upstream, and simply doesn't work on 32-bit x86 because of rustc bugs.
 
-### Cargo continuous integration (brson)
+### Cargo improvement and continuous integration (brson)
 
 Keeping out-of-tree code up to date has become a very labor-intensive process, and our support for out-of-tree libraries is bad. I very much want to set up a continuous integration server for the entire community. Doing this completely in Rust helps uv, cargo, and servo.
 
