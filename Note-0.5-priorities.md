@@ -16,6 +16,11 @@ Fixing those things, primarily the first three, strikes me as very high priority
 
 There are various bugs in the region type system implementation.  I will go through and collect some issue numbers later.  They ought to be fixed.  
 
+
+### Condition-handler system (graydon)
+
+It's difficult to write libraries presently that have "recoverable" failure modes. We've long talked about a pattern for this using TLS. We gained TLS in 0.4. We should give this a try in 0.5, it'll help a lot in writing reasonable libraries.
+
 ### Start on new driver, build and command-line tooling (graydon)
 
 Probably won't be time to finish this, but a new driver, as well as a maintainer-mode tool for bootstrapping the compiler and doing tasks currently done via 'make' (rather than using the makefile) should at least get started. Also probably involves adding a top-level `rust` command and renaming subtools a bit.
