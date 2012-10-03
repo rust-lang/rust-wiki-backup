@@ -51,6 +51,6 @@ Keeping out-of-tree code up to date has become a very labor-intensive process, a
 
 ### Tree cleanup and reorganization (brson)
 
-There are a few things I would like to do to clean up the build, including making all crates libraries so they can be used by other tools, fixing the weird organization of librustc and its driver, splitting rustllvm out into its own crate with bindings, ditto clang.
+There are a few things I would like to do to clean up the build, including making all crates libraries so they can be used by other tools, fixing the weird organization of librustc and its driver, splitting rustllvm out into its own crate with bindings, ditto clang, refactoring the top-level rustc code so that it is more approachable to newcomers.
 
 
