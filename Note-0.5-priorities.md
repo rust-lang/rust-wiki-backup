@@ -53,4 +53,6 @@ Keeping out-of-tree code up to date has become a very labor-intensive process, a
 
 There are a few things I would like to do to clean up the build, including making all crates libraries so they can be used by other tools, fixing the weird organization of librustc and its driver, splitting rustllvm out into its own crate with bindings, ditto clang, refactoring the top-level rustc code so that it is more approachable to newcomers.
 
+### All runtime tests passing under JIT (z0w0)
 
+The JIT compiler passes about 92% tests, give or take a few on different platforms (Windows hasn't even been tested). The failing tests are caused by segfaults, illegal instructions and the occasional task failure. Being able to have all Rust code running perfectly under JIT on all platforms would be an amazing feature of 0.5.
