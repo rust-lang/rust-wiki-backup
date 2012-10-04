@@ -64,3 +64,11 @@ The JIT compiler passes about 92% tests, give or take a few on different platfor
 If we are going to do it, it needs to be sooner than later, as it is another disruptive change.
 
 http://smallcultfollowing.com/babysteps/blog/2012/10/01/moves-based-on-type/
+
+### Fix unwinding on Windows (brson)
+
+The most promising short-term solution (unwinding by propagating a return value) also helps fix our compile time performance.
+
+### Get off of deterministic garbage collection (brson)
+
+We don't even have to implement a conservative GC, but we should forcibly randomize the garbage collection behavior so we are confident we don't depend on ref counting semantics.
