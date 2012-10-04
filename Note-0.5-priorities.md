@@ -51,7 +51,7 @@ Cargo has some pretty nice capabilities but we haven't fully committed to it yet
 
 Keeping out-of-tree code up to date has become a very labor-intensive process, and our support for out-of-tree libraries is bad. I very much want to set up a continuous integration server for the entire community. Doing this completely in Rust helps uv, cargo, and servo, and is fun.
 
-### Tree cleanup and reorganization (brson)
+### Tree cleanup (brson)
 
 There are a few things I would like to do to clean up the build, including making all crates libraries so they can be used by other tools, fixing the weird organization of librustc and its driver, splitting rustllvm out into its own crate with bindings, ditto clang, refactoring the top-level rustc code so that it is more approachable to newcomers, merging rt and core, moving the native uv and compression code to std.
 
