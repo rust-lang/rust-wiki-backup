@@ -25,7 +25,7 @@ It's difficult to write libraries presently that have "recoverable" failure mode
 
 Probably won't be time to finish this, but a new driver, as well as a maintainer-mode tool for bootstrapping the compiler and doing tasks currently done via 'make' (rather than using the makefile) should at least get started. Also probably involves adding a top-level `rust` command and renaming subtools a bit.
 
-Ideally Rust's build system will use cargo for dependency resolution and provide reusable components for others'. Servo has a complex build using awful makefiles that I would prefer be entirely managed by cargo or a cargo-based build tool.
+Ideally Rust's build system will use cargo for dependency resolution and provide reusable components for others'. Servo has a complex build using awful makefiles that would be better managed by cargo or a cargo-based build tool.
 
 ### Performance work (graydon)
 
