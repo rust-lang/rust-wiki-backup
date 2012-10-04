@@ -68,3 +68,7 @@ http://smallcultfollowing.com/babysteps/blog/2012/10/01/moves-based-on-type/
 ### Fix unwinding on Windows (brson)
 
 The most promising short-term solution (unwinding by propagating a return value) also helps fix our compile time performance.
+
+### Replace core::comm with pipes (brson)
+
+Having two systems here is not good.
