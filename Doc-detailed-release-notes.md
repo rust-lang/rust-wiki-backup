@@ -1,6 +1,6 @@
 This page covers releases in more detail than the bullet-point list given in the RELEASES.txt file in the source distribution, in particular focusing on _language level changes_ that will be immediately visible and/or disruptive to users trying to keep their Rust code compiling and working right between releases. It is intended to hold copied, cleaned-up versions of entries from the [[development roadmap|Note development roadmap]] as they are completed, to help users plan migration on their own code.
 
-## 0.4 September 2012
+## 0.4 October 2012
 
 This version was focused on completing as many disruptive syntax changes as possible, including changing and reducing keywords, beefing up traits and removing classes, changing how imports and exports are handled, and moving to a camel case convention for types.
 
