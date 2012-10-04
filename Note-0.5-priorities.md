@@ -47,7 +47,9 @@ Our uv build is very, very far behind upstream, and simply doesn't work on 32-bi
 
 ### Cargo improvement and continuous integration (brson)
 
-Keeping out-of-tree code up to date has become a very labor-intensive process, and our support for out-of-tree libraries is bad. I very much want to set up a continuous integration server for the entire community. Doing this completely in Rust helps uv, cargo, and servo.
+Cargo has some pretty nice capabilities but we haven't fully committed to it yet. Servo (and maybe Rust) should be using cargo to manage their dependencies and installation. I'm imagining this has a lot of overlap with the rewrite of Rust's build system.
+
+Keeping out-of-tree code up to date has become a very labor-intensive process, and our support for out-of-tree libraries is bad. I very much want to set up a continuous integration server for the entire community. Doing this completely in Rust helps uv, cargo, and servo, and is fun.
 
 ### Tree cleanup and reorganization (brson)
 
