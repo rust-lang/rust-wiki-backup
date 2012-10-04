@@ -58,3 +58,9 @@ There are a few things I would like to do to clean up the build, including makin
 ### All runtime tests passing under JIT (z0w0)
 
 The JIT compiler passes about 92% tests, give or take a few on different platforms (Windows hasn't even been tested). The failing tests are caused by segfaults, illegal instructions and the occasional task failure. Being able to have all Rust code running perfectly under JIT on all platforms would be an amazing feature of 0.5.
+
+### Remove move/copy (brson)
+
+If we are going to do it, it needs to be sooner than later, as it is another disruptive change.
+
+http://smallcultfollowing.com/babysteps/blog/2012/10/01/moves-based-on-type/
