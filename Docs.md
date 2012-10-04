@@ -17,12 +17,13 @@ For the most up to date information, the best source is often to ask in [#rust o
 
 ## In-development reference docs (git master)
 
-[Tutorial](http://doc.rust-lang.org/doc/tutorial.html) (notes on [borrowed pointers], [macros], the [FFI])  
+[Tutorial](http://doc.rust-lang.org/doc/tutorial.html) (notes on [borrowed pointers], [tasks], [macros], the [FFI])  
 [Manual](http://doc.rust-lang.org/doc/rust.html) ([PDF](http://doc.rust-lang.org/doc/rust.pdf))  
 [Core library](http://doc.rust-lang.org/doc/core/index.html)  
 [Standard library](http://doc.rust-lang.org/doc/std/index.html)  
 
 [borrowed pointers]: http://doc.rust-lang.org/doc/tutorial-borrowed-ptr.html
+[tasks]: http://doc.rust-lang.org/doc/tutorial-tasks.html
 [macros]: http://doc.rust-lang.org/doc/tutorial-macros.html
 [FFI]: http://doc.rust-lang.org/doc/tutorial-ffi.html
 
