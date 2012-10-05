@@ -39,7 +39,7 @@ We should also experiment with some more-structured code review, as our velocity
 
 ### Remove obsolete features (brson)
 
-Including modes, export, structural Records, #-macros, [mut], assert/log/fail, <-, <->
+Including modes, export, structural Records, #-macros, [mut], assert/log/fail, <-, <->, []/_
 
 ### Upgrade and unblock uv on x86 (brson)
 
