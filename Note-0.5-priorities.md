@@ -12,10 +12,17 @@ I personally think a good overarching goal for 0.5 would be to "unblock" the dev
 
 Fixing those things, primarily the first three, strikes me as very high priority.  It would allow us to define nice trait hierarchies similar to the ones found in Haskell/Clojure (Eq, Ord, Hash, etc) which form the foundation of a strong library design.
 
+### Better treatment of extern fns (nmatsakis)
+
+This would eliminate the last use of modes, and obviously it's a common area that people interact with.
+
+https://github.com/mozilla/rust/issues/3678
+
+https://github.com/mozilla/rust/issues/2628
+
 ### Miscellaneous regions bugs (nmatsakis)
 
 There are various bugs in the region type system implementation.  I will go through and collect some issue numbers later.  They ought to be fixed.  
-
 
 ### Condition-handler system (graydon)
 
