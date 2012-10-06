@@ -1,3 +1,7 @@
+Note: this is out of date and will be deleted: we now have *traits*!
+
+***
+
 This describes the interface (`iface`) and implementation (`impl`) features as they exist at this point (Jan 5 2012). I've mostly copy-pasted [[Proposal for interfaces]] and adjusted the parts that changed or haven't materialized (yet).
 
 ## Method implementation
