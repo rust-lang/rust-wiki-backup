@@ -20,6 +20,10 @@ https://github.com/mozilla/rust/issues/3678
 
 https://github.com/mozilla/rust/issues/2628
 
+### Pattern bindings (nmatsakis)
+
+These are the last vestige of modes.  Finish https://github.com/mozilla/rust/issues/3271
+
 ### Complete the fn type transition (nmatsakis)
 
 The fn types are a mess right now.  They are unsound in various ways (#2829, #3696, perhaps others), you can't have a fully const-ified send-map, and we don't support one-shot closures (#2549).  This should be rectified.
