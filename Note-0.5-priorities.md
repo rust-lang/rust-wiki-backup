@@ -24,6 +24,10 @@ https://github.com/mozilla/rust/issues/2628
 
 These are the last vestige of modes.  Finish https://github.com/mozilla/rust/issues/3271
 
+### Explicit self, freezable data structures (nmatsakis)
+
+I would like to move map over the freezable version. This requires using a trait with explicit self.  There are some bugs that prevent this from working which I haven't fully written up yet.  Probably more I haven't found yet.  In general we should transition to making explicit self mandatory.
+
 ### Complete the fn type transition (nmatsakis)
 
 The fn types are a mess right now.  They are unsound in various ways (#2829, #3696, perhaps others), you can't have a fully const-ified send-map, and we don't support one-shot closures (#2549).  This should be rectified.
