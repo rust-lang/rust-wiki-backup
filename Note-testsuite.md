@@ -178,7 +178,12 @@ mod test {
 
 ## Documentation tests
 
-The build system is able to extract Rust code snippets from documentation and run them using the compiletest driver. Currently the tutorial and reference manual are tested this way. The targets are `make check-stage[N]-doc-tutorial` and `make check-stage[N]-doc-ref`, respectively.
+The build system is able to extract Rust code snippets from documentation and run them using the compiletest driver. Currently the tutorial and reference manual are tested this way. The targets are `make check-stage[N]-doc-tutorial` and `make check-stage[N]-doc-ref`, respectively. There are also several auxiliary tutorials; to run the tests extracted from them, do:
+
+* `make check-stage[N]-tutorial-borrowed-ptr`
+* `make check-stage[N]-tutorial-tasks`
+* `make check-stage[N]-tutorial-ffi`
+* `make check-stage[N]-tutorial-macros`
 
 ## Fast check
 
