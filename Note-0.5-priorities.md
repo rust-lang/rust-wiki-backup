@@ -92,6 +92,6 @@ The most promising short-term solution (unwinding by propagating a return value)
 
 Having two systems here is not good.
 
-### Fix .rc/.rs/companion module issues
+### Fix .rc/.rs/companion module issues (brson)
 
 Our implicit loading of .rs files is confusing
