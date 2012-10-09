@@ -91,3 +91,7 @@ The most promising short-term solution (unwinding by propagating a return value)
 ### Replace core::comm with pipes (brson)
 
 Having two systems here is not good.
+
+### Fix .rc/.rs/companion module issues
+
+Our implicit loading of .rs files is confusing
