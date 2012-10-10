@@ -95,3 +95,7 @@ Having two systems here is not good.
 ### Fix .rc/.rs/companion module issues (brson)
 
 Our implicit loading of .rs files is confusing
+
+### Add labeled break and continue (brson)
+
+Henri still needs it for the HTML parser.
