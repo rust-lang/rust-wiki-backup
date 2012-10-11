@@ -1,4 +1,4 @@
-[ccache]() is a tool which provides a cache for C/C++/Objective-C compiler operations.  We've found that it makes LLVM recompilation a bit easier to handle, and not everyone knows about it yet!
+[ccache](http://ccache.samba.org/) is a tool which provides a cache for C/C++/Objective-C compiler operations.  We've found that it makes LLVM recompilation a bit easier to handle, and not everyone knows about it yet!
 
 On Ubuntu, for example, you can use it without modifying any build scripts by simply installing the `ccache` package and putting links to it in your path like so:
 
