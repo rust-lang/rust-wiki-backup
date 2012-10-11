@@ -65,7 +65,7 @@ tjc, brson, dherman, nmatsakis, pcwalton, graydon
   * **Graydon**: niko created a wiki page with priorities list. think most of us have written something by now?
   * **Graydon**: hopefully this time next 0.4 will be live and we'll have a meeting to discuss scope for 0.5, which I'm hoping will be closer to a 2-month cycle since we won't have destabilization of summer
   * **Graydon**: so just a reminder to read the wiki and update it:
-https://github.com/mozilla/rust/wiki/3Note-0.5-priorities
+https://github.com/mozilla/rust/wiki/Note-0.5-priorities
   * **Graydon**: be prepared to talk about what you want to get done during the cycle by next week
 
 ## Review
