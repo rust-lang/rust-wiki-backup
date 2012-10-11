@@ -18,7 +18,7 @@ Version numbers listed here are "what we're using"; the code may well work with 
 * Valgrind 3.5 or later (recommended, but not required for Linux)
 * [pandoc](http://johnmacfarlane.net/pandoc/) 1.8 at least (optional, if you wish to build HTML docs)
 * pdflatex (optional, if you wish to build PDF docs)
-* ccache ([[optional|Note ccache]]))
+* ccache ([[optional|Note ccache]])
 
 ### Debian-based Linux distributions
 
