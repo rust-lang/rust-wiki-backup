@@ -99,3 +99,7 @@ Our implicit loading of .rs files is confusing
 ### Add labeled break and continue (brson)
 
 Henri still needs it for the HTML parser.
+
+### Dependency generation (tjc)
+
+Add the ability to generate/view item dependencies, as a prequel to incremental compilation.
