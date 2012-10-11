@@ -13,6 +13,7 @@ Listing of notes for developers
 * [[Note style guide]]
 * [[Note testsuite]]
 * [[Note rustc hacking guide]]
+* [[Note ccache]]
 
 ## Language and implementation notes
 
