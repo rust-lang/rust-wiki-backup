@@ -22,28 +22,38 @@ Keyword changes:
 * `ret` became `return`
 * `alt` became `match`
 * `again` was removed in favor of reusing `loop` to continue, i.e. `loop { if foo { loop; } }`
-* TODO
+* `import` and `export` were removed in favor of `pub` and `priv` item-level visibility (see below).
+* `class` was removed in favor of combinations of `struct`, `impl` and `trait`
 
 The current keywords are as follows.
 
 ```none
-as, assert, break, const, copy, do, drop,
-else, enum, export, extern, fail, false, fn, for,
-if, impl, let, log, loop, match, mod, move, mut,
-priv, pub, pure, ref, return, struct, true, trait, type,
-unsafe, use, while
+as assert
+break
+const copy
+do drop
+else enum extern
+fail false fn for
+if impl
+let log loop
+match mod move mut
+priv pub pure
+ref return
+self static struct
+true trait type
+unsafe use
+while
 ```
 
 Notes:
 * `be` is not a keyword, but is reserved for [possible future use](https://github.com/mozilla/rust/issues/217).
 * `self` and `static` are currently parsed as contextual keywords, but are expected to not be keywords in the future.
-* `export` will be removed in favor of `pub` and `priv` item-level visibility (see below).
 * [`assert`](https://github.com/mozilla/rust/issues/2228), [`log`](https://github.com/mozilla/rust/issues/554), and [`fail`](https://github.com/mozilla/rust/issues/2232) are likely to be converted to macros.
 * `drop` may [become a trait](https://github.com/mozilla/rust/issues/3061) rather than a keyword, as might `const`.
 
 ### Structs replace classes
 
-Classes are undergoing a major overhaul and have been removed from the language, in favor of method-less `structs` combined with method-bearing `impls`. The new `struct` syntax is very simple:
+Classes were overhauled; the `class` syntax was removed from the language, in favor of method-less `structs` combined with method-bearing `impls`. The new `struct` syntax is very simple:
 
 ```
 struct Cat {
@@ -181,8 +191,6 @@ See also [the macro tutorial][macros].
 
 ### Smaller syntax changes
 
-* alt -> match
-* use -> extern mod
 * Region names are specified as `&r/T` instead of `&r.T`
 
 ### Kinds become traits
