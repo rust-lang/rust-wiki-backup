@@ -162,10 +162,61 @@ match foo {
 
 See also [#3057](https://github.com/mozilla/rust/issues/3057).
 
-### Static methods and explicit self types
+### Explicit self
 
-static methods
-explicit self types
+We are in the process of generalizing traits so that they can include
+both methods (which take a receiver) and functions (which do not).  To
+that end, we have added a syntax called *explicit self*.  In the
+explicit self system, methods are identified because their first parameter
+is called `self` (similar to Python).  Optionally, the parameter can include a sigil
+indicating what kind of pointer should be used:
+
+```
+struct Foo { ... }
+impl Foo {
+    fn method0(self, ...);       // self has type `Foo`
+    fn method1(&self, ...);      // self has type `&Foo`
+    fn method2(&mut self, ...);  // self has type `&mut Foo`
+    fn method3(@self, ...);      // self has type `@Foo`
+    fn method4(~self, ...);      // self has type `~Foo`
+}
+```
+
+Explicit self can also appear in trait declarations.  Explicit self is
+currently optional but is expected to become mandatory in a future
+release.
+
+### Static methods
+
+Traits can now include methods that do not make use of a receiver.
+Such functions are (currently) labeled with the keyword `static`.
+Static functions are (currently) exported as functions in the module
+which contains the trait where they were declared.  Here is an
+example:
+
+```
+trait FromInt {
+    static fn from_int(i: int) -> self;
+}
+
+struct Foo { v: int }
+impl Foo: FromInt {
+    static fn from_int(i: int) -> Foo {
+        Foo { v: i }
+    }
+}
+
+fn main() {
+    let x: Foo = from_int(3);
+    io::println(fmt!("%?", x));
+}
+```
+
+In the future, when explicit self is mandatory, static functions will
+be designated by the absence of a self receiver.  They are also
+expected to become members of the trait itself, so you would write
+`FromInt::from_int()`.
+
 
 ### Transitioning import/export to pub/priv
 
