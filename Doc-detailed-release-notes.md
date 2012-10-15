@@ -265,7 +265,13 @@ for repeat(50) {
 }
 ```
 
+### Task management
+
+The task creation and lifecycle interface was significantly enhanced, adding more flexibility for grouping tasks according to which should die when a single task fails. There are now methods to spawn tasks with bidirectionally-linked, unidirectionally-linked, and unlinked failure propagation. There is also a low-level mechanism for storing task-local data, which will become the basis for some more advanced error handling mechanisms in future versions.
+
 ### Pipes
+
+A [new communication system](https://github.com/eholk/rust/wiki/Proposal-for-channel-contracts) was added in this cycle, called "pipes". This is a lower-level, higher-performance system based on synchronous, 1:1 communication primitives with owned endpoints. Pipes are much friendlier to the memory subsystem of modern hardware and we expect to transition Rust's libraries to use pipes rather than the port/channel system that shipped in previous releases. This transition is not yet complete, but will happen in over subsequent releases.
 
 ## 0.3 July 2012
 
