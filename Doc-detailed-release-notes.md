@@ -193,9 +193,13 @@ See also [the macro tutorial][macros].
 
 * Region names are specified as `&r/T` instead of `&r.T`
 
-### Kinds become traits
-
 ### Trait-based operator overloading
+
+Operator overloading is now expressed through a set of traits in the core library. The traits, as well as implementations on standard types can be found in `core::ops` and `core::cmp`. The set of overloaded operators has not changed, merely the mechanism used to define overloads.
+
+### Hash function improvements
+
+All hash functions in the standard library were replaced. Hashing is now statically dispatched (via traits) to an implementation of [SipHash](https://www.131002.net/siphash/), a fast keyed hash function. All hashtables are also now randomly keyed from Rust's CPRNG ([ISAAC](http://burtleburtle.net/bob/rand/isaacafa.html), seeded from the operating system PRNG on startup). In practice this should help defend Rust programs against complexity attacks.
 
 ### Deprecation / removal of argument modes
 
