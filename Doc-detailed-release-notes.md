@@ -10,7 +10,7 @@ Borrowed pointers matured and replaced argument modes in some of the libraries. 
 
 We have a new convention that requires that types (and enum variants, which are not yet types) be camel cased. The entire core and standard libraries have been converted. We generally prefer that acronyms not be written with all caps, so e.g. the standard URL type is written `Url`.
 
-There is a lint check for this called `non_camel_case_types` and it is configured to warn by default.
+There is a lint check for this called `non_camel_case_types` but it is disabled by default.
 
 ### Keywords
 
