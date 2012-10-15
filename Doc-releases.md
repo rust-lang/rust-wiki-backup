@@ -2,7 +2,7 @@ This is an archive of all the existing Rust release artifacts. Each release is s
 
 [key]: http://www.rust-lang.org/rust-key.gpg.ascii
 
-## 0.3
+## 0.4
 
 * [Announcement][0.4-announce]
 * [Release notes][0.4-notes]
