@@ -2,6 +2,29 @@ This is an archive of all the existing Rust release artifacts. Each release is s
 
 [key]: http://www.rust-lang.org/rust-key.gpg.ascii
 
+## 0.3
+
+* [Announcement][0.4-announce]
+* [Release notes][0.4-notes]
+* [Source code][0.4-tar] ([signature][0.4-tar-sig])
+* [Windows installer][0.4-exe] ([signature][0.4-exe-sig])
+* [Tutorial][0.4-tutorial]
+* [Manual][0.4-manual] ([PDF][0.4-manual-pdf])
+* [Core library docs][0.4-core]
+* [Standard library docs][0.4-std]
+
+[0.4-announce]: https://mail.mozilla.org/pipermail/rust-dev/2012-October/002489.html
+[0.4-notes]: https://github.com/mozilla/rust/blob/release-0.4/RELEASES.txt
+[0.4-tar]: http://dl.rust-lang.org/dist/rust-0.4.tar.gz
+[0.4-tar-sig]: http://dl.rust-lang.org/dist/rust-0.4.tar.gz.asc
+[0.4-exe]: http://dl.rust-lang.org/dist/rust-0.4-install.exe
+[0.4-exe-sig]: http://dl.rust-lang.org/dist/rust-0.4-install.exe.asc
+[0.4-tutorial]: http://doc.rust-lang.org/doc/0.4/tutorial.html
+[0.4-manual]: http://doc.rust-lang.org/doc/0.4/rust.html
+[0.4-manual-pdf]: http://doc.rust-lang.org/doc/0.4/rust.pdf
+[0.4-core]: http://doc.rust-lang.org/doc/0.4/core/index.html
+[0.4-std]: http://doc.rust-lang.org/doc/0.4/std/index.html
+
 ## 0.3.1
 
 * [Announcement][0.3.1-announce]
