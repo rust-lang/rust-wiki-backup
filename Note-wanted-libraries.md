@@ -19,13 +19,16 @@ Notes taken at rust work week, 2011/06/23
  * [ropes](https://github.com/mozilla/rust/blob/master/src/libstd/rope.rs)
 * networking
  * HTTP
-  * [client](https://github.com/brson/rust-http-client) (external)
+  * client
+    * [rust-http-client](https://github.com/brson/rust-http-client) (external)
   * server
     * [rwebserve](https://github.com/jesse99/rwebserve) (external)
  * [URI/URL](https://github.com/mozilla/rust/blob/master/src/libstd/net_url.rs)
  * [UUID](https://github.com/erickt/rust-uuid) (external)
  * GUID
-* date / time
+* date and time
+  * [rust_datetime](https://github.com/tedhorst/rust_datetime) (external)
+  * [rust-time](https://github.com/erickt/rust-time) (external)
 * [math](https://github.com/z0w0/rusty-math) (external)
 * [random](https://github.com/mozilla/rust/blob/master/src/libcore/rand.rs)
 * [compression](https://github.com/elly/rustzlib) (external)
