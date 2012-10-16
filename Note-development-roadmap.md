@@ -4,6 +4,8 @@ Please note: when we do stabilize for a 1.0 release, it will _not_ mean we are f
 
 Items on this page will move to the [[Doc detailed release notes]] page as they are completed.
 
+See also [Note 0.5 priorities](Note 0.5 priorities)
+
 ## Miscellaneous cleanups, mostly syntax
 
 ### Labeled loops
