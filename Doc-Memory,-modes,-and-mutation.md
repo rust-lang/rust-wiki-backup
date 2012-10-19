@@ -2,6 +2,8 @@
 
 _Do you find yourself writing random punctuation marks in front of types in hopes of making the errors go away? I sure do. So I decided to write some documentation by randomly hitting keys on the keyboard, and having other people fix the errors._
 
+**Please note that as of Rust 0.4 this FAQ is out of date. Several sections below are no longer accurate.**
+
 # Concepts
 ## Slots
 Slots are places where a value can live in memory, like the `x` in `let x = 4` or `{y: 3, x: 2}`.
