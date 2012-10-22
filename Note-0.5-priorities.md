@@ -103,3 +103,7 @@ Henri still needs it for the HTML parser.
 ### Dependency generation (tjc)
 
 Add the ability to generate/view item dependencies, as a prequel to incremental compilation.
+
+### Newtyped structs and struct variants (pcwalton)
+
+Newtyped structs and struct variants don't work.
