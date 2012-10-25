@@ -1,3 +1,5 @@
+**This page is highly out-of-date.**
+
 This page captures a bunch of axes in the space of pattern matching syntax.
 
 ### Allow pattern guards, using `if` or `when` or `where` or `|`.
