@@ -47,6 +47,7 @@ Mozilla employees have a weekly Rust planning meeting on Tuesday mornings at 9:0
 * [[Meeting weekly 2012-10-09]] (0.4; docs; 0.5 priorities; review; anonymous traits)
 * [[Meeting weekly 2012-10-16]] (0.4 release; 0.5 priorities)
 * [[Meeting weekly 2012-10-23]] (dynamic loading; condition system; automation; unwinding)
+* [[Meeting weekly 2012-10-30]] (type/module namespace collision; repl; try policy; versioning; datasort refinements)
 
 ## In-person meetings:
 
