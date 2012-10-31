@@ -18,7 +18,7 @@ We should provide a common interface for databases to ease porting from one data
   * [SOCI](http://soci.sourceforge.net/)
 * Objective C:
   * [Core Data](https://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/CoreData/cdProgrammingGuide.html)
-  * [BaseTen](http://basetenframework.org/)
+  * [BaseTen](http://basetenframework.org/) (Seems to be offline)
 
 ## Known bindings:
 
