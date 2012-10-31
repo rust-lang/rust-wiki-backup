@@ -1,6 +1,6 @@
 We should provide a common interface for databases to ease porting from one database backend to another.
 
-Similar projects for other languages:
+## Similar projects for other languages:
 
 * Python:
   * DB-API: http://www.python.org/dev/peps/pep-0249/ 
@@ -12,7 +12,7 @@ Similar projects for other languages:
 * Node.js:
   * http://www.sequelizejs.com/
 
-Known bindings:
+## Known bindings:
 
 * Sqlite:
   * https://github.com/linuxfood/rustsqlite 
@@ -24,4 +24,7 @@ Needed:
 * MySQL
 * Oracle
 
-Should we bother trying to support NoSQLs?
+## Open questions:
+
+* Should we bother trying to support NoSQLs?
+* Do we low-level like Python's DB-API? Or higher level, like Ruby's Sequel?
