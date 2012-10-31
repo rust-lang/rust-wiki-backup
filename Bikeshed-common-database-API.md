@@ -3,14 +3,22 @@ We should provide a common interface for databases to ease porting from one data
 ## Similar projects for other languages:
 
 * Python:
-  * DB-API: http://www.python.org/dev/peps/pep-0249/ 
+  * [DB-API](http://www.python.org/dev/peps/pep-0249/)
 * Go:
-  * sql: http://golang.org/pkg/database/sql/
+  * [sql](http://golang.org/pkg/database/sql/)
 * Ruby:
-  * DataObjects: https://github.com/datamapper/do
-  * Sequel: http://sequel.rubyforge.org/
+  * [DataObjects](https://github.com/datamapper/do)
+  * [Sequel](http://sequel.rubyforge.org/)
 * Node.js:
-  * http://www.sequelizejs.com/
+  * [Sequelize.js](http://www.sequelizejs.com/)
+* Java:
+  * [JDBC](http://www.oracle.com/technetwork/java/overview-141217.html)
+* C++:
+  * [QtSql](http://doc.qt.digia.com/4.5/qtsql.html)
+  * [SOCI](http://soci.sourceforge.net/)
+* Objective C:
+  * [Core Data](https://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/CoreData/cdProgrammingGuide.html)
+  * [BaseTen](http://basetenframework.org/)
 
 ## Known bindings:
 
