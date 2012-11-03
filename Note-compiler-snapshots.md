@@ -88,3 +88,11 @@ s3cmd put -P rust-stage0-2011-05-13-0d32ff7-linux-i386-4adfe572211e609bf8faeb327
     * Push to Mozilla's `snap-stage3`
     * Wait for the tinderboxes to cycle as above and make a final entry in `src/snapshots.txt`, this time making an `S` entry as you would do for a compatible change.
     * Commit this final snapshot registration, and push to `master`. If there have been changes on `master` in the meantime, _you must_ merge with them before pushing, _not_ rebase onto them.
+
+## Local snapshots
+
+Sometimes you will want to make a snapshot just on your machine for testing. Executing ```make snap-stage3``` in your Rust build directory should leave behind a ```.bz2``` file. To rebuild Rust with the new snapshot, execute:
+
+```CFG_SRC_DIR=$HOME/rust ../src/etc/get-snapshot.py x86_64-apple-darwin rust-stage0-2012-11-03-444a16a-macos-x86_64-ed4b8355bfb1bcea6216bac585053a67e05df8a2.tar.bz2```
+
+modifying the value of ```CFG_SRC_DIR``` appropriately; using the correct host triple for your machine; and substituting whatever the name of the ```.bz2``` file that was just created. This will unzip the new snapshot and install it. Then you can run ```make check``` as normal.
