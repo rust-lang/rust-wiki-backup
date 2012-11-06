@@ -29,15 +29,15 @@ brian, tim, graydon, patrick, niko
 
 * P: Floating point inference. It's come up several times. Not having it is annoying. Etc. Particularly for * graphics programming.
 * G: Integer inference important for literal arguments. Very common.
-* P: <Litany of graphics examples>.
-* P, G, B, N: <Missed discussion>. Will implement float inference.
+* P: *Litany of graphics examples*.
+* P, G, B, N: *Missed discussion. Will implement float inference.*
 
 # Constants in patterns
 
 * P: Constants in patterns. We detect when it happens and make it an error. Why don't we 'do the right thing'.
 * N: Consts can't be shadowed, act like nullary variants?
 * P: That is the situation today. Consts have all caps convention so shadowing isn't a big deal.
-* All: <agreement>
+* All: *agreement*
 
 # Moves based on type
 
