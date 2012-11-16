@@ -4,6 +4,7 @@ One or more core developers spend one day per week mopping up accumulated mess i
   - Source alignment: making FIXMEs in code correspond to bug numbers and vice versa.
       * In general, the tidy script enforces that FIXMEs go with bug numbers. It's still worth checking occasionally that the bug numbers refer to open bugs. It's also worth looking for the handiwork of people who defeated the tidy script by using something like "XXX" instead of "FIXME".
       * As of 2012-10-11, all FIXMEs in the Rust code correspond to valid, open bug numbers (tjc)
+  - Checking whether xfailed test cases can be un-xfailed.
   - Reproduction: checking locally to see if bugs are still valid.
   - Followup: requesting clarification, testcases, etc. from reporters of unclear bugs. 
   - Actual fixing: if there's any time left, pick some work off that seems fixable in short order.
