@@ -1,1 +1,1 @@
-The back end includes files that handle linking, name mangling, and the ABI. It lives in ```src/rustc/back```.
+The back end includes files that handle linking, name mangling, and the ABI. It lives in ```src/librustc/back```.
