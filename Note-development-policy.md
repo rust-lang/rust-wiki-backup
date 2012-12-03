@@ -2,9 +2,15 @@ Development policy for Rust.
 
 ## Contributions and commit access
 
-If you are already have <a href="http://www.mozilla.org/hacking/commit-access-policy/">Level 1 Access</a> to commit within the Mozilla project you may commit directly to this repository. Email one of the existing authors and ask for commit access if you want to be contributing quickly and regularly this way.
+We request that contributions are made via pull request and review. Core contributors (those with direct push access to github.com/mozilla/rust.git) will review and integrate your work. Note that **everyone gets reviewed**, even those with direct push access. Eventually we hope that the "final" push to the repository will happen via an automatic integration script that performs pre-push testing (to ensure we never push any regressions) but our automation is not yet clever enough to do that.
 
-More likely is a fork and pull request, for which you will need a Github account; if you're unclear on this process, see Github's documentation on [forking](https://help.github.com/articles/fork-a-repo) and [pull requests](https://help.github.com/articles/using-pull-requests). Pull requests should be targeted at Rust's `incoming` branch (note that by default Github will aim them at the `master` branch) -- see "Changing The Commit Range and Destination Repository" in Github's documentation on [pull requests](https://help.github.com/articles/using-pull-requests). Before pushing to your Github repo and issuing the pull request, please do two things:
+If your contribution is nontrivial, we ask that you [file a Mozilla "committer agreement"](https://www.mozilla.org/hacking/notification/). This is a short (1-page) legal agreement that asserts certain claims of originality, absence of conflict with other agreements, and similar terms associated with licensing and authorization. If you already have Level 1 or higher commit rights within the Mozilla project, you have already filled out such a form.
+
+Direct push access to the github.com/mozilla/rust.git repository should only be necessary if you want to take on review, integration and other "janitorial" work as part of your day-to-day contribution to the project. If so, please discuss it with the other core contributors through IRC or email.
+
+## Pull request procedure
+
+To make a pull request, you will need a Github account; if you're unclear on this process, see Github's documentation on [forking](https://help.github.com/articles/fork-a-repo) and [pull requests](https://help.github.com/articles/using-pull-requests). Pull requests should be targeted at Rust's `incoming` branch (note that by default Github will aim them at the `master` branch) -- see "Changing The Commit Range and Destination Repository" in Github's documentation on [pull requests](https://help.github.com/articles/using-pull-requests). Before pushing to your Github repo and issuing the pull request, please do two things:
 
 1. [Rebase](http://git-scm.com/book/en/Git-Branching-Rebasing) your local changes against the `incoming` branch. Resolve any conflicts that arise.
 2. Run the full Rust test suite with the `make check` command. You're not off the hook even if you just stick to documentation; code examples in the docs are tested as well!
@@ -12,8 +18,6 @@ More likely is a fork and pull request, for which you will need a Github account
 Pull requests will be treated as "review requests", and we will give feedback we expect to see corrected on [style](https://github.com/mozilla/rust/wiki/Note-style-guide) and substance before pulling. Changes contributed via pull request should focus on a single issue at a time, like any other. We will not look kindly on pull-requests that try to "sneak" unrelated changes in.
 
 Normally, all pull requests must include regression tests (see [[Note-testsuite]]) that test your change. Occasionally, a change will be very difficult to test for. In those cases, please include a note in your commit message explaining why.
-
-Regular contributors who do not have Level 1 Access within the Mozilla project may request commit access, whereupon they will be required to sign a <a href="http://www.mozilla.org/hacking/notification/">Committer's Agreement</a> with the Mozilla Foundation.
 
 ## Getting involved: how to pick your first bug
 
