@@ -52,6 +52,7 @@ Mozilla employees have a weekly Rust planning meeting on Tuesday mornings at 9:0
 * [[Meeting weekly 2012-11-13]] (package management, deriving, unsafe pointers, extern functions)
 * [[Meeting weekly 2012-11-20]] (deriving, mut syntax, impls of typedefs, bounded type parameters on structs, unsafe pointer assignability, removing cast to trait, cross-crate constants)
 * [[Meeting weekly 2012-11-27]] (build systems, imports and exports)
+* [[Meeting weekly 2012-12-04]] (0.5 bug triage)
 
 ## In-person meetings:
 
