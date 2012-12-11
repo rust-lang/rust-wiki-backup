@@ -49,6 +49,7 @@ Agenda:
 - ... some discussion of how buildbot works that does not seem suitable for minutes  ...
 
 # Marking C functions unsafe
+
 - pcwalton: A breaking change so I want to do it early
 - pcwalton: There was some disagreement on the mailing list
 - pcwalton: Are we all ok with that?
@@ -68,7 +69,9 @@ Agenda:
 - pcwalton: I feel like maybe it's better to err on the side of simplicity
 - pcwalton: are people ok with the attribute?
 - brson: it is going to change the type? I'm not sure if I'm ok with that, it'd be the only case where annotations affect the type signature
+
 # AddAssign
+
 - pcwalton: there are cases in which you want to overload `+=` separately from `+`
 - pcwalton: it seems to me that perhaps the best way to do this is with a separate trait
 - pcwalton: for example, strings with `+=` are inefficient
@@ -84,7 +87,9 @@ Agenda:
 - nmatsakis: maybe the right setup is AddAssign as a base trait and Add extending it?
 - pcwalton: that doesn't seem to make sense for IndexAssign
 - nmatsakis: yeah, maybe it's not quite right, or not universally applicable
+
 # Default methods behind a flag
+
 - pcwalton: they don't entirely work right now, I don't know how critical they are for 1.0
 - pcwalton: I would like to propose making an "experimental feature" flag
 - pcwalton: I tend to feel that the half-implemented stuff should be more hidden
