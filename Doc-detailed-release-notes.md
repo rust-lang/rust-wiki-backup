@@ -90,6 +90,8 @@ The declarative language for .rc files has been [removed](https://mail.mozilla.o
 
 The `move` keyword is no longer needed under normal circumstances and should be considered deprecated. Types that are not implicitly copyable now move by default.
 
+TODO: deriving
+
 ## 0.4 October 2012
 
 This version was focused on completing as many disruptive syntax changes as possible, including changing and reducing keywords, beefing up traits and removing classes, changing how imports and exports are handled, and moving to a camel case convention for types.
