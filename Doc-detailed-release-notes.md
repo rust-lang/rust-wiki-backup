@@ -50,12 +50,16 @@ num.add(othernum);
 Furthermore, trait constraints are not yet aware of the kind traits, so using `Copy`, etc. as supertraits will not work as expected.
 
 ### Static methods
-### Type-based move
-### Removal of crate language
 
-### Minor changes
+### Condition
+
+### Type-based move
+
+### Other important changes
 
 The `Send` trait, one of the built-in 'kinds', is now called `Owned`. `Owned` types contain no managed or borrowed pointers. The little-known trait previously called `Owned` is now called `Durable`. `Durable` types contain no borrowed pointers (though in the future they will probably allow borrowed pointers to the `static` region). All `Owned` types are `Durable`.
+
+The declarative language for .rc files has been [removed](https://mail.mozilla.org/pipermail/rust-dev/2012-December/002679.html).
 
 ## 0.4 October 2012
 
