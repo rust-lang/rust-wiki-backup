@@ -51,7 +51,36 @@ Furthermore, trait constraints are not yet aware of the kind traits, so using `C
 
 ### Static methods
 
-### Condition
+### Condition handling
+
+This release adds a new API for dealing with errors, `core::condition`. Unlike exceptions, conditions are handled at the site where they are raised. Failure to handle a condition results in task failure.
+
+```
+// Each type of condition requires a unique key, which currently use this awkward form
+// (using the function address as the key - a problematic solution)
+fn sadness_key(_x: @Handler<int,int>) { }
+
+// Conditions are constant instances of the Condition type
+const sadness_condition : Condition<int,int> = Condition { key: sadness_key };
+
+// Install the handler
+do sadness_condition.trap(|value| {
+    // If the condition is raised, replace `value` with something else
+    value + 1
+}).in {
+    // The condition handler is valid over this block of code
+    let likely_value = calculate_value();
+    if likely_value < THRESHOLD {
+        likely_value
+    } else {
+        // Not the value we expect. Ask for help
+        sadness_condition.raise(&likely_value)
+    }
+}
+
+```
+
+Conditions are not yet used by the standard library.
 
 ### Other important changes
 
