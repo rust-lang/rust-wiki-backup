@@ -5,9 +5,57 @@ This page covers releases in more detail than the bullet-point list given in the
 This was a fairly slow development cycle that focused on implementing more trait features, such as trait constraints (previously referred to as 'inheritance') and static methods, with the goal of enabling more expressive standard libraries. This version more-or-less completes Rust's long transition to a linear type system, with non-copyable types moving automatically (the `move` keyword is deprecated).
 
 ### Trait constraints
+
+Traits now allow declarations of 'constraints', additional traits that must be implemented for a type to implement the given trait. This is used for composing multiple traits into a single trait.
+
+```
+trait Add {
+  fn add(&self, other: &self) -> self;
+}
+trait Sub {
+  fn sub(&self, other: &self) -> self;
+}
+trait Num: Add Sub { }
+```
+
+The methods of each trait must still be implemented seperately.
+
+```
+impl MyNumType: Add {
+  fn add(&self, other: &MyNumType) -> MyNumType { ... }
+}
+impl MyNumType: Sub {
+  fn sub(&self, other: &MyNumType) -> MyNumType { ... }
+}
+impl MyNumType: Num { }
+```
+
+Then the constrained trait may be used in additional trait or type parameter constraints in place of its supertraits.
+
+```
+fn calculate<T: Num>(val1: T, val2: T, val3: T) -> T {
+  val1.add(&val2).sub(&val3)
+}
+```
+
+Note that supertrait methods are not yet available on subtrait 'object' types.
+
+```
+// This doesn't work yet
+let t = &MyNumType { ... };
+let num = t = &Num;
+num.add(othernum);
+```
+
+Furthermore, trait constraints are not yet aware of the kind traits, so using `Copy`, etc. as supertraits will not work as expected.
+
 ### Static methods
 ### Type-based move
 ### Removal of crate language
+
+### Minor changes
+
+The `Send` trait, one of the built-in 'kinds', is now called `Owned`. `Owned` types contain no managed or borrowed pointers. The little-known trait previously called `Owned` is now called `Durable`. `Durable` types contain no borrowed pointers (though in the future they will probably allow borrowed pointers to the `static` region). All `Owned` types are `Durable`.
 
 ## 0.4 October 2012
 
