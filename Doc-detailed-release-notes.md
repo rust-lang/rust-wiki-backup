@@ -82,6 +82,8 @@ do sadness_condition.trap(|value| {
 
 Conditions are not yet used by the standard library.
 
+### Import resolution
+
 ### Other important changes
 
 The `Send` trait, one of the built-in 'kinds', is now called `Owned`. `Owned` types contain no managed or borrowed pointers. The little-known trait previously called `Owned` is now called `Durable`. `Durable` types contain no borrowed pointers (though in the future they will probably allow borrowed pointers to the `static` region). All `Owned` types are `Durable`.
