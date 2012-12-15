@@ -55,7 +55,7 @@ Interesting stuff usually appears on [r/rust].
 
 [Ben]: http://winningraceconditions.blogspot.com/
 [Brian]: http://brson.github.com/
-[Eric Holk]: http://theincredibleholk.wordpress.com/
+[Eric Holk]: http://blog.theincredibleholk.org/
 [Erick Tryzelaar]: http://erickt.github.com/
 [Graydon]: https://blog.mozilla.org/graydon/
 [Niko]: http://smallcultfollowing.com/babysteps/
