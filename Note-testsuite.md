@@ -1,13 +1,13 @@
 # The Rust test suite
 
-The rust test suite has several sets of tests for different purposes. As the compiler is built several times, over multiple stages, the tests can genarally be run against each stage of the build. Under linux, all tests are run under valgrind if it is installed, unless the build was configured with --disable-valgrind or CFG_DISABLE_VALGRIND=1 is provided on the command line.
+The rust test suite has several sets of tests for different purposes. As the compiler is built several times, over multiple stages, the tests can genarally be run against each stage of the build.
 
 ### Recipes
 
 * Run the test suite: `make check`. This runs all stage2 tests. This is the criteria for a successful build.
 * Run only xfailed (ignored, broken) tests: `make check CHECK_XFAILS=1`
 * Run with verbose output: `make check VERBOSE=1`. This will print useful information like the exact commands being run.
-* Run without valgrind: `make check CFG_DISABLE_VALGRIND=1`
+* Run with valgrind: `make check CFG_ENABLE_VALGRIND=1`
 * Run a specific test: `make check TESTNAME=[...]`
   * The pattern `[...]` can be a complete path to a test, such as
     `test/run-pass/foobar.rs`; it can also be any substring of a path.
@@ -182,6 +182,8 @@ The build system is able to extract Rust code snippets from documentation and ru
 * `make check-stage[N]-doc-tutorial-tasks`
 * `make check-stage[N]-doc-tutorial-ffi`
 * `make check-stage[N]-doc-tutorial-macros`
+
+To run all doc tests use `make check-stage[N]-doc`.
 
 ## Fast check
 
