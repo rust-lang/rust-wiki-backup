@@ -51,6 +51,21 @@ Furthermore, trait constraints are not yet aware of the kind traits, so using `C
 
 ### Static methods
 
+### Automatically-derived trait implementations
+
+Implementations of the `Eq` and `IterBytes` can be automatically derived using syntax extensions (types that implement `IterBytes` can automatically implement `Hash`, so can be used in hash tables).
+
+```
+#[deriving_eq]
+#[deriving_iter_bytes]
+struct Foo {
+  bar: int
+}
+```
+
+This should work on all struct and enum types, and does what you would likely expect, delegating to the corresponding impls of each subcomponent in turn.
+
+
 ### Condition handling
 
 This release adds a new API for dealing with errors, `core::condition`. Unlike exceptions, conditions are handled at the site where they are raised. Failure to handle a condition results in task failure.
