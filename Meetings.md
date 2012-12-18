@@ -54,6 +54,7 @@ Mozilla employees have a weekly Rust planning meeting on Tuesday mornings at 9:0
 * [[Meeting weekly 2012-11-27]] (build systems, imports and exports)
 * [[Meeting weekly 2012-12-04]] (0.5 bug triage)
 * [[Meeting weekly 2012-12-11]] (directory modules; kind names; buildbot; unsafe C functions; AssAssign trait; default methods; empty module scope)
+* [[Meeting weekly 2012-12-18]] (linux snapshot problems; reflection; trait inheritance; closure sigils; Self; 0.5 triage)
 
 ## In-person meetings:
 
