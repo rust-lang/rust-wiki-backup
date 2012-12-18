@@ -12,7 +12,7 @@
 
 Attending: Graydon, Felix, Patrick, John Clements, Azita, Brian
 
-# Buildbot
+## Buildbot
 
 - G: Discovered buildbot snapshots are running newer linux. Binaries don't work on older linuxes. If you make a snapshot, you need to copy the linux binaries from s3 to static.rust-lang.org.
 - G: Two repr (reflection) modules in core. We just switched to the new one yesterday. Keep your eyes open for bugs.
@@ -26,7 +26,7 @@ Attending: Graydon, Felix, Patrick, John Clements, Azita, Brian
 - B: Also found a problem with trait inheritance
 - P: If I don't land the path changes a lot of code will break in 0.6
 
-# trait inheritence
+## trait inheritence
 
 - B: trait foo : bar means only one thing presently
 - B: in <T:foo>, also T:bar
@@ -54,20 +54,20 @@ impl<T> T: Bar {
 - P: Can I go over some quick things.
 - G: Yes
 
-# Pointer sigils on closures
+## Pointer sigils on closures
 
 - P: Cant write sigils on lambda syntax, but sometimes you want
 - G: Maybe the default should be &, not @. Why is @ default?
 - P: It's the first one we impemented
 - G: Let's review when Niko is here
 
-# T:&static
+## T:&static
 
 - P: region bounds replaces `Durable` trait
 
 <general agreement>
 
-# self -> Self
+## self -> Self
 - P: Changing the 'self' type to 'Self'
 - B: So will both be keywords?
 - P: No, 'Self' will just be a builtin type, 'self' will become keyword
@@ -75,7 +75,7 @@ impl<T> T: Bar {
 
 <shrugs and agreement>
 
-# Calling static methods from anonymous trait without naming trait
+## Calling static methods from anonymous trait without naming trait
 
 ```
     struct Ball { ... }
@@ -89,6 +89,6 @@ impl<T> T: Bar {
     }
 ```
 
-# triage
+## triage
 
 ... most deferred, a few related to trait inheritence kept to investigate before release
