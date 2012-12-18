@@ -97,7 +97,46 @@ do sadness_condition.trap(|value| {
 
 Conditions are not yet used by the standard library.
 
-### Import resolution
+### Path resolution
+
+Path resolution has changed significantly to keep in-scope identifiers from leaking from parent modules to submodules. The old behavior, particularly when dealing with large projects with many files, made knowing what was in scope very difficult and prone to error.
+
+In response, we're making a change to how imports (`use` statements) are resolved. They are now resolved relative to the top of the crate by default, and can be thought of as absolute paths through the crate's module namespace. Paths may be prefixed with the contextual keywords `self` and `super` to modify how the lookup is performed.
+
+```
+extern mod std;
+
+mod foo {
+    // Bring `net` into scope
+    use std::net;
+
+    fn f() { ... }
+
+    // This submodule no longer inherits the scope of the outer module
+    mod bar {
+        // Need to import `net` again to use it
+        use std::net;
+    }
+
+    mod baz {
+        // We can also use `super` to get at `foo`s import
+        use super::net;
+    }
+
+    mod quux {
+        // Can also use `self` to import from child modules
+        use self::boo::net;
+
+        mod boo {
+            pub use std::net;
+        }
+    }
+}
+```
+
+***Note: There will be related changes to path resolution in other contexts as well in the next release***
+
+***Note: `self` and `super` will likely be promoted to full keywords (not contextual keywords) in the next release***
 
 ### Other important changes
 
