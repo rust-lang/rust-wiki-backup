@@ -134,9 +134,9 @@ mod foo {
 }
 ```
 
-***Note: There will be related changes to path resolution in other contexts as well in the next release***
+**Note: There will be related changes to path resolution in other contexts as well in the next release**
 
-***Note: `self` and `super` will likely be promoted to full keywords (not contextual keywords) in the next release***
+**Note: `self` and `super` will likely be promoted to full keywords (not contextual keywords) in the next release**
 
 ### Other important changes
 
