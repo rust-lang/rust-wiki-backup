@@ -4,9 +4,9 @@ This page covers releases in more detail than the bullet-point list given in the
 
 This was a fairly slow development cycle that focused on implementing more trait features, such as trait constraints (previously referred to as 'inheritance') and static methods, with the goal of enabling more expressive standard libraries. This version more-or-less completes Rust's long transition to a linear type system, with non-copyable types moving automatically (the `move` keyword is deprecated).
 
-### Trait constraints
+### Trait inheritance
 
-Traits now allow declarations of 'constraints', additional traits that must be implemented for a type to implement the given trait. This is used for composing multiple traits into a single trait.
+Traits may now declare supertraits. When a trait has supertraits then any type which implements the subtrait must also implement the supertrait. Trait inheritance allows a group of traits to be treated as a single trait in bounded type parameters.
 
 ```
 trait Add {
@@ -30,7 +30,7 @@ impl MyNumType: Sub {
 impl MyNumType: Num { }
 ```
 
-Then the constrained trait may be used in additional trait or type parameter constraints in place of its supertraits.
+Then the constrained trait may be used in type parameter constraints in place of its supertraits.
 
 ```
 fn calculate<T: Num>(val1: T, val2: T, val3: T) -> T {
