@@ -2,7 +2,7 @@ This page covers releases in more detail than the bullet-point list given in the
 
 ## 0.5 December 2012
 
-This was a fairly slow development cycle that focused on implementing more trait features, such as trait constraints (previously referred to as 'inheritance') and static methods, with the goal of enabling more expressive standard libraries. This version more-or-less completes Rust's long transition to a linear type system, with non-copyable types moving automatically (the `move` keyword is deprecated).
+This was a fairly slow development cycle that focused on implementing more trait features, such as trait inheritance and static methods, with the goal of enabling more expressive standard libraries. This version more-or-less completes Rust's long transition to a linear type system, with non-copyable types moving automatically (the `move` keyword is deprecated).
 
 ### Trait inheritance
 
