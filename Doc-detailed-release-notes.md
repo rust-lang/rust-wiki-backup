@@ -47,7 +47,7 @@ let num = t = &Num;
 num.add(othernum);
 ```
 
-Furthermore, trait constraints are not yet aware of the kind traits, so using `Copy`, etc. as supertraits will not work as expected.
+Furthermore, trait constraints are not yet aware of the "kind" traits, so using `Copy`, etc. as supertraits will not work as expected.
 
 ### Static methods
 
@@ -68,7 +68,7 @@ This should work on all struct and enum types, and does what you would likely ex
 
 ### Condition handling
 
-This release adds a new API for dealing with errors, `core::condition`. Unlike exceptions, conditions are handled at the site where they are raised. Failure to handle a condition results in task failure.
+This release adds a new API for dealing with errors, `core::condition`. Unlike the concept of *exceptions* in other languages, *conditions* are handled at the site where they are raised rather than the site where they are caught. Failure to handle a condition results in task failure.
 
 ```
 // A condition has a name, input type and output type.
@@ -103,7 +103,7 @@ fn foo(p: &Path) {
 
 ```
 
-Conditions are not yet used by the standard library.
+The standard library has not yet been updated to make use of conditions.
 
 ### Path resolution
 
