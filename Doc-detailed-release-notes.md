@@ -27,7 +27,8 @@ enum Option<T> { Some(T), None }
 impl<T> Option<T> {
     fn unwrap(self) -> T {
         // Extract the value from the option and return it.
-        // These operations all move by default now for unique types - there is no copying here
+        // There is no copying here as these operations all
+        // move by default now for unique types.
         match self {
             Some(v) => v,
             None => fail
