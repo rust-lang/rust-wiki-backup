@@ -79,7 +79,7 @@ fn quux<T>() -> T {
 struct Swizzle { ... }
 impl Swizzle { static fn bar() -> T; }
 
-fn snozzle<T>() -> T {
+fn swozzle<T>() -> T {
     return Swizzle::bar();
 }
 ```
