@@ -49,7 +49,40 @@ num.add(othernum);
 
 Furthermore, trait constraints are not yet aware of the "kind" traits, so using `Copy`, etc. as supertraits will not work as expected.
 
-### Static methods
+### Static method resolution
+
+In 0.4 static methods 'leaked' out of the traits in which they were defined and were resolved in the outer module scope. This would mean that two sibling traits couldn't define a static method with the same name.
+
+```
+// Couldn't do this before because `bar` actually exists in the outer scope
+trait Foo<T> { static fn bar() -> T; }
+trait Baz<T> { static fn bar() -> T; }
+
+fn quux<T>() -> T {
+    return bar();
+}
+```
+
+In 0.5 the module and type namespaces are merged and static methods are resolved under the name of the trait in which they are defined.
+
+```
+// Now this is valid
+trait Foo<T> { static fn bar() -> T; }
+trait Baz<T> { static fn bar() -> T; }
+
+fn quux<T>() -> T {
+    // Now trait names may be used in paths to access static methods
+    return Foo::bar();
+}
+
+// Likewise, static methods on types (anonymous traits) may be accessed via the type name
+struct Swizzle { ... }
+impl Swizzle { static fn bar() -> T; }
+
+fn snozzle<T>() -> T {
+    return Swizzle::bar();
+}
+```
 
 ### Automatically-derived trait implementations
 
