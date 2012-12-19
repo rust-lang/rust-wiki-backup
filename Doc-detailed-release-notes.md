@@ -26,9 +26,10 @@ Self types also have correct support for move semantics, enabling some nice patt
 enum Option<T> { Some(T), None }
 impl<T> Option<T> {
     fn unwrap(self) -> T {
-        // Extract the value from the option and return it
+        // Extract the value from the option and return it.
+        // These operations all move by default now for unique types - there is no copying here
         match self {
-            Some(T) => T,
+            Some(v) => v,
             None => fail
         }
     }
