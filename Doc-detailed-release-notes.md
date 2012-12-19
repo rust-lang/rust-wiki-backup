@@ -30,6 +30,10 @@ impl<T> Option<T> {
         }
     }
 }
+
+fn maybe_get_value() -> Option<MyType> { ... }
+
+let value = maybe_get_value().unwrap();
 ```
 
 ### Trait inheritance
