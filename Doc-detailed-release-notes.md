@@ -71,26 +71,34 @@ This should work on all struct and enum types, and does what you would likely ex
 This release adds a new API for dealing with errors, `core::condition`. Unlike exceptions, conditions are handled at the site where they are raised. Failure to handle a condition results in task failure.
 
 ```
-// Each type of condition requires a unique key, which currently use this awkward form
-// (using the function address as the key - a problematic solution)
-fn sadness_key(_x: @Handler<int,int>) { }
-
-// Conditions are constant instances of the Condition type
-const sadness_condition : Condition<int,int> = Condition { key: sadness_key };
+// A condition has a name, input type and output type.
+// The input type contains details of the condition, passed to a handler.
+// The output type is what the handler will return if it handles the condition.
+condition! {
+    missing_input_file : Path -> Reader;
+}
 
 // Install the handler
-do sadness_condition.trap(|value| {
-    // If the condition is raised, replace `value` with something else
-    value + 1
+do missing_input_file::cond.trap(|pathname| {
+    // Handle a missing input file by providing a fake empty reader.
+    io::BytesReader { bytes: bytes, pos: 0u } as Reader
 }).in {
-    // The condition handler is valid over this block of code
-    let likely_value = calculate_value();
-    if likely_value < THRESHOLD {
-        likely_value
+    // The condition handler is valid over the dynamic extent
+    // of the block passed to trap.
+    foo(&Path("/nonexistent"))
+}
+
+fn foo(p: &Path) {
+    let r = if p.exists() {
+        io::file_reader(p)
     } else {
-        // Not the value we expect. Ask for help
-        sadness_condition.raise(&likely_value)
+        // If there's a handler in one of our callers, this
+        // will evaluate to the handler's return value and
+        // we will carry on, no unwinding.
+        missing_input_file::cond.raise(p)
     }
+    let v = r.read();
+    // ...
 }
 
 ```
