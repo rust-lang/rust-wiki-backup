@@ -4,6 +4,25 @@ This page covers releases in more detail than the bullet-point list given in the
 
 This was a fairly slow development cycle that focused on implementing more trait features, such as trait inheritance and static methods, with the goal of enabling more expressive standard libraries. This version more-or-less completes Rust's long transition to a linear type system, with non-copyable types moving automatically (the `move` keyword is deprecated).
 
+### Explicit self
+
+Work continues on requiring that instance methods always use explicit self-type declarations, and now `self`, `&self`, `~self`, and `@self` are all valid self types and should work. Methods with explicit self are declared like `fn foo(self, arg1, arg2) { ... }`. The old method declaration syntax, without a self type, is deprecated and will likely be removed in 0.6.
+
+Self types also have correct support for move semantics, enabling some nice patterns for unique types.
+
+```
+enum Option<T> { Some(T), None }
+impl<T> Option<T> {
+    fn unwrap(self) -> T {
+        // Extract the value from the option and return it
+        match self {
+            Some(T) => T,
+            None => fail
+        }
+    }
+}
+```
+
 ### Trait inheritance
 
 Traits may now declare supertraits. When a trait has supertraits then any type which implements the subtrait must also implement the supertrait. Trait inheritance allows a group of traits to be treated as a single trait in bounded type parameters.
