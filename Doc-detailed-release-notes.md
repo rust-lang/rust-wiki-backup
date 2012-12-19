@@ -162,14 +162,6 @@ mod foo {
 
 *Note: `self` and `super` will likely be promoted to full keywords (not contextual keywords) in the next release*
 
-### Other important changes
-
-The `Send` trait, one of the built-in 'kinds', is now called `Owned`. `Owned` types contain no managed or borrowed pointers. The little-known trait previously called `Owned` is now called `Durable`. `Durable` types contain no borrowed pointers (though in the future they will probably allow borrowed pointers to the `static` region). All `Owned` types are `Durable`.
-
-The declarative language for .rc files has been [removed](https://mail.mozilla.org/pipermail/rust-dev/2012-December/002679.html).
-
-The `move` keyword is no longer needed under normal circumstances and should be considered deprecated. Types that are not implicitly copyable now move by default.
-
 ### Automatically-derived trait implementations
 
 Implementations of the `Eq` and `IterBytes` can be automatically derived using syntax extensions (types that implement `IterBytes` can automatically implement `Hash`, so can be used in hash tables).
@@ -224,6 +216,13 @@ fn foo(p: &Path) {
 
 The standard library has not yet been updated to make use of conditions.
 
+### Other important changes
+
+The `Send` trait, one of the built-in 'kinds', is now called `Owned`. `Owned` types contain no managed or borrowed pointers. The little-known trait previously called `Owned` is now called `Durable`. `Durable` types contain no borrowed pointers (though in the future they will probably allow borrowed pointers to the `static` region). All `Owned` types are `Durable`.
+
+The declarative language for .rc files has been [removed](https://mail.mozilla.org/pipermail/rust-dev/2012-December/002679.html).
+
+The `move` keyword is no longer needed under normal circumstances and should be considered deprecated. Types that are not implicitly copyable now move by default.
 
 ## 0.4 October 2012
 
