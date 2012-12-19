@@ -84,6 +84,55 @@ fn swozzle<T>() -> T {
 }
 ```
 
+### Path resolution
+
+Path resolution has changed significantly to keep in-scope identifiers from leaking from parent modules to submodules. The old behavior, particularly when dealing with large projects with many files, made knowing what was in scope very difficult and prone to error.
+
+In response, we're making a change to how imports (`use` statements) are resolved. They are now resolved relative to the top of the crate by default, and can be thought of as absolute paths through the crate's module namespace. Paths may be prefixed with the contextual keywords `self` and `super` to modify how the lookup is performed.
+
+```
+extern mod std;
+
+mod foo {
+    // Bring `net` into scope
+    use std::net;
+
+    fn f() { ... }
+
+    // This submodule no longer inherits the scope of the outer module
+    mod bar {
+        // Need to import `net` again to use it
+        use std::net;
+    }
+
+    mod baz {
+        // We can also use `super` to get at `foo`s import
+        use super::net;
+    }
+
+    mod quux {
+        // Can also use `self` to import from child modules
+        use self::boo::net;
+
+        mod boo {
+            pub use std::net;
+        }
+    }
+}
+```
+
+*Note: There will be related changes to path resolution in other contexts as well in the next release*
+
+*Note: `self` and `super` will likely be promoted to full keywords (not contextual keywords) in the next release*
+
+### Other important changes
+
+The `Send` trait, one of the built-in 'kinds', is now called `Owned`. `Owned` types contain no managed or borrowed pointers. The little-known trait previously called `Owned` is now called `Durable`. `Durable` types contain no borrowed pointers (though in the future they will probably allow borrowed pointers to the `static` region). All `Owned` types are `Durable`.
+
+The declarative language for .rc files has been [removed](https://mail.mozilla.org/pipermail/rust-dev/2012-December/002679.html).
+
+The `move` keyword is no longer needed under normal circumstances and should be considered deprecated. Types that are not implicitly copyable now move by default.
+
 ### Automatically-derived trait implementations
 
 Implementations of the `Eq` and `IterBytes` can be automatically derived using syntax extensions (types that implement `IterBytes` can automatically implement `Hash`, so can be used in hash tables).
@@ -138,56 +187,6 @@ fn foo(p: &Path) {
 
 The standard library has not yet been updated to make use of conditions.
 
-### Path resolution
-
-Path resolution has changed significantly to keep in-scope identifiers from leaking from parent modules to submodules. The old behavior, particularly when dealing with large projects with many files, made knowing what was in scope very difficult and prone to error.
-
-In response, we're making a change to how imports (`use` statements) are resolved. They are now resolved relative to the top of the crate by default, and can be thought of as absolute paths through the crate's module namespace. Paths may be prefixed with the contextual keywords `self` and `super` to modify how the lookup is performed.
-
-```
-extern mod std;
-
-mod foo {
-    // Bring `net` into scope
-    use std::net;
-
-    fn f() { ... }
-
-    // This submodule no longer inherits the scope of the outer module
-    mod bar {
-        // Need to import `net` again to use it
-        use std::net;
-    }
-
-    mod baz {
-        // We can also use `super` to get at `foo`s import
-        use super::net;
-    }
-
-    mod quux {
-        // Can also use `self` to import from child modules
-        use self::boo::net;
-
-        mod boo {
-            pub use std::net;
-        }
-    }
-}
-```
-
-*Note: There will be related changes to path resolution in other contexts as well in the next release*
-
-*Note: `self` and `super` will likely be promoted to full keywords (not contextual keywords) in the next release*
-
-### Other important changes
-
-The `Send` trait, one of the built-in 'kinds', is now called `Owned`. `Owned` types contain no managed or borrowed pointers. The little-known trait previously called `Owned` is now called `Durable`. `Durable` types contain no borrowed pointers (though in the future they will probably allow borrowed pointers to the `static` region). All `Owned` types are `Durable`.
-
-The declarative language for .rc files has been [removed](https://mail.mozilla.org/pipermail/rust-dev/2012-December/002679.html).
-
-The `move` keyword is no longer needed under normal circumstances and should be considered deprecated. Types that are not implicitly copyable now move by default.
-
-TODO: deriving
 
 ## 0.4 October 2012
 
