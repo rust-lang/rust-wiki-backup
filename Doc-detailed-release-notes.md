@@ -8,6 +8,15 @@ This was a fairly slow development cycle that focused on implementing more trait
 
 Work continues on requiring that instance methods always use explicit self-type declarations, and now `self`, `&self`, `~self`, and `@self` are all valid self types and should work. Methods with explicit self are declared like `fn foo(self, arg1, arg2) { ... }`. The old method declaration syntax, without a self type, is deprecated and will likely be removed in 0.6.
 
+```
+struct MyType { ... }
+
+impl MyType {
+    fn i_need_a_managed_box(@self) { ... }
+    fn i_need_an_owned_box(~self) { ... }
+}
+```
+
 Self types also have correct support for move semantics, enabling some nice patterns for unique types.
 
 ```
