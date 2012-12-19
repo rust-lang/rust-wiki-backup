@@ -15,6 +15,9 @@ impl MyType {
     fn i_need_a_managed_box(@self) { ... }
     fn i_need_an_owned_box(~self) { ... }
 }
+
+let managed_value = @MyType { ... };
+managed_value.i_need_a_managed_box();
 ```
 
 Self types also have correct support for move semantics, enabling some nice patterns for unique types.
