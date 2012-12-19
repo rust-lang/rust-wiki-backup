@@ -47,7 +47,7 @@ let num = t = &Num;
 num.add(othernum);
 ```
 
-Furthermore, trait constraints are not yet aware of the "kind" traits, so using `Copy`, etc. as supertraits will not work as expected.
+Furthermore, trait inheritance not yet aware of the "kind" traits, so using `Copy`, etc. as supertraits will not work as expected.
 
 ### Static method resolution
 
