@@ -59,7 +59,7 @@ s3cmd put -P rust-stage0-2011-05-13-0d32ff7-linux-i386-4adfe572211e609bf8faeb327
 
 * Save `src/snapshots.txt` and make check in your workspace. Make sure everything's cool. You are now building with your new snapshot locally.
 
-* If that worked, commit and push to `master`. Now everyone will be using your snapshot. If there have been changes on `master` in the meantime, _you must_ merge with them before pushing, _not_ rebase onto them.
+* If that worked, commit and push to `try`. Once all the bots successfully build and pass their tests, push to `incoming`. Now everyone will be using your snapshot. If there have been changes on `incoming` in the meantime, _you must_ merge with them before pushing, _not_ rebase onto them.
 
 ## Stage1 (backwards-incompatible) snapshots
 
@@ -87,7 +87,7 @@ s3cmd put -P rust-stage0-2011-05-13-0d32ff7-linux-i386-4adfe572211e609bf8faeb327
     * Commit this change along with the completed `T` snapshot registration in `src/snapshots.txt`.
     * Push to Mozilla's `snap-stage3`
     * Wait for the tinderboxes to cycle as above and make a final entry in `src/snapshots.txt`, this time making an `S` entry as you would do for a compatible change.
-    * Commit this final snapshot registration, and push to `master`. If there have been changes on `master` in the meantime, _you must_ merge with them before pushing, _not_ rebase onto them.
+    * Commit this final snapshot registration, and push to `incoming`. If there have been changes on `incoming` in the meantime, _you must_ merge with them before pushing, _not_ rebase onto them.
 
 ## Local snapshots
 
