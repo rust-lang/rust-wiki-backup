@@ -8,7 +8,7 @@ following these instructions.
 
 Version numbers listed here are "what we're using"; the code may well work with earlier versions of these tools, but we don't know minimum version requirements.
 
-* A recent Linux, OS X, Win32 or FreeBSD system
+* A recent Linux, OS X 10.6 or later, Win32 or FreeBSD system
 * 1 GB RAM
 * [Python 2.x](http://www.python.org/download/) (version 2.7 is known to work)
 * GNU make 3.81
