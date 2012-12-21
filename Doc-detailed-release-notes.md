@@ -220,7 +220,8 @@ The standard library has not yet been updated to make use of conditions.
 
 The `Send` trait, one of the built-in 'kinds', is now called `Owned`. `Owned` types contain no managed or borrowed pointers. The little-known trait previously called `Owned` is now called `Durable`. `Durable` types contain no borrowed pointers (though in the future they will probably allow borrowed pointers to the `static` region). All `Owned` types are `Durable`.
 
-The declarative language for .rc files has been [removed](https://mail.mozilla.org/pipermail/rust-dev/2012-December/002679.html).
+The declarative language for .rc files has been [removed](https://mail.mozilla.org/pipermail/rust-dev/2012-December/002679.html). The biggest practical implication of this change is that, for projects using 'companion modules',
+a `project.rc` combined with `project.rs`, the companion module (`project.rs`) will not be loaded automatically. You should copy the contents of `project.rs` into `project.rc` and delete `project.rs`.
 
 The `move` keyword is no longer needed under normal circumstances and should be considered deprecated. Types that are not implicitly copyable now move by default.
 
