@@ -6,7 +6,7 @@ This was a fairly slow development cycle that focused on implementing more trait
 
 ### Explicit self
 
-Work continues on requiring that instance methods always use explicit self-type declarations, and now `self`, `&self`, `~self`, and `@self` are all valid self types and should work. Methods with explicit self are declared like `fn foo(self, arg1, arg2) { ... }`. The old method declaration syntax, without a self type, is deprecated and will likely be removed in 0.6.
+Work continues on requiring that instance methods always use explicit self-type declarations, and now `self`, `&self`, `~self`, and `@self` are all valid self types and should work. Methods with explicit self are declared like `fn foo(self, arg1: Type1, arg2: Type2) { ... }`. The old method declaration syntax, without a self type, is deprecated and will likely be removed in 0.6.
 
 ```
 struct MyType { ... }
