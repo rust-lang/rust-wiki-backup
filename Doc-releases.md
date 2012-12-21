@@ -1,6 +1,30 @@
-This is an archive of all the existing Rust release artifacts. Each release is signed with the Rust [GPG signing key][key]. In addition to the included short-form release notes there is also a longer explanation of the changes in each release in the [[detailed release notes|Doc detailed release notes]].
+This is an archive of all the existing Rust release artifacts. Each release is signed with the Rust [GPG signing key][key] (older key [here][pre-0.5-key]). In addition to the included short-form release notes there is also a longer explanation of the changes in each release in the [[detailed release notes|Doc detailed release notes]].
 
 [key]: http://www.rust-lang.org/rust-key.gpg.ascii
+[pre-0.5-key]: http://www.rust-lang.org/rust-key-old.gpg.ascii
+
+## 0.5
+
+* [Announcement][0.5-announce]
+* [Release notes][0.5-notes]
+* [Source code][0.5-tar] ([signature][0.5-tar-sig])
+* [Windows installer][0.5-exe] ([signature][0.5-exe-sig])
+* [Tutorial][0.5-tutorial]
+* [Manual][0.5-manual] ([PDF][0.5-manual-pdf])
+* [Core library docs][0.5-core]
+* [Standard library docs][0.5-std]
+
+[0.5-announce]:  https://mail.mozilla.org/pipermail/rust-dev/2012-December/002787.html
+[0.5-notes]: https://github.com/mozilla/rust/blob/release-0.5/RELEASES.txt
+[0.5-tar]: http://static.rust-lang.org/dist/rust-0.5.tar.gz
+[0.5-tar-sig]: http://static.rust-lang.org/dist/rust-0.5.tar.gz.asc
+[0.5-exe]: http://static.rust-lang.org/dist/rust-0.5-install.exe
+[0.5-exe-sig]: http://static.rust-lang.org/dist/rust-0.5-install.exe.asc
+[0.5-tutorial]: http://doc.rust-lang.org/doc/0.5/tutorial.html
+[0.5-manual]: http://doc.rust-lang.org/doc/0.5/rust.html
+[0.5-manual-pdf]: http://doc.rust-lang.org/doc/0.5/rust.pdf
+[0.5-core]: http://doc.rust-lang.org/doc/0.5/core/index.html
+[0.5-std]: http://doc.rust-lang.org/doc/0.5/std/index.html
 
 ## 0.4
 
