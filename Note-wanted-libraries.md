@@ -59,7 +59,7 @@ Notes taken at rust work week, 2011/06/23
 * DB API (sql, nosql)
   * postgres
   * mongodb
-  * redis
+  * [redis](https://github.com/mneumann/rust-redis) (external)
   * [sqlite](https://github.com/linuxfood/rustsqlite) (external)
 * [ZeroMQ](https://github.com/erickt/rust-zmq) (external)
  * How will libs like this be integrated with regular nonblocking io?
