@@ -98,8 +98,8 @@ Some examples that demonstrate different aspects of the language:
 [hash]: https://github.com/mozilla/rust/blob/master/src/libcore/hash.rs
 [LinearMap]: https://github.com/mozilla/rust/blob/master/src/libcore/send_map.rs
 [json]: https://github.com/mozilla/rust/blob/master/src/libstd/json.rs
-[rustdoc]: https://github.com/mozilla/rust/blob/master/src/rustdoc/
-[ImageCacheTask]: https://github.com/mozilla/servo/blob/master/src/servo/resource/image_cache_task.rs
+[rustdoc]: https://github.com/mozilla/rust/tree/master/src/librustdoc
+[ImageCacheTask]: https://github.com/mozilla/servo/blob/master/src/servo-gfx/resource/image_cache_task.rs
 [fempeg]: https://github.com/pcwalton/fempeg
 [mre]: https://github.com/erickt/mre
 
