@@ -19,6 +19,7 @@ One or more core developers spend one day per week mopping up accumulated mess i
   - Friday: @pcwalton
 
 ## Log:
+  - Thursday 12/27, tjc reviewed open issues 4128-4295
   - Thursday 12/6, tjc reviewed open issues 4074-4127 and 2888-3500
   - Thursday 11/29, tjc reviewed open issues 4029-4073
   - Saturday 11/24, tjc reviewed open issues 3976-4028 and 2617-2887
