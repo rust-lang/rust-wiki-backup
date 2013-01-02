@@ -38,7 +38,7 @@ Attending: Graydon, Felix, Patrick, John Clements, Azita, Brian
 - G: wait, are you talking about: "impl <T:foo> ..."
 
 ```
-// checiking that all impls of Bar are Foo. Can it be done at impl declaration time?
+// checking that all impls of Bar are Foo. Can it be done at impl declaration time?
 trait Foo { }
 trait Bar: Foo { }
 impl<T> T: Bar {
