@@ -40,7 +40,7 @@ We recommend developing under [MSYS and MinGW](http://www.mingw.org) using their
 
 Once installed, we tend to work inside the MSYS shell.
 
-For Git, we recommend [MsysGit](http://code.google.com/p/msysgit/) and if you use that you will want to put the git binary path *after* the MinGW path. So add a line like the following to your `.bashrc`:
+For Git, we recommend [MsysGit](http://msysgit.github.com/) and if you use that you will want to put the git binary path *after* the MinGW path. So add a line like the following to your `.bashrc`:
 
     export PATH=$PATH:/c/Program\ Files/Git/bin
 
