@@ -38,10 +38,6 @@ See also [Note 0.5 priorities](Note 0.5 priorities)
 
 ## Compilation and linkage-model changes
 
-### Remove the distinction between crate files and source files
-
-([#2176](https://github.com/mozilla/rust/issues/2176)) Crate files are at this point mostly an artifact of earlier beliefs that turned out not to be true (or convenient) in the compilation model. We believe they are now doing more harm than good, and their features can be presented as an "early pass" in the compilation model of a single tree of source files. Inter-file linkages will be given (within a crate) by the form `mod foo = "path.rs"`.
-
 ### Generalized variables and conditionals in the attribute system.
 
 ([#1242](https://github.com/mozilla/rust/issues/1242) and [#2119](https://github.com/mozilla/rust/issues/2119)) The attribute system has served us well so far for conditional compilation but at times we find it not quite powerful enough. In particular, the ability to bind variables declaratively, as well as conditionally evaluate _any_ attribute, seems lacking. We'll expand the attribute system to handle these cases, possibly changing its syntax slightly along the way.
@@ -55,10 +51,6 @@ See also [Note 0.5 priorities](Note 0.5 priorities)
 ([#2166](https://github.com/mozilla/rust/issues/2166)) Currently a crate has a single version, which is mangled into all the symbols in the crate as well as the crate filename. This is not quite correct. What we want is a per-item version attribute (with a per-crate _default_) that is mangled into each symbol, but _not_ the output filename, such that the compiler can tolerate compiling multiple versions of the same API inside a single output file. This should be mostly invisible to users.
 
 ## Library work
-
-### Condition-handler system
-
-0.3 will introduce an API for setting and retrieving task-local data. We'll build on top of this to provide dynamic-scoped variables (keyed by global constants), on top of that, condition-handlers that can be used to recover from errors at the site of the error, or else fail. This should hopefully address many of the remaining use-cases people have in mind for catchable exceptions.
 
 ### IO library update
 
