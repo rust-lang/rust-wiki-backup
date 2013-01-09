@@ -34,11 +34,11 @@ Azita, John, Tim, Brian, Dave, Graydon, Patrick, Niko
   * **Patrick**: if it gets close to the end and not done, can you offload it on me?
   * **Patrick**: I would like 0.6 to be soft-backwards-compatible
   * **Niko**: understand
-J: I've been here two days! but I love the sound of my own voice, so... we have a roadmap for hygiene for syntax extensions / macros, and it sounds like first couple steps are:
+  * **J**: I've been here two days! but I love the sound of my own voice, so... we have a roadmap for hygiene for syntax extensions / macros, and it sounds like first couple steps are:
     * tokentree -> tokentree syntax extension facility
     * then introducing almost a library for hygiene, which is a set of operations for token trees
-J: next three months, no idea
-T: my stuff:
+  * **J**: next three months, no idea
+  * **T**: my stuff:
     * fixing trait-related bugs, finishing default methods and supertraits
     * would like to keep pushing traits into better traits
     * fixing ICES
@@ -46,9 +46,9 @@ T: my stuff:
       * implementation work
       * syntax and implementation
   * **Patrick**: are they breaking changes?
-T: no, don't think so
+  * **T**: no, don't think so
   * **Patrick**: just want to front-load all visible language changes
-T: what about refcounting?
+  * **T**: what about refcounting?
   * **Patrick**: we can talk about that; not something that breaks language, but good to do early -- for perf, memory model has big impact so good to front load
   * **Dave**: my gut is saying that language changes *and* GC is a big chunk for one point release
 <some mild nods>
@@ -127,9 +127,9 @@ Time:
   * **Patrick**: don't mind if you hit limitations of trait system -- people hit limitations even in Haskell
   * **Dave**: docs is a good point, though: we'll need a full language manual
   * **Graydon**: wanna make a plea: language grammar is ill-defined. we don't know what class parser is in, don't know it's deterministic, ...!
-J: would love to do a little fuzzing, would love to work on that
+  * **J**: would love to do a little fuzzing, would love to work on that
   * **Graydon**: would like our docs to have grammar rules -- they did once upon a time. would like to test our parser against those rules
-J: happy to help, sounds like fun
+  * **J**: happy to help, sounds like fun
   * **Graydon**: huge amount of technical debt. library redesign is true. but tons of support code in compiler for obsolete features that don't even make any sense. not keen on 1.0 continuing to have support for deprecated things. want to get that cleaned out.
   * **Patrick**: we're not that far now; I have a patch that removes a bunch
   * **Graydon**: I know, we're going step by step
