@@ -57,6 +57,10 @@ Mozilla employees have a weekly Rust planning meeting on Tuesday mornings at 9:0
 * [[Meeting weekly 2012-12-18]] (linux snapshot problems; reflection; trait inheritance; closure sigils; Self; 0.5 triage)
 * [[Meeting weekly 2013-01-08]] (region syntax; inherited mutability and write barriers)
 
+## Planning meetings:
+
+* [[Meeting planning 2013-01-08]] (0.6; 1.0)
+
 ## In-person meetings:
 
 * [[Meeting inperson 2011-04-06]] (kind system; resources; env capture)
