@@ -38,7 +38,7 @@ Azita, John, Tim, Brian, Dave, Graydon, Patrick, Niko
     * tokentree -> tokentree syntax extension facility
     * then introducing almost a library for hygiene, which is a set of operations for token trees
   * **John**: next three months, no idea
-  * **T**: my stuff:
+  * **Tim**: my stuff:
     * fixing trait-related bugs, finishing default methods and supertraits
     * would like to keep pushing traits into better traits
     * fixing ICES
@@ -46,9 +46,9 @@ Azita, John, Tim, Brian, Dave, Graydon, Patrick, Niko
       * implementation work
       * syntax and implementation
   * **Patrick**: are they breaking changes?
-  * **T**: no, don't think so
+  * **Tim**: no, don't think so
   * **Patrick**: just want to front-load all visible language changes
-  * **T**: what about refcounting?
+  * **Tim**: what about refcounting?
   * **Patrick**: we can talk about that; not something that breaks language, but good to do early -- for perf, memory model has big impact so good to front load
   * **Dave**: my gut is saying that language changes *and* GC is a big chunk for one point release
 <some mild nods>
