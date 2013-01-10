@@ -1,0 +1,162 @@
+.. default-role:: literal
+
+Rust for C++ programmers
+========================
+
+Pointers and references
+-----------------------
+
+Pointers in C++ are vulnerable to bugs involving dangling or null pointers. In
+Rust, pointers are non-nullable and the compiler enforces the invariant that
+pointers are never dangling.
+
++-------------------+----------------------------------------------+
+| C++               | Rust                                         |
++===================+==============================================+
+| `&`               | `&mut`                                       |
++-------------------+----------------------------------------------+
+| `const&`          | `&const`                                     |
++-------------------+----------------------------------------------+
+| n/a               | `&` (immutable)                              |
++-------------------+----------------------------------------------+
+| `std::unique_ptr` | owned pointer: `~`                           |
++-------------------+----------------------------------------------+
+| `std::shared_ptr` | managed pointer: `@` (with cycles collected) |
++-------------------+----------------------------------------------+
+
+Owned pointers are almost identical to `std::unique_ptr` in C++, and point to
+memory on a shared heap which allows them to be moved between tasks.
+
+Managed pointers are similar to `std::shared_ptr`, but have full garbage
+collection semantics and point to a task-local heap.
+
+Borrowed pointers have the same representation as C pointers or C++ references
+at runtime, but to enforce safety at compile-time they are more restricted and
+have a concept of lifetimes. See `the borrowed pointer tutorial
+<http://static.rust-lang.org/doc/tutorial-borrowed-ptr.html>` for details.
+
+Strings
+-------
+
++----------------------------------------+-----------------------------------+
+| C++                                    | Rust                              |
++========================================+===================================+
+| `"foo"` (`const char *`)               | `"foo"` (`&static/str`)           |
++----------------------------------------+-----------------------------------+
+| `std::string("foo")`                   | `~"foo"` (`~str`)                 |
++----------------------------------------+-----------------------------------+
+| `std::make_shared<std::string>("foo")` | `@"foo"` (`@str`, no indirection) |
+| (`std::shared_ptr<std::string>`)       |                                   |
++----------------------------------------+-----------------------------------+
+
+Vectors
+-------
+
++---------------------------------------------------------------------------+-----------------------------------------+
+| C++                                                                       | Rust                                    |
++===========================================================================+=========================================+
+| `std::array<int, 3> {{1, 2, 3}}`                                          | `[1, 2, 3]` (`[int * 3]`)               |
++---------------------------------------------------------------------------+-----------------------------------------+
+| `std::vector<int> {1, 2, 3}`                                              | `~[1, 2, 3]` (`~[int]`)                 |
++---------------------------------------------------------------------------+-----------------------------------------+
+| `std::make_shared<std::vector<int>>(std::initializer_list<int>{1, 2, 3})` | `@[1, 2, 3]` (`@[int]`, no indirection) |
+| (`std::shared_ptr<std::vector<int>>`)                                     |                                         |
++---------------------------------------------------------------------------+-----------------------------------------+
+
+Enums, sum types and option types
+---------------------------------
+
+Rust's `enum` is a sum type like `boost::variant` (tagged union).  The `match`
+expression is used to pattern match out of it, replacing the usage of a
+`switch` with a C++ `enum`, or a visitor with `boost::variant`. A `match`
+expression is required to cover all possible cases, although a default fallback
+can be used.
+
++-------------------+---------------------------------------------------+
+| C++               | Rust                                              |
++===================+===================================================+
+| `enum`            | `enum`                                            |
++-------------------+---------------------------------------------------+
+| `boost::variant`  | `enum`, `Either` (an `enum`) for 2 types          |
++-------------------+---------------------------------------------------+
+| `boost::optional` | `Option` (an `enum`)                              |
++-------------------+---------------------------------------------------+
+
+Nominal types
+-------------
+
+A Rust `struct` is similar to `struct`/`class` in C++, and uses a memory layout
+compatible with C structs. Members are public by default but can be marked with
+`priv`. There is no concept of a `friend` function or type, because `priv`
+applies only at a module level.
+
+Rust has no special syntax or semantics for constructors, and just uses static
+methods that return the type.
+
+Custom destructors for non-memory resources can be provided by implemented the
+`Drop` trait.
+
+Copying and move semantics
+--------------------------
+
+Rust has no concept of a copy constructor and only shallow types are implicitly
+copyable. Assignment or passing by-value will only do an implicit copy or a
+move. Other types can implement the `Clone` trait, which provides a `clone`
+method.
+
+Rust will implicitly provide the ability to move any type, along with a swap
+implementation using moves. The compiler enforces the invariant that no value
+can be read after it was moved from.
+
+Parametric polymorphism
+-----------------------
+
+In Rust, functions and structs can be given generic type annotations (like
+templated functions and structs), but to actually call a type's methods and use
+operators, the type annotations must be explicitly bounded by the traits
+required. Annotating the type bounds for functions is only necessary at the
+module-level, and not for nested closures where it is inferred.
+
+Despite the different model in the type system, traits are compiled to code
+similar to what templates would produce.
+
+Metaprogramming
+---------------
+
+Rust includes macros (not textual ones) and syntax extensions which can be used
+for many of the other use cases of templates and `constexpr`. Syntax extensions
+can also be used in place of user-defined literals.
+
+Concurrency
+-----------
+
+Rust does not allow sharing mutable data between threads, so it isn't
+vulnerable to races for in-memory data. Instead of sharing data, message
+passing is used instead - either by copying data, or by moving owned pointers
+between tasks.
+
+Tasks currently use an M:N scheduler (they're multiplexed over OS threads), and
+they're much lighter than threads due to segmented stacks. In the future, there
+will be the ability to use N:N scheduling for more performance in CPU-bound
+workloads.
+
+Exceptions
+----------
+
+Rust does not include C++-style exceptions that can be caught, only uncatchable
+unwinding (`fail`) that can be dealt with at task boundaries.
+
+There is also a condition system, which can allow for handling a failure at the
+*site of the failure*, or otherwise just resorting to `fail`.
+
+Memory safety
+-------------
+
+In addition to the prevention of null or dangling pointers and data races, the
+Rust compiler also enforces that data be initialized before being read.
+Variables can still be declared and then initialized later, but there can never
+be a code path where they *could* be read first. All possible code paths in a
+function or expression must also return a correctly typed value, or fail.
+
+This also means indexing a string/vector will do bounds checking like
+`vector<T>::at()`.
