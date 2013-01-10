@@ -151,7 +151,7 @@ run-pass/cci_iter_exe.rs:
 
 ## Unit Tests
 
-Most crates include <a href="https://github.com/mozilla/rust/wiki/Unit-testing">unit tests</a> which are part of the crate they test. These crates are built with the --test flag and run as part of `make check`.
+Most crates include <a href="https://github.com/mozilla/rust/wiki/Doc-unit-testing">unit tests</a> which are part of the crate they test. These crates are built with the --test flag and run as part of `make check`.
 
 Tests should go near the code they test. If a module's tests require additional helper functions then they should be enclosed in a conditionally-compiled test module:
 
