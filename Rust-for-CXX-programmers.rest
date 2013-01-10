@@ -33,7 +33,7 @@ collection semantics and point to a task-local heap.
 Borrowed pointers have the same representation as C pointers or C++ references
 at runtime, but to enforce safety at compile-time they are more restricted and
 have a concept of lifetimes. See `the borrowed pointer tutorial
-<http://static.rust-lang.org/doc/tutorial-borrowed-ptr.html>` for details.
+<http://static.rust-lang.org/doc/tutorial-borrowed-ptr.html>`_ for details.
 
 Strings
 -------
