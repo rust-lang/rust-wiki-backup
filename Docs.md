@@ -37,6 +37,7 @@ For the most up to date information, the best source is often to ask in [#rust o
 
 [[Releases|Doc releases]] - Links to current and old releases and documentation  
 [[Detailed release notes|Doc detailed release notes]] - Further explanation of language changes  
+[[Rust for C++ programmers|Rust for CXX programmers]]
 [[Unit testing|Doc unit testing]] - Writing tests and running them with the built-in test driver  
 [[Using cargo|Doc using cargo to manage packages]] - Managing and distributing Rust crates  
 [[Using rustdoc|Doc using rustdoc]] - How to extract Markdown and HTML documentation from code  
