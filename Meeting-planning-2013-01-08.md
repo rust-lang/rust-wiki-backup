@@ -41,7 +41,7 @@ Azita, John, Tim, Brian, Dave, Graydon, Patrick, Niko
   * **Tim**: my stuff:
     * fixing trait-related bugs, finishing default methods and supertraits
     * would like to keep pushing traits into better traits
-    * fixing ICES
+    * fixing ICEs
     * pattern reform -- two parts
       * implementation work
       * syntax and implementation
