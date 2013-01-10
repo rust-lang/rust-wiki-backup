@@ -117,10 +117,10 @@ vulnerable to races for in-memory data. Instead of sharing data, message
 passing is used instead - either by copying data, or by moving owned pointers
 between tasks.
 
-Tasks currently use an M:N scheduler (they're multiplexed over OS threads), and
-they're much lighter than threads due to segmented stacks. In the future, there
-will be the ability to use N:N scheduling for more performance in CPU-bound
-workloads.
+There are `several scheduling models available
+<http://static.rust-lang.org/doc/0.5/core/task.html#enum-schedmode>`_, which
+allows for either mapping tasks N:N with OS threads, or using N:M scheduling
+like Go and Erlang for lightweight concurrency.
 
 Exceptions
 ----------
