@@ -1,3 +1,4 @@
+.. vim: ft=rst
 .. default-role:: literal
 
 Rust for C++ programmers
@@ -108,25 +109,6 @@ Rust will implicitly provide the ability to move any type, along with a swap
 implementation using moves. The compiler enforces the invariant that no value
 can be read after it was moved from.
 
-Parametric polymorphism
------------------------
-
-In Rust, functions and structs can be given generic type annotations (like
-templated functions and structs), but to actually call a type's methods and use
-operators, the type annotations must be explicitly bounded by the traits
-required. Annotating the type bounds for functions is only necessary at the
-module-level, and not for nested closures where it is inferred.
-
-Despite the different model in the type system, traits are compiled to code
-similar to what templates would produce.
-
-Metaprogramming
----------------
-
-Rust includes macros (not textual ones) and syntax extensions which can be used
-for many of the other use cases of templates and `constexpr`. Syntax extensions
-can also be used in place of user-defined literals.
-
 Concurrency
 -----------
 
@@ -160,3 +142,52 @@ function or expression must also return a correctly typed value, or fail.
 
 This also means indexing a string/vector will do bounds checking like
 `vector<T>::at()`.
+
+Methods
+-------
+
++------------------------+---------------------------------------------------+
+| C++                    | Rust                                              |
++========================+===================================================+
+| `size_t foo() const`   | `fn foo(&self) -> uint`                           |
++------------------------+---------------------------------------------------+
+| `size_t foo()`         | `fn foo(&mut self) -> uint`                       |
++------------------------+---------------------------------------------------+
+| `static size_t foo()`  | `static fn foo() -> uint`                         |
++------------------------+---------------------------------------------------+
+| n/a                    | `fn foo(self)`, `fn foo(~self)`, `fn foo(@self)`  |
++------------------------+---------------------------------------------------+
+
+Methods in Rust are similar to those in C++, but Rust uses explicit self, so
+referring to a member/method from within a method is done with `self.member`.
+It's also possible to take `self` by-value, which allows for moving out of
+`self` since the object will be consumed.
+
+For an example, the `PriorityQueue` struct in the standard library has a
+`to_sorted_vec` method that takes self by-value, making
+`PriorityQueue::from_vec(xs).to_sorted_vec()` an in-place heap sort.
+
+The `~self` and `@self` forms are available for objects allocated as `~` or `@`
+respectively.
+
+Once the transition to explicit self is complete, the `static` keyword will no
+longer be needed to mark static methods.
+
+Parametric polymorphism
+-----------------------
+
+In Rust, functions and structs can be given generic type annotations (like
+templated functions and structs), but to actually call a type's methods and use
+operators, the type annotations must be explicitly bounded by the traits
+required. Annotating the type bounds for functions is only necessary at the
+module-level, and not for nested closures where it is inferred.
+
+Despite the different model in the type system, traits are compiled to code
+similar to what templates would produce.
+
+Metaprogramming
+---------------
+
+Rust includes macros (not textual ones) and syntax extensions which can be used
+for many of the other use cases of templates and `constexpr`. Syntax extensions
+can also be used in place of user-defined literals.
