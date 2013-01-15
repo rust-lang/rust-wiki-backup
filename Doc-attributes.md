@@ -147,7 +147,11 @@ Also, `warn` works too. The complete list of lint warnings can be requested from
 
 ## Auto-serialization
 
-The `auto_serialize` attribute can be used to automatically generate serializers for types.
+The `auto_encode` and `auto_decode` attributes can be used to automatically generate serializers for types.
+
+## Main
+
+A function annotated with `#[main]` will be treated as the main function, overriding any other function named `main`.
 
 ## Relationship with macros
 Please see [[Bikeshed syntax extension]]
