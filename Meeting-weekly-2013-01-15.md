@@ -5,14 +5,15 @@ dherman, azita, nmatsakis, jclements, pcwalton, brson, tjc
 ## Agenda
 
   * FUEGO!
-  * move assert and log to macros
-  * conditions in #[cfg()]
-  * fn() unsafe { ... }
-  * where should we allow trait bounds?
-  * unsafe pointer indexing
-  * [ u8 * CONST ]
-  * removal of "both type and trait" impls
-  * Eq and Ord reform
+  * topics on Patrick's whiteboard:
+    * move assert and log to macros
+    * conditions in `#[cfg()]`
+    * `fn() unsafe { ... }`
+    * where should we allow trait bounds?
+    * unsafe pointer indexing
+    * `[ u8 * CONST ]`
+    * removal of "both type and trait" impls
+    * `Eq` and `Ord` reform
 
 ## Tree's on fire
 
