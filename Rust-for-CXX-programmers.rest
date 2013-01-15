@@ -36,6 +36,11 @@ references at runtime, but to enforce safety at compile-time they are more
 restricted and have a concept of lifetimes. See `the borrowed pointer tutorial
 <http://static.rust-lang.org/doc/tutorial-borrowed-ptr.html>`_ for details.
 
+For example, a container can return a reference to an object inside it, and
+the lifetime will ensure that the container outlives the reference and is not
+modified in a way that would make it invalid. This concept also extends to any
+iterator that wraps borrowed pointers, and makes them impossible to invalidate.
+
 Strings
 -------
 
