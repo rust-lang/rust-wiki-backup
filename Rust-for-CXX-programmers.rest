@@ -139,10 +139,16 @@ Exceptions
 ----------
 
 Rust does not include C++-style exceptions that can be caught, only uncatchable
-unwinding (`fail`) that can be dealt with at task boundaries.
+unwinding (`fail`) that can be dealt with at task boundaries. The lack of
+`catch` means that exception safety is much less of an issue, since calling a
+method that fails will prevent that object from ever being used again.
 
-There is also a condition system, which can allow for handling a failure at the
-*site of the failure*, or otherwise just resorting to `fail`.
+Generally, errors are handled by using a `enum` of the result type and the
+error type, and the `result` module implements related functionality.
+
+There is also a condition system, which allows a failure to be handled at the
+*site of the failure*, or otherwise just resorts to `fail` if it cannot be
+handled.
 
 Memory safety
 -------------
