@@ -108,7 +108,7 @@ applies only at a module level.
 Rust has no special syntax or semantics for constructors, and just uses static
 methods that return the type.
 
-Custom destructors for non-memory resources can be provided by implemented the
+Custom destructors for non-memory resources can be provided by implementing the
 `Drop` trait.
 
 Copying and move semantics
