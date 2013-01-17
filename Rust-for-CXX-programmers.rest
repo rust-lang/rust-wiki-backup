@@ -29,7 +29,12 @@ Owned pointers are almost identical to `std::unique_ptr` in C++, and point to
 memory on a shared heap which allows them to be moved between tasks.
 
 Managed pointers are similar to `std::shared_ptr`, but have full garbage
-collection semantics and point to a task-local heap.
+collection semantics and point to a task-local heap. By virtue of being on a
+local heap, they can use a per-task garbage collector. If managed pointers are
+avoided, garbage collection is not used and the `managed-heap-memory` lint
+check can be used to have the compiler forbid them. Garbage collection will be
+avoided in the standard library except for concepts like persistent
+(copy-on-write) containers that require them.
 
 Borrowed pointers (`&`) have the same representation as C pointers or C++
 references at runtime, but to enforce safety at compile-time they are more
