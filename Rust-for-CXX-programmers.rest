@@ -88,6 +88,9 @@ can be used.
 | `boost::optional` | `Option` (an `enum`)                              |
 +-------------------+---------------------------------------------------+
 
+`Option` and `Either` are very common patterns, so they're predefined along
+with utility methods.
+
 Nominal types
 -------------
 
