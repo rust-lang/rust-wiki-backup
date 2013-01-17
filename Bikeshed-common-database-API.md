@@ -4,6 +4,7 @@ We should provide a common interface for databases to ease porting from one data
 
 * Python:
   * [DB-API](http://www.python.org/dev/peps/pep-0249/)
+  * [SQLAlchemy](http://www.sqlalchemy.org/)
 * Go:
   * [sql](http://golang.org/pkg/database/sql/)
 * Ruby:
