@@ -14,7 +14,7 @@ Meta items occasionally show up outside of attributes, particularly in crate lin
 
 ## Attributes
 
-The primary use of meta items is for applying attributes to items, crates, methods, fields, and potentially other bits of code. Attributes provide additional information to the compiler and may also be accessed via reflection at runtime. An attribute is simply a meta item wrapped in attribute syntax - a preceding _pound_ sigil and enclosing _brackets_:
+The primary use of meta items is for applying attributes to items, crates, methods, fields, and potentially other bits of code. Attributes provide additional information to the compiler and may also be accessed via reflection at runtime. An attribute is simply a meta item wrapped in attribute syntax - a preceding _hash_ sigil and enclosing _brackets_:
 
     #[test]
 
