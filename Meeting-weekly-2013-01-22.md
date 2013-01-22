@@ -7,6 +7,7 @@
 
 ## For loop protocol
 
+- N: http://smallcultfollowing.com/babysteps/blog/2013/01/16/revised-for-loop-protocol/
 - N: Short vers: argument returns bool, iterator itself returns (). hard to compose
 - N: Proposed change: the iterator passes on the bool so that they can be composed
 - N: Additionally want 'for' to always return (). reason: top level statements without semicolons must return ()
