@@ -22,11 +22,11 @@
 ```
     if cond { ... } else { ... }
     foo();
-```    
+```
 - N: Also want this:
 ```
     let x = if cond { ... } else { ... } + 10;
-```    
+```
 - N: We could insist on semicolons but it looks funny.
 - N: Today: if the statement begins with `if`, `do`, `for`, a few other such keywords
 - N: Parse as a statement, that is, do not continue past closing brace
@@ -35,12 +35,12 @@
     fn foo() -> int {
         if cond { ... } else { ... } - 10
     }
-```    
+```
 - N: We won't parse this as intended.  Today, though, we would report an error if the `if` does not have a unit type.
 - N: But there is one important case where this breaks down:
 ```
      do task::spawn { ... }
-```     
+```
 - N: spawn returns the task id but you sometimes don't want it.
 - N: ok, maybe not anymore, but it used to
 - N: another option: keep current parser but issue a warning is there is a binary operator on the same line as the closing right brace
