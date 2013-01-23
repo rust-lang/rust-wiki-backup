@@ -45,7 +45,7 @@ local heap, they can use a per-task garbage collector.
 If managed pointers are avoided, garbage collection is not used (the compiler
 can enforce this with the `managed-heap-memory` lint check). Garbage collection
 will be avoided in the standard library except for concepts like persistent
-(copy-on-write) containers that require them.
+(copy-on-write, with shared substructures) containers that require them.
 
 Strings
 -------
