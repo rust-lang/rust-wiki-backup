@@ -22,7 +22,7 @@ Examples: Look at Servo (resource manager, display list...), https://github.com/
     * default methods
     * objects / dynamic dispatch
     * the difference between static and dynamic dispatch
-Could start with a program that duplicates code, and show how traits emerge when refactoring it
+    Could start with a program that duplicates code, and show how traits emerge when refactoring it
 * Background on traits (2 slides)
     * Traits vs. type classes
     * Traits vs. OO classes
