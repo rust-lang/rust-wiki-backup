@@ -170,10 +170,12 @@ mod test {
 
 ### Build targets
 
-* `make check-stage[N]-rustc`
 * `make check-stage[N]-core`
 * `make check-stage[N]-std`
+* `make check-stage[N]-syntax`
+* `make check-stage[N]-rustc`
 * `make check-stage[N]-rustdoc`
+* `make check-stage[N]-rusti`
 
 ## Documentation tests
 
