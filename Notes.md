@@ -11,7 +11,7 @@ Listing of notes for developers
 * [[Note compiler snapshots]]
 * [[Note git workflow]]
 * [[Note style guide]]
-* [[Note testsuite]]
+* [[Note testsuite]] -- How Rust's tests are organized and operated
 * [[Note rustc hacking guide]]
 * [[Note ccache]]
 
