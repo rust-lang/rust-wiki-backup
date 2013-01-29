@@ -19,6 +19,12 @@ Pull requests will be treated as "review requests", and we will give feedback we
 
 Normally, all pull requests must include regression tests (see [[Note-testsuite]]) that test your change. Occasionally, a change will be very difficult to test for. In those cases, please include a note in your commit message explaining why.
 
+The copyright header at the top of the file should include a date range that includes any years in which the file was changed in a significant way. For example, if it's 2013, and you change a file that has existed since 2010, it should begin
+
+```
+// Copyright 2010-2013 The Rust Project Developers.
+```
+
 ## Getting involved: how to pick your first bug
 
 In the issue tracker, bugs can only be assigned to people who have commit access. Also, we aspire to make as many bugs as possible "owned" by assigning them to a core Rust contributor. Therefore, just because a bug is assigned doesn't mean it's being actively worked on. We (the core contributors) are all busy, and welcome help from the community. If you see a bug you'd like to work on that's assigned but appears to be dormant, communicate with the bug's owner (by IRC, email, or with an @-reply in a comment on the issue page). If you see a bug you'd like to work on that's unassigned, it's fair game: comment to say you'd like to work on it so that we know it's getting attention.
