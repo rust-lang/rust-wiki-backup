@@ -1,6 +1,6 @@
 # The Rust test suite
 
-The rust test suite has several sets of tests for different purposes. As the compiler is built several times, over multiple stages, the tests can genarally be run against each stage of the build.
+The rust test suite has several sets of tests for different purposes. As the compiler is built over multiple stages, and with varying host and target combinations, debugging and profiling settings, the tests can genarally be run in many different ways.
 
 ### Recipes
 
