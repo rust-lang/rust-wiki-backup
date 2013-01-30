@@ -58,6 +58,7 @@ Mozilla employees have a weekly Rust planning meeting on Tuesday mornings at 9:0
 * [[Meeting weekly 2013-01-08]] (region syntax; inherited mutability and write barriers)
 * [[Meeting weekly 2013-01-15]] (tree status; assert and log; #cfg conditions; function unsafe; trait bounds contexts; unsafe pointer indexing; static array bounds; removal of both type and trait impls; Eq and Ord reform)
 * [[Meeting weekly 2013-01-22]] (for loop; semicolon; destructors; type bound syntax)
+* [[Meeting weekly 2013-01-29]] (region syntax; impl Type for Trait; mut fields)
 
 ## Planning meetings:
 
