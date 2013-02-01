@@ -27,3 +27,7 @@ This happens when the snapshot compiler failed to download correctly so doesn't 
 Short answer: your gdb is too old to understand our hip new stacks. Upgrade to a newer version (7.3.1 is known to work).
 
 Long answer: Rust uses 'spaghetti stacks' (a linked list of stacks) to allow tasks to start very small but recurse arbitrarily deep when necessary. As a result, new frames don't always decrease the stack pointer like gdb expects but instead may jump around the heap to different stack segments. Newer versions of gdb recognize that the special function called __morestack may change the stack pointer to a different stack.
+
+### Why did my build create a bunch of zero-length files in my lib directory?
+
+This is a normal part of the Rust build process. The build system uses these zero-length files for dependency tracking, as the actual names of the Rust libraries contain hashes that can't be guessed easily by the Makefiles.
