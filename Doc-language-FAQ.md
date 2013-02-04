@@ -94,11 +94,12 @@ Some examples that demonstrate different aspects of the language:
 * Servo's [ImageCacheTask], an image cache in an actor style
 * [fempeg], an mp2 decoder that does only stack allocation, no heap and no GC
 
-[fempeg]: https://github.com/pcwalton/sprocketnes
+[sprocketnes]: https://github.com/pcwalton/sprocketnes
 [hash]: https://github.com/mozilla/rust/blob/master/src/libcore/hash.rs
 [LinearMap]: https://github.com/mozilla/rust/blob/master/src/libcore/send_map.rs
 [json]: https://github.com/mozilla/rust/blob/master/src/libstd/json.rs
 [ImageCacheTask]: https://github.com/mozilla/servo/blob/master/src/servo-gfx/resource/image_cache_task.rs
+[fempeg]: https://github.com/pcwalton/fempeg
 
 You may also be interested in browsing [GitHub's Rust][github-rust] page.
 
