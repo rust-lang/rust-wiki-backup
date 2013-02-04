@@ -87,21 +87,18 @@ A research browser engine called [Servo][servo], currently 17,000+ lines across 
 
 Some examples that demonstrate different aspects of the language:
 
+* [sprocketnes], an NES emulator with no GC, using modern Rust conventions
 * The language's general-purpose [hash] function, SipHash-2-4. Bit twiddling, OO, macros
 * The core library's [LinearMap], a sendable hash map in an OO style
 * The standard library's [json] module. Enums and pattern matching
 * Servo's [ImageCacheTask], an image cache in an actor style
 * [fempeg], an mp2 decoder that does only stack allocation, no heap and no GC
-* [rustdoc], Rust's documentation generator, in a functional, GC-less style with parallel folding and mapping
-* [mre], a small web framework integrating a number of interesting crates and bindings
 
+[fempeg]: https://github.com/pcwalton/sprocketnes
 [hash]: https://github.com/mozilla/rust/blob/master/src/libcore/hash.rs
 [LinearMap]: https://github.com/mozilla/rust/blob/master/src/libcore/send_map.rs
 [json]: https://github.com/mozilla/rust/blob/master/src/libstd/json.rs
-[rustdoc]: https://github.com/mozilla/rust/tree/master/src/librustdoc
 [ImageCacheTask]: https://github.com/mozilla/servo/blob/master/src/servo-gfx/resource/image_cache_task.rs
-[fempeg]: https://github.com/pcwalton/fempeg
-[mre]: https://github.com/erickt/mre
 
 You may also be interested in browsing [GitHub's Rust][github-rust] page.
 
