@@ -165,19 +165,19 @@
 - JC: Yuck
 - N: I think this is more of a mind-twister than a realistic example, but it could come up
 - N: My proposal is the 
-P: (something about omitting the use of the binder...)
-N: I don't understand about omitting the use of the binder
+- P: (something about omitting the use of the binder...)
+- N: I don't understand about omitting the use of the binder
 
     &fn(x: &int, y: &int)
 
-N: As long as you don't name the lifetime they are separate and bound to the innermost fn
-N: If you wanted to name it, you would introduce the lifetime names with a binder:
+- N: As long as you don't name the lifetime they are separate and bound to the innermost fn
+- N: If you wanted to name it, you would introduce the lifetime names with a binder:
 
     &fn<'a, 'b>(x: &'a int, y: &'b int)
     
-P: To me the question is what about lifetime parameterized structs, do you have to explicitly qualify what the lifetime is?  Or at least acknowledge the existence?
-N: I think if you don't it's consistent, but only at use sites
-P: But 
+- P: To me the question is what about lifetime parameterized structs, do you have to explicitly qualify what the lifetime is?  Or at least acknowledge the existence?
+- N: I think if you don't it's consistent, but only at use sites
+- P: But 
 
     struct Foo<'a> {
         x: &'a int
