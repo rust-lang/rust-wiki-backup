@@ -33,7 +33,7 @@
 
 ### What does it look like?
 
-The syntax is still evolving, but here's a snippet from the hash map in core::send_map.
+The syntax is still evolving, but here's a snippet from the hash map in core::hashmap.
 
 ```none
     struct LinearMap<K:Eq Hash,V> {
