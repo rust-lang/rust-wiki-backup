@@ -15,11 +15,11 @@
   * included, see src/etc/
 * Gedit
   * [gareth0's rust-gnome](https://bitbucket.org/gareth0/rust-gnome) - A syntax highlighting file for   GtkSourceView (Gedit) and a GNOME mime-database file.
+* Kate
+  * included, see src/etc/
 * SublimeText
   * [kib2's SublimeText2 language file](http://kib2.free.fr/Falcon/blog/25-01-2012-SublimeText2-Rust.html) - Highlighting for SublimeText 2
   * [dbp's SublimeText2](https://github.com/dbp/sublime-rust) - Probably more up to date than the above.
-* Kate
-  * included, see src/etc/
 * TextMate
   * [dyluke's textmate bundle](https://github.com/DylanLukes/Rust.tmbundle) - Rust TextMate mode
 * Vim
