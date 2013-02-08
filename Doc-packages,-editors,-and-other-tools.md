@@ -6,13 +6,18 @@
 
 ## Editors
 
-* [dyluke's textmate bundle](https://github.com/DylanLukes/Rust.tmbundle) - Rust TextMate mode
-* [Erik Rose's BBEdit plugin](https://github.com/erikrose/rust-bbedit-plugin) - Plugin for BBEdit. Probably quite out of date.
-* [kib2's SublimeText2 language file](http://kib2.free.fr/Falcon/blog/25-01-2012-SublimeText2-Rust.html) - Highlighting for SublimeText 2
-* [dbp's SublimeText2](https://github.com/dbp/sublime-rust) - Probably more up to date than the above.
-* [ianb's Eclipse plugin](https://github.com/ianbollinger/oxide) - Eclipse!
-* [Reidar Sollid's Eclipse plugin](http://reidarsollid.github.com/RustyCage/) - A newer Eclipse plugin.
-* [gareth0's rust-gnome](https://bitbucket.org/gareth0/rust-gnome) - A syntax highlighting file for GtkSourceView (Gedit) and a GNOME mime-database file.
+* BBEdit
+  * [Erik Rose's BBEdit plugin](https://github.com/erikrose/rust-bbedit-plugin) - Plugin for BBEdit. Probably quite out of date.
+* Eclipse
+  * [ianb's Eclipse plugin](https://github.com/ianbollinger/oxide) - Eclipse!
+  * [Reidar Sollid's Eclipse plugin](http://reidarsollid.github.com/RustyCage/) - A newer Eclipse plugin.
+* Gedit
+  * [gareth0's rust-gnome](https://bitbucket.org/gareth0/rust-gnome) - A syntax highlighting file for   GtkSourceView (Gedit) and a GNOME mime-database file.
+* SublimeText
+  * [kib2's SublimeText2 language file](http://kib2.free.fr/Falcon/blog/25-01-2012-SublimeText2-Rust.html) - Highlighting for SublimeText 2
+  * [dbp's SublimeText2](https://github.com/dbp/sublime-rust) - Probably more up to date than the above.
+* TextMate
+  * [dyluke's textmate bundle](https://github.com/DylanLukes/Rust.tmbundle) - Rust TextMate mode
 
 ## And more!
 
