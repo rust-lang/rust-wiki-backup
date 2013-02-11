@@ -139,3 +139,7 @@ trait Real: Num Ord Sqrt Abs<Self> { }
 ~~~
 
 All integer, floating-point and fixed-point types can trivially implement this. `Sqrt` isn't currently implemented by integer types, but it is useful for some algorithms, so I wouldn't mind adding one.
+
+## LLVM ##
+
+LLVM provides [various intrinsic functions](http://llvm.org/docs/LangRef.html#intrinsic-functions) that could be used in the numeric trait implementations.
