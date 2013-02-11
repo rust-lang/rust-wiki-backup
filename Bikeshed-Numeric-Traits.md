@@ -150,4 +150,4 @@ LLVM provides [various intrinsic functions](http://llvm.org/docs/LangRef.html#in
 
 ## See Also ##
 
-[Diagram of Haskell's numeric type heirachy](http://www.bucephalus.org/text/Haskell98numbers)/Haskell98numbers.png)
+[Diagram of Haskell's numeric type heirachy](http://www.bucephalus.org/text/Haskell98numbers/Haskell98numbers.png)
