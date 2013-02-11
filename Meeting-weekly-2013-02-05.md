@@ -138,7 +138,9 @@
 - N: One thing we decided was whether lifetime parameters must always be specified on types or not
 
     struct Foo<'lt> { ... }
+
     fn bar0(x: &Foo) { ... } // legal?
+
     fn bar1(x: &Foo<'a>) { ... } // or do we have to write this?
     
 - N: The other issue which was raised concerned named lifetime
