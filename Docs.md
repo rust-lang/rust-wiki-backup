@@ -41,7 +41,6 @@ For the most up to date information, the best source is often to ask in [#rust o
 [[Unit testing|Doc unit testing]] - Writing tests and running them with the built-in test driver  
 [[Using cargo|Doc using cargo to manage packages]] - Managing and distributing Rust crates  
 [[Using rustdoc|Doc using rustdoc]] - How to extract Markdown and HTML documentation from code  
-[[Memory, modes, and mutation|Doc memory, modes, and mutation]], _a guide for the perplexed_  
 [[Reading and writing files|Doc Reading and writing files]]  
 [[Attributes|Doc attributes]] - The role of metadata in Rust code, with descriptions of many applications  
 [[Packages, editors, and other tools|Doc packages, editors, and other tools]]  
