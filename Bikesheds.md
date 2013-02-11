@@ -17,6 +17,7 @@ When you're done with a bikeshed page, please either abandon it or move it to a 
 * [[Bikeshed function subtyping wrt regions]]
 * [[Bikeshed task reuse]]
 * [[Bikeshed alt check]]
+* [[Bikeshed Numeric Traits]]
 
 ## Abandoned
 
