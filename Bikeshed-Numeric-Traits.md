@@ -105,7 +105,7 @@ trait Sqrt {
 }
 ~~~
 
-The `rsqrt` is of great importance for computer graphics applications and should therefore be considered for inclusion.
+The `rsqrt` operation is of great importance for computer graphics applications and should therefore also be considered for inclusion in this trait.
 
 ### FusedMultiplyAdd (FMA, FMAC &c.) ###
 
