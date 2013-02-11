@@ -105,6 +105,8 @@ trait Sqrt {
 }
 ~~~
 
+The `rsqrt` is of great importance for computer graphics applications and should therefore be considered for inclusion.
+
 ### FusedMultiplyAdd (FMA, FMAC &c.) ###
 
 While this is trivially implementable for integers since Rust doesn't signal on overflow, this trait is meant to be implemented only by types where it is important (f32 and f64). On systems without support for IEEE 754-2008 in hardware (most x86 systems), this should be implemented in software but that can unfortunatly be slightly slow.
