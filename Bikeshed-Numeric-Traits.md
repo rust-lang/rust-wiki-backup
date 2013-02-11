@@ -147,3 +147,7 @@ All integer, floating-point and fixed-point types can trivially implement this. 
 ### LLVM Intrinsics ###
 
 LLVM provides [various intrinsic functions](http://llvm.org/docs/LangRef.html#intrinsic-functions) that could be used in the numeric trait implementations.
+
+## See Also ##
+
+[Diagram of Haskell's numeric type heirachy](http://www.bucephalus.org/text/Haskell98numbers)/Haskell98numbers.png)
