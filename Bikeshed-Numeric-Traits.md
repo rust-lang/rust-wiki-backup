@@ -13,16 +13,19 @@ These traits are useful for all numeric types, and some are useful to all types 
 
 Eq provides support for the `==` and `!=` operators, and should be implemented by all numeric types.
 
-`trait Eq {
+~~~
+trait Eq {
   fn eq(&self, other: &Self) -> bool;
   fn ne(&self, other: &Self) -> bool;
-}`
+}
+~~~
 
 ### Ord (Ordered) ###
 
 Ord provides support for the ordering `<`, `<=`, `>` and `>=` operators, and should be implemented by all numeric types that are at least partially ordered.
 
-`trait Ord: Eq {
+~~~
+trait Ord: Eq {
   fn lt(&self, other: &Self) -> bool;
   fn le(&self, other: &Self) -> bool;
   fn ge(&self, other: &Self) -> bool;
@@ -31,7 +34,8 @@ Ord provides support for the ordering `<`, `<=`, `>` and `>=` operators, and sho
   fn min(&self, other: &Self) -> Self;
   fn max(&self, other: &Self) -> Self;
   fn clamp(&self, mn: &Self, mx: &Self) -> Self;
-}`
+}
+~~~
 
 `min`, `max` and `clamp` could be factored out of this trait if we want to use it for non-numeric types where they do not make sense, but since they can have default implementations and what they do is very intuitive the extra API pressure for those (few) types would be minimal.
 
@@ -42,12 +46,14 @@ Abs should always take a type parameter Result that is a type that represents a 
  1. For non-complex numbers, Result should be the type Self.
  2. For complex numbers, Result should be the type used internally to represent the real and imaginary parts. For example, a `struct Complex { real: float, imag: float }` type would use the Result parameter `float`.
  
-`trait Abs<Result> {
+~~~
+trait Abs<Result> {
   fn abs(&self) -> Result; // NOTE: Overflows as normal operations, abs(INT_MIN) = INT_MIN.
 
   fn abs_min(&self, other: &Self) -> Self;
   fn abs_max(&self, other: &Self) -> Self;
-}`
+}
+~~~
 
 `abs_min` and `abs_max` are from IEEE754-2008 and can be useful when sorting, an example could be that we calculate eigenvalues, and since we want to show only the most influential ones, we sort them by magnitude.
 
@@ -57,18 +63,22 @@ There is some risk for overflow, and it isn't obvious how it should be handled, 
 
 Signed should be implemented by all signed (real) types.
 
-`trait Signed: Neg<Self> {
+~~~
+trait Signed: Neg<Self> {
   fn sign(&self) -> Self;
-}`
+}
+~~~
 
-Since we have copysign, this should probably return { -1, 0, +1} even for floats, but arguments could allow for it to have copysign semanticts, since floating-point technically doesn't have zeroes in the sense that integer types do.
+Since we have copysign, this should probably return `{ -1, 0, +1}` even for floats, but arguments could allow for it to have copysign semanticts, since floating-point technically doesn't have zeroes in the sense that integer types do.
 
 ### Additive and Multiplicative ###
 
 These traits signal something more than just the sum of their subtraits, they imply that the basic numeric operators are implemented in a sane way and follow basic mathematical laws to approximately the same degree as the built-in types.
 
-`trait Additive<RHS,Result>: Add<RHS,Result> Sub<RHS,Result> { }
-trait Multiplicative<RHS,Result>: Mul<RHS,Result> Div<RHS,Result> One { }`
+~~~
+trait Additive<RHS,Result>: Add<RHS,Result> Sub<RHS,Result> { }
+trait Multiplicative<RHS,Result>: Mul<RHS,Result> Div<RHS,Result> One { }
+~~~
 
 ### Quasigroups &c. ###
 
@@ -76,8 +86,10 @@ Here a quasigroup is a structure resembling a group where the 'division' operati
 
 It means that it is `Additive` or `Multiplicative` with itself, and has an identity element.
 
-`trait AdditiveQuasigroup: Additive<Self,Self> Zero { }
-trait MultiplicativeQuasigroup: Multiplicative<Self,Self> One { }``
+~~~
+trait AdditiveQuasigroup: Additive<Self,Self> Zero { }
+trait MultiplicativeQuasigroup: Multiplicative<Self,Self> One { }
+~~~
 
 A better name could be searched for, since it doesn't mean exactly the same thing as it does in algebra but neither does ordered.
 
@@ -87,9 +99,11 @@ Also, neg / recip could be added here, but I am slightly worried about when some
 
 The fifth basic floating-point operation, square root. This should be correctly rounded for types where that makes sense, and for types where it doesn't, it should provide the answer that makes sense in the domain it tries to solve.
 
-`trait Sqrt {
+~~~
+trait Sqrt {
   fn sqrt(&self) -> Self;
-}`
+}
+~~~
 
 ### FusedMultiplyAdd (FMA, FMAC &c.) ###
 
@@ -97,10 +111,12 @@ While this is trivially implementable for integers since Rust doesn't signal on 
 
 Going forward all major platforms Rust runs on (ARM, MIPS, x86 and x86-64) is going to support this operation, and most other platforms either already supports it in hardware, or is adding it already due to its almost magical powers for implementing fast floating-point division, square-root and its amazing powers to increase accuracy in almost every common numerical task.
 
-`trait FusedMultiplyAdd {
+~~~
+trait FusedMultiplyAdd {
   fn fma(&self, a: Self, b: Self) -> Self;
   fn fms(&self, a: Self, b: Self) -> Self;
-}`
+}
+~~~
 
 Could maybe be factored into FusedMultiplyAdd<RHS1,RHS2,Result>?
 
@@ -110,12 +126,16 @@ This is the trait we've all been waiting for, unfortunately it isn't really that
 
 The major properties of a number in Rust is that they support all arithmetic operators, they have identity operators relating to them and that you can compare instances.
 
-`trait Num: Eq AdditiveQuasigroup MultiplicativeQuasigroup { }`
+~~~
+trait Num: Eq AdditiveQuasigroup MultiplicativeQuasigroup { }
+~~~
 
 ### Real ###
 
 A `Real` is just a `Num`, but in addition is ordered, has a square root and an absolute value that returns the same type, which are quite common requirements.
 
-`trait Real: Num Ord Sqrt Abs<Self> { }`
+~~~
+trait Real: Num Ord Sqrt Abs<Self> { }
+~~~
 
 All integer, floating-point and fixed-point types can trivially implement this. `Sqrt` isn't currently implemented by integer types, but it is useful for some algorithms, so I wouldn't mind adding one.
