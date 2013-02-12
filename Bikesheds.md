@@ -6,11 +6,11 @@ When you're done with a bikeshed page, please either abandon it or move it to a 
 
 ## Active
 
-* [[Bikeshed tailcall]]
-* [[Bikeshed composability]]
-* [[Bikeshed object types]]
-* [[Bikeshed function types]]
-* [[Bikeshed syntax extension]]
+
+
+
+
+
 * [[Bikeshed pattern matching syntax]]
 * [[Bikeshed note]]
 * [[Bikeshed mapreduce]]
@@ -25,3 +25,8 @@ When you're done with a bikeshed page, please either abandon it or move it to a 
 * [[Bikeshed disjoint union types]]
 * [[Bikeshed impl method extraction]]
 * [[Bikeshed constrained types]]
+* [[Bikeshed tailcall]]
+* [[Bikeshed composability]]
+* [[Bikeshed object types]]
+* [[Bikeshed function types]]
+* [[Bikeshed syntax extension]]
