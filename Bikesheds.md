@@ -12,11 +12,9 @@ When you're done with a bikeshed page, please either abandon it or move it to a 
 
 
 * [[Bikeshed pattern matching syntax]]
-* [[Bikeshed note]]
 * [[Bikeshed mapreduce]]
 * [[Bikeshed function subtyping wrt regions]]
 * [[Bikeshed task reuse]]
-* [[Bikeshed alt check]]
 * [[Bikeshed Numeric Traits]]
 
 ## Abandoned
@@ -30,3 +28,5 @@ When you're done with a bikeshed page, please either abandon it or move it to a 
 * [[Bikeshed object types]]
 * [[Bikeshed function types]]
 * [[Bikeshed syntax extension]]
+* [[Bikeshed note]]
+* [[Bikeshed alt check]]
