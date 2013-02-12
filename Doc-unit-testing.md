@@ -4,7 +4,7 @@
 
 Rust has built in support for simple unit testing. Functions can be marked as unit tests using the 'test' attribute.
 
-```
+```rust
 #[test]
 fn return_none_if_empty() {
    ... test code ...
