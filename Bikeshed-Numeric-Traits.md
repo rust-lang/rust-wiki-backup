@@ -1,4 +1,4 @@
-This page is intended to describe the design rationale for Rusts numeric traits, right now it is at bikeshed level but progress is tracked in bug #4819 and when there is more consensus, we'll move it into the documentation/implement it.
+This page is intended to describe the design rationale for Rusts numeric traits, right now it is at bikeshed level but progress is tracked in bug [#4819](https://github.com/mozilla/rust/issues/4819) and when there is more consensus, we'll move it into the documentation/implement it.
 
 ### Issues ###
 
