@@ -148,6 +148,11 @@ All integer, floating-point and fixed-point types can trivially implement this. 
 
 LLVM provides [various intrinsic functions](http://llvm.org/docs/LangRef.html#intrinsic-functions) that could be used in the numeric trait implementations.
 
+## Small details ##
+
+### rename `modulo` into `rem` in traits and docs ###
+Rusts `%` operator mimics C and C++ in that it's not modulo but remainder, however the documentation and naming convention claims for it to be modulo.
+
 ## See Also ##
 
 [Diagram of Haskell's numeric type heirachy](http://www.bucephalus.org/text/Haskell98numbers/Haskell98numbers.png)
