@@ -23,6 +23,6 @@ Wanted:
 * b-tree (either in addition to `std::treemap` or replacing it)
 * small vector (3-word struct storing small arrays on the stack)
 * LRU cache (doubly-linked list and a hash table of key->index)
-* persistent balanced binary search tree
+* persistent balanced binary search tree (map and set)
 * persistent heap
-* persistent hash-based map
+* persistent hash-based map/set
