@@ -10,8 +10,8 @@ Containers in the standard libraries:
     * `std::deque` (ring buffer)
     * `std::priority_queue` (binary heap)
 * Persistent:
-    * `std::list` (persistent singly-linked list)
-    * `std::fun_treemap` (persistent unbalanced binary search tree - not very useful)
+    * `std::list` (singly-linked list)
+    * `std::fun_treemap` (unbalanced binary search tree - not very useful)
 
 Obsolete (to be removed):
 
