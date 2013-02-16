@@ -1,15 +1,17 @@
 Containers in the standard libraries:
 
-* `core::dlist` (doubly-linked list - uses @ but avoiding that would require `unsafe`)
-* `core::vec` (dynamic array)
-* `core::str` (string implemented on top of the same dynamic array as `core::vec`)
-* `core::hashmap` (hash table - set and map)
-* `std::treemap` (balanced binary search tree - set and map)
-* `std::fun_treemap` (persistent unbalanced binary search tree - not very useful)
-* `std::smallintmap` (dense array-based map)
-* `std::deque` (ring buffer)
-* `std::priority_queue` (binary heap)
-* `std::list` (persistent singly-linked list)
+* Mutable:
+    * `core::dlist` (doubly-linked list - uses @ but avoiding that would require `unsafe`)
+    * `core::vec` (dynamic array)
+    * `core::str` (string implemented on top of the same dynamic array as `core::vec`)
+    * `core::hashmap` (hash table - set and map)
+    * `std::treemap` (balanced binary search tree - set and map)
+    * `std::smallintmap` (dense array-based map)
+    * `std::deque` (ring buffer)
+    * `std::priority_queue` (binary heap)
+* Persistent:
+    * `std::list` (persistent singly-linked list)
+    * `std::fun_treemap` (persistent unbalanced binary search tree - not very useful)
 
 Obsolete (to be removed):
 
