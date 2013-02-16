@@ -11,6 +11,12 @@ Containers in the standard libraries:
 * `std::priority_queue` (binary heap)
 * `std::list` (persistent singly-linked list)
 
+Obsolete (to be removed):
+
+* `std::dvec` (`~[]` in a mut field)
+* `std::oldmap` (chaining-based hash table using lots of @ and mut fields)
+* `std::oldsmallintmap` (like `std::smallintmap`, but with mut fields and a @ box)
+
 Wanted:
 
 * radix trie (IntMap, IntSet - perhaps more generic)
