@@ -9,6 +9,7 @@ Containers in the standard libraries:
     * `std::smallintmap` (dense array-based map)
     * `std::deque` (ring buffer)
     * `std::priority_queue` (binary heap)
+    * `std::bitv`
 * Persistent:
     * `std::list` (singly-linked list)
     * `std::fun_treemap` (unbalanced binary search tree - not very useful)
