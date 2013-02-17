@@ -142,6 +142,41 @@ trait Real: Num Ord Sqrt Abs<Self> { }
 
 All integer, floating-point and fixed-point types can trivially implement this. `Sqrt` isn't currently implemented by integer types, but it is useful for some algorithms, so I wouldn't mind adding one.
 
+## Other ideas ##
+
+### Method wrappers ###
+
+Using specific method implementations for numeric functions is extremely useful, as it enables us to tailor the methods to the specific type (for example using LLVM intrinsics or libm functions) whilst also being able to provide generic default methods to reduce code duplication (for example with `Ord::abs` and `Ord::clamp`). The downside is the for some mathematical functions the dot syntax is less readable than the functional equivalent. For example `abs(x)` or `min(x, y)` is more readable than `x.abs()` or `x.min(y)`. One solution is to create a series of inlined generic method wrappers to allow the user to choose which form to use depending on the situation:
+
+~~~
+mod num {
+    #[inline(always)] fn abs<T:Abs>(x: T) -> T { x.abs() }
+    #[inline(always)] fn min<T:Abs>(x: T, y: T) -> T { x.min(y) }
+    #[inline(always)] fn sqrt<T:Sqrt>(x: T) -> T { x.sqrt() }
+    ...
+}
+~~~
+
+Sometimes the user might want to be more specific with type information, so it would be useful to include specific wrappers for each of rust's primitive numeric types:
+
+~~~
+mod float {
+    #[inline(always)] fn abs(x: float) -> float { x.abs() }
+    #[inline(always)] fn min(x: float, y: float) -> float { x.min(y) }
+    #[inline(always)] fn sqrt(x: float) -> float { x.sqrt() }
+    ...
+}
+
+mod f64 {
+    #[inline(always)] fn abs(x: f64) -> f64 { x.abs() }
+    #[inline(always)] fn min(x: f64, y: f64) -> f64 { x.min(y) }
+    #[inline(always)] fn sqrt(x: f64) -> f64 { x.sqrt() }
+    ...
+}
+~~~
+
+Calling these wrappers would be reasonably aesthetically pleasing, and the intent would be obvious, for example `float::abs(-0.5)` or `f64::min(2.0, 7.5)`.
+
 ## Performance ##
 
 ### LLVM Intrinsics ###
