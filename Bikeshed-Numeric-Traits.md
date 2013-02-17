@@ -175,7 +175,7 @@ mod f64 {
 }
 ~~~
 
-Calling these wrappers would be reasonably aesthetically pleasing, and the intent would be obvious, for example `float::abs(-0.5)` or `f64::min(2.0, 7.5)`.
+The type-specific intent would be obvious when calling these functions, for example `float::abs(-0.5)` or `f64::min(2.0, 7.5)`.
 
 ## Performance ##
 
