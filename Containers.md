@@ -33,7 +33,7 @@ Wanted:
 
 # Improvements:
 
-* smallintmap should implement a set type [#4984](https://github.com/mozilla/rust/issues/4984)
+* smallintmap should implement a set type - [#4984](https://github.com/mozilla/rust/issues/4984)
 * Add range searches to TreeMap/TreeSet - [#4604](https://github.com/mozilla/rust/issues/4604)
 * LinearMap fields should be private - [#4764](https://github.com/mozilla/rust/issues/4764)
 * add shrink_to_fit method for vec and hashmap - [#4960](https://github.com/mozilla/rust/issues/4960)
