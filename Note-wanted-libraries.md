@@ -2,11 +2,7 @@ Notes taken at rust work week, 2011/06/23
 
 ## Things that standard libraries might want
 
-* collections
- * list, hash, deque, vec, stack, queue, prioque, trees, set, bitv
- * bitv
- * iteration
- * pure collections
+* collections (see [[Containers]])
 * IO
  * AIO, SIO, stdio
  * [filesystem](https://github.com/mozilla/rust/blob/master/src/libcore/os.rs)
