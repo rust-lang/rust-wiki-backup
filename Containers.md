@@ -42,3 +42,4 @@ Wanted:
 * split the Map and Set traits into Map, MutableMap, PersistentMap and Set, MutableSet, PersistentSet - [#4989](https://github.com/mozilla/rust/issues/4989)
 * Move dlist to std - [#3549](https://github.com/mozilla/rust/issues/3549)
 * benchmark whether 1.5x is a better growth factor for vectors - [#4961](https://github.com/mozilla/rust/issues/4961)
+* add reserve/reserve_at_least to std::deque - [#4994](https://github.com/mozilla/rust/issues/4994)
