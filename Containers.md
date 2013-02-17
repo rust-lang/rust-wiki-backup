@@ -1,4 +1,4 @@
-Containers in the standard libraries:
+# Containers in the standard libraries
 
 * Mutable:
     * `core::dlist` (doubly-linked list - uses @ but avoiding that would require `unsafe`)
@@ -14,13 +14,13 @@ Containers in the standard libraries:
     * `std::list` (singly-linked list)
     * `std::fun_treemap` (unbalanced binary search tree - not very useful)
 
-Obsolete (to be removed):
+# Obsolete (to be removed)
 
 * `std::dvec` (`~[]` in a mut field) - [#4985](https://github.com/mozilla/rust/issues/4985)
 * `std::oldmap` (chaining-based hash table using lots of @ and mut fields) - [#4986](https://github.com/mozilla/rust/issues/4986)
 * `std::oldsmallintmap` (like `std::smallintmap`, but with mut fields and a @ box) - [#4738](https://github.com/mozilla/rust/issues/4738)
 
-Wanted:
+# Wanted
 
 * radix trie (IntMap, IntSet - perhaps more generic)
 * B-tree (Map and Set implementations) - [#4992](https://github.com/mozilla/rust/issues/4992)
