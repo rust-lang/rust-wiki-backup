@@ -31,7 +31,7 @@
 * persistent hash-based map/set
 * compile-time lookup tables via syntax extensions - [#4864](https://github.com/mozilla/rust/issues/4864)
 
-# Issues:
+# Issues
 
 * smallintmap should implement a set type - [#4984](https://github.com/mozilla/rust/issues/4984)
 * Add range searches to TreeMap/TreeSet - [#4604](https://github.com/mozilla/rust/issues/4604)
