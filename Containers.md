@@ -40,3 +40,4 @@ Wanted:
 * Do something about std::deque - [#2343](https://github.com/mozilla/rust/issues/2343)
 * Deque shouldn't require copyable types - [#3748](https://github.com/mozilla/rust/issues/3748)
 * split the Map and Set traits into Map, MutableMap, PersistentMap and Set, MutableSet, PersistentSet - [#4989](https://github.com/mozilla/rust/issues/4989)
+* Move dlist to std [#3549](https://github.com/mozilla/rust/issues/3549)
