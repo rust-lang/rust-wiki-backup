@@ -29,3 +29,9 @@ Wanted:
 * persistent balanced binary search tree (map and set)
 * persistent heap
 * persistent hash-based map/set
+
+# Improvements:
+
+* [smallintmap should implement a set type](https://github.com/mozilla/rust/issues/4984)
+* [Add range searches to TreeMap/TreeSet](https://github.com/mozilla/rust/issues/4604)
+* [LinearMap fields should be private](https://github.com/mozilla/rust/issues/4764)
