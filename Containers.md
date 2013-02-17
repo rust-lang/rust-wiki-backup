@@ -35,3 +35,4 @@ Wanted:
 * [smallintmap should implement a set type](https://github.com/mozilla/rust/issues/4984)
 * [Add range searches to TreeMap/TreeSet](https://github.com/mozilla/rust/issues/4604)
 * [LinearMap fields should be private](https://github.com/mozilla/rust/issues/4764)
+* [add shrink_to_fit method for vec and hashmap](https://github.com/mozilla/rust/issues/4960)
