@@ -18,7 +18,7 @@ Obsolete (to be removed):
 
 * `std::dvec` (`~[]` in a mut field)
 * `std::oldmap` (chaining-based hash table using lots of @ and mut fields)
-* `std::oldsmallintmap` (like `std::smallintmap`, but with mut fields and a @ box)
+* `std::oldsmallintmap` (like `std::smallintmap`, but with mut fields and a @ box) - [#4738](https://github.com/mozilla/rust/issues/4738)
 
 Wanted:
 
