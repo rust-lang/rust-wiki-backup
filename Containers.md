@@ -24,7 +24,7 @@ Wanted:
 
 * radix trie (IntMap, IntSet - perhaps more generic)
 * b-tree (either in addition to `std::treemap` or replacing it)
-* small vector (3-word struct storing small arrays on the stack)
+* small vector (3-word struct storing small arrays on the stack) - [#4991](https://github.com/mozilla/rust/issues/4991)
 * LRU cache (doubly-linked list with a hash table pointing at the nodes) - [#4988](https://github.com/mozilla/rust/issues/4988)
 * persistent balanced binary search tree (map and set) - [#4987](https://github.com/mozilla/rust/issues/4987)
 * persistent heap
