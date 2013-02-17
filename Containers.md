@@ -39,4 +39,4 @@ Wanted:
 * add shrink_to_fit method for vec and hashmap - [#4960](https://github.com/mozilla/rust/issues/4960)
 * Do something about std::deque - [#2343](https://github.com/mozilla/rust/issues/2343)
 * Deque shouldn't require copyable types - [#3748](https://github.com/mozilla/rust/issues/3748)
-* split the Map and Set traits into Map, MutableMap, PersistentMap and Set, MutableSet, PersistentSet [#4989](https://github.com/mozilla/rust/issues/4989)
+* split the Map and Set traits into Map, MutableMap, PersistentMap and Set, MutableSet, PersistentSet - [#4989](https://github.com/mozilla/rust/issues/4989)
