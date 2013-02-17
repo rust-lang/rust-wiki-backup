@@ -29,7 +29,7 @@ Wanted:
 * persistent balanced binary search tree (map and set) - [#4987](https://github.com/mozilla/rust/issues/4987)
 * persistent heap
 * persistent hash-based map/set
-* [compile-time lookup tables via syntax extensions](https://github.com/mozilla/rust/issues/4864)
+* compile-time lookup tables via syntax extensions [#4864](https://github.com/mozilla/rust/issues/4864)
 
 # Improvements:
 
