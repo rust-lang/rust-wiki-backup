@@ -143,6 +143,59 @@ trait Real: Num Ord Sqrt Abs<Self> { }
 
 All integer, floating-point and fixed-point types can trivially implement this. `Sqrt` isn't currently implemented by integer types, but it is useful for some algorithms, so I wouldn't mind adding one.
 
+## Bit- and byte-level Traits ##
+
+Most bit-level traits can be implemented on all types, but they are most commonly associated with integers. 
+
+### Bitwise ###
+
+The main trait is `Bitwise`, which implements all the normal bitwise operations, always returning the same type.
+
+~~~
+trait Bitwise: Not<Self>
+               BitAnd<Self,Self>
+               BitOr<Self,Self>
+               BitXor<Self,Self> {
+
+}
+~~~
+
+### Shift ###
+
+The second trait is `Shift` which implements shifts in a way that makes 'sense' for the type, arithmetic shifts for signed types, and logical shifts for unsigned types. For most non-integral types, like floating-point for example, logical shifts would be the kind that makes sense.
+
+~~~
+trait Shift<RHS>: Shl<RHS,Self> Shr<RHS,Self> { }
+~~~
+
+### Bitcount ###
+
+I find these useful, so I added them here. We also currently have unexposed intrinsics for them, which this would fix. Note that `clz` / `ctz` never returns undefined results (I'm looking at you, x86) and if there isn't a binary one in the value, return the size of the type.
+
+~~~
+trait Bitcount<I:Int> {
+  fn popcount(&self) -> I;
+  fn clz(&self) -> I;
+  fn ctz(&self) -> I;
+}
+~~~
+
+### Byte-Swap ###
+
+This trait is useful for when communicating over a network when on a little-endian host (which rust always is at the moment) and also have unexposed intrinsics like the bitcount ones.
+
+The two methods `to_big_endian` and `to_little_endian` should of course have default implementations that you never should override.
+
+~~~
+trait ByteSwap {
+  fn byte_swap(&self) -> Self;
+
+  fn to_big_endian(&self) -> Self;
+  fn to_little_endian(&self) -> Self;
+}
+~~~
+
+
 ## Method wrappers ##
 
 Using specific method implementations for numeric functions is extremely useful, as it enables us to tailor the methods to the specific type (for example using LLVM intrinsics or libm functions) whilst also being able to provide generic default methods to reduce code duplication (for example with `Ord::abs` and `Ord::clamp`). The downside is the for some mathematical functions the dot syntax is less readable than the functional equivalent. For example `abs(x)` or `min(x, y)` is more readable than `x.abs()` or `x.min(y)`.
