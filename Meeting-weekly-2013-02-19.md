@@ -1,4 +1,8 @@
-# Agenda
+## Attending
+
+Patrick, Tim, Brian, Azita, Graydon, Niko, Felix, John
+
+## Agenda
 
 - Closure inference (@||, ~||, etc) (nmatsakis)
 - Rustpkg and module / library / binary naming conventions (graydon)
