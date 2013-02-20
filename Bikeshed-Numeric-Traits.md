@@ -184,6 +184,29 @@ The type-specific intent would be obvious when calling these functions, for exam
 
 LLVM provides [various intrinsic functions](http://llvm.org/docs/LangRef.html#intrinsic-functions) that could be used in the numeric trait implementations. These are already in the rust compiler, so using them should be quite easy, and reduce our dependence on `libm` / `libc`, possibly increase performance and improve cross-platform numeric compatability.
 
+### Native Math ###
+
+The functions here are copied from OpenCL, and are intended to map to lower level instructions, and are (possibly) not as accurate as the normal ones. The idea is that many applications (graphics mostly) does not need highly accurate functions, but can work fine with much faster, lower precision versions.
+
+~~~
+trait NativeMath {
+  fn native_cos(&self) -> Self;
+  fn native_divide(&self, &b: Self) -> Self;
+  fn native_exp(&self) -> Self;
+  fn native_exp2(&self) -> Self;
+  fn native_exp10(&self) -> Self;
+  fn native_log(&self) -> Self;
+  fn native_log2(&self) -> Self;
+  fn native_log10(&self) -> Self;
+  fn native_powr(&self, &b: Self) -> Self;
+  fn native_recip(&self) -> Self;
+  fn native_rsqrt(&self) -> Self;
+  fn native_sin(&self) -> Self;
+  fn native_sqrt(&self) -> Self;
+  fn native_tan(&self) -> Self;
+}
+~~~
+
 ## Related Changes ##
 
 ### rename `modulo` into `rem` or `remainder` in traits and docs ###
