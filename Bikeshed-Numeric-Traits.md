@@ -143,14 +143,14 @@ trait Real: Num Ord Sqrt Abs<Self> { }
 
 All integer, floating-point and fixed-point types can trivially implement this. `Sqrt` isn't currently implemented by integer types, but it is useful for some algorithms, so I wouldn't mind adding one.
 
-## Other ideas ##
+## Method wrappers ##
 
-### Method wrappers ###
+Using specific method implementations for numeric functions is extremely useful, as it enables us to tailor the methods to the specific type (for example using LLVM intrinsics or libm functions) whilst also being able to provide generic default methods to reduce code duplication (for example with `Ord::abs` and `Ord::clamp`). The downside is the for some mathematical functions the dot syntax is less readable than the functional equivalent. For example `abs(x)` or `min(x, y)` is more readable than `x.abs()` or `x.min(y)`.
 
-Using specific method implementations for numeric functions is extremely useful, as it enables us to tailor the methods to the specific type (for example using LLVM intrinsics or libm functions) whilst also being able to provide generic default methods to reduce code duplication (for example with `Ord::abs` and `Ord::clamp`). The downside is the for some mathematical functions the dot syntax is less readable than the functional equivalent. For example `abs(x)` or `min(x, y)` is more readable than `x.abs()` or `x.min(y)`. One solution is to create a series of inlined generic method wrappers to allow the user to choose which form to use depending on the situation:
+The solution is to create a series of inlined generic method wrappers to allow the user to choose which form to use depending on the situation:
 
 ~~~
-mod num {
+mod math {
     #[inline(always)] fn abs<T:Abs>(x: T) -> T { x.abs() }
     #[inline(always)] fn min<T:Abs>(x: T, y: T) -> T { x.min(y) }
     #[inline(always)] fn sqrt<T:Sqrt>(x: T) -> T { x.sqrt() }
@@ -182,11 +182,12 @@ The type-specific intent would be obvious when calling these functions, for exam
 
 ### LLVM Intrinsics ###
 
-LLVM provides [various intrinsic functions](http://llvm.org/docs/LangRef.html#intrinsic-functions) that could be used in the numeric trait implementations.
+LLVM provides [various intrinsic functions](http://llvm.org/docs/LangRef.html#intrinsic-functions) that could be used in the numeric trait implementations. These are already in the rust compiler, so using them should be quite easy, and reduce our dependence on `libm` / `libc`, possibly increase performance and improve cross-platform numeric compatability.
 
-## Small details ##
+## Related Changes ##
 
-### rename `modulo` into `rem` in traits and docs ###
+### rename `modulo` into `rem` or `remainder` in traits and docs ###
+
 Rusts `%` operator mimics C and C++ in that it's not modulo but remainder, however the documentation and naming convention claims for it to be modulo.
 
 ## See Also ##
