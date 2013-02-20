@@ -11,6 +11,8 @@ Patrick, Tim, Brian, Azita, Graydon, Niko, Felix, John
 - Capturing mutable variables (nmatsakis)
 - Moving from owned fields and so forth (nmatsakis)
 
+## Closure inference
+
 - N: closure inference: wanted to talk about inference of closure types, toss out possibilities. Today, if you write something like this:
 
     |a, b, c| expr
@@ -78,7 +80,7 @@ but I'm also ambivalent. Maybe if you use a sigil, you get that sigil, otherwise
 - N: can be explicit, retain ability to do inference for now.
 - N: currently used in do spawn.
 
-Moving on to next item.
+## rustpkg
 
 - G: I landed rustpkg, just to get ball rolling, just to avoid continual rebasing. All of the things pointed to by cargo mostly don't build under rustpkg. People are starting to upgrade, adding file called package.rs . Bug, we were going to try to infer more. So, want to talk about problem of inferring package.rs. talked to z0w0 and Brian, read Go code.  Don't want to come up with lots of new names ... (laundry list of names) ...
 - ?
@@ -154,12 +156,15 @@ distinguishing binaries from libraries, nice if it didn't have to parse it to lo
 - P: I feel a little uncomfortable w/ that, yeah. I usually do rust- if it's just an external library binding, come up w/ something more creative if it has a significant proportion of original code. sharedgl, for example, vs. rust-opengl. (original vs. bindings)
 - B: That's good. So let's not make any decisions on this topic.
 - G: I will essentially pick inference defaults by fiat.
+
+## Associated types
+
 - F: associated types; however, Niko said this isn't our first rodeo. I think this might matter for library developments.
 - N: I would rather not discuss it now, it's a complex topic, but it will be important at some point
 - P: I think we'll want associated types but not as a Rust 1.0 feature. None of us have time.
 - N: Connected to other aspects of traits, could be simulated. Could be verbose b/c you end up with more typarams than wanted. OTOH, the syntax you proposed has limits, requires a different syntax for trait bindings. I'd rather talk about it a little offline, write a blog post. Too early a stage of discussion.
 
-# Legality of whitespace
+## Legality of whitespace
 
 - J: legality of whitespace. Current situation: paths are made up of a sequence of tokens: ID modsep ID modsep... From later code (macro expander...)'s perspective, the unit *ought* to be a path. (Path = list of IDs.) I claim the world wd be a simpler/nicer place if we closed up our notion of a path, regarded that as being what we now think of as an identifier.
 what does this have to do w/ whitespace? Currently, we allow whitespace in the middle of a path: a::  b is a reference to b in the package a. I claim things wd be simpler if that whitespace were disallowed; if the token was bounded by whitespace. It's not the end of the world either way. I grepped existing code and found one position in entire source code where this "feature" is used (where someone wrote a:: b) and it looks like a mistake. Searched for "a ::b", turns up all the time (b/c of things like "return ::c"). You don't want that whitespace to be collapsed, so parser has special cases.
