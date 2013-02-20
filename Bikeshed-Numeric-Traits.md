@@ -4,6 +4,7 @@ This page is intended to describe the design rationale for Rusts numeric traits,
 
  1. We cannot provide a default implementations for methods due to bugs in rustc I think, something to do with structs and trait inheritance &c.
  2. We cannot inherit generic traits due to bugs in rustc.
+ 3. We cannot split this out to a `libmath` because of rusts treatment of `#[lang]` items.
 
 ## Base Traits ##
 
