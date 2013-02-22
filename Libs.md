@@ -3,12 +3,12 @@ List of docs concerning changes to Rust standard libraries
 # Overview docs
 
   - [[How to add or reorganize modules in the Rust standard libraries|Note editing libraries]]
-  - [[Module planning doc template|Lib template]]
+  - [[Module editing plan template|Lib template]]
 
 # Wanted new modules
 
-# Active module planning docs
+# Active module edit plans
 
-# Abandoned module planning docs
+# Abandoned module edit plans
 
-# Candidate packages to adopt
+# External candidate Rust packages to adopt
