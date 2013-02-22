@@ -2,7 +2,7 @@ List of docs concerning changes to Rust standard libraries
 
 # Overview docs
 
-  - [[How to add or reorganize modules in the Rust standard libraries|Note adding libraries]]
+  - [[How to add or reorganize modules in the Rust standard libraries|Note editing libraries]]
   - [[Module planning doc template|Lib template]]
 
 # Wanted new modules
