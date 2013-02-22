@@ -21,7 +21,6 @@ Listing of notes for developers
 * [[Note tasks and communication]]
 * [[Note metadata format]]
 * [[Note Rust intrinsics]]
-* [[Note Toe Stubbing Scoreboard]]
 
 ## Library notes
 
@@ -29,5 +28,4 @@ Listing of notes for developers
 
 ## Miscellaneous notes
 
-* [[Note constraints in rustc and libraries]]
 * [[Note seeing LLVM output from rust]]
