@@ -2,16 +2,14 @@ Listing of proposals
 
 ## Active
 
-* [[Proposal for regions]]
 * [[Proposal for attribute preprocessing]]
 * [[Proposal for fixits]]
-
-## Accepted
 
 ## Historical
 
 ### Implemented
 
+* [[Proposal for regions]]
 * [[Proposal to address Dan's bug]]
 * [[Proposal for all-or-nothing mut]]
 * [[Proposal for const kind]]
