@@ -32,4 +32,4 @@
 * [GitHub linguist](https://github.com/github/linguist) - GitHub's language detection supports Rust
 * [lkuper's PLT Redex model](https://github.com/github/linguist) - An (out-of-date) model of Rust in PLT Redex
 * [highlight.js](http://softwaremaniacs.org/soft/highlight/en/) - Highlight Rust code in your blog by adding a single line of JavaScript to your pages
-* [Syntax highlighting for vi editor](https://github.com/mozilla/rust/wiki/Syntax-Highlighting-in-VI-Editor) - how to setup vi syntax highlighting
+* [[Syntax highlighting for vi editor|Doc vim support]] - how to setup vi syntax highlighting
