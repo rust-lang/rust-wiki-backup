@@ -2,21 +2,20 @@ Listing of proposals
 
 ## Active
 
-* [[Proposal for constructor expr]]
-* [[Proposal for fixed length arrays]]
-* [[Proposal for predicate language]]
 * [[Proposal for regions]]
 * [[Proposal for attribute preprocessing]]
 * [[Proposal for fixits]]
+
+## Accepted
+
+## Historical
+
+### Implemented
+
 * [[Proposal to address Dan's bug]]
 * [[Proposal for all-or-nothing mut]]
 * [[Proposal for const kind]]
 * [[Proposal for unifying traits and interfaces]]
-
-## Accepted
-
-## Implemented
-
 * [[Proposal for unique types]]
 * [[Proposal for interfaces]]
 * [[Proposal for logging]]
@@ -24,6 +23,9 @@ Listing of proposals
 * [[Proposal for Lightweight RFC Process]]
 * [[Proposal for linked task failure]]
 
-## Withdrawn
+### Withdrawn
 
 * [[Proposal for mutable slots]]
+* [[Proposal for constructor expr]]
+* [[Proposal for fixed length arrays]]
+* [[Proposal for predicate language]]
