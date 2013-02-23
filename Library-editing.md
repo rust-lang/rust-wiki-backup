@@ -20,10 +20,10 @@ For each type of work, we provide a sequence of steps which you should take if y
 
 There are many quality issues (interface consistency, obsolete idioms, non-conformance to the module edit criteria) that require many small patches applied over many different modules. These should  be addressed by the following steps:
 
-  * Announce your intention to produce guidelines on the issue.
-  * Discuss for 1 week on mailing list to solicit input from others on the issue.
-  * Make a wiki page describing instances of the issue and how to solve them, collecting together point-form comments from the mailing list discussion.
-  * Request the core project members approve of this cleanup task. It will get discussed and either approved or rejected at the next weekly meeting.
+  1. Announce your intention to produce guidelines on the issue. This should take the form of an email to the mailing list with with "cleanup:" in the subject.
+  2. Discuss for 1 week on mailing list to solicit input from others on the issue.
+  3. Make a wiki page describing instances of the issue and how to solve them, collecting together point-form comments from the mailing list discussion. Add it to the **Active Module Edit Plans** section of [[Libs]].
+  4. Request the core project members approve of this cleanup task. It will get discussed and either approved or rejected at the next weekly meeting.
 
 Once approved-of, a category of library cleanup can be used to expedite pull requests. In particular, put "cleanup:" in the title of the pull request and address _only_ a project-approved cleanup task in your pull request, and library editors can approve such changes for automated merging.
 
@@ -31,20 +31,21 @@ Once approved-of, a category of library cleanup can be used to expedite pull req
 
 When you want to work on one or more _particular_ modules, due to wanting better library code for the topic the module is concerned with, we ask that you follow a relatively structured process involving research, consultation and (relatively) objective criteria. There are 5 main steps to follow:
 
-  * Announce your intention on the mailing list, make a page on the wiki. Discuss on the mailing list for 1 week.
-  * Research relevant standards (see below).
-  * Research relevant libraries in other languages (see below).
-  * Write or reorganize the modules in question based on the library criteria given in this page (see below).
-  * Get another library-editor (or committer / reviewer) to review your module.
+  1. Announce your intention on the mailing list, make a page on the wiki. Discuss on the mailing list for 1 week.
+  2. Research relevant standards (see below).
+  3. Research relevant libraries in other languages (see below).
+  4. Write or reorganize the modules in question based on the library criteria given in this page (see below).
+  5. Get another library-editor (or committer / reviewer) to review your module.
 
 ### 1. Announce your intention
 
+  - Send an email to the mailing list stating your intention to work on a library and/or assume a library-editing role. This should take the form of an email to the mailing list with with "lib:" in the subject.
   - Make a copy of the [[module edit plan template|Lib template]] and add it to the **Active Module Edit Plans** section of [[Libs]].
-  - Send an email to the mailing list stating your intention to assume a library-editing role.
   - Put a link to the email in the template and note the date.
   - Discuss for _one week_ with the mailing list. Free-form discussion. Fish for ideas. See who else is interested.
   - **During this period, accept the possibility of veto**. If there is strong disagreement that the work you're proposing live in the standard library, you should probably keep it in an external package.
-  - Assuming there is general consensus on the desirability of the module: make a short list of salient people and ideas that came up during that week in your module edit plan.
+  - Assuming there is general consensus on the desirability of the module and your stewardship of it: make a short list of salient people and ideas that came up during that week in your module edit plan.
+  - If you requested it, you may at this point (subject to consensus of the core developers) also be added to the list of reviewers bors listens to, as a library editor. **Please exercise restraint in review and focus on library edits**. Library-editing is a middle role between non-authorized contributors and core developers, and should not be used to review your own work, or work outside the libraries.
 
 ### 2. Survey existing standards and techniques
 
