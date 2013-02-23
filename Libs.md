@@ -8,7 +8,11 @@ List of docs concerning changes to Rust standard libraries
 # Wanted new modules
 
 # Active module edit plans
+## General cross-module cleanup
+## Topical module improvements or additions
 
-# Abandoned module edit plans
+# Abandoned or completed module edit plans
+## General cross-module cleanup
+## Topical module improvements or additions
 
 # External candidate Rust packages to adopt
