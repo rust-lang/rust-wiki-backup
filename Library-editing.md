@@ -62,7 +62,7 @@ When you want to work on one or more _particular_ modules, due to wanting better
     - http://en.wikipedia.org/wiki/Free_file_format
     - http://en.wikipedia.org/wiki/Cryptography_standards
   - Go through any of the following lists looking for _techniques_ related to your module:
-    - http//xlinux.nist.gov/dads/
+    - http://xlinux.nist.gov/dads/
     - http://en.wikipedia.org/wiki/List_of_algorithms
     - http://en.wikipedia.org/wiki/List_of_data_structures
     - http://en.wikipedia.org/wiki/List_of_file_formats
