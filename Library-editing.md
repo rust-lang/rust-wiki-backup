@@ -136,8 +136,10 @@ Modules should generally aim to satisfy these criteria:
     - Randomly generated tests.
     - Hand-written tests.
   - Include `#[bench]` based benchmarks if possible
+  - Minimize mutable state.
   - Minimize unsafe code.
   - Minimize heap allocation.
+  - Minimize size and complexity of traits.
   - Minimize non-portable or platform-specific code.
   - Separately implement Owned variant and Managed variant when reasonable forms of both exist.
   - Similarly (possibly same as above), implement mutable/freezable variant separately from persistent/functional
