@@ -20,10 +20,10 @@ For each type of work, we provide a sequence of steps which you should take if y
 
 There are many quality issues (interface consistency, obsolete idioms, non-conformance to the module edit criteria) that require many small patches applied over many different modules. These should  be addressed by the following steps:
 
-    * Announce your intention to produce guidelines on the issue.
-    * Discuss for 1 week on mailing list to solicit input from others on the issue.
-    * Make a wiki page describing instances of the issue and how to solve them, collecting together point-form comments from the mailing list discussion.
-    * Request the core project members approve of this cleanup task. It will get discussed and either approved or rejected at the next weekly meeting.
+  * Announce your intention to produce guidelines on the issue.
+  * Discuss for 1 week on mailing list to solicit input from others on the issue.
+  * Make a wiki page describing instances of the issue and how to solve them, collecting together point-form comments from the mailing list discussion.
+  * Request the core project members approve of this cleanup task. It will get discussed and either approved or rejected at the next weekly meeting.
 
 Once approved-of, a category of library cleanup can be used to expedite pull requests. In particular, put "cleanup:" in the title of the pull request and address _only_ a project-approved cleanup task in your pull request, and library editors can approve such changes for automated merging.
 
