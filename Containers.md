@@ -41,3 +41,31 @@
 * Move dlist to std - [#3549](https://github.com/mozilla/rust/issues/3549)
 * benchmark whether 1.5x is a better growth factor for vectors - [#4961](https://github.com/mozilla/rust/issues/4961)
 * add reserve/reserve_at_least to std::deque - [#4994](https://github.com/mozilla/rust/issues/4994)
+
+# Stack/Queue-like containers
+
+## Suggested API convention
+
+* `fn back(&self) -> Option<&self/T>`
+* `fn front(&self) -> Option<&self/T>`
+* `fn push_back(&mut self)`
+* `fn push_front(&mut self)`
+* `fn pop_back(&mut self) -> Option<T>`
+* `fn pop_front(&mut self) -> Option<T>`
+
+This is the same naming convention as C++, and seems to be the most consistent way to do it.
+
+Python uses `append`, `pop`, `appendleft` and `popleft` which isn't as uniform and doesn't lead to an obvious naming convention for equivalents to `back` and `front` (they just use `[0]` and `[-1]`).
+
+## Containers
+
+* vectors can efficiently implement `front`, `back` `push_back` and `pop_back`
+* doubly-linked lists and circular buffers can efficiently implement all of the operations
+* a singly-linked list can efficiently implement `front`, `push_front` and `pop_front`, with the addition of `back` and `push_back` if it's either circular or if the container wrapper stores two node pointers
+* a priority queue technically doesn't implement any of these operations, it shouldn't share traits
+
+## Traits
+
+This is the tricky part.... there isn't really an obvious way to divide these up into nice traits. A stack could either use `push_front` and `pop_front` or `push_back` and `pop_back`. The same thing applies to a queue, which could either use `push_back` and `pop_front` or `push_front and `pop_back`.
+
+A `Deque` trait would include all of the operations, so at least that part is easy.
