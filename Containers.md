@@ -57,7 +57,7 @@ This is the same naming convention as C++, and seems to be the most consistent w
 
 Python uses `append`, `pop`, `appendleft` and `popleft` which isn't as uniform and doesn't lead to an obvious naming convention for equivalents to `back` and `front` (they just use `[0]` and `[-1]`).
 
-## Containers
+## Data structures
 
 * vectors can efficiently implement `front`, `back` `push_back` and `pop_back`
 * doubly-linked lists and circular buffers can efficiently implement all of the operations
