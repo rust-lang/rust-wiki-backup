@@ -1,4 +1,8 @@
+Attending:
+* Azita, Brian, Graydon, John, Niko, Patrick, Tim
+
 # Agenda
+
 * Capturing mutable variables (nmatsakis)
 * Moving from owned fields and so forth (nmatsakis)
 * squash commits before pull requests?
