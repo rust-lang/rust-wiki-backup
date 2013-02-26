@@ -38,13 +38,11 @@ N: That would be the default, yes, & it would be adjustable via lint. This relat
 
 N: Right now you can move from a local variable & you can move from a field owned by a local variable. You can only do that if you write it in a particular way w/ a let.
 
-```
      struct Foo { f: ~[uint] }
      let v = Foo { f: ~[1, 2, 3] };
      return v.f; // ERROR today
      let Foo { f: f } = v;
-     return f; // WORKS today
-```     
+     return f; // WORKS today     
      
 Semantically, these are the same, so no good reason to give an error for the first one but not for the second. If we permitted the `return v.f`, it would consume `v`. You may want that behavior. Does anyone object?
 [agreement]
@@ -82,10 +80,9 @@ P: `for`. `impl trait` for types. I've been using this colloquially to mean the 
 
 P: Currently you can say ```use io::println;``` at the top level and technically this is a chained import, because the implicit import of the Prelude imports everything from it.
 
-```
+
     use core::prelude::*; // inserted implicitly
     use io::println; // comes from the *
-```
 
 This is technically a violation of the new resolve rules. A chained import is an import whose base starts from another import.
 
@@ -144,13 +141,13 @@ P: It turns out Servo doesn't quite need single inheritance, though it would be 
 One easy way to make this work is to have traits be able to inherit from a struct, so struct fields would (at runtime) appear in the representation of every instance of the given trait. That's a simple thing we could do. Might also want structs inheriting from other structs. Have to make sure the subtyping relation makes sense, to avoid C++'s slicing problems. I don't know how important this is right now; might be Rust 2.0. We had other ideas (me & N.) but this seems the least intrusive one.
     Example rules in capsule form:
 
-```    
+
         struct DOMNode { ... }
         struct Element : DOMNode { ... }
         enum Element : DOMNode { ... }
         trait TreeTrait : DOMNode { ... }
         &Element <: &DomNode but Element not <: DomNode
-```
+
         Can only "extend" from structs with fields, not enums or newtype structs
 
 N: Want to leave options open, don't need to jump on it
