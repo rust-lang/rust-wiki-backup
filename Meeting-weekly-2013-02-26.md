@@ -1,13 +1,15 @@
 # Agenda
-- Capturing mutable variables (nmatsakis)
-- Moving from owned fields and so forth (nmatsakis)
-- squash commits before pull requests?
-- impl privacy
-- forbidding chained imports at top level
-- notes on new borrow checker (nmatsakis)
-- (something about "single inheritance?")
-- `@mut Trait` and so forth (nmatsakis)
-== Capturing mutable variables ==
+* Capturing mutable variables (nmatsakis)
+* Moving from owned fields and so forth (nmatsakis)
+* squash commits before pull requests?
+* impl privacy
+* forbidding chained imports at top level
+* notes on new borrow checker (nmatsakis)
+* (something about "single inheritance?")
+* `@mut Trait` and so forth (nmatsakis)
+
+# Capturing mutable variables
+
 N: When you make a not-by-ref closure, we forbid you from capturing mutable local variables.
 *  mutable means declared with "let mut", regardless of type
 This rule can confuse people. The intent is to prevent mutable vars from getting copied/captured, which could cause confusion. The programmer probably meant to make a mutable box to share b/w the closure and the original stack frame.
