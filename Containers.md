@@ -48,8 +48,8 @@
 
 * `fn back(&self) -> Option<&self/T>`
 * `fn front(&self) -> Option<&self/T>`
-* `fn push_back(&mut self)`
-* `fn push_front(&mut self)`
+* `fn push_back(&mut self, value: T)`
+* `fn push_front(&mut self, value: T)`
 * `fn pop_back(&mut self) -> Option<T>`
 * `fn pop_front(&mut self) -> Option<T>`
 
