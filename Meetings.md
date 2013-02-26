@@ -62,6 +62,7 @@ Mozilla employees have a weekly Rust planning meeting on Tuesday mornings at 9:0
 * [[Meeting weekly 2013-02-05]] (backwards compat; milestones; mut fields; region syntax)
 * [[Meeting weekly 2013-02-12]] (non-sendable types; MIPS)
 * [[Meeting weekly 2013-02-19]] (closure inference; rustpkg; associated types; whitespace)
+* [[Meeting-weekly-2013-02-26]] (capturing mutable variables, borrow checking, inheritance, trait auto-borrowing)
 
 ## Planning meetings:
 
