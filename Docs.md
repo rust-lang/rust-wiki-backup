@@ -44,6 +44,7 @@ For the most up to date information, the best source is often to ask in [#rust o
 [[Reading and writing files|Doc Reading and writing files]]  
 [[Attributes|Doc attributes]] - The role of metadata in Rust code, with descriptions of many applications  
 [[Packages, editors, and other tools|Doc packages, editors, and other tools]]  
+[[Packaging Terminology|Doc Packaging Terminology]]  
 [[Building for Android|Doc building for Android]]  
 
 ## Blogs
