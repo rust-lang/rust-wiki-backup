@@ -50,19 +50,17 @@ Backward compatibility: not as important, but we'll discuss it. To make associat
 # Object types
 
 - N: opened bug recently, want to make change if possible, will simplify borrowck. Right now, if you have an object type, like:
-
-      If you have an object type @T, ~T, &T where T is a trait
-      It sometimes implements T and sometimes doesn't
-      This has to do whether it not uses the `Self` type
-      
-      Example where it is unsafe:
-      trait Eq {
-          fn eq(&self, other: &Self) -> bool
-       }
-       
-       Can't use this with objects like `@Eq` because we don't know the true type
-       So can't guarantee that `other` will have the same type
-       
+- N: If you have an object type @T, ~T, &T where T is a trait
+- N: It sometimes implements T and sometimes doesn't
+- N: This has to do whether it not uses the `Self` type
+- N: Example where it is unsafe:
+```
+trait Eq {
+    fn eq(&self, other: &Self) -> bool
+}
+```
+- N: Can't use this with objects like `@Eq` because we don't know the true type
+- N: So can't guarantee that `other` will have the same type   
 - N: So. I'd like to say that object types *never* implement their trait. You can implement it yourself if you like.  sidesteps complex specifications, lets the typechecker do its job. How do people feel? Maybe could provide #[auto_deriving].
 - B: ok with this.
 - G: I am ok with this. Object types and trait bounds are pretty different.
