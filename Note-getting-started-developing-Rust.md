@@ -60,10 +60,13 @@ The gcc included with FreeBSD is old, so your best bet is to run the `configure`
 
     git clone git://github.com/mozilla/rust.git
     cd rust
-    mkdir build
-    cd build
-    ../configure
-    make check
+    ./configure
+    make
+
+Optional steps:
+
+    make check   # run the test suite
+    make install   # install the compiler and associated tools
 
 This will build and test the compiler, standard libraries, and supporting tools.
 
