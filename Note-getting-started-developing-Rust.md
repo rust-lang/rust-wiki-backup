@@ -61,7 +61,7 @@ The gcc included with FreeBSD is old, so your best bet is to run the `configure`
     git clone git://github.com/mozilla/rust.git
     cd rust
     ./configure   # this may take a while if this is your first time, as it downloads LLVM
-    make
+    make    # this will definitely take a while if this is your first time, as it builds LLVM
 
 Optional steps:
 
