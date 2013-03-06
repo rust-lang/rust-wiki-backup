@@ -122,7 +122,7 @@ Compiler warnings and errors can be controlled to a very fine level with attribu
         }
     }
 
-Also, `warn` works too. The complete list of lint warnings can be requested from `rustc` on the command line ... somehow.
+Also, `warn` works too. The complete list of possible lint checks can be requested from `rustc` on the command line by running `rustc -W help`.
 
 ## Foreign functions
 
