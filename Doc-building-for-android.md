@@ -35,7 +35,7 @@ These are preliminary build instructions for Android. Note that ARM and Android 
 
     it will copy rustc binaries and libraries into /usr/local (or as defined with --prefix)
     
-5. How to cross compiler
+5. How to cross compile
     
         rustc --target=arm-unknown-android --android-cross-path=[path of standalone toolchain dir] hello.rs
  
