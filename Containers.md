@@ -64,6 +64,6 @@ Python uses `append`, `pop`, `appendleft` and `popleft` which isn't as uniform a
 
 ## Traits
 
-This is the tricky part.... there isn't really an obvious way to divide these up into nice traits. A stack could either use `push_front` and `pop_front` or `push_back` and `pop_back`. The same thing applies to a queue, which could either use `push_back` and `pop_front` or `push_front and `pop_back`.
+This is the tricky part.... there isn't really an obvious way to divide these up into nice traits. A stack could either use `push_front` and `pop_front` or `push_back` and `pop_back`. The same thing applies to a queue, which could either use `push_back` and `pop_front` or `push_front` and `pop_back`.
 
 A `Deque` trait would include all of the operations, so at least that part is easy.
