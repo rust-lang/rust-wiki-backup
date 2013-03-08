@@ -27,11 +27,13 @@ These are preliminary build instructions for Android. Note that ARM and Android 
 
     a. make
   
-    b. make install  [ it will copy ARM libraries into /usr/local/lib/rustc/arm-unknown-android/lib
+    b. make install  
+
+    it will copy rustc binaries and libraries into /usr/local (or as defined with --prefix)
     
 5. How to cross compiler
     
-    rustc --target=arm-unknown-android --android-cross-path=[ath of standalone toolchain dir] hello.rs
+    rustc --target=arm-unknown-android --android-cross-path=[path of standalone toolchain dir] hello.rs
  
 6. How to run on Android
 
