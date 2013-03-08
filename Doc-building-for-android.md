@@ -9,8 +9,11 @@ These are preliminary build instructions for Android. Note that ARM and Android 
        ~/android-ndk-r8d/build/tools$ ./make-standalone-toolchain.sh --platform=android-14 --install-dir=/opt/ndk_standalone --ndk-dir=~/android-ndk-r8d
 
     In case of 64bit linux system, android ndk needs 32bit linux libraries.
+
         e.g) /lib32/libc.so.6, /usr/lib32/libz.so.1, /usr/lib32/libstdc++.so.6.0.17
+
     You can simple install at Ubuntu System by 
+
         apt-get install libc-i386 lib32z1 libstdc++6
 
 2. Download rustc from git repository
