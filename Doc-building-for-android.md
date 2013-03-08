@@ -33,7 +33,7 @@ These are preliminary build instructions for Android. Note that ARM and Android 
   
         make install  
 
-    it will copy rustc binaries and libraries into /usr/local (or as defined with --prefix)
+    It will copy rustc binaries and libraries into /usr/local (or as defined with --prefix)
     
 5. How to cross compile
     
@@ -41,10 +41,23 @@ These are preliminary build instructions for Android. Note that ARM and Android 
  
 6. How to run on Android
 
-        use adb -e push command to push all arm libs as specified in 6 b
-   
-    push your binary
-   
-    set LD_LIBRARY_PATH
-   
-    run using adb shell  
+    Remount your device for get the read/write permission on /system partition
+
+        adb remount
+
+    Push arm libs and Android GNU STL shared lib
+
+        adb push /usr/local/lib/rustc/arm-unknown-android/libcore-c3ca5d77d81b46c1-0.6.so /system/lib
+        adb push /usr/local/lib/rustc/arm-unknown-android/librustrt.so /system/lib
+        adb push /usr/local/lib/rustc/arm-unknown-android/libstd-4782a756585a81-0.6.so /system/lib
+        e.g) adb push YOUR_NDK_TOOLCHAIN_PATH/arm-linux-androideabi/lib/libgnustl_shared.so /system/lib
+
+    Push your binary
+
+        e.g) adb push hello /system/bin
+
+    Run using adb shell
+
+        adb shell
+        cd /system/bin
+        ./hello
