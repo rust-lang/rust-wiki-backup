@@ -8,7 +8,7 @@ Self-hosting involves "stages". There are 4 stages to know about:
 
 * `stage2` is your workspace compiled with `stage1`. It was built with your changes.
 
-* `stage3` is your workspace compiled with `stage2`; it should equal stage2, and is built only as a check to ensure that your change "converges" to a fixpoint where multiple compilations of self result in the same binary image.
+* `stage3` is your workspace compiled with `stage2`; it should equal stage2, and is built only as a check to ensure that your change "converges" to a fixpoint where multiple compilations of self will result in the same binary image.
 
 The stage0 snapshots originated from a bootstrap compiler that has since been retired. We're running on all snapshots now.
 
