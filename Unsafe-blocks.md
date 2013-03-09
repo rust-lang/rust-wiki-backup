@@ -1,4 +1,4 @@
-This is a summary of some things that are disallowed in unsafe blocks, but is in no way exhaustive.
+These are some guidelines for using unsafe blocks, but is in no way an exhaustive list of everything to avoid in order to use them safely.
 
 * Any resource management (memory, files, sockets, database connections, etc.) needs to be wrapped in an object with a destructor, or it will leak if the stack unwinds. Exposing a `close` method and never forgetting to call it isn't enough.
 * You should be very aware of stack unwinding. If a failure happens, destructors will be called, so objects can't be left in a state where that could be harmful unless it can be guaranteed to never happen.
