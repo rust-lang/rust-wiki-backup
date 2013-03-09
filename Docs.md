@@ -39,7 +39,8 @@ For the most up to date information, the best source is often to ask in [#rust o
 [[Detailed release notes|Doc detailed release notes]] - Further explanation of language changes  
 [[Rust for C++ programmers|Rust for CXX programmers]] - A cheat sheet  
 [[Unit testing|Doc unit testing]] - Writing tests and running them with the built-in test driver  
-[[Using cargo|Doc using cargo to manage packages]] - Managing and distributing Rust crates in Rust < 0.6. Use rustpkg instead of cargo with Rust >= 0.6.
+[[Using cargo|Doc using cargo to manage packages]] - Managing and distributing Rust crates in Rust <= 0.5.
+[[Using rustpkg|Doc using rustpkg to manage packages]] - Managing and distributing Rust crates in Rust >= 0.6.
 [[Using rustdoc|Doc using rustdoc]] - How to extract Markdown and HTML documentation from code  
 [[Reading and writing files|Doc Reading and writing files]]  
 [[Attributes|Doc attributes]] - The role of metadata in Rust code, with descriptions of many applications  
