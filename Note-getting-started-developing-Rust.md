@@ -24,7 +24,7 @@ Version numbers listed here are "what we're using"; the code may well work with 
 
 You can install all the prerequisites you need to build Rust by running
 
-    sudo apt-get install python make git g++ curl valgrind pandoc texlive-latex-recommended curl
+    sudo apt-get install python make git g++ curl valgrind pandoc texlive-latex-recommended
 
 Incidentally, the pandoc that's packaged for certain Linux
 distributions (Ubuntu, for instance) is older than 1.8, so in order to
