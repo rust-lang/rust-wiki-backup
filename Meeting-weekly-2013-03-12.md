@@ -109,6 +109,7 @@
 - P: Yes I'd like to remove that but you can still do it with traits
 - G: Yes this applies only to inherent methods
 - ... some discussion on inherent vs trait and how such overloading is still permitted...
+
 # Rename 'static to 'const?
 - P: Let's rename the static region to const since it refers only to constants and it would let us remove the `static` keyword entirely.  
 - N: +1. I think Graydon wanted this name originally.
