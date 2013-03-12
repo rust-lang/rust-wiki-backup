@@ -26,7 +26,7 @@ brson, graydon, tjc, azita, jclements, nmatsakis, pcwalton, pnkfelix
 - N: yes, I can prepare examples/presentation for this.
 Backward compatibility: not as important, but we'll discuss it. To make associated types work, we may want to change name resolution.  We'll talk about it then.
 - P: +1 for in-person. Hard to do async. 
-- A: as we come up with list, keep in mind that Niko and Felx are going to be in PJs for first day, how to break it down etc., make sure that things don't overlap.
+- A: as we come up with list, keep in mind that Niko and Felix are going to be in PJs for first day, how to break it down etc., make sure that things don't overlap.
 - N: +1. Scheduling is important.
 - N: other things?
 - P: depends on what states regions are in, lingering things there? eg: random borrowck errors? May want a discussion about it. Also possible that your changes will resolve this.
@@ -121,8 +121,8 @@ trait Eq {
 - N: I would prefer generating in the long term but I don't have a strong opinion
 - JC: I also support the notion of a parser generated from a grammar
 - JC: I didn't know you were working on this, maybe we should touch base
-- F: Only a litle, I am more interested in generalized LL/Early grammars and modern parsing technolgoies
-- JC: Let me suggest a general direction: it is my hope that Rust will have balanced delimiters, which is pretty vital for making maros work, so I'm imagining a grammar where for instance delimiters are always balanced ...
+- F: Only a litle, I am more interested in generalized LL/Earley grammars and modern parsing technologies
+- JC: Let me suggest a general direction: it is my hope that Rust will have balanced delimiters, which is pretty vital for making macros work, so I'm imagining a grammar where for instance delimiters are always balanced ...
 - F: ...some sort of parenthesized grammar, makes sense not sure if it's the right answer but is feasible
 - JC: I'm trying to update token trees so that they ...
 - G: for newcomers to the project: I have always grumpily insisted that we try to keep the lexical grammar regular and the CFG LL(1).
@@ -230,7 +230,7 @@ trait Eq {
 
 ## TotalOrd, Ord
 
-- P: strcat introduced TotalOrd likes Haskell's Ord
+- P: strcat introduced TotalOrd like Haskell's Ord
 - P: I think we should rename TotalOrd to Ord and rename Ord to Cmp
 - P: Where Cmp is used for partial equality and the < opeator etc
 - P: Usually Ord is the one you want anyhow
