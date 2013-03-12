@@ -19,7 +19,7 @@ These are preliminary build instructions for Android. Note that ARM and Android 
 
 2. Download rustc from git repository
 
-        git clone  http://github.com/webconv/rust.git
+        git clone  http://github.com/mozilla/rust.git
     
 3. Configure with ndk toolchain path
 
