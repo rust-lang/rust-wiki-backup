@@ -69,7 +69,7 @@ To begin, let us read bytes from read.txt.
 
 ### The Testing Function
 
-~~~~
+```
 fn is_success (-path: str) {
     // [1]
     let maybe_test_reader: result<reader, str> = file_reader(path);
@@ -95,7 +95,7 @@ fn is_success (-path: str) {
     let maybe_success: str = str::from_bytes(bytes);
     assert maybe_success == "success";
 }
-~~~~
+```
 
 1. The function tries to creates a file_reader using the path given to it.
 2. If the file_reader call failed, print why and then fail the test.
@@ -121,13 +121,13 @@ This is due to the way reader.eof() works. Using a while loop checking for eof
 will cause the EOF byte of value -1 (255u8) to be appended to the vector. The
 final value has to be popped off when using a while loop.
 
-~~~~
+```
 let mut bytes: ~[u8] = ~[];
 while !reader.eof() {
     vec::push(bytes, reader.read_byte() as u8);
 }
 vec::pop(bytes);
-~~~~
+```
 
 ### Absolute Path
 
@@ -136,12 +136,12 @@ exists in the specified location.
 
 An absolute URL begins with the root directory, '/'.
 
-~~~~
+```
 #[test]
 fn read_absolute_file () {
     is_success("/home/havvy/read.txt");
 }
-~~~~
+```
 
 ### Relative Path
 
@@ -157,13 +157,13 @@ The paths test.txt and ./test.txt are equivelent. This test will pass or fail,
 depending on whether or not the file exists in the directory the program is
 ran from and whether or not the file contains the contents "success".
 
-~~~~
+```
 #[test]
 fn read_relative_file () {
     is_success("./read.txt");
     is_success("read.txt");
 }
-~~~~
+```
 
 ## Interlude: Some helper methods
 
@@ -172,7 +172,7 @@ steps each time. Since we don't want to see the same algorithm over and over
 again, the functions freader and fwriter are defined that return readers and
 writers unpacked already.
 
-~~~~
+```
 fn freader (-path: str) -> reader {
     let maybe_reader = file_reader(path);
 
@@ -194,17 +194,17 @@ fn fwriter (-path: str) -> writer {
 
     unwap(maybe_writer)
 }
-~~~~
+```
 
 In the writer section, there needs to be a guarantee that the file being 
 written to is empty. An empty file will return EOF as the first byte, and as 
 such, the is_empty function will return whether or not this is true.
 
-~~~~
+```
 fn is_empty (-path: str) -> bool {
     freader(path).read_byte() == -1
 }
-~~~~
+```
 
 ## Better Reader Methods
 
@@ -228,7 +228,7 @@ or false to break the loop. It could be useful for a generator.
 The other three can be used for reading read.txt and getting its contents. The
 test method below demonstrates this.
 
-~~~~
+```
 fn is_success2 (-path: str) {
     let reader = freader(path);
     assert reader.read_line() == "success";
@@ -245,7 +245,7 @@ fn utility_read_fns () {
         assert line == "success"; true
     });
 }
-~~~~
+```
 
 The rest of this guide will be using is_success2 over is_success.
 
@@ -263,12 +263,12 @@ system with the command `touch /home/havvy/write.txt`.
 
 To make sure the file is empty, the following test case is ran.
 
-~~~~
+```
 #[test]
 fn write_dot_txt_is_empty () {
     assert is_empty("write.txt");
 }
-~~~~
+```
 
 ### Write Success
 
