@@ -43,7 +43,7 @@ In the issue tracker, bugs can only be assigned to people who have commit access
 
 Pass the existing tests. If you have a good reason for breaking a test, XFAIL it. We aim for clean builds at all times.
 
-There is a [bot](http://bot.rust-lang.org) that builds rust. The `master` branch should be kept green.
+There is a [bot](http://buildbot.rust-lang.org/) that builds rust. The `master` branch should be kept green. The [bors](http://buildbot.rust-lang.org/bors/bors.html) bot merges pull requests after they have been signed off (`r+`'ed) by an authorized reviewer.
 
 ### Pay attention to portability:
 * You are responsible for clean-build condition _on all platforms_ (linux, OSX, win32), including under valgrind on linux. 
