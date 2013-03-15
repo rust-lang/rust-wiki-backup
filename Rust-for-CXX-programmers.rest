@@ -53,13 +53,15 @@ Strings
 +----------------------------------------+-----------------------------------+
 | C++                                    | Rust                              |
 +========================================+===================================+
-| `"foo"` (`const char *`)               | `"foo"` (`&static/str`)           |
+| `"foo"` (`const char *`)               | `"foo"` (`&'static str`)           |
 +----------------------------------------+-----------------------------------+
 | `std::string("foo")`                   | `~"foo"` (`~str`)                 |
 +----------------------------------------+-----------------------------------+
 | `std::make_shared<std::string>("foo")` | `@"foo"` (`@str`, no indirection) |
 | (`std::shared_ptr<std::string>`)       |                                   |
 +----------------------------------------+-----------------------------------+
+
+The `&str` and `&mut str` types represent a fixed-size slice (immutable and mutable respectively) of any kind of string.
 
 Vectors
 -------
@@ -74,6 +76,8 @@ Vectors
 | `std::make_shared<std::vector<int>>(std::initializer_list<int>{1, 2, 3})` | `@[1, 2, 3]` (`@[int]`, no indirection) |
 | (`std::shared_ptr<std::vector<int>>`)                                     |                                         |
 +---------------------------------------------------------------------------+-----------------------------------------+
+
+The `&[]` and `&mut []` types represent a fixed-size slice (immutable and mutable respectively) of any kind of vector.
 
 Enums, sum types and option types
 ---------------------------------
