@@ -59,7 +59,7 @@ Strings
 +----------------------------------------+-----------------------------------+
 | `std::make_shared<std::string>("foo")` | `@"foo"` (`@str`, no indirection) |
 | (`std::shared_ptr<std::string>`)       |                                   |
-+----------------------------------------+-----------------------------------
++----------------------------------------+-----------------------------------+
 
 The `&str` and `&mut str` types represent a fixed-size slice (immutable and mutable respectively) of any kind of string.
 
