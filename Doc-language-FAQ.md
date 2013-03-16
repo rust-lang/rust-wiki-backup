@@ -14,7 +14,7 @@
 
 * Lightweight tasks (coroutines) with expanding stacks
 * Fast asynchronous, copyless message passing
-* Optional garbage collection
+* Optional garbage collected pointers
 * All types may be explicitly allocated on the stack or interior to other types
 * Static, native compilation using LLVM
 * Direct and simple interface to C code
