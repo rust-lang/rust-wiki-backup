@@ -52,7 +52,7 @@ There is a [bot](http://buildbot.rust-lang.org/) that builds rust. The `master` 
 * If you are doing a lot of changes likely to cause per-platform breakage (say, a lot of linkage or threading work) please use a staging branch.
 
 ### Conform to source-formatting house style:
-* 78 column maximum lines
+* 100 column maximum lines
 * no tabs (except Makefiles)
 * stick to local naming and code-organization style
 
