@@ -1,3 +1,7 @@
+## Destructors
+
+Rust uses destructors to handle the release of resources like memory allocations, files and sockets. An object will only be destroyed when there is no longer any way to access it, which prevents dynamic failures from an attempt to use a freed resource. When a task fails, the stack unwinds and the destructors of all objects owned by that task are called.
+
 ## Ownership
 
 An object's owner is responsible for managing the lifetime of the object by calling the destructor, and it determines whether the object is mutable. Ownership is recursive, so mutability is inherited recursively and a destructor will destroy the contained tree of owned objects. Variables are top-level owners and destroy the contained object when they go out of scope. If an object consists entirely of a single ownership tree, it is given the `Owned` trait and can be sent between tasks.
