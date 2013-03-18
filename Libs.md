@@ -6,6 +6,7 @@ List of docs concerning changes to Rust standard libraries
   - [[Module editing plan template|Lib template]]
 
 # Wanted new modules
+* [[Note wanted libraries]]
 
 # Active module edit plans
 ## General cross-module cleanup
