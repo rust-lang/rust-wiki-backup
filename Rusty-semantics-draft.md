@@ -16,7 +16,7 @@ An owned box is a uniquely owned allocation on the heap. An owned box inherits t
 
 ## Managed boxes
 
-Managed boxes lack an owner, so they are a break in the ownership tree and don't inherit mutability. They do own the contained object, and mutability is defined by the type of the shared box (`@` or `@mut`). An object containing a managed box is not `Owned`, and can't be sent between tasks. Managed boxes have their lifetimes managed by a task-local garbage collector and will be destroyed at some point after there are no more references to them and the end of the task.
+Managed boxes lack an owner, so they are a break in the ownership tree and don't inherit mutability. They do own the contained object, and mutability is defined by the type of the shared box (`@` or `@mut`). An object containing a managed box is not `Owned`, and can't be sent between tasks. Managed boxes have their lifetimes managed by a task-local garbage collector and will be destroyed at some point after there are no more references to them or the end of the task.
 
 ## Freezing
 
