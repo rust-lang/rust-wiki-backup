@@ -8,7 +8,7 @@ A borrowed pointer is a reference to an existing object, and expresses no owners
 
 ## Owned boxes
 
-An owned box is a uniquely owned allocation on the heap. An owned box inherits the mutability and lifetime of the owner as it would if there was no box.
+An owned box is a uniquely owned allocation on the heap. An owned box inherits the mutability and lifetime of the owner as it would if there was no box. The purpose of an owned box is to add a layer of indirection in order to create recursive data structures or cheaply pass around an object larger than a pointer.
 
 ## Managed boxes
 
