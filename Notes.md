@@ -22,10 +22,6 @@ Listing of notes for developers
 * [[Note metadata format]]
 * [[Note Rust intrinsics]]
 
-## Library notes
-
-* [[Note wanted libraries]]
-
 ## Miscellaneous notes
 
 * [[Note seeing LLVM output from rust]]
