@@ -34,7 +34,7 @@
   * **Time Duration**: a length of time
   * **Time Period**: attached to a specific point in the time continuum
 * Calendars
-  * [Gregorian Calendar](http://en.wikipedia.org/wiki/Gregorian_calendar)
+  * [Gregorian Calendar](http://en.wikipedia.org/wiki/Gregorian_calendar): internationally the most widely accepted and used civil calendar.
 * Time Zones
 
 #### Those intended to follow (and why)
