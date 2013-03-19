@@ -55,7 +55,7 @@ Things to be aware of (among others):
         - boost::date_time::posix_time
             - [Posix Time](http://www.boost.org/doc/libs/1_53_0/doc/html/date_time/posix_time.html)
     - Qt
-        - [QDateTime ](http://qt-project.org/doc/qt-5.0/qtcore/qdatetime.html)
+        - [QDateTime](http://qt-project.org/doc/qt-5.0/qtcore/qdatetime.html)
 
 
   2. Language: Haskell
