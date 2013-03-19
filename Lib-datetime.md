@@ -56,6 +56,8 @@ Things to be aware of (among others):
             - [Posix Time](http://www.boost.org/doc/libs/1_53_0/doc/html/date_time/posix_time.html)
     - Qt
         - [QDate](http://qt-project.org/doc/qt-5.0/qtcore/qdate.html)
+            - dates are stored as Julian Day number
+            - there is no year 0
         - [QTime](http://qt-project.org/doc/qt-5.0/qtcore/qtime.html)
         - [QDateTime](http://qt-project.org/doc/qt-5.0/qtcore/qdatetime.html)
 
