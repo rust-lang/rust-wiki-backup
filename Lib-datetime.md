@@ -35,11 +35,11 @@
   1. Language: C++/Boost
     - http://www.boost.org/doc/libs/1_53_0/doc/html/date_time.html
     - ...
-  2. Language: _language_
-    - _link to library_
+  2. Language: Haskell
+    - http://www.haskell.org/ghc/docs/latest/html/libraries/time-1.4.0.1/Data-Time-Calendar.html
     - ...
-  3. Language: _language_
-    - _link to library_
+  3. Language: Python
+    - http://docs.python.org/3.3/library/datetime.html
     - ...
   4. Language: _language_
     - _link to library_
