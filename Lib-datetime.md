@@ -34,7 +34,7 @@
 
   1. Language: C++/Boost
     - http://www.boost.org/doc/libs/1_53_0/doc/html/date_time.html
-    - Uses the concepts of "Time Point" (a location in the time continuum), "Time Duration" (a length of time), and "Time Interval/Period" (attached to a specific point in the time continuum)
+    - Uses the concepts of **Time Point** (a location in the time continuum), **Time Duration **(a length of time), and **Time Interval/Period** (attached to a specific point in the time continuum)
 
   2. Language: Haskell
     - http://www.haskell.org/ghc/docs/latest/html/libraries/time-1.4.0.1/Data-Time-Calendar.html
