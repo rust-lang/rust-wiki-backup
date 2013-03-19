@@ -51,7 +51,7 @@
             - **Gregorian Date System**
 
   3. Language: Python
-    - http://docs.python.org/3.3/library/datetime.html
+    - [datetime](http://docs.python.org/3.3/library/datetime.html)
         - ...
 
 ### Summary of research from other languages:
