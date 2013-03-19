@@ -12,7 +12,7 @@
 
 ## 2. Research of standards and techniques
 
-  1. Standard: [ISO 8601](http://en.wikipedia.org/wiki/ISO_8601)
+  1. Standard: _standard_
     - _link to docs_
     - ...
   2. Standard: _standard_
@@ -26,29 +26,31 @@
     - ...
 
 ### Summary of research on standards and leading techniques
+
 #### Relevant standards and techniques exist?
+
+* Concepts
+  * **Time Point**: a location in the time continuum
+  * **Time Duration**: a length of time
+  * **Time Period**: attached to a specific point in the time continuum
+* Calendars
+  * **Gregorian Calendar**
+* Time Zones
+
 #### Those intended to follow (and why)
+
 #### Those intended to ignore (and why)
 
 ## 3. Research of libraries from other languages
 
   1. Language: C++/Boost
     - [Boost.Date_Time](http://www.boost.org/doc/libs/1_53_0/doc/html/date_time.html)
-        - concepts:
-            - **Time Point**: a location in the time continuum
-            - **Time Duration**: a length of time
-            - **Time Interval/Period**: attached to a specific point in the time continuum
-        - date systems:
-            - **Gregorian Date System**
-            - **Posix Time System**
-            - **Local Time System**
+        - ...
 
   2. Language: Haskell
     - [Data.Time](http://www.haskell.org/ghc/docs/latest/html/libraries/time-1.4.0.1/Data-Time-Calendar.html)
-        - concepts:
-            - **Day**: a Modified Julian Day is a standard count of days, with zero being the day 1858-11-17
-        - date systems:
-            - **Gregorian Date System**
+        - ...
+
 
   3. Language: Python
     - [datetime](http://docs.python.org/3.3/library/datetime.html)
