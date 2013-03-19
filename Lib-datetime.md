@@ -36,7 +36,7 @@
     - http://www.boost.org/doc/libs/1_53_0/doc/html/date_time.html
     - concepts
         - **Time Point** (a location in the time continuum)
-        - **Time Duration **(a length of time)
+        - **Time Duration** (a length of time)
         - **Time Interval/Period** (attached to a specific point in the time continuum)
 
   2. Language: Haskell
