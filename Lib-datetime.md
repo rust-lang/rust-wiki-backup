@@ -48,7 +48,7 @@
         - ...
 
   2. Language: Haskell
-    - [Data.Time](http://www.haskell.org/ghc/docs/latest/html/libraries/time-1.4.0.1/Data-Time-Calendar.html)
+    - [Data.Time](http://www.haskell.org/ghc/docs/latest/html/libraries/time-1.4.0.1/index.html)
         - ...
 
   3. Language: Python
