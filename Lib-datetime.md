@@ -18,6 +18,13 @@
 
 ### Summary of research on standards and leading techniques
 
+Things to be aware of (among others):
+  * leap seconds
+  * infinity
+  * high resolution
+  * network time sources
+  * ...
+
 #### Relevant standards and techniques exist?
 
 * Concepts
