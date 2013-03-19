@@ -53,7 +53,9 @@
 
   3. Language: Python
     - [datetime](http://docs.python.org/3.3/library/datetime.html)
-        - ...
+        - [datetime.datetime](http://docs.python.org/3.3/library/datetime.html#datetime.datetime)
+        - [datetime.timedelta](http://docs.python.org/3.3/library/datetime.html#datetime.timedelta)
+    - [calendar](http://docs.python.org/3.3/library/calendar.html#module-calendar)
 
   4. Language: Java
     - [java.util.Date](http://docs.oracle.com/javase/7/docs/api/java/util/Date.html)
