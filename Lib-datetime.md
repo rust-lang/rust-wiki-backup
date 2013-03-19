@@ -49,6 +49,8 @@
 
   3. Language: Python
     - [datetime](http://docs.python.org/3.3/library/datetime.html)
+        - [datetime.date](http://docs.python.org/3.3/library/datetime.html#datetime.date)
+        - [datetime.time](http://docs.python.org/3.3/library/datetime.html#datetime.time)
         - [datetime.datetime](http://docs.python.org/3.3/library/datetime.html#datetime.datetime)
         - [datetime.timedelta](http://docs.python.org/3.3/library/datetime.html#datetime.timedelta)
         - [datetime.timezone](http://docs.python.org/3.3/library/datetime.html#datetime.timezone)
