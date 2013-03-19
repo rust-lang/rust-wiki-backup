@@ -51,10 +51,14 @@
     - [Data.Time](http://www.haskell.org/ghc/docs/latest/html/libraries/time-1.4.0.1/Data-Time-Calendar.html)
         - ...
 
-
   3. Language: Python
     - [datetime](http://docs.python.org/3.3/library/datetime.html)
         - ...
+
+  4. Language: Java
+    - [Date](http://docs.oracle.com/javase/7/docs/api/java/util/Date.html)
+    - [GregorianCalendar](http://docs.oracle.com/javase/7/docs/api/java/util/GregorianCalendar.html)
+    - [TimeZone](http://docs.oracle.com/javase/7/docs/api/java/util/TimeZone.html)
 
 ### Summary of research from other languages:
 #### Structures and functions commonly appearing
