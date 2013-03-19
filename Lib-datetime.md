@@ -35,9 +35,9 @@
   1. Language: C++/Boost
     - http://www.boost.org/doc/libs/1_53_0/doc/html/date_time.html
     - concepts:
-        - **Time Point** (a location in the time continuum)
-        - **Time Duration** (a length of time)
-        - **Time Interval/Period** (attached to a specific point in the time continuum)
+        - **Time Point**: a location in the time continuum
+        - **Time Duration**: a length of time
+        - **Time Interval/Period**: attached to a specific point in the time continuum
     - date systems:
         - **Gregorian Date System**
         - **Posix Time System**
@@ -45,12 +45,13 @@
 
   2. Language: Haskell
     - http://www.haskell.org/ghc/docs/latest/html/libraries/time-1.4.0.1/Data-Time-Calendar.html
-    - ...
+    - concepts:
+        - **Day**: a Modified Julian Day is a standard count of days, with zero being the day 1858-11-17
+    - date systems:
+        - **Gregorian Date System**
+
   3. Language: Python
     - http://docs.python.org/3.3/library/datetime.html
-    - ...
-  4. Language: _language_
-    - _link to library_
     - ...
 
 ### Summary of research from other languages:
