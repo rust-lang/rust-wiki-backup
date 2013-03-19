@@ -45,6 +45,9 @@ Things to be aware of (among others):
 
 ## 3. Research of libraries from other languages
 
+  1. Language: C
+    - [time.h](http://pubs.opengroup.org/onlinepubs/7908799/xsh/time.h.html)
+
   1. Language: C++
     - [Boost.Date_Time](http://www.boost.org/doc/libs/1_53_0/doc/html/date_time.html)
         - boost::date_time
@@ -62,12 +65,12 @@ Things to be aware of (among others):
         - [QDateTime](http://qt-project.org/doc/qt-5.0/qtcore/qdatetime.html)
 
 
-  2. Language: Haskell
+  1. Language: Haskell
     - [Data.Time](http://www.haskell.org/ghc/docs/latest/html/libraries/time-1.4.0.1/index.html)
         - uses Modified Julian Day count internally
         - day 0 := 1858-11-17
 
-  3. Language: Python
+  1. Language: Python
     - [datetime](http://docs.python.org/3.3/library/datetime.html)
         - distinguishes between "naive" and "aware" date/time objects
         - [datetime.date](http://docs.python.org/3.3/library/datetime.html#datetime.date)
