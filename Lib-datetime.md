@@ -55,6 +55,7 @@
     - [datetime](http://docs.python.org/3.3/library/datetime.html)
         - [datetime.datetime](http://docs.python.org/3.3/library/datetime.html#datetime.datetime)
         - [datetime.timedelta](http://docs.python.org/3.3/library/datetime.html#datetime.timedelta)
+        - [datetime.timezone](http://docs.python.org/3.3/library/datetime.html#datetime.timezone)
     - [calendar](http://docs.python.org/3.3/library/calendar.html#module-calendar)
 
   4. Language: Java
