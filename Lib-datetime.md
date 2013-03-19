@@ -65,6 +65,7 @@ Things to be aware of (among others):
   2. Language: Haskell
     - [Data.Time](http://www.haskell.org/ghc/docs/latest/html/libraries/time-1.4.0.1/index.html)
         - uses Modified Julian Day count internally
+        - valid date range: 1858-11-17 to ?
 
   3. Language: Python
     - [datetime](http://docs.python.org/3.3/library/datetime.html)
