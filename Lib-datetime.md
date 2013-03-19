@@ -22,8 +22,11 @@
 
 * Concepts
   * **Time Point**: a location in the time continuum
-  * **Time Duration**: a length of time
-  * **Time Period**: attached to a specific point in the time continuum
+  * **Duration**: a length of time
+  * **Period**: a duration attached to a specific point in the time continuum
+  * **Resolution**: is defined by the smallest representable duration
+  * **Time System**:
+  * **Calendar System**: http://en.wikipedia.org/wiki/Calendar#Calendar_systems
 * Calendars
   * [Gregorian Calendar](http://en.wikipedia.org/wiki/Gregorian_calendar): internationally the most widely accepted and used civil calendar.
 * Time Zones
