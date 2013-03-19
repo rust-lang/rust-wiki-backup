@@ -56,9 +56,11 @@
         - ...
 
   4. Language: Java
-    - [Date](http://docs.oracle.com/javase/7/docs/api/java/util/Date.html)
-    - [GregorianCalendar](http://docs.oracle.com/javase/7/docs/api/java/util/GregorianCalendar.html)
-    - [TimeZone](http://docs.oracle.com/javase/7/docs/api/java/util/TimeZone.html)
+    - [java.util.Date](http://docs.oracle.com/javase/7/docs/api/java/util/Date.html)
+    - [java.util.Calendar](http://docs.oracle.com/javase/7/docs/api/java/util/Calendar.html)
+        - [java.util.GregorianCalendar](http://docs.oracle.com/javase/7/docs/api/java/util/GregorianCalendar.html)
+    - [java.util.TimeZone](http://docs.oracle.com/javase/7/docs/api/java/util/TimeZone.html)
+        - [java.util.SimpleTimeZone](http://docs.oracle.com/javase/7/docs/api/java/util/SimpleTimeZone.html)
 
 ### Summary of research from other languages:
 #### Structures and functions commonly appearing
