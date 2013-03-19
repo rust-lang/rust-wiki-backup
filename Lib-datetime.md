@@ -56,15 +56,14 @@ Things to be aware of (among others):
             - [Posix Time](http://www.boost.org/doc/libs/1_53_0/doc/html/date_time/posix_time.html)
     - Qt
         - [QDate](http://qt-project.org/doc/qt-5.0/qtcore/qdate.html)
-            - dates are stored as Julian Day number
-            - there is no year 0
+            - uses Julian Day count
         - [QTime](http://qt-project.org/doc/qt-5.0/qtcore/qtime.html)
         - [QDateTime](http://qt-project.org/doc/qt-5.0/qtcore/qdatetime.html)
 
 
   2. Language: Haskell
     - [Data.Time](http://www.haskell.org/ghc/docs/latest/html/libraries/time-1.4.0.1/index.html)
-        - ...
+        - uses Modified Julian Day count
 
   3. Language: Python
     - [datetime](http://docs.python.org/3.3/library/datetime.html)
