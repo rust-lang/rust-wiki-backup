@@ -12,7 +12,7 @@
 
 ## 2. Research of standards and techniques
 
-  1. Standard: _standard_
+  1. Standard: [ISO 8601](http://en.wikipedia.org/wiki/ISO_8601)
     - _link to docs_
     - ...
   2. Standard: _standard_
