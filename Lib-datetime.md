@@ -52,6 +52,7 @@ Things to be aware of (among others):
             - [boost::date_time::period] (http://www.boost.org/doc/libs/1_53_0/doc/html/boost/date_time/period.html)
         - boost::date_time::gregorian
           - [Gregorian](http://www.boost.org/doc/libs/1_53_0/doc/html/date_time/gregorian.html)
+            - valid date range: 1400-01-01 to 9999-12-03
         - boost::date_time::posix_time
             - [Posix Time](http://www.boost.org/doc/libs/1_53_0/doc/html/date_time/posix_time.html)
     - Qt
