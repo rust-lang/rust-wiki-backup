@@ -45,7 +45,7 @@ Things to be aware of (among others):
 
 ## 3. Research of libraries from other languages
 
-  1. Language: C++/Boost
+  1. Language: C++
     - [Boost.Date_Time](http://www.boost.org/doc/libs/1_53_0/doc/html/date_time.html)
         - boost::date_time
             - [boost::date_time::date](http://www.boost.org/doc/libs/1_53_0/doc/html/boost/date_time/date.html)
