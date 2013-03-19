@@ -55,7 +55,7 @@
     - [calendar](http://docs.python.org/3.3/library/calendar.html#module-calendar)
 
   4. Language: Java
-    - [java.util.Date](http://docs.oracle.com/javase/7/docs/api/java/util/Date.html)
+    - [java.util.Date](http://docs.oracle.com/javase/7/docs/api/java/util/Date.html): a time point with millisecond precision
     - [java.util.Calendar](http://docs.oracle.com/javase/7/docs/api/java/util/Calendar.html)
         - [java.util.GregorianCalendar](http://docs.oracle.com/javase/7/docs/api/java/util/GregorianCalendar.html)
     - [java.util.TimeZone](http://docs.oracle.com/javase/7/docs/api/java/util/TimeZone.html)
