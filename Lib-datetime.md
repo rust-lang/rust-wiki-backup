@@ -71,6 +71,7 @@ Things to be aware of (among others):
         - [datetime.time](http://docs.python.org/3.3/library/datetime.html#datetime.time)
         - [datetime.datetime](http://docs.python.org/3.3/library/datetime.html#datetime.datetime)
         - [datetime.timedelta](http://docs.python.org/3.3/library/datetime.html#datetime.timedelta)
+            - uses days, seconds and microseconds internally
         - [datetime.timezone](http://docs.python.org/3.3/library/datetime.html#datetime.timezone)
     - [time](http://docs.python.org/3.3/library/time.html)
     - [calendar](http://docs.python.org/3.3/library/calendar.html#module-calendar)
