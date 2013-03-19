@@ -12,18 +12,9 @@
 
 ## 2. Research of standards and techniques
 
-  1. Standard: _standard_
-    - _link to docs_
-    - ...
-  2. Standard: _standard_
-    - _link to docs_
-    - ...
-  1. Technique: _technique_
-    - _link to docs_
-    - ...
-  2. Technique: _technique_
-    - _link to docs_
-    - ...
+  1. Standard: Coordinated Universal Time (UTC)
+    - http://en.wikipedia.org/wiki/Coordinated_Universal_Time
+    - [Leap second](http://en.wikipedia.org/wiki/Leap_second)
 
 ### Summary of research on standards and leading techniques
 
