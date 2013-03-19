@@ -45,7 +45,9 @@
 
   1. Language: C++/Boost
     - [Boost.Date_Time](http://www.boost.org/doc/libs/1_53_0/doc/html/date_time.html)
-        - ...
+        - [Gregorian](http://www.boost.org/doc/libs/1_53_0/doc/html/date_time/gregorian.html)
+        - [Posix Time](http://www.boost.org/doc/libs/1_53_0/doc/html/date_time/posix_time.html)
+        - [Local Time](http://www.boost.org/doc/libs/1_53_0/doc/html/date_time/local_time.html)
 
   2. Language: Haskell
     - [Data.Time](http://www.haskell.org/ghc/docs/latest/html/libraries/time-1.4.0.1/index.html)
