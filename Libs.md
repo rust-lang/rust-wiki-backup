@@ -8,6 +8,8 @@ List of docs concerning changes to Rust standard libraries
 
 # Wanted new modules
 
+  - [[lib DateTime]]
+
 # Active module edit plans
 ## General cross-module cleanup
 ## Topical module improvements or additions
