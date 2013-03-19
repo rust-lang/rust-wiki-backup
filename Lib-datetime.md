@@ -15,6 +15,8 @@
   1. Standard: Coordinated Universal Time (UTC)
     - http://en.wikipedia.org/wiki/Coordinated_Universal_Time
     - [Leap second](http://en.wikipedia.org/wiki/Leap_second)
+  2. Standard: Julian Day
+    - http://en.wikipedia.org/wiki/Julian_day
 
 ### Summary of research on standards and leading techniques
 
