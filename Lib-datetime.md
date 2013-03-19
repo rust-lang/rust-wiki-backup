@@ -30,7 +30,7 @@ Things to be aware of (among others):
 * Concepts
   * **Time Point**: a location in the time continuum
   * **Duration**: a length of time
-  * **Period**: a duration attached to a time point
+  * **Interval**/**Period**: a duration attached to a time point
   * **Resolution**: is defined by the smallest representable duration
   * **Time System**: ?
   * **Calendar System**: ?
