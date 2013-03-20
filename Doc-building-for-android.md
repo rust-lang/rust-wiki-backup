@@ -25,7 +25,7 @@ These are preliminary build instructions for Android. Note that ARM and Android 
 
         mkdir build; cd build
 
-        ../configure --target-triples=arm-unknown-android --android-cross-path=[path of standalone toolchain dir]
+        ../configure --target-triples=arm-linux-androideabi --android-cross-path=[path of standalone toolchain dir]
 
 4. Build
 
@@ -37,7 +37,7 @@ These are preliminary build instructions for Android. Note that ARM and Android 
     
 5. How to cross compile
     
-        rustc --target=arm-unknown-android --android-cross-path=[path of standalone toolchain dir] hello.rs
+        rustc --target=arm-linux-androideabi --android-cross-path=[path of standalone toolchain dir] hello.rs
  
 6. How to run on Android
 
