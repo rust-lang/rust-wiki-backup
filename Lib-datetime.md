@@ -95,6 +95,8 @@ Things to be aware of (among others):
         - [java.util.GregorianCalendar](http://docs.oracle.com/javase/7/docs/api/java/util/GregorianCalendar.html)
     - [java.util.TimeZone](http://docs.oracle.com/javase/7/docs/api/java/util/TimeZone.html)
         - [java.util.SimpleTimeZone](http://docs.oracle.com/javase/7/docs/api/java/util/SimpleTimeZone.html)
+    - [Joda-Time](https://github.com/JodaOrg/joda-time)
+    - [JSR-310](https://github.com/ThreeTen/threeten)
 
 ### Summary of research from other languages:
 #### Structures and functions commonly appearing
