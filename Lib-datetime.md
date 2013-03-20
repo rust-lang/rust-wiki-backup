@@ -17,6 +17,10 @@
     - [Leap second](http://en.wikipedia.org/wiki/Leap_second)
   2. Standard: Julian Day
     - http://en.wikipedia.org/wiki/Julian_day
+  3. Standard: TAI (Temps Atomique International)
+    - The underlying atomic time, non-leap seconds
+    - [International Atomic Time](https://en.wikipedia.org/wiki/International_Atomic_Time)
+    - [UTC vs. TAI discussion](http://cr.yp.to/proto/utctai.html)
 
 ### Summary of research on standards and leading techniques
 
@@ -49,6 +53,7 @@ Things to be aware of (among others):
 
   1. Language: C
     - [time.h](http://pubs.opengroup.org/onlinepubs/7908799/xsh/time.h.html)
+    - [libtai](http://cr.yp.to/libtai.html)
 
   1. Language: C++
     - [Boost.Date_Time](http://www.boost.org/doc/libs/1_53_0/doc/html/date_time.html)
