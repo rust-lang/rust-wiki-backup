@@ -74,7 +74,7 @@ We should refer to the definitions of ISO 8601 which rely on IEC 60050-111, IEC 
 
 ## 2. Research of standards and techniques
 
-  1. [ISO 31-1](http://en.wikipedia.org/wiki/ISO_31-1) defines units day, hour, minute, second for time, time interval and duration
+  1. [ISO 31-1](http://en.wikipedia.org/wiki/ISO_31-1) defines the units **day, hour, minute, second** for time, time interval and duration
   1. [ISO 8601](http://en.wikipedia.org/wiki/ISO_8601)
   1. [ITU-R TF.460-5](http://www.itu.int/dms_pubrec/itu-r/rec/tf/R-REC-TF.460-5-199710-S!!PDF-E.pdf)
   1. Standard: Coordinated Universal Time (UTC)
