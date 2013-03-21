@@ -3,7 +3,7 @@ A library for date, time and date/time.
 Concepts:
   * **Calendar System**: ?
   * **Duration**: a length of time
-  * **Epoch**: the origin of a particular era
+  * **Epoch**: the origin of a particular era, e.g. the Incarnation of Jesus
   * **Instant** / **Time Point**: a location in the time continuum
   * **Interval** / **Period** : a duration attached to a time point
   * **Resolution**: is defined by the smallest representable duration
