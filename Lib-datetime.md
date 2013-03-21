@@ -13,14 +13,14 @@ We should refer to the definitions of ISO 8601 which rely on IEC 60050-111, IEC 
   * **Time System**: ?
   * **Time Zone**: ?
 
-Things to be aware of (among others):
+### Requirements
+
+#### Things to be aware of
   * leap seconds
   * infinity
   * high resolution
   * network time sources
-  * ...
-
-### Requirements
+  * daylight saving time
 
 #### Types
 
