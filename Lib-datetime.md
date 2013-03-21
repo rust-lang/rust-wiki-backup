@@ -123,3 +123,6 @@ Things to be aware of (among others):
     * what about negative Durations?
 
 #### Conversion to and from strings
+
+  * **Date to ISO 8601 string** conversion
+  * **ISO 8601 string to Date** conversion
