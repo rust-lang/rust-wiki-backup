@@ -67,6 +67,7 @@ Things to be aware of (among others):
             - valid date range: 1400-01-01 to 9999-12-03
         - boost::date_time::posix_time
             - [Posix Time](http://www.boost.org/doc/libs/1_53_0/doc/html/date_time/posix_time.html)
+        - [Unit tests](http://svn.boost.org/svn/boost/trunk/libs/date_time/test/)
     - Qt
         - [QDate](http://qt-project.org/doc/qt-5.0/qtcore/qdate.html)
             - uses Julian Day count internally
