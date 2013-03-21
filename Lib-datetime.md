@@ -12,6 +12,13 @@ Concepts:
 
 ### Requirements
 
+#### Types
+
+  * **Date** represents time points with a resolution of days
+  * **Time** represents XXX
+  * **DateTime** represents time points with a resolution of XXX
+  * **Weekday** an enum: Monday, Tuesday, ...
+
 #### Conversion to/from other date representations
 
   * **Date -> year, month, day**
