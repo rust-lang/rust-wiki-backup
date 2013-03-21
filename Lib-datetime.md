@@ -74,6 +74,7 @@ Things to be aware of (among others):
 
 ## 2. Research of standards and techniques
 
+  1. [ISO 31-1](http://en.wikipedia.org/wiki/ISO_31-1)
   1. [ISO 8601](http://en.wikipedia.org/wiki/ISO_8601)
   1. Standard: Coordinated Universal Time (UTC)
     - http://en.wikipedia.org/wiki/Coordinated_Universal_Time
