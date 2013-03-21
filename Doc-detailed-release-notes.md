@@ -2,7 +2,7 @@ This page covers releases in more detail than the bullet-point list given in the
 
 ## 0.6 March 2013
 
-This was a very busy development cycle focused on completing as many of the planned language-level changes as possible in the release time-window. While we cannot promise that this is the last time there will be incompatible changes, the great majority of anticipated language-level changes are complete in this version. We expect subsequent releases before a beta and final 1.0 to be much more focused on non-language-level work (performance, libraries, packaging and building, runtime system) with only modest language-level changes as we discover bugs and areas requiring residual polish.
+This was a very busy development cycle focused on completing as many of the planned language-level changes as possible in the release time-window. While we cannot promise that this is the last time there will be incompatible changes, the great majority of anticipated language-level changes are complete in this version. We expect subsequent releases before a beta and final 1.0 to be more focused on non-language-level work (performance, libraries, packaging and building, runtime system) with only modest language-level changes as we discover bugs and areas requiring residual polish (primarily in the trait system, macro system, and borrow check).
 
 ### Minor syntax changes
 
