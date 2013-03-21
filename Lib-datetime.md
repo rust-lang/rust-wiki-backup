@@ -1,7 +1,6 @@
 A library for date, time and date/time.
 
-### Concepts, Terminology
-
+Concepts:
   * **Calendar System**: ?
   * **Duration**: a length of time
   * **Epoch**: the origin of a particular era
