@@ -23,16 +23,12 @@ Concepts:
 
 #### Conversion to/from other date representations
 
-  * **Date to Y/M/D** conversion
-  * **Y/M/D to Date** conversion
-  * **Date to Julian Day** conversion
-  * **Julian Day to Date** conversion
+  * **Date <-> Year, month, day**
+  * **Date <-> Julian Day**
 
 #### Conversion to/from strings
 
-  * **Date to ISO 8601 string** conversion
-  * **ISO 8601 string to Date** conversion
-
+  * **Date <-> ISO 8601**
 
 ## 1. Announcement to mailing list
 
