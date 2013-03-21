@@ -138,14 +138,14 @@ Things to be aware of (among others):
     - [calendar](http://docs.python.org/3.3/library/calendar.html#module-calendar)
 
   4. Language: Java
+    - [JSR-310](https://github.com/ThreeTen/threeten)
+    - [Joda-Time](https://github.com/JodaOrg/joda-time)
     - java.util
         - [java.util.Date](http://docs.oracle.com/javase/7/docs/api/java/util/Date.html): a time period with millisecond duration
         - [java.util.Calendar](http://docs.oracle.com/javase/7/docs/api/java/util/Calendar.html)
         - [java.util.GregorianCalendar](http://docs.oracle.com/javase/7/docs/api/java/util/GregorianCalendar.html)
         - [java.util.TimeZone](http://docs.oracle.com/javase/7/docs/api/java/util/TimeZone.html)
         - [java.util.SimpleTimeZone](http://docs.oracle.com/javase/7/docs/api/java/util/SimpleTimeZone.html)
-    - [Joda-Time](https://github.com/JodaOrg/joda-time)
-    - [JSR-310](https://github.com/ThreeTen/threeten)
 
 ### Summary of research from other languages:
 
