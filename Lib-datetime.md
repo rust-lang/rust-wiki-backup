@@ -17,6 +17,7 @@ Concepts:
   * **Date** represents time points with a resolution of days
   * **Time** represents XXX
   * **DateTime** represents time points with a resolution of XXX
+  * **Month** an enum: January, February, ...
   * **Weekday** an enum: Monday, Tuesday, ...
 
 #### Conversion to/from other date representations
@@ -27,6 +28,7 @@ Concepts:
   * **Date <-> Julian Day**
   * **Date -> year number**
   * **Date -> month number**
+    * should we use an enum instead?
   * **Date -> week number**
   * **Date -> day number**
   * **Date -> day of year number**
