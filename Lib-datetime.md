@@ -44,8 +44,8 @@ Things to be aware of (among others):
 
 #### Calculations
 
-  * **Timepoint +/- Duration** gives a Timepoint relative to the former
-  * **Timepoint - Timepoint** gives the Duration between them
+  * **Instant+/- Duration** gives a Instant relative to the former
+  * **Instant - Instant** gives the Duration between them
   * **Duration +/- Duration** gives an extended/reduced Duration
     * what about negative Durations?
   * **Period +/- Duration** gives an extended/reduced Period
