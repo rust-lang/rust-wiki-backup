@@ -1,5 +1,18 @@
 A library for date, time and date/time.
 
+### Concepts, Terminology
+
+  * **Calendar System**: ?
+  * **Duration**: a length of time
+  * **Epoch**: the origin of a particular era
+  * **Instant** / **Time Point**: a location in the time continuum
+  * **Interval** / **Period** : a duration attached to a time point
+  * **Resolution**: is defined by the smallest representable duration
+  * **Time System**: ?
+  * **Time Zone**: ?
+
+### Requirements
+
 #### Calculations
 
   * **Timepoint +/- Duration** gives a Timepoint relative to the former
@@ -57,15 +70,6 @@ Things to be aware of (among others):
 
 #### Relevant standards and techniques exist?
 
-* Concepts
-  * **Calendar System**: ?
-  * **Duration**: a length of time
-  * **Epoch**: the origin of a particular era
-  * **Instant** / **Time Point**: a location in the time continuum
-  * **Interval** / **Period** : a duration attached to a time point
-  * **Resolution**: is defined by the smallest representable duration
-  * **Time System**: ?
-  * **Time Zone**: ?
 * Calendars
   * [Gregorian Calendar](http://en.wikipedia.org/wiki/Gregorian_calendar): internationally the most widely accepted and used civil calendar.
 * Time Zones
