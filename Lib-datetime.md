@@ -14,7 +14,9 @@ Concepts:
 
 #### Conversion to/from other date representations
 
-  * **Date <-> year, month, day**
+  * **Date -> year, month, day**
+  * **Date <- year, month, day**
+    * Feb 29 should be legal/illegal depending on leap years
   * **Date <-> Julian Day**
   * **Date -> year number**
   * **Date -> month number**
