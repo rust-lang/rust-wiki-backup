@@ -2,7 +2,7 @@ A library for date, time and date/time.
 
 ### Concepts
 
-We should refer to the definitions of ISO 8601 which rely on the definitions of IEC 60050-111, IEC 60050-713).
+We should refer to the definitions of ISO 8601 which rely on IEC 60050-111, IEC 60050-713).
 
   * **Calendar System**: ?
   * **Duration**: a length of time
