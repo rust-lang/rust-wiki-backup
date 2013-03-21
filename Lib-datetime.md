@@ -125,6 +125,9 @@ We should refer to the definitions of ISO 8601 which rely on IEC 60050-111, IEC 
             - https://qt.gitorious.org/qt/qt/blobs/4.8/tests/auto/qdate/tst_qdate.cpp
             - https://qt.gitorious.org/qt/qt/blobs/4.8/tests/auto/qtime/tst_qtime.cpp
             - https://qt.gitorious.org/qt/qt/blobs/4.8/tests/auto/qdatetime/tst_qdatetime.cpp
+    - QuantLib
+        - [Date](http://quantlib.org/reference/class_quant_lib_1_1_date.html)
+        - [Calendar](http://quantlib.org/reference/class_quant_lib_1_1_calendar.html)
 
   1. Language: Haskell
     - [Data.Time](http://www.haskell.org/ghc/docs/latest/html/libraries/time-1.4.0.1/index.html)
