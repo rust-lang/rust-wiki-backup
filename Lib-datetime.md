@@ -39,9 +39,9 @@ Things to be aware of (among others):
   * **Calendar System**: ?
   * **Duration**: a length of time
   * **Epoch**: the origin of a particular era
+  * **Instant** / **Time Point**: a location in the time continuum
   * **Interval** / **Period** : a duration attached to a time point
   * **Resolution**: is defined by the smallest representable duration
-  * **Time Point**: a location in the time continuum
   * **Time System**: ?
   * **Time Zone**: ?
 * Calendars
