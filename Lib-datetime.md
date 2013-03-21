@@ -44,7 +44,7 @@ Things to be aware of (among others):
 
 #### Calculations
 
-  * **Instant+/- Duration** gives a Instant relative to the former
+  * **Instant +/- Duration** gives a Instant relative to the former
   * **Instant - Instant** gives the Duration between them
   * **Duration +/- Duration** gives an extended/reduced Duration
     * what about negative Durations?
@@ -148,7 +148,14 @@ Things to be aware of (among others):
     - [JSR-310](https://github.com/ThreeTen/threeten)
 
 ### Summary of research from other languages:
+
 #### Structures and functions commonly appearing
+
+See https://github.com/ThreeTen/threeten/wiki/Multi-calendar-system
+
+  * the primary calendar system is ISO-8601
+  * other calendar systems focus on user input/output localization 
+
 #### Variations on implementation seen
 #### Pitfalls and hazards associated with each variant
 #### Relationship to other libraries and/or abstract interfaces
