@@ -12,6 +12,17 @@ Concepts:
 
 ### Requirements
 
+#### Conversion to/from other date representations
+
+  * **Date <-> year, month, day**
+  * **Date <-> Julian Day**
+  * **Date -> year number**
+  * **Date -> month number**
+  * **Date -> week number**
+  * **Date -> day of year number**
+  * **Date -> day of month number**
+  * **Date -> day of week number**
+
 #### Calculations
 
   * **Timepoint +/- Duration** gives a Timepoint relative to the former
@@ -20,11 +31,6 @@ Concepts:
     * what about negative Durations?
   * **Period +/- Duration** gives an extended/reduced Period
     * what about negative Durations?
-
-#### Conversion to/from other date representations
-
-  * **Date <-> Year, month, day**
-  * **Date <-> Julian Day**
 
 #### Conversion to/from strings
 
