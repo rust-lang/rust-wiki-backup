@@ -7,6 +7,7 @@ This was a very busy development cycle focused on completing as many of the plan
 ### Minor syntax changes
 
   - The `self` type parameter in traits was renamed `Self` (capital) to help differentiate it from the keyword `self`
+  - The _implicit_ `self` parameter in trait methods is now deprecated. Methods should now specify their `self` parameter explicitly.
   - The `Durable` trait was removed; it is synonymous, as a type-bound, with the `static` lifetime.
   - The `const` keyword was renamed to `static`, to accommodate for future unsafe mutable static variables.
   - The `fail` and `assert` keywords were replaced with macros `fail!()` and `assert!()`.
