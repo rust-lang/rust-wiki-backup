@@ -115,11 +115,11 @@ Things to be aware of (among others):
 
 #### Calculations
 
-  * Timepoint +/- Duration gives a Timepoint relative to the former
-  * Timepoint - Timepoint gives the Duration between them
-  * Duration +/- Duration gives an extended/reduced Duration
+  * **Timepoint +/- Duration** gives a Timepoint relative to the former
+  * **Timepoint - Timepoint** gives the Duration between them
+  * **Duration +/- Duration** gives an extended/reduced Duration
     * what about negative Durations?
-  * Period +/- Duration gives an extended/reduced Period
+  * **Period +/- Duration** gives an extended/reduced Period
     * what about negative Durations?
 
 #### Conversion to and from strings
