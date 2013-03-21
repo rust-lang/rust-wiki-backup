@@ -76,6 +76,7 @@ Things to be aware of (among others):
 
   1. [ISO 31-1](http://en.wikipedia.org/wiki/ISO_31-1)
   1. [ISO 8601](http://en.wikipedia.org/wiki/ISO_8601)
+  1. [ITU-R TF.460-5](http://www.itu.int/dms_pubrec/itu-r/rec/tf/R-REC-TF.460-5-199710-S!!PDF-E.pdf)
   1. Standard: Coordinated Universal Time (UTC)
     - http://en.wikipedia.org/wiki/Coordinated_Universal_Time
     - [Leap second](http://en.wikipedia.org/wiki/Leap_second)
