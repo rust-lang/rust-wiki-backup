@@ -36,12 +36,13 @@ Things to be aware of (among others):
 #### Relevant standards and techniques exist?
 
 * Concepts
-  * **Time Point**: a location in the time continuum
+  * **Calendar System**: ?
   * **Duration**: a length of time
+  * **Epoch**: the origin of a particular era
   * **Interval** / **Period** : a duration attached to a time point
   * **Resolution**: is defined by the smallest representable duration
+  * **Time Point**: a location in the time continuum
   * **Time System**: ?
-  * **Calendar System**: ?
   * **Time Zone**: ?
 * Calendars
   * [Gregorian Calendar](http://en.wikipedia.org/wiki/Gregorian_calendar): internationally the most widely accepted and used civil calendar.
