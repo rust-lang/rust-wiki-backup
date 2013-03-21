@@ -28,7 +28,9 @@ Concepts:
 
 #### Conversion to/from strings
 
-  * **Date <-> ISO 8601**
+  * **Date <-> user formatted string**
+  * **Date <-> ISO 8601 string**
+  * **Date <-> localized string**
 
 ## 1. Announcement to mailing list
 
