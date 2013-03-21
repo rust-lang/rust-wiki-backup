@@ -122,6 +122,13 @@ Things to be aware of (among others):
   * **Period +/- Duration** gives an extended/reduced Period
     * what about negative Durations?
 
+#### Conversion to and from other date representations
+
+  * **Date to Y/M/D** conversion
+  * **Y/M/D to Date** conversion
+  * **Date to Julian Day** conversion
+  * **Julian Day to Date** conversion
+
 #### Conversion to and from strings
 
   * **Date to ISO 8601 string** conversion
