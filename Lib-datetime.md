@@ -151,14 +151,17 @@ Things to be aware of (among others):
 
 #### Structures and functions commonly appearing
 
-See https://github.com/ThreeTen/threeten/wiki/Multi-calendar-system
-
   * the primary calendar system is ISO-8601
   * other calendar systems focus on user input/output localization 
 
+See https://github.com/ThreeTen/threeten/wiki/Multi-calendar-system
+
 #### Variations on implementation seen
+
 #### Pitfalls and hazards associated with each variant
+
 #### Relationship to other libraries and/or abstract interfaces
+
 
 ## 4. Module writing
 
