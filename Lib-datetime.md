@@ -1,3 +1,5 @@
+A library for date, time and date/time.
+
 ## 1. Announcement to mailing list
 
   - Proposed editor: _your name_
