@@ -71,12 +71,13 @@ Things to be aware of (among others):
 
 ## 2. Research of standards and techniques
 
+  1. [ISO 8601](http://en.wikipedia.org/wiki/ISO_8601)
   1. Standard: Coordinated Universal Time (UTC)
     - http://en.wikipedia.org/wiki/Coordinated_Universal_Time
     - [Leap second](http://en.wikipedia.org/wiki/Leap_second)
-  2. Standard: Julian Day
+  1. Standard: Julian Day
     - http://en.wikipedia.org/wiki/Julian_day
-  3. Standard: TAI (Temps Atomique International)
+  1. Standard: TAI (Temps Atomique International)
     - The underlying atomic time, non-leap seconds
     - [International Atomic Time](https://en.wikipedia.org/wiki/International_Atomic_Time)
     - [UTC vs. TAI discussion](http://cr.yp.to/proto/utctai.html)
@@ -151,7 +152,7 @@ Things to be aware of (among others):
 
 #### Structures and functions commonly appearing
 
-  * the primary calendar system is ISO-8601
+  * the primary calendar system is ISO 8601
   * other calendar systems focus on user input/output localization 
 
 See https://github.com/ThreeTen/threeten/wiki/Multi-calendar-system
