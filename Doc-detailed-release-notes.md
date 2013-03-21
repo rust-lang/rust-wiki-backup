@@ -1,5 +1,103 @@
 This page covers releases in more detail than the bullet-point list given in the RELEASES.txt file in the source distribution, in particular focusing on _language level changes_ that will be immediately visible and/or disruptive to users trying to keep their Rust code compiling and working right between releases. It is intended to hold copied, cleaned-up versions of entries from the [[development roadmap|Note development roadmap]] as they are completed, to help users plan migration on their own code.
 
+## 0.6 March 2013
+
+This was a very busy development cycle focused on completing as many of the planned language-level changes as possible in the release time-window. While we cannot promise that this is the last time there will be incompatible changes, the great majority of anticipated language-level changes are complete in this version. We expect subsequent releases before a beta and final 1.0 to be much more focused on non-language-level work (performance, libraries, packaging and building, runtime system) with only modest language-level changes as we discover bugs and areas requiring residual polish.
+
+### Minor syntax changes
+
+  - The `self` type parameter in traits was renamed `Self` (capital) to help differentiate it from the keyword `self`
+  - The `Durable` trait was removed; it is synonymous, as a type-bound, with the `static` lifetime.
+  - The `const` keyword was renamed to `static`, to accommodate for future unsafe mutable static variables.
+  - The `fail` and `assert` keywords were replaced with macros `fail!()` and `assert!()`.
+  - The `export` keyword, formerly deprecated, was removed; `pub use exported::path;` is synonymous.
+  - The `log` keyword was removed; use `debug!()`, `error!()` and similar macros.
+  - The `move` keyword was removed; owned types are always passed and assigned by moving now.
+  - Structural records (those written as `{field:type,...}` without a named constructor) were removed. Only named `struct` declarations remain.
+  - "Newtype" enums (those with a single variant) such as `enum Foo = int;` were removed; use tuple structs such as `struct Foo(int);` instead
+
+#### Inherited mutability
+The `mut` keyword is no longer permitted in `~mut T`, or in fields of structures; in both cases mutability is controlled by mutability of the owner (inherited mutability). So things written like this in 0.5:
+```
+struct Foo {
+   mut x: int,
+   mut y: int
+}
+fn main() {
+  let z = Foo { x: 10, y: 11 };
+  z.y = 12;
+}
+```
+must now be written like this in 0.6:
+```
+struct Foo {
+   x: int,
+   y: int
+}
+fn main() {
+  let mut z = Foo { x: 10, y: 11 };
+  z.y = 12;
+}
+```
+This change permits reasoning about mutability of an owned structure by reasoning about the mutability of its owner, which in turn means many structures support "freezing" and "thawing": acquiring mutator-methods (statically) when held in a mutable owner, and losing those methods (statically) when moved to an immutable owner.
+
+#### trait bounds are separated by `+`
+
+A function like this in 0.5:
+
+```
+fn foo<T:X Y Z, U:Q>() {
+}
+```
+is written like this in 0.6:
+
+```
+fn foo<T:X + Y + Z, U:Q>() {
+}
+```
+
+#### Trait impls use `for`
+
+A trait implementation that was written this way in 0.5: 
+```
+impl Ty : Trait { 
+}
+```
+is written this way in 0.6:
+```
+impl Trait for Ty { 
+}
+```
+
+
+### Further adjustments to name resolution
+
+  - `super` and `self` can be used in paths to refer to parent modules and the current module, respectively.
+
+### Foreign module changes
+
+Foreign modules (those declared `extern`) have been simplified to anonymous `extern` blocks, and all `extern` functions are now unsafe. This means that code like this in 0.5:
+```
+extern mod libc {
+    fn getc() -> c_char;
+}
+fn main() {
+    let x = libc::getc();
+}
+```
+must be written this way in 0.6:
+```
+extern {
+    fn getc() -> c_char;
+}
+fn main() {
+    unsafe {
+        let x = getc();
+    }
+}
+```
+
+
 ## 0.5 December 2012
 
 This was a fairly slow development cycle that focused on implementing more trait features, such as trait inheritance and static methods, with the goal of enabling more expressive standard libraries. This version more-or-less completes Rust's long transition to a linear type system, with non-copyable types moving automatically (the `move` keyword is deprecated).
