@@ -21,9 +21,10 @@ Concepts:
   * **Date -> year number**
   * **Date -> month number**
   * **Date -> week number**
+  * **Date -> day number**
   * **Date -> day of year number**
-  * **Date -> day of month number**
   * **Date -> day of week number**
+    * should we use an enum instead?
 
 #### Calculations
 
