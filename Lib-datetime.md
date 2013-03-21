@@ -10,6 +10,13 @@ Concepts:
   * **Time System**: ?
   * **Time Zone**: ?
 
+Things to be aware of (among others):
+  * leap seconds
+  * infinity
+  * high resolution
+  * network time sources
+  * ...
+
 ### Requirements
 
 #### Types
@@ -75,13 +82,6 @@ Concepts:
     - [UTC vs. TAI discussion](http://cr.yp.to/proto/utctai.html)
 
 ### Summary of research on standards and leading techniques
-
-Things to be aware of (among others):
-  * leap seconds
-  * infinity
-  * high resolution
-  * network time sources
-  * ...
 
 #### Relevant standards and techniques exist?
 
