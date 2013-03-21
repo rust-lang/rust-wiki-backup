@@ -1,5 +1,27 @@
 A library for date, time and date/time.
 
+#### Calculations
+
+  * **Timepoint +/- Duration** gives a Timepoint relative to the former
+  * **Timepoint - Timepoint** gives the Duration between them
+  * **Duration +/- Duration** gives an extended/reduced Duration
+    * what about negative Durations?
+  * **Period +/- Duration** gives an extended/reduced Period
+    * what about negative Durations?
+
+#### Conversion to/from other date representations
+
+  * **Date to Y/M/D** conversion
+  * **Y/M/D to Date** conversion
+  * **Date to Julian Day** conversion
+  * **Julian Day to Date** conversion
+
+#### Conversion to/from strings
+
+  * **Date to ISO 8601 string** conversion
+  * **ISO 8601 string to Date** conversion
+
+
 ## 1. Announcement to mailing list
 
   - Proposed editor: _your name_
@@ -115,26 +137,3 @@ Things to be aware of (among others):
 ## 4. Module writing
 
   - Pull request: _link to bug_
-
-### Requirements
-
-#### Calculations
-
-  * **Timepoint +/- Duration** gives a Timepoint relative to the former
-  * **Timepoint - Timepoint** gives the Duration between them
-  * **Duration +/- Duration** gives an extended/reduced Duration
-    * what about negative Durations?
-  * **Period +/- Duration** gives an extended/reduced Period
-    * what about negative Durations?
-
-#### Conversion to and from other date representations
-
-  * **Date to Y/M/D** conversion
-  * **Y/M/D to Date** conversion
-  * **Date to Julian Day** conversion
-  * **Julian Day to Date** conversion
-
-#### Conversion to and from strings
-
-  * **Date to ISO 8601 string** conversion
-  * **ISO 8601 string to Date** conversion
