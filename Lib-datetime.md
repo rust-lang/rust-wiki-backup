@@ -73,7 +73,10 @@ Things to be aware of (among others):
             - uses Julian Day count internally
         - [QTime](http://qt-project.org/doc/qt-5.0/qtcore/qtime.html)
         - [QDateTime](http://qt-project.org/doc/qt-5.0/qtcore/qdatetime.html)
-
+        - Unit tests:
+            - https://qt.gitorious.org/qt/qt/blobs/4.8/tests/auto/qdate/tst_qdate.cpp
+            - https://qt.gitorious.org/qt/qt/blobs/4.8/tests/auto/qtime/tst_qtime.cpp
+            - https://qt.gitorious.org/qt/qt/blobs/4.8/tests/auto/qdatetime/tst_qdatetime.cpp
 
   1. Language: Haskell
     - [Data.Time](http://www.haskell.org/ghc/docs/latest/html/libraries/time-1.4.0.1/index.html)
