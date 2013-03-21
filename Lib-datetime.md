@@ -81,7 +81,7 @@ We should refer to the definitions of ISO 8601 which rely on IEC 60050-111, IEC 
     - http://en.wikipedia.org/wiki/Coordinated_Universal_Time
     - [Leap second](http://en.wikipedia.org/wiki/Leap_second)
   1. Standard: Julian Day
-    - http://en.wikipedia.org/wiki/Julian_day
+    - http://en.wikipedia.org/wiki/Julian_day#Alternatives
   1. Standard: TAI (Temps Atomique International)
     - The underlying atomic time, non-leap seconds
     - [International Atomic Time](https://en.wikipedia.org/wiki/International_Atomic_Time)
@@ -129,7 +129,6 @@ We should refer to the definitions of ISO 8601 which rely on IEC 60050-111, IEC 
   1. Language: Haskell
     - [Data.Time](http://www.haskell.org/ghc/docs/latest/html/libraries/time-1.4.0.1/index.html)
         - uses Modified Julian Day count internally
-        - day 0 := 1858-11-17
 
   1. Language: Python
     - [datetime](http://docs.python.org/3.3/library/datetime.html)
