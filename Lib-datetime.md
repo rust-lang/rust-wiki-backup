@@ -1,6 +1,6 @@
 A library for date, time and date/time.
 
-Concepts (we should refer to the definitions of ISO 8601 which rely on the definitions of IEC 60050-111):
+Concepts (we should refer to the definitions of ISO 8601 which rely on the definitions of IEC 60050-111, IEC 60050-713):
   * **Calendar System**: ?
   * **Duration**: a length of time
   * **Epoch**: the origin of a particular era, e.g. the Incarnation of Jesus
