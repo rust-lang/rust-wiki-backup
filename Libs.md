@@ -9,6 +9,7 @@ List of docs concerning changes to Rust standard libraries
 # Wanted new modules
 
   - [[DateTime|lib DateTime]]
+  - [[Html|lib Html]]
 
 # Active module edit plans
 ## General cross-module cleanup
