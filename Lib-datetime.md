@@ -130,6 +130,9 @@ We should refer to the definitions of ISO 8601 which rely on IEC 60050-111, IEC 
         - [Period](http://quantlib.org/reference/class_quant_lib_1_1_period.html)
         - [Calendar](http://quantlib.org/reference/class_quant_lib_1_1_calendar.html)
 
+  1. Language: Go
+    - [time](http://golang.org/pkg/time/)
+
   1. Language: Haskell
     - [Data.Time](http://www.haskell.org/ghc/docs/latest/html/libraries/time-1.4.0.1/index.html)
         - uses Modified Julian Day count internally
