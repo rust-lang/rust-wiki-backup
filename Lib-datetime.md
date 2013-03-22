@@ -104,7 +104,6 @@ We should refer to the definitions of ISO 8601 which rely on IEC 60050-111, IEC 
   1. Language: C
     - [time.h](http://pubs.opengroup.org/onlinepubs/7908799/xsh/time.h.html)
     - [libtai](http://cr.yp.to/libtai.html)
-
   1. Language: C++
     - [Boost.Date_Time](http://www.boost.org/doc/libs/1_53_0/doc/html/date_time.html)
         - boost::date_time
@@ -129,14 +128,20 @@ We should refer to the definitions of ISO 8601 which rely on IEC 60050-111, IEC 
         - [Date](http://quantlib.org/reference/class_quant_lib_1_1_date.html)
         - [Period](http://quantlib.org/reference/class_quant_lib_1_1_period.html)
         - [Calendar](http://quantlib.org/reference/class_quant_lib_1_1_calendar.html)
-
   1. Language: Go
     - [time](http://golang.org/pkg/time/)
-
   1. Language: Haskell
     - [Data.Time](http://www.haskell.org/ghc/docs/latest/html/libraries/time-1.4.0.1/index.html)
         - uses Modified Julian Day count internally
-
+  1. Language: Java
+    - [JSR-310](https://github.com/ThreeTen/threeten)
+    - [Joda-Time](https://github.com/JodaOrg/joda-time)
+    - java.util
+        - [java.util.Date](http://docs.oracle.com/javase/7/docs/api/java/util/Date.html): a time period with millisecond duration
+        - [java.util.Calendar](http://docs.oracle.com/javase/7/docs/api/java/util/Calendar.html)
+        - [java.util.GregorianCalendar](http://docs.oracle.com/javase/7/docs/api/java/util/GregorianCalendar.html)
+        - [java.util.TimeZone](http://docs.oracle.com/javase/7/docs/api/java/util/TimeZone.html)
+        - [java.util.SimpleTimeZone](http://docs.oracle.com/javase/7/docs/api/java/util/SimpleTimeZone.html)
   1. Language: Python
     - builtin
         - [datetime](http://docs.python.org/3.3/library/datetime.html)
@@ -150,16 +155,8 @@ We should refer to the definitions of ISO 8601 which rely on IEC 60050-111, IEC 
         - [time](http://docs.python.org/3.3/library/time.html)
         - [calendar](http://docs.python.org/3.3/library/calendar.html#module-calendar)
     - [pytz](http://pytz.sourceforge.net/)
-
-  4. Language: Java
-    - [JSR-310](https://github.com/ThreeTen/threeten)
-    - [Joda-Time](https://github.com/JodaOrg/joda-time)
-    - java.util
-        - [java.util.Date](http://docs.oracle.com/javase/7/docs/api/java/util/Date.html): a time period with millisecond duration
-        - [java.util.Calendar](http://docs.oracle.com/javase/7/docs/api/java/util/Calendar.html)
-        - [java.util.GregorianCalendar](http://docs.oracle.com/javase/7/docs/api/java/util/GregorianCalendar.html)
-        - [java.util.TimeZone](http://docs.oracle.com/javase/7/docs/api/java/util/TimeZone.html)
-        - [java.util.SimpleTimeZone](http://docs.oracle.com/javase/7/docs/api/java/util/SimpleTimeZone.html)
+  1. Ruby
+    - [Date](http://ruby-doc.org/stdlib-2.0/libdoc/date/rdoc/Date.html)
 
 ### Summary of research from other languages:
 
