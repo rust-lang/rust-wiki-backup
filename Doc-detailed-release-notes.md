@@ -16,6 +16,7 @@ This was a very busy development cycle focused on completing as many of the plan
   - The `move` keyword was removed; owned types are always passed and assigned by moving now.
   - Structural records (those written as `{field:type,...}` without a named constructor) were removed. Only named `struct` declarations remain.
   - "Newtype" enums (those with a single variant) such as `enum Foo = int;` were removed; use tuple structs such as `struct Foo(int);` instead
+  - The `#[deriving_eq]` attribute (and the related ones for `clone` and `iter_bytes`) was removed; use `#[deriving(Eq)]` instead. Multiple traits can be specified in the same attribute, as in `#[deriving(Eq, Clone, IterBytes)]`.
 
 #### Inherited mutability
 The `mut` keyword is no longer permitted in `~mut T`, or in fields of structures; in both cases mutability is controlled by mutability of the owner (inherited mutability). So things written like this in 0.5:
