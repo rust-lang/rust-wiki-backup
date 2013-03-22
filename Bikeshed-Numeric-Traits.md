@@ -10,20 +10,21 @@ This page is intended to describe the design rationale for Rusts numeric traits,
 
 These traits are useful for all numeric types, and some are useful to all types (Eq). They form the base of the trait structure, and influence all others.
 
-### Eq ###
+### cmp::Eq ###
 
-Eq provides support for the `==` and `!=` operators, and should be implemented by all numeric types.
+`Eq` is a language item that Rust code may implement to overload the `==` and `!=` operators, and should be implemented by all numeric types.
 
 ~~~
 trait Eq {
-  fn eq(&self, other: &Self) -> bool;
-  fn ne(&self, other: &Self) -> bool;
+  fn eq(&self, other: &Self) -> bool { return !self.ne(other) };
+  fn ne(&self, other: &Self) -> bool { return !self.eq(other) };
 }
 ~~~
 
-### Ord (Ordered) ###
 
-Ord provides support for the ordering `<`, `<=`, `>` and `>=` operators, and should be implemented by all numeric types that are at least partially ordered.
+### cmp::Ord (Ordered) ###
+
+`Ord` like `Eq` is a language item that the compiler uses to implement comparison operators. Rust code may implement Ord to overload the `<`, `<=`, `>`, and `>=` operators, and should be implemented by all numeric types that are at least partially ordered.
 
 ~~~
 trait Ord: Eq {
@@ -32,13 +33,26 @@ trait Ord: Eq {
   fn ge(&self, other: &Self) -> bool;
   fn gt(&self, other: &Self) -> bool;
 
-  fn min(&self, other: &Self) -> Self;
-  fn max(&self, other: &Self) -> Self;
-  fn clamp(&self, mn: &Self, mx: &Self) -> Self;
+  fn min(&self, other: &Self) -> Self { if (self.lt(other)) { self } else { other } };
+  fn max(&self, other: &Self) -> Self { if (self.gt(other)) { self } else { other } };
+  fn clamp(&self, min: &Self, max: &Self) -> Self { self.min(max).max(min)) };
 }
 ~~~
 
 `min`, `max` and `clamp` could be factored out of this trait if we want to use it for non-numeric types where they do not make sense, but since they can have default implementations and what they do is very intuitive the extra API pressure for those (few) types would be minimal.
+
+#### Min ####
+
+Calculates the minimum of the object and `other`.
+
+#### Max ####
+
+Calculates the maximum of the object and `other`.
+
+#### Clamp ####
+
+Ensures that the object is between the limits set by `min` and `max`. If `min` is greater than `max` the result is undefined.
+
 
 ### Abs<Result> ###
 
@@ -59,6 +73,9 @@ trait Abs<Result> {
 `abs_min` and `abs_max` are from IEEE754-2008 and can be useful when sorting, an example could be that we calculate eigenvalues, and since we want to show only the most influential ones, we sort them by magnitude.
 
 There is some risk for overflow, and it isn't obvious how it should be handled, but I propose we follow current semantics and overflow instead of saturate. I would love to add another trait at a later date with saturating arithmetic, which is awesomely useful, but I think most people could be even more surprised by some operations saturating and some overflowing.
+
+From a performance perspective, the result could just as well be unsigned, like the corresponding hardware instructions in SSSE3 for example. Since that is bitwise equivalent to overflowing, it makes no difference.
+
 
 ### Signed ###
 
@@ -106,7 +123,8 @@ trait Sqrt {
 }
 ~~~
 
-The `rsqrt` operation is of great importance for computer graphics applications and should therefore also be considered for inclusion in this trait.
+The `rsqrt` operation is of great importance for computer graphics applications and should therefore also be considered for inclusion in this trait. But on the other hand, the proposed `NativeMath` trait provides exactly that function with higher performance code, at a cost in accuracy. This trade-off might be acceptable for all users of `rsqrt`.
+
 
 ### FusedMultiplyAdd (FMA, FMAC &c.) ###
 
