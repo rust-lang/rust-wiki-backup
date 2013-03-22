@@ -155,9 +155,9 @@ We should refer to the definitions of ISO 8601 which rely on IEC 60050-111, IEC 
         - [time](http://docs.python.org/3.3/library/time.html)
         - [calendar](http://docs.python.org/3.3/library/calendar.html#module-calendar)
     - [pytz](http://pytz.sourceforge.net/)
-  1. Ruby
+  1. Language: Ruby
     - [Date](http://ruby-doc.org/stdlib-2.0/libdoc/date/rdoc/Date.html)
-  1. Scheme
+  1. Language: Scheme
     - [SRFI 19](http://srfi.schemers.org/srfi-19/srfi-19.html)
 
 ### Summary of research from other languages:
