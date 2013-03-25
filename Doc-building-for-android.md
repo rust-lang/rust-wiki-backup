@@ -15,7 +15,7 @@ These are preliminary build instructions for Android. Note that ARM and Android 
 
     You can simple install at Ubuntu System by 
 
-        apt-get install libc6-i386 lib32z1 libstdc++6
+        apt-get install libc6-i386 lib32z1 lib32stdc++6
 
 2. Download rustc from git repository
 
