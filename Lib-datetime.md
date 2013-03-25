@@ -96,6 +96,11 @@ See ISO 8601 which relies on IEC 60050-111, IEC 60050-713.
 #### Relevant standards and techniques exist?
 
 ##### Epochs
+
+  * Julian Day
+    * Used by: ?
+  * Modified Julian Day
+    * Used by: Haskell
   * **1970-01-01T00:00:00Z**
     * 00:00:00 UTC on 1 January 1970
     * Used by: Go, Unix 
