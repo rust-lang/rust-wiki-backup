@@ -90,25 +90,22 @@ See ISO 8601 which relies on IEC 60050-111, IEC 60050-713.
   1. Network Time Protocol
     - http://en.wikipedia.org/wiki/Network_Time_Protocol
 
-### Epochs
 
+### Summary of research on standards and leading techniques
+
+#### Relevant standards and techniques exist?
+
+##### Epochs
   * **1970-01-01T00:00:00Z**
     * 00:00:00 UTC on 1 January 1970
     * Used by: Go, Unix 
   * **2001-01-01T00:00:00Z**
     * Used by: Apple Cocoa
 
-### Techniques
+##### Techniques
   * Simple immutable objects 
     * Used by: Cocoa, JSR-310
 
-### Summary of research on standards and leading techniques
-
-#### Relevant standards and techniques exist?
-
-* Calendars
-  * [Gregorian Calendar](http://en.wikipedia.org/wiki/Gregorian_calendar): internationally the most widely accepted and used civil calendar.
-* Time Zones
 
 #### Those intended to follow (and why)
 
