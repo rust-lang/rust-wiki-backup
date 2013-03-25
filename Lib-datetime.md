@@ -7,7 +7,7 @@ We should refer to the definitions of ISO 8601 which rely on IEC 60050-111, IEC 
   * **Calendar System**: ?
   * **Duration**: a length of time
   * **Epoch**: the origin of a particular era, e.g. the Incarnation of Jesus
-  * **Instant** / **Time Point**: a location in the time continuum
+  * **Instant**: a location in the time continuum
   * **Interval** / **Period** : a duration attached to a time point
   * **Resolution**: is defined by the smallest representable duration
   * **Time System**: ?
@@ -130,6 +130,8 @@ We should refer to the definitions of ISO 8601 which rely on IEC 60050-111, IEC 
         - [Calendar](http://quantlib.org/reference/class_quant_lib_1_1_calendar.html)
   1. Language: Go
     - [time](http://golang.org/pkg/time/)
+        - [Duration](http://golang.org/pkg/time/#Duration): a duration with an int64 nanosecond count.
+        - [Time](http://golang.org/pkg/time/#Time): an instant in time with nanosecond precision.
   1. Language: Haskell
     - [Data.Time](http://www.haskell.org/ghc/docs/latest/html/libraries/time-1.4.0.1/index.html)
         - uses Modified Julian Day count internally
