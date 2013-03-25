@@ -2,16 +2,17 @@ A library for date, time and date/time.
 
 ### Concepts
 
-We should refer to the definitions of ISO 8601 which rely on IEC 60050-111, IEC 60050-713.
-
-  * **Calendar System**: ?
-  * **Duration**: a length of time
-  * **Epoch**: the origin of a particular era, e.g. the Incarnation of Jesus
-  * **Instant**: a location in the time continuum
-  * **Interval** / **Period** : a duration attached to a time point
-  * **Resolution**: is defined by the smallest representable duration
+  * **Duration**: a non-negative length of time.
+  * **Epoch**: the origin of a particular era, e.g. the Incarnation of Jesus.
+  * **Instant**: a location in the time continuum.
+  * **Resolution**: is defined by the smallest representable duration.
+  * **Time Point**: an instant, defined by the means of a Time Scale.
+  * **Time Scale**: a system of ordered marks of instants. One instant is chosen as the Origin, see Epoch.
   * **Time System**: ?
+  * **Time Interval**: a part of the the time continuum limited by two instants.
   * **Time Zone**: ?
+
+See ISO 8601 which relies on IEC 60050-111, IEC 60050-713.
 
 ### Requirements
 
