@@ -132,7 +132,10 @@ We should refer to the definitions of ISO 8601 which rely on IEC 60050-111, IEC 
     - [time](http://golang.org/pkg/time/)
         - [Duration](http://golang.org/pkg/time/#Duration): a duration with an int64 nanosecond count.
         - [Location](http://golang.org/pkg/time/#Location): maps time instants to the zone in use at that time.
-        - [Time](http://golang.org/pkg/time/#Time): an instant in time with nanosecond precision.
+        - [Time](http://golang.org/pkg/time/#Time): an instant in time with nanosecond precision. Consists of:
+            - Seconds (int64) since the Unix epoch
+            - Nanoseconds (int32)
+            - Location
   1. Language: Haskell
     - [Data.Time](http://www.haskell.org/ghc/docs/latest/html/libraries/time-1.4.0.1/index.html)
         - uses Modified Julian Day count internally
