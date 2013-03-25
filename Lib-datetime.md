@@ -74,6 +74,7 @@ See ISO 8601 which relies on IEC 60050-111, IEC 60050-713.
 
   1. [ISO 31-1](http://en.wikipedia.org/wiki/ISO_31-1) defines the units **day, hour, minute, second** for time, time interval and duration
   1. [ISO 8601](http://en.wikipedia.org/wiki/ISO_8601)
+    - uses the [Gregorian calendar](http://en.wikipedia.org/wiki/Gregorian_calendar) to identify calendar days
   1. [ITU-R TF.460-5](http://www.itu.int/dms_pubrec/itu-r/rec/tf/R-REC-TF.460-5-199710-S!!PDF-E.pdf)
   1. Standard: Coordinated Universal Time (UTC)
     - http://en.wikipedia.org/wiki/Coordinated_Universal_Time
