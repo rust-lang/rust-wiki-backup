@@ -142,7 +142,7 @@ See ISO 8601 which relies on IEC 60050-111, IEC 60050-713.
     - Qt
         - [QDate](http://qt-project.org/doc/qt-5.0/qtcore/qdate.html)
             - uses Julian Day count internally
-        - [QTime](http://qt-project.org/doc/qt-5.0/qtcore/qtime.html)
+        - [QTime](http://qt-project.org/doc/qt-5.0/qtcore/qtime.html): a clock time since midnight
         - [QDateTime](http://qt-project.org/doc/qt-5.0/qtcore/qdatetime.html)
         - Unit tests:
             - https://qt.gitorious.org/qt/qt/blobs/4.8/tests/auto/qdate/tst_qdate.cpp
