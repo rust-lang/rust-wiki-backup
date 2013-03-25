@@ -86,6 +86,8 @@ We should refer to the definitions of ISO 8601 which rely on IEC 60050-111, IEC 
     - The underlying atomic time, non-leap seconds
     - [International Atomic Time](https://en.wikipedia.org/wiki/International_Atomic_Time)
     - [UTC vs. TAI discussion](http://cr.yp.to/proto/utctai.html)
+  1. Network Time Protocol
+    - http://en.wikipedia.org/wiki/Network_Time_Protocol
 
 ### Summary of research on standards and leading techniques
 
