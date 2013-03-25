@@ -98,11 +98,11 @@ See ISO 8601 which relies on IEC 60050-111, IEC 60050-713.
 
 ##### Epochs
 
-  * **-4714-11-24T12:00:00Z** Julian Day
+  * **Julian Day**: -4714-11-24T12:00:00Z
     * Used by: ?
-  * **1858-11-17T00:00:00Z** Modified Julian Day
+  * **Modified Julian Day**: 1858-11-17T00:00:00Z
     * Used by: Haskell
-  * **1970-01-01T00:00:00Z**
+  * **Unix Time**: 1970-01-01T00:00:00Z
     * 00:00:00 UTC on 1 January 1970
     * Used by: Go, Unix 
   * **2001-01-01T00:00:00Z**
