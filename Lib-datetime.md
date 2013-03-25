@@ -98,6 +98,10 @@ See ISO 8601 which relies on IEC 60050-111, IEC 60050-713.
   * **2001-01-01T00:00:00Z**
     * Used by: Apple Cocoa
 
+### Techniques
+  * Simple immutable objects 
+    * Used by: Cocoa, JSR-310
+
 ### Summary of research on standards and leading techniques
 
 #### Relevant standards and techniques exist?
