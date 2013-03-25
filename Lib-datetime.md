@@ -131,6 +131,7 @@ We should refer to the definitions of ISO 8601 which rely on IEC 60050-111, IEC 
   1. Language: Go
     - [time](http://golang.org/pkg/time/)
         - [Duration](http://golang.org/pkg/time/#Duration): a duration with an int64 nanosecond count.
+        - [Location](http://golang.org/pkg/time/#Location): maps time instants to the zone in use at that time.
         - [Time](http://golang.org/pkg/time/#Time): an instant in time with nanosecond precision.
   1. Language: Haskell
     - [Data.Time](http://www.haskell.org/ghc/docs/latest/html/libraries/time-1.4.0.1/index.html)
