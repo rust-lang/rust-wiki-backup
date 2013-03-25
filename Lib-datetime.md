@@ -8,6 +8,7 @@ A library for date, time and date/time.
   * **Epoch**: the origin of a particular era, e.g. the Incarnation of Jesus.
   * **Time Point**: an instant, defined by the means of a Time Scale.
   * **Duration**: a non-negative length of time.
+  * **Coordinated Universal Time (UTC)**: is the primary time scale by which the world regulates clocks and time.
 
 See ISO 8601 which relies on IEC 60050-111, IEC 60050-713.
 
