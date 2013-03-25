@@ -91,9 +91,11 @@ See ISO 8601 which relies on IEC 60050-111, IEC 60050-713.
 
 ### Epochs
 
-  * Unix epoch
+  * 1970-01-01T00:00:00Z ISO 8601 (Unix epoch)
     * 00:00:00 UTC on 1 January 1970
     * Used by: Go
+  * 2001-01-01T00:00:00Z ISO 8601
+    * Used by: Apple Cocoa
 
 ### Summary of research on standards and leading techniques
 
