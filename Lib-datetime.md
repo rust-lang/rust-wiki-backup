@@ -89,6 +89,12 @@ See ISO 8601 which relies on IEC 60050-111, IEC 60050-713.
   1. Network Time Protocol
     - http://en.wikipedia.org/wiki/Network_Time_Protocol
 
+### Epochs
+
+  * Unix epoch
+    * 00:00:00 UTC on 1 January 1970
+    * Used by: Go
+
 ### Summary of research on standards and leading techniques
 
 #### Relevant standards and techniques exist?
