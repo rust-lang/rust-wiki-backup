@@ -103,6 +103,12 @@ See ISO 8601 which relies on IEC 60050-111, IEC 60050-713.
     * Used by: Apple Cocoa
 
 ##### Techniques
+
+  * Types
+    * Date/Time/DateTime
+      * Used by: Qt
+    * Time
+      * Used by: Go
   * Simple immutable objects 
     * Used by: Cocoa, JSR-310
 
