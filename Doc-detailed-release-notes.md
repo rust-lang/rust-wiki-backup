@@ -141,6 +141,12 @@ TODO: write barriers, &mut, 'l
   - The `super` and `self` can be used in paths to refer to parent modules and the current module, respectively.
   - `extern mod` statements must occur before `use` statements, and `use` statements can now shadow `extern mod` statements (rather than vice-versa, as was the case in 0.5). This change makes the shadowing behavior between `extern mod`, `use` and module-local item definitions consistent with the (required) order of writing them.
 
+### Minor semantic changes
+
+  - the nil type `()` is now properly 0 bytes
+  - the "main function" of an executable crate -- where execution begins -- does not need to be called `main` anymore. While `main` is the default, any function marked with the attribute `#[main]` will override this behavior.
+  - The default behavior of an inferred closure is now &fn.
+
 ## 0.5 December 2012
 
 This was a fairly slow development cycle that focused on implementing more trait features, such as trait inheritance and static methods, with the goal of enabling more expressive standard libraries. This version more-or-less completes Rust's long transition to a linear type system, with non-copyable types moving automatically (the `move` keyword is deprecated).
