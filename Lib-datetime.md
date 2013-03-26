@@ -197,12 +197,13 @@ See ISO 8601 which relies on IEC 60050-111, IEC 60050-713.
 
 ### Summary of research from other languages:
 
+  * [Proposal to Add Date-Time to the C++ Standard Library](http://www.crystalclearsoftware.com/libraries/date_time/proposal_v75/date_time_standard.html)
+  * https://github.com/ThreeTen/threeten/wiki/Multi-calendar-system
+
 #### Structures and functions commonly appearing
 
   * the primary calendar system is ISO 8601
   * other calendar systems focus on user input/output localization 
-
-See https://github.com/ThreeTen/threeten/wiki/Multi-calendar-system
 
 #### Variations on implementation seen
 
