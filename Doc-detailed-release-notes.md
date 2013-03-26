@@ -99,6 +99,9 @@ fn main() {
 }
 ```
 
+### Changes to the borrow check and borrowed pointers
+
+TODO: write barriers, &mut, 'l
 
 ## 0.5 December 2012
 
