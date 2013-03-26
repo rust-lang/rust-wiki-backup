@@ -65,6 +65,7 @@ Mozilla employees have a weekly Rust planning meeting on Tuesday mornings at 9:0
 * [[Meeting-weekly-2013-02-26]] (capturing mutable variables, borrow checking, inheritance, trait auto-borrowing)
 * [[Meeting-weekly-2013-03-05]] (work week; object types; parsing; milestones; `copy` keyword; `Ord` vs `TotalOrd`)
 * [[Meeting-weekly-2013-03-12]] (GC; triage; bool; 78 column limit; impl *Type; 'static vs 'const; autoderef in overloaded operators; enum variants; global variables)
+* [[Meeting-weekly-2013-03-26]] (0.6)
 
 ## Planning meetings:
 
