@@ -9,17 +9,19 @@ This was a very busy development cycle focused on completing as many of the plan
   - The `self` type parameter in traits was renamed `Self` (capital) to help differentiate it from the keyword `self`
   - The _implicit_ `self` parameter in trait methods is now deprecated. Methods should now specify their `self` parameter explicitly.
   - The `Durable` trait was removed; it is synonymous, as a type-bound, with the `static` lifetime.
+  - Trailing sigils on closure types such as `fn@`, `fn~` and `fn&` were removed in favour of the more-consistent leading sigils `@fn`, `~fn` and `&fn`
   - The `const` keyword was renamed to `static`, to accommodate for future unsafe mutable static variables.
-  - The `fail` and `assert` keywords were replaced with macros `fail!()` and `assert!()`.
   - The `export` keyword, formerly deprecated, was removed; `pub use exported::path;` is synonymous.
-  - The `log` keyword was removed; use `debug!()`, `error!()` and similar macros.
   - The `move` keyword was removed; owned types are always passed and assigned by moving now.
-  - Structural records (those written as `{field:type,...}` without a named constructor) were removed. Only named `struct` declarations remain.
+  - The `fail` and `assert` keywords were replaced with macros `fail!()` and `assert!()`.
+  - The `log` keyword was removed; use `debug!()`, `error!()` and similar macros.
+  - Single-element tuples, denoted `(T,)` were added as a special-case to help with some macros.
   - "Newtype" enums (those with a single variant) such as `enum Foo = int;` were removed; use tuple structs such as `struct Foo(int);` instead
+  - The visibility modifiers (`pub` and `priv`) are no longer permitted on trait implementations. They were redundant with the visibility modifiers on trait and type declarations themselves.
   - The `#[deriving_eq]` attribute (and the related ones for `clone` and `iter_bytes`) was removed; use `#[deriving(Eq)]` instead. Multiple traits can be specified in the same attribute, as in `#[deriving(Eq, Clone, IterBytes)]`.
 
 #### Inherited mutability
-The `mut` keyword is no longer permitted in `~mut T`, or in fields of structures; in both cases mutability is controlled by mutability of the owner (inherited mutability). So things written like this in 0.5:
+The `mut` keyword is no longer permitted in `~mut T`, `[mut T]`, or in fields of structures; in all cases mutability is controlled by mutability of the owner (inherited mutability). So things written like this in 0.5:
 ```
 struct Foo {
    mut x: int,
@@ -71,11 +73,6 @@ impl Trait for Ty {
 }
 ```
 
-
-### Further adjustments to name resolution
-
-`use` statements are now crate-relative by default, meaning that they resolve from the "top" of the crate. The `super` and `self` can be used in paths to refer to parent modules and the current module, respectively.
-
 ### Foreign module changes
 
 Foreign modules (those declared `extern`) have been simplified to anonymous `extern` blocks, and all `extern` functions are now unsafe. This means that code like this in 0.5:
@@ -99,9 +96,50 @@ fn main() {
 }
 ```
 
+### Vector pattern-matching enhancements
+
+Vectors can now be matched against any combination of prefix, suffix and variable-length remainder patterns. The vector is destructured into the variable names given: the variable-length remainder is bound to a slice:
+
+  - `[a, b..]` to match a vector prefix
+  - `[..a, b]` to match a vector suffix
+  - `[a, ..b, c]` to match both prefix and suffix
+
+### Structural records removed
+
+This release completes the consolidation of older "structural records" (those lacking a constructor name, denoted directly as `{field: type, ...}`) with the newer "nominal structs". Old code written like this in 0.5:
+```
+type Cat = {
+    name: ~str,
+    color: Color
+};
+
+fn main() {
+    let x = { name: ~"fluffy", color: Grey };
+}
+```
+Must be written this way in 0.6:
+```
+struct Cat {
+    name: ~str,
+    color: Color
+}
+
+fn main() {
+    let x = Cat { name: ~"fluffy", color: Grey };
+}
+```
+
+
 ### Changes to the borrow check and borrowed pointers
 
 TODO: write barriers, &mut, 'l
+
+
+### Further adjustments to name resolution
+
+  - `use` statements are now crate-relative by default, meaning that they resolve from the "top" of the crate.
+  - The `super` and `self` can be used in paths to refer to parent modules and the current module, respectively.
+  - `extern mod` statements must occur before `use` statements, and `use` statements can now shadow `extern mod` statements (rather than vice-versa, as was the case in 0.5). This change makes the shadowing behavior between `extern mod`, `use` and module-local item definitions consistent with the (required) order of writing them.
 
 ## 0.5 December 2012
 
