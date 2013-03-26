@@ -74,7 +74,7 @@ impl Trait for Ty {
 
 ### Further adjustments to name resolution
 
-  - `super` and `self` can be used in paths to refer to parent modules and the current module, respectively.
+`use` statements are now crate-relative by default, meaning that they resolve from the "top" of the crate. The `super` and `self` can be used in paths to refer to parent modules and the current module, respectively.
 
 ### Foreign module changes
 
