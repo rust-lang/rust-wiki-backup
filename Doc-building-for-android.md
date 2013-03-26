@@ -1,4 +1,4 @@
-These are preliminary build instructions for Android. Note that ARM and Android integration are still very early and incomplete. This information is for hackers that want to work on the ARM port.
+These are preliminary build instructions for Android. Note that ARM and Android integration are still very early and incomplete, and as such this information is for hackers that want to work on the ARM port. It is strongly recommended to use the Rust 'incoming' branch (not any released version).
 
 1. setup android ndk standalone tool chain with platform=14 option
 
