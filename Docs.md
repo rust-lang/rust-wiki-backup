@@ -68,8 +68,9 @@ Interesting stuff usually appears on [r/rust].
 
 Some Rust classics:
 
-* [An Overview of Memory Management in Rust](http://pcwalton.github.com/blog/2013/03/18/an-overview-of-memory-management-in-rust/)
+* [An overview of memory management in Rust](http://pcwalton.github.com/blog/2013/03/18/an-overview-of-memory-management-in-rust/)
 * [Embedding Rust in Ruby](http://brson.github.com/2013/03/10/embedding-rust-in-ruby/)
-* [Which Pointer Should I Use?](http://pcwalton.github.com/blog/2013/03/09/which-pointer-should-i-use/)
-* [A First Parallel Program in Rust](http://blog.leahhanson.us/a-first-parallel-program-in-rust.html)
-* [FizzBuzz Revisited](http://composition.al/blog/2013/03/02/fizzbuzz-revisited/)
+* [Which pointer should I use?](http://pcwalton.github.com/blog/2013/03/09/which-pointer-should-i-use/)
+* [A first parallel program in Rust](http://blog.leahhanson.us/a-first-parallel-program-in-rust.html)
+* [FizzBuzz revisited](http://composition.al/blog/2013/03/02/fizzbuzz-revisited/)
+* [Ownership types in Rust, and whether they're worth it](http://tim.dreamwidth.org/1784423.html)
