@@ -95,8 +95,20 @@ See ISO 8601 which relies on IEC 60050-111, IEC 60050-713.
 ### Summary of research on standards and leading techniques
 
 #### Relevant standards and techniques exist?
+#### Those intended to follow (and why)
 
-##### Epochs
+#### Those intended to ignore (and why)
+
+
+
+## 3. Research of libraries from other languages
+
+### Summary of research from other languages:
+
+  * [Proposal to Add Date-Time to the C++ Standard Library](http://www.crystalclearsoftware.com/libraries/date_time/proposal_v75/date_time_standard.html)
+  * https://github.com/ThreeTen/threeten/wiki/Multi-calendar-system
+
+#### Epochs
 
   * **Julian Day**: -4714-11-24T12:00:00Z
     * Used by: ?
@@ -107,7 +119,7 @@ See ISO 8601 which relies on IEC 60050-111, IEC 60050-713.
   * **2001-01-01T00:00:00Z**
     * Used by: Apple Cocoa
 
-##### Techniques
+#### Techniques
 
   * Types
     * Date/Time/DateTime
@@ -117,17 +129,6 @@ See ISO 8601 which relies on IEC 60050-111, IEC 60050-713.
   * Simple immutable objects 
     * Used by: Cocoa, JSR-310
 
-
-#### Those intended to follow (and why)
-
-#### Those intended to ignore (and why)
-
-## 3. Research of libraries from other languages
-
-### Summary of research from other languages:
-
-  * [Proposal to Add Date-Time to the C++ Standard Library](http://www.crystalclearsoftware.com/libraries/date_time/proposal_v75/date_time_standard.html)
-  * https://github.com/ThreeTen/threeten/wiki/Multi-calendar-system
 
 #### Structures and functions commonly appearing
 
