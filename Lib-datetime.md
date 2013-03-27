@@ -116,7 +116,7 @@ Used by: Boost, Cocoa, JSR-310
 #### Date and Time Types
 
 Options:
-  * having separate types for Date, Time and Date/Time
+  * having separate types for Date, (Clock) Time and Date/Time
     * Used by: Boost, Haskell, Python, Qt, Ruby
     * Cons:
       * ?
