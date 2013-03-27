@@ -117,7 +117,7 @@ Used by: Boost, Cocoa, JSR-310
 
 Options:
   * having separate types for Date, Time and Date/Time
-    * Used by: Qt
+    * Used by: Boost, Haskell, Python, Qt, Ruby
     * Cons:
       * ?
     * Pros:
@@ -141,7 +141,7 @@ Options:
     * Pros:
       * ?
   * integers
-    * Used by: Boost
+    * Used by: Boost, Go, Haskell
     * Cons:
       * ?
     * Pros:
