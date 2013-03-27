@@ -50,7 +50,7 @@ For the most up to date information, the best source is often to ask in [#rust o
 
 ## Blogs
 
-People sometimes write about Rust: [Niko], [Patrick], [Graydon], [Brian], [Tim], [Ben], [Eric Holk], [Erick Tryzelaar], [Zack]
+People sometimes write about Rust: [Niko], [Patrick], [Graydon], [Brian], [Tim], [Felix], [Ben], [Eric Holk], [Erick Tryzelaar], [Zack]
 
 Interesting stuff usually appears on [r/rust].
 
@@ -58,6 +58,7 @@ Interesting stuff usually appears on [r/rust].
 [Brian]: http://brson.github.com/
 [Eric Holk]: http://blog.theincredibleholk.org/
 [Erick Tryzelaar]: http://erickt.github.com/
+[Felix]: http://blog.pnkfx.org/
 [Graydon]: https://blog.mozilla.org/graydon/
 [Niko]: http://smallcultfollowing.com/babysteps/
 [Patrick]: http://pcwalton.github.com/
