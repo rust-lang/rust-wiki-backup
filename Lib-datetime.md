@@ -159,7 +159,7 @@ Options:
       * Go: int64 (seconds since Unix Time epoch) + int32 (nanoseconds)
       * Haskell: arbitrary-precision integers (days since Modified Julian Day epoch)
       * Qt: int64 (days since Julian Day epoch)
-      * Ruby: int
+      * Ruby: int (days since Julian Day epoch)
     * Cons:
       * ?
     * Pros:
@@ -224,7 +224,6 @@ Options:
         - [Unit tests](http://svn.boost.org/svn/boost/trunk/libs/date_time/test/)
     - Qt
         - [QDate](http://qt-project.org/doc/qt-5.0/qtcore/qdate.html)
-            - uses Julian Day count internally
         - [QTime](http://qt-project.org/doc/qt-5.0/qtcore/qtime.html): a clock time since midnight
         - [QDateTime](http://qt-project.org/doc/qt-5.0/qtcore/qdatetime.html)
         - Unit tests:
@@ -267,7 +266,6 @@ Options:
             - [datetime.time](http://docs.python.org/3.3/library/datetime.html#datetime.time)
             - [datetime.datetime](http://docs.python.org/3.3/library/datetime.html#datetime.datetime)
             - [datetime.timedelta](http://docs.python.org/3.3/library/datetime.html#datetime.timedelta)
-                - uses days, seconds and microseconds internally
             - [datetime.timezone](http://docs.python.org/3.3/library/datetime.html#datetime.timezone)
         - [time](http://docs.python.org/3.3/library/time.html)
         - [calendar](http://docs.python.org/3.3/library/calendar.html#module-calendar)
