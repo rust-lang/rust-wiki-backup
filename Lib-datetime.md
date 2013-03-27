@@ -109,18 +109,43 @@ See ISO 8601 which relies on IEC 60050-111, IEC 60050-713.
   * https://github.com/ThreeTen/threeten/wiki/Multi-calendar-system
 
 #### Simple immutable objects 
-Used by: Cocoa, JSR-310
+Used by: Boost, Cocoa, JSR-310
 
 #### Gregorian Calendar
 
 #### Date and Time Types
+
 There are two possible approaches:
 
-  * having separate ´types for Date and Time 
-    * Date/Time/DateTime
-      * Used by: Qt
+  * having separate types for Date, Time and Date/Time
+    * Used by: Qt
+    * Cons:
+      * ?
+    * Pros:
+      * ?
   * having only one type for Date/Time 
-      * Used by: Go
+    * Used by: Go
+    * Cons:
+      * ?
+    * Pros:
+      * ?
+   
+#### Underlying Representation
+
+  * floats
+    * Used by: ?
+    * Cons:
+      * ?
+    * Pros:
+      * ?
+  * integers
+    * Used by: Boost
+    * Cons:
+      * ?
+    * Pros:
+      * ?
+
+#### Date and Time Types
 
 #### Epochs
 
