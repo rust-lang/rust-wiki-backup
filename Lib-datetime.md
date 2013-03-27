@@ -157,12 +157,13 @@ Options:
 
 #### Epochs
 
+Options:
   * **Julian Day**: -4714-11-24T12:00:00Z
-    * Used by: ?
+    * Used by: Qt
   * **Modified Julian Day**: 1858-11-17T00:00:00Z
     * Used by: Haskell
   * **Unix Time**: 1970-01-01T00:00:00Z
-    * Used by: Go, Unix 
+    * Used by: Go, Unix
   * **2001-01-01T00:00:00Z**
     * Used by: Apple Cocoa
 
