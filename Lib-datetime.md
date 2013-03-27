@@ -156,9 +156,9 @@ Options:
   * integers
     * Used by:
       * Boost
-      * Go: int64 (seconds since Unix epoch) + int32 (nanoseconds)
-      * Haskell: arbitrary-precision integers
-      * Qt: int64 (days since Julian epoch)
+      * Go: int64 (seconds since Unix Time epoch) + int32 (nanoseconds)
+      * Haskell: arbitrary-precision integers (days since Modified Julian Day epoch)
+      * Qt: int64 (days since Julian Day epoch)
       * Ruby: int
     * Cons:
       * ?
@@ -245,7 +245,6 @@ Options:
             - Location
   1. Language: Haskell
     - [Data.Time](http://www.haskell.org/ghc/docs/latest/html/libraries/time-1.4.0.1/index.html)
-        - uses Modified Julian Day count internally
   1. Language: Java
     - [JSR-310](https://github.com/ThreeTen/threeten)
     - [Joda-Time](https://github.com/JodaOrg/joda-time)
