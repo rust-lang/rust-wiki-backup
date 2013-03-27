@@ -137,7 +137,7 @@ Options:
       * more space-efficient
       * ?
   * having only one type for Date/Time 
-    * Used by: Go
+    * Used by: Go, .Net
     * Cons:
       * loss of expressiveness (e.g. for acquaintances' birthdays often the time of birth is not known)
       * ?
