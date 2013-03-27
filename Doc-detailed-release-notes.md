@@ -132,8 +132,7 @@ fn main() {
 
 ### Changes to the borrow check and borrowed pointers
 
-TODO: write barriers, &mut, 'l
-
+  - Borrowing a mutable managed pointer (i.e. passing `@mut T` to an argument of type `&T` or `&mut T`) changed. The borrow is now performed with a dynamic (runtime) write-barrier check that can fail if multiple borrows are performed on the same value. In other words, the type `@mut T` now behaves like the library module `Mut<T>` did in 0.5. This change means that a class of potential errors -- multiple mutable aliases of the same memory -- that was formerly prohibited by a conservative static rule in 0.5 will be left to a dynamic check at runtime in 0.6. Experience with the rule present in 0.5 and before demonstrated that the static rule was too restrictive to be useful in practice. We will monitor the resulting semantics carefully to see if the new dynamic failure mode occurs frequently in practice.
 
 ### Further adjustments to name resolution
 
@@ -145,7 +144,7 @@ TODO: write barriers, &mut, 'l
 
   - the nil type `()` is now properly 0 bytes
   - the "main function" of an executable crate -- where execution begins -- does not need to be called `main` anymore. While `main` is the default, any function marked with the attribute `#[main]` will override this behavior.
-  - The default behavior of an inferred closure is now &fn.
+  - The default type of an inferred closure (such as `|x| x+1`) is now `&fn` rather than `@fn` as it was in 0.5.
 
 ## 0.5 December 2012
 
