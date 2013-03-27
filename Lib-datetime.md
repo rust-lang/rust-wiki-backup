@@ -104,7 +104,7 @@ See ISO 8601 which relies on IEC 60050-111, IEC 60050-713.
 
   * Conversion Gregorian Date <=> Julian Day
     * Letter to the editor of Communications of the ACM (CACM, volume 11, number 10, October 1968, p.657) Henry F. Fliegel and Thomas C. Van Flandern
-
+    * 1582-10-04 => 1582-10-15
 
 #### Relevant standards and techniques exist?
 #### Those intended to follow (and why)
