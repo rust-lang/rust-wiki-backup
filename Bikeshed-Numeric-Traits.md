@@ -280,23 +280,28 @@ trait NativeMath {
 
 ## Alternative idea: Add more generics to numerical traits ##
 The following is a lose idea which may or may not work.
+
 ~~~
 trait AllNumOperations <A, B : One + Zero> Multiplicative<A, B> + Additive<A, B>
 trait CummutativeOperations <A : AllNumOperations<Self, B>, B> : AllNumOperations <A, B>;
 ~~~
+
 The benefit of this approach is that you can specify things like 
 * impl CummutativeOperations<Int, F32> for F32 { .. };
 * impl CummutativeOperations<UInt, F16> for F16 { .. };
 * impl CummutativeOperations<Float, SymbolicExpression> for SymbolicExpression { .. };
 * impl AllNumOperations<SparseMatrix, FullMatrix> for FullMatrix { .. }; 
 Hopefully this will help the user to do less casting. Similarly it may be useful to compare ints with floats, so perhaps the Ord trait could be generic as well.
+
 ~~~
 trait Ord < A >: Eq < A >{
   fn lt(&self, other: &A) -> bool;
   ...
 }
 ~~~
+
 Lastly it might be useful to disallow integer division, because this is a common source of error. (A function of two variables would be more explicit), but this appears to be a minority view 
+
 ~~~
 trait NumOpExceptDivison <A, B : One + Zero> Mul<A, B> + Additive<A, B>
 impl NumOpExceptDivison <uint, uint> for unit {..}
