@@ -50,9 +50,7 @@ For the most up to date information, the best source is often to ask in [#rust o
 
 ## Blogs
 
-People sometimes write about Rust.
-
-[Niko], [Patrick], [Graydon], [Brian], [Tim], [Ben], [Eric Holk], [Erick Tryzelaar], [Zack]
+People sometimes write about Rust: [Niko], [Patrick], [Graydon], [Brian], [Tim], [Ben], [Eric Holk], [Erick Tryzelaar], [Zack]
 
 Interesting stuff usually appears on [r/rust].
 
@@ -67,3 +65,11 @@ Interesting stuff usually appears on [r/rust].
 [Zack]: http://blog.z0w0.me/
 
 [r/rust]: http://reddit.com/r/rust
+
+Some Rust classics:
+
+* [An Overview of Memory Management in Rust](http://pcwalton.github.com/blog/2013/03/18/an-overview-of-memory-management-in-rust/)
+* [Embedding Rust in Ruby](http://brson.github.com/2013/03/10/embedding-rust-in-ruby/)
+* [Which Pointer Should I Use?](http://pcwalton.github.com/blog/2013/03/09/which-pointer-should-i-use/)
+* [A First Parallel Program in Rust](http://blog.leahhanson.us/a-first-parallel-program-in-rust.html)
+* [FizzBuzz Revisited](http://composition.al/blog/2013/03/02/fizzbuzz-revisited/)
