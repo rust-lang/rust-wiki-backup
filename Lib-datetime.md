@@ -84,24 +84,21 @@ See ISO 8601 which relies on IEC 60050-111, IEC 60050-713.
     - 1582-10-04 last day of the Julian calendar, followed by
     - 1582-10-15 first day of the Gregorian calendar
   1. [ITU-R TF.460-5](http://www.itu.int/dms_pubrec/itu-r/rec/tf/R-REC-TF.460-5-199710-S!!PDF-E.pdf)
-  1. Coordinated Universal Time (UTC)
-    - http://en.wikipedia.org/wiki/Coordinated_Universal_Time
+  1. [Coordinated Universal Time (UTC)](http://en.wikipedia.org/wiki/Coordinated_Universal_Time)
     - [Leap second](http://en.wikipedia.org/wiki/Leap_second)
-  1. Julian Day
-    - http://en.wikipedia.org/wiki/Julian_day#Alternatives
+  1. [Julian Day](http://en.wikipedia.org/wiki/Julian_day)
     - Epoch: -4714-11-24T12:00:00Z
   1. Modified Julian Day
     - Epoch: 1858-11-17T00:00:00Z
     - MJD = JD - 2400000.5
-  1. Unix Time
+  1. [Unix Time](http://en.wikipedia.org/wiki/Unix_Time)
     - Epoch: 1970-01-01T00:00:00Z
     - UnixTime = (JD − 2440587.5) × 86400
   1. TAI (Temps Atomique International)
     - The underlying atomic time, non-leap seconds
     - [International Atomic Time](https://en.wikipedia.org/wiki/International_Atomic_Time)
     - [UTC vs. TAI discussion](http://cr.yp.to/proto/utctai.html)
-  1. Network Time Protocol
-    - http://en.wikipedia.org/wiki/Network_Time_Protocol
+  1. [Network Time Protocol](http://en.wikipedia.org/wiki/Network_Time_Protocol)
 
 #### Techniques
 
