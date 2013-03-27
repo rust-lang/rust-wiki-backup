@@ -73,26 +73,33 @@ See ISO 8601 which relies on IEC 60050-111, IEC 60050-713.
   - _note_
   - _note_
 
+
 ## 2. Research of standards and techniques
 
+### Summary of research on standards and leading techniques
+
+#### Standards
   1. [ISO 31-1](http://en.wikipedia.org/wiki/ISO_31-1) defines the units **day, hour, minute, second** for time, time interval and duration
   1. [ISO 8601](http://en.wikipedia.org/wiki/ISO_8601)
     - uses the [Gregorian calendar](http://en.wikipedia.org/wiki/Gregorian_calendar) to identify calendar days
   1. [ITU-R TF.460-5](http://www.itu.int/dms_pubrec/itu-r/rec/tf/R-REC-TF.460-5-199710-S!!PDF-E.pdf)
-  1. Standard: Coordinated Universal Time (UTC)
+  1. Coordinated Universal Time (UTC)
     - http://en.wikipedia.org/wiki/Coordinated_Universal_Time
     - [Leap second](http://en.wikipedia.org/wiki/Leap_second)
-  1. Standard: Julian Day
+  1. Julian Day
     - http://en.wikipedia.org/wiki/Julian_day#Alternatives
-  1. Standard: TAI (Temps Atomique International)
+  1. TAI (Temps Atomique International)
     - The underlying atomic time, non-leap seconds
     - [International Atomic Time](https://en.wikipedia.org/wiki/International_Atomic_Time)
     - [UTC vs. TAI discussion](http://cr.yp.to/proto/utctai.html)
   1. Network Time Protocol
     - http://en.wikipedia.org/wiki/Network_Time_Protocol
 
+#### Techniques
 
-### Summary of research on standards and leading techniques
+  * Conversion Gregorian Date <=> Julian Day
+    * Letter to the editor of Communications of the ACM (CACM, volume 11, number 10, October 1968, p.657) Henry F. Fliegel and Thomas C. Van Flandern
+
 
 #### Relevant standards and techniques exist?
 #### Those intended to follow (and why)
