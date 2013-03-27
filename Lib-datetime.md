@@ -11,6 +11,7 @@ A library for date, time and date/time.
   * **International Atomic Time (TAI)**: ?
   * **Coordinated Universal Time (UTC)**: is the primary time scale by which the world regulates clocks and time.
   * **Standard Time**: the result of synchronizing clocks in different geographical locations within a time zone to the same time.
+  * **Local Time**: a time in the local non-UTC based standard time
 
 See ISO 8601 which relies on IEC 60050-111, IEC 60050-713.
 
