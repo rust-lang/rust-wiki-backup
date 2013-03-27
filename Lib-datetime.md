@@ -165,8 +165,6 @@ Options:
       * more space efficient
       * lossless calculations 
 
-#### Date and Time Types
-
 #### Epochs
 
 Options:
