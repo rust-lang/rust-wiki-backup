@@ -195,18 +195,6 @@ Options:
     * Pros:
       * ?
 
-
-#### Structures and functions commonly appearing
-
-  * the primary calendar system is ISO 8601
-  * other calendar systems focus on user input/output localization 
-
-#### Variations on implementation seen
-
-#### Pitfalls and hazards associated with each variant
-
-#### Relationship to other libraries and/or abstract interfaces
-
 #### Reference
   1. Language: C
     - [time.h](http://pubs.opengroup.org/onlinepubs/7908799/xsh/time.h.html)
