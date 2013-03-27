@@ -95,6 +95,7 @@ See ISO 8601 which relies on IEC 60050-111, IEC 60050-713.
     - MJD = JD - 2400000.5
   1. Unix Time
     - Epoch: 1970-01-01T00:00:00Z
+    - UnixTime = (JD − 2440587.5) × 86400
   1. TAI (Temps Atomique International)
     - The underlying atomic time, non-leap seconds
     - [International Atomic Time](https://en.wikipedia.org/wiki/International_Atomic_Time)
