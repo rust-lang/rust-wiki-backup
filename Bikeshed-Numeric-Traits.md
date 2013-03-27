@@ -291,6 +291,7 @@ The benefit of this approach is that you can specify things like
 * impl CummutativeOperations<UInt, F16> for F16 { .. };
 * impl CummutativeOperations<Float, SymbolicExpression> for SymbolicExpression { .. };
 * impl AllNumOperations<SparseMatrix, FullMatrix> for FullMatrix { .. }; 
+
 Hopefully this will help the user to do less casting. Similarly it may be useful to compare ints with floats, so perhaps the Ord trait could be generic as well.
 
 ~~~
