@@ -115,23 +115,25 @@ Used by: Boost, Cocoa, JSR-310
 
 #### Date and Time Types
 
-There are two possible approaches:
-
+Options:
   * having separate types for Date, Time and Date/Time
     * Used by: Qt
     * Cons:
       * ?
     * Pros:
+      * more space efficient
       * ?
   * having only one type for Date/Time 
     * Used by: Go
     * Cons:
+      * loss of expressiveness (e.g. for acquaintances' birthdays often the time of birth is not known)
       * ?
     * Pros:
       * ?
    
 #### Underlying Representation
 
+Options:
   * floats
     * Used by: ?
     * Cons:
