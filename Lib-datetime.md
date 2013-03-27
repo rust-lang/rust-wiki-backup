@@ -88,6 +88,12 @@ See ISO 8601 which relies on IEC 60050-111, IEC 60050-713.
     - [Leap second](http://en.wikipedia.org/wiki/Leap_second)
   1. Julian Day
     - http://en.wikipedia.org/wiki/Julian_day#Alternatives
+    - Epoch: -4714-11-24T12:00:00Z
+  1. Modified Julian Day
+    - Epoch: 1858-11-17T00:00:00Z
+    - MJD = JD - 2400000.5
+  1. Unix Time
+    - Epoch: 1970-01-01T00:00:00Z
   1. TAI (Temps Atomique International)
     - The underlying atomic time, non-leap seconds
     - [International Atomic Time](https://en.wikipedia.org/wiki/International_Atomic_Time)
@@ -165,11 +171,11 @@ Options:
 #### Epochs
 
 Options:
-  * **Julian Day**: -4714-11-24T12:00:00Z
+  * **Julian Day**
     * Used by: Qt
-  * **Modified Julian Day**: 1858-11-17T00:00:00Z
+  * **Modified Julian Day**
     * Used by: Haskell
-  * **Unix Time**: 1970-01-01T00:00:00Z
+  * **Unix Time**
     * Used by: Go, Unix
   * **2001-01-01T00:00:00Z**
     * Used by: Apple Cocoa
