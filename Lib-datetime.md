@@ -133,7 +133,7 @@ Options:
     * Cons:
       * ?
     * Pros:
-      * more space efficient
+      * more space-efficient
       * ?
   * having only one type for Date/Time 
     * Used by: Go
@@ -162,7 +162,7 @@ Options:
       * ?
     * Pros:
       * faster comparison and calculation
-      * more space efficient
+      * more space-efficient
       * lossless calculations 
 
 #### Epochs
