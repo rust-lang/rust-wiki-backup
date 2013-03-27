@@ -143,7 +143,9 @@ There are two possible approaches:
     * Cons:
       * ?
     * Pros:
-      * ?
+      * faster comparison and calculation
+      * more space efficient
+      * lossless calculations 
 
 #### Date and Time Types
 
