@@ -126,6 +126,7 @@ See ISO 8601 which relies on IEC 60050-111, IEC 60050-713.
 Used by: Boost, Cocoa, JSR-310
 
 #### Gregorian Calendar
+Widely adopted.
 
 #### Date and Time Types
 
