@@ -108,6 +108,16 @@ See ISO 8601 which relies on IEC 60050-111, IEC 60050-713.
   * [Proposal to Add Date-Time to the C++ Standard Library](http://www.crystalclearsoftware.com/libraries/date_time/proposal_v75/date_time_standard.html)
   * https://github.com/ThreeTen/threeten/wiki/Multi-calendar-system
 
+#### Techniques
+
+  * Types
+    * Date/Time/DateTime
+      * Used by: Qt
+    * Time
+      * Used by: Go
+  * Simple immutable objects 
+    * Used by: Cocoa, JSR-310
+
 #### Epochs
 
   * **Julian Day**: -4714-11-24T12:00:00Z
@@ -118,16 +128,6 @@ See ISO 8601 which relies on IEC 60050-111, IEC 60050-713.
     * Used by: Go, Unix 
   * **2001-01-01T00:00:00Z**
     * Used by: Apple Cocoa
-
-#### Techniques
-
-  * Types
-    * Date/Time/DateTime
-      * Used by: Qt
-    * Time
-      * Used by: Go
-  * Simple immutable objects 
-    * Used by: Cocoa, JSR-310
 
 
 #### Structures and functions commonly appearing
