@@ -198,6 +198,7 @@ Options:
 #### Reference
   1. Language: C
     - [time.h](http://pubs.opengroup.org/onlinepubs/7908799/xsh/time.h.html)
+    - [glib](https://developer.gnome.org/glib/2.36/glib-Date-and-Time-Functions.html)
     - [libtai](http://cr.yp.to/libtai.html)
   1. Language: C++
     - [Boost.Date_Time](http://www.boost.org/doc/libs/1_53_0/doc/html/date_time.html)
