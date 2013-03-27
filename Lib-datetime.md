@@ -173,12 +173,28 @@ Options:
 Options:
   * **Julian Day**
     * Used by: Qt
+    * Cons:
+      * ?
+    * Pros:
+      * ?
   * **Modified Julian Day**
     * Used by: Haskell
+    * Cons:
+      * ?
+    * Pros:
+      * ?
   * **Unix Time**
     * Used by: Go, Unix
+    * Cons:
+      * ?
+    * Pros:
+      * ?
   * **2001-01-01T00:00:00Z**
     * Used by: Apple Cocoa
+    * Cons:
+      * ?
+    * Pros:
+      * ?
 
 
 #### Structures and functions commonly appearing
