@@ -282,7 +282,7 @@ trait NativeMath {
 The following is a lose idea which may or may not work.
 
 ~~~
-trait AllNumOperations <A, B : One + Zero> Multiplicative<A, B> + Additive<A, B>
+trait AllNumOperations <A: One + Zero, B > Multiplicative<A, B> + Additive<A, B>
 trait CummutativeOperations <A : AllNumOperations<Self, B>, B> : AllNumOperations <A, B>;
 ~~~
 
@@ -291,7 +291,7 @@ The benefit of this approach is that you can specify things like
 ~~~
 impl CummutativeOperations<Int, F32> for F32 { .. };
 impl CummutativeOperations<UInt, F16> for F16 { .. };
-impl CummutativeOperations<Float, SymbolicExpression> for SymbolicExpression { .. };
+impl CummutativeOperations<F32, SymbolicExpression> for SymbolicExpression { .. };
 impl AllNumOperations<SparseMatrix, FullMatrix> for FullMatrix { .. }; 
 ~~~
 
@@ -304,7 +304,7 @@ trait Ord < A >: Eq < A >{
 }
 ~~~
 
-Lastly it might be useful to disallow integer division, because this is a common source of error. (A function of two variables would be more explicit), but this appears to be a minority view 
+Lastly it might be useful to disallow integer division, because this is a common source of error. (A function of two variables would be more explicit) 
 
 ~~~
 trait NumOpExceptDivison <A, B : One + Zero> Mul<A, B> + Additive<A, B>
