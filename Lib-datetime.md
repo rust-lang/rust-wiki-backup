@@ -124,6 +124,23 @@ See ISO 8601 which relies on IEC 60050-111, IEC 60050-713.
 
 ## 3. Research of libraries from other languages
 
+### Summary of research from other languages:
+
+  * [Proposal to Add Date-Time to the C++ Standard Library](http://www.crystalclearsoftware.com/libraries/date_time/proposal_v75/date_time_standard.html)
+  * https://github.com/ThreeTen/threeten/wiki/Multi-calendar-system
+
+#### Structures and functions commonly appearing
+
+  * the primary calendar system is ISO 8601
+  * other calendar systems focus on user input/output localization 
+
+#### Variations on implementation seen
+
+#### Pitfalls and hazards associated with each variant
+
+#### Relationship to other libraries and/or abstract interfaces
+
+#### Reference
   1. Language: C
     - [time.h](http://pubs.opengroup.org/onlinepubs/7908799/xsh/time.h.html)
     - [libtai](http://cr.yp.to/libtai.html)
@@ -194,23 +211,6 @@ See ISO 8601 which relies on IEC 60050-111, IEC 60050-713.
     - [Date](http://ruby-doc.org/stdlib-2.0/libdoc/date/rdoc/Date.html)
   1. Language: Scheme
     - [SRFI 19](http://srfi.schemers.org/srfi-19/srfi-19.html)
-
-### Summary of research from other languages:
-
-  * [Proposal to Add Date-Time to the C++ Standard Library](http://www.crystalclearsoftware.com/libraries/date_time/proposal_v75/date_time_standard.html)
-  * https://github.com/ThreeTen/threeten/wiki/Multi-calendar-system
-
-#### Structures and functions commonly appearing
-
-  * the primary calendar system is ISO 8601
-  * other calendar systems focus on user input/output localization 
-
-#### Variations on implementation seen
-
-#### Pitfalls and hazards associated with each variant
-
-#### Relationship to other libraries and/or abstract interfaces
-
 
 ## 4. Module writing
 
