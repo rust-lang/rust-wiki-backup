@@ -34,13 +34,11 @@ See ISO 8601 which relies on IEC 60050-111, IEC 60050-713.
 
 #### Conversion to/from other date representations
 
-  * **Date -> year, month, day**
-  * **Date <- year, month, day**
+  * **Date -> Gregorian Date (y,m,d)**
+  * **Date <- Gregorian Date (y,m,d)**
     * Feb 29 should be legal/illegal depending on leap years
-  * **Date <-> Julian Day**
-  * **Date -> year number**
-  * **Date -> month number**
-    * should we use an enum instead?
+  * **Date <- Julian Day**
+  * **Date -> Julian Day**
   * **Date -> week number**
   * **Date -> day number**
   * **Date -> day of year number**
