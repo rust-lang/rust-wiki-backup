@@ -108,15 +108,19 @@ See ISO 8601 which relies on IEC 60050-111, IEC 60050-713.
   * [Proposal to Add Date-Time to the C++ Standard Library](http://www.crystalclearsoftware.com/libraries/date_time/proposal_v75/date_time_standard.html)
   * https://github.com/ThreeTen/threeten/wiki/Multi-calendar-system
 
-#### Techniques
+#### Simple immutable objects 
+Used by: Cocoa, JSR-310
 
-  * Types
+#### Gregorian Calendar
+
+#### Date and Time Types
+There are two possible approaches:
+
+  * having separate ´types for Date and Time 
     * Date/Time/DateTime
       * Used by: Qt
-    * Time
+  * having only one type for Date/Time 
       * Used by: Go
-  * Simple immutable objects 
-    * Used by: Cocoa, JSR-310
 
 #### Epochs
 
