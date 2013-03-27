@@ -141,7 +141,11 @@ Options:
     * Pros:
       * ?
   * integers
-    * Used by: Boost, Go, Haskell, Ruby
+    * Used by:
+      * Boost
+      * Go: int64 (seconds) + int32 (nanoseconds)
+      * Haskell: arbitrary-precision integers
+      * Ruby: int
     * Cons:
       * ?
     * Pros:
