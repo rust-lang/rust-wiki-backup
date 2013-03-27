@@ -156,8 +156,9 @@ Options:
   * integers
     * Used by:
       * Boost
-      * Go: int64 (seconds) + int32 (nanoseconds)
+      * Go: int64 (seconds since Unix epoch) + int32 (nanoseconds)
       * Haskell: arbitrary-precision integers
+      * Qt: int64 (days since Julian epoch)
       * Ruby: int
     * Cons:
       * ?
