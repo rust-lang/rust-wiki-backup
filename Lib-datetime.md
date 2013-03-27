@@ -141,7 +141,7 @@ Options:
     * Pros:
       * ?
   * integers
-    * Used by: Boost, Go, Haskell
+    * Used by: Boost, Go, Haskell, Ruby
     * Cons:
       * ?
     * Pros:
