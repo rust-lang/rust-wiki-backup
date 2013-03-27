@@ -308,7 +308,7 @@ Lastly it might be useful to disallow integer division, because this is a common
 
 ~~~
 trait NumOpExceptDivison <A, B : One + Zero> Mul<A, B> + Additive<A, B>
-impl NumOpExceptDivison <uint, uint> for unit {..}
+impl NumOpExceptDivison <uint, uint> for uint {..}
 ~~~
 
 ## Related Changes ##nt 
