@@ -141,7 +141,7 @@ Options:
     * Pros:
       * ?
    
-#### Underlying Representation
+#### Integers vs floats
 
 All representations are based on the time passed from a certain epoch, either counted in days or seconds/milliseconds/nanoseconds.
 
