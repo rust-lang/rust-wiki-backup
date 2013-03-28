@@ -147,6 +147,10 @@ fn main() {
   - the "main function" of an executable crate -- where execution begins -- does not need to be called `main` anymore. While `main` is the default, any function marked with the attribute `#[main]` will override this behavior.
   - The default type of an inferred closure (such as `|x| x+1`) is now `&fn` rather than `@fn` as it was in 0.5.
 
+### TODO
+
+inline asm
+
 ## 0.5 December 2012
 
 This was a fairly slow development cycle that focused on implementing more trait features, such as trait inheritance and static methods, with the goal of enabling more expressive standard libraries. This version more-or-less completes Rust's long transition to a linear type system, with non-copyable types moving automatically (the `move` keyword is deprecated).
