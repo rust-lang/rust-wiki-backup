@@ -147,9 +147,83 @@ fn main() {
   - the "main function" of an executable crate -- where execution begins -- does not need to be called `main` anymore. While `main` is the default, any function marked with the attribute `#[main]` will override this behavior.
   - The default type of an inferred closure (such as `|x| x+1`) is now `&fn` rather than `@fn` as it was in 0.5.
 
-### TODO
+### Inline Assembly
 
-inline asm
+Rust now supports using inline assembly through the `asm!` macro. The syntax roughly matches that of gcc/clang:
+
+```
+asm!(assembly template
+   : output operands
+   : input operands
+   : clobbers
+   : options
+   );
+```
+
+`asm!` must be wrapped in an `unsafe` block.
+
+**Assembly Template**
+
+The `assembly template` is the only required parameter and must be a literal string (i.e `""`)
+
+```
+asm!("NOP");
+```
+
+Output operands, input operands, clobbers and options are all optional but you must add the right number of `:` if you skip them:
+
+```
+asm!("xor %eax, %eax"
+    :
+    :
+    : "eax"
+   );
+```
+Whitespace also doesn't matter:
+```
+asm!("xor %eax, %eax" ::: "eax");
+```
+
+**Operands**
+
+Input and output operands follow the same format: `: "constraints1"(expr1), "constraints2"(expr2), ..."`. Output operand expressions must be mutable lvalues:
+
+```
+fn add(a: int, b: int) -> int {
+    let mut c = 0;
+    unsafe {
+        asm!("add $2, $0"
+             : "=r"(c)
+             : "0"(a), "r"(b)
+             );
+    }
+    c
+}
+```
+
+**Clobbers**
+
+Some instructions modify registers which might otherwise have held different values so we use the clobbers list to indicate to the compiler not to assume any values loaded into those registers will stay valid.
+```
+// Put the value 0x200 in eax
+asm!("mov $$0x200, %eax" : /* no outputs */ : /* no inputs */ : "eax");
+```
+
+Input and output registers need not be listed since that information is already communicated by the given constraints. Otherwise, any other registers used either implicitly or explicitly should be listed.
+
+If the assembly changes the condition code register `cc` should be specified as one of the clobbers. Similarly, if the assembly modifies memory, `memory` should also be specified.
+
+**Options**
+
+The last section, `options` is specific to Rust. The format is comma separated literal strings (i.e `:"foo", "bar", "baz"`). It's used to specify some extra info about the inline assembly:
+
+Current valid options are:
+
+1. **volatile** - specifying this is analogous to `__asm__ __volatile__ (...)` in gcc/clang.
+
+2. **alignstack** - certain instructions expect the stack to be aligned a certain way (i.e SSE) and specifying this indicates to the compiler to insert its usual stack alignment code
+
+3. **intel** - use intel syntax instead of the default AT&T.
 
 ## 0.5 December 2012
 
