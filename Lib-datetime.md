@@ -130,14 +130,14 @@ Widely adopted.
 
 Options:
   * having separate types for Date, (Clock) Time and Date/Time
-    * Used by: Boost, Haskell, Python, Qt, Ruby
+    * Used by: Boost, Haskell, Joda, Python, Qt, Ruby
     * Cons:
       * ?
     * Pros:
       * more space-efficient
       * ?
   * having only one type for Date/Time 
-    * Used by: Go, .Net
+    * Used by: Cocoa, Go, .Net
     * Cons:
       * loss of expressiveness (e.g. for acquaintances' birthdays often the time of birth is not known)
       * ?
