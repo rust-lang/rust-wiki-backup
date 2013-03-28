@@ -195,12 +195,12 @@ Options:
     * Pros:
       * ?
 
-#### Interfaces
+#### Separate Date/Time and Calendar interfaces
 
 Options:
-  * DateTime coupled to a calendar
+  * DateTime interface coupled to a calendar
     * Used by: Qt
-  * DateTime independent of a calendar
+  * DateTime interface independent of a calendar
     * Used by: Boost, Cocoa, Joda
 
 
