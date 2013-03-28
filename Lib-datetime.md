@@ -129,7 +129,7 @@ Widely adopted.
 #### Date and Time Types
 
 Options:
-  * having separate types for Date, (Clock) Time and Date/Time
+  * having separate types for Date and Time
     * Used by: Boost, Haskell, Joda, Python, Qt, Ruby
     * Cons:
       * ?
