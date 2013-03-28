@@ -137,6 +137,7 @@ fn main() {
 ### Further adjustments to name resolution
 
   - `use` statements are now crate-relative by default, meaning that they resolve from the "top" of the crate.
+  - As a specific corollary: "chained" `use` statements -- those that refer to abbreviated names when finding targets -- are no longer legal. For example: `use std::libc; use libc::raw;` must now be written `use std::libc; use std::libc::raw;`.
   - The `super` and `self` can be used in paths to refer to parent modules and the current module, respectively.
   - `extern mod` statements must occur before `use` statements, and `use` statements can now shadow `extern mod` statements (rather than vice-versa, as was the case in 0.5). This change makes the shadowing behavior between `extern mod`, `use` and module-local item definitions consistent with the (required) order of writing them.
 
