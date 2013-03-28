@@ -148,7 +148,8 @@ Options:
 
 Options:
   * floats
-    * Used by: Cocoa (NSTimeInterval)
+    * Used by:
+      * Cocoa: NSTimeInterval := double (seconds since the Cocoa epoch)
     * Cons:
       * ?
     * Pros:
@@ -156,10 +157,10 @@ Options:
   * integers
     * Used by:
       * Boost
-      * Go: int64 (seconds since Unix Time epoch) + int32 (nanoseconds)
+      * Go: int64 (seconds since the Unix Time epoch) + int32 (nanoseconds)
       * Haskell: arbitrary-precision integers (days since Modified Julian Day epoch)
-      * Qt: int64 (days since Julian Day epoch)
-      * Ruby: int (days since Julian Day epoch)
+      * Qt: int64 (days since the Julian Day epoch)
+      * Ruby: int (days since the Julian Day epoch)
     * Cons:
       * ?
     * Pros:
