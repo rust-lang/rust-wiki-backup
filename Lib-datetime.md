@@ -196,6 +196,15 @@ Options:
     * Pros:
       * ?
 
+#### Interfaces
+
+Options:
+  * DateTime coupled to a calendar
+    * Used by: Qt
+  * DateTime independent of a calendar
+    * Used by: Boost, Cocoa, Joda
+
+
 #### Reference
   1. Language: C
     - [time.h](http://pubs.opengroup.org/onlinepubs/7908799/xsh/time.h.html)
