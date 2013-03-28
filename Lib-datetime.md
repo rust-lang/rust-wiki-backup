@@ -148,7 +148,7 @@ Options:
 
 Options:
   * floats
-    * Used by: ?
+    * Used by: Cocoa (NSTimeInterval)
     * Cons:
       * ?
     * Pros:
