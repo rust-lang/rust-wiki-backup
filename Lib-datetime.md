@@ -123,10 +123,7 @@ See ISO 8601 which relies on IEC 60050-111, IEC 60050-713.
 #### Simple immutable objects 
 Used by: Boost, Cocoa, JSR-310
 
-#### Gregorian Calendar
-Widely adopted.
-
-#### Date and Time Types
+#### Separate Date and Time types
 
 Options:
   * having separate types for Date and Time
@@ -145,6 +142,8 @@ Options:
       * ?
    
 #### Underlying Representation
+
+All representations are based on the time passed from a certain epoch, either counted in days or seconds/milliseconds/nanoseconds.
 
 Options:
   * floats
