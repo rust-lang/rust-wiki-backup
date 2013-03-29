@@ -23,6 +23,7 @@ See ISO 8601 which relies on IEC 60050-111, IEC 60050-713.
   * high resolution
   * network time sources
   * daylight saving time
+  * eras, e.g. BC/AD
 
 #### Types
 
