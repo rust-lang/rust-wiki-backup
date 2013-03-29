@@ -1,4 +1,4 @@
-These are preliminary build instructions for Android. Note that ARM and Android integration are still very early and incomplete. Some [features](https://github.com/mozilla/rust/issues?labels=A-android&page=1&state=open) do not work yet, and as such this information is for hackers that want to work on the ARM port. It is strongly recommended to use the Rust 'incoming' branch (not any released version).
+These are preliminary build instructions for Android. Note that ARM and Android integration are still very early and incomplete. Some [features](https://github.com/mozilla/rust/issues?labels=A-android&page=1&state=open) do not work yet, and as such this information is primarily for hackers that want to work on the ARM port.
 
 1. setup android ndk standalone tool chain with platform=14 option
 
