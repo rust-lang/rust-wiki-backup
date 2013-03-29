@@ -25,3 +25,4 @@ Listing of notes for developers
 ## Miscellaneous notes
 
 * [[Note seeing LLVM output from rust]]
+* [[Note packaging]]
