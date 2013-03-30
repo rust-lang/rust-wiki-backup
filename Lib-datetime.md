@@ -162,19 +162,45 @@ Options:
   * Date/Time coupled to a calendar
     * Used by:
       * Qt: Gregorian calendar
+    * Cons:
+      * ?
+    * Pros:
+      * ?
   * Date/Time tied to a configurable calendar
     * Used by: Boost, Joda
+    * Cons:
+      * ?
+    * Pros:
+      * ?
   * Date/Time independent of a calendar
     * Used by: Cocoa
+    * Cons:
+      * ?
+    * Pros:
+      * ?
 
 ### Support for Date/Time without a timezone
+
+When the timezone information is missing, e.g. parsing from a textual representation, there are the following options:
+
 Options:
   * support Date/Time with no attached timezone
     * Used by:
       * Joda: LocalDate, LocalTime, LocalDateTime
-  * no support Date/Time with no attached timezone
+    * Cons:
+      * more complex interfaces/types
+      * ?
+    * Pros:
+      * clear distinction between dates that are comparable and date that are not
+      * ?
+  * assume the local timezone if the timezone is not available
     * Used by:
       * Cocoa
+    * Cons:
+      * dates are created that appear to be comparable, but are not. One needs to keep tracks of those dates.
+      * ?
+    * Pros:
+      * ?
 
 
 ### Reference
