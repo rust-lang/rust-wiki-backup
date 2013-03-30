@@ -31,7 +31,7 @@ although they are reserved for future extensions.
 
 .. _OpenCL: http://www.khronos.org/registry/cl/
 
-LLVM has a `vecor type`_ intended to be compiled to SIMD.
+LLVM has a `vector type`_ intended to be compiled to SIMD.
 All integers and floating point types can be element types. Apart from
 Rust's 10 machine types, these include ``i1`` and ``half``.
 There is no restriction on number of elements.
