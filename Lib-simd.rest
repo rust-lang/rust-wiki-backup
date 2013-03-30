@@ -132,7 +132,7 @@ Mono provides Mono.Simd_.
 
 .. _Mono.Simd: http://docs.go-mono.com/?link=N:Mono.Simd
 
-`GHC SIMD` project.
+`GHC SIMD`_ project.
 
 .. _GHC SIMD: http://hackage.haskell.org/trac/ghc/wiki/SIMD
 
