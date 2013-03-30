@@ -1,7 +1,6 @@
 # Containers in the standard libraries
 
-* Mutable:
-    * `core::dlist` (doubly-linked list - uses @ but avoiding that would require `unsafe`)
+* Mutable, owned:
     * `core::vec` (dynamic array)
     * `core::str` (string implemented on top of the same dynamic array as `core::vec`)
     * `core::hashmap` (hash table - set and map)
@@ -11,7 +10,9 @@
     * `std::deque` (ring buffer)
     * `std::priority_queue` (binary heap)
     * `std::bitv`
-* Persistent:
+* Mutable, managed:
+    * `core::dlist` (doubly-linked list - avoiding @ would require `unsafe` and careful thought about nodes)
+* Persistent, managed:
     * `std::list` (singly-linked list)
     * `std::fun_treemap` (unbalanced binary search tree - not very useful)
 
