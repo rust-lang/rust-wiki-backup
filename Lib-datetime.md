@@ -97,6 +97,7 @@ Options:
       * loss of expressiveness (e.g. for acquaintances' birthdays often the time of birth is not known)
       * ?
     * Pros:
+      * simpler interfaces, fewer classes
       * ?
    
 ### Integers vs floats representation
