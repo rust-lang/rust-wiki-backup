@@ -164,6 +164,15 @@ Options:
   * Date/Time independent of a calendar
     * Used by: Cocoa
 
+### Support for Date/Time without a timezone
+Options:
+  * support Date/Time with no attached timezone
+    * Used by:
+      * Joda: LocalDate, LocalTime, LocalDateTime
+  * no support Date/Time with no attached timezone
+    * Used by:
+      * Cocoa
+
 
 ### Reference
   1. Language: C
