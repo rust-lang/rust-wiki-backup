@@ -15,9 +15,7 @@ A library for date, time and date/time.
 
 See ISO 8601 which relies on IEC 60050-111, IEC 60050-713.
 
-### Requirements
-
-#### Things to be aware of
+### Things to be aware of
   * leap seconds
   * infinity
   * high resolution
