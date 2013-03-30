@@ -156,10 +156,13 @@ Options:
 ### Separate Date/Time and Calendar interfaces
 
 Options:
-  * DateTime interface coupled to a calendar
-    * Used by: Qt
-  * DateTime interface independent of a calendar
-    * Used by: Boost, Cocoa, Joda
+  * Date/Time coupled to a calendar
+    * Used by:
+      * Qt: Gregorian calendar
+  * Date/Time tied to a configurable calendar
+    * Used by: Boost, Joda
+  * Date/Time independent of a calendar
+    * Used by: Cocoa
 
 
 ### Reference
