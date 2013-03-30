@@ -25,42 +25,6 @@ See ISO 8601 which relies on IEC 60050-111, IEC 60050-713.
   * daylight saving time
   * eras, e.g. BC/AD
 
-#### Types
-
-  * **Date** represents time points with a resolution of days
-  * **Time** represents XXX
-  * **DateTime** represents time points with a resolution of XXX
-  * **Month** an enum: January, February, ...
-  * **Weekday** an enum: Monday, Tuesday, ...
-
-#### Conversion to/from other date representations
-
-  * **Date -> Gregorian Date (y,m,d)**
-  * **Date <- Gregorian Date (y,m,d)**
-    * Feb 29 should be legal/illegal depending on leap years
-  * **Date <- Julian Day**
-  * **Date -> Julian Day**
-  * **Date -> week number**
-  * **Date -> day number**
-  * **Date -> day of year number**
-  * **Date -> day of week number**
-    * should we use an enum instead?
-
-#### Calculations
-
-  * **Instant +/- Duration** gives a Instant relative to the former
-  * **Instant - Instant** gives the Duration between them
-  * **Duration +/- Duration** gives an extended/reduced Duration
-    * what about negative Durations?
-  * **Period +/- Duration** gives an extended/reduced Period
-    * what about negative Durations?
-
-#### Conversion to/from strings
-
-  * **Date <-> user formatted string**
-  * **Date <-> ISO 8601 string**
-  * **Date <-> localized string**
-
 ## 1. Announcement to mailing list
 
   - Proposed editor: _your name_
@@ -282,3 +246,40 @@ Options:
 ## 4. Module writing
 
   - Pull request: _link to bug_
+
+
+### Types
+
+  * **Date** represents time points with a resolution of days
+  * **Time** represents XXX
+  * **DateTime** represents time points with a resolution of XXX
+  * **Month** an enum: January, February, ...
+  * **Weekday** an enum: Monday, Tuesday, ...
+
+### Conversion to/from other date representations
+
+  * **Date -> Gregorian Date (y,m,d)**
+  * **Date <- Gregorian Date (y,m,d)**
+    * Feb 29 should be legal/illegal depending on leap years
+  * **Date <- Julian Day**
+  * **Date -> Julian Day**
+  * **Date -> week number**
+  * **Date -> day number**
+  * **Date -> day of year number**
+  * **Date -> day of week number**
+    * should we use an enum instead?
+
+### Calculations
+
+  * **Instant +/- Duration** gives a Instant relative to the former
+  * **Instant - Instant** gives the Duration between them
+  * **Duration +/- Duration** gives an extended/reduced Duration
+    * what about negative Durations?
+  * **Period +/- Duration** gives an extended/reduced Period
+    * what about negative Durations?
+
+### Conversion to/from strings
+
+  * **Date <-> user formatted string**
+  * **Date <-> ISO 8601 string**
+  * **Date <-> localized string**
