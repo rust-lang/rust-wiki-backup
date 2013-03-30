@@ -16,10 +16,6 @@
     * `std::list` (singly-linked list)
     * `std::fun_treemap` (unbalanced binary search tree - not very useful)
 
-# Obsolete (to be removed)
-
-* `std::oldmap` (chaining-based hash table using lots of @ and mut fields) - [#4986](https://github.com/mozilla/rust/issues/4986)
-
 # Wanted
 
 * B-tree (Map and Set implementations) - [#4992](https://github.com/mozilla/rust/issues/4992)
