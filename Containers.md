@@ -11,7 +11,7 @@
     * `std::priority_queue` (binary heap)
     * `std::bitv`
 * Mutable, managed:
-    * `core::dlist` (doubly-linked list - avoiding @ would require `unsafe` and careful thought about nodes)
+    * `core::dlist` (doubly-linked list - avoiding @ requires `unsafe` and being careful with nodes)
 * Persistent, managed:
     * `std::list` (singly-linked list)
     * `std::fun_treemap` (unbalanced binary search tree - not very useful)
