@@ -1,4 +1,4 @@
-A library for date, time and date/time.
+A library for date and time.
 
 ### Concepts
 
@@ -38,9 +38,7 @@ See ISO 8601 which relies on IEC 60050-111, IEC 60050-713.
 
 ## 2. Research of standards and techniques
 
-### Summary of research on standards and leading techniques
-
-#### Standards
+### Standards
   1. [ISO 31-1](http://en.wikipedia.org/wiki/ISO_31-1) defines the units **day, hour, minute, second** for time, time interval and duration
   1. [ISO 8601](http://en.wikipedia.org/wiki/ISO_8601)days
   1. [Gregorian calendar](http://en.wikipedia.org/wiki/Gregorian_calendar)
@@ -63,30 +61,27 @@ See ISO 8601 which relies on IEC 60050-111, IEC 60050-713.
     - [UTC vs. TAI discussion](http://cr.yp.to/proto/utctai.html)
   1. [Network Time Protocol](http://en.wikipedia.org/wiki/Network_Time_Protocol)
 
-#### Techniques
+### Techniques
 
   * Conversion Gregorian Date <=> Julian Day
     * Letter to the editor of Communications of the ACM (CACM, volume 11, number 10, October 1968, p.657) Henry F. Fliegel and Thomas C. Van Flandern
     * 1582-10-04 => 1582-10-15
 
-#### Relevant standards and techniques exist?
-#### Those intended to follow (and why)
+### Those intended to follow (and why)
 
-#### Those intended to ignore (and why)
+### Those intended to ignore (and why)
 
 
 
 ## 3. Research of libraries from other languages
 
-### Summary of research from other languages:
-
   * [Proposal to Add Date-Time to the C++ Standard Library](http://www.crystalclearsoftware.com/libraries/date_time/proposal_v75/date_time_standard.html)
   * https://github.com/ThreeTen/threeten/wiki/Multi-calendar-system
 
-#### Simple immutable objects 
+### Simple immutable objects 
 Used by: Boost, Cocoa, JSR-310
 
-#### Separate Date and Time types
+### Separate Date and Time types
 
 Options:
   * having separate types for Date and Time
@@ -104,7 +99,7 @@ Options:
     * Pros:
       * ?
    
-#### Integers vs floats
+### Integers vs floats representation
 
 All representations are based on the time passed from a certain epoch, either counted in days or seconds/milliseconds/nanoseconds.
 
@@ -130,7 +125,7 @@ Options:
       * more space-efficient
       * lossless calculations 
 
-#### Epochs
+### Epochs
 
 Options:
   * **Julian Day**
@@ -158,7 +153,7 @@ Options:
     * Pros:
       * ?
 
-#### Separate Date/Time and Calendar interfaces
+### Separate Date/Time and Calendar interfaces
 
 Options:
   * DateTime interface coupled to a calendar
@@ -167,7 +162,7 @@ Options:
     * Used by: Boost, Cocoa, Joda
 
 
-#### Reference
+### Reference
   1. Language: C
     - [time.h](http://pubs.opengroup.org/onlinepubs/7908799/xsh/time.h.html)
     - [glib](https://developer.gnome.org/glib/2.36/glib-Date-and-Time-Functions.html)
