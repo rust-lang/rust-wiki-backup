@@ -1,0 +1,142 @@
+SIMD for Rust
+=============
+
+Discussion
+----------
+
+Rust `issue 3499`_.
+
+.. _issue 3499: https://github.com/mozilla/rust/issues/3499
+
+Standards
+---------
+
+A vector type is defined by the element type and the number of elements.
+
+Rust recognizes 10 `machine types`_: ``i8``, ``i16``, ``i32``, ``i64``,
+``u8``, ``u16``, ``u32``, ``u64``, ``f32``, ``f64``.
+
+.. _machine types: http://static.rust-lang.org/doc/rust.html#machine-types
+
+OpenCL_ defines Built-in Vector Data Types intended to be compiled to SIMD.
+Possible element types are ``char``, ``short``, ``int``, ``long``,
+``uchar``, ``ushort``, ``uint``, ``ulong``, ``float``, ``double``,
+which maps one to one to Rust machine types.
+Possible number of elements are 2, 3, 4, 8, 16.
+3-elements vector types were introduced in OpenCL 1.1.
+All possible combinations of element types and number of elements are
+defined. While OpenCL defines ``bool`` and ``half`` scalar types,
+they are not allowed as element types of vector types at the moment,
+although they are reserved for future extensions.
+
+.. _OpenCL: http://www.khronos.org/registry/cl/
+
+LLVM has a `vecor type`_ intended to be compiled to SIMD.
+All integers and floating point types can be element types. Apart from
+Rust's 10 machine types, these include ``i1`` and ``half``.
+There is no restriction on number of elements.
+
+.. _vector type: http://llvm.org/docs/LangRef.html#vector-type
+
+`Intel Software Developer's Manual`_ (Order Number 253665) provide
+information about SSE SIMD.
+
+.. _Intel Software Developer's Manual: http://www.intel.com/content/www/us/en/processors/architectures-software-developer-manuals.html
+
+According to Software Developer's Manual section Packed SIMD Data Types,
+there are 64-bit and 128-bit vector types. (It is missing in the section,
+but AVX also defines 256-bit vector types.) 64-bit vectors can be
+8 packed byte integers, 4 packed word integers, 2 packed doubleword integers.
+(No floating-point values are available for 64-bit vectors.) 128-bit vectors
+can be 16 packed byte integers, 8 packed word integers, 4 packed doubleword
+integers, 2 packed quadword integers, 4 packed single precision
+floating point, 2 packed double precision floating point. Some integer
+operations are available in both signed and unsigned version, but some
+are not: for example, there is no unsigned integer comparison.
+
+ARM publications `RVCT Assembler Guide`_ (ARM DUI 0204) and
+`RVCT Compiler Reference Guide`_ (ARM DUI 0348) provide informations about
+NEON SIMD.
+
+.. _RVCT Assembler Guide: http://infocenter.arm.com/help/topic/com.arm.doc.dui0204j/
+.. _RVCT Compiler Reference Guide: http://infocenter.arm.com/help/topic/com.arm.doc.dui0348c/
+
+According to Assembler Guide section NEON and VFP data types,
+NEON data types are ``S8``, ``S16``, ``S32``, ``S64``,
+``U8``, ``U16``, ``U32``, ``U64``, ``F16``, ``F32``, ``P8``, ``P16``.
+``F64`` is not available and ``F16`` support is optional.
+``P8`` and ``P16`` are polynomials over GF(2).
+Vector types need to be either 64 bits or 128 bits long.
+
+According to Compiler Reference Guide section Vector data types,
+these types are named like ``int8x8_t``, ``int8x16_t``,
+``uint8x8_t``, ``uint8x16_t``, ``float32x2_t``, ``float32x4_t`` in C.
+The number of elements can be 1 in case of ``int64x1_t``.
+
+XXX Research AltiVec.
+
+Languages
+---------
+
+SIMD architectures usually define C API(compiler intrinsics) in
+addition to instructions. C API is provided by headers such as
+``emmintrin.h`` for SSE2, ``arm_neon.h`` for NEON, ``altivec.h`` for
+AltiVec. These APIs are architecture-specific, but common to all
+compilers.
+
+Compilers can also provide language extensions common to all
+architectures. GCC_ provides vector_size_ attribute, Clang_ provides
+ext_vector_type_ attribute. XXX Research MSVC.
+
+.. _GCC: http://gcc.gnu.org/
+.. _vector_size: http://gcc.gnu.org/onlinedocs/gcc/Vector-Extensions.html
+.. _Clang: http://clang.llvm.org/
+.. _ext_vector_type: http://clang.llvm.org/docs/LanguageExtensions.html#vectors-and-extended-vectors
+
+There is the issue of what to do when SIMD is not available. GCC
+provides indirect function, which can select optimized version
+at load time, using ifunc_ attribute. GCC 4.8 also introduced
+`function multiversioning`_ for C++, which uses the same mechanism.
+
+.. _ifunc: http://gcc.gnu.org/onlinedocs/gcc/Function-Attributes.html
+.. _function multiversioning: http://gcc.gnu.org/wiki/FunctionMultiVersioning
+
+AMD developed SSEPlus_, which emulates newer SSE instructions on
+older architectures. The interface provided is the same as compiler
+intrinsics.
+
+.. _SSEPlus: http://sseplus.sourceforge.net/
+
+Johann Wolfgang Goethe-Universität Frankfurt am Main's
+Department of High Performance Computer Architecture develops
+softwares to help analysis of experimental data from CERN.
+One such software is Vc_, a C++ library to help the use of SIMD.
+It defines C++ classes ``int_v``, ``uint_v``, ``float_v``, ``double_v``,
+which provides overloaded C++ operators.
+
+.. _Vc: http://code.compeng.uni-frankfurt.de/projects/vc
+
+Microsoft published XNAMath_ as part of DirectX SDK. XNAMath was later
+renamed to DirectXMath_ and published as part of Windows SDK. Since
+Windows 8 runs on both Intel and ARM architectures and Xbox 360 uses
+PowerPC, DirectXMath abstracts over SSE, NEON, AltiVec.
+
+.. _XNAMath: http://blogs.msdn.com/b/chuckw/archive/2010/01/29/a-little-love-for-xnamath.aspx
+.. _DirectXMath: http://blogs.msdn.com/b/chuckw/archive/2012/03/27/introducing-directxmath.aspx
+
+D has core.simd_.
+
+.. _core.simd: http://dlang.org/phobos/core_simd.html
+
+Mono provides Mono.Simd_.
+
+.. _Mono.Simd: http://docs.go-mono.com/?link=N:Mono.Simd
+
+`GHC SIMD` project.
+
+.. _GHC SIMD: http://hackage.haskell.org/trac/ghc/wiki/SIMD
+
+For Common Lisp, there are sb-simd_ and cl-simd_.
+
+.. _sb-simd: http://common-lisp.net/projects/sb-simd/
+.. _cl-simd: https://github.com/angavrilov/cl-simd
