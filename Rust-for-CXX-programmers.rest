@@ -16,9 +16,7 @@ pointers are never dangling.
 +===================+==============================================+
 | `&`               | `&mut`                                       |
 +-------------------+----------------------------------------------+
-| `const&`          | `&const`                                     |
-+-------------------+----------------------------------------------+
-| n/a               | `&` (immutable)                              |
+| `const&`          | `&` (immutable)                              |
 +-------------------+----------------------------------------------+
 | `std::unique_ptr` | owned pointer: `~`                           |
 +-------------------+----------------------------------------------+
@@ -177,7 +175,7 @@ Methods
 +------------------------+---------------------------------------------------+
 | `size_t foo()`         | `fn foo(&mut self) -> uint`                       |
 +------------------------+---------------------------------------------------+
-| `static size_t foo()`  | `static fn foo() -> uint`                         |
+| `static size_t foo()`  | `fn foo() -> uint`                         |
 +------------------------+---------------------------------------------------+
 | n/a                    | `fn foo(self)`, `fn foo(~self)`, `fn foo(@self)`  |
 +------------------------+---------------------------------------------------+
@@ -193,9 +191,6 @@ For an example, the `PriorityQueue` struct in the standard library has a
 
 The `~self` and `@self` forms are available for objects allocated as `~` or `@`
 respectively.
-
-Once the transition to explicit self is complete, the `static` keyword will no
-longer be needed to mark static methods.
 
 Parametric polymorphism
 -----------------------
