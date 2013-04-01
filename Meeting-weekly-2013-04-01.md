@@ -1,5 +1,5 @@
-Agenda
-======
+## Agenda
+
 * prefixing labels with '
 * impl PATH [for …] { … }
 * fast-ffi
