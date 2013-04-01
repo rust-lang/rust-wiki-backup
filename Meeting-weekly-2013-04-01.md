@@ -66,7 +66,7 @@ azita, pcwalton, brson, dherman, graydon, jclements, jack, tjc, nmatsakis
 * pcwalton: you can use the rust stack
 * brson: i don't like hte rust stack approach because it's in the red zone. it's not right.
 * pcwalton: the earlier approach has a branch. seems like a waste
-* brson: <didn't catch>
+* brson: `<didn't catch>`
 * pcwalton: you could add an intrinsic, but ugly. there's a better approach. we could add one llvm_used to mark a function as having ai fixed stack segment. it would be a toplevel intrinsic call where you call a function llvm-fixed-stack-segment and give it a function. might play havoc with inlining.
 * graydon; let's discuss this on IRC in a more problem solving fashion.
 
