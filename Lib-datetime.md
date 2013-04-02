@@ -115,6 +115,7 @@ Options:
       * Boost: int32 (days since 1400-01-01)
       * Go: int64 (seconds since the Unix Time epoch) + int32 (nanoseconds)
       * Haskell: arbitrary-precision integers (days since Modified Julian Day epoch)
+      * Joda: long (milliseconds since the Unix Time epoch)
       * Qt: int64 (days since the Julian Day epoch)
       * Ruby: int (days since the Julian Day epoch)
     * Cons:
