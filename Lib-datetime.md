@@ -160,9 +160,8 @@ Options:
 ### Separate date/time and calendar interfaces
 
 Options:
-  * date/time interface is coupled to a calendar
-    * Used by:
-      * Qt: Gregorian calendar
+  * date/time interface is coupled to a calendar (Gregorian)
+    * Used by: Go, Qt
     * Cons:
       * ?
     * Pros:
