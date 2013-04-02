@@ -82,7 +82,7 @@ See ISO 8601 which relies on IEC 60050-111, IEC 60050-713.
 ### Simple immutable objects 
 Used by: Boost, Cocoa, JSR-310
 
-### Separate Date and Time types
+### Separate date and time types
 
 Options:
   * having separate types for Date and Time
@@ -99,9 +99,9 @@ Options:
     * Pros:
       * simpler API (to use and implement)
    
-### Integers vs floats representation
+### Integers vs floats
 
-All representations are based on the time passed from a certain epoch, either counted in days or seconds/milliseconds/nanoseconds.
+All known representations are based on the time passed from a certain epoch, either counted in days or seconds/milliseconds/nanoseconds.
 
 Options:
   * floats
@@ -155,30 +155,30 @@ Options:
     * Pros:
       * ?
 
-### Separate Date/Time and Calendar interfaces
+### Separate date/time and calendar interfaces
 
 Options:
-  * Date/Time coupled to a calendar
+  * date/time is coupled to a calendar
     * Used by:
       * Qt: Gregorian calendar
     * Cons:
       * ?
     * Pros:
       * ?
-  * Date/Time tied to a configurable calendar
+  * date/time is tied to a configurable calendar
     * Used by: Boost, Joda
     * Cons:
       * ?
     * Pros:
       * ?
-  * Date/Time independent of a calendar
+  * date/time is independent of a calendar
     * Used by: Cocoa
     * Cons:
       * ?
     * Pros:
       * ?
 
-### Support for Date/Time without a timezone
+### Support for date/time without a timezone
 
 Sometimes the timezone information is missing, e.g. parsing from a textual representation.
 
