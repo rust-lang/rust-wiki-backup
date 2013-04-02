@@ -113,7 +113,7 @@ Options:
   * integers
     * Used by:
       * Boost: int32 (days since 1400-01-01)
-      * Go: int64 (seconds since the Unix Time epoch) + int32 (nanoseconds)
+      * Go: int64 (seconds since 0001-01-01) + int32 (nanoseconds)
       * Haskell: arbitrary-precision integers (days since Modified Julian Day epoch)
       * Joda: long (milliseconds since the Unix Time epoch)
       * Qt: int64 (days since the Julian Day epoch)
@@ -130,6 +130,8 @@ Options:
 Epochs are the reference for the internal date/time counting. It does not matter so much, which instant in time one chooses if the type is large enough (Year 2038 problem for int32).
 
 Options:
+  * **0001-01-01T00:00:00Z**
+    * Used by: Go
   * **Julian Day**
     * Used by: Qt
     * Cons:
@@ -143,7 +145,7 @@ Options:
     * Pros:
       * more space-efficient
   * **Unix Time**
-    * Used by: Go, Unix
+    * Used by: Joda, Unix
     * Cons:
       * ?
     * Pros:
