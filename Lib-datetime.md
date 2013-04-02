@@ -88,18 +88,16 @@ Options:
   * having separate types for Date and Time
     * Used by: Boost, Haskell, Joda, Python, Qt, Ruby
     * Cons:
-      * ?
+      * more complex API (to use and implement)
     * Pros:
-      * more space-efficient
-      * ?
+      * more space-efficient if one only needs date or time
   * having only one type for Date/Time 
     * Used by: Cocoa, Go, .Net
     * Cons:
-      * loss of expressiveness (e.g. for acquaintances' birthdays often the time of birth is not known)
-      * ?
+      * less space-efficient if one only needs date or time
+      * less expressive (e.g. for birthdays often the time of birth is not known)
     * Pros:
-      * simpler interfaces, fewer classes
-      * ?
+      * simpler API (to use and implement)
    
 ### Integers vs floats representation
 
