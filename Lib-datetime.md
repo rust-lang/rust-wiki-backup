@@ -166,19 +166,19 @@ Options:
     * Cons:
       * ?
     * Pros:
-      * ?
+      * less code is needed to get started
   * date/time is tied to a configurable calendar
     * Used by: Boost, Joda
     * Cons:
       * ?
     * Pros:
-      * ?
+      * not much code is needed to get started
   * date/time is independent of a calendar
     * Used by: Cocoa
     * Cons:
-      * ?
+      * more code is needed to get started
     * Pros:
-      * ?
+      * seperated interfaces are themselves easier to understand and extend
 
 ### Support for date/time without a timezone
 
