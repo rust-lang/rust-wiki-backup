@@ -33,6 +33,7 @@ azita, pcwalton, brson, dherman, graydon, jclements, jack, tjc, nmatsakis
 * brson: do we have an example?
 * pcwalton: like this:
 
+```
     loop foo: {
         hello();
         break foo;
@@ -42,6 +43,7 @@ azita, pcwalton, brson, dherman, graydon, jclements, jack, tjc, nmatsakis
         hello();
         break 'foo;
     }
+```
 
 * pcwalton: This lets you use 'foo as a lifetime to mention the lifetime of that block
 * tjc: i don't think peeople know about labeled break and continue, so if we want to break it, now's the time. it's nice to make it look different from an identifier.
@@ -73,32 +75,34 @@ azita, pcwalton, brson, dherman, graydon, jclements, jack, tjc, nmatsakis
 # plans for copy/Clone
 
 * pcwalton: goal is to get rid of copy keyword and move it to clone trait. 
-impl<T:Copy> Clone for T { … }
+`impl<T:Copy> Clone for T { … }`
 this impl is not coherent. the problem is that you can't know whether it's copyable because it could have generic type parameters and you don't know whether those are copyable. if it says they are not copyable, it's wrong because you can have copyable generic params. i would like to say that the clone trait is auto-derived for any nominal type that is implicity copyable and has no type parameters. coherence synthesizes defids.
-* graydon: why is the T:Copy bound not enough to indicate implements-copy?
+* graydon: why is the `T:Copy` bound not enough to indicate implements-copy?
 * pcwalton: it is enough. it's hard for coherence to make that decision. coherence has to check to see if trait implementations conflict, and it's hard to do with generics. example:
 
+```
     struct MyStruct<T> {
         x: T
     }
     
     impl<T:Copy> Clone for T { … }
     impl<T> Clone for MyStruct<T> { … }
+```
 
 coherence detects this as a conflict. the question is do they conflict? the answer is possibly, depending on what T is. if T is copyable, then yes they conflict. but if it's `MyStract<fd>` then they do not conflict.
 * tjc: it's about more than just copy
 * pcwalton: our answer to overlapping instances is to disallow them.
 * tjc: the exmaple could occur for other traits than copy.
-* pcwalton: right now we disallow and we have to because there is some T for which there could be  conflict. i worry that if we allow this we'll have problems down the road. if disallowed, you can't put a destructor on a generic struct or enum. it would rule out ARC<T>.
+* pcwalton: right now we disallow and we have to because there is some T for which there could be  conflict. i worry that if we allow this we'll have problems down the road. if disallowed, you can't put a destructor on a generic struct or enum. it would rule out `ARC<T>`.
 * tjc: what makes this extra difficult is implementations would span crates. one solution from research is to write impls as if-then-else. ti's harder to do this cross-crate.
-* graydon: ... why can't you write impl<T:Clone> Clone for MyStruct<T> { ... } ?
+* graydon: ... why can't you write `impl<T:Clone> Clone for MyStruct<T> { ... }` ?
 * pcwalton: this is also conflicting because tehre are some types for which both copy and clone apply. for example int.
 * graydon: ok, I don't even know what the difference between Copy and Clone is here
-* pcwalton: copy mean implicitly copyable. clone is just a special trait that can be overrideen that the compiler doesn't know about. in my proposal it will auto-derive but wouldn't invoke it for you. the methods that take T:Copy would take T:Clone instead so you could do ARC boxes and bump the ref count, etc.
-* graydon: I was asking why you can't put the bound-you-need on the impl<T> part
-* pcwalton: because there is no bound. You need T:!Copy.
+* pcwalton: copy mean implicitly copyable. clone is just a special trait that can be overrideen that the compiler doesn't know about. in my proposal it will auto-derive but wouldn't invoke it for you. the methods that take `T:Copy` would take `T:Clone` instead so you could do ARC boxes and bump the ref count, etc.
+* graydon: I was asking why you can't put the bound-you-need on the `impl<T>` part
+* pcwalton: because there is no bound. You need `T:!Copy`.
 
-   <T:!Copy>
+   `<T:!Copy>`
 
 we don't have a function with a bound that doesn't implement a trait. i feel like it would be a lot of complexity.
 * tjc: the negation thing is also in that paper i was referring to (instance chains in haskell). it's recent technology. would it be easy to solve the problem with trait negation?
@@ -107,7 +111,7 @@ we don't have a function with a bound that doesn't implement a trait. i feel lik
 * pcwalton: yes, and arc already does that. it seems simpler than having trait negation.
 * nmatsakis: what would you do for generic structs
 * pcwalton: you'd have to write `deriving(Clone)` on those
-* nmatsakis: if write let a = b and don't call clone, it has a certain semantics.
+* nmatsakis: if write `let a = b` and don't call clone, it has a certain semantics.
 * pcwalton: when the compiler auto-derives is tied up in semantics of implicitly copyable.
 * graydon: I'm ok with this. it feels clunky but so does everything in this space.
 * pcwalton: instance chains would allow us to reify this automatic deriving and notion of implicit copyability in a generic way
