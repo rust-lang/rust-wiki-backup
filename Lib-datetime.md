@@ -127,7 +127,7 @@ Options:
 
 ### Epochs
 
-Epochs are the reference date/time for internal state. It does not matter much, which instant in time one chooses if the type is large enough (Year 2038 problem for int32).
+Epochs are the reference for the internal date/time counting. It does not matter so much, which instant in time one chooses if the type is large enough (Year 2038 problem for int32).
 
 Options:
   * **Julian Day**
