@@ -64,14 +64,13 @@ See ISO 8601 which relies on IEC 60050-111, IEC 60050-713.
 
 ### Techniques
 
-  * Conversion Gregorian Date <=> Julian Day
+  * Gregorian Date <=> Julian Day conversion:
     * Letter to the editor of Communications of the ACM (CACM, volume 11, number 10, October 1968, p.657) Henry F. Fliegel and Thomas C. Van Flandern
-    * 1582-10-04 => 1582-10-15
+
 
 ### Those intended to follow (and why)
 
 ### Those intended to ignore (and why)
-
 
 
 ## 3. Research of libraries from other languages
