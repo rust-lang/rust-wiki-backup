@@ -180,7 +180,9 @@ Options:
 
 ### Support for Date/Time without a timezone
 
-When the timezone information is missing, e.g. parsing from a textual representation, there are the following options:
+Sometimes the timezone information is missing, e.g. parsing from a textual representation.
+
+Options:
 
 Options:
   * support Date/Time with no attached timezone
