@@ -193,13 +193,13 @@ Options:
       * ?
     * Pros:
       * clear distinction between dates that are comparable and date that are not
-      * ?
+      * more space-efficient
   * assume the local timezone if the timezone is not available
     * Used by:
       * Cocoa
     * Cons:
       * dates are created that appear to be comparable, but are not. One needs to keep tracks of those dates.
-      * ?
+      * less space-efficient
     * Pros:
       * ?
 
