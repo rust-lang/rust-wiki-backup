@@ -90,6 +90,7 @@ Options:
       * more complex API (to use and implement)
     * Pros:
       * more space-efficient if one only needs date or time
+      * more expressive (e.g. for birthdays often the time of birth is not known)
   * having only one type for Date/Time 
     * Used by: Cocoa, Go, .Net
     * Cons:
