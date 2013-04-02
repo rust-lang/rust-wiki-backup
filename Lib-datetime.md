@@ -113,7 +113,7 @@ Options:
       * ?
   * integers
     * Used by:
-      * Boost: int32 (days since 1400-01-01)
+      * Boost: int?? (template argument) (days since 1400-01-01)
       * Go: int64 (seconds since 0001-01-01) + int32 (nanoseconds)
       * Haskell: arbitrary-precision integers (days since Modified Julian Day epoch)
       * Joda: long (milliseconds since the Unix Time epoch)
