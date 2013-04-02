@@ -160,21 +160,22 @@ Options:
 ### Separate date/time and calendar interfaces
 
 Options:
-  * date/time is coupled to a calendar
+  * date/time interface is coupled to a calendar
     * Used by:
       * Qt: Gregorian calendar
     * Cons:
       * ?
     * Pros:
       * less code is needed to get started
-  * date/time is tied to a configurable calendar
+  * date/time interface is tied to a configurable calendar
     * Used by: Boost, Joda
     * Cons:
       * ?
     * Pros:
       * not much code is needed to get started
-  * date/time is independent of a calendar
-    * Used by: Cocoa
+  * date/time interface is independent of a calendar
+    * Used by:
+      * Cocoa: NSCalendar create NSDates and are used for calendrical calculation
     * Cons:
       * more code is needed to get started
     * Pros:
