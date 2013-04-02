@@ -183,8 +183,6 @@ Options:
 Sometimes the timezone information is missing, e.g. parsing from a textual representation.
 
 Options:
-
-Options:
   * support Date/Time with no attached timezone
     * Used by:
       * Joda: LocalDate, LocalTime, LocalDateTime
