@@ -3,6 +3,30 @@ This is an archive of all the existing Rust release artifacts. Each release is s
 [key]: http://www.rust-lang.org/rust-key.gpg.ascii
 [pre-0.5-key]: http://www.rust-lang.org/rust-key-old.gpg.ascii
 
+## 0.6
+
+* [Announcement][0.6-announce]
+* [Release notes][0.6-notes]
+* [Source code][0.6-tar] ([signature][0.6-tar-sig])
+* [Windows installer][0.6-exe] ([signature][0.6-exe-sig])
+* [Tutorial][0.6-tutorial]
+* [Manual][0.6-manual] ([PDF][0.6-manual-pdf])
+* [Core library docs][0.6-core]
+* [Standard library docs][0.6-std]
+
+
+[0.6-announce]: https://mail.mozilla.org/pipermail/rust-dev/2013-April/003427.html  
+[0.6-notes]: https://github.com/mozilla/rust/blob/release-0.6/RELEASES.txt
+[0.6-tar]: http://static.rust-lang.org/dist/rust-0.6.tar.gz
+[0.6-tar-sig]: http://static.rust-lang.org/dist/rust-0.6.tar.gz.asc
+[0.6-exe]: http://static.rust-lang.org/dist/rust-0.6-install.exe
+[0.6-exe-sig]: http://static.rust-lang.org/dist/rust-0.6-install.exe.asc
+[0.6-tutorial]: http://doc.rust-lang.org/doc/0.6/tutorial.html
+[0.6-manual]: http://doc.rust-lang.org/doc/0.6/rust.html
+[0.6-manual-pdf]: http://doc.rust-lang.org/doc/0.6/rust.pdf
+[0.6-core]: http://doc.rust-lang.org/doc/0.6/core/index.html
+[0.6-std]: http://doc.rust-lang.org/doc/0.6/std/index.html
+
 ## 0.5
 
 * [Announcement][0.5-announce]
