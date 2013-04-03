@@ -8,12 +8,12 @@ For the most up to date information, the best source is often to ask in [#rust o
 [rust-dev]: https://mail.mozilla.org/listinfo/rust-dev
 [r/rust]: http://reddit.com/r/rust
 
-## Current reference docs (0.5)
+## Current reference docs (0.6)
 
-[Tutorial](http://doc.rust-lang.org/doc/0.5/tutorial.html)  
-[Manual](http://doc.rust-lang.org/doc/0.5/rust.html) ([PDF](http://doc.rust-lang.org/doc/0.5/rust.pdf))  
-[Core library](http://doc.rust-lang.org/doc/0.5/core/index.html)  
-[Standard library](http://doc.rust-lang.org/doc/0.5/std/index.html)  
+[Tutorial](http://doc.rust-lang.org/doc/0.6/tutorial.html)  
+[Manual](http://doc.rust-lang.org/doc/0.6/rust.html) ([PDF](http://doc.rust-lang.org/doc/0.6/rust.pdf))  
+[Core library](http://doc.rust-lang.org/doc/0.6/core/index.html)  
+[Standard library](http://doc.rust-lang.org/doc/0.6/std/index.html)  
 
 ## In-development reference docs (git master)
 
