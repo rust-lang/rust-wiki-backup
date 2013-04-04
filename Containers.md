@@ -11,7 +11,7 @@
     * `std::priority_queue` (binary heap)
     * `std::bitv`
 * Mutable, managed:
-    * `core::dlist` (doubly-linked list - avoiding @ requires `unsafe` and being careful with nodes)
+    * `std::dlist` (doubly-linked list - avoiding @ requires `unsafe` and being careful with nodes)
 * Persistent, managed:
     * `std::list` (singly-linked list)
     * `std::fun_treemap` (unbalanced binary search tree - not very useful)
@@ -32,7 +32,6 @@
 * Add range searches to TreeMap/TreeSet - [#4604](https://github.com/mozilla/rust/issues/4604)
 * add shrink_to_fit method for vec and hashmap - [#4960](https://github.com/mozilla/rust/issues/4960)
 * split the Map and Set traits into Map, MutableMap, PersistentMap and Set, MutableSet, PersistentSet - [#4989](https://github.com/mozilla/rust/issues/4989)
-* Move dlist to std - [#3549](https://github.com/mozilla/rust/issues/3549)
 * benchmark whether 1.5x is a better growth factor for vectors - [#4961](https://github.com/mozilla/rust/issues/4961)
 * add reserve/reserve_at_least to std::deque - [#4994](https://github.com/mozilla/rust/issues/4994)
 * add swap method to the Map trait [#5392](https://github.com/mozilla/rust/issues/5392)
