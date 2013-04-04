@@ -2,7 +2,7 @@ Development policy for Rust.
 
 ## Contributions and commit access
 
-We request that contributions are made via pull request and review. Core contributors (those with direct push access to github.com/mozilla/rust.git) will review and integrate your work. Note that **everyone gets reviewed**, even those with direct push access. Eventually we hope that the "final" push to the repository will happen via an automatic integration script that performs pre-push testing (to ensure we never push any regressions) but our automation is not yet clever enough to do that.
+We request that contributions are made via pull request and review. Core contributors (those with direct push access to github.com/mozilla/rust.git) will review and integrate your work. Note that **everyone gets reviewed**, even those with direct push access. Upon review, pull requests are tested and merged automatically by our integration bot, [bors](https://github.com/bors).
 
 If your contribution is nontrivial, we ask that you [file a Mozilla "committer agreement"](https://www.mozilla.org/hacking/notification/). This is a short (1-page) legal agreement that asserts certain claims of originality, absence of conflict with other agreements, and similar terms associated with licensing and authorization. If you already have Level 1 or higher commit rights within the Mozilla project, you have already filled out such a form.
 
