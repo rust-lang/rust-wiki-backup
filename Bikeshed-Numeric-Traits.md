@@ -319,6 +319,9 @@ There is also the question about how to handle the  `ToStr`, `FromStr`, `ToStrRa
   - useful for all scalar numbers
   - should ideally get impl for free on all those numbers though the appropriate numeric traits
 - need functions for different formats (`1/2` vs `0.5`, `4+3i`)
+- getting a unified interface for automatic formatting (ala the current `NumStrConv`) is probably an impossible task, since there are so many different sorts of numbers. i.e. it's almost certainly not possible to make a single scheme general enough to include ints, floats, rationals, complexs, finite fields/integer modulo rings, algebraic numbers, [exact real arithmetic](http://www.haskell.org/haskellwiki/Exact_real_arithmetic), etc, so it would be good to decide on a limit and let other numbers implement their own conversions, rather than try to bolt on extensions/squeeze numbers into a framework they don't fit
+- possible new traits:
+  - `ToStrExact` which prints in a format that can be converted back without any precision loss (like `fmt!("%?", ..)`, but nicer, e.g. 1/10 for rationals) 
 
 ## Related Changes ##
 
