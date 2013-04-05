@@ -318,7 +318,7 @@ There is also the question about how to handle the  `ToStr`, `FromStr`, `ToStrRa
 - `core::num::strconv` contains traits and functions to convert to/from a string in fractional positional notation
   - useful for all scalar numbers
   - should ideally get impl for free on all those numbers though the appropriate numeric traits
-- need functions for different formats (`1/2` vs `0.5`)
+- need functions for different formats (`1/2` vs `0.5`, `4+3i`)
 
 ## Related Changes ##
 
