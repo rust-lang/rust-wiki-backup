@@ -311,9 +311,18 @@ trait NumOpExceptDivison <A, B : One + Zero> Mul<A, B> + Additive<A, B>
 impl NumOpExceptDivison <uint, uint> for uint {..}
 ~~~
 
-## Related Changes ##nt 
+## String Representation ##
 
-### rename `modulo` into `rem` or `remainder` in traits and docs ###
+There is also the question about how to handle the  `ToStr`, `FromStr`, `ToStrRadix`, etc traits:
+
+- `core::num::strconv` contains traits and functions to convert to/from a string in fractional positional notation
+  - useful for all scalar numbers
+  - should ideally get impl for free on all those numbers though the appropriate numeric traits
+- need functions for different formats (`1/2` vs `0.5`)
+
+## Related Changes ##
+
+# rename `modulo` into `rem` or `remainder` in traits and docs #
 
 Rusts `%` operator mimics C and C++ in that it's not modulo but remainder, however the documentation and naming convention claims for it to be modulo.
 
