@@ -322,7 +322,7 @@ There is also the question about how to handle the  `ToStr`, `FromStr`, `ToStrRa
 
 ## Related Changes ##
 
-# rename `modulo` into `rem` or `remainder` in traits and docs #
+### rename `modulo` into `rem` or `remainder` in traits and docs ###
 
 Rusts `%` operator mimics C and C++ in that it's not modulo but remainder, however the documentation and naming convention claims for it to be modulo.
 
