@@ -113,11 +113,6 @@ methods that return the type.
 Custom destructors for non-memory resources can be provided by implementing the
 `Drop` trait.
 
-Generics
---------
-
-Rust generics are more like C++13 templates with concepts, not like the templates that exist today. This allows templates to be type-checked at the time you write them, not when you instantiate them. You can use Rust macros for the more unstructured approach.  Plug in a type and see if it compiles!
-
 Copying and move semantics
 --------------------------
 
@@ -196,6 +191,11 @@ For an example, the `PriorityQueue` struct in the standard library has a
 
 The `~self` and `@self` forms are available for objects allocated as `~` or `@`
 respectively.
+
+Generics
+--------
+
+Rust generics are more like C++13 templates with concepts, not like the templates that exist today. This allows templates to be type-checked at the time you write them, not when you instantiate them. You can use Rust macros for the more unstructured approach.  Plug in a type and see if it compiles!
 
 Parametric polymorphism
 -----------------------
