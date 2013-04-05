@@ -54,10 +54,8 @@ These are preliminary build instructions for Android. Note that ARM and Android 
 
     Push your binary
 
-        e.g) adb push hello /system/bin
+        adb push hello /system/bin
 
     Run using adb shell
 
-        adb shell
-        cd /system/bin
-        ./hello
+        adb shell /system/bin/hello
