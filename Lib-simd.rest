@@ -136,6 +136,10 @@ Mono provides Mono.Simd_.
 
 .. _GHC SIMD: http://hackage.haskell.org/trac/ghc/wiki/SIMD
 
+`Haskell Beats C Using Generalized Stream Fusion`_ paper.
+
+.. _Haskell Beats C Using Generalized Stream Fusion: http://research.microsoft.com/en-us/um/people/simonpj/papers/ndp/haskell-beats-C.pdf
+
 For Common Lisp, there are sb-simd_ and cl-simd_.
 
 .. _sb-simd: http://common-lisp.net/projects/sb-simd/
