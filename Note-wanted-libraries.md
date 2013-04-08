@@ -14,11 +14,11 @@ Notes taken at rust work week, 2011/06/23
  * [regexp](https://github.com/elly/rustpcre) (external)
  * [ropes](https://github.com/mozilla/rust/blob/master/src/libstd/rope.rs)
 * networking
- * HTTP
-  * client
-    * [rust-http-client](https://github.com/mozilla-servo/rust-http-client) (external)
-  * server
-    * [rwebserve](https://github.com/jesse99/rwebserve) (external)
+  * HTTP
+    * client
+      * [rust-http-client](https://github.com/mozilla-servo/rust-http-client) (external)
+    * server
+      * [rwebserve](https://github.com/jesse99/rwebserve) (external)
  * [URI/URL](https://github.com/mozilla/rust/blob/master/src/libstd/net_url.rs)
  * [UUID](https://github.com/erickt/rust-uuid) (external)
  * GUID
