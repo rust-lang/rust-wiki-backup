@@ -13,6 +13,10 @@ Notes taken at rust work week, 2011/06/23
  * slicing w/o copy, stringref
  * [regexp](https://github.com/elly/rustpcre) (external)
  * [ropes](https://github.com/mozilla/rust/blob/master/src/libstd/rope.rs)
+ * simple tokenizer
+* I18n
+ * one aspect of i18n is to map a key to a text, based on the current locale (eg Java's [ResourceBundle](http://docs.oracle.com/javase/7/docs/api/java/util/ResourceBundle.html))
+ * another aspect is to format a string based on the current locale (eg Java's [MessageFormat](http://docs.oracle.com/javase/7/docs/api/java/text/MessageFormat.html))
 * networking
   * HTTP
     * client
@@ -28,6 +32,9 @@ Notes taken at rust work week, 2011/06/23
 * [random](https://github.com/mozilla/rust/blob/master/src/libcore/rand.rs)
 * [compression](https://github.com/elly/rustzlib) (external)
 * [libicu](https://github.com/mozilla/rust/blob/master/src/libstd/unicode.rs)
+ * Convertions between text encodings. Ideally, with a customizable way of handling conversion errors.
+ * Unicode normalization (NFD, NFC, NFKD, NFKC)
+ * Collator (locale sensitive string comparison), with a configurable degree of strictness
 * serialization/encoding
  * [base64](https://github.com/mozilla/rust/blob/master/src/libstd/base64.rs)
  * [CSV](https://github.com/grahame/rust-csv) (external)
@@ -36,10 +43,14 @@ Notes taken at rust work week, 2011/06/23
  * thrift
  * [tnetstring](https://github.com/erickt/rust-tnetstring) (external)
  * xml
+* file formats
+ * zip file format
+ * tar file format
 * [crypto](https://github.com/elly/rustcrypto) (external)
 * concurrency
  * task management, actor, OTP, [[Bikeshed mapreduce]], pools
 * low-level OS services
+* Simple search on a filesystem (eg Ruby's [glob](http://ruby-doc.org/core-2.0/Dir.html#method-c-glob))
 * unit testing
 * FFI, ctypes
 * dlopen, os proceses
