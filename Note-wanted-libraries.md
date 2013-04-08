@@ -16,7 +16,7 @@ Notes taken at rust work week, 2011/06/23
 * networking
  * HTTP
   * client
-    * [rust-http-client](https://github.com/brson/rust-http-client) (external)
+    * insert project here
   * server
     * [rwebserve](https://github.com/jesse99/rwebserve) (external)
  * [URI/URL](https://github.com/mozilla/rust/blob/master/src/libstd/net_url.rs)
