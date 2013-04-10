@@ -47,8 +47,6 @@ A ```for``` loop is always preferable to a ```while``` loop unless the loop coun
 
 ## Naming conventions
 
-Inspired by PEP8
-
 100 column lines, 4 space indent, no tabs
 Type names, variants - camel case
 function - lowercase with underscores where it helps readability
