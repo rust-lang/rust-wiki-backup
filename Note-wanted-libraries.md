@@ -14,8 +14,8 @@ Notes taken at rust work week, 2011/06/23
  * [regexp](https://github.com/elly/rustpcre) (external)
  * [ropes](https://github.com/mozilla/rust/blob/master/src/libstd/rope.rs)
  * simple tokenizer
-* I18n
- * one aspect of i18n is to map a key to a text, based on the current locale (eg Java's [ResourceBundle](http://docs.oracle.com/javase/7/docs/api/java/util/ResourceBundle.html))
+* Localizability
+ * one aspect of L10n is to map a key to a text, based on the current locale (eg Java's [ResourceBundle](http://docs.oracle.com/javase/7/docs/api/java/util/ResourceBundle.html))
  * another aspect is to format a string based on the current locale (eg Java's [MessageFormat](http://docs.oracle.com/javase/7/docs/api/java/text/MessageFormat.html))
 * networking
   * HTTP
