@@ -2,17 +2,17 @@ These are coding guidelines for Rust code.
 
 ## Naming conventions
 
-100 column lines, 4 space indent, no tabs
-Type names, variants - camel case
-function - lowercase with underscores where it helps readability
-Static variables are capitalized
+- 100 column lines, 4 space indent, no tabs
+- Type names, variants - camel case
+- function - lowercase with underscores where it helps readability
+- Static variables are capitalized
 
 on type implementations, make default private, add pub explicitly where wanted
 
 Trait naming?
 
--trait examples: Copy, Owned, Const, Add, Sub, Num, Shr, Index, Encode, Decode, Reader, Writer, GenericPath
--extension methods: XUtil? Prefer default methods
+- trait examples: Copy, Owned, Const, Add, Sub, Num, Shr, Index, Encode, Decode, Reader, Writer, GenericPath
+- extension methods: XUtil? Prefer default methods
 - avoid things with prefixes (able, etc). try to use transitive verbs, nouns, and then adjectives in that order
 
 
