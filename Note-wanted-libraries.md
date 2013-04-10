@@ -17,6 +17,7 @@ Notes taken at rust work week, 2011/06/23
 * Localizability
  * one aspect of L10n is to map a key to a text, based on the current locale (eg Java's [ResourceBundle](http://docs.oracle.com/javase/7/docs/api/java/util/ResourceBundle.html) or [GNU gettext](http://www.gnu.org/software/gettext/))
  * another aspect is to format a string based on the current locale (eg Java's [MessageFormat](http://docs.oracle.com/javase/7/docs/api/java/text/MessageFormat.html))
+ * See [issue #4630](https://github.com/mozilla/rust/issues/4630)
 * networking
   * HTTP
     * client
