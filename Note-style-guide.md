@@ -179,7 +179,7 @@ Only use inner doc comments to document crates and file-level modules.
 //! The core library is a something something...
 ```
 
-Use full sentences that start with capitals and end with a period. See [Doc-using-rustdoc].
+Use full sentences that start with capitals and end with a period. See [[Doc-using-rustdoc]].
 
 # Module organization
 
