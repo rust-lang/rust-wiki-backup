@@ -5,7 +5,7 @@ These are coding guidelines for Rust code.
   * Lines should not be longer than 100 characters.
   * Use spaces for indentation not tabs.
 
-## Naming conventions
+# Naming conventions
 
 - Type names, variants - camel case
 - function - lowercase with underscores where it helps readability
@@ -25,7 +25,7 @@ Constructors are static methods called `new` or `new_with_more_details`.
 
 use ffi instead of _hl or ll or raw as the module for holding the extern definitions
 
-## Function declarations
+# Function declarations
 
 Wrapped functions:
 
@@ -152,7 +152,7 @@ TODO
 TODO
 
 
-## Error messages and warnings
+# Error messages and warnings
 
 Rust code in error messages should be enclosed in backquotes.
 
@@ -164,7 +164,7 @@ Error messages should use the pattern "expected \`X\`, found \`Y\`".
 
 * ```mismatched types: expected `u16`, found `u8` ```
 
-## Traits
+# Traits
 
 [Trait](http://dl.rust-lang.org/doc/tutorial.html#traits) names should be capitalized and should follow the pattern of `Verb` or `Verber`, except in cases where no verb seems sensible.
 
@@ -172,7 +172,7 @@ Examples:
 
 * ```Iterate```
 
-## Predicates
+# Predicates
 
 The names of simple boolean predicates should start with "is_" or similarly be expressed using a "small question word".
 
@@ -182,7 +182,7 @@ Examples:
 
 * ```is_not_empty```
 
-## Loops
+# Loops
 
 A ```for``` loop is always preferable to a ```while``` loop unless the loop counts in a non-uniform way (making it difficult to express as a ```for```).
 
