@@ -2,7 +2,6 @@ These are coding guidelines for Rust code.
 
 ## Naming conventions
 
-- 100 column lines, 4 space indent, no tabs
 - Type names, variants - camel case
 - function - lowercase with underscores where it helps readability
 - Static variables are capitalized
