@@ -58,10 +58,10 @@ avoid import of functions, instead `mod::func()`
   * Lines should not be longer than 100 characters.
   * Use spaces for indentation not tabs.
 
-# Testing
+# Unit testing
 
-put tests in a test module at the bottom of the modules they test. Use `#[cfg(test)]` to only compile when testing.
-
+  * Put tests in a test module at the bottom of the modules they test.
+  * Use `#[cfg(test)]` to only compile when testing. Example:
 ```
 #[cfg(test)]
 mod test {
