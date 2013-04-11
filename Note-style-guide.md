@@ -21,7 +21,7 @@ Constructors are static methods called `new` or `new_with_more_details`.
 
 use ffi instead of _hl or ll or raw as the module for holding the extern definitions
 
-## function declarations
+## Function declarations
 
 Wrapped functions:
 
@@ -39,25 +39,25 @@ note: need to adjust editors to do this automatically - this is not the current 
 
 avoid using cfg directives outside of platform namespace
 
-# imports
+# Imports
 
 extern mods, blank line
 local imports first, then external imports, then pub use.
 
 avoid use of *, except in tests
 
-# namespacing
+# Namespacing
 
 ok to use use `foo = bar;`
 
 avoid import of functions, instead `mod::func()`
 
-# editor settings
+# Editor settings
 
 spaces not tabs
 line length 100
 
-# testing
+# Testing
 
 put tests in a test module at the bottom of the modules they test. Use `#[cfg(test)]` to only compile when testing.
 
@@ -67,7 +67,7 @@ mod test {
 }
 ```
 
-# match expressions
+# Match expressions
 
 deref the match target if you can. prefer 
 
@@ -113,7 +113,7 @@ match foo {
 }
 ```
 
-# comments
+# Comments
 
 Prefer line comments and avoid block comments. Reason: it avoids the debate about whether to put stars on every line, etc.
 
