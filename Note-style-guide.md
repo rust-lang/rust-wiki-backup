@@ -34,6 +34,8 @@ fn frobnicate(a: bar,
 
 note: need to adjust editors to do this automatically - this is not the current convention
 
+The downside of this is, that the indendation level of many lines of code may change when the length of the function name changes.
+
 # cfg
 
 avoid using `cfg` directives outside of platform namespace
