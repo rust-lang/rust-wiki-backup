@@ -4,8 +4,8 @@
 
 #### Safety oriented
 
-* Memory safe: no null pointers, wild pointers, etc
-* Expressive mutability control. Immutable by default
+* Memory safe: no null pointers, dangling pointers, use-before-initialize or use-after-move
+* Expressive mutability control. Immutable by default, statically verified freezing for Owned types
 * No shared mutable state across tasks
 * Dynamic execution safety: task failure / unwinding, trapping, RAII / dtors
 * Safe interior pointer types with lifetime analysis
