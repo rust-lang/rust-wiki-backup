@@ -1,5 +1,10 @@
 These are coding guidelines for Rust code.
 
+# Editor settings
+
+  * Lines should not be longer than 100 characters.
+  * Use spaces for indentation not tabs.
+
 ## Naming conventions
 
 - Type names, variants - camel case
@@ -52,11 +57,6 @@ avoid use of *, except in tests
 ok to use use `foo = bar;`
 
 avoid import of functions, instead `mod::func()`
-
-# Editor settings
-
-  * Lines should not be longer than 100 characters.
-  * Use spaces for indentation not tabs.
 
 # Unit testing
 
