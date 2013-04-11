@@ -55,8 +55,8 @@ avoid import of functions, instead `mod::func()`
 
 # Editor settings
 
-spaces not tabs
-line length 100
+  * Lines should not be longer than 100 characters.
+  * Use spaces for indentation not tabs.
 
 # Testing
 
