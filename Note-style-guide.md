@@ -37,7 +37,7 @@ note: need to adjust editors to do this automatically - this is not the current 
 
 # cfg
 
-avoid using cfg directives outside of platform namespace
+avoid using `cfg` directives outside of platform namespace
 
 # Imports
 
