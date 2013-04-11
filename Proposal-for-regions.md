@@ -2,7 +2,7 @@
 
 ## Note
 
-Rust has regions, but not exactly as they are described here.
+Rust has regions now, but not exactly as they are described here.
 
 ## Summary
 
