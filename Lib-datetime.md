@@ -13,7 +13,7 @@ A library for date and time.
   * **Standard Time**: the result of synchronizing clocks in different geographical locations within a time zone to the same time.
   * **Local Time**: a time in the local non-UTC based standard time
 
-See ISO 8601 which relies on IEC 60050-111, IEC 60050-713.
+See ISO 8601, which relies on IEC 60050-111, IEC 60050-713.
 
 ### Things to be aware of
   * leap seconds
@@ -22,6 +22,7 @@ See ISO 8601 which relies on IEC 60050-111, IEC 60050-713.
   * network time sources
   * daylight saving time
   * eras, e.g. BC/AD
+  * time zone changes, sometimes on short notice
 
 ## 1. Announcement to mailing list
 
