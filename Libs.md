@@ -12,6 +12,7 @@ List of docs concerning changes to Rust standard libraries
   - [[Html|lib Html]]
   - [[SIMD|Lib simd]]
   - [[I/O|Lib io]]
+  - [[Formatting|Lib fmt]]
 
 # Active module edit plans
 ## General cross-module cleanup
