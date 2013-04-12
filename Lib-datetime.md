@@ -60,6 +60,7 @@ See ISO 8601 which relies on IEC 60050-111, IEC 60050-713.
     - [International Atomic Time](https://en.wikipedia.org/wiki/International_Atomic_Time)
     - [UTC vs. TAI discussion](http://cr.yp.to/proto/utctai.html)
   1. [Network Time Protocol](http://en.wikipedia.org/wiki/Network_Time_Protocol)
+  1. [IANA Time Zone Database](http://www.iana.org/time-zones)
   1. [Sources for Time Zone and Daylight Saving Time Data](http://www.twinsun.com/tz/tz-link.htm)
 
 ### Techniques
