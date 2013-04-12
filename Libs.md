@@ -11,6 +11,7 @@ List of docs concerning changes to Rust standard libraries
   - [[DateTime|lib DateTime]]
   - [[Html|lib Html]]
   - [[SIMD|Lib simd]]
+  - [[I/O|Lib io]]
 
 # Active module edit plans
 ## General cross-module cleanup
