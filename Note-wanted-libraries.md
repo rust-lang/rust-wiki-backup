@@ -7,7 +7,7 @@ Notes taken at rust work week, 2011/06/23
  * AIO, SIO, stdio
  * [filesystem](https://github.com/mozilla/rust/blob/master/src/libcore/os.rs)
  * [path manipulation](https://github.com/mozilla/rust/blob/master/src/libcore/path.rs)
- * <> or fileinput
+ * [<> or fileinput](https://github.com/mozilla/rust/blob/incoming/src/libstd/fileinput.rs)
  * timers
 * string manipulation
  * slicing w/o copy, stringref
