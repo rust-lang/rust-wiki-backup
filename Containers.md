@@ -26,7 +26,6 @@
 * persistent hash-based map/set
 * compile-time lookup tables via syntax extensions - [#4864](https://github.com/mozilla/rust/issues/4864)
 * multimap
-* stream
 
 # Issues
 
