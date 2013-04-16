@@ -8,11 +8,11 @@ List of docs concerning changes to Rust standard libraries
 
 # Wanted new modules
 
-  - [[DateTime|lib DateTime]]
-  - [[Html|lib Html]]
-  - [[SIMD|Lib simd]]
-  - [[I/O|Lib io]]
+  - [[DateTime|Lib DateTime]]
   - [[Formatting|Lib fmt]]
+  - [[Html|Lib Html]]
+  - [[I/O|Lib io]]
+  - [[SIMD|Lib simd]]
 
 # Active module edit plans
 ## General cross-module cleanup
