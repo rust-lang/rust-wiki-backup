@@ -88,4 +88,12 @@ Conditions are events that can be raised, usually upon error, and optionally han
 
 The `Result` type is a monad-like type that can either be `Ok(A)` or `Err(B)`. Calculations on `Result` can be chained together in various ways based on previous results. They are generally considered unwieldy.
 
+##### A proposed error handling strategy
 
+The I/O library will use a combination of conditions and fallable (Result, Option) or otherwise 'nullable' values (explained in detail later).
+
+All I/O errors will raise a condition and so will, by default, trigger task failure. This removes most of the obligation for the programmer to think about error handling on the successful path.
+
+When a condition is handled I/O libraries will essentially be expected to turn the current operation into a no-op, possibly returning a sensible null or error value, as appropriate each specific function. This behavior of always being able to return *some* value on error will allow errors to be recovered without creating new tasks, which is seen as expensive, and also problematic when managed data is involved.
+
+TODO
