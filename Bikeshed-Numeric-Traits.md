@@ -337,7 +337,10 @@ It would be more elegant if we could call LLVM directly from the operator trait:
 
 ~~~rust
 impl Add<T,T> for T {
-    #[inline(always)] fn add(&self, other: &T) -> T { llvm!("...") }
+    #[inline(always)]
+    fn add(&self, other: &T) -> T {
+        unsafe { llvm!("...") }
+    }
 }
 ~~~
 
