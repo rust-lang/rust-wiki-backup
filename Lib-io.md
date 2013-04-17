@@ -97,3 +97,7 @@ All I/O errors will raise a condition and so will, by default, trigger task fail
 When a condition is handled I/O libraries will essentially be expected to turn the current operation into a no-op, possibly returning a sensible null or error value, as appropriate each specific function. This behavior of always being able to return *some* value on error will allow errors to be recovered without creating new tasks, which is seen as expensive, and also problematic when managed data is involved.
 
 TODO
+
+##### Reader/Writer composition
+
+TODO
