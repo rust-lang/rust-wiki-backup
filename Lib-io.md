@@ -81,3 +81,11 @@ I/O is an area where nearly every operation can result in unexpected errors. It 
 Some use cases:
   * I'm hacking together a quick prototype or script that does a bunch of file manipulation. Thinking about all the possible ways I/O could fail is not the point of this work and it's ok for the entire process to fail if something goes wrong. I don't want to be inconvenienced with handling errors.
   * I'm doing some performance critical I/O on a server and want to recover from an I/O failure in the most efficient way possible. I'm ok with writing extra error handling code.
+
+In Rust our error handling options are 'conditions' and the `Result` type.
+
+Conditions are events that can be raised, usually upon error, and optionally handled by dynamically-scoped 'condition handlers'. An unhandled condition results in task failure. Condition handlers are not like exceptions - they are handled at the site of the error, not after unwinding the stack. There is no way in Rust to 'catch' an exception. Conditions are not used widely and it's unknown how well they work in practice.
+
+The `Result` type is a monad-like type that can either be `Ok(A)` or `Err(B)`. Calculations on `Result` can be chained together in various ways based on previous results. They are generally considered unwieldy.
+
+
