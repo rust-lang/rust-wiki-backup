@@ -283,15 +283,15 @@ The following is a lose idea which may or may not work.
 
 ~~~
 trait AllNumOperations <A: One + Zero, B > Multiplicative<A, B> + Additive<A, B>
-trait CummutativeOperations <A : AllNumOperations<Self, B>, B> : AllNumOperations <A, B>;
+trait CommutativeOperations <A : AllNumOperations<Self, B>, B> : AllNumOperations <A, B>;
 ~~~
 
 The benefit of this approach is that you can specify things like 
 
 ~~~
-impl CummutativeOperations<Int, F32> for F32 { .. };
-impl CummutativeOperations<UInt, F16> for F16 { .. };
-impl CummutativeOperations<F32, SymbolicExpression> for SymbolicExpression { .. };
+impl CommutativeOperations<Int, F32> for F32 { .. };
+impl CommutativeOperations<UInt, F16> for F16 { .. };
+impl CommutativeOperations<F32, SymbolicExpression> for SymbolicExpression { .. };
 impl AllNumOperations<SparseMatrix, FullMatrix> for FullMatrix { .. }; 
 ~~~
 
