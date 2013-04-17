@@ -59,6 +59,12 @@ Module editing plan template
 - Encryption
 
 #### Variations on implementation seen
+
+##### Error handling
+
+* Return values - requires explicit checks, lots of noise
+* Exceptions - results in nicer looking code, error handling at arbitrary granularity
+
 #### Pitfalls and hazards associated with each variant
 #### Relationship to other libraries and/or abstract interfaces
 
@@ -68,6 +74,10 @@ Module editing plan template
 
 ### Additional implementation notes
 
-  - _note_
-  - _note_
-  - _note_
+#### Error handling
+
+I/O is an area where nearly every operation can result in unexpected errors. It needs to be convenient to use I/O on the non-error path while also possible to handle errors efficiently.
+
+Some use cases:
+  * I'm hacking together a quick prototype or script that does a bunch of file manipulation. Thinking about all the possible ways I/O could fail is not the point of this work and it's ok for the entire process to fail if something goes wrong. I don't want to be inconvenienced with handling errors.
+  * I'm doing some performance critical I/O on a server and want to recover from an I/O failure in the most efficient way possible. I'm ok with writing extra error handling code.
