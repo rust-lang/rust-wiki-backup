@@ -37,6 +37,11 @@ Module editing plan template
 - Ada [streams](http://www.ada-auth.org/standards/12rm/html/RM-13-13-1.html) [streamIO](http://www.ada-auth.org/standards/12rm/html/RM-A-12-1.html) [sequentialIO](http://www.ada-auth.org/standards/12rm/html/RM-A-8-1.html)
 - Lua [LTN12: filters sources and sinks](http://lua-users.org/wiki/FiltersSourcesAndSinks) as used in [LuaSocket](http://w3.impa.br/~diego/software/luasocket/ltn12.html)
 
+### Code examples
+
+* [http://pleac.sourceforge.net/]
+* [Ruby tutorial](http://ruby.bastardsbook.com/chapters/io/)
+
 ### Summary of research from other languages:
 #### Structures and functions commonly appearing
 
