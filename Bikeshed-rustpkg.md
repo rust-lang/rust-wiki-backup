@@ -15,6 +15,7 @@ This is Tim's attempt to come up with a schedule for finishing rustpkg, with a p
       * test cases:
          * deeply-nested subdirectory
       	 * remote (github) URL
+
    Due: 2013-04-24
 
 3. Test	runner (#5683)
