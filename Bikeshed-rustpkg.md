@@ -36,6 +36,7 @@ This is Tim's attempt to come up with a schedule for finishing rustpkg, with a p
 8. Use workcache
       * test case:
           * run "rustpkg build foo" twice, check timestamps to make sure foo isn't built again the second time
+      * This depends on #4432
 
 8. Track dependencies between Rust packages
       * test case:
