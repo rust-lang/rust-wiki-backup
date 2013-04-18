@@ -258,6 +258,10 @@ pub trait Float {
     fn NaN()           -> Self;
     fn infinity()      -> Self;
     fn neg_infinity()  -> Self;
+    ...
+}
+
+trait Real {
     fn pi()            -> Self;    // π
     fn two_pi()        -> Self;    // 2 × π
     ...
@@ -267,6 +271,10 @@ impl Float for f32 {
     #[inline(always)] fn NaN()          -> f32 { 0_f32 / 0_f32 }
     #[inline(always)] fn infinity()     -> f32 { 1_f32 / 0_f32 }
     #[inline(always)] fn neg_infinity() -> f32 {-1_f32 / 0_f32 }
+    ...
+}
+
+impl Real for f32 {
     #[inline(always)] fn two_pi()       -> f32 { 6.28318530717958647692528676655900576 }
     #[inline(always)] fn pi()           -> f32 { 3.14159265358979323846264338327950288 }
     ...
@@ -275,11 +283,14 @@ impl Float for f32 {
 
 This is not ideal however, as these 'constants' would not be able to be used in compile time expressions (for example when defining new constants). There has been talk of adding '[Associated Items](http://smallcultfollowing.com/babysteps/blog/2013/04/03/associated-items-continued/)' to traits in the future. This would allow the definition of true constants:
 
-~~~rust
-pub trait Float {
+~~~rustpub trait Float {
     static NAN           : Self;
     static INFINITY      : Self;
     static NEG_INFINITY  : Self;
+    ...
+}
+
+trait Real {
     static PI            : Self;    // π
     static TWO_PI        : Self;    // 2 × π
     ...
@@ -289,8 +300,12 @@ impl Float for f32 {
     static NAN          : f32 =  0_f32 / 0_f32;
     static INFINITY     : f32 =  1_f32 / 0_f32;
     static NEG_INFINITY : f32 = -1_f32 / 0_f32;
-    static TWO_PI       : f32 =  6.28318530717958647692528676655900576;
-    static PI           : f32 =  3.14159265358979323846264338327950288;
+    ...
+}
+
+impl Real for f32 {
+    static TWO_PI       : f32 =  6.28318530717958647692528676655900576_f32;
+    static PI           : f32 =  3.14159265358979323846264338327950288_f32;
     ...
 }
 ~~~
