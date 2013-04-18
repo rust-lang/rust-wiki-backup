@@ -6,7 +6,7 @@ This is Tim's attempt to come up with a schedule for finishing rustpkg, with a p
 
       1a. Clarify directory structure for package dirs (src/, lib/, build/, etc.) and make sure test cases reflect that. Also document this in English in a separate document.
        
-            Due: 2013-04-19
+           Due: 2013-04-19
 
 1. Implement 'install' command
       * test cases:
