@@ -34,3 +34,4 @@ This is Tim's attempt to come up with a schedule for finishing rustpkg, with a p
       	  * remove one package, make sure it doesn't appear in list and other packages do
 
 8. Finish implementing all other commands
+       * do, info, prefer, test, uninstall, unprefer
