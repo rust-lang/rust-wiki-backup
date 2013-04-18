@@ -53,7 +53,6 @@ Calculates the maximum of the object and `other`.
 
 Ensures that the object is between the limits set by `min` and `max`. If `min` is greater than `max` the result is undefined.
 
-
 ### Abs<Result> ###
 
 Abs should always take a type parameter Result that is a type that represents a real number but does not necessarily have to implement the Real trait (but really should implement at least `Ord`).
@@ -160,6 +159,15 @@ trait Real: Num Ord Sqrt Abs<Self> { }
 ~~~
 
 All integer, floating-point and fixed-point types can trivially implement this. `Sqrt` isn't currently implemented by integer types, but it is useful for some algorithms, so I wouldn't mind adding one.
+
+
+## Type independent NumLimit-like trait ##
+
+There should also be a trait similar to the NumLimits template in C++. (See http://www.cplusplus.com/reference/limits/numeric_limits/)
+
+Compared to the standard set of traits, this trait would be implemented for all/most numbers, and provide a more verbose, but also universal way to query things about a numeric types.
+
+For example, the normal `Bounded` trait would only be implemented for types with bounds and consist of some kind of min/max of type T, while the NumLimit one would have something like `defined_min: Option<T>, undefined_min: Option<T>`, which for a int would be `Some(MININT)` and `None`, for a f32 `Some(1.18e−38)` and `Some(-inf)`, and for a bigint `None` and `None`
 
 ## Bit- and byte-level Traits ##
 
