@@ -8,6 +8,7 @@ Module editing plan template
 
 ###  Notes from discussion on mailing list
 
+- [WIP](https://github.com/brson/rust/tree/io/src/libcore/rt/io)
 - [API sketch](https://gist.github.com/brson/5399629)
 
 ## 2. Research of standards and techniques
