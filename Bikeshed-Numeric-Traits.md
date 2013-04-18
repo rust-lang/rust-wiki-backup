@@ -281,7 +281,9 @@ impl Real for f32 {
 }
 ~~~
 
-This is not ideal however, as these 'constants' would not be able to be used in compile time expressions (for example when defining new constants). There has been talk of adding '[Associated Items](http://smallcultfollowing.com/babysteps/blog/2013/04/03/associated-items-continued/)' to traits in the future. This would allow the definition of true constants:
+### Associated Constants ###
+
+This is not ideal however, as these 'constants' would not be able to be used in compile time expressions (for example when defining new constants). There has been talk of adding [Associated Items](http://smallcultfollowing.com/babysteps/blog/2013/04/03/associated-items-continued/) in the future. This would allow the definition of true compile-time constants:
 
 ~~~rust
 pub trait Float {
@@ -311,7 +313,7 @@ impl Real for f32 {
 }
 ~~~
 
-### Proposed associated constants ###
+Here is a list of some of the associated constants that could be defined:
 
 - Zero
     - ZERO
