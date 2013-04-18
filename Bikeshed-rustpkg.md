@@ -3,8 +3,9 @@ This is Tim's attempt to come up with a schedule for finishing rustpkg, with a p
 0. Check in concrete test cases and/or English descriptions of how to test for this, for each item below
 
 1. Implement 'install' command
-      test cases: main/lib files	end up in specified install dir
-      	      	 test/bench files stay in build	subdir
+      * test cases:
+        * * main/lib files end up in specified install dir
+      	* * test/bench files stay in build	subdir
 
 2. Full	pkgids (#5679)
       test cases: deeply-nested	subdirectory
