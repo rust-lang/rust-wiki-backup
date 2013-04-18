@@ -101,3 +101,9 @@ TODO
 ##### Reader/Writer composition
 
 TODO
+
+##### Questions
+
+* Is ReaderUtil/WriterUtil the proper abstraction?
+* Do we need to consider string/character readers more carefully than mixins on Readers and Writers? For example, there are multiple options for handling newlines, and the ReaderUtil/WriterUtil trait doesn't have the state to store a flag.
+* Need to think about iteration, `each_byte` etc. and how it relates to iteration elsewhere.
