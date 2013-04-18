@@ -104,11 +104,11 @@ When a condition is handled I/O libraries will essentially be expected to turn t
 
 TODO
 
-##### Reader/Writer composition
+#### Reader/Writer composition
 
 TODO
 
-##### Questions
+#### Questions
 
 * Is ReaderUtil/WriterUtil the proper abstraction?
 * Do we need to consider string/character readers more carefully than mixins on Readers and Writers? For example, there are multiple options for handling newlines, and the ReaderUtil/WriterUtil trait doesn't have the state to store a flag.
