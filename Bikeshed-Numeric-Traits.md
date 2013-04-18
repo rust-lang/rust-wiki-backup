@@ -249,6 +249,52 @@ mod f64 {
 
 The type-specific intent would be obvious when calling these functions, for example `float::abs(-0.5)` or `f64::min(2.0, 7.5)`.
 
+## Constants ##
+
+Initially constants could be declared using static methods:
+
+~~~rust
+pub trait Float {
+    fn NaN()           -> Self;
+    fn infinity()      -> Self;
+    fn neg_infinity()  -> Self;
+    fn pi()            -> Self;    // π
+    fn two_pi()        -> Self;    // 2 × π
+    ...
+}
+
+impl Float for f32 {
+    #[inline(always)] fn NaN()          -> f32 { 0_f32 / 0_f32 }
+    #[inline(always)] fn infinity()     -> f32 { 1_f32 / 0_f32 }
+    #[inline(always)] fn neg_infinity() -> f32 {-1_f32 / 0_f32 }
+    #[inline(always)] fn two_pi()       -> f32 { 6.28318530717958647692528676655900576 }
+    #[inline(always)] fn pi()           -> f32 { 3.14159265358979323846264338327950288 }
+    ...
+}
+~~~
+
+This is not ideal however, as these 'constants' would not be able to be used in compile time expressions (for example when defining new constants). There has been talk of adding '[Associated Items](http://smallcultfollowing.com/babysteps/blog/2013/04/03/associated-items-continued/)' to traits in the future. This would allow the definition of true constants:
+
+~~~rust
+impl Float for f32 {pub trait Float {
+    static NAN           : Self;
+    static INFINITY      : Self;
+    static NEG_INFINITY  : Self;
+    static PI            : Self;    // π
+    static TWO_PI        : Self;    // 2 × π
+    ...
+}
+
+impl Float for f32 {
+    static NAN          : f32 =  0_f32 / 0_f32;
+    static INFINITY     : f32 =  1_f32 / 0_f32;
+    static NEG_INFINITY : f32 = -1_f32 / 0_f32;
+    static TWO_PI       : f32 =  6.28318530717958647692528676655900576;
+    static PI           : f32 =  3.14159265358979323846264338327950288;
+    ...
+}
+~~~
+
 ## Performance ##
 
 ### LLVM Intrinsics ###
@@ -339,7 +385,9 @@ It would be more elegant if we could call LLVM directly from the operator trait:
 impl Add<T,T> for T {
     #[inline(always)]
     fn add(&self, other: &T) -> T {
-        unsafe { llvm!("...") }
+        unsafe { llvm!( "%0 = add u8 %1, u8 %2"
+                      : "r="(result)
+                      : "r"(a), "r"(b)); result") }
     }
 }
 ~~~
