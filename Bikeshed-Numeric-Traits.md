@@ -311,7 +311,7 @@ impl Real for f32 {
 }
 ~~~
 
-### Proposed constants ###
+### Proposed associated constants ###
 
 - Zero
     - ZERO
