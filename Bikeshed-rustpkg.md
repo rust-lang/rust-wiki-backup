@@ -8,6 +8,7 @@ This is Tim's attempt to come up with a schedule for finishing rustpkg, with a p
       * test cases:
         * main/lib files end up in specified install dir
       	* test/bench files stay in build subdir
+
    Due: 2013-04-22
 
 2. Full	pkgids (#5679)
