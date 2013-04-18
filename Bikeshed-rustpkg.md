@@ -2,7 +2,7 @@ This is Tim's attempt to come up with a schedule for finishing rustpkg, with a p
 
 0. Check in concrete test cases and/or English descriptions of how to test for this, for each item below
 
-      ~~Due: 2013-04-17~~ Done.
+      ~~Due: 2013-04-17~~ Done (pending pull request #5920).
 
 1. Implement 'install' command
       * test cases:
