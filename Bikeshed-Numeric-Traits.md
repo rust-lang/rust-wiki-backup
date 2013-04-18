@@ -276,7 +276,7 @@ impl Float for f32 {
 This is not ideal however, as these 'constants' would not be able to be used in compile time expressions (for example when defining new constants). There has been talk of adding '[Associated Items](http://smallcultfollowing.com/babysteps/blog/2013/04/03/associated-items-continued/)' to traits in the future. This would allow the definition of true constants:
 
 ~~~rust
-impl Float for f32 {pub trait Float {
+pub trait Float {
     static NAN           : Self;
     static INFINITY      : Self;
     static NEG_INFINITY  : Self;
@@ -385,9 +385,7 @@ It would be more elegant if we could call LLVM directly from the operator trait:
 impl Add<T,T> for T {
     #[inline(always)]
     fn add(&self, other: &T) -> T {
-        unsafe { llvm!( "%0 = add u8 %1, u8 %2"
-                      : "r="(result)
-                      : "r"(a), "r"(b)); result") }
+        unsafe { llvm!( "...") }
     }
 }
 ~~~
