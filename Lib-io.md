@@ -28,7 +28,7 @@ Module editing plan template
 - [C / C++ stdio](http://www.cplusplus.com/reference/cstdio/)
 - [C++ iostreams](http://www.cplusplus.com/reference/iostream/) - Probably don't want to take a lot of influence from C++
 - [C++ boost iostreams](http://www.boost.org/doc/libs/1_53_0/libs/iostreams/doc/index.html)
-- [C (Plan 9) bio](http://swtch.com/usr/local/plan9/include/bio.h) - tidied up / simplified stdio
+- [C (Plan 9) bio](http://swtch.com/usr/local/plan9/include/bio.h) [man](http://man.cat-v.org/plan_9/2/bio) - tidied up / simplified stdio
 - [D stdio](http://dlang.org/phobos/std_stdio.html) - stdio-like
 - [Go](http://golang.org/pkg/io/) - many fine-grained interfaces
 - [Python 3 io](http://docs.python.org/3.2/library/io.html) - includes text/binary division
