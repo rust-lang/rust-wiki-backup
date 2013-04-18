@@ -35,6 +35,7 @@ Module editing plan template
 - [Common Lisp streams](http://www.lispworks.com/documentation/HyperSpec/Body/c_stream.htm) - very composable, possibly over-engineered
 - [Haskell System.IO](http://www.haskell.org/ghc/docs/latest/html/libraries/base-4.6.0.1/System-IO.html)
 - Ada [streams](http://www.ada-auth.org/standards/12rm/html/RM-13-13-1.html) [streamIO](http://www.ada-auth.org/standards/12rm/html/RM-A-12-1.html) [sequentialIO](http://www.ada-auth.org/standards/12rm/html/RM-A-8-1.html)
+- Lua [LTN12: filters sources and sinks](http://lua-users.org/wiki/FiltersSourcesAndSinks) as used in [LuaSocket](http://w3.impa.br/~diego/software/luasocket/ltn12.html)
 
 ### Summary of research from other languages:
 #### Structures and functions commonly appearing
