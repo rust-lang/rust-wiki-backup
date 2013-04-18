@@ -283,7 +283,8 @@ impl Real for f32 {
 
 This is not ideal however, as these 'constants' would not be able to be used in compile time expressions (for example when defining new constants). There has been talk of adding '[Associated Items](http://smallcultfollowing.com/babysteps/blog/2013/04/03/associated-items-continued/)' to traits in the future. This would allow the definition of true constants:
 
-~~~rustpub trait Float {
+~~~rust
+pub trait Float {
     static NAN           : Self;
     static INFINITY      : Self;
     static NEG_INFINITY  : Self;
@@ -309,6 +310,41 @@ impl Real for f32 {
     ...
 }
 ~~~
+
+### Proposed constants ###
+
+- Zero
+    - ZERO
+- One
+    - ONE 
+- Primitive
+    - BITS
+    - BYTES
+- Int
+    - MIN_VALUE
+    - MAX_VALUE
+- Float
+    - NAN
+    - INFINITY
+    - NEG_INFINITY
+- Real
+    - PI
+    - TWO_PI
+    - FRAC_PI_2
+    - FRAC_PI_3
+    - FRAC_PI_4
+    - FRAC_PI_6
+    - FRAC_PI_8
+    - FRAC_1_PI
+    - FRAC_2_PI
+    - FRAC_2_SQRTPI
+    - SQRT2
+    - FRAC_1_SQRT2
+    - E
+    - LOG2_E
+    - LOG10_E
+    - LN_2
+    - LN_10
 
 ## Performance ##
 
