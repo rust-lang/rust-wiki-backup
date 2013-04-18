@@ -8,7 +8,7 @@ This is Tim's attempt to come up with a schedule for finishing rustpkg, with a p
          Due: 2013-04-19
 
     
-1. Implement 'install' command
+1. Implement `install` command
       * test cases:
         * main.rs and lib.rs files end up in package source's install dirs (`lib` and `bin` by default)
       	* test/bench files end up in package source's build dir
@@ -28,7 +28,7 @@ This is Tim's attempt to come up with a schedule for finishing rustpkg, with a p
 
 4. Finding external crates (#5681)
       * test cases:
-          * a file with "extern mod foo" where foo lives in a different directory
+          * a file with `extern mod foo` where foo lives in a different directory
 
    Due: 2013-05-03
 
