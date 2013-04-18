@@ -49,6 +49,12 @@ This is Tim's attempt to come up with a schedule for finishing rustpkg, with a p
 
    Due: 2013-05-17
 
+8. Track dependencies between Rust packages
+      * test case:
+          * two packages, A and B; A depends on B with ```extern mod```; building A automatically builds B
+
+   Due: 2013-05-28
+
 8. Use workcache
       * test cases:
           * run "rustpkg build foo" twice, check timestamps to make sure foo isn't built again the second time
@@ -58,13 +64,7 @@ This is Tim's attempt to come up with a schedule for finishing rustpkg, with a p
       * generally, make sure ```rustpkg build``` "works like ```make```"
       * This depends on #4432
 
-   Due: 2013-05-28
-
-8. Track dependencies between Rust packages
-      * test case:
-          * two packages, A and B; A depends on B with ```extern mod```; building A automatically builds B
-
-   Due: 2013-06-05
+   Due: 2013-06-04
 
 8. Extend pkg IDs to specify version explicitly
       * test case:
