@@ -8,7 +8,7 @@ Module editing plan template
 
 ###  Notes from discussion on mailing list
 
-- [API sketch]:(https://gist.github.com/brson/5399629)
+- [API sketch](https://gist.github.com/brson/5399629)
 
 ## 2. Research of standards and techniques
 
