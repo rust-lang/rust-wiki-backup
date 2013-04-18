@@ -38,11 +38,11 @@ This is Tim's attempt to come up with a schedule for finishing rustpkg, with a p
 
    Due: 2013-05-07
 
-6. Implement RUST_PATH (#5682)
+6. Implement `RUST_PATH` (#5682)
       * test cases:
-          * searching in .rust
-      	  * install; make sure it installs to the first entry in $RUST_PATH
-      	  * install from an entry in RUST_PATH that isn't the first one
+          * searching in `.rust`
+      	  * install; make sure it installs to the first entry in `$RUST_PATH`
+      	  * install from an entry in `RUST_PATH` that isn't the first one
 
    Due: 2013-05-10
 
@@ -61,7 +61,7 @@ This is Tim's attempt to come up with a schedule for finishing rustpkg, with a p
 
 8. Use workcache
       * test cases:
-          * run "rustpkg build foo" twice, check timestamps to make sure foo isn't built again the second time
+          * run `rustpkg build foo` twice, check timestamps to make sure foo isn't built again the second time
           * build foo, which depends on bar, from scratch; check timestamps to make sure foo was built after bar
           * build foo, which depends on bar, from scratch; change bar; rebuild foo; make sure foo was actually rebuilt (i.e. foo's timestamp is later than bar's timestamp)
           * use content hashing and not just datestamps (have tests where one, but not the other, changes)
