@@ -322,7 +322,7 @@ Here is a list of some of the associated constants that could be defined:
 - Primitive
     - BITS
     - BYTES
-- Int
+- Bounded
     - MIN_VALUE
     - MAX_VALUE
 - Float
