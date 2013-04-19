@@ -40,7 +40,7 @@ Module editing plan template
 
 ### Code examples
 
-* [http://pleac.sourceforge.net/]
+* http://pleac.sourceforge.net/
 * [Ruby tutorial](http://ruby.bastardsbook.com/chapters/io/)
 
 ### Summary of research from other languages:
