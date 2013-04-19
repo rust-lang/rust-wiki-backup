@@ -56,6 +56,12 @@ Rust builds on FreeBSD but is not officially supported. It is only known to work
 
 The gcc included with FreeBSD is old, so your best bet is to run the `configure` script with `--enable-clang`. Installing gcc 4.6 can also work. Build with `gmake` instead of `make`.
 
+### OSX
+
+Get the command line tools for xcode from  [Apple Developer Downloads](https://developer.apple.com/downloads/index.action) or Xcode.app -> Preferences -> Downloads -> Components.
+
+Then, optionally get Valgrind and pandoc. Vallgrind is available in machomebrew: `brew install valgrind`. pandoc must be installed manually according to the [installation instructions](http://johnmacfarlane.net/pandoc/installing.html). ccache can also be installed from machomebrew: `brew install ccache`.
+
 ## Downloading and building Rust
 
     git clone git://github.com/mozilla/rust.git
