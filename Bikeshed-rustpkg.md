@@ -8,6 +8,11 @@ This is Tim's attempt to come up with a schedule for finishing rustpkg, with a p
          ~~Due: 2013-04-19~~ Done (pending pull request #5948)
 
     
+1. Fix package searching
+
+   Look for packages in `./src` and not in `.` (as a stopgap before fully implementing `RUST_PATH`). Basically, respect the directory structure as specified in the draft manual, even if we're only searching in `.` and not the whole `RUST_PATH`.
+         Due: 2013-04-19
+
 1. Implement `install` command
       * test cases:
         * main.rs and lib.rs files end up in package source's install dirs (`lib` and `bin` by default)
@@ -40,7 +45,7 @@ This is Tim's attempt to come up with a schedule for finishing rustpkg, with a p
 
 6. Implement `RUST_PATH` (#5682)
       * test cases:
-          * searching in `.rust`
+          * searching in `./.rust`
       	  * install; make sure it installs to the first entry in `$RUST_PATH`
       	  * install from an entry in `RUST_PATH` that isn't the first one
 
