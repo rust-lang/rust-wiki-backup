@@ -1,4 +1,4 @@
-These are coding guidelines for Rust code.
+Here are some rough guidelines to Rust style. They are followed unevenly and there's not necessarily consensus about everything here. More work is required.
 
 # Editor settings
 
