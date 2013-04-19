@@ -16,8 +16,8 @@ on type implementations, make default private, add pub explicitly where wanted
 Trait naming?
 
 - trait examples: Copy, Owned, Const, Add, Sub, Num, Shr, Index, Encode, Decode, Reader, Writer, GenericPath
-- extension methods: XUtil? Prefer default methods
-- avoid things with prefixes (able, etc). try to use transitive verbs, nouns, and then adjectives in that order
+- extension traits: XUtil? When do you prefer default methods to extensions?
+- avoid words with suffixes (able, etc). try to use transitive verbs, nouns, and then adjectives in that order
 
 
 
