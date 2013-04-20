@@ -7,12 +7,14 @@ This is Tim's attempt to come up with a schedule for finishing rustpkg, with a p
       1a. Clarify directory structure for package dirs (src/, lib/, build/, etc.) and make sure test cases reflect that. Also document this in English in a separate document.    
          ~~Due: 2013-04-19~~ Done (pending pull request #5948)
 
+      1b. Incorporate comments at https://github.com/mozilla/rust/pull/5948
+         ~~Due: 2013-04-21~~
     
 1. Fix package searching
 
    Look for packages in `./src` and not in `.` (as a stopgap before fully implementing `RUST_PATH`). Basically, respect the directory structure as specified in the draft manual, even if we're only searching in `.` and not the whole `RUST_PATH`.
          
-   Due: 2013-04-19
+   Due: 2013-04-21
 
 1. Implement `install` command
       * test cases:
