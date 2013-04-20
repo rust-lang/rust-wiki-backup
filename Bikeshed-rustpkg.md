@@ -12,7 +12,7 @@ This is Tim's attempt to come up with a schedule for finishing rustpkg, with a p
     
 1. Fix package searching
 
-   Look for packages in `./src` and not in `.` (as a stopgap before fully implementing `RUST_PATH`). Basically, respect the directory structure as specified in the draft manual, even if we're only searching in `.` and not the whole `RUST_PATH`.
+   Look for packages in `./src` and not in `.` (as a stopgap before fully implementing `RUST_PATH`). Basically, respect the directory structure as specified in the draft manual, even if we're only searching in `.` and not the whole `RUST_PATH`. In my local copy of `src/librustpkg/testsuite/pass`, `rustpkg build hello-world` should work.
          
    Due: 2013-04-21
 
