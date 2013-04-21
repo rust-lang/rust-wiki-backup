@@ -3,7 +3,7 @@ This page is intended to describe the design rationale for Rusts numeric traits,
 ### Issues ###
 
  1. We cannot provide a default implementations for methods due to bugs in rustc I think, something to do with structs and trait inheritance &c.
- 2. We cannot inherit generic traits due to bugs in rustc.
+ 2. ~~We cannot inherit generic traits due to bugs in rustc.~~ Fixed
  3. We cannot split this out to a `libmath` because of rusts treatment of `#[lang]` items.
 
 ## Base Traits ##
@@ -455,9 +455,9 @@ This would allow us to remove the operator code from the compiler.
 
 ## Related Changes ##
 
-### rename `modulo` into `rem` or `remainder` in traits and docs ###
+### ~~rename `modulo` into `rem` or `remainder` in traits and docs~~ ###
 
-Rusts `%` operator mimics C and C++ in that it's not modulo but remainder, however the documentation and naming convention claims for it to be modulo.
+~~Rusts `%` operator mimics C and C++ in that it's not modulo but remainder, however the documentation and naming convention claims for it to be modulo.~~ [Implemented](https://github.com/mozilla/rust/issues/5990)
 
 ## See Also ##
 
