@@ -8,7 +8,7 @@ This is Tim's attempt to come up with a schedule for finishing rustpkg, with a p
          ~~Due: 2013-04-19~~ Done (pending pull request #5948)
 
       1b. Incorporate comments at https://github.com/mozilla/rust/pull/5948
-          Due: 2013-04-22
+          ~~Due: 2013-04-22~~ Done (pending pull request #6008)
     
 1. Fix package searching
 
