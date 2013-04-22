@@ -8,20 +8,20 @@ This is Tim's attempt to come up with a schedule for finishing rustpkg, with a p
          ~~Due: 2013-04-19~~ Done (pending pull request #5948)
 
       1b. Incorporate comments at https://github.com/mozilla/rust/pull/5948
-         ~~Due: 2013-04-21~~
+          Due: 2013-04-22
     
 1. Fix package searching
 
    Look for packages in `./src` and not in `.` (as a stopgap before fully implementing `RUST_PATH`). Basically, respect the directory structure as specified in the draft manual, even if we're only searching in `.` and not the whole `RUST_PATH`. In my local copy of `src/librustpkg/testsuite/pass`, `rustpkg build hello-world` should work.
          
-   Due: 2013-04-21
+   Due: 2013-04-22
 
 1. Implement `install` command
       * test cases:
         * main.rs and lib.rs files end up in package source's install dirs (`lib` and `bin` by default)
       	* test/bench files end up in package source's build dir
 
-   Due: 2013-04-22
+   Due: 2013-04-23
 
 2. Full	pkgids (#5679)
       * test cases:
