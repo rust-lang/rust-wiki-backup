@@ -6,16 +6,12 @@ When you're done with a bikeshed page, please either abandon it or move it to a 
 
 ## Active
 
-
-
-
-
-
-* [[Bikeshed pattern matching syntax]]
-* [[Bikeshed mapreduce]]
 * [[Bikeshed function subtyping wrt regions]]
-* [[Bikeshed task reuse]]
+* [[Bikeshed mapreduce]]
 * [[Bikeshed Numeric Traits]]
+* [[Bikeshed pattern matching syntax]]
+* [[Bikeshed rustpkg]]
+* [[Bikeshed task reuse]]
 
 ## Abandoned
 
