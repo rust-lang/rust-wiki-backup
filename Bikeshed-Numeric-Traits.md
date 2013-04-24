@@ -196,13 +196,13 @@ trait Shift<RHS>: Shl<RHS,Self> Shr<RHS,Self> { }
 
 ### Bitcount ###
 
-I find these useful, so I added them here. We also currently have unexposed intrinsics for them, which this would fix. Note that `clz` / `ctz` never returns undefined results (I'm looking at you, x86) and if there isn't a binary one in the value, return the size of the type.
+I find these useful, so I added them here. We also currently have unexposed intrinsics for them, which this would fix. Note that `leading_zeros` / `trailing_zeros` never returns undefined results (I'm looking at you, x86) and if there isn't a binary one in the value, return the size of the type.
 
 ~~~
 trait Bitcount<I:Int> {
-  fn popcount(&self) -> I;
-  fn clz(&self) -> I;
-  fn ctz(&self) -> I;
+  fn population_count(&self) -> I;
+  fn leading_zeros(&self) -> I;
+  fn trailing_zeros(&self) -> I;
 }
 ~~~
 
