@@ -29,7 +29,7 @@ Internal iterators provide a subset of the functionality of an external iterator
 to interleave them to implement algorithms like `zip`, `union` and `merge`. However, they're often
 much easier to implement.
 
-External iterator adaptors are defined as methods on any `Iterator` implementation. In the future they can be switched to default methods instead of a utility trait. The module currently defines these adaptors:
+External iterator adaptors are defined as methods on any `Iterator` implementation returning a state machine implementing `Iterator`. In the future they can be switched to default methods instead of a utility trait. The module currently defines these adaptors:
 
 ```rust
     fn chain(self, other: Self) -> ChainIterator<Self>;
