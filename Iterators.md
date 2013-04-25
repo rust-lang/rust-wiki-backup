@@ -25,7 +25,7 @@ for it.advance |&x: &uint| {
 }
 ```
 
-Internal iterators provide a subset of the functionality of an external iterator. It's not possible
+Internal iterators provide a subset of the functionality of an external iterator since the caller cannot store the state and iterate as-needed. It's not possible
 to interleave them to implement algorithms like `zip`, `union` and `merge`. However, they're often
 much easier to implement.
 
