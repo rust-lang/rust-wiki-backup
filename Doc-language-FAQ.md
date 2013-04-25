@@ -35,8 +35,8 @@
 
 The syntax is still evolving, but here's a snippet from the hash map in core::hashmap.
 
-```none
-    struct LinearMap<K:Eq Hash,V> {
+```rust
+    struct LinearMap<K,V> {
         k0: u64,
         k1: u64,
         resize_at: uint,
@@ -48,14 +48,14 @@ The syntax is still evolving, but here's a snippet from the hash map in core::ha
         FoundEntry(uint), FoundHole(uint), TableFull
     }
 
-    fn linear_map_with_capacity<K:Eq Hash,V>(capacity: uint) -> LinearMap<K,V> {
+    fn linear_map_with_capacity<K:Eq + Hash,V>(capacity: uint) -> LinearMap<K,V> {
         let r = rand::Rng();
         linear_map_with_capacity_and_keys(r.gen_u64(), r.gen_u64(), capacity)
     }
 
-    impl<K:Hash IterBytes Eq, V> LinearMap<K,V> {
+    impl<K:Hash + IterBytes + Eq, V> LinearMap<K,V> {
 
-        pure fn contains_key(&const self, k: &K) -> bool {
+        fn contains_key(&self, k: &K) -> bool {
             match self.bucket_for_key(self.buckets, k) {
                 FoundEntry(_) => true,
                 TableFull | FoundHole(_) => false
