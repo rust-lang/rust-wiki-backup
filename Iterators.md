@@ -9,7 +9,7 @@ use core::iter::iter_to_vec;
 println(iter_to_vec(|f| uint::range(0, 20, f)).to_str());
 ```
 
-The old `iter` module defined the adaptors as working on `BaseIter`, which crippled them by restricting the usage to an `each` method on a container taking `&self`. Right now `iter_to_vec` is the only function implement the composable way, but it's easy enough to redefine the others.
+The old `iter` module defined the adaptors as working on `BaseIter`, which crippled them by restricting the usage to an `each` method on a container taking `&self`. Right now `iter_to_vec` is the only function implementing the composable way, but it's easy enough to redefine the others.
 
 An external iterator object implementing the interface in the `iterator` module can be used as an
 internal iterator by calling the `advance` method. For example:
