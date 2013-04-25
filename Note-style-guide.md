@@ -3,60 +3,68 @@ Here are some rough guidelines to Rust style. They are followed unevenly and the
 # Editor settings
 
   * Lines should not be longer than 100 characters.
-  * Use spaces for indentation not tabs.
+  * Use spaces for indentation, not tabs.
 
 # Naming conventions
 
-- Type names, variants - camel case
-- function - lowercase with underscores where it helps readability
-- Static variables are capitalized
+## General
 
-on type implementations, make default private, add pub explicitly where wanted
+* Type names and enumeration variants should be in `CamelCase`.
+* Functions, methods, and variables should be lowercase with underscores where it helps readability.
+* Static variables should be in `ALL_CAPS`.
+* Constructors are methods called `new` or `new_with_more_details`.
+* When writing a binding to an external library, put the raw C bindings in a module called `ffi` (rather than `ll`). Do not create high-level bindings called `hl`.
 
-Trait naming?
+## Trait naming
 
 - trait examples: Copy, Owned, Const, Add, Sub, Num, Shr, Index, Encode, Decode, Reader, Writer, GenericPath
 - extension traits: XUtil? When do you prefer default methods to extensions?
 - avoid words with suffixes (able, etc). try to use transitive verbs, nouns, and then adjectives in that order
 
+# Privacy
 
-
-Constructors are static methods called `new` or `new_with_more_details`.
-
-use ffi instead of _hl or ll or raw as the module for holding the extern definitions
+* Avoid (`pub impl Type { ... }`). Instead mark the individual methods public. This allows a reader to immediately tell which methods are public at a glance.
 
 # Function declarations
 
 Wrapped functions:
 
 ```
-fn frobnicate(a: bar,
-              b: bar)
-              -> bar {
+fn frobnicate(a: Bar,
+              b: Bar)
+              -> Bar {
+    code;
+}
+
+fn foo<T:This,
+       U:That>(
+       a: Bar,
+       b: Bar)
+       -> Baz {
     code;
 }
 ```
 
-note: need to adjust editors to do this automatically - this is not the current convention
+(Note: We need to adjust editors to do this automatically. This is not the current convention.)
 
 The downside of this is, that the indendation level of many lines of code may change when the length of the function name changes.
 
-# cfg
+# Platform-specific code
 
-avoid using `cfg` directives outside of platform namespace
+* When writing cross-platform code, try to group platform-specific code into a module called `platform`.
+* Try to avoid `#[cfg]` directives outside this `platform` module.
 
 # Imports
 
-extern mods, blank line
-local imports first, then external imports, then pub use.
-
-avoid use of *, except in tests
+* Write `extern mod` directives first, then a blank line.
+* Put local imports first, then external imports, then `pub use`.
+* Avoid use of `use *`, except in tests.
 
 # Namespacing
 
-ok to use use `foo = bar;`
+* It's OK to use `foo = bar;`
 
-avoid import of functions, instead `mod::func()`
+* Avoid importing functions, unless they're very common. Instead import up to the module you're going to use and then call `mod::func()`.
 
 # Unit testing
 
