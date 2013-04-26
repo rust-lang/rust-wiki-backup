@@ -212,6 +212,7 @@ Options:
     - [time.h](http://pubs.opengroup.org/onlinepubs/7908799/xsh/time.h.html)
     - [glib](https://developer.gnome.org/glib/2.36/glib-Date-and-Time-Functions.html)
     - [libtai](http://cr.yp.to/libtai.html)
+    - [Modernized `<time.h>` API proposal](http://www.cl.cam.ac.uk/~mgk25/time/c/) by Markus Kuhn
   1. Language: C++
     - [Boost.Date_Time](http://www.boost.org/doc/libs/1_53_0/doc/html/date_time.html)
         - boost::date_time
