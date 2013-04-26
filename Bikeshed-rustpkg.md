@@ -23,30 +23,30 @@ This is Tim's attempt to come up with a schedule for finishing rustpkg, with a p
 
    Pull request #6054 adds test cases
 
-   Due: 2013-04-25
+   Due: 2013-04-26
 
 2. Full	pkgids (#5679)
       * test cases:
          * deeply-nested subdirectory
       	 * remote (github) URL
 
-   Due: 2013-04-26
+   Due: 2013-04-29
 
 3. Test	runner (#5683)
 
-   Due: 2013-04-30
+   Due: 2013-05-03
 
 4. Finding external crates (#5681)
       * test cases:
           * a file with `extern mod foo` where foo lives in a different directory
 
-   Due: 2013-05-03
+   Due: 2013-05-10
 
 5. Get version from VCS (#5684)
       * test case:
           * use a subdirectory containing a git version, make sure the created executable or library has the right version number in the name
 
-   Due: 2013-05-07
+   Due: 2013-05-12
 
 6. Implement `RUST_PATH` (#5682)
       * test cases:
@@ -54,14 +54,14 @@ This is Tim's attempt to come up with a schedule for finishing rustpkg, with a p
       	  * install; make sure it installs to the first entry in `$RUST_PATH`
       	  * install from an entry in `RUST_PATH` that isn't the first one
 
-   Due: 2013-05-10
+   Due: 2013-05-16
 
 7. Implement (or test) package database	and ability to list, add, remove packages
       * test case:
           * install several packages, make sure they appear in list
       	  * remove one package, make sure it doesn't appear in list and other packages do
 
-   Due: 2013-05-17
+   Due: 2013-05-23
 
 8. Track dependencies between Rust packages
       * test case:
