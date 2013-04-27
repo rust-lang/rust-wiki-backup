@@ -126,10 +126,13 @@ match foo {
 
 Prefer line comments and avoid block comments. Reason: it avoids the debate about whether to put stars on every line, etc.
 
+In doc comments, write sentences that begin with capital letters and end in a period, even in the
+short summary description.
+
 Favor outer doc comments
 
 ```
-/// Function documentation
+/// Function documentation.
 fn foo() {
     ...
 }
@@ -148,8 +151,6 @@ Use full sentences that start with capitals and end with a period. See [[Doc-usi
 # Module organization
 
 Put types first, then implementations
-
-Do we want to prefer 'top-down' organization?
 
 # Function definitions
 
@@ -195,3 +196,6 @@ Examples:
 A ```for``` loop is always preferable to a ```while``` loop unless the loop counts in a non-uniform way (making it difficult to express as a ```for```).
 
 
+# Questions
+
+* Do we want to prefer 'top-down' organization?
