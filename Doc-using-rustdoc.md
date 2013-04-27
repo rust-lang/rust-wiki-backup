@@ -4,13 +4,13 @@ documentation itself. Unlike javadoc and other tools there is no internal
 markup for identifying things like arguments. How the documentation is
 written is a matter of convention.
 
-Rustdocs can be as simple as `Returns a slice` or they can be more involved:
+Rustdocs can be as simple as "Returns a slice." or they can be more involved:
 
     Adopt a slice of a string as a node.
 
     If the slice is longer than `max_leaf_char_len`, it is logically split
     between as many leaves as necessary. Regardless, the string itself
-    is not copied
+    is not copied.
 
     # Arguments
 
@@ -20,7 +20,7 @@ Rustdocs can be as simple as `Returns a slice` or they can be more involved:
     # Safety note
 
     Behavior is undefined if `byte_start` or `byte_len` do not represent
-    valid positions in `str`
+    valid positions in `str`.
 
     # Example
 
@@ -32,15 +32,15 @@ Rustdocs must be put inside doc-comments, which are comments that start with
 `/**` (one more star than for a normal comment) or `///` (one more slash) or,
 for inner-doc-comments, `/*!` or `//!`.
 
-    /// Engage thrusters
+    /// Engage thrusters.
     fn thrusters_on() { ... }
 
 Or:
 
     /**
-     * Engage thrusters
+     * Engage thrusters.
      *
-     * Begin heating toast at the temperature specified by the temperature dial
+     * Begin heating toast at the temperature specified by the temperature dial.
      */
     fn thrusters_on() { ... }
 
@@ -52,7 +52,7 @@ to write function documentation inside the function definition by using the `//!
  or `/*!` syntax:
 
     fn thrusters_on() {
-        //! Engage thrusters
+        //! Engage thrusters.
         ...
     }
 
@@ -75,7 +75,7 @@ first sentence of the rustdoc as a "summary" of the documentation. This
 summary is then used in the documentation index. Rustdocs are often formulated
 like
 
-    Get the next victim
+    Get the next victim.
 
     Get the next victim from the holding chambers. If there are no futher
     victims in the holding chambers then return `none`.
@@ -126,8 +126,8 @@ The argument section should be written as a bulleted list with the following for
 
     # Arguments
 
-    * `s` - The input string
-    * `n` - The starting index
+    * `s` - The input string.
+    * `n` - The starting index.
 
 ### Operating the rustdoc tool
 
