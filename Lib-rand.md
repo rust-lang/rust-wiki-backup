@@ -27,7 +27,12 @@ Generating random numbers, and sampling from random distributions.
     - [Overview wikipedia article](http://en.wikipedia.org/wiki/Randomness_test)
     - [Diehard tests](http://en.wikipedia.org/wiki/Diehard_tests) (e.g. [dieharder](http://www.phy.duke.edu/~rgb/General/dieharder.php))
     - [TestU01](http://en.wikipedia.org/wiki/TestU01) including "Small crush", "Crush" and "Big crush"
+    - [tests written by the creator of ISAAC](http://burtleburtle.net/bob/rand/testsfor.html)
     - Add a new make target "check-rngs" with a testsuite? 
+  3. Technique: sampling from distributions
+    - [Inverse transform sampling](http://en.wikipedia.org/wiki/Inverse_transform_sampling) (fully general)
+    - [Ziggurat algorithm](http://en.wikipedia.org/wiki/Ziggurat_algorithm) (distributions with decreasing density functions)
+    - [Box-Muller transform](https://en.wikipedia.org/wiki/Box%E2%80%93Muller_transform) and [Marsaglia polar method](https://en.wikipedia.org/wiki/Marsaglia_polar_method) (normal distribution, both are almost certainly inferior to the ziggurat algorithm)
 
 ### Summary of research on standards and leading techniques
 #### Relevant standards and techniques exist?
