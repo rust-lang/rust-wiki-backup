@@ -48,7 +48,7 @@ Generating random numbers, and sampling from random distributions.
   3. Language: R (statistical language, so much broader random number support than necessary)
     - http://stat.ethz.ch/R-manual/R-patched/library/base/html/Random.html
     - http://stat.ethz.ch/R-manual/R-patched/library/stats/html/Distributions.html
-  4: Library: [GSL](https://www.gnu.org/software/gsl/manual/html_node/)
+  4. Library: [GSL](https://www.gnu.org/software/gsl/manual/html_node/)
     - https://www.gnu.org/software/gsl/manual/html_node/Random-Number-Generation.html
     - https://www.gnu.org/software/gsl/manual/html_node/Random-Number-Distributions.html
 
