@@ -18,10 +18,10 @@ Generating random numbers, and sampling from random distributions.
   2. Standard: _standard_
     - _link to docs_
     - ...
-  1. Technique: [ISAAC/ISAAC-64 RNG](http://en.wikipedia.org/wiki/ISAAC_%28cipher%29
-)
-    - http://burtleburtle.net/bob/rand/isaacafa.html
-    - ISAAC is the main RNG used in rust at the moment
+  1. Technique: Generating random bits (i.e `u32` or `u64`)
+    - [ISAAC/ISAAC-64 RNG](http://en.wikipedia.org/wiki/ISAAC_%28cipher%29)
+       - http://burtleburtle.net/bob/rand/isaacafa.html
+       - ISAAC is the main RNG used in rust at the moment
   2. Technique: Testing quality of random numbers 
     - Very important! Extremely hard to tell if random numbers are "random enough" (a bug in an implementation, or a bad algorithm, can produce numbers that look random but aren't random enough for many purposes).
     - [Overview wikipedia article](http://en.wikipedia.org/wiki/Randomness_test)
@@ -48,6 +48,10 @@ Generating random numbers, and sampling from random distributions.
   3. Language: R (statistical language, so much broader random number support than necessary)
     - http://stat.ethz.ch/R-manual/R-patched/library/base/html/Random.html
     - http://stat.ethz.ch/R-manual/R-patched/library/stats/html/Distributions.html
+  4. Language: D
+    - http://dlang.org/phobos/std_random.html (no support for sampling from distributions other than uniform, but many RNGs)
+  5. Language: Go
+    - http://golang.org/pkg/math/rand/
   4. Library: [GSL](https://www.gnu.org/software/gsl/manual/html_node/)
     - https://www.gnu.org/software/gsl/manual/html_node/Random-Number-Generation.html
     - https://www.gnu.org/software/gsl/manual/html_node/Random-Number-Distributions.html
