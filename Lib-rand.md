@@ -18,9 +18,9 @@ Generating random numbers, and sampling from random distributions.
   2. Standard: _standard_
     - _link to docs_
     - ...
-  1. Technique: ISAAC/ISAAC-64 random number generator
+  1. Technique: [ISAAC/ISAAC-64 RNG](http://en.wikipedia.org/wiki/ISAAC_%28cipher%29
+)
     - http://burtleburtle.net/bob/rand/isaacafa.html
-    - http://en.wikipedia.org/wiki/ISAAC_%28cipher%29
     - ISAAC is the main RNG used in rust at the moment
   2. Technique: Testing quality of random numbers 
     - Very important! Extremely hard to tell if random numbers are "random enough" (a bug in an implementation, or a bad algorithm, can produce numbers that look random but aren't random enough for many purposes).
