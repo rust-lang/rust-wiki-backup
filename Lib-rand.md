@@ -20,6 +20,7 @@ Generating random numbers, and sampling from random distributions.
     - ...
   1. Technique: Generating random bits/numbers (i.e `u32` or `u64`)
     - http://en.wikipedia.org/wiki/List_of_random_number_generators
+    - http://en.wikipedia.org/wiki/Cryptographically_secure_pseudorandom_number_generator
     - [ISAAC/ISAAC-64 RNG](http://en.wikipedia.org/wiki/ISAAC_%28cipher%29)
        - cryptographically secure
        - http://burtleburtle.net/bob/rand/isaacafa.html
