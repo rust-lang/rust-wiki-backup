@@ -196,6 +196,7 @@ Examples:
 A ```for``` loop is always preferable to a ```while``` loop unless the loop counts in a non-uniform way (making it difficult to express as a ```for```).
 
 
-# Questions
+# Questions and TODO
 
 * Do we want to prefer 'top-down' organization?
+* Prefer unsafe pointers to unsafely transmuting borrowed pointers
