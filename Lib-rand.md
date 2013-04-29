@@ -18,7 +18,8 @@ Generating random numbers, and sampling from random distributions.
   2. Standard: _standard_
     - _link to docs_
     - ...
-  1. Technique: Generating random bits (i.e `u32` or `u64`)
+  1. Technique: Generating random bits/numbers (i.e `u32` or `u64`)
+    - http://en.wikipedia.org/wiki/List_of_random_number_generators
     - [ISAAC/ISAAC-64 RNG](http://en.wikipedia.org/wiki/ISAAC_%28cipher%29)
        - http://burtleburtle.net/bob/rand/isaacafa.html
        - ISAAC is the main RNG used in rust at the moment
@@ -48,10 +49,14 @@ Generating random numbers, and sampling from random distributions.
   3. Language: R (statistical language, so much broader random number support than necessary)
     - http://stat.ethz.ch/R-manual/R-patched/library/base/html/Random.html
     - http://stat.ethz.ch/R-manual/R-patched/library/stats/html/Distributions.html
+  4. Language: Julia (also a statistical language)
+    - https://github.com/JuliaStats/Distributions.jl
   4. Language: D
     - http://dlang.org/phobos/std_random.html (no support for sampling from distributions other than uniform, but many RNGs)
   5. Language: Go
     - http://golang.org/pkg/math/rand/
+  6. Language: Erlang
+    - https://mail.mozilla.org/pipermail/rust-dev/2013-April/003881.html
   4. Library: [GSL](https://www.gnu.org/software/gsl/manual/html_node/)
     - https://www.gnu.org/software/gsl/manual/html_node/Random-Number-Generation.html
     - https://www.gnu.org/software/gsl/manual/html_node/Random-Number-Distributions.html
