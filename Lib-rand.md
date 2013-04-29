@@ -21,8 +21,15 @@ Generating random numbers, and sampling from random distributions.
   1. Technique: Generating random bits/numbers (i.e `u32` or `u64`)
     - http://en.wikipedia.org/wiki/List_of_random_number_generators
     - [ISAAC/ISAAC-64 RNG](http://en.wikipedia.org/wiki/ISAAC_%28cipher%29)
+       - cryptographically secure
        - http://burtleburtle.net/bob/rand/isaacafa.html
        - ISAAC is the main RNG used in rust at the moment
+       - I've found little/no information about ISAAC-64
+    - [Mersenne Twister](http://en.wikipedia.org/wiki/Mersenne_twister)
+       - "The Mersenne twister is the default random number generator for Python,[7][8] Ruby,[9] R,[10] PHP,[11] MATLAB and also available in C++[12] since C++11."
+       - "The algorithm in its native form is not suitable for cryptography"
+       - [SIMD-oriented Fast Mersenne Twister (SFMT)](http://www.math.sci.hiroshima-u.ac.jp/~m-mat/MT/SFMT/)
+          - dSFMT is used by Julia
   2. Technique: Testing quality of random numbers 
     - Very important! Extremely hard to tell if random numbers are "random enough" (a bug in an implementation, or a bad algorithm, can produce numbers that look random but aren't random enough for many purposes).
     - [Overview wikipedia article](http://en.wikipedia.org/wiki/Randomness_test)
