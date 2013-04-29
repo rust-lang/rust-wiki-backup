@@ -30,7 +30,6 @@ Generating random numbers, and sampling from random distributions.
     - [Mersenne Twister](http://en.wikipedia.org/wiki/Mersenne_twister)
        - "The Mersenne twister is the default random number generator for Python,[7][8] Ruby,[9] R,[10] PHP,[11] MATLAB and also available in C++[12] since C++11."
        - "The algorithm in its native form is not suitable for cryptography"
-       - WELL
        - [SIMD-oriented Fast Mersenne Twister (SFMT)](http://www.math.sci.hiroshima-u.ac.jp/~m-mat/MT/SFMT/)
           - dSFMT is used by Julia, and possibly Erlang
     - [Xorshift](http://en.wikipedia.org/wiki/Xorshift)
