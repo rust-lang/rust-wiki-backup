@@ -25,6 +25,7 @@ Generating random numbers, and sampling from random distributions.
        - http://burtleburtle.net/bob/rand/isaacafa.html
        - ISAAC is the main RNG used in rust at the moment
        - I've found little/no information about ISAAC-64
+       - ["On the pseudo-random generator ISAAC" Aumasson 2006](http://eprint.iacr.org/2006/438.pdf) (details some problems in ISAAC and proposes a slight improvement ISAAC+)
     - [Mersenne Twister](http://en.wikipedia.org/wiki/Mersenne_twister)
        - "The Mersenne twister is the default random number generator for Python,[7][8] Ruby,[9] R,[10] PHP,[11] MATLAB and also available in C++[12] since C++11."
        - "The algorithm in its native form is not suitable for cryptography"
@@ -36,6 +37,7 @@ Generating random numbers, and sampling from random distributions.
     - [Diehard tests](http://en.wikipedia.org/wiki/Diehard_tests) (e.g. [dieharder](http://www.phy.duke.edu/~rgb/General/dieharder.php))
     - [TestU01](http://en.wikipedia.org/wiki/TestU01) including "Small crush", "Crush" and "Big crush"
     - [tests written by the creator of ISAAC](http://burtleburtle.net/bob/rand/testsfor.html)
+    - [NIST](http://csrc.nist.gov/groups/ST/toolkit/rng/index.html)
     - Add a new make target "check-rngs" with a testsuite? 
   3. Technique: sampling from distributions
     - [Inverse transform sampling](http://en.wikipedia.org/wiki/Inverse_transform_sampling) (fully general)
@@ -50,7 +52,7 @@ Generating random numbers, and sampling from random distributions.
 
 ## 3. Research of libraries from other languages
 
-  1. Language: C++
+  1. Language: C++11
     - http://www.cplusplus.com/reference/random/
   2. Language: Python
     - http://docs.python.org/3.3/library/random.html
@@ -71,6 +73,8 @@ Generating random numbers, and sampling from random distributions.
   5. Library: Numpy/Scipy
     - http://docs.scipy.org/doc/numpy/reference/routines.random.html
     - http://docs.scipy.org/doc/scipy/reference/stats.html
+  6. Library: Boost
+    - http://www.boost.org/doc/libs/1_53_0/doc/html/boost_random/reference.html
 
 ### Summary of research from other languages:
 #### Structures and functions commonly appearing
