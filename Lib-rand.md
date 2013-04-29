@@ -112,6 +112,6 @@ Very common/important:
 
 ### Additional implementation notes
 
-  - _note_
+  - `Rng` should take `&mut self`, instead of forcing the use of mutable fields
   - _note_
   - _note_
