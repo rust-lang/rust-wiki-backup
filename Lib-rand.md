@@ -43,6 +43,9 @@ Generating random numbers, and sampling from random distributions.
     - [WELL](http://en.wikipedia.org/wiki/Well_Equidistributed_Long-period_Linear)
        - Better randomness properties than Mersenne twister
        - Fairly fast public domain implementation on p8 of http://www.lomont.org/Math/Papers/2008/Lomont_PRNG_2008.pdf (this is an overview of multiple RNG algorithms)
+    - [MWC/CMWC](http://en.wikipedia.org/wiki/Multiply-with-carry)
+       - Not crypto quality, fast
+       - ["Random Number Generators" Marsaglia 2003](http://www.jmasm.com/journal/2003_vol2_no1.pdf) (pages 6-17, also relevant to xorshift)
   2. Technique: Testing quality of random numbers 
     - Very important! Extremely hard to tell if random numbers are "random enough" (a bug in an implementation, or a bad algorithm, can produce numbers that look random but aren't random enough for many purposes).
     - [Overview wikipedia article](http://en.wikipedia.org/wiki/Randomness_test)
