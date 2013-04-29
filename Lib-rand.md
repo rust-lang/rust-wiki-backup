@@ -36,6 +36,7 @@ Generating random numbers, and sampling from random distributions.
     - [Xorshift](http://en.wikipedia.org/wiki/Xorshift)
        - Not crypto quality, but simple, small and fast
        - Currently the only other RNG in Rust
+       - ["On the Xorshift Random Number Generators" Panneton & L'Ecuyer 2005(?)](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.63.7497&rep=rep1&type=pdf) (analysis of and improvements to the xorshift generators)
     - [LFSR](http://en.wikipedia.org/wiki/Linear_feedback_shift_registers)
        - Not crypto quality, fast
        - ["Tables of maximally equidistributed combined LSFR generators" L'Ecuyer 1999](http://www.ams.org/mcom/1999-68-225/S0025-5718-99-01039-X/S0025-5718-99-01039-X.pdf) (includes a 64 bit variant)
