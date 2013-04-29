@@ -30,8 +30,18 @@ Generating random numbers, and sampling from random distributions.
     - [Mersenne Twister](http://en.wikipedia.org/wiki/Mersenne_twister)
        - "The Mersenne twister is the default random number generator for Python,[7][8] Ruby,[9] R,[10] PHP,[11] MATLAB and also available in C++[12] since C++11."
        - "The algorithm in its native form is not suitable for cryptography"
+       - WELL
        - [SIMD-oriented Fast Mersenne Twister (SFMT)](http://www.math.sci.hiroshima-u.ac.jp/~m-mat/MT/SFMT/)
           - dSFMT is used by Julia, and possibly Erlang
+    - [Xorshift](http://en.wikipedia.org/wiki/Xorshift)
+       - Not crypto quality, but simple, small and fast
+       - Currently the only other RNG in Rust
+    - [LFSR](http://en.wikipedia.org/wiki/Linear_feedback_shift_registers)
+       - Not crypto quality, fast
+       - ["Tables of maximally equidistributed combined LSFR generators" L'Ecuyer 1999](http://www.ams.org/mcom/1999-68-225/S0025-5718-99-01039-X/S0025-5718-99-01039-X.pdf) (includes a 64 bit variant)
+    - [WELL](http://en.wikipedia.org/wiki/Well_Equidistributed_Long-period_Linear)
+       - Better randomness properties than Mersenne twister
+       - Fairly fast public domain implementation on p8 of http://www.lomont.org/Math/Papers/2008/Lomont_PRNG_2008.pdf (this is an overview of multiple RNG algorithms)
   2. Technique: Testing quality of random numbers 
     - Very important! Extremely hard to tell if random numbers are "random enough" (a bug in an implementation, or a bad algorithm, can produce numbers that look random but aren't random enough for many purposes).
     - [Overview wikipedia article](http://en.wikipedia.org/wiki/Randomness_test)
