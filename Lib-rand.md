@@ -29,7 +29,7 @@ Generating random numbers, and sampling from random distributions.
        - "The Mersenne twister is the default random number generator for Python,[7][8] Ruby,[9] R,[10] PHP,[11] MATLAB and also available in C++[12] since C++11."
        - "The algorithm in its native form is not suitable for cryptography"
        - [SIMD-oriented Fast Mersenne Twister (SFMT)](http://www.math.sci.hiroshima-u.ac.jp/~m-mat/MT/SFMT/)
-          - dSFMT is used by Julia
+          - dSFMT is used by Julia, and possibly Erlang
   2. Technique: Testing quality of random numbers 
     - Very important! Extremely hard to tell if random numbers are "random enough" (a bug in an implementation, or a bad algorithm, can produce numbers that look random but aren't random enough for many purposes).
     - [Overview wikipedia article](http://en.wikipedia.org/wiki/Randomness_test)
@@ -68,9 +68,22 @@ Generating random numbers, and sampling from random distributions.
   4. Library: [GSL](https://www.gnu.org/software/gsl/manual/html_node/)
     - https://www.gnu.org/software/gsl/manual/html_node/Random-Number-Generation.html
     - https://www.gnu.org/software/gsl/manual/html_node/Random-Number-Distributions.html
+  5. Library: Numpy/Scipy
+    - http://docs.scipy.org/doc/numpy/reference/routines.random.html
+    - http://docs.scipy.org/doc/scipy/reference/stats.html
 
 ### Summary of research from other languages:
 #### Structures and functions commonly appearing
+
+##### Distributions:
+
+Very common/important:
+
+ - Normal
+ - Exponential
+ - Uniform (discrete and continuous)
+ - Gamma (many distributions are special cases/functions of this, e.g. Chi^2, F, t, beta, even uniform.)
+
 #### Variations on implementation seen
 #### Pitfalls and hazards associated with each variant
 #### Relationship to other libraries and/or abstract interfaces
