@@ -34,6 +34,7 @@ Generating random numbers, and sampling from random distributions.
     - [Inverse transform sampling](http://en.wikipedia.org/wiki/Inverse_transform_sampling) (fully general)
     - [Ziggurat algorithm](http://en.wikipedia.org/wiki/Ziggurat_algorithm) (distributions with decreasing density functions)
     - [Box-Muller transform](https://en.wikipedia.org/wiki/Box%E2%80%93Muller_transform) and [Marsaglia polar method](https://en.wikipedia.org/wiki/Marsaglia_polar_method) (normal distribution, both are almost certainly inferior to the ziggurat algorithm)
+    - ["A simple method for generating gamma variables" Marsaglia & Tsang 2000](http://dl.acm.org/citation.cfm?id=358414)
 
 ### Summary of research on standards and leading techniques
 #### Relevant standards and techniques exist?
