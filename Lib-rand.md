@@ -113,5 +113,5 @@ Very common/important:
 ### Additional implementation notes
 
   - `Rng` should take `&mut self`, instead of forcing the use of mutable fields
-  - _note_
+  - Generating many random numbers at once: methods that fill vectors, or iterators?
   - _note_
