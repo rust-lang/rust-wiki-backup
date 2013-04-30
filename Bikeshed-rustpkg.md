@@ -23,14 +23,14 @@ This is Tim's attempt to come up with a schedule for finishing rustpkg, with a p
 
    Pull request #6054 adds test cases
 
-   Due: 2013-04-26
+   ~~Due: 2013-04-26~~ Done (pending pull request #6124)
 
 2. Full	pkgids (#5679)
       * test cases:
          * deeply-nested subdirectory
       	 * remote (github) URL
 
-   Due: 2013-04-29
+   Due: 2013-04-30
 
 3. Test	runner (#5683)
 
