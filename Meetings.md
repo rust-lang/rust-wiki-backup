@@ -69,6 +69,7 @@ Mozilla employees have a weekly Rust planning meeting on Tuesday mornings at 9:0
 * [[Meeting-weekly-2013-04-01]] (0.6; label syntax; impl grammar; FFI; Copy/Clone)  
 * [[Meeting-weekly-2013-04-16]] (bors; infrastructure; warnings/data-flow; destructors; libicu; triage; converting `~` to `@`)
 * [[Meeting-weekly-2013-04-23]] (core/std; valgrind; uv; modes)
+* [[Meeting-weekly-2013-04-30]] (borrowck; closure recursion; typedef reform; remove <->; @bindings)
 
 
 ## Planning meetings:
