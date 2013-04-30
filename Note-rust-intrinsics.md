@@ -7,9 +7,9 @@ Rust provides several intrinsic functions. These are called like normal function
 * `atomic_sub`
 * `atomic_sub_acq`
 * `atomic_sub_rel`
-* `atomic_xchng`
-* `atomic_xchng_acq`
-* `atomic_xchng_rel`
+* `atomic_xchg`
+* `atomic_xchg_acq`
+* `atomic_xchg_rel`
 * `forget`
 * `frame_address`
 * `get_tydesc`
