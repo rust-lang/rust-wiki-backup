@@ -49,9 +49,7 @@ For the most up to date information, the best source is often to ask in [#rust o
 
 ## Blogs
 
-People sometimes write about Rust: [Niko], [Patrick], [Graydon], [Brian], [Tim], [Felix], [Ben], [Eric Holk], [Erick Tryzelaar], [Zack]
-
-Interesting stuff usually appears on [r/rust].
+People sometimes write about Rust. Interesting stuff usually appears on [r/rust].
 
 [Ben]: http://winningraceconditions.blogspot.com/
 [Brian]: http://brson.github.com/
