@@ -68,8 +68,9 @@ Some Rust classics:
 
 * [A taste of Rust](http://lwn.net/SubscriberLink/547145/a0762de5f5cb70bd/)
 * [An overview of memory management in Rust](http://pcwalton.github.com/blog/2013/03/18/an-overview-of-memory-management-in-rust/)
-* [Embedding Rust in Ruby](http://brson.github.com/2013/03/10/embedding-rust-in-ruby/)
 * [Which pointer should I use?](http://pcwalton.github.com/blog/2013/03/09/which-pointer-should-i-use/)
+* [Operator overloading in Rust](http://maniagnosis.crsr.net/2013/04/operator-overloading-in-rust.html)
+* [Embedding Rust in Ruby](http://brson.github.com/2013/03/10/embedding-rust-in-ruby/)
 * [A first parallel program in Rust](http://blog.leahhanson.us/a-first-parallel-program-in-rust.html)
 * [FizzBuzz revisited](http://composition.al/blog/2013/03/02/fizzbuzz-revisited/)
 * [Ownership types in Rust, and whether they're worth it](http://tim.dreamwidth.org/1784423.html)
