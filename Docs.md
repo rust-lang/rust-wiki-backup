@@ -66,7 +66,7 @@ People sometimes write about Rust. Interesting stuff usually appears on [r/rust]
 
 Some Rust classics:
 
-* [A taste of Rust](http://lwn.net/SubscriberLink/547145/a0762de5f5cb70bd/)
+* [A taste of Rust](https://lwn.net/Articles/547145/)
 * [An overview of memory management in Rust](http://pcwalton.github.com/blog/2013/03/18/an-overview-of-memory-management-in-rust/)
 * [Which pointer should I use?](http://pcwalton.github.com/blog/2013/03/09/which-pointer-should-i-use/)
 * [Operator overloading in Rust](http://maniagnosis.crsr.net/2013/04/operator-overloading-in-rust.html)
