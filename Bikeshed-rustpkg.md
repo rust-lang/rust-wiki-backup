@@ -31,11 +31,11 @@ This is Tim's attempt to come up with a schedule for finishing rustpkg, with a p
       	 * remote (github) URL
 
       * Sub-tasks:
-          * Allow installing from URLs
-          * Ensure there's no longer any dependency on ```#[link]``` name, URL, uuid
-          * Wipe out any traces of reverse-DNS-style paths if there are any
-          * Make sure, via unit tests, that "package IDs are relative-path-like" is enforced
-          * Make sure, via unit tests, that "package IDs have a single stem" is enforced
+         * Allow installing from URLs
+         * Ensure there's no longer any dependency on link name, URL, uuid
+         * Wipe out any traces of reverse-DNS-style paths if there are any
+         * Make sure, via unit tests, that "package IDs are relative-path-like" is enforced
+         * Make sure, via unit tests, that "package IDs have a single stem" is enforced
 
    Due: 2013-04-30
 
