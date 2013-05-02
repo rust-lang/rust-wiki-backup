@@ -29,7 +29,6 @@ This is Tim's attempt to come up with a schedule for finishing rustpkg, with a p
       * test cases:
          * ~~deeply-nested subdirectory~~ Already working
       	 * remote (github) URL
-
      * Sub-tasks:
         * Allow installing from URLs
         * Ensure there's no longer any dependency on link name, URL, uuid
