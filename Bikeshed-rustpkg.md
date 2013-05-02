@@ -27,7 +27,7 @@ This is Tim's attempt to come up with a schedule for finishing rustpkg, with a p
 
 2. Full	pkgids (#5679)
       * test cases:
-         * deeply-nested subdirectory
+         * ~~deeply-nested subdirectory~~ Already working
       	 * remote (github) URL
 
    Due: 2013-04-30
