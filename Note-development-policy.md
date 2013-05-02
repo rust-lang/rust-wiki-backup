@@ -78,7 +78,6 @@ Tags in the tracker are in groups:
   - `[B-foo]` tags mean that the bug is **blocked** in a particular state, such as "wanting clarification" or "RFC". These are effectively workflow-oriented tags, so we can see try to attack bugs that are stuck in a particular state of their life and could possibly become unstuck. Just "awaiting someone to do the work" is not a blocked state. A bug should be in _zero or one_ `[B-foo]` states, no more than one.
   - `[E-foo]` tags indicate a guess of the **effort** required by a bug. Most bugs are "medium" and don't need such tags; but some are especially easy or hard, and this can be helpful to highlight.
   - `[I-foo]` tags area subjective judgment of **importance**. A bug should be in only one `[I-foo]` state. "Wishlist" is the least important: used for non-core features that would be nice to have, but don't need to be scheduled for any particular time.
-  - `[C-foo]` tags are explanations that may be applied as an explanation when a bug is **closed** without fixing it. Application of these tags is inconsistent and occasional, mostly as a form of politeness.
 
 Add "FIXME (issue #NN): blah blah" in the source anywhere you see room for improvement, where #NN is the issue number in the tracker here. If you fix an issue on commit, remove the associated FIXMEs (grep for other occurrences) and put the exact phrase "Closes #NN" (with that capitalization) in the commit message and github will pick it up and link to the commit, close the issue.
 
