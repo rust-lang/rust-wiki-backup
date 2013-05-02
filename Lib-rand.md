@@ -54,6 +54,7 @@ Generating random numbers, and sampling from random distributions.
     - [Diehard tests](http://en.wikipedia.org/wiki/Diehard_tests) (e.g. [dieharder](http://www.phy.duke.edu/~rgb/General/dieharder.php))
     - [TestU01](http://en.wikipedia.org/wiki/TestU01) including "Small crush", "Crush" and "Big crush"
     - [tests written by the creator of ISAAC](http://burtleburtle.net/bob/rand/testsfor.html)
+    - [ENT](http://www.fourmilab.ch/random/)
     - [NIST](http://csrc.nist.gov/groups/ST/toolkit/rng/index.html)
     - Add a new make target "check-rngs" with a testsuite? 
   3. Technique: sampling from distributions
