@@ -49,6 +49,4 @@ A library/module for escaping of HTML characters.
 
 ### Additional implementation notes
 
-  - _note_
-  - _note_
-  - _note_
+  * we probably should use a table-lookup (binary search), similar to the code in `libcore/unicode.rs`
