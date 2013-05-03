@@ -26,3 +26,7 @@ Listing of notes for developers
 
 * [[Note seeing LLVM output from rust]]
 * [[Note packaging]]
+
+## Tools
+
+* [Bors's Queue](http://buildbot.rust-lang.org/bors/bors.html) - Our [integration bot, bors] tries to keep the build green.
