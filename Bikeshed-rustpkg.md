@@ -25,6 +25,8 @@ This is Tim's attempt to come up with a schedule for finishing rustpkg, with a p
 
    ~~Due: 2013-04-26~~ Done (pending pull request #6124)
 
+   Except for one hitch: need to infer the sysroot properly, at least for the tests to be able to run 
+
 2. Full	pkgids (#5679)
       * test cases:
          * ~~deeply-nested subdirectory~~ Already working
@@ -36,7 +38,7 @@ This is Tim's attempt to come up with a schedule for finishing rustpkg, with a p
          * Make sure, via unit tests, that "package IDs are relative-path-like" is enforced
          * Make sure, via unit tests, that "package IDs have a single stem" is enforced
 
-   Due: 2013-04-30
+   Due: 2013-04-30 (Blocked on finishing the sysroot stuff)
 
 3. Test	runner (#5683)
 
