@@ -29,4 +29,4 @@ Listing of notes for developers
 
 ## Tools
 
-* [Bors's Queue](http://buildbot.rust-lang.org/bors/bors.html) - Our [integration bot, bors] tries to keep the build green.
+* [Bors's Queue](http://buildbot.rust-lang.org/bors/bors.html) - Our [integration bot, bors](https://github.com/bors) tries to keep the build green.
