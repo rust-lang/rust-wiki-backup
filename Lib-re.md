@@ -71,6 +71,7 @@ It is also not difficult to imagine falling back to a backtracking implementatio
 #### Relationship to other libraries and/or abstract interfaces
 
 - May suffice to implement string tokenization library from https://github.com/mozilla/rust/wiki/Note-wanted-libraries
+- May be useful for implementing glob library from that same list of wanted libraries.
 - Depends on core::unicode, want core::unicode to be improved for extra unicode features.
 
 ## 4. Module writing
