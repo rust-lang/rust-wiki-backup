@@ -18,6 +18,8 @@ List of docs concerning changes to Rust standard libraries
 ## General cross-module cleanup
 ## Topical module improvements or additions
 
+  - [[re|Lib re]]
+
 # Abandoned or completed module edit plans
 ## General cross-module cleanup
 ## Topical module improvements or additions
