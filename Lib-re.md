@@ -2,7 +2,7 @@
 
   - Proposed editor: Devin Jeanpierre
   - Date proposed: May 04, 2013
-  - Link: _NOT YET POSTED_
+  - Link: https://mail.mozilla.org/pipermail/rust-dev/2013-May/004017.html
 
 ###  Notes from discussion on mailing list
 
