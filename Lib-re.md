@@ -41,7 +41,7 @@ Pike VM and Laurikari TNFA are apparently similar techniques. I am not very fami
 
 Backtracking search is the simplest to implement and has the least overhead when nothing goes wrong. However, in the presence of a few regex operators and bad input, it also has the worst performance, with worst case O(2^n) time and O(n) space.
 
-Pike VM / TNFA have more overhead, but worst-case O(nm) time and O(1) space complexity. They can't implement backreferences, and may not be able to implement zero width assertions.
+Pike VM / TNFA have more overhead, but worst-case O(nm) time and O(m) space complexity. They can't implement backreferences, and may not be able to implement zero width assertions.
 
 Memoized backtracking search is O(nm) time and O(nm) space. It can't implement backreferences, but can implement zero width assertions. It is not difficult to imagine combining this approach with Pike/TNFA so that the memo cache is only used for keeping track of zero width assertions, so as to get the benefits of both approaches.
 
