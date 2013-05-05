@@ -6,7 +6,7 @@
 
 ###  Notes from discussion on mailing list
 
-  - _NOT YET POSTED_
+  - Consider previous attempt description: https://github.com/mcpherrinm/rerust/blob/master/Design.txt
 
 ## 2. Research of standards and techniques
 
@@ -82,6 +82,19 @@ It is also not difficult to imagine falling back to a backtracking implementatio
 ## 4. Module writing
 
   - Pull request: _NOT YET MADE_
+
+### API
+  
+####re!() syntax extension
+
+Pro:
+
+- Compile-time syntax and type checking (can fail these: `re!("[")`, `let x, y = re!("(1)(2)(3)").fullmatch("123").groups()`)
+- Compile to rust/LLVM bitcode at build time, don't even need to JIT at runtime.
+
+Cons:
+
+- Syntax extensions must be defined in the parser currently.
 
 ### Additional implementation notes
 
