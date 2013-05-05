@@ -68,7 +68,7 @@ Pike VM and Laurikari TNFA simulation are apparently similar techniques. I am no
 
 * Generalized Boyer-Moore is interesting in that it is the only algorithm presented that has better best-case time complexity than backtracking search. In fact, Boyer Moore is frequently used instead of regexps because of its ability to skip large sections of text. However, I don't yet know exactly what features can be implemented under generalized Boyer-Moore.
 
-* FIXME: describe DFA compilation, preprocessing costs, and best-case time complexity
+* TODO: describe DFA compilation, preprocessing costs, and best-case time complexity. Describe OBDD-TNFA performance. Determine if OBDD-TNFA can do assertions using the memoization approach, or using a new approach utilizing features of OBDD-TNFA. Determine if the algorithm for recovering matches with OBDD-TNFA can be used to recover assertion information, solving the O(m) assertion problem.
 
 #### Relevant standards and techniques exist?
 #### Those intended to follow (and why)
