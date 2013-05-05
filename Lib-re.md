@@ -29,28 +29,45 @@
   5. Technique: OBDD NFA simulation:
     - http://link.springer.com/chapter/10.1007%2F978-3-642-15512-3_4 (without submatch extraction)
     - http://www.hpl.hp.com/techreports/2012/HPL-2012-215.pdf (with submatch extraction)
+  6. Technique: Generalized Boyer-Moore (limited)
+    - http://www.sciencedirect.com/science/article/pii/S0167642303000133
 
 ### Summary of research on standards and leading techniques
 
 #### Classification of techniques.
 
-Pike VM is an extension of Thompson NFA to handle submatch extraction. We care about that, so let's ignore Thompson NFA as a separate topic.
+Pike VM is an extension of Thompson NFA to handle submatch extraction, with identical performance characteristics for regexps that have no submatch extraction. Therefore, we can ignore Thompson NFA as a separate topic.
 
-Pike VM and Laurikari TNFA are apparently similar techniques. I am not very familiar with TNFA currently, so for now I will lump them together.
+Pike VM and Laurikari TNFA simulation are apparently similar techniques. I am not very familiar with Laurikari's TFNA simulation algorithm currently, so for now I will lump them together.
 
 #### Summary of techniques
 
-(Performance details are given where m is the size of the regex, and n is the size of the string being matched.)
+ Technique                           | Features missing                         | time     | space
+ ----------------------------------- | ---------------------------------------- | -------- | -----
+ Backtracking Search                 | None                                     | O(2^n)   | O(n log n) ?
+ Memoized Backtracking Search        | Backreferences                           | O(nm)    | O(n log m) ?
+ Pike VM / Laurikari TNFA simulation | Backreferences, assertions               | O(nm)    | O(m log n) ?
+ OBDD TNFA Simulation                | Backreferences, assertions?              | ???      | ???
+ Generalized Boyer-Moore             | Backreferences, assertions, groups (???) | O(nm)??  | ???
 
-Backtracking search is the simplest to implement and has the least overhead when nothing goes wrong. However, in the presence of a few regex operators and bad input, it also has the worst performance, with worst case O(2^n) time and O(n log m) (?) space.
+ **Note on features**: The list of missing features is only with the "standard" algorithm. There may be easy modifications to bring back some features (see the detailed summary for ideas).
 
-Pike VM / TNFA have more overhead, but worst-case O(nm) time and O(m) space complexity. They can't implement backreferences, and may not be able to implement zero width assertions.
+ **Note on complexity**: `n` is the size of the input string, `m` is the size of the "pattern", specifically the regex in backtracking searches, and the automaton in automata search. This is somewhat misleading, because the worst-case automaton size is exponential in the size of the regex (consider .{10}{10}{10} which has 1000 states), but in practice this doesn't seem to be something people are concerned about.
+(Performance details are given where m is the size of the regex in the case of backtracking search, or the size of the automaton, and n is the size of the string being matched.)
 
-Memoized backtracking search is O(nm) time and O(nm) space. It can't implement backreferences, but can implement zero width assertions. It is not difficult to imagine combining this approach with Pike/TNFA so that the memo cache is only used for keeping track of zero width assertions, so as to get the benefits of both approaches.
+#### Detailed summary of techniques
+
+Backtracking search is the simplest to implement and has the least overhead when nothing goes wrong. However, in the presence of a few regex operators and bad input, it also has the worst performance.
+
+Pike VM / TNFA have more overhead, but better worst-case performance. They can't implement backreferences, and may not be able to implement zero width assertions.
+
+Memoized backtracking search is more efficient than backtracking search, but it can't implement backreferences, and the memory cost may be prohibitive. Unlike most of the efficient techniques, it can easily implement zero width assertions. It is not difficult to imagine combining this approach with Pike/TNFA so that the memo cache is only used for keeping track of zero width assertions, so as to get the benefits of both approaches.
 
 It is also not difficult to imagine falling back to a backtracking implementation in the presence of backreferences, if those are to be supported.
 
 <FIXME: summarize OBDD methods>
+
+Generalized Boyer-Moore is interesting in that it is the only algorithm presented that has better best-case time complexity than backtracking search. In fact, Boyer Moore is frequently used instead of regexps because of its ability to skip large sections of text. However, I don't yet know exactly what features can be implemented under generalized Boyer-Moore.
 
 #### Relevant standards and techniques exist?
 #### Those intended to follow (and why)
