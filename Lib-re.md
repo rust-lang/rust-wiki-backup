@@ -53,21 +53,18 @@ Pike VM and Laurikari TNFA simulation are apparently similar techniques. I am no
  **Note on features**: The list of missing features is only with the "standard" algorithm. There may be easy modifications to bring back some features (see the detailed summary for ideas).
 
  **Note on complexity**: `n` is the size of the input string, `m` is the size of the "pattern", specifically the regex in backtracking searches, and the automaton in automata search. This is somewhat misleading, because the worst-case automaton size is exponential in the size of the regex (consider .{10}{10}{10} which has 1000 states), but in practice this doesn't seem to be something people are concerned about.
-(Performance details are given where m is the size of the regex in the case of backtracking search, or the size of the automaton, and n is the size of the string being matched.)
 
-#### Detailed summary of techniques
+#### Notes about techniques
 
-Backtracking search is the simplest to implement and has the least overhead when nothing goes wrong. However, in the presence of a few regex operators and bad input, it also has the worst performance.
+* Backreferences cannot be implemented efficiently unless P=NP.
 
-Pike VM / TNFA have more overhead, but better worst-case performance. They can't implement backreferences, and may not be able to implement zero width assertions.
+* Whether or not assertions can be implemented in O(m) space with an automaton approach is AFAIK an open problem.
 
-Memoized backtracking search is more efficient than backtracking search, but it can't implement backreferences, and the memory cost may be prohibitive. Unlike most of the efficient techniques, it can easily implement zero width assertions. It is not difficult to imagine combining this approach with Pike/TNFA so that the memo cache is only used for keeping track of zero width assertions, so as to get the benefits of both approaches.
+* It is possible to combine the memoization approach with automaton search to get assertions, but where a regexp with assertions uses something like `nm` space to store a record of what assertions match at what places (and with what result).
 
-It is also not difficult to imagine falling back to a backtracking implementation in the presence of backreferences, if those are to be supported.
+* It is also not difficult to imagine falling back to a backtracking implementation in the presence of backreferences, if those are to be supported.
 
-<FIXME: summarize OBDD methods>
-
-Generalized Boyer-Moore is interesting in that it is the only algorithm presented that has better best-case time complexity than backtracking search. In fact, Boyer Moore is frequently used instead of regexps because of its ability to skip large sections of text. However, I don't yet know exactly what features can be implemented under generalized Boyer-Moore.
+* Generalized Boyer-Moore is interesting in that it is the only algorithm presented that has better best-case time complexity than backtracking search. In fact, Boyer Moore is frequently used instead of regexps because of its ability to skip large sections of text. However, I don't yet know exactly what features can be implemented under generalized Boyer-Moore.
 
 #### Relevant standards and techniques exist?
 #### Those intended to follow (and why)
