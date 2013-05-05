@@ -26,6 +26,9 @@
     - http://en.wikipedia.org/wiki/Backtracking (not a very hard algorithm, this is sufficient)
   4. Technique: Memoized Backtracking Search
     - Discussed in Russ Cox Regexp2 above ( http://swtch.com/~rsc/regexp/regexp2.html )
+  5. Technique: OBDD NFA simulation:
+    - http://link.springer.com/chapter/10.1007%2F978-3-642-15512-3_4 (without submatch extraction)
+    - http://www.hpl.hp.com/techreports/2012/HPL-2012-215.pdf (with submatch extraction)
 
 ### Summary of research on standards and leading techniques
 
@@ -46,6 +49,8 @@ Pike VM / TNFA have more overhead, but worst-case O(nm) time and O(m) space comp
 Memoized backtracking search is O(nm) time and O(nm) space. It can't implement backreferences, but can implement zero width assertions. It is not difficult to imagine combining this approach with Pike/TNFA so that the memo cache is only used for keeping track of zero width assertions, so as to get the benefits of both approaches.
 
 It is also not difficult to imagine falling back to a backtracking implementation in the presence of backreferences, if those are to be supported.
+
+<FIXME: summarize OBDD methods>
 
 #### Relevant standards and techniques exist?
 #### Those intended to follow (and why)
