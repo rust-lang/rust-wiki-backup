@@ -45,20 +45,22 @@ Pike VM and Laurikari TNFA simulation are apparently similar techniques. I am no
  Technique                           | Features missing                         | time     | space
  ----------------------------------- | ---------------------------------------- | -------- | -----
  Backtracking Search                 | None                                     | O(2^n)   | O(n log n) ?
- Memoized Backtracking Search        | Backreferences                           | O(nm)    | O(n log m) ?
+ Memoized Backtracking Search        | Backreferences                           | O(nm)    | O(n m log n) ?
  Pike VM / Laurikari TNFA simulation | Backreferences, assertions               | O(nm)    | O(m log n) ?
  OBDD TNFA Simulation                | Backreferences, assertions?              | ???      | ???
  Generalized Boyer-Moore             | Backreferences, assertions, groups (???) | O(nm)??  | ???
 
  **Note on features**: The list of missing features is only with the "standard" algorithm. There may be easy modifications to bring back some features (see the detailed summary for ideas).
 
- **Note on complexity**: `n` is the size of the input string, `m` is the size of the "pattern", specifically the regex in backtracking searches, and the automaton in automata search. This is somewhat misleading, because the worst-case automaton size is exponential in the size of the regex (consider .{10}{10}{10} which has 1000 states), but in practice this doesn't seem to be something people are concerned about.
+ **Note on complexity**: `n` is the size of the input string, `m` is the size of the "pattern", specifically the regex in backtracking searches, and the automaton in automata search. This is somewhat misleading, because the worst-case automaton size is exponential in the size of the regex (consider `.{10}{10}{10}` which has 1000 states), but in practice this doesn't seem to be something people are concerned about.
 
 #### Notes about techniques
 
+* I didn't think too hard about space complexity. The `log n` component is for keeping track of match indices.
+
 * Backreferences cannot be implemented efficiently unless P=NP.
 
-* Whether or not assertions can be implemented in O(m) space with an automaton approach is AFAIK an open problem.
+* Whether or not assertions can be implemented in `O(m)` space with an automaton approach is AFAIK an open problem.
 
 * It is possible to combine the memoization approach with automaton search to get assertions, but where a regexp with assertions uses something like `nm` space to store a record of what assertions match at what places (and with what result).
 
