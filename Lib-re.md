@@ -84,6 +84,8 @@ Pike VM and Laurikari TNFA simulation are apparently similar techniques. I am no
     - http://dlang.org/regular-expression.html
   6. Language: Python
     - http://docs.python.org/2/library/re.html
+  7. Language: Common Lisp
+    - http://weitz.de/cl-ppcre/
 
 ### Summary of research from other languages:
 #### Structures and functions commonly appearing
