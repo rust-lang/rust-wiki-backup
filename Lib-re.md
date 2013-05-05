@@ -42,7 +42,7 @@ Pike VM and Laurikari TNFA are apparently similar techniques. I am not very fami
 
 (Performance details are given where m is the size of the regex, and n is the size of the string being matched.)
 
-Backtracking search is the simplest to implement and has the least overhead when nothing goes wrong. However, in the presence of a few regex operators and bad input, it also has the worst performance, with worst case O(2^n) time and O(n) space.
+Backtracking search is the simplest to implement and has the least overhead when nothing goes wrong. However, in the presence of a few regex operators and bad input, it also has the worst performance, with worst case O(2^n) time and O(n log m) (?) space.
 
 Pike VM / TNFA have more overhead, but worst-case O(nm) time and O(m) space complexity. They can't implement backreferences, and may not be able to implement zero width assertions.
 
