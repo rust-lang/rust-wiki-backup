@@ -36,8 +36,8 @@ A library/module for escaping of HTML characters.
 
   1. Language: Go
     - [html](http://golang.org/pkg/html/)
-      - `EscapeString(s string) string` escapes only five characters: <, >, &, ' and "
-      - `UnescapeString(s string) string` unescapes more characters
+      - `EscapeString()` escapes only five characters: <, >, &, ' and "
+      - `UnescapeString()` unescapes more characters
 
 ### Summary of research from other languages:
 #### Structures and functions commonly appearing
