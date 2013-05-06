@@ -57,7 +57,7 @@ extern mod std;
 fn bench_sum_1024_ints(b: &mut std::test::BenchHarness) {
     let v = vec::from_fn(1024, |n| n);
     do b.iter {
-        v.foldl(|a, b| a + b);
+        v.foldl(|a, b| *a + *b);
     }
 }
 ```
