@@ -91,6 +91,19 @@ Pike VM and Laurikari TNFA simulation are apparently similar techniques. I am no
 
 ### Summary of research from other languages:
 #### Structures and functions commonly appearing
+
+- Separate type for compiled regexp, separate type for result of a search operation
+  * result.start, result.end, result.groups (or equivalent)
+- function for compiling a regexp to a compiled regexp, with options:
+  * ignore case
+  * multiline (^/$ match start/end of line)
+  * bytes vs unicode
+  * verbose/freeform mode (where whitespace is ignored unless escaped)
+- Function for searching; sometimes searching with anchors (e.g. python's re.match vs re.search; RE2's FullMatch vs PartialMatch)
+  * Support for controlling area of string to search (but we can use slices)
+- function for search/replace
+- function for splitting text by a regexp
+
 #### Variations on implementation seen
 #### Pitfalls and hazards associated with each variant
 #### Relationship to other libraries and/or abstract interfaces
