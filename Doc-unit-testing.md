@@ -128,7 +128,7 @@ result: ok. 11 passed; 0 failed; 1 ignored
 > mytests --bench
 
 running 1 test
-test bench_sum_1024_ints ... bench: 65888 ns/iter (+/- 309)
+test bench_sum_1024_ints ... bench: 14 ns/iter (+/- 0)
 
 result: ok. 0 passed; 0 failed; 0 ignored
 ```
