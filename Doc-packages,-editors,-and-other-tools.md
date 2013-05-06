@@ -4,7 +4,7 @@
 * [FreeBSD Port](http://www.freebsd.org/cgi/cvsweb.cgi/ports/lang/rust/) - maintained by jyyou
 * [Homebrew](https://github.com/mxcl/homebrew/blob/master/Library/Formula/rust.rb)
 * [Fink](http://fink.cvs.sourceforge.net/viewvc/fink/dists/10.7/stable/main/finkinfo/languages/rust.info?view=log) Also available through fink's apt at `deb http://brendan.users.finkproject.org/10.8 stable main` - maintained by bcully
-* [Fedora Copr](http://copr-fe.cloud.fedoraproject.org/coprs/detail/fabiand/rust/)
+* [Fedora Copr](http://copr-fe.cloud.fedoraproject.org/coprs/detail/fabiand/rust/) - ([instructions](http://dummdida.blogspot.de/2013/05/mozillas-rust-in-fedoras-ppa-copr.html)) maintained by fabiand
 
 ## Editors
 
