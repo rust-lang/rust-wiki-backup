@@ -192,16 +192,12 @@ For an example, the `PriorityQueue` struct in the standard library has a
 The `~self` and `@self` forms are available for objects allocated as `~` or `@`
 respectively.
 
-Generics
---------
+Parametric polymorphism
+-----------------------
 
 Rust generics are more like the proposed concepts extension for C++, not like the templates that
 exist today. This allows templates to be type-checked at the time you write them, not when you
-instantiate them. You can use Rust macros for the more unstructured approach.  Plug in a type and
-see if it compiles!
-
-Parametric polymorphism
------------------------
+instantiate them.
 
 In Rust, functions and structs can be given generic type annotations (like
 templated functions and structs), but to actually call a type's methods and use
