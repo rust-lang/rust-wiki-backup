@@ -283,3 +283,5 @@ Options:
 ## 4. Module writing
 
   - Pull request: _link to bug_
+
+https://github.com/Aatch/rust-datetime
