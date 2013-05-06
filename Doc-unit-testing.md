@@ -44,6 +44,28 @@ A test runner built with the '--test' flag supports a limited set of arguments t
 
 By default, tests are run in parallel, which can make interpreting failure output difficult. In these cases you can set the RUST_THREADS environment variable to 1 to make the tests run sequentially.
 
+## Benchmarking
+
+The test runner also understands a simple form of benchmark execution. Benchmark functions are marked with the `#[bench]` attribute, rather than `#[test]`, and have a different form and meaning. They are not run by default.
+
+The type signature of a benchmark function differs from a unit test: it takes a mutable reference to type `test::BenchHarness`. Inside the benchmark function, any time-variable or "setup" code should execute first, followed by a call to `iter` on the benchmark harness, passing a closure that contains the portion of the benchmark you wish to actually measure the per-iteration speed of. For example:
+
+```
+extern mod std;
+
+#[bench]
+fn bench_sum_1024_ints(b: &mut std::test::BenchHarness) {
+    let v = vec::from_fn(1024, |n| n);
+    do b.iter {
+        v.foldl(|a, b| a + b);
+    }
+}
+```
+
+The benchmark runner will calibrate measurement of the benchmark function to run the `iter` block "enough" times to get a reliable measure of the per-iteration speed. In other words, you do not have to (and should not) put any logic for calibration or "picking a good benchmark size" into your test: so long as it represents a loop-body that's "large enough to measure with a high-precision clock" -- more than a few microseconds -- it should be fine. Let the benchmark runner calibrate it. If the benchmark runner doesn't do a good job -- too much noise or faulty statistical reasoning -- that's a bug in its logic to correct; benchmarks that are too elaborate to optimize successfully or too slow to run regularly are less useful in the long run.
+
+To run benchmarks, pass the `--bench` flag to the compiled test-runner. Benchmarks are compiled-in but not executed by default.
+
 ## Examples
 
 ### Typical test run
@@ -98,4 +120,15 @@ running driver::tests::mytest10 ... ignored
 running driver::tests::mytest19 ... ok
 
 result: ok. 11 passed; 0 failed; 1 ignored
+```
+
+### Running benchmarks
+
+```
+> mytests --bench
+
+running 1 test
+test bench_sum_1024_ints ... bench: 65888 ns/iter (+/- 309)
+
+result: ok. 0 passed; 0 failed; 0 ignored
 ```
