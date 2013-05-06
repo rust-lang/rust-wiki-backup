@@ -195,7 +195,10 @@ respectively.
 Generics
 --------
 
-Rust generics are more like C++13 templates with concepts, not like the templates that exist today. This allows templates to be type-checked at the time you write them, not when you instantiate them. You can use Rust macros for the more unstructured approach.  Plug in a type and see if it compiles!
+Rust generics are more like the proposed concepts extension for C++, not like the templates that
+exist today. This allows templates to be type-checked at the time you write them, not when you
+instantiate them. You can use Rust macros for the more unstructured approach.  Plug in a type and
+see if it compiles!
 
 Parametric polymorphism
 -----------------------
