@@ -51,4 +51,6 @@ A library/module for escaping of HTML characters.
 
 ### Additional implementation notes
 
-  * we probably should use a table-lookup (binary search), similar to the code in `libcore/unicode.rs`
+- provide a `escape_basic` than only escapes the necessary characters for security/forms/URLs
+- provide a `escape_full` than escapes all characters
+  - We probably should use a table-lookup (binary search), similar to the code in `libcore/unicode.rs`
