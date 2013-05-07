@@ -35,8 +35,6 @@
 * split the Map and Set traits into Map, MutableMap, PersistentMap and Set, MutableSet, PersistentSet - [#4989](https://github.com/mozilla/rust/issues/4989)
 * benchmark whether 1.5x is a better growth factor for vectors - [#4961](https://github.com/mozilla/rust/issues/4961)
 * add reserve/reserve_at_least to std::deque - [#4994](https://github.com/mozilla/rust/issues/4994)
-* add swap method to the Map trait [#5392](https://github.com/mozilla/rust/issues/5392)
-* add pop method to the Map trait [#5393](https://github.com/mozilla/rust/issues/5393)
 
 # Stack/Queue-like containers
 
