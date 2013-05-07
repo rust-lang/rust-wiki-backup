@@ -42,6 +42,7 @@ A library/module for escaping/unescaping of special HTML characters.
     - [htmlspecialchars()](http://php.net/manual/en/function.htmlspecialchars.php)
       - escapes only the 5 characters: <, >, &, ' and "
     - [htmlspecialchars_decode ()](http://www.php.net/manual/en/function.htmlspecialchars-decode.php)
+      - decodes only the characters handled by htmlspecialchars()
 
 ### Summary of research from other languages:
 #### Structures and functions commonly appearing
