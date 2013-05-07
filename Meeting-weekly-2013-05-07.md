@@ -1,4 +1,3 @@
-
 # Agenda
 - By-value self in destructors #4330 (nmatsakis)
 - Dynamically sized types proposal (nmatsakis)
