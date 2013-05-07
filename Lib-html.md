@@ -56,6 +56,8 @@ A library/module for escaping/unescaping of special HTML characters.
 
 ### Additional implementation notes
 
-- `escape_basic()` only escapes the necessary 5 (?) characters which are necessary for security/forms/URLs
+Question: where to get from the complete list of characters to escape and entities to produce?
+
+- `escape_minimal()` only escapes the necessary 5 (?) characters which are necessary for security/forms/URLs
 - `escape_full()` escapes all characters
   - We probably should use a table-lookup (binary search), similar to the code in `libcore/unicode.rs`
