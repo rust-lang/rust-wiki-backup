@@ -62,7 +62,15 @@ fn bench_sum_1024_ints(b: &mut std::test::BenchHarness) {
 }
 ```
 
-The benchmark runner will calibrate measurement of the benchmark function to run the `iter` block "enough" times to get a reliable measure of the per-iteration speed. In other words, you do not have to (and should not) put any logic for calibration or "picking a good benchmark size" into your test: so long as it represents a loop-body that's "large enough to measure with a high-precision clock" -- more than a few microseconds -- it should be fine. Let the benchmark runner calibrate it. If the benchmark runner doesn't do a good job -- too much noise or faulty statistical reasoning -- that's a bug in its logic to correct; benchmarks that are too elaborate to optimize successfully or too slow to run regularly are less useful in the long run.
+The benchmark runner will calibrate measurement of the benchmark function to run the `iter` block "enough" times to get a reliable measure of the per-iteration speed. 
+
+Advice on writing benchmarks:
+
+  - Move setup code outside the `iter` loop; only put the part you want to measure inside
+  - Make the code do "the same thing" on each iteration; do not accumulate or change state
+  - Make the outer function idempotent too; the benchmark runner is likely to run it many times
+  - Make the inner `iter` loop short and fast so benchmark runs are fast and the calibrator can adjust the run-length at fine resolution
+  - Make the code in the `iter` loop do something simple, to assist in pinpointing performance improvements (or regressions)
 
 To run benchmarks, pass the `--bench` flag to the compiled test-runner. Benchmarks are compiled-in but not executed by default.
 
