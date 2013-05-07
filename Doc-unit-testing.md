@@ -46,7 +46,7 @@ By default, tests are run in parallel, which can make interpreting failure outpu
 
 ## Benchmarking
 
-The test runner also understands a simple form of benchmark execution. Benchmark functions are marked with the `#[bench]` attribute, rather than `#[test]`, and have a different form and meaning. They are not run by default.
+The test runner also understands a simple form of benchmark execution. Benchmark functions are marked with the `#[bench]` attribute, rather than `#[test]`, and have a different form and meaning. They are compiled along with `#[test]` functions when a crate is compiled with `--test`, but they are not run by default. To run the benchmark component of your testsuite, pass `--bench` to the compiled test runner.
 
 The type signature of a benchmark function differs from a unit test: it takes a mutable reference to type `test::BenchHarness`. Inside the benchmark function, any time-variable or "setup" code should execute first, followed by a call to `iter` on the benchmark harness, passing a closure that contains the portion of the benchmark you wish to actually measure the per-iteration speed of. For example:
 
