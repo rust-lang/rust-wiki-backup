@@ -134,7 +134,7 @@ Cons:
 Suppose we separate parsing from compiling. Then there are four situations:
 
 - A builtin parser and compiler is used. Compile-time syntax and type checking is possible, as is compile-time regexp compilation.
-- A builtin parser and custom compiler is used. Compile-time syntax (and type checking, if the compiler is "reasonable" and preserves groups and such) is possible, but regexp compilation is not.
+- A builtin parser and custom compiler is used. Compile-time syntax (and type checking, if the compiler is "reasonable" and preserves groups and such) is possible, but regexp compilation is not. (Compile-time parsing is also done, but if this is slow enough to care about, we've done something wrong.)
 - A custom parser and builtin compiler is used. No compile-time work can be done.
 - A custom parser and compiler is used. No compile-time work can be done.
 
