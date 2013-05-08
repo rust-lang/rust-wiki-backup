@@ -1,9 +1,3 @@
-For the most up to date information, the best source is often to ask on IRC in [#rust on irc.mozilla.org][pound-rust], as that is where most discussion about Rust takes place. A lot of decisions are made on the mailing list [rust-dev], and new developments are often blogged in various places, which usually appear on Reddit's [r/rust]. Some people find the minutes from the [[weekly planning meetings|meetings]] useful for keeping informed.
-
-[pound-rust]: http://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust
-[rust-dev]: https://mail.mozilla.org/listinfo/rust-dev
-[r/rust]: http://reddit.com/r/rust
-
 ## Reference docs
 
 ### Current (Rust 0.6)
@@ -30,6 +24,17 @@ For the most up to date information, the best source is often to ask on IRC in [
 [[Language FAQ|Doc language FAQ]]  
 [[Project FAQ|Doc project FAQ]]  
 [[Usage FAQ|Doc usage FAQ]]  
+
+## Community
+
+* IRC: [#rust on irc.mozilla.org][pound-rust]
+* Mailing list [rust-dev]
+* Reddit's [r/rust]
+
+[pound-rust]: http://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust
+[rust-dev]: https://mail.mozilla.org/listinfo/rust-dev
+[r/rust]: http://reddit.com/r/rust
+
 
 ## Other documentation
 
