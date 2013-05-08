@@ -6,6 +6,8 @@
 
 ###  Notes from discussion on mailing list
 
+Note that the majority of the discussion was had over IRC, and not the mailing list. Logs exist, but anything relevant is summarized in this document.
+
   - Consider previous attempt description: https://github.com/mcpherrinm/rerust/blob/master/Design.txt
 
 ## 2. Research of standards and techniques
@@ -128,6 +130,15 @@ Pro:
 Cons:
 
 - Syntax extensions must be defined in the parser currently.
+
+Issue: should it always work at compile time, or optionally fall back to runtime?
+
+- Pro always:
+  * Simplified API. We know that re!() will never fail, don't need to be concerned with that.
+  * Predictability. We know that the work is done at compile time, so that at runtime there is no compilation overhead.
+
+- Pro sometimes:
+  * Simplified API. There is no separate API for runtime compilation, and making a change from compile-time to run-time regexps doesn't involve changing functions.
 
 #### Separation of parsing from compiling
 
