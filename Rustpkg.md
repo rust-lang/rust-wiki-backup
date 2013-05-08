@@ -1,6 +1,6 @@
 # What's Rustpkg?
 
-Rustpkg is a revamp of Cargo that brings awesome new features such as a build system described in build scripts.
+Rustpkg is a tool that brings features such as a build system described in build scripts.
 It's a purely functional package manager that has no central sources of any kind,
 but rather installs via URLs. It's similar to how Go's `go get` tool works, except
 Rustpkg requires a central metadata file (`pkg.rs`) in the repository, archive or folder
