@@ -129,6 +129,17 @@ Cons:
 
 - Syntax extensions must be defined in the parser currently.
 
+#### Separation of parsing from compiling
+
+Suppose we separate parsing from compiling. Then there are four situations:
+
+- A builtin parser and compiler is used. Compile-time syntax and type checking is possible, as is compile-time regexp compilation.
+- A builtin parser and custom compiler is used. Compile-time syntax (and type checking, if the compiler is "reasonable" and preserves groups and such) is possible, but regexp compilation is not.
+- A custom parser and builtin compiler is used. No compile-time work can be done.
+- A custom parser and compiler is used. No compile-time work can be done.
+
+If parsing and compiling are unified, then the second case is lost. This is in addition to the usability losses of not having separated interfaces for parsing and compiling. Food for thought!
+
 ### Additional implementation notes
 
   - _note_
