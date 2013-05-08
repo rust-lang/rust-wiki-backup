@@ -38,6 +38,8 @@ For Ubuntu 11.10 there seems to be a conflict with texlive-latex-base, per [#169
 
 We recommend developing under [MSYS and MinGW](http://www.mingw.org) using their auto-installer. Be careful with versions: the version dated [20110802](http://sourceforge.net/projects/mingw/files/Installer/mingw-get-inst/mingw-get-inst-20110802/mingw-get-inst-20110802.exe/download) is known to work _so long as you use the built-in package list_, and wind up with gcc 4.5; later versions including gcc 4.7 are known _not_ to work due to a [bug with LLVM](https://github.com/mozilla/rust/issues/2641), and possibly other reasons; we're unclear on the cause.
 
+You can update MinGW by using the command `mingw-get update`, this updates the package repository for MinGW.  After which you can upgrade packages with `mingw-get upgrade`.  If you are a consistent user of MinGW or plan to be, you might also want to subscribe to their mailing list: [Mingw-users](https://lists.sourceforge.net/lists/listinfo/mingw-users)
+
 Once installed, we tend to work inside the MSYS shell.
 
 For Git, we recommend [MsysGit](http://msysgit.github.com/) and if you use that you will want to put the git binary path *after* the MinGW path. So add a line like the following to your `.bashrc`:
