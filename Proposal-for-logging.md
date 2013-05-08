@@ -16,7 +16,7 @@
 
 ## The future
 
-* Logging will be done through a `#fmt`-like syntax extension, which (somehow) expands to a special form that handles the module-check wiring and such. The syntax extension will handle stringification, so the runtime logger will only deal with strings anymore.
+* Logging will be done through a `fmt!`-like syntax extension, which (somehow) expands to a special form that handles the module-check wiring and such. The syntax extension will handle stringification, so the runtime logger will only deal with strings anymore.
 
 * There will be more log levels: 0 error, 1 warning, 2 note, 3 debug. The default log level will be 1 (show warnings and errors). The `RUST_LOG` directives will support `module=2` syntax to set specific log levels. If no `=X` is given, the level for that module is set to 3.
 
