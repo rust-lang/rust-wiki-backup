@@ -1,4 +1,4 @@
-Listing of notes for developers
+Listing of notes for developers working on the Rust compiler and tools.
 
 ## Process and workflow notes
 
