@@ -140,6 +140,8 @@ Issue: should it always work at compile time, or optionally fall back to runtime
 - Pro sometimes:
   * Simplified API. There is no separate API for runtime compilation, and making a change from compile-time to run-time regexps doesn't involve changing functions.
 
+After some discussion on #rust, the consensus appears to be that re!() should only be compile time, and re() should only be run-time, and never the twain shall meet.
+
 #### Separation of parsing from compiling
 
 Suppose we separate parsing from compiling. Then there are four situations:
