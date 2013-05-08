@@ -140,6 +140,8 @@ Issue: should it always work at compile time, or optionally fall back to runtime
 - Pro sometimes:
   * Simplified API. There is no separate API for runtime compilation, and making a change from compile-time to run-time regexps doesn't involve changing functions.
 
+WIP notes: https://gist.github.com/Kimundi/5543809
+
 #### Separation of parsing from compiling
 
 Suppose we separate parsing from compiling. Then there are four situations:
