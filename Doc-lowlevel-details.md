@@ -5,7 +5,7 @@ Type-parameterized functions are specialized for each set of type parameters use
 
 ```rust
 fn foo<T: ToStr>(x: &T) -> ~str { x.to_str() }
-foo(&5u); // foo<uint> is generated for this crate
+foo(&5u); // `foo<uint>` is instantiated for this crate
 ```
 Using traits as objects is dynamic dispatch at runtime. The method calls are resolved by dereferencing a pointer to a vtable at runtime and then calling a function pointer. Example:
 
