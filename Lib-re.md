@@ -151,6 +151,20 @@ Suppose we separate parsing from compiling. Then there are four situations:
 
 If parsing and compiling are unified, then the second case is lost. This is in addition to the usability losses of not having separated interfaces for parsing and compiling. Food for thought!
 
+### User stories
+
+* I am the author of an online regexp sandbox. I do not want my server to be DDOSed.
+  * Concession: Tagged NFA simulation (non-exponential worst-case time)
+  * Concession: Measurability of number of states of NFA (to estimate cost of search)
+  * Concession: Predictability of size of NFA based on regexp? (only necessary if NFA can grow exponentially; instructions like a Repeat instruction which has exponential _state_ but not exponential _size_ may make this unnecessary).
+* I am a regexp power user. I want to be able to fine-tune a regexp to perform well, because I know what I am doing.
+  * Concession: Backtracking search (which has low overhead and quick times in best case)
+  * Concession: Various regexp operators that tailor backtracking search process (e.g. atomic grouping)
+
+#### Notes
+
+While usually the power user / safety user would use different libraries, there's no particular reason both their needs can't be satisfied by one library. Plus, sometimes even with the overhead, Tagged NFA based search may be faster than backtracking search for some problems, no matter how much the power user tries to optimize the regex for backtracking search.
+
 ### Additional implementation notes
 
   - _note_
