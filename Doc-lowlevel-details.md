@@ -1,11 +1,16 @@
 Dispatch
 ========
 
-Generics are statically-compiled, specialized for each type. Using traits as objects is runtime dispatch. Example:
+Type-parameterized functions are specialized for each set of type parameters used with it in a crate. The method calls are resolved statically at compile-time. Example:
 
 ```rust
-fn foo(a: ToStr);
-fn bar<T: ToStr>(a: T);
+fn foo<T: ToStr>(x: &T) -> ~str { x.to_str() }
+foo(&5u); // foo<uint> is generated for this crate
 ```
+Using traits as objects is dynamic dispatch at runtime. The method calls are resolved by dereferencing a pointer to a vtable at runtime and then calling a function pointer. Example:
 
-At runtime, `foo` is represented as a "fat pointer", a pointer to a vtable for ToStr and a pointer to the data. `bar` is specialized at compile-time for every type it is used with.
+```rust
+fn foo(x: &ToStr) -> ~str { x.to_str() }
+foo(&5u as &ToStr); // a vtable is generated for `uint` with the `to_str` method
+```
+At runtime, `&ToStr` is represented as a a pointer to a vtable with all the methods in the trait (just `to_str` in this case) and a pointer to the value. The pointer to the value is the pointer sigil in front of the trait object.
