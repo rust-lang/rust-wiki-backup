@@ -1,7 +1,7 @@
 Dispatch
 ========
 
-Type-parameterized functions are specialized for each set of type parameters used with it in a crate. The method calls are resolved statically at compile-time. Example:
+Type-parameterized functions are specialized for each set of type parameters used to instantiate them in a crate. The method calls are resolved statically at compile-time. Example:
 
 ```rust
 fn foo<T: ToStr>(x: &T) -> ~str { x.to_str() }
