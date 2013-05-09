@@ -138,7 +138,9 @@ Therefore I think it is obvious we should decide to be approximately 100% compat
 - Considering its worldwide use across the web, we can safely assume its Unicode support is at least sufficient.
 - There is a simply massive library of tests and benchmarks. Not only is this the regexp dialect with the most implementations, but it also has the fastest and most complex implementations (meaning excellent test banks), and the most intense performance competition between implementations (meaning excellent benchmarks to draw on).
 
-Any objections? :)
+A possible objection is that if we tie ourselves to ECMAScript, it may change backwards incompatibly and leave us in the dust, forcing us to either remain out of date, or adapt backwards incompatibly. However, as noted above, ECMAScript is _very_ widely used. Any backwards incompatible changes would be introduced in such a way as to not break existing ECMAScript code without a lot of time to prepare -- for example, in a new version of JavaScript, which has to be opted into by code. In that case, we can support it in a similar fashion, with a new version of regexps, which have to be opted into via a flag or option, with a similarly long period to allow code to adapt. We can probably trust the JS developers to be far more worried about backwards compatibility than Rust is, for the foreseeable future. If and when that changes, we can always elect to desynchronize from ECMAScript regexps.
+
+Does this seem reasonable? :)
 
 ## 4. Module writing
 
