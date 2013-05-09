@@ -190,9 +190,9 @@ https://gist.github.com/Kimundi/5543809
 ### User stories
 
 * I am the author of an online regexp sandbox. I do not want my server to be DDOSed.
-  * Concession: Tagged NFA simulation (non-exponential worst-case time)
+  * Concession: Tagged NFA (Pike VM, etc.) simulation (non-exponential worst-case time)
   * Concession: Measurability of number of states of NFA (to estimate cost of search)
-  * Concession: Predictability of size of NFA based on regexp? (only necessary if NFA can grow exponentially; instructions like a Repeat instruction which has exponential _state_ but not exponential _size_ may make this unnecessary).
+  * Concession: Predictability of size of NFA based on regexp? (only necessary if NFA space usage can grow exponentially in the regex length; instructions like a Repeat instruction which has exponential _state_ but not exponential _space_ may make this unnecessary).
 * I am a regexp power user. I want to be able to fine-tune a regexp to perform well, because I know what I am doing.
   * Concession: Backtracking search (which has low overhead and quick times in best case)
   * Concession: Various regexp operators that tailor backtracking search process (e.g. atomic grouping)
