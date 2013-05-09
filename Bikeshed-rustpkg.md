@@ -23,9 +23,9 @@ This is Tim's attempt to come up with a schedule for finishing rustpkg, with a p
 
    Pull request #6054 adds test cases
 
-   ~~Due: 2013-04-26~~ Done (pending pull request #6124)
+   ~~Due: 2013-04-26~~ Done ~~(pending pull request #6124)~~
 
-   Except for one hitch: need to infer the sysroot properly, at least for the tests to be able to run 
+   ~~Except for one hitch: need to infer the sysroot properly, at least for the tests to be able to run~~ Done
 
 2. Full	pkgids (#5679)
       * test cases:
