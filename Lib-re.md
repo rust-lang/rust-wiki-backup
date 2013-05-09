@@ -114,6 +114,25 @@ Pike VM and Laurikari TNFA simulation are apparently similar techniques. I am no
 - May be useful for implementing glob library from that same list of wanted libraries.
 - Depends on core::unicode, want core::unicode to be improved for extra unicode features.
 
+### Compatibility
+
+It is too easy to write your own PCRE variant from scratch. Most likely, what we really want is to take some PCRE variant, and say "we're compatible with that" (maybe with a few clearly defined extensions and removals). If we do this, then we get the following benefits:
+
+- Lower learning curve: if we're identical to a widely used PCRE variant, then people used to that variant need learn nothing new.
+- Less documentation burden: if we bind ourselves to be compatible with some API, we can say "if you're unsure about something, check their docs". Especially if the other thing is a documented standard, as opposed to some module that might change its semantics backwards-incompatibly from underneath us.
+- Less bikeshedding: it becomes harder to arbitrarily redefine things for silly and subjective reasons. An existing standard ties our hands, in a good way.
+
+Therefore I think it is obvious we should decide to be approximately 100% compatible with some implementation. And then with a little thought, I think the implementation we should follow is obviously that of ECMAScript/JavaScript:
+
+- It is a standard, with a stable and clearly documented syntax/semantics as a result. (Not to mention the billions of people that run code that relies on its semantics.)
+- It has the most implementations of any PCRE variant. In fact, very few other PCRE variants have multiple implementations. This also assists stability, and means that the semantics are clearly enough explored for us to copy without too much trouble.
+- It is perhaps the most widely used PCRE variant there is, but if not, it's certainly up there. As a result, lots of programmers are familiar with it.
+- It is relatively simple, without too many crazy extensions. This makes the implementation easier (phew!)
+- Considering its worldwide use across the web, we can safely assume its Unicode support is at least sufficient.
+- There is a simply massive library of tests and benchmarks. Not only is this the regexp dialect with the most implementations, but it also has the fastest and most complex implementations (meaning excellent test banks), and the most intense performance competition between implementations (meaning excellent benchmarks to draw on).
+
+Any objections? :)
+
 ## 4. Module writing
 
   - Pull request: _NOT YET MADE_
