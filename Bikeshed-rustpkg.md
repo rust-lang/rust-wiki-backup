@@ -40,15 +40,15 @@ This is Tim's attempt to come up with a schedule for finishing rustpkg, with a p
 
    Due: 2013-04-30 (Blocked on finishing the sysroot stuff)
 
-3. Test	runner (#5683)
-
-   Due: 2013-05-03
-
 4. Finding external crates (#5681)
       * test cases:
           * a file with `extern mod foo` where foo lives in a different directory
 
    Due: 2013-05-10
+
+3. Test	runner (#5683)
+
+   Due: 2013-05-03
 
 5. Get version from VCS (#5684)
       * test case:
