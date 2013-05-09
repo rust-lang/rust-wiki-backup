@@ -126,10 +126,10 @@ FIXME: note difference between "streaming" style APIs and the more python-ish AP
 It is too easy to write your own PCRE variant from scratch. Most likely, what we really want is to take some PCRE variant, and say "we're compatible with that" (maybe with a few clearly defined extensions and removals). If we do this, then we get the following benefits:
 
 - Lower learning curve: if we're identical to a widely used PCRE variant, then people used to that variant need learn nothing new.
-- Less documentation burden: if we bind ourselves to be compatible with some API, we can say "if you're unsure about something, check their docs". Especially if the other thing is a documented standard, as opposed to some module that might change its semantics backwards-incompatibly from underneath us.
+- Less documentation burden: if we bind ourselves to be compatible with some syntax/semantics, we can say "if you're unsure about something, check their docs". Especially if the other thing is a documented standard, as opposed to some module that might change its semantics backwards-incompatibly from underneath us.
 - Less bikeshedding: it becomes harder to arbitrarily redefine things for silly and subjective reasons. An existing standard ties our hands, in a good way.
 
-Therefore I think it is obvious we should decide to be approximately 100% compatible with some implementation. And then with a little thought, I think the implementation we should follow is obviously that of ECMAScript/JavaScript:
+Therefore I think it is quite possible that we should be approximately 100% compatible with some implementation as far as the syntax and semantics of regular expressions are concerned. And then with a little thought about the various possibilities, ECMAScript/JavaScript stands out as something we should _definitely_ copy:
 
 - It is a standard, with a stable and clearly documented syntax/semantics as a result. (Not to mention the billions of people that run code that relies on its semantics.)
 - It has the most implementations of any PCRE variant. In fact, very few other PCRE variants have multiple implementations. This also assists stability, and means that the semantics are clearly enough explored for us to copy without too much trouble.
