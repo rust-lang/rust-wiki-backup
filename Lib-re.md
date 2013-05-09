@@ -237,11 +237,14 @@ https://gist.github.com/Kimundi/5543809
   * Concession: Tagged NFA (Pike VM, etc.) simulation (non-exponential worst-case time)
   * Concession: Measurability of number of states of NFA (to estimate cost of search)
   * Concession: Predictability of size of NFA based on regexp? (only necessary if NFA space usage can grow exponentially in the regex length; instructions like a Repeat instruction which has exponential _state_ but not exponential _space_ may make this unnecessary).
+  * Concession: Way to bound time used by regexp (e.g. running in a subtask)? Needs investigation.
 * I am a regexp power user. I want to be able to fine-tune a regexp to perform well, because I know what I am doing.
   * Concession: Backtracking search (which has low overhead and quick times in best case)
   * Concession: Various regexp operators that tailor backtracking search process (e.g. atomic grouping)
 * I'm just a regular guy hacking up a file in a weird format, and I don't care about any of that stuff. Just don't take too long.
   * Would defaulting to Tagged NFA simulation make this person happier than defaulting to backtracking search?
+* I an writing a service, and would like to validate user input using a regex.
+  * Different from sandbox case; regex is trusted, input is not. Probably the same advice still applies.
 
 #### Notes
 
