@@ -51,7 +51,7 @@ Pike VM and Laurikari TNFA simulation are apparently similar techniques. I am no
  Backtracking Search                 | None                                     | O(2^n)   | O(n log n) ?
  Memoized Backtracking Search        | Backreferences                           | O(nm)    | O(n m log n) ?
  Pike VM / Laurikari TNFA simulation | Backreferences, assertions               | O(nm)    | O(m log n) ?
- OBDD TNFA Simulation                | Backreferences, assertions?              | ???      | ???
+ ROBDD TNFA Simulation               | Backreferences, assertions?              | ???      | ???
  Generalized Boyer-Moore             | Backreferences, assertions, groups (???) | O(nm)??  | ???
 
  **Note on features**: The list of missing features is only with the "standard" algorithm. There may be easy modifications to bring back some features (see the detailed summary for ideas).
@@ -72,11 +72,29 @@ Pike VM and Laurikari TNFA simulation are apparently similar techniques. I am no
 
 * Generalized Boyer-Moore is interesting in that it is the only algorithm presented that has better best-case time complexity than backtracking search. In fact, Boyer Moore is frequently used instead of regexps because of its ability to skip large sections of text. However, I don't yet know exactly what features can be implemented under generalized Boyer-Moore.
 
-* TODO: describe DFA compilation, preprocessing costs, and best-case time complexity. Describe OBDD-TNFA performance. Determine if OBDD-TNFA can do assertions using the memoization approach, or using a new approach utilizing features of OBDD-TNFA. Determine if the algorithm for recovering matches with OBDD-TNFA can be used to recover assertion information, solving the O(m) assertion problem.
+* **TODO:** describe DFA compilation, Thompson NFA search, RE2 "no-backtrack" backtracking, preprocessing costs, and best-case time complexity. Describe OBDD-TNFA performance. Determine if OBDD-TNFA can do assertions using the memoization approach, or using a new approach utilizing features of OBDD-TNFA. Determine if the algorithm for recovering matches with OBDD-TNFA can be used to recover assertion information, solving the O(m) assertion problem.
 
 #### Relevant standards and techniques exist?
+
+Yes.
+
 #### Those intended to follow (and why)
+
+The ECMA 262 standard should be followed. See discussion on implementations for details as to why.
+
+As far as implementation techniques go, there's two fundamental groups of people: those who are willing to hand-tune the regexp and don't want extra overhead, and those who won't or can't and want acceptable worst-case performance. It is reasonable to support both use cases by having a first-class implementation of both backtracking search (tunable, low overhead in best case) and Pike VM style implementation (excellent worst case time).
+
+In order to allow for the "excellent worst-case time" implementation to be as efficient as possible, RE2 implements multiple algorithms handling special cases of regular expressions. This can be considered a "stretch goal", in that the people that really care might want to use backtracking search, but it is valuable to make the algorithmically good solution also as close as possible to the solution that is best everywhere.
+
+**FIXME:** Discuss assertions.
+
 #### Those intended to ignore (and why)
+
+The POSIX regexp standard is not compatible with ECMA 262, and will be ignored.
+
+The Unicode regexp standard is intended for those designing new PCRE variants, and will be ignored in favor of doing whatever ECMA 262 does. However, any implemented extensions to ECMA 262 should draw on the Unicode standard rather than making things up.
+
+For the time being, ROBDD NFA simulation is too new and untested to rely on for good performance.
 
 ## 3. Research of libraries from other languages
 
