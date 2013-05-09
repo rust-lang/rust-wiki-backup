@@ -201,6 +201,32 @@ Suppose we separate parsing from compiling. Then there are four situations:
 
 If parsing and compiling are unified, then the second case is lost. This is in addition to the usability losses of not having separated interfaces for parsing and compiling. Food for thought!
 
+#### Notion of a regexp "engine"
+
+Consider that we have the following implementation approaches:
+
+* Backtracking search
+* Memoized backtracking search
+* TNFA search
+* NFA search
+* DFA search
+* Backtracking-free "backtracking" search
+
+Consider that the following options may apply:
+
+* Find PCRE-style match
+* Find shortest match.
+* Find longest match.
+* Only discover if a match exists
+* Ignore case (and other normal regexp flags)
+* Forbid assertions
+* Run assertions by running the same search type as a subroutine
+* Run assertions by running the same search type as a subroutine, but with results memoized
+
+It's probably best to have engines (as in the first list) with options (from the second list), considering that most of the time every option applies to every of the search types.
+
+It's also possibly best to have some means of automatically selecting an engine based on the regex or such, so a special "Auto" engine which selects the most efficient (in algorithmic terms) engine that can run the regex.
+
 #### WIP notes
 
 https://gist.github.com/Kimundi/5543809
