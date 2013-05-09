@@ -17,6 +17,8 @@ Note that the majority of the discussion was had over IRC, and not the mailing l
   2. Standard: Open Group Base Specification (Regular Expressions)
     - http://pubs.opengroup.org/onlinepubs/009695399/basedefs/xbd_chap09.html
     - There are other specifications for UNIX/POSIX, not sure which are preferred (and free)
+  3. Standard: ECMA-262 (RegExp Objects)
+    - http://www.ecma-international.org/ecma-262/5.1/#sec-15.10
   1. Technique: Thompson NFA
     - http://swtch.com/~rsc/regexp/regexp1.html
   2. Technique: Pike VM / Laurikari TNFA
@@ -90,9 +92,14 @@ Pike VM and Laurikari TNFA simulation are apparently similar techniques. I am no
     - http://docs.python.org/2/library/re.html
   7. Language: Common Lisp
     - http://weitz.de/cl-ppcre/
+  8. Language: ECMAScript/JS
+    - http://www.ecma-international.org/ecma-262/5.1/#sec-15.10
+    - https://developer.mozilla.org/en-US/docs/JavaScript/Guide/Regular_Expressions
 
 ### Summary of research from other languages:
 #### Structures and functions commonly appearing
+
+FIXME: note difference between "streaming" style APIs and the more python-ish APIs
 
 - Separate type for compiled regexp, separate type for result of a search operation
   * result.start, result.end, result.groups (or equivalent)
