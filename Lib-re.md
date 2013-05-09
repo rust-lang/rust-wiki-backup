@@ -203,7 +203,7 @@ If parsing and compiling are unified, then the second case is lost. This is in a
 
 #### Notion of a regexp "engine"
 
-Consider that we have the following implementation approaches:
+Suppose that we have the following implementation approaches:
 
 * Backtracking search
 * Memoized backtracking search
@@ -212,7 +212,7 @@ Consider that we have the following implementation approaches:
 * DFA search
 * Backtracking-free "backtracking" search
 
-Consider that the following options may apply:
+And suppose that the following options may apply:
 
 * Find PCRE-style match
 * Find shortest match.
@@ -240,6 +240,8 @@ https://gist.github.com/Kimundi/5543809
 * I am a regexp power user. I want to be able to fine-tune a regexp to perform well, because I know what I am doing.
   * Concession: Backtracking search (which has low overhead and quick times in best case)
   * Concession: Various regexp operators that tailor backtracking search process (e.g. atomic grouping)
+* I'm just a regular guy hacking up a file in a weird format, and I don't care about any of that stuff. Just don't take too long.
+  * Would defaulting to Tagged NFA simulation make this person happier than defaulting to backtracking search?
 
 #### Notes
 
