@@ -40,11 +40,14 @@ For Ubuntu 11.10 there seems to be a conflict with texlive-latex-base, per [#169
 
 ### Windows
 
+#### 3 Quick Steps for environment setup.
 We recommend developing under [MSYS and MinGW](http://www.mingw.org) using their auto-installer.
 
 1. Download the latest mingw-get-inst (the auto-installer) directly from http://sourceforge.net/projects/mingw/.
 2. During the MinGW installation, choose both MinGW base and MSYS to install.
+3. Start MSYS shell console, and Use the command `mingw-get upgrade "gcc<4.6"` to ensure that GCC is upgraded to the latest version BELOW 4.6.
 
+#### Further info for Windows users.
 You can update MinGW components once you start it's console by using the command `mingw-get update`, this updates the package repository for MinGW.  After which you can upgrade packages with `mingw-get upgrade`.
 Using `mingw-get` alone will open a GUI interface for package management.  If you are a consistent user of MinGW or plan to be, you might also want to subscribe to their mailing list: [Mingw-users](https://lists.sourceforge.net/lists/listinfo/mingw-users)
 
@@ -53,11 +56,10 @@ This is a requirement on Windows 64 bit for LLVM to compile correctly, according
 
 Rust will download a git submodule for LLVM during the build and compile it, so no need to do download LLVM and build it yourself.
 
-**Use the command `mingw-get upgrade "gcc<4.6"` to ensure that GCC is upgraded to the latest version BELOW 4.6.**
-
 Once installed, we tend to work inside the MSYS shell.
 
-(OPTIONAL - if not using MinGW base install, which includes Git)
+(OPTIONAL - if not using MinGW base install, which includes Git) --
+
 For Git, we recommend [MsysGit](http://msysgit.github.com/) and if you use that you will want to put the git binary path *after* the MinGW path. So add a line like the following to your `.bashrc`:
 
     export PATH=$PATH:/c/Program\ Files/Git/bin
