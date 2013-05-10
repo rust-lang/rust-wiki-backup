@@ -4,6 +4,8 @@ Rust is alpha-level software with many known bugs, incomplete features and plann
 
 You should check out the [[docs|Docs]]. Also, join [#rust on irc.mozilla.org][pound-rust]. It is a friendly place.
 
-If you intend to edit this wiki, please follow some [[conventions|Note wiki conventions]]. If you want to hack on Rust itself then read the [[getting started guide for Rust developers|Note getting started developing Rust]].
+If you want to hack on Rust itself then read the [[getting started guide for Rust developers|Note getting started developing Rust]].
+
+If you intend to edit this wiki, please follow some [[conventions|Note wiki conventions]]. 
 
 [pound-rust]: http://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust
