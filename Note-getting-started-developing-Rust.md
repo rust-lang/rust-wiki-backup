@@ -54,7 +54,7 @@ Using `mingw-get` alone will open a GUI interface for package management.  If yo
 **You currently need to ensure that you are using GCC version < 4.6. for the LLVM / Rust build to complete successfully.**
 This is a requirement on Windows 64 bit for LLVM to compile correctly, according to their docs.
 
-Rust will download a git submodule for LLVM during the build and compile it, so no need to do download LLVM and build it yourself.
+Rust will download a git submodule for LLVM during the build and compile it, so you do not need to download LLVM and build it yourself.
 
 Once installed, we tend to work inside the MSYS shell.
 
