@@ -2,7 +2,7 @@ Generating random numbers, and sampling from random distributions.
 
 ## 1. Announcement to mailing list
 
-  - Proposed editor: _your name_
+  - Proposed editor: Huon Wilson ([@huonw](https://github.com/huonw))
   - Date proposed: _date of proposal_
   - Link: _link to email_
 
@@ -114,6 +114,7 @@ Very common/important:
 
 ## 4. Module writing
 
+  - WIP: https://github.com/huonw/rust-rand
   - Pull request: _link to bug_
 
 ### Additional implementation notes
