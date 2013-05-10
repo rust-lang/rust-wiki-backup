@@ -44,6 +44,8 @@ This is Tim's attempt to come up with a schedule for finishing rustpkg, with a p
       * test cases:
           * a file with `extern mod foo` where foo lives in a different directory
 
+   As part of this, fix #6407 (change what's allowed in an `extern mod` directive)
+
    Due: 2013-05-10
 
 3. Test	runner (#5683)
@@ -63,6 +65,11 @@ This is Tim's attempt to come up with a schedule for finishing rustpkg, with a p
       	  * install from an entry in `RUST_PATH` that isn't the first one
 
    Due: 2013-05-16
+
+6. Teach pkg.rs how to execute the default build logic (#6401)
+
+6. Commands should work without an explicit package name (#6405)
+      * build and install, to start with
 
 7. Implement (or test) package database	and ability to list, add, remove packages
       * test case:
@@ -91,6 +98,8 @@ This is Tim's attempt to come up with a schedule for finishing rustpkg, with a p
 8. Extend pkg IDs to specify version explicitly
       * test case:
            * have two versions of package A, A 0.1 and A 0.2; installing A#0.1 doesn't install 0.2, does install 0.1
+   
+   At the same time, teach rustpkg about branches and tags (#6411)
 
    Due: 2013-06-07
 
@@ -98,6 +107,10 @@ This is Tim's attempt to come up with a schedule for finishing rustpkg, with a p
        * do, info, prefer, test, uninstall, unprefer
 
    Due: 2013-06-14
+
+8. Expose the ability to clone a git repository (#6409)
+
+8. Build C libraries (#6403 and #6404)
 
 8. (wishlist) Track non-Rust dependencies
        * test case:
