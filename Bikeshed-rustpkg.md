@@ -38,7 +38,7 @@ This is Tim's attempt to come up with a schedule for finishing rustpkg, with a p
          * Make sure, via unit tests, that "package IDs are relative-path-like" is enforced
          * Make sure, via unit tests, that "package IDs have a single stem" is enforced
 
-   Due: 2013-04-30 (Blocked on finishing the sysroot stuff)
+   Due: 2013-05-12
 
 4. Finding external crates (#5681)
       * test cases:
@@ -46,17 +46,17 @@ This is Tim's attempt to come up with a schedule for finishing rustpkg, with a p
 
    As part of this, fix #6407 (change what's allowed in an `extern mod` directive)
 
-   Due: 2013-05-10
+   Due: 2013-05-14
 
 3. Test	runner (#5683)
 
-   Due: 2013-05-03
+   Due: 2013-05-17
 
 5. Get version from VCS (#5684)
       * test case:
           * use a subdirectory containing a git version, make sure the created executable or library has the right version number in the name
 
-   Due: 2013-05-12
+   Due: 2013-05-20
 
 6. Implement `RUST_PATH` (#5682)
       * test cases:
@@ -64,25 +64,29 @@ This is Tim's attempt to come up with a schedule for finishing rustpkg, with a p
       	  * install; make sure it installs to the first entry in `$RUST_PATH`
       	  * install from an entry in `RUST_PATH` that isn't the first one
 
-   Due: 2013-05-16
+   Due: 2013-05-22
 
 6. Teach pkg.rs how to execute the default build logic (#6401)
 
+   Due: 2013-05-24
+
 6. Commands should work without an explicit package name (#6405)
       * build and install, to start with
+
+   Due: 2013-05-25
 
 7. Implement (or test) package database	and ability to list, add, remove packages
       * test case:
           * install several packages, make sure they appear in list
       	  * remove one package, make sure it doesn't appear in list and other packages do
 
-   Due: 2013-05-23
+   Due: 2013-05-27
 
 8. Track dependencies between Rust packages
       * test case:
           * two packages, A and B; A depends on B with ```extern mod```; building A automatically builds B
 
-   Due: 2013-05-28
+   Due: 2013-05-29
 
 8. Use workcache
       * test cases:
