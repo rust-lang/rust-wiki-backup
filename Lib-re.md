@@ -229,7 +229,8 @@ It's also possibly best to have some means of automatically selecting an engine 
 
 #### WIP notes
 
-https://gist.github.com/Kimundi/5543809
+- All-in-one `re!()`: https://gist.github.com/Kimundi/5543809
+- Compiletime only `re!()`: https://gist.github.com/Kimundi/5553204
 
 ### User stories
 
