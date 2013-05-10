@@ -84,7 +84,7 @@ The gcc included with FreeBSD is old, so your best bet is to run the `configure`
 
 ### Android
 
-See [[Doc-building-for-android|building for Android]]
+See [[building for Android|Doc-building-for-android]]
 
 ## Downloading and building Rust
 
