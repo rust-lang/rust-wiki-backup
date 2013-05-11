@@ -80,6 +80,7 @@ Generating random numbers, and sampling from random distributions.
   3. Language: R (statistical language, so much broader random number support than necessary)
     - http://stat.ethz.ch/R-manual/R-patched/library/base/html/Random.html
     - http://stat.ethz.ch/R-manual/R-patched/library/stats/html/Distributions.html
+    - Parallel random numbers (section 6): http://stat.ethz.ch/R-manual/R-devel/library/parallel/doc/parallel.pdf
   4. Language: Julia (also a statistical language)
     - https://github.com/JuliaStats/Distributions.jl
   4. Language: D
