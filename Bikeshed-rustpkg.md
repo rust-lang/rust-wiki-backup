@@ -33,7 +33,7 @@ This is Tim's attempt to come up with a schedule for finishing rustpkg, with a p
       	 * ~~remote (github) URL~~ Done pending pull request #6418
       * Sub-tasks:
          * ~~Allow installing from URLs~~ Pull request #6418
-         * Ensure there's no longer any dependency on link name, URL, uuid
+         * ~~Ensure there's no longer any dependency on link name, URL, uuid~~
          * Wipe out any traces of reverse-DNS-style paths if there are any
          * Make sure, via unit tests, that "package IDs are relative-path-like" is enforced
          * Make sure, via unit tests, that "package IDs have a single stem" is enforced
