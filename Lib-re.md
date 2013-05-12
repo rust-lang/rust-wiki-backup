@@ -254,5 +254,3 @@ While usually the power user / safety user would use different libraries, there'
 ### Additional implementation notes
 
  - Most of the work is in parsing, and I'm not very confident in the quality of it. :(  There are lots of tests though. If anyone wants to redo parsing code, go for it.
-
-  - _note_
