@@ -76,6 +76,7 @@ Generating random numbers, and sampling from random distributions.
     - Gamma
       - ["A simple method for generating gamma variables" Marsaglia & Tsang 2000](http://dl.acm.org/citation.cfm?id=358414)
       - ["A Simple Gamma Random Number Generator for Arbitrary Shape Parameters" Tanizaki 2008](http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.158.3866)
+      - https://hips.seas.harvard.edu/blog/2013/02/21/a-parallel-gamma-sampling-implementation/
 
 
 
