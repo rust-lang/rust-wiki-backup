@@ -52,6 +52,7 @@ Generating random numbers, and sampling from random distributions.
        - ["Generating good pseudo-random numbers" Wichmann-Hill 2005](http://dl.acm.org/citation.cfm?id=1219278)
     - Hardware
        - `RDRAND` on Ivy Bridge x64 CPUs ([example of use in a Haskell package](https://github.com/TomMD/entropy/blob/master/cbits/rdrand.c))
+    - Assorted names: YARN5, Lagged Fibonacci, Multiple recurrence
 
   2. Technique: Testing quality of random numbers 
     - Very important! Extremely hard to tell if random numbers are "random enough" (a bug in an implementation, or a bad algorithm, can produce numbers that look random but aren't random enough for many purposes).
@@ -112,6 +113,8 @@ Generating random numbers, and sampling from random distributions.
   6. Library: Boost
     - http://www.boost.org/doc/libs/1_53_0/doc/html/boost_random/reference.html
   7. Library: [RandomKit](http://js2007.free.fr/code/index.html#RandomKit)
+  8. Library: [Tina's Random Number Generator Library](http://numbercrunch.de/trng/)
+    - Includes many distributions, also support for/discussion about parallel RNGs.
 
 ### Summary of research from other languages:
 #### Structures and functions commonly appearing
