@@ -110,6 +110,7 @@ Generating random numbers, and sampling from random distributions.
     - http://docs.scipy.org/doc/scipy/reference/stats.html
   6. Library: Boost
     - http://www.boost.org/doc/libs/1_53_0/doc/html/boost_random/reference.html
+  7. Library: [RandomKit](http://js2007.free.fr/code/index.html#RandomKit)
 
 ### Summary of research from other languages:
 #### Structures and functions commonly appearing
