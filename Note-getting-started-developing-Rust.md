@@ -40,12 +40,13 @@ For Ubuntu 11.10 there seems to be a conflict with texlive-latex-base, per [#169
 
 ### Windows
 
-#### 3 Quick Steps for environment setup.
+#### Quick Steps for Windows environment setup.
 We recommend developing under [MSYS and MinGW](http://www.mingw.org) using their auto-installer.
 
 1. Download the latest mingw-get-inst (the auto-installer) directly from http://sourceforge.net/projects/mingw/.
-2. During the MinGW installation, choose both MinGW base and MSYS to install.
+2. During the MinGW installation, check the boxes to select the following components to install: C compiler, C++ compiler, & MSYS.
 3. Start MSYS shell console, and Use the command `mingw-get upgrade "gcc<4.6"` to ensure that GCC is upgraded to the latest version BELOW 4.6.
+4. Install Perl with `mingw-get install msys-perl`.
 
 #### Further info for Windows users.
 You can update MinGW components once you start it's console by using the command `mingw-get update`, this updates the package repository for MinGW.  After which you can upgrade packages with `mingw-get upgrade`.
