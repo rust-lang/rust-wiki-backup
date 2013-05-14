@@ -45,7 +45,8 @@ We recommend developing under [MSYS and MinGW](http://www.mingw.org) using their
 
 1. Download the latest mingw-get-inst (the auto-installer) directly from http://sourceforge.net/projects/mingw/.
 2. During the MinGW installation, check the boxes to select the following components to install: C compiler, C++ compiler, & MSYS.
-3. Start MSYS shell console, and Use the command `mingw-get upgrade "gcc<4.6"` to ensure that GCC is upgraded to the latest version BELOW 4.6.
+3. Start MSYS shell console from the desktop or Start menu.
+4. Use the command `mingw-get upgrade "gcc<4.6"` to ensure that GCC is upgraded to the latest version BELOW 4.6.  Do the same for the C++ compiler with the command `mingw-get upgrade "g++<4.6"`.
 4. Install Perl with `mingw-get install msys-perl`.
 
 #### Further info for Windows users.
