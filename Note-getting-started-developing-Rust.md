@@ -48,6 +48,7 @@ We recommend developing under [MSYS and MinGW](http://www.mingw.org) using their
 3. Start MSYS shell console from the desktop or Start menu.
 4. Use the command `mingw-get upgrade "gcc<4.6"` to ensure that GCC is upgraded to the latest version BELOW 4.6.  Do the same for the C++ compiler with the command `mingw-get upgrade "g++<4.6"`.
 4. Install Perl with `mingw-get install msys-perl`.
+5. Install Curl with ... placeholder for figuring out how to easily install Curl for MinGW Windows users.
 
 #### Further info for Windows users.
 You can update MinGW components once you start it's console by using the command `mingw-get update`, this updates the package repository for MinGW.  After which you can upgrade packages with `mingw-get upgrade`.
