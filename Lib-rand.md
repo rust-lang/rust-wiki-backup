@@ -114,6 +114,8 @@ Generating random numbers, and sampling from random distributions.
   7. Library: [RandomKit](http://js2007.free.fr/code/index.html#RandomKit)
   8. Library: [Tina's Random Number Generator Library](http://numbercrunch.de/trng/)
     - Includes many distributions, also support for/discussion about parallel RNGs.
+  9. Misc:
+    - http://tommd.github.io/posts/RNG-Bench.html
 
 ### Summary of research from other languages:
 #### Structures and functions commonly appearing
