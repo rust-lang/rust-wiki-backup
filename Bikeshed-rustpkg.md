@@ -38,7 +38,7 @@ This is Tim's attempt to come up with a schedule for finishing rustpkg, with a p
          * ~~Make sure, via unit tests, that "package IDs are relative-path-like" is enforced~~
          * ~~Make sure, via unit tests, that "package IDs have a single stem" is enforced~~
 
-   ~~Due: 2013-05-12~~ Done pending #6418
+   ~~Due: 2013-05-12~~ Done ~~pending #6418~~
 
 4. Finding external crates (#5681)
       * test cases:
