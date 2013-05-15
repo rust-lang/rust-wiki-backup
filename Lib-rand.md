@@ -116,6 +116,7 @@ Generating random numbers, and sampling from random distributions.
     - Includes many distributions, also support for/discussion about parallel RNGs.
   9. Misc:
     - http://tommd.github.io/posts/RNG-Bench.html
+    - http://hackage.haskell.org/package/crypto-api (An example of a generic interface for cryptographic things, not in the scope of lib-rand, but it'd be good to not make things hard to fit into an api like this.)
 
 ### Summary of research from other languages:
 #### Structures and functions commonly appearing
