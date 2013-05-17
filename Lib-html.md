@@ -60,4 +60,4 @@ Question: where to get from the complete list of characters to escape and entiti
 
 - `escape_minimal()` only escapes the necessary 5 (?) characters which are necessary for security/forms/URLs
 - `escape_full()` escapes all characters
-  - We probably should use a table-lookup (binary search), similar to the code in `libcore/unicode.rs`
+  - We probably should use a table-lookup (binary search), similar to the code in https://github.com/mozilla/rust/blob/incoming/src/libcore/unicode.rs
