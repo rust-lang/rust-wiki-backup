@@ -21,7 +21,7 @@ pointers are never dangling.
 | `std::unique_ptr` | owned pointer: `~`                                                   |
 +-------------------+----------------------------------------------------------------------+
 | `std::shared_ptr` | * `@`, `@mut` (garbage collected, cycles allowed/collected)          |
-|                   | * `std::rc::Rc`, `std::rc::RcMut` (acyclic, enforced by type bounds) |
+|                   | * `std::rc::Rc`, `std::rc::RcMut` (reference counted; acyclic, enforced by type bounds) |
 +-------------------+----------------------------------------------------------------------+
 
 Borrowed pointers (`&`) have the same representation as C pointers or C++
