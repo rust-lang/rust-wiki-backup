@@ -1,5 +1,3 @@
-# 2012-01-24 Meeting Notes
-
 ## Congrats on 0.1!
 
 - http://news.ycombinator.com/item?id=3501980
