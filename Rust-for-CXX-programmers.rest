@@ -28,6 +28,8 @@ Borrowed pointers (`&`) have the same representation as C pointers or C++
 references at runtime, but to enforce safety at compile-time they are more
 restricted and have a concept of lifetimes. See `the borrowed pointer tutorial
 <http://static.rust-lang.org/doc/tutorial-borrowed-ptr.html>`_ for details.
+Note that unlike C++ references but like raw pointers, they can be treated as
+values and stored in containers.
 
 For example, a container can return a reference to an object inside it, and
 the lifetime will ensure that the container outlives the reference and is not
