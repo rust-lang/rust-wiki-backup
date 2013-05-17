@@ -11,18 +11,18 @@ Pointers in C++ are vulnerable to bugs involving dangling or null pointers. In
 Rust, pointers are non-nullable and the compiler enforces the invariant that
 pointers are never dangling.
 
-+-------------------+----------------------------------------------------------------------+
-| C++               | Rust                                                                 |
-+===================+======================================================================+
-| `&`               | `&mut`                                                               |
-+-------------------+----------------------------------------------------------------------+
-| `const&`          | `&` (immutable - not just read-only through reference)               |
-+-------------------+----------------------------------------------------------------------+
-| `std::unique_ptr` | owned pointer: `~`                                                   |
-+-------------------+----------------------------------------------------------------------+
-| `std::shared_ptr` | * `@`, `@mut` (garbage collected, cycles allowed/collected)          |
-|                   | * `std::rc::Rc`, `std::rc::RcMut` (reference counted; acyclic, enforced by type bounds) |
-+-------------------+----------------------------------------------------------------------+
++-------------------+---------------------------------------------------------------------------------+
+| C++               | Rust                                                                            |
++===================+=================================================================================+
+| `&`               | `&mut`                                                                          |
++-------------------+---------------------------------------------------------------------------------+
+| `const&`          | `&` (immutable - not just read-only through reference)                          |
++-------------------+---------------------------------------------------------------------------------+
+| `std::unique_ptr` | owned pointer: `~`                                                              |
++-------------------+---------------------------------------------------------------------------------+
+| `std::shared_ptr` | * garbage collection: `@`, `@mut` (cycles allowed/collected)                    |
+|                   | * reference counting: `std::rc::{Rc, RcMut}` (acyclic, enforced by type bounds) |
++-------------------+---------------------------------------------------------------------------------+
 
 Borrowed pointers (`&`) have the same representation as C pointers or C++
 references at runtime, but to enforce safety at compile-time they are more
