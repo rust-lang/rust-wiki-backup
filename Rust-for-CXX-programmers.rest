@@ -89,15 +89,15 @@ expression is used to pattern match out of it, replacing the usage of a
 expression is required to cover all possible cases, although a default fallback
 can be used.
 
-+-------------------+-----------------------------------------------+
-| C++               | Rust                                          |
-+===================+===============================================+
-| `enum`            | `enum`, but it only store the given variants  |
-+-------------------+-----------------------------------------------+
-| `boost::variant`  | `enum`, `Either` (an `enum`) for 2 types      |
-+-------------------+-----------------------------------------------+
-| `boost::optional` | `Option` (an `enum`)                          |
-+-------------------+-----------------------------------------------+
++-------------------+------------------------------------------------+
+| C++               | Rust                                           |
++===================+================================================+
+| `enum`            | `enum`, but can only store the given variants  |
++-------------------+------------------------------------------------+
+| `boost::variant`  | `enum`, `Either` (an `enum`) for 2 types       |
++-------------------+------------------------------------------------+
+| `boost::optional` | `Option` (an `enum`)                           |
++-------------------+------------------------------------------------+
 
 `Option` and `Either` are very common patterns, so they're predefined along
 with utility methods.
