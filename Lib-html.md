@@ -36,7 +36,7 @@ A library/module for escaping/unescaping of special HTML characters.
 
   1. Language: Go
     - [html](http://golang.org/pkg/html/)
-      - `EscapeString()` escapes only the 5 characters: <, >, &, ' and "
+      - `EscapeString()` escapes only the 5 characters `< > & ' "`
       - `UnescapeString()` unescapes more characters
   1. Language: PHP
     - [htmlspecialchars()](http://php.net/manual/en/function.htmlspecialchars.php)
