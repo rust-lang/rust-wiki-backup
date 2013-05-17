@@ -40,7 +40,7 @@ A library/module for escaping/unescaping of special HTML characters.
       - `UnescapeString()` unescapes more characters
   1. Language: PHP
     - [htmlspecialchars()](http://php.net/manual/en/function.htmlspecialchars.php)
-      - escapes only the 5 characters: <, >, &, ' and "
+      - escapes only the 5 characters `< > & ' "`
     - [htmlspecialchars_decode ()](http://www.php.net/manual/en/function.htmlspecialchars-decode.php)
       - decodes only the characters handled by htmlspecialchars()
 
@@ -58,6 +58,6 @@ A library/module for escaping/unescaping of special HTML characters.
 
 Question: where to get from the complete list of characters to escape and entities to produce?
 
-- `escape_minimal()` only escapes the necessary 5 (?) characters which are necessary for security/forms/URLs
+- `escape_minimal()` only escapes the necessary 5 characters `< > & ' "` which are necessary for security/forms/URLs
 - `escape_full()` escapes all characters
   - We probably should use a table-lookup (binary search), similar to the code in https://github.com/mozilla/rust/blob/incoming/src/libcore/unicode.rs
