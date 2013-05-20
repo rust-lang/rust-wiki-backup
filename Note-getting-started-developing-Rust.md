@@ -9,7 +9,7 @@ following these instructions.
 Version numbers listed here are "what we're using"; the code may well work with earlier versions of these tools, but we don't know minimum version requirements.
 
 * A recent Linux, OS X 10.6 or later, Win32 or FreeBSD system
-* 2 GB RAM _available for the build process_ (see note below about memory usage)
+* 2.5 GB RAM _available for the build process_ (see note below about memory usage)
 * [Python 2.x](http://www.python.org/download/) (version 2.7 is known to work)
 * GNU make 3.81
 * git 1.7
