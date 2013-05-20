@@ -44,15 +44,24 @@ For Ubuntu 11.10 there seems to be a conflict with texlive-latex-base, per [#169
 We recommend developing under [MSYS and MinGW](http://www.mingw.org) using their auto-installer.
 
 1. Download the latest mingw-get-inst (the auto-installer - Green button) directly from http://sourceforge.net/projects/mingw/.
-2. During the MinGW installation, check the boxes to select the following components to install: C compiler, C++ compiler, & scroll down and check the box for the MSYS Basic System.
-3. After installing MinGW/MSYS, Start the MSYS shell console from the desktop or Start menu.
-4. Use the command `mingw-get upgrade "gcc<4.6"` to ensure that GCC is upgraded to the latest version BELOW 4.6.  Do the same for the C++ compiler with the command `mingw-get upgrade "g++<4.6"`.
-4. Install Perl with `mingw-get install msys-perl`.
-5. Install Curl with ... placeholder for figuring out how to easily install Curl for MinGW Windows users.
+2. Run the mingw-get-inst-########.exe
+3. Check the boxes to select the following components to install:
+ * C compiler
+ * C++ compiler
+ * Scroll down and check the box for the MSYS Basic System.
+4. After installing MinGW/MSYS, start the MSYS shell console from the desktop or Start menu.
+5. Use the command `mingw-get upgrade "gcc<4.6"` to ensure that GCC is upgraded to the latest version BELOW 4.6.  Do the same for the C++ compiler with the command `mingw-get upgrade "g++<4.6"`.
+5. Install Perl with `mingw-get install msys-perl`.
+6. Install Curl with ... Curl is not yet part of MSYS or MinGW, bummer, we know, but all it needs is a volunteer contributor to maintain it however, helping them, helps us, until then...ya gotta do this:
+ * download [curl-7.30.0.tar.gz](http://curl.haxx.se/download/curl-7.30.0.tar.gz) or the latest version manually to your MSYS home, usually `C:\MinGW\msys\1.0\home\<your_name>`
+ * `tar -zxvf curl-7.30.0.tar.gz`
+ * `cd curl-7.30.0`
+ * `./configure –prefix=/mingw`
+ * `make`
+ * `make install`
+ * `curl --version` and `which curl` to ensure the build of Curl worked.
 
 #### Further info for Windows users.
-You can update MinGW components once you start it's console by using the command `mingw-get update`, this updates the package repository for MinGW.  After which you can upgrade packages with `mingw-get upgrade`.
-Using `mingw-get` alone will open a GUI interface for package management.  If you are a consistent user of MinGW or plan to be, you might also want to subscribe to their mailing list: [Mingw-users](https://lists.sourceforge.net/lists/listinfo/mingw-users)
 
 **You currently need to ensure that you are using GCC version < 4.6. for the LLVM / Rust build to complete successfully.**
 This is a requirement on Windows 64 bit for LLVM to compile correctly, according to their docs.
@@ -60,14 +69,19 @@ This is a requirement on Windows 64 bit for LLVM to compile correctly, according
 Rust will download a git submodule for LLVM during the build and compile it, so you do not need to download LLVM and build it yourself.
 
 Once installed, we tend to work inside the MSYS shell.
+If you are a consistent user of MinGW or plan to be, you might also want to subscribe to their mailing list: [Mingw-users](https://lists.sourceforge.net/lists/listinfo/mingw-users)
 
-(OPTIONAL - if not using MinGW base install, which includes Git) --
+(OPTIONAL)
+* You can update MinGW components once you start it's console by using the command `mingw-get update`, this updates the package repository for MinGW.  After which you can upgrade packages with `mingw-get upgrade`.
+Using `mingw-get` alone will open a GUI interface for package management.
 
-For Git, we recommend [MsysGit](http://msysgit.github.com/) and if you use that you will want to put the git binary path *after* the MinGW path. So add a line like the following to your `.bashrc`:
+(OPTIONAL - if your not using MinGW auto-installer above, you will have to also do the following) :
+
+* For Git, we recommend [MsysGit](http://msysgit.github.com/) and if you use that you will want to put the git binary path *after* the MinGW path. So add a line like the following to your `.bashrc`:
 
     export PATH=$PATH:/c/Program\ Files/Git/bin
 
-If while building you receive an error that `libpthread-2.dll` is not found, you need to install the [libpthread-2.8.0-3-mingw32-dll-2.tar.lzma package](http://sourceforge.net/projects/mingw/files/MinGW/Base/pthreads-w32/pthreads-w32-2.8.0-3/).  It seems this must be installed by hand, as far as I can tell:
+* If while building you receive an error that `libpthread-2.dll` is not found, you need to install the [libpthread-2.8.0-3-mingw32-dll-2.tar.lzma package](http://sourceforge.net/projects/mingw/files/MinGW/Base/pthreads-w32/pthreads-w32-2.8.0-3/).  It seems this must be installed by hand, as far as I can tell:
 
     cd /mingw; lzma -d -c /path/to/downloaded/libpthread-2.8.0-3-mingw32-dll-2.tar.lzma | tar xf -
 
