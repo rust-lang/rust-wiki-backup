@@ -9,7 +9,7 @@ following these instructions.
 Version numbers listed here are "what we're using"; the code may well work with earlier versions of these tools, but we don't know minimum version requirements.
 
 * A recent Linux, OS X 10.6 or later, Win32 or FreeBSD system
-* 2.5 GB RAM _available for the build process_ (see note below about memory usage)
+* 2.5 GiB RAM _available for the build process_ (see note below about memory usage)
 * [Python 2.x](http://www.python.org/download/) (version 2.7 is known to work)
 * GNU make 3.81
 * git 1.7
@@ -22,7 +22,7 @@ Version numbers listed here are "what we're using"; the code may well work with 
 
 ### Memory usage
 
-Rust seems to take about 1.4-1.6 GB for most of the build, peaking at around 2 GB.  If you only have 2 GB of RAM total, you may have a difficult time building Rust while doing anything else, such as using a browser.  (One very patient user reported being able to build Rust on a netbook with 1 GB RAM, but the full three-stage build took six hours.)
+Rust seems to take about 1.4-1.6 GiB for most of the build, peaking at around 2.5 GiB.  If you only have 2 GiB of RAM total, you may have a difficult time building Rust while doing anything else, such as using a browser.  (One very patient user reported being able to build Rust on a netbook with 1 GiB RAM, but the full three-stage build took six hours.)
 
 ### Debian-based Linux distributions
 
