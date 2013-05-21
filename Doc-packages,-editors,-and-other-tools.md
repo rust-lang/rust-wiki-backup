@@ -26,7 +26,7 @@
 * TextMate
   * [dyluke's textmate bundle](https://github.com/DylanLukes/Rust.tmbundle) - Rust TextMate mode
 * Vim
-  * included, see src/etc/
+  * included, see `src/etc/`. Syntastic has syntax error matching based on rustc.
 
 ## And more!
 
