@@ -164,7 +164,7 @@ http://smallcultfollowing.com/babysteps/blog/2013/05/14/procedures/
 
 ## subpattern binding: for, as, @, =, something else?
 
-   match foo {
+    match foo {
         Some(bar @ @Baz(0)) => ()
     }
     match foo {
