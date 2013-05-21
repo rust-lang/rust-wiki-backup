@@ -60,6 +60,7 @@ We recommend developing under [MSYS and MinGW](http://www.mingw.org) using their
  * `make`
  * `make install`
  * `curl --version` and `which curl` to ensure the build of Curl worked.
+7. Proceed to Downloading and building Rust.
 
 #### Further info for Windows users.
 
