@@ -32,11 +32,33 @@ Module editing plan template
 - [C (Plan 9) bio](http://swtch.com/usr/local/plan9/include/bio.h) [man](http://man.cat-v.org/plan_9/2/bio) - tidied up / simplified stdio
 - [D stdio](http://dlang.org/phobos/std_stdio.html) - stdio-like
 - [Go](http://golang.org/pkg/io/) - many fine-grained interfaces
-    - http://golang.org/pkg/bufio/ for buffered I/O
-    - http://golang.org/pkg/io/
-      - `Closer` is the interface that wraps the basic Close method.
+    - [bufio](http://golang.org/pkg/bufio/) for buffered I/O
+    - [io](http://golang.org/pkg/io/)
+      - `ByteReader`: `ReadByte()`
+      - `ByteScanner`: `ByteReader` + `UnreadByte()`
+      - `ByteWriter`: `WriteByte()`
+      - `Closer`: `Close()`
+      - `LimitedReader`
+      - `PipeReader`
+      - `PipeWriter`
+      - `ReadCloser`
+      - `ReadSeeker`
+      - `ReadWriteCloser`
+      - `ReadWriteSeeker`
+      - `ReadWriter`
+      - `Reader`
+      - `ReaderAt`
+      - `ReaderFrom`
+      - `RuneReader`
+      - `RuneScanner`
+      - `SectionReader`
       - `Seeker` is the interface that wraps the basic Seek method.
-    - http://golang.org/pkg/io/ioutil/
+      - `WriteCloser`
+      - `WriteSeeker`
+      - `Writer`
+      - `WriterAt`
+      - `WriterTo`
+    - [io.util](http://golang.org/pkg/io/ioutil/)
       - `ReadAll` reads from r until an error or EOF and returns the data it read.
 - [Python 3 io](http://docs.python.org/3.2/library/io.html) - includes text/binary division
 - [Common Lisp streams](http://www.lispworks.com/documentation/HyperSpec/Body/c_stream.htm) - very composable, possibly over-engineered
