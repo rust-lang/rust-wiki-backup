@@ -40,9 +40,11 @@ http://smallcultfollowing.com/babysteps/blog/2013/05/14/procedures/
 - N: yes
 - N: the equivalent of the major 3 types that we use today look like:
 
-    &fn(S) becomes fn(S) -> T
-    @fn(S) -> T becomes @proc(S) (or else a trait)
-    ~fn(S) -> T becomes proc:Owned(S) -> T
+```
+&fn(S) becomes fn(S) -> T
+@fn(S) -> T becomes @proc(S) (or else a trait)
+~fn(S) -> T becomes proc:Owned(S) -> T
+```
 
 - P: niko and I came to almost the same design. the basic issue is that ... I don't think we'd need proc except that the difference between capture-by-ref and by-val is important sometimes.
 - P: now that niko has brought it up, the fact that &fn captures by ref and ~fn captures by val is kinda weird in the first place, now that I think of it.
@@ -58,9 +60,11 @@ http://smallcultfollowing.com/babysteps/blog/2013/05/14/procedures/
 - N: you have to pass them around linearly
 - G: somewhat similar to the old `prog` notion we had way back, which were the spawnable-things. we switched to spawnable functions when we added destructors.
 
-    [once] fn:'r K(S) -> T
-    [once] proc:'r K(S) -> T
-    where K are builtin traits: Owned, Const, Copy?
+```
+[once] fn:'r K(S) -> T
+[once] proc:'r K(S) -> T
+```
+where `K` are builtin traits: `Owned`, `Const`, `Copy`?
 
 - N: what name do people want? some people suggest `proc` means doesn't return a value
 - P: proc is ok with me
@@ -69,13 +73,19 @@ http://smallcultfollowing.com/babysteps/blog/2013/05/14/procedures/
 - B: do you have a suggestion?
 - N: 
 
-    proc |a, b| expr
-    do spawn proc { ... }
+```
+proc |a, b| expr
+do spawn proc { ... }
+```
 
 - P: do we want to continue to infer sigils?
 - N: that's what we're talking about, really. There won't be sigils. So this is about inferring proc-ness
 - P: ok, so what's the signature of spawn?
-    fn spawn(p: once proc:Owned())
+
+```
+fn spawn(p: once proc:Owned())
+```
+
 - P: oh. so you're not going to have sigils?
 - N: yeah
 - P: that's nice. cleans up all the questions about  ..
