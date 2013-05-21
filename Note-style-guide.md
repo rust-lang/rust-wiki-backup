@@ -195,6 +195,10 @@ Examples:
 
 A ```for``` loop is always preferable to a ```while``` loop unless the loop counts in a non-uniform way (making it difficult to express as a ```for```).
 
+# Impls
+
+Put `pub` modifiers on method names, not on the impls.
+
 
 # Questions and TODO
 
