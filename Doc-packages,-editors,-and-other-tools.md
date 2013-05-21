@@ -41,3 +41,4 @@
 * [highlight.js](http://softwaremaniacs.org/soft/highlight/en/) - Highlight Rust code in your blog by adding a single line of JavaScript to your pages
 * [[Syntax highlighting for vi editor|Doc vim support]] - how to setup vi syntax highlighting
 * [bstrie's map of Rust contributors](http://seleniac.org/map/)
+* ["Is Rust fast yet?"](http://huonw.github.io/isrustfastyet/) - graphs of the build/test times of each merge into incoming
