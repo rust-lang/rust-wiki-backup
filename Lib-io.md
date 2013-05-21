@@ -42,12 +42,12 @@ Module editing plan template
       - interface `ReadSeeker`: interfaces `Reader` + `Seeker`
       - interface `ReadWriteCloser`: interfaces `Reader` + `Writer` + `Closer`
       - interface `ReadWriteSeeker`: interfaces `Reader` + `Writer` + `Seeker`
-      - interface `ReadWriter`
-      - interface `Reader`
-      - interface `ReaderAt`
-      - interface `ReaderFrom`
-      - interface `RuneReader`
-      - interface `RuneScanner`
+      - interface `ReadWriter`: interfaces `Reader` + `Writer`
+      - interface `Reader`: `Read()`
+      - interface `ReaderAt`: `ReadAt()`
+      - interface `ReaderFrom`: `ReadFrom()`
+      - interface `RuneReader`: `ReadRune()`
+      - interface `RuneScanner`: interface `RuneReader` + `UnreadRune()`
       - interface `Seeker`: `Seek()`
       - interface `WriteCloser`: interfaces `Writer` + `Closer`
       - interface `WriteSeeker`: interfaces `Writer` + `Seeker`
