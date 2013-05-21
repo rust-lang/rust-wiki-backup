@@ -34,30 +34,28 @@ Module editing plan template
 - [Go](http://golang.org/pkg/io/) - many fine-grained interfaces
     - [bufio](http://golang.org/pkg/bufio/) for buffered I/O
     - [io](http://golang.org/pkg/io/)
-      - `ByteReader`: `ReadByte()`
-      - `ByteScanner`: `ByteReader` + `UnreadByte()`
-      - `ByteWriter`: `WriteByte()`
-      - `Closer`: `Close()`
-      - `LimitedReader`
+      - interface `ByteReader`: `ReadByte()`
+      - interface `ByteScanner`: interface `ByteReader` + `UnreadByte()`
+      - interface `ByteWriter`: `WriteByte()`
+      - interface `Closer`: `Close()`
       - `PipeReader`
       - `PipeWriter`
-      - `ReadCloser`
-      - `ReadSeeker`
-      - `ReadWriteCloser`
-      - `ReadWriteSeeker`
-      - `ReadWriter`
-      - `Reader`
-      - `ReaderAt`
-      - `ReaderFrom`
-      - `RuneReader`
-      - `RuneScanner`
-      - `SectionReader`
-      - `Seeker` is the interface that wraps the basic Seek method.
-      - `WriteCloser`
-      - `WriteSeeker`
-      - `Writer`
-      - `WriterAt`
-      - `WriterTo`
+      - interface `ReadCloser`: interfaces `Reader` + `Closer`
+      - interface `ReadSeeker`: interfaces `Reader` + `Seeker`
+      - interface `ReadWriteCloser`: interfaces `Reader` + `Writer` + `Closer`
+      - interface `ReadWriteSeeker`: interfaces `Reader` + `Writer` + `Seeker`
+      - interface `ReadWriter`
+      - interface `Reader`
+      - interface `ReaderAt`
+      - interface `ReaderFrom`
+      - interface `RuneReader`
+      - interface `RuneScanner`
+      - interface `Seeker`: `Seek()`
+      - interface `WriteCloser`: interfaces `Writer` + `Closer`
+      - interface `WriteSeeker`: interfaces `Writer` + `Seeker`
+      - interface `Writer`: `Write()`
+      - interface `WriterAt`: `WriteAt()`
+      - interface `WriterTo`: `WriteTo()`
     - [io.util](http://golang.org/pkg/io/ioutil/)
       - `ReadAll` reads from r until an error or EOF and returns the data it read.
 - [Python 3 io](http://docs.python.org/3.2/library/io.html) - includes text/binary division
