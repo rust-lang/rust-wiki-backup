@@ -38,8 +38,6 @@ Module editing plan template
       - interface `ByteScanner`: interface `ByteReader` + `UnreadByte()`
       - interface `ByteWriter`: `WriteByte()`
       - interface `Closer`: `Close()`
-      - `PipeReader`
-      - `PipeWriter`
       - interface `ReadCloser`: interfaces `Reader` + `Closer`
       - interface `ReadSeeker`: interfaces `Reader` + `Seeker`
       - interface `ReadWriteCloser`: interfaces `Reader` + `Writer` + `Closer`
