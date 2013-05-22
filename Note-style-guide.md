@@ -21,10 +21,6 @@ Here are some rough guidelines to Rust style. They are followed unevenly and the
 - extension traits: XUtil? When do you prefer default methods to extensions?
 - avoid words with suffixes (able, etc). try to use transitive verbs, nouns, and then adjectives in that order
 
-# Privacy
-
-* Avoid (`pub impl Type { ... }`). Instead mark the individual methods public. This allows a reader to immediately tell which methods are public at a glance.
-
 # Function declarations
 
 Wrapped functions:
@@ -206,8 +202,7 @@ A ```for``` loop is always preferable to a ```while``` loop unless the loop coun
 
 # Impls
 
-Put `pub` modifiers on method names, not on the impls.
-
+* Avoid `pub impl Type { ... }`. Instead put `pub ` modifiers on the method names. This allows a reader to immediately tell which methods are public at a glance.
 
 # Questions and TODO
 
