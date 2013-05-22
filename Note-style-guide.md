@@ -10,7 +10,7 @@ Here are some rough guidelines to Rust style. They are followed unevenly and the
 ## General
 
 * Type names and enumeration variants should be in `CamelCase`.
-* Functions, methods, and variables should be lowercase with underscores where it helps readability.
+* Functions, methods, and variables should be `lowercase_with_underscores` where it helps readability.
 * Static variables should be in `ALL_CAPS`.
 * Constructors are methods called `new` or `new_with_more_details`.
 * When writing a binding to an external library, put the raw C bindings in a module called `ffi` (rather than `ll`). Do not create high-level bindings called `hl`.
