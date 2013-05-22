@@ -60,6 +60,15 @@ The downside of this is, that the indendation level of many lines of code may ch
 * Put local imports first, then external imports, then `pub use`.
 * Avoid use of `use *`, except in tests.
 
+Prefer to fully import types while module-qualifying functions, e.g.
+
+```
+use option::Option;
+use cast;
+
+pub int = cast::transmute(Option(0));
+```
+
 # Namespacing
 
 * It's OK to use `foo = bar;`
