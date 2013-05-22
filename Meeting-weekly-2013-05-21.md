@@ -117,6 +117,7 @@ fn spawn(p: once proc:Owned())
 - P: I talked to dave about how we might drop it before 1.0 
 - B: seems like we really want it. people keep proposing new ones.
 - P: yeah, just proposing ways we might do 1.0 w/o macros
+
 ## back to dynamic sized types
 - G: this was only thing blocking dynamic-sized-types proposal?
 - N: yeah.
