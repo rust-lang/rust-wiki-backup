@@ -186,6 +186,10 @@ Examples:
 
 * ```Iterate```
 
+# Impls
+
+* Avoid `pub impl Type { ... }`. Instead put `pub ` modifiers on the method names. This allows a reader to immediately tell which methods are public at a glance.
+
 # Predicates
 
 The names of simple boolean predicates should start with "is_" or similarly be expressed using a "small question word".
@@ -199,10 +203,6 @@ Examples:
 # Loops
 
 A ```for``` loop is always preferable to a ```while``` loop unless the loop counts in a non-uniform way (making it difficult to express as a ```for```).
-
-# Impls
-
-* Avoid `pub impl Type { ... }`. Instead put `pub ` modifiers on the method names. This allows a reader to immediately tell which methods are public at a glance.
 
 # Questions and TODO
 
