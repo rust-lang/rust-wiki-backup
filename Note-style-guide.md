@@ -66,7 +66,7 @@ Prefer to fully import types while module-qualifying functions, e.g.
 use option::Option;
 use cast;
 
-pub int = cast::transmute(Option(0));
+let i: int = cast::transmute(Option(0));
 ```
 
 # Namespacing
