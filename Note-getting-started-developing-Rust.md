@@ -50,7 +50,9 @@ We recommend developing under [MSYS and MinGW](http://www.mingw.org) using their
  * C++ compiler
  * Scroll down and check the box for the MSYS Basic System.
 4. After installing MinGW/MSYS, start the MSYS shell console from the desktop or Start menu.
-5. Use the command `mingw-get upgrade "gcc<4.6"` to ensure that GCC is upgraded to the latest version BELOW 4.6.  Do the same for the C++ compiler with the command `mingw-get upgrade "g++<4.6"`.
+5. In the MinGW console, type the commands:
+ * `mingw-get upgrade "gcc<4.6"` this ensures that the C compiler (GCC) is below 4.6.
+ * `mingw-get upgrade "g++<4.6"` this ensures that the C++ compiler is below version 4.6 as well.
 5. Install Perl with `mingw-get install msys-perl`.
 6. Install Curl with ... Curl is not yet part of MSYS or MinGW, bummer, we know, but all it needs is a volunteer contributor to maintain it however, helping them, helps us, until then...ya gotta do this:
  * download [curl-7.30.0.tar.gz](http://curl.haxx.se/download/curl-7.30.0.tar.gz) or the latest version manually to your MSYS home, usually `C:\MinGW\msys\1.0\home\<your_name>`
