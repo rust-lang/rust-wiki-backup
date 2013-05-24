@@ -62,9 +62,17 @@ We recommend developing under [MSYS and MinGW](http://www.mingw.org) using their
  * `make`
  * `make install`
  * `curl --version` and `which curl` to ensure the build of Curl worked.
-7. Proceed to Downloading and building Rust.
+7. Download and install Git for Windows following these steps:
+ * Download latest [Git for Windows on Google Code](https://code.google.com/p/msysgit/downloads/list?q=full+installer+official+git) and run it.
+ * Change install path instead from `C:\Program Files(x86)` to just `C:\Git`.
+ * Uncheck **Associate .sh files to be run with Bash**.
+ * Choose to **Run Git from the Windows Command Prompt** instead of Use Git Bash only.
+ * Choose **Use OpenSSH**.
+ * Choose **Checkout as-is, commit Unix-style line endings** (you'll have less problems).
+ * Close the MinGW console and reopen it, type `git --version` to verify installation and path is set correctly.
+8. Scroll down to **Downloading and building Rust** section.
 
-#### Further info for Windows users.
+#### More info for Windows users.
 
 **You currently need to ensure that you are using GCC version < 4.6. for the LLVM / Rust build to complete successfully.**
 This is a requirement on Windows 64 bit for LLVM to compile correctly, according to their docs.
@@ -75,15 +83,16 @@ Once installed, we tend to work inside the MSYS shell.
 If you are a consistent user of MinGW or plan to be, you might also want to subscribe to their mailing list: [Mingw-users](https://lists.sourceforge.net/lists/listinfo/mingw-users)
 
 (OPTIONAL)
-* You can update MinGW components once you start it's console by using the command `mingw-get update`, this updates the package repository for MinGW.  After which you can upgrade packages with `mingw-get upgrade`.
+* You can update MinGW components once you start it's console by using the command `mingw-get update`, this updates the package repository for MinGW.  After which you can upgrade packages with `mingw-get upgrade`. **mingw-get upgrade will overwrite to latest versions of GCC as well, so you might have to upgrade to a lower version afterwards.**
 Using `mingw-get` alone will open a GUI interface for package management.
 
-(OPTIONAL - if your not using MinGW auto-installer above, you will have to also do the following) :
+(OPTIONAL - if using another Git installer or method than the above steps) :
 
-* For Git, we recommend [MsysGit](http://msysgit.github.com/) and if you use that you will want to put the git binary path *after* the MinGW path. So add a line like the following to your `.bashrc`:
+* Put the git binary path *after* the MinGW path. So add a line like the following to your `.bashrc`:
 
     export PATH=$PATH:/c/Program\ Files/Git/bin
 
+**Troubleshooting Windows environment setups:**
 * If while building you receive an error that `libpthread-2.dll` is not found, you need to install the [libpthread-2.8.0-3-mingw32-dll-2.tar.lzma package](http://sourceforge.net/projects/mingw/files/MinGW/Base/pthreads-w32/pthreads-w32-2.8.0-3/).  It seems this must be installed by hand, as far as I can tell:
 
     cd /mingw; lzma -d -c /path/to/downloaded/libpthread-2.8.0-3-mingw32-dll-2.tar.lzma | tar xf -
