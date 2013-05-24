@@ -86,7 +86,7 @@ If you are a consistent user of MinGW or plan to be, you might also want to subs
 * You can update MinGW components once you start it's console by using the command `mingw-get update`, this updates the package repository for MinGW.  After which you can upgrade packages with `mingw-get upgrade`. **mingw-get upgrade will overwrite to latest versions of GCC as well, so you might have to upgrade to a lower version afterwards.**
 Using `mingw-get` alone will open a GUI interface for package management.
 
-(OPTIONAL - if using another Git installer or method than the above steps) :
+(OPTIONAL - if using another Git installer or method other than the Quick Steps) :
 
 * Put the git binary path *after* the MinGW path. So add a line like the following to your `.bashrc`:
 
