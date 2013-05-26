@@ -1,6 +1,6 @@
 # The Rust test suite
 
-The rust test suite has several sets of tests for different purposes. As the compiler is built over multiple stages, and with varying host and target combinations, debugging and profiling settings, the tests can genarally be run in many different ways.
+The rust test suite has several sets of tests for different purposes. As the compiler is built over multiple stages, and with varying host and target combinations, debugging and profiling settings, the tests can generally be run in many different ways.
 
 ### Recipes
 
@@ -52,7 +52,7 @@ Valid directives include:
 * `pp-exact:[filename]` - The pretty-printed test should match the example in `filename`
 * `xfail-test` - Test is broken, don't run it
 * `xfail-fast` - Don't run as part of check-fast, a special win32 test runner (some tests don't work with it)
-* `xfail-pretty` - Test doesn't pretty-print correcty
+* `xfail-pretty` - Test doesn't pretty-print correctly
 * `error-pattern:[...]` - A message that should be expected on standard out. If multiple patterns are provided then they must all be matched, in order (**Note:** error-patterns are somewhat deprecated, see the section on Expected Errors below).
 * `no-reformat` - Don't reformat the code when running the test through the pretty-printer
 * `aux-build:foo.rs` - Compiles an auxiliary library for use in multi-crate tests.  See the section on multi-crate testing below.
