@@ -134,6 +134,8 @@ This will build and test the compiler, standard libraries, and supporting tools.
 
 If you are going to be hacking on the Rust compiler itself then it is recommended that you configure with `--disable-optimize`, since this will greatly reduce up your compilation time.
 
+Note that some make targets are only exercised by `make check-full`.  If you want to see what commands a make invocation is running, you can add `VERBOSE=1` to the argument list for make.  (Also, if you use make options like `--print-database` to see other targets, note that some rules in the database are only generated dynamically.)
+
 ## Navigating
 
 There's a quick guide to the source of the compiler in [src/librustc/README.txt](https://github.com/mozilla/rust/blob/master/src/librustc/README.txt). You should look through it if you're going to be contributing.
