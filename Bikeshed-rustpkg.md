@@ -44,9 +44,7 @@ This is Tim's attempt to come up with a schedule for finishing rustpkg, with a p
       * test cases:
           * a file with `extern mod foo` where foo lives in a different directory
 
-   As part of this, fix #6407 (change what's allowed in an `extern mod` directive)
-
-   Due: 2013-05-14
+   ~~Due: 2013-05-14~~ Done pending #6807
 
 3. Test	runner (#5683)
 
@@ -81,6 +79,9 @@ This is Tim's attempt to come up with a schedule for finishing rustpkg, with a p
       	  * remove one package, make sure it doesn't appear in list and other packages do
 
    Due: 2013-05-27
+
+8. `extern mod` should name a package ID
+      * fix #6407 (change what's allowed in an `extern mod` directive)
 
 8. Track dependencies between Rust packages
       * test case:
