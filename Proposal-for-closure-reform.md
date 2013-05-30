@@ -54,11 +54,11 @@ In all of these cases (except 5), ```&fn()``` becomes noncopyable, unless it has
 
 In all of these proposals, heap closures can't be promoted to borrowed closures. I don't know of any demand for doing so, and in any case you can always just do the manually-currying thing of ```|args| { heap_closure(args) }```.
 
-1. ```&fn()``` becomes ```fn()```, ```@fn()``` is killed, and ```~fn()``` becomes ```proc()``` (variant 2 of [this] (http://smallcultfollowing.com/babysteps/blog/2013/05/14/procedures/)). The con here is that it breaks the "no dynamic allocation unless you see a ~ or a @" rule.
+1. ```&fn()``` becomes ```fn()```, ```@fn()``` is killed, and ```~fn()``` becomes ```proc()``` (variant 2 of [this idea] (http://smallcultfollowing.com/babysteps/blog/2013/05/14/procedures/)). The con here is that it breaks the "no dynamic allocation unless you see a ~ or a @" rule.
 
-2. ```&fn()``` becomes ```fn()```, ```@fn()``` is killed, and ```~fn()``` becomes ```~proc()``` (variant 3 of [this] (http://smallcultfollowing.com/babysteps/blog/2013/05/14/procedures/)). Semantically this is no different from case 1, but the con is that ```fn``` is a first-class (sized) type, while ```proc``` is a second-class (unsized) type, which I think has a lot of confusingness potential.
+2. ```&fn()``` becomes ```fn()```, ```@fn()``` is killed, and ```~fn()``` becomes ```~proc()``` (variant 3 of [this idea] (http://smallcultfollowing.com/babysteps/blog/2013/05/14/procedures/)). Semantically this is no different from case 1, but the con is that ```fn``` is a first-class (sized) type, while ```proc``` is a second-class (unsized) type, which I think has a lot of confusingness potential.
 
-3. ```&fn()``` becomes ```fn()```, ```@fn()``` and ```~fn()``` are killed and replaced by macros that use ```@Trait``` or ```~Trait``` to accomplish the same thing (especially in task spawning) ([this] (http://smallcultfollowing.com/babysteps/blog/2013/05/30/removing-procs/)).
+3. ```&fn()``` becomes ```fn()```, ```@fn()``` and ```~fn()``` are killed and replaced by macros that use ```@Trait``` or ```~Trait``` to accomplish the same thing (especially in task spawning) ([this idea] (http://smallcultfollowing.com/babysteps/blog/2013/05/30/removing-procs/)).
 
 4. ```&fn()``` becomes ```fn&()``` (```fn()``` can be sugar for this), ```@fn()``` becomes ```fn@()```, and ```~fn()``` becomes ```fn~()```. This retains most expressivity, but the con is that "common wisdom" says pointer sigils after types confuse people. (I don't mind; to me it suggests "I'm not a pointer but I have one inside". It's just parameterising over pointer types.)
 
@@ -76,8 +76,8 @@ In all of these proposals, heap closures can't be promoted to borrowed closures.
 
 I: 2 for sure.
 
-II: prefer 3, 2 OK.
+II: prefer 3; 2 would be OK.
 
-III: prefer 2, 1 OK.
+III: prefer 2; 1 would be OK.
 
 IV: in order of preference: 4, 7, 3, 8, 6.
