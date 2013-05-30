@@ -22,6 +22,10 @@ The recent proposal for unsized types (#6308) intersects the above soundness iss
 
 (That's a carefully-stated condition, because there are a number of ways to prevent this: ```&fn()```s can't be promoted, ```&fn()```s can't be called, ```&fn()```s can't mutably borrow their environments... each with different details and different degrees of feasibility.)
 
+### Custom smart pointers
+
+pcwalton has been thinking about custom smart pointers a lot recently. It would be nice if the language did not bless `@` and `~` in any way in regards to ability to create environments.
+
 ## Proposals
 
 There are a bunch of ways to clean up the closure situation. The way I see it, there are 4 major decisions to make, all orthogonal to each other. I list them in rough increasing order of controversiality.
