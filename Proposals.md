@@ -4,6 +4,7 @@ Listing of proposals
 
 * [[Proposal for attribute preprocessing]]
 * [[Proposal for fixits]]
+* [[Proposal for closure reform]]
 
 ## Historical
 
