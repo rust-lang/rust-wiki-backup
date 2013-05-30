@@ -48,7 +48,7 @@ There are a bunch of ways to clean up the closure situation. The way I see it, t
 
 ### IV. Fix the soundness bug.
 
-In all of these cases (except 5), ```&fn()``` becomes noncopyable, unless it has a ```:Const``` bound. ```@fn()``` is a big problem if its environment is mutable, so any proposal that keeps ```@fn()```s (4, 5, 6, 7, 8) would have to add a dynamic "recursion barrier" akin to the write barrier on ```@mut T``` boxes (not needed on a ```@fn:Const()```).
+In all of these cases (except B1), ```&fn()``` becomes noncopyable, unless it has a ```:Const``` bound. ```@fn()``` is a big problem if its environment is mutable, so any proposal that keeps ```@fn()```s (A4, B1, B2, B3, B4) would have to add a dynamic "recursion barrier" akin to the write barrier on ```@mut T``` boxes (not needed on a ```@fn:Const()```).
 
 **A. Make closure types statically-sized.**
 
@@ -64,13 +64,13 @@ In all of these proposals, heap closures can't be promoted to borrowed closures.
 
 **B. Make closure types dynamically-sized ("always have to be behind a pointer"), but prevent them from being copied.**
 
-5. Borrowed closures can't be called at all as ```&fn()```; you have to use ```&mut fn()```. This has a horrible "default case", and also prevents oneshot closures from working (since you could just re-borrow the ```&mut``` to call it twice in a row, even though Y-combinator-like recursion is prevented).
+1. Borrowed closures can't be called at all as ```&fn()```; you have to use ```&mut fn()```. This has a horrible "default case", and also prevents oneshot closures from working (since you could just re-borrow the ```&mut``` to call it twice in a row, even though Y-combinator-like recursion is prevented).
 
-6. Allow unsized promotion to ```&T```, but restrict when generic ```&T``` can be copied. This could be done with a new kind bound, such as ```fn copy_ref<T: NoMutableEnvironment>(x: &'a T) -> (&'a T, &'a T)```. This allows oneshot closures, but makes ```&T```'s behaviour depend on ```T```.
+2. Allow unsized promotion to ```&T```, but restrict when generic ```&T``` can be copied. This could be done with a new kind bound, such as ```fn copy_ref<T: NoMutableEnvironment>(x: &'a T) -> (&'a T, &'a T)```. This allows oneshot closures, but makes ```&T```'s behaviour depend on ```T```.
 
-7. Don't allow closures to be promoted to ```&T``` (although vectors still can be). The con is the weird discrepancy between vectors and closures ("why can I do... but can't...?"). Note that this is almost identical to case 4, but the pointer sigils stay in front instead of behind the ```fn``` (except this still lets ```~fn()``` be promoted to ```&fn()```).
+3. Don't allow closures to be promoted to ```&T``` (although vectors still can be). The con is the weird discrepancy between vectors and closures ("why can I do... but can't...?"). Note that this is almost identical to case 4, but the pointer sigils stay in front instead of behind the ```fn``` (except this still lets ```~fn()``` be promoted to ```&fn()```).
 
-8. Don't do dynamically-sized types at all. This also saves the pain of introducing ```Sized``` bounds into all data structure functions, but of course precludes the future possibilities discussed in #6308.
+4. Don't do dynamically-sized types at all. This also saves the pain of introducing ```Sized``` bounds into all data structure functions, but of course precludes the future possibilities discussed in #6308.
 
 ## Ben's recommendation
 
@@ -80,4 +80,4 @@ II: prefer 3; 2 would be OK.
 
 III: prefer 2; 1 would be OK.
 
-IV: in order of preference: 4, 7, 3, 8, 6.
+IV: in order of preference: A4, B3, A3, B4, B2.
