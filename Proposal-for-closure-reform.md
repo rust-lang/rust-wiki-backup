@@ -80,26 +80,26 @@ In all of these proposals, heap closures can't be promoted to borrowed closures.
 
 **Ultimate preferences**
 
-*I:* 2 for sure.
+**I:** 2 for sure.
 
-*II:* prefer 3; 2 would be OK.
+**II:** prefer 3; 2 would be OK.
 
-*III:* prefer 2; 1 would be OK.
+**III:** prefer 2; 1 would be OK.
 
-*IV:* in order of preference: B3, A4, A3, B4, B2.
+**IV:** in order of preference: B3, A4, A3, B4, B2.
 
 **Scheduling for 1.0 vs post-1.0**
 
-*I:* For the most part, we could leave option 1 and add option 2 post-1.0. However, for backwards-compatibility, we have to make sure that the "default bounds" in option 1 are "no bounds at all" (e.g., if v1.0's ```~fn()``` means ```~fn():Owned``` with post-1.0-option-2, then some v1.0 code that uses ```~fn()```s might assume ```Owned``` capabilities and break later). Since task body closures need to own their environment, we can't make no default bounds on ```~fn()```s, so either:
+**I:** For the most part, we could leave option 1 and add option 2 post-1.0. However, for backwards-compatibility, we have to make sure that the "default bounds" in option 1 are "no bounds at all" (e.g., if v1.0's ```~fn()``` means ```~fn():Owned``` with post-1.0-option-2, then some v1.0 code that uses ```~fn()```s might assume ```Owned``` capabilities and break later). Since task body closures need to own their environment, we can't make no default bounds on ```~fn()```s, so either:
 * We decide between option 1 or 2 pre-1.0 and stick with it forever
 * We get rid of all heap closures (Niko's idea, IV-A-3), and can then make all default environment bounds empty.
 However, note they add a piece of expressivity that we don't yet have (we can't put bounds on a Trait's existential data yet either).
 
-*II:* Options 1 (nothing) and 2 (```once```) are future-proof (that is, option 2 can be safely added post-1.0 if we reserve ```once```). Option 3 (making ```fn:Clone``` mean not-once) is not future-proof, because it removes capabilities from plain ```fn()```s, so it requires both itself and option I-2 to happen pre-1.0.
+**II:** Options 1 (nothing) and 2 (```once```) are future-proof (that is, option 2 can be safely added post-1.0 if we reserve ```once```). Option 3 (making ```fn:Clone``` mean not-once) is not future-proof, because it removes capabilities from plain ```fn()```s, so it requires both itself and option I-2 to happen pre-1.0.
 
-*III:* Changing from either option to the other is not future-proof, no way, no how.
+**III:** Changing from either option to the other is not future-proof, no way, no how.
 
-*IV:* Niko's idea, A3, can happen for 1.0 and later be upgraded to A1, A2, A4, or B3. Option B4 can be upgraded later to option B3 (that is, deferring dynamically-sized types to post-1.0). The other options are stickier.
+**IV:** Niko's idea, A3, can happen for 1.0 and later be upgraded to A1, A2, A4, or B3. Option B4 can be upgraded later to option B3 (that is, deferring dynamically-sized types to post-1.0). The other options are stickier.
 
 **Recommended plan:**
 * For bounds and oneshots: Because of my preference for II-3, and the note about expressivity, I want I-2 and II-3 to happen pre-1.0. If II-2 outvotes II-3, then (assuming IV-A3) I-2 and II-2 can both happen independently either pre- or post-1.0.
