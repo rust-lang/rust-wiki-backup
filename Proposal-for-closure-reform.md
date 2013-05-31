@@ -106,3 +106,71 @@ However, note they add a piece of expressivity that we don't yet have (we can't 
 * For bounds and oneshots: Because of my preference for II-3, and the note about expressivity, I want I-2 and II-3 to happen pre-1.0. If II-2 outvotes II-3, then (assuming IV-A3) I-2 and II-2 can both happen independently either pre- or post-1.0.
 * For environment borrowing: I think III-2 is theoretically prettier, but it is a lot of churn, so I won't be offended if we do III-1.
 * For fixing the soundness bug: IV-A3 is clearly the most flexible, both for rushing to 1.0 and for getting a nice final product.
+
+# Niko's comments
+
+- Point-by-point comments:
+  - Once-ness
+    - It would be useful to come up with a list of functions where
+      once-ness is applicable. `option::each` is certainly a prime
+      example, though you can so easily use `match` that it's not
+      especially persuasive to me.
+  - Soundness with `&mut`
+    - The problem is not that `&mut` is captured by value whereas
+      other types are not. The problem is that they *are* captured
+      by reference, which means that the type of an upvar is really
+      something like `&&mut`, but we don't recognize that in the type
+      system. Of course, if we did, closures would be nigh unusable,
+      hence the need to change how we treat closures to track them more
+      linearly.
+  - Soundness with first-class DST
+    - Sounds about right, though I wouldn't say that `&fn` is "promoted"
+      to `&T`, more that `T` can be bound to `fn`
+  - Environment bounds
+    - Option 1 is incompatible with DST
+  - Onceness
+    - Option 3 was considered a long time ago and rejected because it
+      makes calling functions repeatedly very expensive, and this is
+      not exactly uncommon. Moreover, there is now a very large
+      category of functions that can be safely called multiple times
+      but cannot safely be copied (e.g., any closure that references
+      `&mut`).
+    - A type like `once fn` only works if fns are values. In other
+      words, it is incompatible with DST, and also... largely
+      incompatible with the notation of `&once fn`, unless we are
+      *really* stretching what `&` means. This is something I didn't
+      fully realize at first. Therefore, if you wanted to keep the
+      `@/~/&fn` scheme we have today, `once` would effectively becomea
+      sigil of its own. But that is not adequate, since you must
+      differentiate "borrowed" once closures, where the memory is on
+      the stack, from "owned" once closures. So you want something
+      like `once fn&`. Or something.
+  - Implicit vs expicit borrows in the environment
+    - Though this doesn't really relate to point 1 or 2, you raise an
+      interesting point that when we consider what a type like `fn:K`
+      means, I think the bound `K` needs to consider the "true type"
+      of the closed over variables. The reason is that we want to say
+      that `fn:K` has kind `K`, essentially. In other words, if a
+      variable of type `T` is mutated, the "true type" of the upvar
+      would be `&mut T`, not `T`. This implies that a function like
+      `fn:Owned` could never be used, since here `fn` is always a
+      closure with borrowed pointers to the creating environment, and
+      thus will never contain only `Owned` values. There is still a
+      use for `fn:Share` or `fn:Freeze`, which is roughly the
+      equivalent of the old `pure fn` (minus the parametricity).
+  - IV. Fix the soundness bug
+    - `@fn` is not really a problem. Basically the rule would be
+      something like that "to call a fn, you first borrow it to `&mut
+      fn`".  This would just not be possible for `&fn` or `@fn`. As
+      you point out, you could potentially loosen this rule and say
+      "if the fn has bound `Freeze`, you first borrow it to
+      `&fn`". Then it would fine for `@fn` and `&fn`. `@mut fn` would
+      impose dynamic checks as before.
+      
+      However, if we permit recursion for `fn:Freeze`, we would have
+      to ensure that a `fn:Freeze` could not move from values in any
+      way.  I had in mind permitting functions to move from a value as
+      long as they replace it before returning; this is useful when
+      writing things fold patterns.
+    - A. Options 1--4 sound about right.
+    - B. Options 1--4 sound about right.
