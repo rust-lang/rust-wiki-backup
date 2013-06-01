@@ -8,10 +8,6 @@ See also [Note 0.5 priorities](Note 0.5 priorities)
 
 ## Miscellaneous cleanups, mostly syntax
 
-### Labeled loops
-
-([#2216](https://github.com/mozilla/rust/issues/2216)) Loops currently cannot carry labels, which makes breaking from deep within a loop difficult. There's a pretty clear way to implement this, it just requires some care to avoid clashing with nearby syntax.
-
 ### Raw-strings rather than balanced-character custom lexemes
 
 ([#2755](https://github.com/mozilla/rust/issues/2755)) This is a minor change that should effect no code presently; we'll be introducing a "raw string" form (possibly with a variety of legal delimiters) that does _not_ balance the delimiter characters, so requires internal escaping of only the delimiter. This will replace the proposed (but never implemented) character-balanced custom lexeme syntax in the syntax-extension system. The cost of having a non-regular token grammar was deemed not worth the benefit, and most of the use cases for the latter are easily handled by the former.
