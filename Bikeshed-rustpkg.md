@@ -54,7 +54,7 @@ This is Tim's attempt to come up with a schedule for finishing rustpkg, with a p
       * test case:
           * use a subdirectory containing a git version, make sure the created executable or library has the right version number in the name
 
-   Due: 2013-05-20
+   ~~Due: 2013-05-20~~~ Done pending #6905
 
 6. Implement `RUST_PATH` (#5682)
       * test cases:
