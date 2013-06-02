@@ -44,7 +44,7 @@ This is Tim's attempt to come up with a schedule for finishing rustpkg, with a p
       * test cases:
           * a file with `extern mod foo` where foo lives in a different directory
 
-   ~~Due: 2013-05-14~~ Done pending #6807
+   ~~Due: 2013-05-14~~ Done ~~pending #6807~~
 
 3. Test	runner (#5683)
 
