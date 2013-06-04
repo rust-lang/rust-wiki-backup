@@ -15,7 +15,7 @@ So, the grammar for function types is simply: ```{&|~|@}[once ]fn[:k1[+k2...]]()
 **Examples**
 
 * Functions that can be shared between tasks are written (at least) ```~fn:Owned()```. A task body is ```~once fn:Owned()```. A function that can go in an ARC is ```~fn:Owned+Const()```.
-* The argument to ```option::map``` is written ```&once fn(T) -> U```.
+* The argument to ```option::map``` is written ```&once fn(T) -> U``` (see note 2 below for alternatives).
 * The closure from "the case of the recurring closure" would have to be written ```&fn:Copy()``` (which can't be satisfied with something with a ```&mut``` in its environment).
 
 **Notes**
