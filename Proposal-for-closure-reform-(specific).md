@@ -2,7 +2,7 @@ This is a more specific, condensed version of [this] (https://github.com/mozilla
 
 **Proposal**
 
-My proposal is to **keep ```~fn``` as part of the language```, and to unify the way ```~fn``` and ```&fn``` behave so that it makes sense to continue using the same keyword for both of them. The idea is that there is one basic (second-class) closure type, written ```fn()```, which can be "configured" with a number of different options. These are:
+My proposal is to **keep ~fn as part of the language**, and to unify the way ```~fn``` and ```&fn``` behave so that it makes sense to continue using the same keyword for both of them. The idea is that there is one basic (second-class) closure type, written ```fn()```, which can be "configured" with a number of different options. These are:
 
 * Where the environment packet is located. Write ```&fn()``` for environment on the stack, or ```~fn()``` for environment on the heap.
 * Whether the closure references its captured variables or owns (moves/copies) them. *A function that references its upvars will own explicit borrowed pointers to those upvars.* A capture clause can be used for this, with "reasonable defaults" (borrow for stack closures, copy/move for heap closures) if the clause is omitted.
