@@ -161,9 +161,9 @@ https://github.com/mozilla/rust/issues/6308
 
 ## Closures
 
-https://github.com/mozilla/rust/wiki/Proposal-for-closure-reform
-http://smallcultfollowing.com/babysteps/blog/2013/05/30/removing-procs/
-http://smallcultfollowing.com/babysteps/blog/2013/06/03/more-on-fns/
+https://github.com/mozilla/rust/wiki/Proposal-for-closure-reform  
+http://smallcultfollowing.com/babysteps/blog/2013/05/30/removing-procs/  
+http://smallcultfollowing.com/babysteps/blog/2013/06/03/more-on-fns/  
 
 - pcwalton: I'm fine with `fn` always stack allocated and no facility for adding thunks. brson had concerns
 - dherman: that alone forces you to do an explicit move, equiv of capture clause. i understand explicit vs implicit tradeoffs, macros can mask sins
