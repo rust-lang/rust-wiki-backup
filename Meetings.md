@@ -74,6 +74,7 @@ Mozilla employees have a weekly Rust planning meeting on Tuesday mornings at 9:0
 * [[Meeting-weekly-2013-05-14]] (submodule ownership; generic paths; fns & dynamically sized types; copy removal)
 * [[Meeting-weekly-2013-05-21]] (proc; Owned->Send / Copy->Freeze; null/transmute in prelude; let a, b; @ patterns)
 * [[Meeting-weekly-2013-05-28]] (noalias; pub extern/pub impl; unwrap, get; Const->Freeze; new sched; 128i8)
+* [[Meeting-weekly-2013-06-04]] (<<; mut bindings; dynamically-sized types; closure reform)
 
 ## Planning meetings:
 
