@@ -24,4 +24,4 @@ Then you can verify that ccache is being used during builds:
 ccache --show-stats
 ```
 
-There are also some [concerns](http://petereisentraut.blogspot.com/2011/09/ccache-and-clang-part-2.html) using `ccache` with `clang` that should be noted.
+There are also some [concerns](http://petereisentraut.blogspot.com/2011/09/ccache-and-clang-part-2.html) using `ccache` with `clang` that should be noted.  (The combination `configure --enable-ccache --enable-clang` already does magic to address these concerns.)
