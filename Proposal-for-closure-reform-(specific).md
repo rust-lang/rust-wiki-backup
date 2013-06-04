@@ -30,3 +30,4 @@ So, the grammar for function types is simply: ```{&|~|@}[once ]fn[:k1[+k2...]]()
 * Kind bounds on the environment make putting functions inside ARCs possible.
 * Stack closures can be copied if they satisfy ```Copy```.
 * Task spawn is the same as always, "feels like the language is built around it", with no extra special-case syntax.
+* As opposed to stack closures "implicitly referencing" upvars, no confusing/arbitrary rules for when closures are copyable or when they own their upvars.
