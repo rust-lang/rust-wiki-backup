@@ -4,18 +4,18 @@ This is a more specific, condensed version of [this] (https://github.com/mozilla
 
 My proposal is to **keep ~fn as part of the language**, and to **unify the way ~fn and &fn behave** so that it makes sense to continue using the same keyword for both of them. The idea is that there is one basic (second-class) closure type, written ```fn()```, which can be "configured" with a number of different options. These are:
 
-* Where the environment packet is located. Write ```&fn()``` for environment on the stack, or ```~fn()``` for environment on the heap.
+* Where the environment packet is located. Write ```&fn()``` for environment on the stack, or ```~fn()``` for environment on the heap. ```fn()``` can be shorthand for ```&fn()```, and heap closures won't be promotable to ```fn()```.
 * Whether the closure references its captured variables or owns (moves/copies) them. *A function that references its upvars will own explicit borrowed pointers to those upvars.* A capture clause can be used for this, with "reasonable defaults" (borrow for stack closures, copy/move for heap closures) if the clause is omitted.
 * Whether the closure can be copied. A closure can be copied if it has the ```fn:Copy()``` bound (or possibly ```fn:Clone()```). This and other kind bounds behave like "deriving". Note: stack closures which don't mutate their environment will satisfy ```Copy``` because their environment will be borrowed immutable pointers.
 * Whether the closure transitively owns data in its environment (i.e., no captured & or @). This is indicated by ```fn:Owned()``` and is necessary for task spawning or putting functions in ARCs.
 * Whether the closure can be called more than once. ```once fn()``` means the closure is consumed when it is called, and it may move noncopyables out of its environment.
 
-So, the grammar for function types is simply: ```{&|~|@}[once ]fn[:k1[+k2...]]()```
+So, the grammar for function types is simply: ```{[&]|~|@}[once ]fn[:k1[+k2...]]()```
 
 **Examples**
 
 * Functions that can be shared between tasks are written (at least) ```~fn:Owned()```. A task body is ```~once fn:Owned()```. A function that can go in an ARC is ```~fn:Owned+Const()```.
-* The argument to ```option::map``` is written ```&once fn(T) -> U``` (see note 2 below for alternatives).
+* The argument to ```option::map``` is written ```once fn(T) -> U``` (see note 2 below for alternatives).
 * The closure from "the case of the recurring closure" would have to be written ```&fn:Copy()``` (which can't be satisfied with something with a ```&mut``` in its environment).
 
 **Notes**
