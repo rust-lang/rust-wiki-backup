@@ -1,6 +1,6 @@
 This is more of a meta-proposal, in which I gather all the different ways we might fix the mess that is closures in the current system. There are a bunch of features we want that are sometimes at odds.
 
-For an outline of a specific set of possible features, see [here] (https://github.com/mozilla/rust/wiki/Proposal-for-closure-reform-(specific)).
+For an outline of a specific set of possible features, see [here] (https://github.com/mozilla/rust/wiki/Proposal-for-closure-reform-%28specific%29).
 
 ## Motivation
 
