@@ -18,6 +18,6 @@ Common triples are `x86_64-unknown-linux-gnu`, `i686-unknown-linux-gnu`, `x86_64
 * `rustc-stage1-H-x86_64-unknown-linux-gnu` - The stage1 compiler for x86_64 linux
 * `x86_64-unknown-linux-gnu/stage1/lib/rustc/arm-linux-androideabi/lib/libstd.so` - Build the stage1 standard library for the android *target*, for the x86_64 *host* compiler (Cross x86_64->android).
 * `check-stage1-T-x86_64-unknown-linux-gnu-H-x86_64-unknown-linux-gnu-std` - Test stage1 std for x86_64 linux
-* `check-stage1-T-x86_64-unknown-linux-gnu-H-i686-unknown-linux-gnu-std` - Test stage1 std for i686 linux targets, built by the x86_64 host compiler (cross compile x86_64->i686)
+* `check-stage1-T-i686-unknown-linux-gnu-H-x86_64-unknown-linux-gnu-std` - Test stage1 std for i686 linux targets, built by the x86_64 host compiler (cross compile x86_64->i686)
 
 See also the notes on the Rust [[test suite|Note testsuite]].
