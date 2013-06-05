@@ -6,7 +6,7 @@ Rust is a cross compiler. At various stages of the build a distinction is made b
 
 * `build` - The triple for the native platform on which the build is being performed. The compiler is always bootstrapped from the build architecture. There is only one build triple.
 * `host` - The triples for which the build process produces executable rustc's. 'host' then refers to the host platforms on which the compiler artifacts run. There may be multiple host triples, but the build triple is always in the set of host triples. Each host triple gets its own subdirectory in the build output.
-* `target` - The triples for which the produced compilers can in turn compile. The host triples are a subset of the target triples. Targets may not have compilers that actually run on that platform, e.g. we don't produce a rustc to run on Android.
+* `target` - The triples for which the produced compilers can in turn compile. The host triples are a subset of the target triples. All host compilers contain libs for all target platforms. Targets may not have compilers that actually run on that platform, e.g. we don't produce a rustc to run on Android.
 
 Common triples are `x86_64-unknown-linux-gnu`, `i686-unknown-linux-gnu`, `x86_64-apple-darwin`, `i686-apple-darwin`, `i686-pc-mingw32`, `arm-linux-androideabi`.
 
