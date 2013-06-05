@@ -66,7 +66,7 @@ fn foo(helper: fn()) {
 
 ## Potential use cases
 
-The most obviously useful reason to have effects is that currently destructors can leak memory if they fail when a task is already unwinding (#910). With effects, we could write:
+The most obviously useful reason to have effects is that currently destructors can leak memory if they fail when a task is already unwinding ([#910] (https://github.com/mozilla/rust/issues/910)). With effects, we could write:
 ```
 #[lang="Drop"]
 trait Drop {
@@ -76,7 +76,7 @@ trait Drop {
 A "fantasy" reason is that, with the old borrow checker (where ```&mut T```s were copyable, and ```&mut T``` could be borrowed into ```&T``` only if the surrounding code was "pure"), effect inference would avoid needing to write ```pure``` explicitly on any function you wanted to call from such code, and ```#[wont(Mutate)]``` could be inferred.
 
 Other speculative reasons include:
-* Reasoning about concurrency nondeterminism (#3094)
+* Reasoning about concurrency nondeterminism ([#3094] (https://github.com/mozilla/rust/issues/3094))
 * Preventing garbage collection in performance-critical code (such as the renderer thread in Servo)
 * Preventing dynamic allocation or rescheduling in "atomic"-context kernel code (I hear we're running in ring 0 these days)
 * Allowing users to reason about whatever arbitrary effects their own software might have
