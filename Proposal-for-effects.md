@@ -64,7 +64,7 @@ fn foo(helper: fn()) {
 
 **Alternate syntax ideas**
 * One alternate possibility would simply be ```#[effect(Effect1, ... EffectN, not(EffectP), ... not(effectQ)]```
-* Another idea would be to not use attributes at all and write the effect after the function return type, using either ```might``` and ```wont``` keywords or just the same ```effect``` keyword (or maybe even a macro!) -- this way would combine more consistently with parameterizing with effect variables. This way, the full type of the above function could be written ```fn foo<$e>(helper: fn() effect!($e)) effect!($e)```.
+* Another idea would be to not use attributes at all and write the effect after the function return type, using either ```might``` and ```wont``` keywords or just the same ```effect``` keyword, or maybe even a macro. This way would combine more consistently with parameterizing with effect variables (i.e., similar treatment as region variables). This way, the full type of the above function could be written ```fn foo<$e>(helper: fn() effect($e)) effect($e)```.
 
 ## Potential use cases
 
