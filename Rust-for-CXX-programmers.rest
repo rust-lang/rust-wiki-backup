@@ -37,7 +37,7 @@ modified in a way that would make it invalid. This concept also extends to any
 iterator that wraps borrowed pointers, and makes them impossible to invalidate.
 
 Owned pointers are almost identical to `std::unique_ptr` in C++, and point to
-memory on a shared heap which allows them to be moved between tasks.
+memory on a shared heap so they can be moved between tasks.
 
 Managed pointers are similar to `std::shared_ptr`, but have full garbage
 collection semantics and point to a task-local heap. By virtue of being on a
