@@ -27,8 +27,6 @@ After that, annotations on functions can refer to the declared effect. I would r
 #[might(Effect1, ... EffectN)]
 #[wont(Effect1, ... EffectN)]
 ```
-Note an alternate possibility would simply be ```#[effect(Effect1, ... EffectN, not(EffectP), ... not(effectQ)]```.
-
 There would also be a ```trustme``` keyword, for overriding the compiler's opinion on whether a function has a specific effect. For example, ```#[trustme(wont(Fail))]```. (Maybe this would have to introduce the ```Unsafe``` effect, unless ```#[trustme(wont(Unsafe))]``` is also used?)
 
 **Inference**
@@ -63,6 +61,10 @@ fn foo(helper: fn()) {
     // Users shouldn't rely on helper not being called.
 }
 ```
+
+**Alternate syntax ideas**
+* One alternate possibility would simply be ```#[effect(Effect1, ... EffectN, not(EffectP), ... not(effectQ)]```
+* Another idea would be to not use attributes at all and write the effect after the function return type, using either ```might``` and ```wont``` keywords or just the same ```effect``` keyword (or maybe even a macro!) -- this way would combine more consistently with parameterizing with effect variables. This way, the full type of the above function could be written ```fn foo<$e>(helper: fn() effect!($e)) effect!($e)```.
 
 ## Potential use cases
 
