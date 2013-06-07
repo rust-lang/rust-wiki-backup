@@ -76,10 +76,9 @@ Mozilla employees have a weekly Rust planning meeting on Tuesday mornings at 9:0
 * [[Meeting-weekly-2013-05-28]] (noalias; pub extern/pub impl; unwrap, get; Const->Freeze; new sched; 128i8)
 * [[Meeting-weekly-2013-06-04]] (<<; mut bindings; dynamically-sized types; closure reform)
 
-## Planning meetings:
-
-* [[Meeting planning 2013-01-08]] (0.6; 1.0)
-
-## In-person meetings:
+## Other meetings:
 
 * [[Meeting inperson 2011-04-06]] (kind system; resources; env capture)
+* [[Meeting planning 2013-01-08]] (0.6; 1.0)
+* [[Meeting 2013-06-07]] (dynamically sized types; closures; GC)
+
