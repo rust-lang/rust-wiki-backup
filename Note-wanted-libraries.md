@@ -65,7 +65,7 @@ Notes taken at rust work week, 2011/06/23
 ## Things that do not belong in std
 * DB API (sql, nosql)
   * postgres
-  * mongodb
+  * mongodb (external)
   * [redis](https://github.com/mneumann/rust-redis) (external)
   * [sqlite](https://github.com/linuxfood/rustsqlite) (external)
 * [ZeroMQ](https://github.com/erickt/rust-zmq) (external)
