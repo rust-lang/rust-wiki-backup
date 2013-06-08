@@ -176,3 +176,153 @@ However, note they add a piece of expressivity that we don't yet have (we can't 
       writing things fold patterns.
     - A. Options 1--4 sound about right.
     - B. Options 1--4 sound about right.
+
+# Amanieu's proposal
+
+Instead of going for one of the listed options, I instead propose that functions become objects which implement an trait rather than being a distinct type. The idea behind this comes from C++, where any type that implements operator() becomes a function object.
+
+The fn keyword is used to define 3 traits:
+```
+// Can be called once, this is the most general function type
+trait once fn(Args...) -> Ret {
+	fn call(self, Args...) -> Ret;
+}
+
+// Can be called multiple times, but may mutate its state
+trait fn(Args...) -> Ret {
+	fn call(&mut self, Args...) -> Ret;
+}
+
+// Can be called multiple times and has immutable state
+trait const fn(Args...) -> Ret {
+	fn call(&self, Args...) -> Ret;
+}
+```
+
+`const fn` can be implicitly converted to `fn`, and `fn` can be implicitly converted to `once fn`. This way, a function which takes a function as a parameter can specify the minimum requirements it needs (can call multiple times? has mutable state?).
+
+Because pointers to a functions are callable, &fn() and &mut fn() are implementations of the fn() trait. This allows generic functions to accept functions by value (for moving) and by reference.
+
+Type bounds are also supported, which essentially extend the trait to include other traits.
+
+## Use case examples
+
+Here is what the use cases described in http://smallcultfollowing.com/babysteps/blog/2013/05/13/recurring-closures-and-dynamically-sized-types/ would look like:
+
+1. Higher-order functions
+```
+// Currently
+fn each<'r, T>(vec: &'r [T], f: &fn(&'r T))
+
+// Proposed
+fn each<'r, T, F: fn(&'r T)>(vec: &'r [T], f: F)
+```
+
+2. Once functions
+```
+// Currently
+fn each<'r, T>(opt: &'r Optional<T>, f: &once fn(&'r T))
+
+// Proposed
+fn each<'r, T, F: once fn(&'r T)>(opt: &'r Optional<T>, f: F)
+```
+
+3. Sendable functions
+```
+// Currently
+fn spawn(f: ~fn())
+
+// Proposed
+fn spawn(f: ~fn:Owned())
+```
+
+4. Sendable once functions
+```
+// Currently
+fn spawn(f: ~once fn())
+
+// Proposed
+fn spawn(f: ~once fn:Owned())
+```
+
+5. Const functions
+```
+// Currently
+fn each<'r, T>(vec: &'r [T], f: &fn:Const(&'r T))
+
+// Proposed
+fn each<'r, T, F: const fn:Const(&'r T)(vec: &'r [T], f: F)
+```
+
+6. Sendable const functions
+```
+// Currently
+fn spawn(f: ~fn:Const())
+
+// Proposed
+fn spawn(f: ~const fn:Const+Owned())
+```
+
+7. Combinators
+This is something which is not currently possible with the current type system, but would be possible if arbitrary types can become callable.
+```
+// Structure containing a function and a bound value
+struct bind_result<F: once fn(int)> {
+	func: F,
+	val: int
+}
+
+// Make bind_result a callable object
+impl<F: once fn(int)> once fn() for bind_result<F> {
+	fn call(self) { self.func(self.val) }
+}
+impl<F: fn(int)> fn() for bind_result<F> {
+	fn call(&mut self) { self.func(self.val) }
+}
+impl<F: const fn(int)> const fn() for bind_result<F> {
+	fn call(&self) { self.func(self.val) }
+}
+
+// A simple version of bind which binds an int parameter to a closure
+fn bind<F: once fn(int)>(func: F, val: int) -> bind_result<F> {
+	bind_result {func: func, val: val}
+}
+```
+
+## Closure creation
+
+Another part of this proposal is a rework of how closures are created. I propose a system similar to C++ lambdas where variables can be captured either by value or by reference.
+
+This is best demonstrated by an example:
+```
+fn main() {
+	let a: int = 1;
+	let b: int = 2;
+	let c: int = 3;
+	// Creates an anonymous function type which:
+	// - captures a by value
+	// - captures b by reference
+	// - captures c by mutable reference
+	// - holds a variable d with the value 4
+	// - takes one int parameter
+	let func1 = |a, &b, &mut c, d = 4|(e: int) {}
+
+	// Some other examples
+	let func2 = |=| {a} // = means capture all referenced variables by value
+	let func3 = |&, c| {b} // & means capture all referenced variables by reference, except c which is captured by value
+	let func4 = || {c} // Error: no default capture mode defined and c is not explicitly captured
+}
+```
+
+Any time a by-ref capture is referenced in the closure body it is automatically derefenced.
+
+func1 would create the following struct:
+```
+// 'r is the intersection of all by-ref lifetimes
+struct anonymous_type<'r> {
+	a: int,
+	b: &'r int,
+	c: &'r mut int,
+	d: int
+}
+```
