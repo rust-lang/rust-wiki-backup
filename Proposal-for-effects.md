@@ -34,8 +34,8 @@ fn b() wont(Effect1, ... EffectN)
 Higher-order functions can be reasoned about like this:
 ```
 fn hof1(blk: fn()           ) wont(Fail)  // won't fail unless 'blk' fails
-fn hof2(blk: fn() wont(Fail)) wont(Fail)  // won't fail, and 'blk' can't fail either
-fn hof3(blk: fn() wont(Fail))             // might fail, but 'blk' can't fail
+fn hof2(blk: fn() wont(Fail)) wont(Fail)  // won't fail; 'blk' can't either
+fn hof3(blk: fn() wont(Fail))             // might fail, but 'blk' can't
 ```
 There would also be a ```trustme``` keyword, for overriding the compiler's opinion on whether a function has a specific effect. For example, ```fn b() trustme(wont(Fail))```. (It might have to introduce the ```Unsafe``` effect, unless that one is also squelched.)
 
@@ -45,9 +45,12 @@ Data structures might be passed around with function pointers inside. Unless we 
 
 Closures are also parameterized. The functions in the above example are actually short for:
 ```
-fn hof1<%e            >(blk: fn() %e) effect(%e) wont(Fail)  // won't fail unless 'blk' fails
-fn hof2<%e: wont(Fail)>(blk: fn() %e) effect(%e) wont(Fail)  // won't fail, and 'blk' can't fail either
-fn hof3<%e: wont(Fail)>(blk: fn() %e) effect(%e)             // might fail, but 'blk' can't fail
+// won't fail unless 'blk' fails
+fn hof1<%e            >(blk: fn() %e) effect(%e) wont(Fail)
+// won't fail, and 'blk' can't fail either
+fn hof2<%e: wont(Fail)>(blk: fn() %e) effect(%e) wont(Fail)
+// might fail, but 'blk' can't fail
+fn hof3<%e: wont(Fail)>(blk: fn() %e) effect(%e)
 ```
 You shouldn't usually have to write effect variables explicitly, but if you wanted to restrict the effects of trait methods you would have to do something like:
 ```
@@ -60,7 +63,9 @@ which is short for:
 ```
 trait Foo<%e> { fn foo(self) %e; }
 
-fn something<%e: wont(Fail), T: Foo<%e>> (x: T) effect(%e) wont(Fail) { x.foo(); }
+fn something<%e: wont(Fail), T: Foo<%e>> (x: T) effect(%e) wont(Fail) {
+    x.foo();
+}
 ```
 The syntax for structs/enums would be analogous. By default, only one effect variable would be used for structs and traits, and the inferred effect of a struct/trait would be the aggregate effect of all functions inside. But you could write additional ones explicitly if you wanted:
 ```
@@ -157,5 +162,5 @@ fn f2(blk: fn() wont(X)) wont(X)  // won't X, and 'blk' can't X either
 With this way, I fear it'd be too easy to screw up and allow the function to be instantied with something that could have an unexpected effect. The default for the other way is somewhat more verbose, though, as you have to use effect vars.
 ```
 fn f1<%e>(blk: fn() %e) effect(%e) wont(X)  // won't X unless 'blk' X
-fn f2    (blk: fn()   ) wont(X)             // won't X, and 'blk' can't X either
+fn f2    (blk: fn()   ) wont(X)             // won't X, and 'blk' can't either
 ```
