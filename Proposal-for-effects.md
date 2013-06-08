@@ -99,7 +99,7 @@ trait Drop {
     fn finalize(self) wont(Fail);
 }
 ```
-We might also want to forbid GC in destructors, as per (#6996) [https://github.com/mozilla/rust/issues/6996].
+We might also want to forbid GC in destructors, as per [#6996] (https://github.com/mozilla/rust/issues/6996).
 
 A "fantasy" reason is that, with the old borrow checker (where ```&mut T```s were copyable, and ```&mut T``` could be borrowed into ```&T``` only if the surrounding code was "pure"), effect inference would avoid needing to write ```pure``` explicitly on any function you wanted to call from such code, and ```wont(Mutate)``` could be inferred.
 
