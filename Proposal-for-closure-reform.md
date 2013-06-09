@@ -201,7 +201,24 @@ trait const fn(Args...) -> Ret {
 
 `const fn` can be implicitly converted to `fn`, and `fn` can be implicitly converted to `once fn`. This way, a function which takes a function as a parameter can specify the minimum requirements it needs (can call multiple times? has mutable state?).
 
-Because pointers to a functions are callable, &fn() and &mut fn() are implementations of the fn() trait. This allows generic functions to accept functions by value (for moving) and by reference.
+Borrowed pointers to functions also implement the callable trait for const and normal functions. This means that borrowed pointers can be called directly without dereferencing them, and allows generic functions to accept function parameters either by value or by reference.
+```
+impl<F: fn(Args...) -> Ret> fn(Args...) -> Ret for &mut F {
+	fn call(&self, Args...) -> Ret {
+		(**self).call(Args...)
+	}
+}
+impl<F: fn(Args...) -> Ret> const fn(Args...) -> Ret for &mut F {
+	fn call(&self, Args...) -> Ret {
+		(**self).call(Args...)
+	}
+}
+impl<F: fn(Args...) -> Ret> const fn(Args...) -> Ret for &F {
+	fn call(&self, Args...) -> Ret {
+		(**self).call(Args...)
+	}
+}
+```
 
 Type bounds are also supported, which essentially extend the trait to include other traits.
 
