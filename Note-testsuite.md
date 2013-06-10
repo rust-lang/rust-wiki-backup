@@ -70,15 +70,15 @@ There are five directories containing compile tests, living in the src/tests dir
 
 And finally, build targets:
 
-* check-stage[N]-rpass - The tests in the run-pass directory, in run-pass mode
-* check-stage[N]-rfail - The tests in the run-fail-directory, in run-fail mode
-* check-stage[N]-cfail - The tests in the compile-fail directory, in compile-fail mode
-* check-stage[N]-bench - The tests in the bench directory, in run-pass mode
-* check-stage[N]-pretty - All the pretty-print tests
-* check-stage[N]-pretty-rpass - The tests in the run-pass directory, in pretty mode
-* check-stage[N]-pretty-rfail - The tests in the run-fail directory, in pretty mode
-* check-stage[N]-pretty-bench - The tests in the bench directory, in pretty mode
-* check-stage[N]-pretty-pretty - The tests in the pretty directory, in pretty mode
+* `check-stage[N]-rpass` - The tests in the run-pass directory, in run-pass mode
+* `check-stage[N]-rfail` - The tests in the run-fail-directory, in run-fail mode
+* `check-stage[N]-cfail` - The tests in the compile-fail directory, in compile-fail mode
+* `check-stage[N]-bench` - The tests in the bench directory, in run-pass mode
+* `check-stage[N]-pretty` - All the pretty-print tests
+* `check-stage[N]-pretty-rpass` - The tests in the run-pass directory, in pretty mode
+* `check-stage[N]-pretty-rfail` - The tests in the run-fail directory, in pretty mode
+* `check-stage[N]-pretty-bench` - The tests in the bench directory, in pretty mode
+* `check-stage[N]-pretty-pretty` - The tests in the pretty directory, in pretty mode
 
 ### Specifying the expected errors and warnings
 
