@@ -42,7 +42,7 @@ fn main() {
 There are four different modes for compile tests. Each test is run under one or more modes:
 
 * compile-fail - The test should fail to compile. Must include at least one expected error.
-* run-fail - The test should compile but fail to run. Must include at least one error-pattern directive.
+* run-fail - The test should compile but fail at runtime (return exit code 101). Must include at least one error-pattern directive.
 * run-pass - The test should compile and run successfully
 * pretty - The test should round-trip through the pretty-printer and then compile successfully
 
