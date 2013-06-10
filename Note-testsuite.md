@@ -90,7 +90,7 @@ have as many of these comments as you like.  The test harness will
 verify that the compiler reports precisely the errors/warnings that are
 specified, no more and no less.  An example of using the error/warning
 messages is:
-```
+```rust
 // Regression test for issue #XXX
 
 fn main() {
@@ -108,7 +108,7 @@ indicates that the error is expected to appear on the line above.  You
 may have as many caret as you like, so `//~^^^ ERROR foo` indicates
 that the error message `foo` is expected to be reported 3 lines above
 the comment.  We could therefore correct the above test like so:
-```
+```rust
 // Regression test for issue #XXX
 
 fn main() {
@@ -131,7 +131,7 @@ additional errors or warnings are reported.
 Sometimes it is useful to write tests that make use of more than one crate.  We have limited support for this scenario.  Basically, you can write and add modules into the `src/test/auxiliary` directory. These files are not built nor tested directly.  Instead, you write a main test in one of the other directories (`run-pass`, `compile-fail`, etc) and add a `aux-build` directive at the head of the main test.  When running the main test, the test framework will build the files it is directed to build from the auxiliary directory.  These builds *must* succeed or the test will fail.  You can then include `use` and `import` commands to make use of the byproducts from these builds as you wish.  
 
 An example consisting of two files:
-```
+```rust
 auxiliary/cci_iter_lib.rs:
   #[inline]
   fn iter<T>(v: [T], f: fn(T)) {...}
@@ -157,7 +157,7 @@ Most crates include <a href="https://github.com/mozilla/rust/wiki/Doc-unit-testi
 
 All tests in a module should go in an inner module named `test`, with the attribute `#[cfg(test)]`. Placing tests in their own module is a practical issue - because test cases are not included in normal builds, building with `--test` require a different set of imports than without, and that causes 'unused import' errors.
 
-```
+```rust
 use std::option;
 
 fn do_something() { ... }
