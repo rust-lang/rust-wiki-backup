@@ -153,7 +153,7 @@ run-pass/cci_iter_exe.rs:
 
 ## Unit Tests
 
-Most crates include <a href="https://github.com/mozilla/rust/wiki/Doc-unit-testing">unit tests</a> which are part of the crate they test. These crates are built with the --test` flag and run as part of `make check`.
+Most crates include <a href="https://github.com/mozilla/rust/wiki/Doc-unit-testing">unit tests</a> which are part of the crate they test. These crates are built with the `--test` flag and run as part of `make check`.
 
 All tests in a module should go in an inner module named `test`, with the attribute `#[cfg(test)]`. Placing tests in their own module is a practical issue - because test cases are not included in normal builds, building with `--test` require a different set of imports than without, and that causes 'unused import' errors.
 
