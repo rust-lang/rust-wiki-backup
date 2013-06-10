@@ -22,7 +22,7 @@ The rust test suite has several sets of tests for different purposes. As the com
 
 These options can be combined.  For instance, `make check CHECK_XFAILS=1 TESTNAME=test/run-pass/foobar.rs` runs the xfailed test `foobar.rs` in the `run-pass` directory.
 
-## Compiler tests
+## Language and compiler tests
 
 These are tests of the compiler against Rust source code. They typically have a `main` function that takes no arguments and may have directives that instruct the test runner how to run the test. These tests may be compiled and executed, pretty-printed, jitted, etc. depending on the test configuration.
 
