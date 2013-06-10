@@ -30,7 +30,7 @@ The test runner for these tests is at src/test/compiletest and is compiled to te
 
 A typical test might look like:
 
-```
+```Rust
 // xfail-pretty 'bool' doesn't pretty-print (#XXX)
 // Regression test for issue #YYY
 
