@@ -46,11 +46,11 @@ Data structures might be passed around with function pointers inside. Unless we 
 Closures are also parameterized. The functions in the above example are actually short for:
 ```
 // won't fail unless 'blk' fails
-fn hof1<%e            >(blk: fn() %e) effect(%e) wont(Fail)
+fn hof1<%e            >(blk: fn() effect(%e)) effect(%e) wont(Fail)
 // won't fail, and 'blk' can't fail either
-fn hof2<%e: wont(Fail)>(blk: fn() %e) effect(%e) wont(Fail)
+fn hof2<%e: wont(Fail)>(blk: fn() effect(%e)) effect(%e) wont(Fail)
 // might fail, but 'blk' can't fail
-fn hof3<%e: wont(Fail)>(blk: fn() %e) effect(%e)
+fn hof3<%e: wont(Fail)>(blk: fn() effect(%e)) effect(%e)
 ```
 You shouldn't usually have to write effect variables explicitly, but if you wanted to restrict the effects of trait methods you would have to do something like:
 ```
@@ -61,7 +61,7 @@ fn something<T: Foo<wont(Fail)>> (x: T) wont(Fail) { x.foo(); }
 ```
 which is short for:
 ```
-trait Foo<%e> { fn foo(self) %e; }
+trait Foo<%e> { fn foo(self) effect(%e); }
 
 fn something<%e: wont(Fail), T: Foo<%e>> (x: T) effect(%e) wont(Fail) {
     x.foo();
@@ -72,7 +72,7 @@ The syntax for structs/enums would be analogous. By default, only one effect var
 enum WackyLazyList<%e1, %e2, T> {
     Nil,
     // effects alternate, i guess? why would you want this? o_O
-    Cons(~fn() -> T %e1,
+    Cons(~fn() -> T effect(%e1),
          ~fn() -> ~List<%e2, %e1, T>),
 }
 ```
@@ -118,10 +118,10 @@ fn pipes::recv(...) effect(Reschedule) // "fail" effect is inferred
 fn tmpdir() -> os::Path effect(IO)
 
 fn divide_unless_zero(x: int, y: int) -> Option<int> trustme(wont(Fail)) {
-    if y == 0 { None } else { x/y }
+    if y == 0 { None } else { Some(x/y) }
 }
 
-fn foo<%e>(helper: fn() %e) effect(%e) {
+fn foo<%e>(helper: fn() effect(%e)) effect(%e) {
     // FIXME: Call helper in the future.
     // Users shouldn't rely on helper not being called.
 }
@@ -161,6 +161,6 @@ fn f2(blk: fn() wont(X)) wont(X)  // won't X, and 'blk' can't X either
 ```
 With this way, I fear it'd be too easy to screw up and allow the function to be instantied with something that could have an unexpected effect. The default for the other way is somewhat more verbose, though, as you have to use effect vars.
 ```
-fn f1<%e>(blk: fn() %e) effect(%e) wont(X)  // won't X unless 'blk' X
-fn f2    (blk: fn()   ) wont(X)             // won't X, and 'blk' can't either
+fn f1<%e>(blk: fn() effect(%e)) effect(%e) wont(X)
+fn f2    (blk: fn()           )            wont(X)
 ```
