@@ -12,6 +12,7 @@ Listing of notes for developers working on the Rust compiler and tools.
 * [[Note git workflow]]
 * [[Note style guide]]
 * [[Note build system]] - Makefile targets
+* [[Note bors usage]] - Instructing bors to build, check, and merge on github
 * [[Note testsuite]] - How Rust's tests are organized and operated
 * [[Note rustc hacking guide]]
 * [[Note ccache]]
