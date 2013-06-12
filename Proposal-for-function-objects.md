@@ -25,7 +25,7 @@ Because these are not valid in the current trait syntax (use of `fn`, variadic t
 
 The 3 function traits form a hierarchy: A `fn` can be called once and a `const fn` can be called with a mutable object. This results in a supertrait-like relationship between the traits, which also allows one-way implicit conversions: `const fn` -> `fn` -> `once fn`. This allows a function taking another function as a parameter to specify the minimum requirements it needs from the function (Can it be called multiple times? Does it have mutable state?)
 
-## Pointers to
+## Pointers to functions
 
 Similar to the auto-dereferencing of the dot operator, pointers to a function object are also callable, which means that the pointers themselves implement the `fn` traits:
 ```rust
@@ -50,6 +50,8 @@ impl<F: fn(Args...) -> Ret> const fn(Args...) -> Ret for &F {
 
 // References to a once fn are not callable, it must be called with a value
 ```
+
+## Type bounds
 
 Type bounds on the `fn` keywords will also be supported. They will have the same behavior as defining a new trait which inherits from both the `fn` trait and the listed traits:
 ```rust
