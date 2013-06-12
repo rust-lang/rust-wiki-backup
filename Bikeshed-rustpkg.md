@@ -89,7 +89,7 @@ This is Tim's attempt to come up with a schedule for finishing rustpkg, with a p
 
    Due: 2013-05-29
 
-8. Use workcache
+8. Use workcache (#7075)
       * test cases:
           * run `rustpkg build foo` twice, check timestamps to make sure foo isn't built again the second time
           * build foo, which depends on bar, from scratch; check timestamps to make sure foo was built after bar
