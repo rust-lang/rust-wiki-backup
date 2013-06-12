@@ -3,6 +3,8 @@
 There is an autolander running on mozilla/rust;
 its name is bors (listed as a collaborator in the rust-push group).
 
+Its status URL is: http://buildbot.rust-lang.org/bors/bors.html
+
 It works by scanning pull reqs for r+ _on the commit_ (not the pull)
 from one of the reviewers.
 It then resets the 'auto' ref to incoming, attempts to merge the
