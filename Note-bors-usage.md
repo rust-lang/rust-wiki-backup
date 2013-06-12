@@ -8,7 +8,8 @@ from one of the reviewers.
 It then resets the 'auto' ref to incoming, attempts to merge the
 reviewed commit into auto, and if that works, sends it for testing on
 buildbot. If all tests come back green, it advances incoming to auto
-(fast-forward only).
+(fast-forward only).  Rebased pull requests require
+re-approval.
 
 This _should_ mean that, insofar as all commits go through it, the tree
 will always be green.
