@@ -1,7 +1,7 @@
 ## Agenda
 
 - proposal for effects (bblum)
-- end of master/iincoming split? (graydon)
+- end of master/incoming split? (graydon)
 - alloc expressions (graydon)
 
 ## Attending
