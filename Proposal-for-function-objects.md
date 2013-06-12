@@ -197,3 +197,4 @@ An alternative approach would be to force the environment to be immutable unless
 // Once (movable variables) closure
 |=|(int) once {}
 ```
+This would help catch errors when accidentally moving or modifying the environment.
