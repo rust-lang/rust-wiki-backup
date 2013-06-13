@@ -1,11 +1,8 @@
 Incoming
 --------
 
-* The integration branch is `incoming`. Only the sheriff should push to `master`.
-  * If you have push access and are not the sheriff today, please push to `incoming`, not `master`.
-  * If you are filing pull requests, please file them against `incoming`, not `master`.
-* The sheriff will pull the last green commit from `incoming` to `master` daily.
-* The current sheriff will be listed in the IRC channel title.
+* The integration branch is `master`. Only the sheriff should push to `master`.
+* Integration happens automatically via @bors. This is an automatic integration robot that does the entire merge-and-test integration cycle after an authorized reviewer reviews your pull request.
 
 General
 -------
@@ -35,17 +32,14 @@ $ git rebase mozilla/master
 > Do not repeatedly merge `master` into your branch. We will ask you to rewrite any pull request that
 > contains unnecessary merge nodes.
 
-3. When done, rebase one final time to the `incoming` branch of `mozilla/rust`, and push your work up to github:
+3. When done, push your work up to github:
 ```
-$ git fetch mozilla
-$ git rebase mozilla/incoming
-$ <re-run local tests, make sure it still works>
 $ git push origin mybranch
 ```
 
-4. File a pull request against `mozilla/rust`. Target the pull request to the `incoming` integration branch in `mozilla/rust`, not `master`. Incoming changes target the `incoming` branch only. Once your pull request is filed, you can create a new branch and do something else.
+4. File a pull request against `mozilla/rust`. Target the pull request to the `master` integration branch in `mozilla/rust`. Once your pull request is filed, you can create a new branch and do something else.
 
-5. After Mozilla merges your stuff to `incoming`, tests that it's green, and merges it over (semi-regularly) to `master`, it is integrated. Watch this process to ensure your change integrates. Address any test-breakage reported in the bots during integration.
+5. Mozilla reviewers regularly look through the @bors integration queue, shown here: http://buildbot.rust-lang.org/bors/bors.html . Monitor your pull request for any additional comments or feedback from reviewers. Once an authorized reviewer leave a comment of the form `r+` on the end of the final commit in your pull request, @bors will attempt to merge your change to a temporary branch, test it, and advance `master` to that version if the tests pass. If any of these steps fail, it is your responsibility to address any problems that show up and refresh the pull request with updated code, so watch this process to ensure your change integrates.
 
 6. Pull `master` into your local repo and verify that it contains your changes:
 ```
