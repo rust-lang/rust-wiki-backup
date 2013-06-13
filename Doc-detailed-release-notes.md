@@ -1,5 +1,7 @@
 This page covers releases in more detail than the bullet-point list given in the RELEASES.txt file in the source distribution, in particular focusing on _language level changes_ that will be immediately visible and/or disruptive to users trying to keep their Rust code compiling and working right between releases. It is intended to hold copied, cleaned-up versions of entries from the [[development roadmap|Note development roadmap]] as they are completed, to help users plan migration on their own code.
 
+## 0.7 June 2013
+
 ## 0.6 April 2013
 
 This was a very busy development cycle focused on completing as many of the planned language-level changes as possible in the release time-window. While we cannot promise that this is the last time there will be incompatible changes, the great majority of anticipated language-level changes are complete in this version. We expect subsequent releases before a beta and final 1.0 to be more focused on non-language-level work (performance, libraries, packaging and building, runtime system) with only modest language-level changes as we discover bugs and areas requiring residual polish (primarily in the trait system, macro system, and borrow check).
