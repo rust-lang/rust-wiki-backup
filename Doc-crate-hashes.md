@@ -19,7 +19,7 @@ Rust crate versioning: "very explicitly designed to meet the needs of linux pack
     * Hashes should be stable, based on identity and not time-variant state of the code.
 
 ### Symbol hashes:
-Each symbol in a crate is also versioned. Symbols have mangled names of the format: `<crate-local-name>::<hash>::<version>` (the mangling format is part of the language specification, unlike C++).
+Each symbol in a crate is also versioned. Symbols have mangled names of the format: `<crate-local-name>::<hash>::<version>` (the mangling format is defined by the language specification, unlike C++).
 * Example: `cleanup::annihilate::_c0b9e988aa1ab6bf::_07pre`
 * Again, `<hash>` and `<version>` are orthogonal:
     * `<hash>` is computed based on the *crate* hash and type of the symbol in the Rust type system.
