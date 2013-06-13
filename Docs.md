@@ -49,6 +49,7 @@
 [[Attributes|Doc attributes]] - The role of metadata in Rust code, with descriptions of many applications  
 [[Packages, editors, and other tools|Doc packages, editors, and other tools]]  
 [[Packaging Terminology|Doc Packaging Terminology]]  
+[[Crate Hashes|Doc crate hashes]] - How Rust generates crate filenames, versions symbols, and why  
 [[Building for Android|Doc building for Android]]  
 
 ## Blogs
