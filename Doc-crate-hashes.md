@@ -7,7 +7,7 @@ Rust crate versioning: "very explicitly designed to meet the needs of linux pack
 * Symbols also have hashes and versions, with somewhat different semantics.
 
 ### Crate filenames and hashes:
-* Library filenames look like: `lib<shortname>-<hash>-<version>.so` or `lib<shortname>-<hash>.so.<version>`
+* Library filenames look like: `lib<shortname>-<hash>-<version>.so` (or possibly `lib<shortname>-<hash>.so.<version>` in the future)
     * Example: `librust-39583f72884834e3-0.6.so`
     * The version number is not included in `<hash>`
 * `<hash>` is intended to prevent different authors' libs with the same `<shortname>` from conflicting.
