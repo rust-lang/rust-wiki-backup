@@ -5,14 +5,14 @@ Notes taken at rust work week, 2011/06/23
 * collections (see [[Containers]])
 * IO
  * AIO, SIO, stdio
- * [filesystem](https://github.com/mozilla/rust/blob/master/src/libcore/os.rs)
- * [path manipulation](https://github.com/mozilla/rust/blob/master/src/libcore/path.rs)
- * [<> or fileinput](https://github.com/mozilla/rust/blob/incoming/src/libstd/fileinput.rs)
+ * [filesystem](https://github.com/mozilla/rust/blob/master/src/libstd/os.rs)
+ * [path manipulation](https://github.com/mozilla/rust/blob/master/src/libstd/path.rs)
+ * [<> or fileinput](https://github.com/mozilla/rust/blob/incoming/src/libextra/fileinput.rs)
  * timers
 * string manipulation
  * slicing w/o copy, stringref
  * [regexp](https://github.com/elly/rustpcre) (external)
- * [ropes](https://github.com/mozilla/rust/blob/master/src/libstd/rope.rs)
+ * [ropes](https://github.com/mozilla/rust/blob/master/src/libextra/rope.rs)
  * simple tokenizer
 * Localizability
  * one aspect of L10n is to map a key to a text, based on the current locale (eg Java's [ResourceBundle](http://docs.oracle.com/javase/7/docs/api/java/util/ResourceBundle.html) or [GNU gettext](http://www.gnu.org/software/gettext/))
@@ -24,22 +24,22 @@ Notes taken at rust work week, 2011/06/23
       * [rust-http-client](https://github.com/mozilla-servo/rust-http-client) (external)
     * server
       * [rwebserve](https://github.com/jesse99/rwebserve) (external)
- * [URI/URL](https://github.com/mozilla/rust/blob/master/src/libstd/net_url.rs)
+ * [URI/URL](https://github.com/mozilla/rust/blob/master/src/libextra/net_url.rs)
  * [UUID](https://github.com/erickt/rust-uuid) (external)
  * GUID
 * date and time
   * [rust_datetime](https://github.com/tedhorst/rust_datetime) (external)
 * [math](https://github.com/z0w0/rusty-math) (external)
-* [random](https://github.com/mozilla/rust/blob/master/src/libcore/rand.rs)
+* [random](https://github.com/mozilla/rust/blob/master/src/libcstd/rand.rs)
 * [compression](https://github.com/elly/rustzlib) (external)
-* [libicu](https://github.com/mozilla/rust/blob/master/src/libstd/unicode.rs)
+* [libicu](https://github.com/mozilla/rust/blob/master/src/libextra/unicode.rs)
  * Convertions between text encodings. Ideally, with a customizable way of handling conversion errors.
  * Unicode normalization (NFD, NFC, NFKD, NFKC)
  * Collator (locale sensitive string comparison), with a configurable degree of strictness
 * serialization/encoding
- * [base64](https://github.com/mozilla/rust/blob/master/src/libstd/base64.rs)
+ * [base64](https://github.com/mozilla/rust/blob/master/src/libextra/base64.rs)
  * [CSV](https://github.com/grahame/rust-csv) (external)
- * [json](https://github.com/mozilla/rust/blob/master/src/libstd/json.rs)
+ * [json](https://github.com/mozilla/rust/blob/master/src/libextra/json.rs)
  * protobuf
  * thrift
  * [tnetstring](https://github.com/erickt/rust-tnetstring) (external)
