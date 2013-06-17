@@ -42,7 +42,9 @@ _exactly_ the bits that tested OK.
 It retries if you move incoming while it's working, so tends to behave
 "mostly gracefully" with respect to disruption around it. If it
 misbehaves, it can be provoked to retry a commit with a comment from a
-reviewer saying "@bors: retry". It ignores comments by non-reviewers. It
+reviewer saying "@bors: retry" (on that same commit as the original "r+", as
+opposed to the comment-trail inlined the Pull Request itself).
+It ignores comments by non-reviewers. It
 also does not merge "updates" to a pull request. It considers comments on
 commits only, not pull requests; if you update a pull request to contain new
 commits, they need to be reviewed anew.
