@@ -19,8 +19,8 @@ graydon, felix, sully, jack, niko, eston, bblum, aaron, ecr, azita, brson, tjc, 
 - graydon: milestone says we're complete at end of month. everyone go back to 0.7 milestone and clarify things you are going to get done in the next ~week. if you're not going to get it done then remove it, if it's important than make a note of it. it's ok - don't feel bad
 - graydon: release notes are started. if you have time go through them and make sure they reflect what you did. detailed release notes are empty.
 
-detailed release notes: https://github.com/mozilla/rust/wiki/Doc-detailed-release-notes
-0.7 doc issue: https://github.com/mozilla/rust/issues/7097
+detailed release notes: https://github.com/mozilla/rust/wiki/Doc-detailed-release-notes  
+0.7 doc issue: https://github.com/mozilla/rust/issues/7097  
 
 - graydon: think this is a really good cycle. converging on a backward compatible language. didn't expand the scope this time.
 - azita: graydon, are you going to have a seperate meeting for 0.7?
@@ -106,6 +106,7 @@ trait Mappable<T> {
     fn map<U>(self, blk:      fn(T) -> U) -> Self<U>;
 }
 
+```
 impl Mappable<T> for Option<T> {
     fn map<U>(self, blk: once fn(T) -> U) -> Self<U>;
 }
@@ -115,6 +116,7 @@ Or perhaps:
 trait OnceMappable<T> : Mappable<T> {
     fn map<U>(self, blk: once fn(T) -> U) -> Self<U>;
 }
+```
 
 - graydon: I want to take a slightly different angle, we currently wind up duplciating APIs for by-value and by-reference. One of which expresses contexts where you can move something in or out of the container and one where you can't, and they mean somewhat different things. I don't view it as a cognitive burden to the user since they are already confronted with this, where there are APIs. I find the concept of moving out of the environment due to environment capture a more likely cognitive hazard than by argument passing. We already kind of do that, we already have APIs where by providing the argument you are giving it up (e.g., hashtable insert).
 - nmatsakis: if we move to external iterators, then the use case of each/map is a non-issue.
@@ -163,9 +165,11 @@ trait OnceMappable<T> : Mappable<T> {
 
 - pnkfelix: I've been trying to figure out our situation with namespaces. Module and types share the same namespace. The language is written in a way that makes it sound like the only conflict you will have is between modules and types, but there is also the possibility of two types shadowing each other. I am confused about when shadowing is allowed, can types shadow one another? What about this example:
 
+```
 struct C { a: int, b: int }
 enum Foo { C { a: int, b: int } }
 fn main() { }
+```
 
 - pcwalton: This should  be an error. You've stumbled upon the fact that struct-like enum variants are weird. 
 - brson: It's strange that we have some variants in the type namespace and some in the value namespace.
@@ -179,6 +183,7 @@ fn main() { }
 
 - pcwalton: Let me draw an ASCII art diagram!
 
+```
                    module def
                  /
         type NS
@@ -186,6 +191,7 @@ fn main() { }
  name              type def
       \
         value NS - value def
+```
 
 - jld: fwiw I used a struct-like enum variant at one point because I had too many fields with types like bool and int and it was getting confusing.  And we had this feature to give this names.
 - nmatsakis: I usually just make a struct and wrap it in an enum, because that allows me to write helper functions that know that they are dealing with that specific variant.
