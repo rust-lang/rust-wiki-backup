@@ -13,6 +13,7 @@ Common triples are `x86_64-unknown-linux-gnu`, `i686-unknown-linux-gnu`, `x86_64
 ## Make targets
 
 * `all` - The default rule. Builds a complete stage2 compiler, std, and extra for all hosts and targets
+* `docs` - Generate HTML documentation for the std and extra libraries from source code comments
 * `rustc` - The stage 2 compiler for the build platform with standard and extra libraries
 * `rustc-stage1` - The stage1 compiler for the build platform
 * `rustc-stage1-H-x86_64-unknown-linux-gnu` - The stage1 compiler for x86_64 linux
