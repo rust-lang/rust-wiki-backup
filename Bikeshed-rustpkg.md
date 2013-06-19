@@ -47,8 +47,8 @@ This is Tim's attempt to come up with a schedule for finishing rustpkg, with a p
    ~~Due: 2013-05-14~~ Done ~~pending #6807~~
 
 3. Test	runner (#5683)
-
-   Due: 2013-05-17
+ 
+   ~~Due: 2013-05-17~~ Done
 
 5. Get version from VCS (#5684)
       * test case:
@@ -108,7 +108,7 @@ This is Tim's attempt to come up with a schedule for finishing rustpkg, with a p
 
    Due: 2013-06-07
 
-8. Finish implementing all other commands
+8. Finish implementing all other commands (#7242)
        * do, info, prefer, test, uninstall, unprefer
 
    Due: 2013-06-14
