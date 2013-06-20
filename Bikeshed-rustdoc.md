@@ -49,7 +49,7 @@ At any point in the above, rustdoc can stop and spew out JSON/XML.
 
 # Pain points with current rustdoc
 
-- "Implementation of Foo for Bar where <useless stuff>"
+- `Implementation of Foo for Bar where <useless stuff>` (from SL. where -> given?) 
 
 # New features
 
