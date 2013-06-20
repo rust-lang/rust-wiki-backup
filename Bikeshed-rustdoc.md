@@ -8,10 +8,50 @@ rustdoc currently needs some love, and I'm going to give it some.
 
 This is much more flexible and should be more parallelizable than current rustdoc (which seems to be rather serial, but I haven't done a thorough review of it yet). It also has the benefit of being able to serve as a backend for more than just generating static docs with pandoc, specifically being able to output a format usable in an IDE for inline-documentation (much like java and .net have).
 
+Diagram:
+
+```
+                  +--------+   +-------+  +--------+
+                  |foo.rs  |   |bar.rs |  |baz.rs  |
+                  +---+----+   +---+---+  +----+---+
+                      |            |           |
+                +-----|----rustdoc-|-----------|-----+
+                      |            |           |
+                      v            v           v
+                  +--------+   +-------+  +--------+
+                  |extract |   |extract|  |extract |
+                  +---+----+   +---+---+  +----+---+
+                      |            |           |
+                      |            |           |
+                      v            v           v
+                  +--------+
+                  |filter 1|    ....
+                  +---+----+       +           +
+                      |            |           |
+                      |            |           |
+                      v            |           |
+                  +--------+       |           |
+                  |filter n|       |           |
+                  +--------+       |           |
+                      +            |           |
+                      |            |           |
+                      |            |           |
+                      +            +           +
+                      |            |           |
+                      |            |           |
+                      |            v           |
+                      +------>+----------+<----+
+                              |generation|
+                              +----------+
+```
+
+At any point in the above, rustdoc can stop and spew out JSON/XML.
+
 # New features
 
 - Unformatted JSON/XML (undecided) output
 - More complete TOCs, indexes, links to all items documented
+- Interactive browser interface (live search, toggle platform cfg's)
 - your feature requests here!
 
 # New bugs
