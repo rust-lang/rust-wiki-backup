@@ -10,6 +10,8 @@ This is much more flexible and should be more parallelizable than current rustdo
 
 # New features
 
+- Unformatted JSON/XML (undecided) output
+- More complete TOCs, indexes, links to all items documented
 - your feature requests here!
 
 # New bugs
