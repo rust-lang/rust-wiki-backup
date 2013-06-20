@@ -52,6 +52,7 @@ At any point in the above, rustdoc can stop and spew out JSON/XML.
 - Unformatted JSON/XML (undecided) output
 - More complete TOCs, indexes, links to all items documented
 - Interactive browser interface (live search, toggle platform cfg's)
+- every symbol should be able to be linked to its documentation (eg, types, methods, functions)
 - your feature requests here!
 
 # New bugs
