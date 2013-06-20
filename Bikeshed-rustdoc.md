@@ -47,6 +47,10 @@ Diagram:
 
 At any point in the above, rustdoc can stop and spew out JSON/XML.
 
+# Pain points with current rustdoc
+
+- "Implementation of Foo for Bar where <useless stuff>"
+
 # New features
 
 - Unformatted JSON/XML (undecided) output
