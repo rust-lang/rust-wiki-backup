@@ -1,5 +1,4 @@
-Dispatch
-========
+## Method Dispatch
 
 Type-parameterized functions are specialized for each set of type parameters used to instantiate them in a crate. The method calls are resolved statically at compile-time. Example:
 
