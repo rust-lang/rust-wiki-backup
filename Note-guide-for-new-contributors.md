@@ -12,6 +12,15 @@ The source is also littered with hundreds of comments marked with 'FIXME' and 'T
 
 For inspiration, read about how [cmr started hacking the compiler]. If in doubt, ask on IRC. Somebody will surely have a task that needs to be done.
 
+# Ideas for newbies
+
+* Adopt a module in std and ensure all doc comments are provided, accurate, complete and follow the style guidelines.
+* Adopt a module and write unit tests for each feature. Bonus points for writing one that triggers a bug and reporting it.
+* Examine the runtime library of language Xyz and build a table comparing features with Rust, identifying missing features.
+* Proofread the tutorial, ensuring it works as described with the relevant release of the compiler.
+
+Reddit has [more ideas still](http://www.reddit.com/r/rust/comments/1grj61/feed_us_some_low_hanging_fruit/).
+
 ## Hacking on Rust
 
 Before hacking, read some tips on [[getting started|Note-getting-started-developing-rust]] and the [[development policy|Note-development-policy]]. The [[Notes]] section on the wiki contains general wisdom about the code base from other developers.
