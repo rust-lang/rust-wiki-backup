@@ -3,6 +3,6 @@ All Categories:
 * [[Docs]] -- For users
 * [[Notes]] -- For developers
 * [[Libs]] -- For library authors
-* [[Meetings]] -- Meeting minutes
+* [[Meetings]] -- Minutes
 * [[Proposals]] -- Detailed plans
 * [[Bikesheds]] -- Random sketches
