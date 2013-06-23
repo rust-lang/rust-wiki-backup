@@ -18,10 +18,6 @@ Also try setting RUST_LOG to `::help`. For a full description see [the language 
 
 This message indicates a memory leak, and is mostly likely to happen on rarely exercised failure paths. Note that failure unwinding is not yet implemented on windows so this is expected. If you see this on Linux or Mac it's a compiler bug; please report it.
 
-### Why does my build fail with a "bad hash on download" message?
-
-This happens when the snapshot compiler failed to download correctly so doesn't have the correct hash. To fix it just delete the mentioned tar.bz2 file from the dl folder in your build directory and run make again.
-
 ### Why do gdb backtraces end with the error 'previous frame inner to this frame (corrupt stack?)'?
 
 Short answer: your gdb is too old to understand our hip new stacks. Upgrade to a newer version (7.3.1 is known to work).
