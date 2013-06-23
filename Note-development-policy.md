@@ -8,6 +8,10 @@ If your contribution is nontrivial, we ask that you [file a Mozilla "committer a
 
 Direct push access to the github.com/mozilla/rust.git repository should only be necessary if you want to take on review, integration and other "janitorial" work as part of your day-to-day contribution to the project. If so, please discuss it with the other core contributors through IRC or email.
 
+## Getting involved: how to pick your first bug
+
+In the issue tracker, bugs can only be assigned to people who have commit access. Also, we aspire to make as many bugs as possible "owned" by assigning them to a core Rust contributor. Therefore, just because a bug is assigned doesn't mean it's being actively worked on. We (the core contributors) are all busy, and welcome help from the community. If you see a bug you'd like to work on that's assigned but appears to be dormant, communicate with the bug's owner (by IRC, email, or with an @-reply in a comment on the issue page). If you see a bug you'd like to work on that's unassigned, it's fair game: comment to say you'd like to work on it so that we know it's getting attention.
+
 ## Pull request procedure
 
 To make a pull request, you will need a Github account; if you're unclear on this process, see Github's documentation on [forking](https://help.github.com/articles/fork-a-repo) and [pull requests](https://help.github.com/articles/using-pull-requests). Pull requests should be targeted at Rust's `master` branch. Before pushing to your Github repo and issuing the pull request, please do two things:
