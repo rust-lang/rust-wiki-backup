@@ -94,6 +94,7 @@ Using `mingw-get` alone will open a GUI interface for package management.
     export PATH=$PATH:/c/Program\ Files/Git/bin
 
 **Troubleshooting Windows environment setups:**
+
 * If while building you receive an error that `libpthread-2.dll` is not found, you need to install the [libpthread-2.8.0-3-mingw32-dll-2.tar.lzma package](http://sourceforge.net/projects/mingw/files/MinGW/Base/pthreads-w32/pthreads-w32-2.8.0-3/).  It seems this must be installed by hand, as far as I can tell:
 
     cd /mingw; lzma -d -c /path/to/downloaded/libpthread-2.8.0-3-mingw32-dll-2.tar.lzma | tar xf -
@@ -121,6 +122,9 @@ See [[building for Android|Doc-building-for-android]]
     git clone git://github.com/mozilla/rust.git
     cd rust
     ./configure   # this may take a while if this is your first time, as it downloads LLVM
+
+If you already have one of the prereqs installed, like Python or Perl, make sure the PATH environment variable is set so the configure script can find it, otherwise you will get errors during configure.
+
     make    # this will definitely take a while if this is your first time, as it builds LLVM
 
 Optional steps:
