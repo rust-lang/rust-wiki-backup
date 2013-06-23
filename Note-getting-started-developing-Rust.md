@@ -69,7 +69,7 @@ We recommend developing under [MSYS and MinGW](http://www.mingw.org) using their
  * Choose to **Run Git from the Windows Command Prompt** instead of Use Git Bash only.
  * Choose **Use OpenSSH**.
  * Choose **Checkout as-is, commit Unix-style line endings** (you'll have less problems).
- * Close the MinGW console and reopen it, type `git --version` to verify installation and path is set correctly.
+ * After installing Git, close the MinGW console and reopen it, type `git --version` to verify installation and path is set correctly.
 8. Download Python 2.7 installer for your Windows version from http://www.python.org/getit/ and install it preferably to `C:\Python27`.
 9. Scroll down to **Downloading and building Rust** section.
 
