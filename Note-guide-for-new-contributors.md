@@ -14,7 +14,7 @@ For inspiration, read about how [cmr started hacking the compiler]. If in doubt,
 
 ## Hacking on Rust
 
-Before hacking, read some tips on [[getting started|Note-getting-started-developing-rust]] and the [[development policy|Note-development-policy]].
+Before hacking, read some tips on [[getting started|Note-getting-started-developing-rust]] and the [[development policy|Note-development-policy]]. The [[Notes]] section on the wiki contains general wisdom about the code base from other developers.
 
 [issue tracker]: http://github.com/mozilla/rust/issues
 [contributing]: https://github.com/mozilla/rust/blob/master/CONTRIBUTING.md
