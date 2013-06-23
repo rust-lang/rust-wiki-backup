@@ -75,13 +75,13 @@ The syntax is still evolving, but here's a snippet from the hash map in core::ha
 
 ### Are there any big programs written in it yet? I want to read big samples.
 
-There aren't many large programs yet. The Rust [compiler][rustc], 50,000+ lines at the time of writing, is written in Rust. As the oldest body of Rust code it has gone through many iterations of the language, and some parts are nicer to look at than others. It may not be the best code to learn from, but [borrowck] and [resolve] were written recently.
+There aren't many large programs yet. The Rust [compiler][rustc], 60,000+ lines at the time of writing, is written in Rust. As the oldest body of Rust code it has gone through many iterations of the language, and some parts are nicer to look at than others. It may not be the best code to learn from, but [borrowck] and [resolve] were written recently.
 
 [rustc]: https://github.com/mozilla/rust/tree/master/src/librustc
 [resolve]: https://github.com/mozilla/rust/blob/master/src/librustc/middle/resolve.rs
 [borrowck]: https://github.com/mozilla/rust/blob/master/src/librustc/middle/borrowck/
 
-A research browser engine called [Servo][servo], currently 17,000+ lines across more than a dozen crates, will be exercising a lot of Rust's distinctive type-system and concurrency features, and integrating many native libraries.
+A research browser engine called [Servo][servo], currently 30,000+ lines across more than a dozen crates, will be exercising a lot of Rust's distinctive type-system and concurrency features, and integrating many native libraries.
 
 [servo]: https://github.com/mozilla/servo
 
