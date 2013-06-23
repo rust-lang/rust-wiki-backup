@@ -81,7 +81,7 @@ There aren't many large programs yet. The Rust [compiler][rustc], 50,000+ lines 
 [resolve]: https://github.com/mozilla/rust/blob/master/src/librustc/middle/resolve.rs
 [borrowck]: https://github.com/mozilla/rust/blob/master/src/librustc/middle/borrowck/
 
-A research browser engine called [Servo][servo], currently 17,000+ lines across more than a dozen crates, will be exercising a lot of Rust's distinctive type-system and concurrency features, and integrating many native libraries. Note that Servo pushes at all the rough edges of Rust, and with the ongoing language changes is regrettably difficult to build for the time being.
+A research browser engine called [Servo][servo], currently 17,000+ lines across more than a dozen crates, will be exercising a lot of Rust's distinctive type-system and concurrency features, and integrating many native libraries.
 
 [servo]: https://github.com/mozilla/servo
 
@@ -89,17 +89,13 @@ Some examples that demonstrate different aspects of the language:
 
 * [sprocketnes], an NES emulator with no GC, using modern Rust conventions
 * The language's general-purpose [hash] function, SipHash-2-4. Bit twiddling, OO, macros
-* The core library's [LinearMap], a sendable hash map in an OO style
-* The standard library's [json] module. Enums and pattern matching
-* Servo's [ImageCacheTask], an image cache in an actor style
-* [fempeg], an mp2 decoder that does only stack allocation, no heap and no GC
+* The standard library's [HashMap], a sendable hash map in an OO style
+* The extra library's [json] module. Enums and pattern matching
 
 [sprocketnes]: https://github.com/pcwalton/sprocketnes
-[hash]: https://github.com/mozilla/rust/blob/master/src/libcore/hash.rs
-[LinearMap]: https://github.com/mozilla/rust/blob/master/src/libcore/send_map.rs
-[json]: https://github.com/mozilla/rust/blob/master/src/libstd/json.rs
-[ImageCacheTask]: https://github.com/mozilla/servo/blob/master/src/servo-gfx/resource/image_cache_task.rs
-[fempeg]: https://github.com/pcwalton/fempeg
+[hash]: https://github.com/mozilla/rust/blob/master/src/libstd/hash.rs
+[HashMap]: https://github.com/mozilla/rust/blob/master/src/libstd/hashmap.rs
+[json]: https://github.com/mozilla/rust/blob/master/src/libextra/json.rs
 
 You may also be interested in browsing [GitHub's Rust][github-rust] page.
 
