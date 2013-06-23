@@ -82,3 +82,4 @@ Some Rust classics:
 * [Ownership types in Rust, and whether they're worth it](http://tim.dreamwidth.org/1784423.html)
 * [Reasoning about the heap in Rust](http://johnbender.us/2013/04/30/reasoning-about-the-heap-in-rust)
 * [The Option Type](http://nickdesaulniers.github.io/blog/2013/05/07/rust-pattern-matching-and-the-option-type/)
+* [How I got started hacking rustc](http://cmr.github.io/blog/2013/06/23/how-i-got-started-with-rust/)
