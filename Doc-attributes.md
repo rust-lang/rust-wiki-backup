@@ -1,6 +1,6 @@
 # The many uses of attributes
 
-**Note: This page has not been updated in a long time. There are many more attributes in use now.**
+*Note: This page has not been updated in a long time. There are many more attributes in use now.*
 
 ## Meta items
 
