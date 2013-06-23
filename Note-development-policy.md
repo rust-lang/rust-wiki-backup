@@ -25,10 +25,6 @@ The copyright header at the top of the file should include a date range that inc
 // Copyright 2010-2013 The Rust Project Developers.
 ```
 
-## Getting involved: how to pick your first bug
-
-In the issue tracker, bugs can only be assigned to people who have commit access. Also, we aspire to make as many bugs as possible "owned" by assigning them to a core Rust contributor. Therefore, just because a bug is assigned doesn't mean it's being actively worked on. We (the core contributors) are all busy, and welcome help from the community. If you see a bug you'd like to work on that's assigned but appears to be dormant, communicate with the bug's owner (by IRC, email, or with an @-reply in a comment on the issue page). If you see a bug you'd like to work on that's unassigned, it's fair game: comment to say you'd like to work on it so that we know it's getting attention.
-
 ## Conduct
 
 * We are committed to providing a friendly, safe and welcoming environment for all, regardless of gender, sexual orientation, disability, ethnicity, religion, or similar personal characteristic.
