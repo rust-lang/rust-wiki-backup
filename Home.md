@@ -1,5 +1,3 @@
-## Rust
-
 *Hey, Listen! Rust is alpha-level software with many known bugs, incomplete features and planned future changes. Use at your own risk, expect some instability, disruption and source-level incompatibility for a while yet.*
 
 If this is your first time then perhaps you would like a peek at the [[docs|Docs]].
