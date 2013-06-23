@@ -1,5 +1,7 @@
 # The many uses of attributes
 
+**Note: This page has not been updated in a long time. There are many more attributes in use now.**
+
 ## Meta items
 
 Attributes are built from _meta items_, which have three forms:
