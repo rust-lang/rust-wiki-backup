@@ -2,6 +2,8 @@
 
 Is this your first time? Then perhaps you would like a peek at the [[docs|Docs]].
 
+Want to contribute? [[We love that|Note guide for new contributors]]
+
 Rust is developed through an open process by friendly people who congregate at [#rust on irc.mozilla.org][pound-rust]. If you run into problems, IRC is the best place ask for help.
 
 Please follow some [[conventions|Note wiki conventions]] when editing this wiki.
