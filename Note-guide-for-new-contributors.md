@@ -12,7 +12,7 @@ The source is also littered with hundreds of comments marked with 'FIXME' and 'T
 
 For inspiration, read about how [cmr started hacking the compiler]. If in doubt, ask on IRC. Somebody will surely have a task that needs to be done.
 
-# Ideas for newbies
+## Ideas for newbies
 
 * Adopt a module in std and ensure all doc comments are provided, accurate, complete and follow the style guidelines.
 * Adopt a module and write unit tests for each feature. Bonus points for writing one that triggers a bug and reporting it.
