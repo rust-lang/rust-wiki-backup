@@ -4,7 +4,7 @@ This page covers releases in more detail than the bullet-point list given in the
 
 ## Cloning vs. copying
 
-The `copy` keyword is being removed in favor of traits, continuing a trend of moving language features into libraries. Explicit copying is now performed with the `clone` method of the `Clone` trait, which can automatically be derived with `#[deriving(Clone)]`. `Clone` is part of the Rust prelude so is always in scope.
+The `copy` keyword is being removed in favor of traits. Explicit copying is now performed with the `clone` method of the `Clone` trait, which can automatically be derived with `#[deriving(Clone)]`. `Clone` is part of the Rust prelude so is always in scope.
 
 ```
 #[deriving(Clone)]
