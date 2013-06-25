@@ -1,6 +1,24 @@
 This page covers releases in more detail than the bullet-point list given in the RELEASES.txt file in the source distribution, in particular focusing on _language level changes_ that will be immediately visible and/or disruptive to users trying to keep their Rust code compiling and working right between releases. It is intended to hold copied, cleaned-up versions of entries from the [[development roadmap|Note development roadmap]] as they are completed, to help users plan migration on their own code.
 
-## 0.7 June 2013
+## 0.7 July 2013
+
+## Cloning vs. copying
+
+The `copy` keyword is being removed in favor of traits, continuing a trend of moving language features into libraries. Explicit copying is now performed with the `clone` method of the `Clone` trait, which can automatically be derived with `#[deriving(Clone)]`. `Clone` is part of the Rust prelude so is always in scope.
+
+```
+#[deriving(Clone)]
+struct PopsicleToken;
+
+let my_token = PopsicleToken;
+let your_token = my_token.clone();
+```
+
+### Iterators
+
+### Numeric traits
+
+### Macros?
 
 ## 0.6 April 2013
 
