@@ -77,6 +77,7 @@ Mozilla employees have a weekly Rust planning meeting on Tuesday mornings at 9:0
 * [[Meeting-weekly-2013-06-04]] (<<; mut bindings; dynamically-sized types; closure reform)
 * [[Meeting-weekly-2013-06-11]] (effects, master/incoming, new)
 * [[Meeting-weekly-2013-06-18]] (tree maintenance; 0.7; weekly status process; once fns; namespaces)
+* [[Meeting-weekly-2013-06-25]] (0.7; @mut; iterators)
 
 ## Other meetings:
 
