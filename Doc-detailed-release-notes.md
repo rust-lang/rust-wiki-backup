@@ -14,6 +14,8 @@ let my_token = PopsicleToken;
 let your_token = my_token.clone();
 ```
 
+`Clone` makes shallow copies of managed pointers and other shared pointer types like `Rc` and `ARC`. For deep copies use the `DeepClone` trait and the `deep_clone` method.
+
 ### Iterators
 
 ### Numeric traits
