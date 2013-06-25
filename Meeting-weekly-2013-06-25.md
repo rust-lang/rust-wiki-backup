@@ -43,9 +43,9 @@ attending: jclements, tkuehn, dherman, eston, azita, brson, toddaaro, ecr, bblum
 
 - p: there's been some discussion about @mut not pulling its weight. whenever people use it, they get dynamic borrow-check errors, all the time. after talking it over with strcat & niko etc., maybe the right thing is to remove @mut, and use explicit cells to do dynamic borrowing, or introduce a new type called slot, which does dynamic borrowing. by making it explicit, you make it obvious what's going to happen. two things.
 
-1) it becomes obvious when it can fail. you have to scope it (or not, with dtors)
-2) we can explicitly document it in the library type. when you use it, you'll probably read the docs. right now it,s too easy, people are surprised by fails.
-3) you can choose where the borrow happens on a more fine-grained level. you don't have to borrow a whole structures at once. eliminates some gotchas. niko & i went back and forth... this sidesteps the problem by making it explicit in all cases. this hase been a very abstract thing, hard to illustrate. 
+- 1) it becomes obvious when it can fail. you have to scope it (or not, with dtors)
+- 2) we can explicitly document it in the library type. when you use it, you'll probably read the docs. right now it,s too easy, people are surprised by fails.
+- 3) you can choose where the borrow happens on a more fine-grained level. you don't have to borrow a whole structures at once. eliminates some gotchas. niko & i went back and forth... this sidesteps the problem by making it explicit in all cases. this hase been a very abstract thing, hard to illustrate. 
 
 - dave : thoughts; 1) looks like null pointers vs. option types: do you want convenience or explicitness? with this one, the lack of safety outweighs convenience... this comes from real experience. What will this look like in real code if we make this switch.  I think it may look one way on paper, but it might look different when we really try it.  
 - p: maybe we should try it first, before making a decision
