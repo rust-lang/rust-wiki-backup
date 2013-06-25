@@ -124,9 +124,9 @@ for x.iter().transform(|x| x+2).filter(|x| x%3 ==0)  {
 - d: tell strcat to take a look at clojure & racket, I'll send blog post.
 - jack: two good talks from rich hickey
 
-http://clojure.com/blog/2012/05/08/reducers-a-library-and-model-for-collection-processing.html
-http://clojure.com/blog/2012/05/15/anatomy-of-reducer.html
-http://www.infoq.com/presentations/Clojure-Reducers
+http://clojure.com/blog/2012/05/08/reducers-a-library-and-model-for-collection-processing.html  
+http://clojure.com/blog/2012/05/15/anatomy-of-reducer.html  
+http://www.infoq.com/presentations/Clojure-Reducers  
 
 - d: good if strcat could write up rationale, what we liked & didn't like about the various points in the design space.
 - p: going back to why `for` is better this way: it makes break, continue, and return consistent. 
