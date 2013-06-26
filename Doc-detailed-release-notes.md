@@ -20,6 +20,7 @@ let your_token = my_token.clone();
 
 https://mail.mozilla.org/pipermail/rust-dev/2013-June/004364.html  
 http://thread.gmane.org/gmane.comp.lang.rust.devel/4528  
+http://journal.stuffwithstuff.com/2013/01/13/iteration-inside-and-out/  
 
 ### Numeric traits
 
