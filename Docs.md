@@ -1,13 +1,13 @@
 ## Reference docs
 
-### Current (Rust 0.6)
+#### Current (Rust 0.6)
 
 [Tutorial](http://doc.rust-lang.org/doc/0.6/tutorial.html)  
 [Manual](http://doc.rust-lang.org/doc/0.6/rust.html) ([PDF](http://doc.rust-lang.org/doc/0.6/rust.pdf))  
 [Core library](http://doc.rust-lang.org/doc/0.6/core/index.html)  
 [Standard library](http://doc.rust-lang.org/doc/0.6/std/index.html)  
 
-### In-development (git master)
+#### In-development (git master)
 
 [Tutorial](http://doc.rust-lang.org/doc/tutorial.html)  
 [Manual](http://doc.rust-lang.org/doc/rust.html) ([PDF](http://doc.rust-lang.org/doc/rust.pdf))  
