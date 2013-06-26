@@ -18,6 +18,9 @@ let your_token = my_token.clone();
 
 ### Iterators
 
+https://mail.mozilla.org/pipermail/rust-dev/2013-June/004364.html  
+http://thread.gmane.org/gmane.comp.lang.rust.devel/4528  
+
 ### Numeric traits
 
 ### Macros?
