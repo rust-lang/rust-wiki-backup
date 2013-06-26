@@ -1,6 +1,6 @@
 You want to contribute to Rust? Frankly, you've made an excellent decision. Rust is developed by a small and inclusive community that takes *very kindly* to strangers. You're going to have a good time.
 
-The way most people seem to get involved is by simply trying to write Rust code. Inevitably they hit a bug or missing feature, at which point they are compelled to write a patch.
+The way [most people][cmr] seem to get involved is by simply trying to write Rust code. Inevitably they hit a bug or missing feature, at which point they are compelled to write a patch.
 
 ## Picking something to do
 
@@ -10,7 +10,7 @@ Outstanding bugs or feature requests in Rust often have a corresponding test in 
 
 The source is also littered with hundreds of comments marked with 'FIXME' and 'TODO'. In Rust, FIXME comments come with an issue number; sometimes these refer to issues that may be resolved easily.
 
-For inspiration, read about how [cmr started hacking the compiler]. If in doubt, ask on IRC. Somebody will surely have a task that needs to be done.
+If in doubt, ask on IRC. Somebody will surely have a task that needs to be done.
 
 ## Ideas for newbies
 
@@ -27,4 +27,4 @@ Before hacking, read some tips on [[getting started|Note-getting-started-develop
 
 [issue tracker]: http://github.com/mozilla/rust/issues
 [contributing]: https://github.com/mozilla/rust/blob/master/CONTRIBUTING.md
-[cmr started hacking the compiler]: http://cmr.github.io/blog/2013/06/23/how-i-got-started-with-rust/
+[cmr]: http://cmr.github.io/blog/2013/06/23/how-i-got-started-with-rust/
