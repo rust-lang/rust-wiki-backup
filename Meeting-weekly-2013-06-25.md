@@ -91,9 +91,9 @@ attending: jclements, tkuehn, dherman, eston, azita, brson, toddaaro, ecr, bblum
 - sully: we want to provide libs that people can use and not cry
 - p: cell probably needs to grow dynamic borrowing anyway. we can add it to cell and see if it's distasteful. 
 - bb: I'm pretty sure cell already has dynamic borrowing.
-- p: knid of feels like ML ref cells.
+- p: kind of feels like ML ref cells.
 - f: but... can we get mail on this?
-- p: okay. actually, it does make it *quite* similar to ML. mutability only through cells or thrrough mutable local vars.
+- p: okay. actually, it does make it *quite* similar to ML. mutability only through cells or through mutable local vars.
 
 ## Iterators
 
