@@ -74,11 +74,11 @@ attending: jclements, tkuehn, dherman, eston, azita, brson, toddaaro, ecr, bblum
 - b: can't hoist out into all slots?
 - bb: no, doesn't fit with existing type system
 - p: i think &mut plays a very special rule in the borrow-checker. it knows deeply about &mut, that it's affine, that it's the only owner, and so it can track unique paths, just as it can with unique pointers. wouldn't work as a library. 
-& - aliasable, non-owning, immutable
-&mut - non-aliasable, non-owning, mutable
-~ - non-aliasable, owning, mutable, 
+  - `&` - aliasable, non-owning, immutable
+  - `&mut` - non-aliasable, non-owning, mutable
+  - `~` - non-aliasable, owning, mutable, 
 all distinct and important rules. &mut is the only way to have something that's non-aliasable but mutable.
-...discussion about what's the most awesome thing about &mut....
+- ...discussion about what's the most awesome thing about &mut....
 - p: even to make slot work, it's critical that we have this. it has to be aliasable and non-mutable.
 - p: I can talk about iterators
 - felix: I needed the concrete version of this, so... could you send out mail on this
