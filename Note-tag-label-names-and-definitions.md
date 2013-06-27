@@ -48,14 +48,14 @@ meaning of the label and does not think it is self-evident.
 | A-typesystem             | put label description here                        |
 | A-versioning             | put label description here                        |
 | A-windows                | Related to Microsoft Windows operating system     |
-|:------------------------:|:-------------------------------------------------:|
+|                          |                                                   |
 | B-RFC                    | Blocked on a Request-for-Comment                  |
 | B-clarifying             | put label description here                        |
 | B-reproduce              | Blocked on a need to reproduce problem locally    |
-|:------------------------:|:-------------------------------------------------:|
+|                          |                                                   |
 | E-easy                   | Effort: easy   |
 | E-hard                   | Effort: hard   |
-|:------------------------:|:-------------------------------------------------:|
+|                          |                                                   |
 | I-ICE                    | Importance: error internal to rustc               |
 | I-cleanup                | Importance: Internal source code cleanup          |
 | I-completion             | ? |
@@ -66,5 +66,4 @@ meaning of the label and does not think it is self-evident.
 | I-slow                   | Importance: slow (in compile or running time)     |
 | I-wishlist               | Importance: would be nice but can do without      |
 | I-wrong                  | Importance: behavior does not match specification |
-|:------------------------:|:-------------------------------------------------:|
-| metabug                  | ? |
+|                          |                                                   || metabug                  | ? |
