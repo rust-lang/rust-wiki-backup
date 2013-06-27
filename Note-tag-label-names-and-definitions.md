@@ -7,11 +7,9 @@ self-evident).
 If the meaning is a "?", then Felix did not immediately know the
 meaning of the label and does not think it is self-evident.
 
-| Label                      |               Meaning                           |
+| Label                    |               Meaning                             |
 |:------------------------:|:-------------------------------------------------:|
-|                          |                                                   |
 | *AREA TAGS*              |                                                   |
-|                          |                                                   |
 | A-an-interesting-project | A self-contained independent project              |
 | A-android                | Related to Android mobile device OS               |
 | A-attributes             | Issues with Rust meta-data attributes             |
@@ -51,17 +49,14 @@ meaning of the label and does not think it is self-evident.
 | A-typesystem             | put label description here                        |
 | A-versioning             | put label description here                        |
 | A-windows                | Related to Microsoft Windows operating system     |
-|                          |                                                   |
 | *BLOCKER TAGS*           |                                                   |
 | B-RFC                    | Blocked on a Request-for-Comment                  |
 | B-clarifying             | put label description here                        |
 | B-reproduce              | Blocked on a need to reproduce problem locally    |
-|                          |                                                   |
 | *EFFORT TAGS*            |                                                   |
-| E-easy                   | Effort: easy   |
-| E-hard                   | Effort: hard   |
+| E-easy                   | Effort: easy                                      |
+| E-hard                   | Effort: hard                                      |
 | *IMPORTANCE TAGS*        |                                                   |
-|                          |                                                   |
 | I-ICE                    | Importance: error internal to rustc               |
 | I-cleanup                | Importance: Internal source code cleanup          |
 | I-completion             | ? |
@@ -73,4 +68,4 @@ meaning of the label and does not think it is self-evident.
 | I-wishlist               | Importance: would be nice but can do without      |
 | I-wrong                  | Importance: behavior does not match specification |
 | *uncategorized tags*     |                                                   |
-|                          |                                                   || metabug                  | ? |
+| metabug                  | ? |
