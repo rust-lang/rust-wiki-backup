@@ -66,7 +66,7 @@ This is Tim's attempt to come up with a schedule for finishing rustpkg, with a p
 
 6. Teach pkg.rs how to execute the default build logic (#6401)
 
-   ~~Due: 2013-05-24~~ Done pending #7403
+   ~~Due: 2013-05-24~~ Done ~~pending #7403~~
 
 6. Commands should work without an explicit package name (#6405)
       * build and install, to start with
