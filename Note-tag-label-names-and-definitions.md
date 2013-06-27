@@ -51,13 +51,13 @@ meaning of the label and does not think it is self-evident.
 | A-typesystem             | put label description here                        |
 | A-versioning             | put label description here                        |
 | A-windows                | Related to Microsoft Windows operating system     |
-| *BLOCKER TAGS*           |                                                   |
 |                          |                                                   |
+| *BLOCKER TAGS*           |                                                   |
 | B-RFC                    | Blocked on a Request-for-Comment                  |
 | B-clarifying             | put label description here                        |
 | B-reproduce              | Blocked on a need to reproduce problem locally    |
-| *EFFORT TAGS*            |                                                   |
 |                          |                                                   |
+| *EFFORT TAGS*            |                                                   |
 | E-easy                   | Effort: easy   |
 | E-hard                   | Effort: hard   |
 | *IMPORTANCE TAGS*        |                                                   |
