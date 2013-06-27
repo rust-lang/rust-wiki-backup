@@ -7,8 +7,10 @@ self-evident).
 If the meaning is a "?", then Felix did not immediately know the
 meaning of the label and does not think it is self-evident.
 
-| *AREA TAGS LABELS*       |               Meaning                             |
+| *TAGS LABELS*            |               Meaning                             |
 |:------------------------:|:-------------------------------------------------:|
+|                          |                                                   |
+| *AREA TAGS LABELS*       |               Meaning                             |
 | A-an-interesting-project | A self-contained independent project              |
 | A-android                | Related to Android mobile device OS               |
 | A-attributes             | Issues with Rust meta-data attributes             |
