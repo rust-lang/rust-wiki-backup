@@ -50,18 +50,15 @@ meaning of the label and does not think it is self-evident.
 | A-windows                | Related to Microsoft Windows operating system     |
 |                          |                                                   |
 | *BLOCKER TAGS*           |               Meaning                             |
-|:------------------------:|:-------------------------------------------------:|
 | B-RFC                    | Blocked on a Request-for-Comment                  |
 | B-clarifying             | put label description here                        |
 | B-reproduce              | Blocked on a need to reproduce problem locally    |
 |                          |                                                   |
 | *EFFORT TAGS*            |               Meaning                             |
-|:------------------------:|:-------------------------------------------------:|
 | E-easy                   | Effort: easy                                      |
 | E-hard                   | Effort: hard                                      |
 |                          |                                                   |
 | *IMPORTANCE TAGS*        |               Meaning                             |
-|:------------------------:|:-------------------------------------------------:|
 | I-ICE                    | Importance: error internal to rustc               |
 | I-cleanup                | Importance: Internal source code cleanup          |
 | I-completion             | ? |
@@ -74,5 +71,4 @@ meaning of the label and does not think it is self-evident.
 | I-wrong                  | Importance: behavior does not match specification |
 |                          |                                                   |
 | *uncategorized tags*     |               Meaning                             |
-|:------------------------:|:-------------------------------------------------:|
 | metabug                  | ? |
