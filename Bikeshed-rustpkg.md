@@ -71,7 +71,7 @@ This is Tim's attempt to come up with a schedule for finishing rustpkg, with a p
 6. Commands should work without an explicit package name (#6405)
       * build and install, to start with
 
-   Due: 2013-05-25
+   ~~Due: 2013-05-25~~ Done pending #7419
 
 7. Implement (or test) package database	and ability to list, add, remove packages
       * test case:
