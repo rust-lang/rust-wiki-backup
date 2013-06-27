@@ -2,7 +2,7 @@ This page covers releases in more detail than the bullet-point list given in the
 
 ## 0.7 July 2013
 
-## Cloning vs. copying
+### Cloning vs. copying
 
 The `copy` keyword is being removed in favor of traits. Explicit copying is now performed with the `clone` method of the `Clone` trait, which can automatically be derived with `#[deriving(Clone)]`. `Clone` is part of the Rust prelude so is always in scope.
 
@@ -21,6 +21,17 @@ let your_token = my_token.clone();
 https://mail.mozilla.org/pipermail/rust-dev/2013-June/004364.html  
 http://thread.gmane.org/gmane.comp.lang.rust.devel/4528  
 http://journal.stuffwithstuff.com/2013/01/13/iteration-inside-and-out/  
+
+### rustpkg
+
+While rustpkg is still in an experimental state, there are a number of improvements; see the rustpkg manual for more details.
+* rustpkg uses a URL-like package ID to specify a local or remote package, and has the ability to download remote packages from github.
+* rustpkg infers package IDs from directory structure; packages need no longer declare their identity explicitly
+* Package IDs can have explicit versions attached.
+* Package scripts (pkg.rs) are no longer required; rustpkg infers crates to build based on reasonable defaults.
+* Package scripts can explicitly invoke the default build logic.
+* rustpkg requires a specific directory structure for workspaces.
+* rustpkg infers dependencies from `extern mod` directives, and doesn't require `-L` flags on the command line for finding libraries.
 
 ### Numeric traits
 
