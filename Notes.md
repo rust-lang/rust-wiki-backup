@@ -11,6 +11,7 @@ Listing of notes for developers working on the Rust compiler and tools.
 * [[Note development roadmap]]
 * [[Note compiler snapshots]]
 * [[Note git workflow]]
+* [[Note tag label names and definitions]]
 * [[Note style guide]]
 * [[Note build system]] - Makefile targets
 * [[Note bors usage]] - Instructing bors to build, check, and merge on github
