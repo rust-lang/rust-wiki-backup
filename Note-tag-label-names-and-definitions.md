@@ -25,7 +25,7 @@ meaning of the label and does not think it is self-evident.
 | A-ffi                    | Foreign Function Interface i.e. interop with C/C++|
 | A-freebsd                | Related to FreeBSD operating system               |
 | A-frontend               | ? |
-| A-grammar                | Issues with the formal grammar of Rust            |
+| A-grammar                | Grammar spec (not *implementation*; see A-parser) |
 | A-iOS                    | Related to Apple iOS device operating system      |
 | A-infrastructure         | Mozilla-hosted services: buildbot, website, etc   |
 | A-instrumentation        | Rust library / object code instrumentation        |
@@ -36,20 +36,20 @@ meaning of the label and does not think it is self-evident.
 | A-llvm                   | Related to LLVM IR and code-generation library    |
 | A-macos                  | Related to Apple Mac OS X operating system        |
 | A-metadata               | Crate-embedded data for reflection/compilation    |
-| A-parser                 | put label description here                        |
-| A-pkg                    | put label description here                        |
-| A-pretty                 | put label description here                        |
-| A-regions                | put label description here                        |
-| A-resolve                | put label description here                        |
-| A-runtime                | put label description here                        |
-| A-rustdoc                | put label description here                        |
-| A-rusti                  | put label description here                        |
-| A-syntaxext              | put label description here                        |
-| A-testsuite              | put label description here                        |
-| A-tools                  | put label description here                        |
-| A-traits                 | put label description here                        |
-| A-typesystem             | put label description here                        |
-| A-versioning             | put label description here                        |
+| A-parser                 | Parser impl. (not *specification*; see A-grammar) |
+| A-pkg                    | Issues with package management e.g. rustpkg       |
+| A-pretty                 | Pretty-printing rust source via `rustc --pretty`  |
+| A-regions                | Lifetime semantics; borrow-checker (aka borrowck) |
+| A-resolve                | Identifier/name resolution                        |
+| A-runtime                | Task scheduler, memory management, core I/O       |
+| A-rustdoc                | API documentation extraction and generation tool  |
+| A-rusti                  | rusti is a REPL-like dynamic Rust interpreter     |
+| A-syntaxext              | syntax extensions aka macros i.e. `macro_rules!`  |
+| A-testsuite              |                                                   |
+| A-tools                  | ? |
+| A-traits                 | Trait system provides bounded polymorphism + OOP  |
+| A-typesystem             | Rust's static type system, type check (aka typeck)|
+| A-versioning             | Version numbers/handling for language + libraries |
 | A-windows                | Related to Microsoft Windows operating system     |
 |                          |                                                   |
 | *BLOCKER TAGS*           |               Meaning                             |
