@@ -22,6 +22,7 @@ meaning of the label and does not think it is self-evident.
 | A-diagnostics            | ? |
 | A-docs                   | Issues with tutorials, manuals, and API docs      |
 | A-driver                 | Issues with wrapper around rustc/rustdoc/etc      |
+| A-ffi                    | Foreign Function Interface i.e. interop with C/C++|
 | A-freebsd                | Related to FreeBSD operating system               |
 | A-frontend               | ? |
 | A-grammar                | Issues with the formal grammar of Rust            |
