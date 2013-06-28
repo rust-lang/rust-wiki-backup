@@ -7,7 +7,7 @@ We coordinate through [email][rust-dev], [IRC][pound-rust], and the GitHub [issu
 [pound-rust]: http://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust
 [rust-dev]: https://mail.mozilla.org/listinfo/rust-dev
 [r/rust]: http://reddit.com/r/rust
-[issues]: http://github.com/mozilla/rust/issues
+[issue]: http://github.com/mozilla/rust/issues
 
 ## Picking something to do
 
