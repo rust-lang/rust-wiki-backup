@@ -8,7 +8,7 @@ If the meaning is a "?", then Felix did not immediately know the
 meaning of the label and does not think it is self-evident.
 
 | *TAGS LABELS*            |               Meaning                             |
-|:------------------------:|:-------------------------------------------------:|
+|:-------------------------|:--------------------------------------------------|
 |                          |                                                   |
 | *AREA TAGS LABELS*       |               Meaning                             |
 | A-an-interesting-project | A self-contained independent project              |
