@@ -2,6 +2,13 @@ You want to contribute to Rust? Frankly, you've made an excellent decision. Rust
 
 The way [most people][cmr] seem to get involved is by simply trying to write Rust code. Inevitably they hit a bug or missing feature, at which point they are compelled to [[write a patch|Note development policy]].
 
+We coordinate through [email][rust-dev], [IRC][pound-rust], and the GitHub [issue] tracker.
+
+[pound-rust]: http://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust
+[rust-dev]: https://mail.mozilla.org/listinfo/rust-dev
+[r/rust]: http://reddit.com/r/rust
+[issues]: http://github.com/mozilla/rust/issues
+
 ## Picking something to do
 
 Another way to get involved is to look through the [issue tracker] for issues labeled with "E-easy", "I-enhancement", "I-wishlist", and/or "A-an-interesting-project". Unassigned bugs are always fair game. Assigned bugs that don't seem to be getting worked on actively can be fair game, but always check with the bug owner first in that case.
