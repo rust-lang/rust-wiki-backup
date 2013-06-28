@@ -13,6 +13,7 @@
 [Manual](http://doc.rust-lang.org/doc/rust.html) ([PDF](http://doc.rust-lang.org/doc/rust.pdf))  
 [Standard library](http://doc.rust-lang.org/doc/std/index.html)  
 [Extra](http://doc.rust-lang.org/doc/extra/index.html)
+
 [Package manager](http://doc.rust-lang.org/doc/rustpkg.html)
 
 [borrowed pointers]: http://doc.rust-lang.org/doc/tutorial-borrowed-ptr.html
