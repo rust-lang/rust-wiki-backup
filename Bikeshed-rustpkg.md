@@ -109,7 +109,7 @@ This is Tim's attempt to come up with a schedule for finishing rustpkg, with a p
    Due: 2013-06-07
 
 8. Finish implementing all other commands (#7242)
-       * do, info, prefer, test, uninstall, unprefer
+       * do, fetch, info, prefer, test, uninstall, unprefer
 
    Due: 2013-06-14
 
