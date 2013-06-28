@@ -8,7 +8,7 @@ Another way to get involved is to look through the [issue tracker] for issues la
 
 Outstanding bugs or feature requests in Rust often have a corresponding test in the [[test suite|Note testsuite]] that doesn't yet pass. One good way to jump into Rust development is to look for files in the test/run-pass directory containing the string `xfail-test`. Those tests all correspond to bugs that need to be fixed, features that someone needs to finish, or sometimes tests that need deleting.
 
-The source is also littered with hundreds of comments marked with 'FIXME' and 'TODO'. In Rust, FIXME comments come with an issue number; sometimes these refer to issues that may be resolved easily.
+The source is also littered with hundreds of comments marked with 'FIXME' and 'XXX'. In Rust, FIXME comments come with an issue number; sometimes these refer to issues that may be resolved easily.
 
 If in doubt, ask on IRC. Somebody will surely have a task that needs to be done.
 
