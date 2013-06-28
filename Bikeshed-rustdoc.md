@@ -15,6 +15,9 @@ rustdoc currently needs some love, and I'm going to give it some.
 - Interactive browser interface (live search, toggle platform cfg's)
 - every symbol should be able to be linked to its documentation (eg, types, methods, functions)
 - new attribute that instructs rustdoc to inline a nested module into its parent's documentation
+- document macros
+- navigate visibility graph and don't generate docs for stuff which isn't visible
+- document macro-generated code
 - your feature requests here!
 
 # New bugs
