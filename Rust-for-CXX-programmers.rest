@@ -132,12 +132,12 @@ Concurrency
 -----------
 
 Rust does not allow sharing mutable data between threads, so it isn't
-vulnerable to races for in-memory data. Instead of sharing data, message
+vulnerable to races for in-memory data (data races). Instead of sharing data, message
 passing is used instead - either by copying data, or by moving owned pointers
 between tasks.
 
 There are `several scheduling models available
-<http://static.rust-lang.org/doc/0.5/core/task.html#enum-schedmode>`_, which
+<http://static.rust-lang.org/doc/0.6/core/task.html#enum-schedmode>`_, which
 allows for either mapping tasks N:N with OS threads, or using N:M scheduling
 like Go and Erlang for lightweight concurrency.
 
@@ -166,7 +166,7 @@ be a code path where they *could* be read first. All possible code paths in a
 function or expression must also return a correctly typed value, or fail.
 
 This also means indexing a string/vector will do bounds checking like
-`vector<T>::at()`.
+`vector<T>::at()` (though there are unsafe functions in `vec::raw` that allow bypassing the bounds checks)
 
 Methods
 -------
@@ -193,7 +193,7 @@ For an example, the `PriorityQueue` struct in the standard library has a
 `PriorityQueue::from_vec(xs).to_sorted_vec()` an in-place heap sort.
 
 The `~self` and `@self` forms are available for objects allocated as `~` or `@`
-respectively.
+respectively, but you usually want `&self`.
 
 Parametric polymorphism
 -----------------------
