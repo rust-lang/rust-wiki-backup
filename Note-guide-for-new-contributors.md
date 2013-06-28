@@ -1,4 +1,4 @@
-You want to contribute to Rust? Frankly, you've made an excellent decision. Rust is developed by a small and inclusive community that takes *very kindly* to strangers. You're going to have a good time.
+You want to contribute to Rust? Frankly, you've made an excellent decision. Rust is developed by a small and inclusive community that takes *very kindly* to strangers. You are going to have a good time.
 
 The way [most people][cmr] seem to get involved is by simply trying to write Rust code. Inevitably they hit a bug or missing feature, at which point they are compelled to [[write a patch|Note development policy]].
 
