@@ -9,17 +9,15 @@
 
 #### In-development (git master)
 
-[Tutorial](http://doc.rust-lang.org/doc/tutorial.html)  
-[Manual](http://doc.rust-lang.org/doc/rust.html) ([PDF](http://doc.rust-lang.org/doc/rust.pdf))  
-[Standard library](http://doc.rust-lang.org/doc/std/index.html)  
-[Extra](http://doc.rust-lang.org/doc/extra/index.html)
-
-[Package manager](http://doc.rust-lang.org/doc/rustpkg.html)
-
-[borrowed pointers]: http://doc.rust-lang.org/doc/tutorial-borrowed-ptr.html
-[tasks]: http://doc.rust-lang.org/doc/tutorial-tasks.html
-[macros]: http://doc.rust-lang.org/doc/tutorial-macros.html
-[FFI]: http://doc.rust-lang.org/doc/tutorial-ffi.html
+* [Tutorial](http://doc.rust-lang.org/doc/tutorial.html)  
+* [Manual](http://doc.rust-lang.org/doc/rust.html) ([PDF](http://doc.rust-lang.org/doc/rust.pdf))  
+* [Standard library](http://doc.rust-lang.org/doc/std/index.html)  
+* [Extra](http://doc.rust-lang.org/doc/extra/index.html)
+* [Package manager](http://doc.rust-lang.org/doc/rustpkg.html)
+* [borrowed pointers](http://doc.rust-lang.org/doc/tutorial-borrowed-ptr.html)
+* [tasks](http://doc.rust-lang.org/doc/tutorial-tasks.html)
+* [macros](http://doc.rust-lang.org/doc/tutorial-macros.html)
+* [FFI](http://doc.rust-lang.org/doc/tutorial-ffi.html)
 
 ## FAQs
 
