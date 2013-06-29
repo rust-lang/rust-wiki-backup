@@ -51,10 +51,10 @@ The test runner also understands a simple form of benchmark execution. Benchmark
 The type signature of a benchmark function differs from a unit test: it takes a mutable reference to type `test::BenchHarness`. Inside the benchmark function, any time-variable or "setup" code should execute first, followed by a call to `iter` on the benchmark harness, passing a closure that contains the portion of the benchmark you wish to actually measure the per-iteration speed of. For example:
 
 ```
-extern mod std;
+extern mod extra;
 
 #[bench]
-fn bench_sum_1024_ints(b: &mut std::test::BenchHarness) {
+fn bench_sum_1024_ints(b: &mut extra::test::BenchHarness) {
     let v = vec::from_fn(1024, |n| n);
     do b.iter {
         v.foldl(|a, b| *a + *b);
