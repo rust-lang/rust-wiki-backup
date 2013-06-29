@@ -3,7 +3,7 @@ Listing of notes for developers working on the Rust compiler and tools.
 ## Process and workflow notes
 
 * [[Note guide for new contributors]]
-* [[Note getting started developing Rust]]
+* [[Note getting started developing Rust]] -- How to **Build Rust** on your platform
 * [[Note development policy]] -- **please read this**
 * [[Note RFC process]] -- **read this for larger changes**
 * [[Note wiki conventions]]
