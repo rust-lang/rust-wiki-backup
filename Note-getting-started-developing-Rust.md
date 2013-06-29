@@ -119,6 +119,8 @@ See [[building for Android|Doc-building-for-android]]
 
 ## Downloading and building Rust
 
+Before you get started, you should quickly review the [Build system notes here](note-build-system) which describes the Make targets among other things.
+
     git clone git://github.com/mozilla/rust.git
     cd rust
     ./configure   # this may take a while if this is your first time, as it downloads LLVM
