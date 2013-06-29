@@ -21,4 +21,6 @@ Common triples are `x86_64-unknown-linux-gnu`, `i686-unknown-linux-gnu`, `x86_64
 * `check-stage1-T-x86_64-unknown-linux-gnu-H-x86_64-unknown-linux-gnu-std` - Test stage1 std for x86_64 linux
 * `check-stage1-T-i686-unknown-linux-gnu-H-x86_64-unknown-linux-gnu-std` - Test stage1 std for i686 linux targets, built by the x86_64 host compiler (cross compile x86_64->i686)
 
+back to [[Getting Started Developing Rust|Note-getting-started-developing-Rust]]
+
 See also the notes on the Rust [[test suite|Note testsuite]].
