@@ -16,6 +16,8 @@ let your_token = my_token.clone();
 
 `Clone` makes shallow copies of managed pointers and other shared pointer types like `Rc` and `ARC`. For deep copies use the `DeepClone` trait and the `deep_clone` method.
 
+Note that `copy` has not been removed from the language yet and there may still be some types that don't implement `Clone`.
+
 ### Iterators
 
 Rust is in the middle of a transition to a new iterator mechanism. Instead of using higher-order functions like Ruby ("internal iterators") Rust will use `Iterator` types, like Java ("external iterators"). There was an [excellent blog post][iterators] recently exploring the pros and cons of each. External iterators are more flexible and their code is believed to be faster to generate.
