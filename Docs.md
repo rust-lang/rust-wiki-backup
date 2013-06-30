@@ -15,6 +15,7 @@
 * [Extra library](http://doc.rust-lang.org/doc/extra/index.html)
 * [Package manager](http://doc.rust-lang.org/doc/rustpkg.html)
 * [Borrowed pointers](http://doc.rust-lang.org/doc/tutorial-borrowed-ptr.html)
+* [Containers and iterators](http://doc.rust-lang.org/doc/tutorial-container.html)
 * [Tasks](http://doc.rust-lang.org/doc/tutorial-tasks.html)
 * [Macros](http://doc.rust-lang.org/doc/tutorial-macros.html)
 * [FFI](http://doc.rust-lang.org/doc/tutorial-ffi.html)
