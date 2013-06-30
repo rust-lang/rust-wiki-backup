@@ -2,6 +2,8 @@ This page covers releases in more detail than the bullet-point list given in the
 
 ## 0.7 July 2013
 
+This release didn't have many breaking language changes that require lengthy explanation beyond the short release notes, but there were many improvements to the libraries this time, and it feels like the standard library is beginning to reflect the final design.
+
 ### Cloning vs. copying
 
 The `copy` keyword is being removed in favor of traits. Explicit copying is now performed with the `clone` method of the `Clone` trait, which can automatically be derived with `#[deriving(Clone)]`. `Clone` is part of the Rust prelude so is always in scope.
@@ -50,6 +52,18 @@ While rustpkg is still in an experimental state, there are a number of improveme
 * rustpkg infers dependencies from `extern mod` directives, and doesn't require `-L` flags on the command line for finding libraries.
 
 ### Numeric traits
+
+Rust now has a proper numerical tower, defined in `std::num`. All numeric types implement trait `Num`, which in turn inherits from the operator traits, `Neg`, `Add`, `Eq`, as well as the `Zero` and `One` traits.
+
+```
+pub trait Num: Eq + Zero + One
+             + Neg<Self>
+             + Add<Self,Self>
+             + Sub<Self,Self>
+             + Mul<Self,Self>
+             + Div<Self,Self>
+             + Rem<Self,Self> {}
+```
 
 ## 0.6 April 2013
 
