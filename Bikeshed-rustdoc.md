@@ -1,4 +1,4 @@
-rustdoc currently needs some love, and I'm going to give it some.
+rustdoc currently needs some love, and I (cmr) am going to give it some.
 
 # Architecture
 
