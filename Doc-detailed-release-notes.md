@@ -44,7 +44,7 @@ Further reading:
 
 Rust now has a proper numerical tower, defined in [`std::num`](http://static.rust-lang.org/doc/std/num.html). All numeric types implement trait `Num`, which in turn inherits from the operator traits, `Neg`, `Add`, `Eq`, as well as the `Zero` and `One` traits. `Num` itself defines no methods.
 
-```
+```rust
 pub trait Num: Eq + Zero + One
              + Neg<Self>
              + Add<Self,Self>
@@ -54,7 +54,16 @@ pub trait Num: Eq + Zero + One
              + Rem<Self,Self> {}
 ```
 
-`Signed` types extend `Num` with methods specific to signed types, such as `abs`.
+`Signed` types extend `Num` with methods specific to signed types, such as `abs`, and there's a corresponding `Unsigned` trait (that defines no new methods).
+
+The `Real` trait then defines the the interface required of real numbers, which inherits from `Signed` as well as a number of traits that define common math operations: `Fractional`, `Algebraic`, `Trigonometric`, and `Hyperbolic`. `RealExt` further defines less common operations, the gamma and bessel functions.
+
+Then there are a number of traits specific to primitive numeric types:
+
+* `Bounded` types have a minimum and maximum value.
+* `Bitwise` inherits from the bit-twiddling operators, `BitAnd`, `BitOr`, `BitXor`, `Shl`, `Shr`, as well as `Not`, and further defines several methods for counting and querying bits.
+* `Primitive` again collects a number of traits that are implemented by the primitive types.
+* `Int` and `Float` traits define the interface to machine integers and floats.
 
 ### rustpkg
 
