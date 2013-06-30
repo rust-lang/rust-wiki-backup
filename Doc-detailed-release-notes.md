@@ -18,9 +18,23 @@ let your_token = my_token.clone();
 
 ### Iterators
 
-https://mail.mozilla.org/pipermail/rust-dev/2013-June/004364.html  
-http://thread.gmane.org/gmane.comp.lang.rust.devel/4528  
-http://journal.stuffwithstuff.com/2013/01/13/iteration-inside-and-out/  
+Rust is in the middle of a transition to a new iterator mechanism. Instead of using higher-order functions like Ruby ("internal iterators") Rust will use `Iterator` types, like Java ("external iterators"). There was an [excellent blog post][iterators] recently exploring the pros and cons of each. External iterators are more flexible and their code is believed to be faster to generate.
+
+Note that the `for` protocol is still using the old iteration protocol, but it will be updated in the next release. For compatibility with `for`, `Iterator`s have an `advance` method that converts them to the old-style.
+
+```
+let v = [0, 1];
+for v.iter().advance |i| { ... }
+```
+
+There is a new [tutorial][containers] on this topic.
+
+Further reading:
+* https://mail.mozilla.org/pipermail/rust-dev/2013-June/004364.html  
+* http://thread.gmane.org/gmane.comp.lang.rust.devel/4528  
+
+[iterators]: http://journal.stuffwithstuff.com/2013/01/13/iteration-inside-and-out/  
+[containers]: http://doc.rust-lang.org/doc/tutorial-container.html
 
 ### rustpkg
 
