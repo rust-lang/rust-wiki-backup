@@ -32,8 +32,8 @@ for v.iter().advance |i| { ... }
 There is a new [tutorial][containers] on this topic.
 
 Further reading:
-* https://mail.mozilla.org/pipermail/rust-dev/2013-June/004364.html  
-* http://thread.gmane.org/gmane.comp.lang.rust.devel/4528  
+* https://mail.mozilla.org/pipermail/rust-dev/2013-June/004364.html
+* https://mail.mozilla.org/pipermail/rust-dev/2013-June/004599.html
 
 [iterators]: http://journal.stuffwithstuff.com/2013/01/13/iteration-inside-and-out/  
 [containers]: http://doc.rust-lang.org/doc/tutorial-container.html
