@@ -8,7 +8,7 @@ This release didn't have many breaking language changes that require lengthy exp
 
 The `copy` keyword is being removed in favor of traits. Explicit copying is now performed with the `clone` method of the `Clone` trait, which can automatically be derived with `#[deriving(Clone)]`. `Clone` is part of the Rust prelude so is always in scope.
 
-```
+```rust
 #[deriving(Clone)]
 struct PopsicleToken;
 
@@ -26,7 +26,7 @@ Rust is in the middle of a transition to a new iterator mechanism. Instead of us
 
 Note that the `for` protocol is still using the old iteration protocol, but it will be updated in the next release. For compatibility with `for`, `Iterator`s have an `advance` method that converts them to the old-style.
 
-```
+```rust
 let v = [0, 1];
 for v.iter().advance |i| { ... }
 ```
@@ -40,20 +40,9 @@ Further reading:
 [iterators]: http://journal.stuffwithstuff.com/2013/01/13/iteration-inside-and-out/  
 [containers]: http://doc.rust-lang.org/doc/tutorial-container.html
 
-### rustpkg
-
-While rustpkg is still in an experimental state, there are a number of improvements; see the rustpkg manual for more details.
-* rustpkg uses a URL-like package ID to specify a local or remote package, and has the ability to download remote packages from github.
-* rustpkg infers package IDs from directory structure; packages need no longer declare their identity explicitly
-* Package IDs can have explicit versions attached.
-* Package scripts (pkg.rs) are no longer required; rustpkg infers crates to build based on reasonable defaults.
-* Package scripts can explicitly invoke the default build logic.
-* rustpkg requires a specific directory structure for workspaces.
-* rustpkg infers dependencies from `extern mod` directives, and doesn't require `-L` flags on the command line for finding libraries.
-
 ### Numeric traits
 
-Rust now has a proper numerical tower, defined in `std::num`. All numeric types implement trait `Num`, which in turn inherits from the operator traits, `Neg`, `Add`, `Eq`, as well as the `Zero` and `One` traits.
+Rust now has a proper numerical tower, defined in [`std::num`](http://static.rust-lang.org/doc/std/num.html). All numeric types implement trait `Num`, which in turn inherits from the operator traits, `Neg`, `Add`, `Eq`, as well as the `Zero` and `One` traits. `Num` itself defines no methods.
 
 ```
 pub trait Num: Eq + Zero + One
@@ -64,6 +53,19 @@ pub trait Num: Eq + Zero + One
              + Div<Self,Self>
              + Rem<Self,Self> {}
 ```
+
+`Signed` types extend `Num` with methods specific to signed types, such as `abs`.
+
+### rustpkg
+
+While rustpkg is still in an experimental state, there are a number of improvements; see the rustpkg manual for more details.
+* rustpkg uses a URL-like package ID to specify a local or remote package, and has the ability to download remote packages from github.
+* rustpkg infers package IDs from directory structure; packages need no longer declare their identity explicitly
+* Package IDs can have explicit versions attached.
+* Package scripts (pkg.rs) are no longer required; rustpkg infers crates to build based on reasonable defaults.
+* Package scripts can explicitly invoke the default build logic.
+* rustpkg requires a specific directory structure for workspaces.
+* rustpkg infers dependencies from `extern mod` directives, and doesn't require `-L` flags on the command line for finding libraries.
 
 ## 0.6 April 2013
 
