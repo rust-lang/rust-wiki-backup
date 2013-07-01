@@ -12,6 +12,7 @@ When you're done with a bikeshed page, please either abandon it or move it to a 
 * [[Bikeshed pattern matching syntax]]
 * [[Bikeshed rustpkg]]
 * [[Bikeshed task reuse]]
+* [[Bikeshed rustdoc]]
 
 ## Abandoned
 
