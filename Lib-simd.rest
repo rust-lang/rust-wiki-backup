@@ -144,3 +144,7 @@ For Common Lisp, there are sb-simd_ and cl-simd_.
 
 .. _sb-simd: http://common-lisp.net/projects/sb-simd/
 .. _cl-simd: https://github.com/angavrilov/cl-simd
+
+`Dart SIMD API`.
+
+.. _Dart SIMD API: http://news.dartlang.org/2013/03/dart-vm-uses-more-cpu-features-for.html
