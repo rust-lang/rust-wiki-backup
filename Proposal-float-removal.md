@@ -1,0 +1,7 @@
+I propose to remove the `float` type from the language.
+
+`float` is defined by the manual as "the largest floating-point type that is directly supported by hardware on the target machine," but this isn't actually true (x87 supports 80-bit floats). I've seen it advertised as the "fastest float for the target," but performance also needs to include cache and bus pressure as well, not just speed of manipulation, and often the "fasted" in terms of manipulation is going to be some SIMD type using a coprocessor, and the situation gets even trickier if/when we have Rust being used for GPGPU kernels (LLVM has an R600 (AMD GPU) backend) or accelerator chips (a la Epiphany (parallella)). Furthermore it can cause confusion for incoming C/C++ programmers who would expect `float` to be an `f32`.
+
+Variable width floating point code is also dangerous - frequently code has implicit assumptions about accuracy. Using floating point correctly is already hard enough, introducing variable width types makes it even harder.
+
+I would remove `float` entirely, instead using `f32` and `f64` exclusively, also removing the `f` suffix for float literals. This allows user code to typedef `float` to what they want.
