@@ -18,6 +18,7 @@ rustdoc currently needs some love, and I (cmr) am going to give it some.
 - document macros
 - navigate visibility graph and don't generate docs for stuff which isn't visible
 - document macro-generated code
+- link to source
 - your feature requests here!
 
 # New bugs
