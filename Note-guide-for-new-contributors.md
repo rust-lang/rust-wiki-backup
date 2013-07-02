@@ -10,6 +10,10 @@ We coordinate through [email][rust-dev], [IRC][pound-rust], and the GitHub [issu
 [r/rust]: http://reddit.com/r/rust
 [issue]: http://github.com/mozilla/rust/issues
 
+## Hacking on Rust
+
+Before hacking, read some tips on [[getting started|Note-getting-started-developing-rust]] and the [[development policy|Note-development-policy]]. The [[Notes]] section on the wiki contains general wisdom about the code base from other developers.
+
 ## Picking something to do
 
 The simplest way is to look through the [issue tracker] for issues labeled with "E-easy", "I-enhancement", "I-wishlist", and/or "A-an-interesting-project". Unassigned bugs are always fair game. Assigned bugs that don't seem to be getting worked on actively can be fair game, but always check with the bug owner first in that case.
@@ -28,10 +32,6 @@ If in doubt, ask on IRC. Somebody will surely have a task that needs to be done.
 * Proofread the tutorial, ensuring it works as described with the relevant release of the compiler.
 
 Reddit has [more ideas still](http://www.reddit.com/r/rust/comments/1grj61/feed_us_some_low_hanging_fruit/).
-
-## Hacking on Rust
-
-Before hacking, read some tips on [[getting started|Note-getting-started-developing-rust]] and the [[development policy|Note-development-policy]]. The [[Notes]] section on the wiki contains general wisdom about the code base from other developers.
 
 [issue tracker]: http://github.com/mozilla/rust/issues
 [contributing]: https://github.com/mozilla/rust/blob/master/CONTRIBUTING.md
