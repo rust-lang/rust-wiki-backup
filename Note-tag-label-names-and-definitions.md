@@ -45,7 +45,7 @@ meaning of the label and does not think it is self-evident.
 | A-rusti                  | rusti is a REPL-like dynamic Rust interpreter     |
 | A-syntaxext              | syntax extensions aka macros i.e. `macro_rules!`  |
 | A-testsuite              |                                                   |
-| A-tools                  | Tools for hacking Rust (editors, profilers, etc)  |
+| A-tools                  | For Rust user: syntax highlighting, profiling, etc|
 | A-traits                 | Trait system provides bounded polymorphism + OOP  |
 | A-typesystem             | Rust's static type system, type check (aka typeck)|
 | A-versioning             | Version numbers/handling for language + libraries |
