@@ -15,15 +15,15 @@ meaning of the label and does not think it is self-evident.
 | A-attributes             | Issues with Rust meta-data attributes             |
 | A-build                  | Issues bootstrapping rust compiler and runtime    |
 | A-codegen                | Issues with rustc code generator                  |
-| A-concurrency            |                                                   |
-| A-debuginfo              |                                                   |
-| A-destructors            |                                                   |
-| A-diagnostics            | ? |
+| A-concurrency            | Scheduler, tasks, plus other concurrency idioms   |
+| A-debuginfo              | Debug meta-data for integration with `gdb`        |
+| A-destructors            | Issues with object destruction/finalization       |
+| A-diagnostics            | Error reporting (some overlap with A-lint)        |
 | A-docs                   | Issues with tutorials, manuals, and API docs      |
 | A-driver                 | Issues with wrapper around rustc/rustdoc/etc      |
 | A-ffi                    | Foreign Function Interface i.e. interop with C/C++|
 | A-freebsd                | Related to FreeBSD operating system               |
-| A-frontend               | ? |
+| A-frontend               | Issues with rustc frontend (`librustc::front::*`) |
 | A-grammar                | Grammar spec (not *implementation*; see A-parser) |
 | A-iOS                    | Related to Apple iOS device operating system      |
 | A-infrastructure         | Mozilla-hosted services: buildbot, website, etc   |
@@ -45,7 +45,7 @@ meaning of the label and does not think it is self-evident.
 | A-rusti                  | rusti is a REPL-like dynamic Rust interpreter     |
 | A-syntaxext              | syntax extensions aka macros i.e. `macro_rules!`  |
 | A-testsuite              |                                                   |
-| A-tools                  | ? |
+| A-tools                  | Tools for hacking Rust (editors, profilers, etc)  |
 | A-traits                 | Trait system provides bounded polymorphism + OOP  |
 | A-typesystem             | Rust's static type system, type check (aka typeck)|
 | A-versioning             | Version numbers/handling for language + libraries |
@@ -63,7 +63,7 @@ meaning of the label and does not think it is self-evident.
 | *IMPORTANCE TAGS*        |                                                   |
 | I-ICE                    | Importance: error internal to rustc               |
 | I-cleanup                | Importance: Internal source code cleanup          |
-| I-completion             | ? |
+| I-completion             | Importance: fill gaps in existing implementation  |
 | I-crash                  | Importance: Rust runtime/program is crashing      |
 | I-enhancement            | Importance: Potential tools/language enhancement  |
 | I-nominated              | Importance: Nominated for a milestone             |
@@ -73,4 +73,4 @@ meaning of the label and does not think it is self-evident.
 | I-wrong                  | Importance: behavior does not match specification |
 | &nbsp;                                                                       |
 | *uncategorized tags*     |                                                   |
-| metabug                  | ? |
+| metabug                  | Collects several related issues together          |
