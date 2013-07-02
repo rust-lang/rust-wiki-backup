@@ -17,7 +17,7 @@ meaning of the label and does not think it is self-evident.
 | A-codegen                | Issues with rustc code generator                  |
 | A-concurrency            | Scheduler, tasks, plus other concurrency idioms   |
 | A-debuginfo              | Debug meta-data for integration with `gdb`        |
-| A-destructors            | Destructors (scope-based; not [finalization][1])  |
+| A-destructors            | Destructors (static lifetime based; not [finalization][1])  |
 | A-diagnostics            | Error reporting (some overlap with A-lint)        |
 | A-docs                   | Issues with tutorials, manuals, and API docs      |
 | A-driver                 | Issues with wrapper around rustc/rustdoc/etc      |
