@@ -4,7 +4,7 @@ Is this your first time? Then perhaps you would like a to [[peruse the docs|Docs
 
 Want to contribute? [[We love that|Note guide for new contributors]].
 
-Rust is developed through an open process by folks who congregate in [#rust on irc.mozilla.org][pound-rust]. If you run into problems, IRC is a good place to ask for help.
+Rust is developed through an open process by kindly folks who congregate in [#rust on irc.mozilla.org][pound-rust]. If you run into problems, IRC is a good place to ask for help.
 
 Please follow some [[conventions|Note wiki conventions]] when editing this wiki.
 
