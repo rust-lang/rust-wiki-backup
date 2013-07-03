@@ -24,3 +24,8 @@ Bindings
 * Azure 2D graphics library: https://github.com/mozilla-servo/rust-azure/
 * OpenGL ES: https://github.com/mozilla-servo/rust-opengles
 * SDL: https://github.com/brson/rust-sdl
+
+Competitions
+------------
+
+* At least one finishing entry for the Matasano security challenges
