@@ -14,7 +14,7 @@ This is an archive of all the existing Rust release artifacts. Each release is s
 * [Core library docs][0.7-core]
 * [Standard library docs][0.7-std]
 
-
+[0.7-announce]: https://mail.mozilla.org/pipermail/rust-dev/2013-July/004667.html
 [0.7-notes]: https://github.com/mozilla/rust/blob/release-0.7/RELEASES.txt
 [0.7-tar]: http://static.rust-lang.org/dist/rust-0.7.tar.gz
 [0.7-tar-sig]: http://static.rust-lang.org/dist/rust-0.7.tar.gz.asc
