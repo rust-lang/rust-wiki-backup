@@ -66,12 +66,12 @@ let val1 = ...;
 let val2 = HasDtor { v1: &val1 }; // illegal
 ```
 
-P: everyone's surprised that you can put & in @
-B: I still don't see why we need it
-(G: I don't know either!)
-N: partly, it takes extra type rules to make it not-work, and it seems harmless
-N: I think the other use-cases are marginal, and you can get by with ~
-N: eg. sometimes you want a function that returns an @Trait that closes over &-ptrs, say. Like in the case of iterators say, or parser combinators. But it only really applies when you're trying to hide implementation details, and in those cases you can use a ~Trait.
+- P: everyone's surprised that you can put & in @
+- B: I still don't see why we need it
+- (G: I don't know either!)
+- N: partly, it takes extra type rules to make it not-work, and it seems harmless
+- N: I think the other use-cases are marginal, and you can get by with ~
+- N: eg. sometimes you want a function that returns an @Trait that closes over &-ptrs, say. Like in the case of iterators say, or parser combinators. But it only really applies when you're trying to hide implementation details, and in those cases you can use a ~Trait.
 
 ```
 // Example that is not totally unreasonable:
@@ -90,9 +90,9 @@ fn mk_reader<'a>(s: &'a str) -> ~Reader:'a {
 }
 ```
 
-G: ok so the only set of cases you have in mind are those with @Trait (since they need bounds)?
-N: Somewhat. Consider second example above. Reveals implementation details, but also in some ways preferable: no heap allocation, can inline, etc.
-N: Using ~ loses the aliasability of @, but you can also just borrow the ~ to get aliasability.
+- G: ok so the only set of cases you have in mind are those with @Trait (since they need bounds)?
+- N: Somewhat. Consider second example above. Reveals implementation details, but also in some ways preferable: no heap allocation, can inline, etc.
+- N: Using ~ loses the aliasability of @, but you can also just borrow the ~ to get aliasability.
 
 ```
 // Legal today:
@@ -104,11 +104,11 @@ fn foo<A>(x: A) -> @A { @x }
 fn foo<A:'static>(x: A) -> @A { @x }
 ```
 
-G: so .. to get a bit concrete, what's being proposed?
-N: 1. limit what goes in a @box, require any &-ptrs to be 'static
-N: 2. modify dtors to permit &-ptrs in the destructed object whose lifetime is strictly greater than the lifetime of the object.
-Bblum: this sounds surprising. You could define an object that has a &'self ptr in it that can never be instantiated.
-N: the only situation that would be ruled out would be if you want something with a dtor that points to something you declared earlier in the same block, and you want dtor to run on exit from the block.
+- G: so .. to get a bit concrete, what's being proposed?
+- N: 1. limit what goes in a @box, require any &-ptrs to be 'static
+- N: 2. modify dtors to permit &-ptrs in the destructed object whose lifetime is strictly greater than the lifetime of the object.
+- Bblum: this sounds surprising. You could define an object that has a &'self ptr in it that can never be instantiated.
+- N: the only situation that would be ruled out would be if you want something with a dtor that points to something you declared earlier in the same block, and you want dtor to run on exit from the block.
 
 ```
 // Would not type check because `lock` contains a pointer to
@@ -163,24 +163,24 @@ impl<A:'static> GC<A> {
 box.as_mut().field += 1;
 ```
 
-P: to be concrete:
+- P: to be concrete:
 
 ```
 let box: @Cell<int> = ...;
 box.as_mut().value = 10;
 ```
 
-G: does this have to be an `@Cell`?  (i.e. One could just write "Cell<int>", right?)
-N: Yeah, this is like the old `Mut<>` structure.
+- G: does this have to be an `@Cell`?  (i.e. One could just write "Cell<int>", right?)
+- N: Yeah, this is like the old `Mut<>` structure.
 ... some discussion...
-N: yeah, what does `as_mut` return?
-P: some kind of & that can set the write barrier flag?
-P: has a pointer to the value and pointer to the write barrier
-P: flips the write barrier back on destruction
+- N: yeah, what does `as_mut` return?
+- P: some kind of & that can set the write barrier flag?
+- P: has a pointer to the value and pointer to the write barrier
+- P: flips the write barrier back on destruction
 ...
-P: want a mechanism for a managed pointer to a field of a managed object.
+- P: want a mechanism for a managed pointer to a field of a managed object.
 
-G: Sorry to keep foot-dragging but .. I don't understand how `Cell` actually works
+- G: Sorry to keep foot-dragging but .. I don't understand how `Cell` actually works
 (also it's pretty difficult to take notes given that state!)
 
 ```
