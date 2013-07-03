@@ -30,22 +30,22 @@
 - Bblum: you still need some restrictions on dtors even if you fix this
 - N: the danger ben is referring to is that if you have 2 objects that refer to one another, ...
  
-```
-     Two objects in the same scope that both have dtors:
+```rust
+     //Two objects in the same scope that both have dtors:
      {
         let object1 = ...;
         let object2 = ...;
         object1.field = &object2;
         object2.field = &object1;
      }
-     Bad.
+     //Bad.
 ```
 
 - G: I think we're not supposed to permit destructors on cyclic values at all, no?
 - N: if we prohibit & and @ in objects with dtors, that's true.
 - N: but it rules out some desirable things. it would be nice to be able to do:
 
-```
+```rust
      fn foo(rwarc: &Rwarc<T>) {
         let write_lock = rwarc.write_lock();
         write_lock.contents = foo; 
@@ -61,7 +61,7 @@
 - N: so, suppose we take advantage of lifetimes: it's ok for objects with dtors to have &-ptrs, but they must be longer than the object lifetime itself.
 - G: yeah, that's what I'd be suggesting.
 
-```
+```rust
 let val1 = ...;
 let val2 = HasDtor { v1: &val1 }; // illegal
 ```
@@ -73,7 +73,7 @@ let val2 = HasDtor { v1: &val1 }; // illegal
 - N: I think the other use-cases are marginal, and you can get by with ~
 - N: eg. sometimes you want a function that returns an @Trait that closes over &-ptrs, say. Like in the case of iterators say, or parser combinators. But it only really applies when you're trying to hide implementation details, and in those cases you can use a ~Trait.
 
-```
+```rust
 // Example that is not totally unreasonable:
 fn mk_reader<'a>(s: &'a str) -> @Reader:'a {
     BufReaderImpl {s: s} as @Reader:'a
@@ -94,7 +94,7 @@ fn mk_reader<'a>(s: &'a str) -> ~Reader:'a {
 - N: Somewhat. Consider second example above. Reveals implementation details, but also in some ways preferable: no heap allocation, can inline, etc.
 - N: Using ~ loses the aliasability of @, but you can also just borrow the ~ to get aliasability.
 
-```
+```rust
 // Legal today:
 fn foo<A>(x: A) -> @A { @x }
 
@@ -110,7 +110,7 @@ fn foo<A:'static>(x: A) -> @A { @x }
 - Bblum: this sounds surprising. You could define an object that has a &'self ptr in it that can never be instantiated.
 - N: the only situation that would be ruled out would be if you want something with a dtor that points to something you declared earlier in the same block, and you want dtor to run on exit from the block.
 
-```
+```rust
 // Would not type check because `lock` contains a pointer to
 // `locked`, and that has the same time as lock:
 {
@@ -140,7 +140,7 @@ lock.foo;
 - N: Cf. exmple above. If you really wanted to hide implementation detail, not sure how else you'd do it. I guess you could take a closure.
 - J: is the mechanism that would be used to constrain the contents of @Trait objects also be applicable to user-defined smart-pointers?
 
-```
+```rust
 impl<A:'static> GC<A> {
     fn new(a: A) -> GC<A> { ... }
 }
@@ -150,7 +150,7 @@ impl<A:'static> GC<A> {
 
 - P: With that decided, we could replace the methods for accessing @mut concents with an RAII system, like:
 
-```
+```rust
 // Long hand access:
     {
         let as_mut = box.as_mut();
@@ -158,14 +158,14 @@ impl<A:'static> GC<A> {
     }
 ```
 
-```
+```rust
 // I think this would also work:
 box.as_mut().field += 1;
 ```
 
 - P: to be concrete:
 
-```
+```rust
 let box: @Cell<int> = ...;
 box.as_mut().value = 10;
 ```
@@ -183,7 +183,7 @@ box.as_mut().value = 10;
 - G: Sorry to keep foot-dragging but .. I don't understand how `Cell` actually works
 (also it's pretty difficult to take notes given that state!)
 
-```
+```rust
 struct MutCell<'a, T> {
     priv cell: &'a Cell,
     value: &'a mut T
