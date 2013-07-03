@@ -3,6 +3,29 @@ This is an archive of all the existing Rust release artifacts. Each release is s
 [key]: http://www.rust-lang.org/rust-key.gpg.ascii
 [pre-0.5-key]: http://www.rust-lang.org/rust-key-old.gpg.ascii
 
+## 0.7
+
+* [Announcement][0.7-announce]
+* [Release notes][0.7-notes]
+* [Source code][0.7-tar] ([signature][0.7-tar-sig])
+* [Windows installer][0.7-exe] ([signature][0.7-exe-sig])
+* [Tutorial][0.7-tutorial]
+* [Manual][0.7-manual] ([PDF][0.7-manual-pdf])
+* [Core library docs][0.7-core]
+* [Standard library docs][0.7-std]
+
+
+[0.7-notes]: https://github.com/mozilla/rust/blob/release-0.7/RELEASES.txt
+[0.7-tar]: http://static.rust-lang.org/dist/rust-0.7.tar.gz
+[0.7-tar-sig]: http://static.rust-lang.org/dist/rust-0.7.tar.gz.asc
+[0.7-exe]: http://static.rust-lang.org/dist/rust-0.7-install.exe
+[0.7-exe-sig]: http://static.rust-lang.org/dist/rust-0.7-install.exe.asc
+[0.7-tutorial]: http://doc.rust-lang.org/doc/0.7/tutorial.html
+[0.7-manual]: http://doc.rust-lang.org/doc/0.7/rust.html
+[0.7-manual-pdf]: http://doc.rust-lang.org/doc/0.7/rust.pdf
+[0.7-core]: http://doc.rust-lang.org/doc/0.7/core/index.html
+[0.7-std]: http://doc.rust-lang.org/doc/0.7/std/index.html
+
 ## 0.6
 
 * [Announcement][0.6-announce]
