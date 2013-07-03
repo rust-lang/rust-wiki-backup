@@ -10,7 +10,7 @@ Applications
 * `sprocketnes` NES emulator: https://github.com/pcwalton/sprocketnes
 * Q^3 Quake-like game: https://github.com/Jeaye/q3
 * `rustray` raytracer: https://github.com/brson/rustray
-* `rust-airhockey: https://github.com/FrozenCow/rust-airhockey
+* `rust-airhockey`: https://github.com/FrozenCow/rust-airhockey
 
 Libraries
 ---------
