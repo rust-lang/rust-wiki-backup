@@ -24,6 +24,8 @@ Bindings
 * Azure 2D graphics library: https://github.com/mozilla-servo/rust-azure/
 * OpenGL ES: https://github.com/mozilla-servo/rust-opengles
 * SDL: https://github.com/brson/rust-sdl
+* OpenSSL libcrypto: https://github.com/kballard/rustcrypto
+* ncurses: https://github.com/kballard/rust-curses
 
 Competitions
 ------------
