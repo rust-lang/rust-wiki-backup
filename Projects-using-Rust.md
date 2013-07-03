@@ -29,3 +29,4 @@ Competitions
 ------------
 
 * At least one finishing entry for the Matasano security challenges
+* An ICFP programming contest entry
