@@ -8,7 +8,9 @@ Consider the following code:
 ```
 fn foo(message: ~str, chan_opt: Option<Chan<~str>>) {
     do chan_opt.map |chan| {
-        chan.send(message); // error: cannot move out of captured outer variable
+        // error: cannot move out of captured outer variable
+        chan.send(message);
+        //        ^~~~~~~
     }
 }
 ```
@@ -16,7 +18,8 @@ This code should be legal, because the closure provided to ```map_consume``` wil
 ```
 fn foo(message: ~str, chan_list: ~[Chan<~str>]) {
     do chan_list.map |chan| {
-        chan.send(message); // might unsafely duplicate the unique message pointer!
+        // XXX: might unsafely duplicate the unique message pointer!
+        chan.send(message);
     }
 }
 ```
@@ -33,7 +36,8 @@ fn foo(message: ~str, chan_opt: Option<Chan<~str>>) {
 fn foo(message: ~str, chan_opt: Option<Chan<~str>>) {
     let message_cell == Cell::new(message);
     do chan_opt.map_with(message) |message, chan| {
-        chan.send(message_cell.take()); // NOTE: If the closure is called twice, the 2nd take() will fail!
+        // NOTE: If the closure is called twice, the 2nd take() will fail!
+        chan.send(message_cell.take());
     }
 }
 ```
