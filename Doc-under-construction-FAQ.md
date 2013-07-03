@@ -63,7 +63,7 @@ fn bar(vec: &[int], callback: &fn(int)) {
     }
 }
 ```
-The compiler issues this error because while it's safe to *call* ```&fn()```s multiple times, it is not safe to *copy* them. (Allowing that would [break soundness](http://smallcultfollowing.com/babysteps/blog/2013/04/30/the-case-of-the-recurring-closure/).)
+The compiler issues this error because while it's safe to *call* ```&fn()```s multiple times, it is not safe to *copy* them. (Allowing arbitrary stack closures to be copied would [break soundness](http://smallcultfollowing.com/babysteps/blog/2013/04/30/the-case-of-the-recurring-closure/) in certain cases.)
 
 **Recommended solution:** To work around this error, "borrow" the closure by capturing it in another closure, like so:
 ```
