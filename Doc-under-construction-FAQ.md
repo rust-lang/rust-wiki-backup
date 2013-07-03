@@ -35,7 +35,7 @@ fn foo(message: ~str, chan_opt: Option<Chan<~str>>) {
 ```
 fn foo(message: ~str, chan_opt: Option<Chan<~str>>) {
     let message_cell == Cell::new(message);
-    do chan_opt.map_with(message) |message, chan| {
+    do chan_opt.map |chan| {
         // NOTE: If the closure is called twice, the 2nd take() will fail!
         chan.send(message_cell.take());
     }
