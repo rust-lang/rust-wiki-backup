@@ -29,4 +29,4 @@ Competitions
 ------------
 
 * At least one finishing entry for the Matasano security challenges
-* An ICFP programming contest entry
+* Two ICFP programming contest entries: [Emarhavil Heavy Industries](https://github.com/emarhavilicfp/icfp) and Celestial Dire Badger (link needed)
