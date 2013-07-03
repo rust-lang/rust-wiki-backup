@@ -1,11 +1,17 @@
 ## Reference docs
 
-#### Current (Rust 0.6)
+#### Current (0.7)
 
-[Tutorial](http://doc.rust-lang.org/doc/0.6/tutorial.html)  
-[Manual](http://doc.rust-lang.org/doc/0.6/rust.html) ([PDF](http://doc.rust-lang.org/doc/0.6/rust.pdf))  
-[Core library](http://doc.rust-lang.org/doc/0.6/core/index.html)  
-[Standard library](http://doc.rust-lang.org/doc/0.6/std/index.html)  
+* [Tutorial](http://doc.rust-lang.org/doc/0.7/tutorial.html)  
+* [Manual](http://doc.rust-lang.org/doc/0.7/rust.html) ([PDF](http://doc.rust-lang.org/doc/0.7/rust.pdf))  
+* [Standard library](http://doc.rust-lang.org/doc/0.7/std/index.html)  
+* [Extra library](http://doc.rust-lang.org/doc/0.7/extra/index.html)
+* [Package manager](http://doc.rust-lang.org/doc/0.7/rustpkg.html)
+* [Borrowed pointers](http://doc.rust-lang.org/doc/0.7/tutorial-borrowed-ptr.html)
+* [Containers and iterators](http://doc.rust-lang.org/doc/0.7/tutorial-container.html)
+* [Tasks](http://doc.rust-lang.org/doc/0.7/tutorial-tasks.html)
+* [Macros](http://doc.rust-lang.org/doc/0.7/tutorial-macros.html)
+* [FFI](http://doc.rust-lang.org/doc/0.7/tutorial-ffi.html)
 
 #### In-development (git master)
 
