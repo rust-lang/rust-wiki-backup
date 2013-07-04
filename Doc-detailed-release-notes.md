@@ -65,6 +65,8 @@ Then there are a number of traits specific to primitive numeric types:
 * `Primitive` again collects a number of traits that are implemented by the primitive types.
 * `Int` and `Float` traits define the interface to machine integers and floats.
 
+Furthermore, `Add`, `Sub`, `Mul`, and `Neg` no longer include [compound assignment](https://en.wikipedia.org/wiki/Compound-assignment) in favor of the upcoming `AddAssign`, `SubAssign`, etc traits. For now, ported code shall take the form of `foo = foo + bar` instead of `foo += bar`.
+
 ### rustpkg
 
 While rustpkg is still in an experimental state, there are a number of improvements; see the rustpkg manual for more details.
