@@ -19,6 +19,7 @@ rustdoc currently needs some love, and I (cmr) am going to give it some.
 - navigate visibility graph and don't generate docs for stuff which isn't visible
 - document macro-generated code
 - link to source
+- "a cross-reference with a list of all traits declared in all modules would be very useful. Developers, particularly people writing libraries, would have a big "to-do" list of all the traits their new types could implement."
 - your feature requests here!
 
 # New bugs
