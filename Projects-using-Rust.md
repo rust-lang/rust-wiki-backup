@@ -22,6 +22,7 @@ Bindings
 --------
 
 * Azure 2D graphics library: https://github.com/mozilla-servo/rust-azure/
+* GLFW: https://github.com/bjz/glfw-rs/
 * OpenGL ES: https://github.com/mozilla-servo/rust-opengles
 * SDL: https://github.com/brson/rust-sdl
 * OpenSSL libcrypto: https://github.com/kballard/rustcrypto
