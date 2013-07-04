@@ -30,7 +30,7 @@ Bindings
 * OpenSSL libcrypto: https://github.com/kballard/rustcrypto
 * SDL: https://github.com/brson/rust-sdl
 * SFML: https://github.com/JeremyLetang/rust-sfml
-* Sqlite https://github.com/linuxfood/rustsqlite
+* SQLite3 https://github.com/linuxfood/rustsqlite
 
 Competitions
 ------------
