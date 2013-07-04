@@ -29,6 +29,7 @@ Bindings
 * OpenGL ES: https://github.com/mozilla-servo/rust-opengles
 * OpenSSL libcrypto: https://github.com/kballard/rustcrypto
 * SDL: https://github.com/brson/rust-sdl
+* SFML: https://github.com/JeremyLetang/rust-sfml
 
 Competitions
 ------------
