@@ -1,6 +1,6 @@
 Rust [milestones] are divided into two categories: point release milestones and [maturity] milestones. Point release milestones track work being done for the quarterly releases, and maturity milestones track progress toward language stability and completeness. Bugs must meet certain criteria to be assigned to milestones, and the criteria is different for each type of milestone.
 
-For point releases, the current criteria is that *you intend to complete the bug in time for the release*. All point release milestones should be assigned to somebody.
+For point releases, the current criteria is that *you intend to complete the bug in time for the release*. All bugs associated with point release milestones should be assigned to somebody.
 
 Maturity milestones have a more formal process to establish consensus. When you see an issue that fits the criteria for a maturity milestone:
 
