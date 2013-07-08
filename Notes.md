@@ -35,3 +35,4 @@ Listing of notes for developers working on the Rust compiler and tools.
 
 * [Bors's Queue](http://buildbot.rust-lang.org/bors/bors.html) - Our [integration bot, bors](https://github.com/bors) tries to keep the build green.
 * [buildbot](http://buildbot.rust-lang.org) - All pull requests go through buildbot, via bors.
+* [isrustfastyet](http://huonw.github.io/isrustfastyet/mem/)
