@@ -4,8 +4,8 @@ For point releases, the current criteria is that *you intend to complete the bug
 
 Maturity milestones have a more formal process to establish consensus. When you see an issue that fits the criteria for a maturity milestone:
 
-1) Add the `I-nominated` tag
-2) Add a comment to the bug saying 'nominated' and, preferably, the milestone it should be added to. If you aren't certain which milestone is appropriate then that information can be left off. It's important to add the comment so reviewers can later ask about why the issue is nominated.
+- Add the `I-nominated` tag
+- Add a comment to the bug saying 'nominated' and, preferably, the milestone it should be added to. If you aren't certain which milestone is appropriate then that information can be left off. It's important to add the comment so reviewers can later ask about why the issue is nominated.
 
 Do *not* assign the issue to a milestone yourself.
 
