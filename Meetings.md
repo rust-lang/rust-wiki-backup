@@ -79,6 +79,7 @@ Mozilla employees have a weekly Rust planning meeting on Tuesday mornings at 9:0
 * [[Meeting-weekly-2013-06-18]] (tree maintenance; 0.7; weekly status process; once fns; namespaces)
 * [[Meeting-weekly-2013-06-25]] (0.7; @mut; iterators)
 * [[Meeting-weekly-2013-07-02]] (0.7; @mut; @ bounds)
+* [[Meeting-weekly-2013-07-09]] (split stacks & ffi)
 
 ## Other meetings:
 
