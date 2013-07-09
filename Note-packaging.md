@@ -17,7 +17,7 @@ At least for arm based builds rust is using a patched llvm.
 It seems that a stock llvm can be used for x86 builds.But also see the next issue.
 
 ### `--llvm-root` switch doesn't work
-* Issue
+* [Issue 6802](https://github.com/mozilla/rust/issues/6802)
 The `--llvm-root` switch should allow the usage of an external (existing) llvm, but this is currently not working.
 
 ### Tightly coupled with libuv
