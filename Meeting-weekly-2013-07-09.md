@@ -12,11 +12,11 @@ dherman, niko, felix, sully, kmc, ecr, toddaaro, azita, tjc, brson, jclements, j
 
 - N: How to manage split stacks, particularly re: calling C functions. I don't know exactly what's the right behavior. 
 
-What we do today: whenever you link to a C function, we declare a special Rust wrapper that bridges ABI differences. The wrapper switches to the C stack, which is 2 MB big or something. 
+    What we do today: whenever you link to a C function, we declare a special Rust wrapper that bridges ABI differences. The wrapper switches to the C stack, which is 2 MB big or something. 
 
-What we're trying to do: when you link to a C function, you have the real function pointer. No implicit gap. When you call the function, take advantage of P's changes where we tag the function as a called-in-FFI function. When we enter the Rust function that calls the C function, we request a big stack using the morestack mechanism. This has the advantage that you can call C functions by pointer without knowing what they are. We can also statically link to C functions, which plays nicely with hardware prediction/lookahead. Other advantage: user can manually tag callers, so if you call a C function in a loop, you won't have to switch stacks on every loop iteration. This reduces the cost of calling C function.
+    What we're trying to do: when you link to a C function, you have the real function pointer. No implicit gap. When you call the function, take advantage of P's changes where we tag the function as a called-in-FFI function. When we enter the Rust function that calls the C function, we request a big stack using the morestack mechanism. This has the advantage that you can call C functions by pointer without knowing what they are. We can also statically link to C functions, which plays nicely with hardware prediction/lookahead. Other advantage: user can manually tag callers, so if you call a C function in a loop, you won't have to switch stacks on every loop iteration. This reduces the cost of calling C function.
 
-One potentially nasty side-effect: suppose the task spawn function calls a C function. Then, as soon as you spawn a new task, you request a 2 MB stack and you lose all the benefits of small stack switching. To reduce costs, want to move stack switching as early as possible, but if you do it at the beginning, you lose the benefits. Currently, if the compiler decides you're calling a C function and it gives you a big stack, you may not realize you're switching. 
+    One potentially nasty side-effect: suppose the task spawn function calls a C function. Then, as soon as you spawn a new task, you request a 2 MB stack and you lose all the benefits of small stack switching. To reduce costs, want to move stack switching as early as possible, but if you do it at the beginning, you lose the benefits. Currently, if the compiler decides you're calling a C function and it gives you a big stack, you may not realize you're switching. 
 
 - D: The big-stack thing sounds like an effect. How does that work in the face of higher-order functions?
 
@@ -40,7 +40,11 @@ One potentially nasty side-effect: suppose the task spawn function calls a C fun
 
 - P: The performance costs of thrashing on a stack boundary are totally unacceptable
 
-- D: Before we make absolute proclamations, let's lay out the various things that are in tension here. This is a big conversation, I don't want to jump to "we must do X because it's the end of the world." I'm not ready to say "this trumps everything" before we talk about what "everything is". I'm concerned about 2 things: First, it violates the tension with the rest of how we've been designing Rust that this is a much more heavyweight machinery that's done for you behind your back, that you can't control. It's in tension with low-level systems nature of Rust and predictable perf. That said, the two things I see us getting from it are: (a) the ability to have lots of lightweight tasks (tasks as cheap abstraction boundary), and (b) the ability to write recursive algorithms that operate on potentially large data structures. And actually, (c), currently in C++ and Gecko, anything that runs out of stack space is an unsafe crash and we have to manually implement things like red zones to safely exit the browser, which is awful. We have wanted to be able to more granularly kill subcomponents of a program, particularly in the browser, but for other Rust programs too. Like the Erlang philosophy of being able to kill components of a program w/o affecting the whole. These are the 3 things I see automatic stack growth helping us with.
+- D: Before we make absolute proclamations, let's lay out the various things that are in tension here. This is a big conversation, I don't want to jump to "we must do X because it's the end of the world." I'm not ready to say "this trumps everything" before we talk about what "everything is".
+
+    I'm concerned about 2 things: First, it violates the tension with the rest of how we've been designing Rust that this is a much more heavyweight machinery that's done for you behind your back, that you can't control. It's in tension with low-level systems nature of Rust and predictable perf. That said, the two things I see us getting from it are: (a) the ability to have lots of lightweight tasks (tasks as cheap abstraction boundary), and (b) the ability to write recursive algorithms that operate on potentially large data structures.
+
+    And actually, (c), currently in C++ and Gecko, anything that runs out of stack space is an unsafe crash and we have to manually implement things like red zones to safely exit the browser, which is awful. We have wanted to be able to more granularly kill subcomponents of a program, particularly in the browser, but for other Rust programs too. Like the Erlang philosophy of being able to kill components of a program w/o affecting the whole. These are the 3 things I see automatic stack growth helping us with.
 
 - B: On the issue of safely killing tasks, right now we don't even have a viable strategy for what happens when you run out of stack. It's a process abort; we don't have a clear way to make it terminate safely.
 
@@ -268,7 +272,9 @@ One potentially nasty side-effect: suppose the task spawn function calls a C fun
 
 - P: There is the fast FFI, but it's not on by default. Fast FFI does help a lot, but it only helps when you already have a big stack. (due to the morestack path being slower -- there's just a lot of code there)
 
-- D: My feeling is if we could get it so stack overflow is a task-local failure, that's a pretty coherent design. It says Rust has a thinner, lighter-weight stack mechanism that limits some of the use cases that we thought we'd be able to handle: particularly, recursion and variable-sized tasks. I'd be much happier if there were some way -- even if it's the uncommon case -- to have recourse, as a programmer, to be able to do that without having to defunctionalize your entire recursive algorithm into manual stacks and loops. Even that, systems programmers understand they have to use loops instead of recursion, but it seems like a shame; would be nice to have a fallback. I buy that it wouldn't be the common case. I'll just mention this one totally naive ridiculous thing I brought up: if there were some way to have configurable stacks, where you could write unsafe code to follow some protocol; I imagine the hard part is how to specify a protocol that avoids the specific details of a specific compiler. I'm just wondering if there's some minimum subset of stack functionality that could be turned into a trait, like just the allocation policy, and not the argument-passing policy
+- D: My feeling is if we could get it so stack overflow is a task-local failure, that's a pretty coherent design. It says Rust has a thinner, lighter-weight stack mechanism that limits some of the use cases that we thought we'd be able to handle: particularly, recursion and variable-sized tasks. I'd be much happier if there were some way -- even if it's the uncommon case -- to have recourse, as a programmer, to be able to do that without having to defunctionalize your entire recursive algorithm into manual stacks and loops. Even that, systems programmers understand they have to use loops instead of recursion, but it seems like a shame; would be nice to have a fallback. I buy that it wouldn't be the common case.
+
+    I'll just mention this one totally naive ridiculous thing I brought up: if there were some way to have configurable stacks, where you could write unsafe code to follow some protocol; I imagine the hard part is how to specify a protocol that avoids the specific details of a specific compiler. I'm just wondering if there's some minimum subset of stack functionality that could be turned into a trait, like just the allocation policy, and not the argument-passing policy
 
 - P: There's also strcat's proposal, which is to have small stacks but not have them be the default. Then there's Niko's proposal to require annotations
 
@@ -291,12 +297,3 @@ One potentially nasty side-effect: suppose the task spawn function calls a C fun
 - B: The initial stack segment would be huge, so you would almost never grow the stack
 
 - D: That seems to me like a situation where you could have some sort of lightweight, configurable approach based on traits where you could implement a policy that says "I don't ever want growth". Or maybe you just need a boolean flag. It would be good to have the functionality to be able to grow tasks, but allow programmers to opt out of it. strcat's direction sounds plausible to me, but we can continue this conversation elsewhere.
-
-
-
-
-
-
-
-
-
