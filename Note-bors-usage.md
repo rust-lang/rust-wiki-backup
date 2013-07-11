@@ -12,16 +12,13 @@ For the most part no knowledge of bors is required of people submitting pull
 requests.  When a reviewer signs off on one of your commits by writing "r+" 
 in a comment on the final commit of a pull request, bors will automatically:
 
-  - Form a new merge node based on your pull + incoming
-  - Wait for results from that to come back from buildbot
-  - If successful, advance incoming to that node
+  - Reset the `auto` branch to `master`
+  - Attempt to merge your pull request into `auto` --- if this fails, your request will be marked as stale, meaning you will need to rebase it.
+  - Wait for buildbot to test `auto`
+  - If successful, fast-forward `master` to `auto`
   - Otherwise report how the change failed
 
-It then resets the 'auto' ref to incoming, attempts to merge the
-reviewed commit into auto, and if that works, sends it for testing on
-buildbot. If all tests come back green, it advances incoming to auto
-(fast-forward only).  Rebased pull requests require
-re-approval.
+Rebased pull requests require re-approval.
 
 This _should_ mean that, insofar as all commits go through bors, the tree
 will always be green.
