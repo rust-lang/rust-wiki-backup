@@ -26,4 +26,4 @@ Rust is currently tighly coupled to libuv. Typically downstream distributions do
 It might be a bit problematic to keep libuv and rust versions in sync during this early stage.
 
 ## Minor notes
-* Bootstrap binary is required
+* Bootstrap binary is required. You can either let it download its own, or download the most recent snapshot binary yourself. The snapshot SHA1s are listed in `src/snapshots.txt` and the script `src/etc/get-snapshot.py` downloads them from our server. The simplest thing to do is just copy the appropriate snapshot into the `dl/` subdirectory of your build dir; `get-snapshot.py` will pick it up from there and avoid downloading anything.
