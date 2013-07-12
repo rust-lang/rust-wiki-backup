@@ -62,7 +62,7 @@ This is Tim's attempt to come up with a schedule for finishing rustpkg, with a p
       	  * install; make sure it installs to the first entry in `$RUST_PATH`
       	  * install from an entry in `RUST_PATH` that isn't the first one
 
-   ~~Due: 2013-05-22~~ Done pending #7397
+   ~~Due: 2013-05-22~~ Done ~~pending #7397~~
 
 6. Teach pkg.rs how to execute the default build logic (#6401)
 
@@ -71,14 +71,14 @@ This is Tim's attempt to come up with a schedule for finishing rustpkg, with a p
 6. Commands should work without an explicit package name (#6405)
       * build and install, to start with
 
-   ~~Due: 2013-05-25~~ Done pending #7419
+   ~~Due: 2013-05-25~~ Done pending #7419 (still unmerged due to bors problems)
 
 7. Implement (or test) package database	and ability to list, add, remove packages
       * test case:
           * install several packages, make sure they appear in list
       	  * remove one package, make sure it doesn't appear in list and other packages do
 
-   Due: 2013-05-27
+   ~~Due: 2013-05-27~~ Done pending #7750
 
 8. `extern mod` should name a package ID
       * fix #6407 (change what's allowed in an `extern mod` directive)
