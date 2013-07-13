@@ -96,7 +96,7 @@ Functions that corecurse will (of course) have to have the same effect. The anal
 The most obviously useful reason to have effects is that currently destructors can leak memory if they fail when a task is already unwinding ([#910] (https://github.com/mozilla/rust/issues/910)). With effects, we could write:
 ```
 trait Drop {
-    fn finalize(self) wont(Fail);
+    fn drop(self) wont(Fail);
 }
 ```
 We might also want to forbid GC in destructors, as per [#6996] (https://github.com/mozilla/rust/issues/6996).
