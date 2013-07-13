@@ -29,7 +29,9 @@ Notes taken at rust work week, 2011/06/23
  * GUID
 * date and time
   * [rust_datetime](https://github.com/tedhorst/rust_datetime) (external)
-* [math](https://github.com/z0w0/rusty-math) (external)
+* math
+  * [lmath](https://github.com/bjz/lmath-rs) (external)
+  * [rusty-math](https://github.com/z0w0/rusty-math) (external)
 * [random](https://github.com/mozilla/rust/blob/master/src/libcstd/rand.rs)
 * [compression](https://github.com/elly/rustzlib) (external)
 * [libicu](https://github.com/mozilla/rust/blob/master/src/libextra/unicode.rs)
