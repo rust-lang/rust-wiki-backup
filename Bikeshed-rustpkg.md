@@ -87,7 +87,7 @@ This is Tim's attempt to come up with a schedule for finishing rustpkg, with a p
       * test case:
           * two packages, A and B; A depends on B with ```extern mod```; building A automatically builds B
 
-   Due: 2013-05-29
+   ~~Due: 2013-05-29~~ Done as part of previous work
 
 8. Use workcache (#7075)
       * test cases:
