@@ -1,20 +1,19 @@
 # Containers in the standard libraries
 
 * Mutable, owned:
-    * `core::vec` (dynamic array)
-    * `core::str` (string implemented on top of the same dynamic array as `core::vec`)
-    * `core::hashmap` (hash table - set and map)
-    * `core::trie` (radix trie - set and map, for `uint` keys only at the moment)
-    * `std::treemap` (balanced binary search tree - set and map)
-    * `std::smallintmap` (dense array-based map)
-    * `std::deque` (ring buffer)
-    * `std::priority_queue` (binary heap)
-    * `std::bitv`
-* Mutable, managed:
-    * `std::dlist` (doubly-linked list - avoiding @ requires `unsafe` and being careful with nodes)
+    * `std::vec` (dynamic array)
+    * `std::str` (string implemented on top of the same dynamic array as `core::vec`)
+    * `std::hashmap` (hash table - set and map)
+    * `std::trie` (radix trie - set and map, for `uint` keys only at the moment)
+    * `extra::treemap` (balanced binary search tree - set and map)
+    * `extra::smallintmap` (dense array-based map)
+    * `extra::priority_queue` (binary heap)
+    * `extra::bitv`
+    * `extra::dlist` (doubly-linked list, impl Deque)
+    * `extra::ringbuf` (ring buffer, impl Deque)
 * Persistent, managed:
-    * `std::list` (singly-linked list)
-    * `std::fun_treemap` (unbalanced binary search tree - not very useful)
+    * `extra::list` (singly-linked list)
+    * `extra::fun_treemap` (unbalanced binary search tree - not very useful)
 
 # Wanted
 
