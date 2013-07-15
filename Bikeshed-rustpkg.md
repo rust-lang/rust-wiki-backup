@@ -78,7 +78,7 @@ This is Tim's attempt to come up with a schedule for finishing rustpkg, with a p
           * install several packages, make sure they appear in list
       	  * remove one package, make sure it doesn't appear in list and other packages do
 
-   ~~Due: 2013-05-27~~ Done pending #7750
+   ~~Due: 2013-05-27~~
 
 8. `extern mod` should name a package ID
       * fix #6407 (change what's allowed in an `extern mod` directive)
@@ -106,7 +106,7 @@ This is Tim's attempt to come up with a schedule for finishing rustpkg, with a p
    
    At the same time, teach rustpkg about branches and tags (#6411)
 
-   Due: 2013-06-07 - Blocked on #7749 landing (test needs `list`)
+   Due: 2013-06-07
 
 8. Finish implementing all other commands (#7242)
        * do, fetch, info, prefer, test, uninstall, unprefer
