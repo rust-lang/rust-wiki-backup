@@ -39,12 +39,14 @@ fn main() {
 }
 ```
 
-There are four different modes for compile tests. Each test is run under one or more modes:
+There are six different modes for compile tests. Each test is run under one or more modes:
 
 * compile-fail - The test should fail to compile. Must include at least one expected error.
 * run-fail - The test should compile but fail at runtime. Must include at least one error-pattern directive.
 * run-pass - The test should compile and run successfully
 * pretty - The test should round-trip through the pretty-printer and then compile successfully
+* debug_info - The test will be compiled with debuginfo and an embedded `gdb` command script will be run to query the debuginfo
+* codegen - The test will be compiled to LLVM bitcode, and a companion test written in C++ will be compiled to LLVM bitcode with `clang`, and the number of instructions will be compared
 
 Valid directives include:
 
@@ -58,14 +60,18 @@ Valid directives include:
 * `no-reformat` - Don't reformat the code when running the test through the pretty-printer
 * `aux-build:foo.rs` - Compiles an auxiliary library for use in multi-crate tests.  See the section on multi-crate testing below.
 * `exec-env:NAME` or `exec-env:NAME=VALUE` - Sets an environment variable during test execution
+* `debugger:CMD` - Issues a command to the debugger in `debuginfo` mode
+* `check:RESULT` - Checks the result of a previous `debugger:` directive in `debuginfo` mode
 
-There are five directories containing compile tests, living in the src/tests directory:
+There are seven directories containing compile tests, living in the src/tests directory:
 
 * run-pass - Tests that are expected to compile and run successfully. Also used for pretty-print testing.
 * run-fail - Tests that are expected compile but fail when run. Also used for pretty-print testing.
 * compile-fail - Tests that are expected not to compile
 * bench - Benchmarks and miscellaneous snippets of code that are expected to compile and run successfully. Also used for pretty-print testing.
 * pretty - Pretty-print tests
+* debug-info - Debuginfo tests
+* codegen - Codegen tests
 * auxiliary - libraries used in multi-crate testing. See the section on this topic below.
 
 And finally, build targets:
@@ -79,6 +85,8 @@ And finally, build targets:
 * `check-stage[N]-pretty-rfail` - The tests in the run-fail directory, in pretty mode
 * `check-stage[N]-pretty-bench` - The tests in the bench directory, in pretty mode
 * `check-stage[N]-pretty-pretty` - The tests in the pretty directory, in pretty mode
+* `check-stage[N]-debuginfo` - The tests in the debuginfo directory
+* `check-stage[N]-codegen` - The tests in the codegen directory
 
 ### Specifying the expected errors and warnings
 
@@ -198,3 +206,7 @@ To run all doc tests use `make check-stage[N]-doc`.
 ## Fast check
 
 Because Windows has slow process spawning running `make check` on that platform can take a long time. For this reason we have a `make check-fast` target that the Windows build servers run to keep the cycle time down. This is a special test runner that is built by combining all the run-pass tests into a single library. It is created by the src/etc/combine-tests.py script.
+
+## Benchmarks, saved metrics and ratchets
+
+All benchmark metrics are saved by default. Depending on configuration, some benchmark metrics are ratcheted. The `codegen` compile tests are always ratcheted if they run, since they are deterministic / low-noise. See [[Doc unit testing]] for details on metrics and ratchets.
