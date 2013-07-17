@@ -2,7 +2,7 @@
 
 Rust has built in support for simple unit testing. Functions can be marked as unit tests using the 'test' attribute.
 
-```
+```rust
 #[test]
 fn return_none_if_empty() {
    ... test code ...
@@ -13,7 +13,7 @@ A test function's signature must have no arguments and no return value. To run t
 
 When compiling a crate with the '--test' flag '--cfg test' is also implied, so that tests can be conditionally compiled.
 
-```
+```rust
 #[cfg(test)]
 mod tests {
   #[test]
@@ -29,7 +29,7 @@ Tests that should not be run can be annotated with the 'ignore' attribute. The e
 
 Tests that are intended to fail can be annotated with the 'should_fail' attribute.  The test will be run, and if it causes its task to fail then the test will be counted as successful; otherwise it will be counted as a failure.  For example:
 
-```
+```rust
 #[test]
 #[should_fail]
 fn test_out_of_bounds_failure() {
@@ -50,7 +50,7 @@ The test runner also understands a simple form of benchmark execution. Benchmark
 
 The type signature of a benchmark function differs from a unit test: it takes a mutable reference to type `test::BenchHarness`. Inside the benchmark function, any time-variable or "setup" code should execute first, followed by a call to `iter` on the benchmark harness, passing a closure that contains the portion of the benchmark you wish to actually measure the per-iteration speed of. For example:
 
-```
+```rust
 extern mod extra;
 
 #[bench]
