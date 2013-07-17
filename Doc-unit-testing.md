@@ -140,3 +140,15 @@ test bench_sum_1024_ints ... bench: 14 ns/iter (+/- 0)
 
 result: ok. 0 passed; 0 failed; 0 ignored
 ```
+
+## Saving and ratcheting metrics
+
+When running benchmarks or other tests, the test runner can record per-test "metrics". Each metric is a scalar `f64` value, plus a noise value which represents uncertainty in the measurement. By default, all `#[bench]` benchmarks are recorded as metrics, which can be saved as JSON in an external file for further reporting.
+
+In addition, the test runner supports _ratcheting_ against a metrics file. Ratcheting is like saving metrics, except that after each run, if the output file already exists the results of the current run are compared against the contents of the existing file, and any regression _causes the testsuite to fail_. If the comparison passes -- if all metrics stayed the same (within noise) or improved -- then the metrics file is overwritten with the new values. In this way, a metrics file in your workspace can be used to ensure your work does not regress performance.
+
+Test runners take 3 options that are relevant to metrics:
+
+  - `--save-metrics=<file.json>` will save the metrics from a test run to `file.json`
+  - `--ratchet-metrics=<file.json>` will ratchet the metrics against the `file.json`
+  - `--ratchet-noise-percent=N` will override the noise measurements in `file.json`, and consider a metric change less than `N%` to be noise. This can be helpful if you are testing in a noisy environment where the benchmark calibration loop cannot acquire a clear enough signal.
