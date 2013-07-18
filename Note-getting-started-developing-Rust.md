@@ -22,7 +22,7 @@ Version numbers listed here are "what we're using"; the code may well work with 
 
 ### Memory usage
 
-Rust seems to take about 1.4-1.6 GiB for most of the build, peaking at around 2.5 GiB.  If you only have 2 GiB of RAM total, you may have a difficult time building Rust while doing anything else, such as using a browser.  (One very patient user reported being able to build Rust on a netbook with 1 GiB RAM, but the full three-stage build took six hours.)
+The Rust build peaks at around 1.6GiB, so at least that much memory should be available for the build to avoid excessive swapping or out-of-memory. If you only have 2 GiB of RAM total, you may have a difficult time building Rust while doing anything else, such as using a browser.
 
 ### Debian-based Linux distributions
 
