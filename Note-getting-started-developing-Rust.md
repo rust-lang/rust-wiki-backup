@@ -9,7 +9,7 @@ the instructions in the [tutorial](http://doc.rust-lang.org/doc/tutorial.html).
 Version numbers listed here are "what we're using"; the code may well work with earlier versions of these tools, but we don't know minimum version requirements.
 
 * A recent Linux, OS X 10.6 or later, Win32 or FreeBSD system
-* 2.5 GiB RAM _available for the build process_ (see note below about memory usage)
+* 1.6 GiB RAM _available for the build process_ (see note below about memory usage)
 * [Python 2.x](http://www.python.org/download/) (version 2.7 is known to work)
 * GNU make 3.81
 * git 1.7
