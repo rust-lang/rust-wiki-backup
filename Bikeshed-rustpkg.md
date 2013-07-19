@@ -71,7 +71,7 @@ This is Tim's attempt to come up with a schedule for finishing rustpkg, with a p
 6. Commands should work without an explicit package name (#6405)
       * build and install, to start with
 
-   ~~Due: 2013-05-25~~ Done pending #7419 (still unmerged due to bors problems)
+   ~~Due: 2013-05-25~~ Done pending #7419
 
 7. Implement (or test) package database	and ability to list, add, remove packages
       * test case:
@@ -98,7 +98,7 @@ This is Tim's attempt to come up with a schedule for finishing rustpkg, with a p
       * generally, make sure ```rustpkg build``` "works like ```make```"
       * This depends on #4432
 
-   Due: 2013-06-04
+   Due: 2013-06-04 (Blocked on graydon doing more work on workcache)
 
 8. Extend pkg IDs to specify version explicitly
       * test case:
