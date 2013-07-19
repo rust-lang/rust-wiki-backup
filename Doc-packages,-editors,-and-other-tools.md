@@ -37,7 +37,7 @@
 * [Prism's pastebin](http://kib2.free.fr/pastebin) - A pastebin instance that support Rust syntax highlighting using the Prism library
 * [startling's pygments plugin](https://github.com/startling/pygments-rust) - Pygments syntax highlighting
 * [GitHub linguist](https://github.com/github/linguist) - GitHub's language detection supports Rust
-* [lkuper's PLT Redex model](https://github.com/github/linguist) - An (out-of-date) model of Rust in PLT Redex
+* [lkuper's PLT Redex model](https://github.com/lkuper/rust-redex) - An (out-of-date) model of Rust in PLT Redex
 * [highlight.js](http://softwaremaniacs.org/soft/highlight/en/) - Highlight Rust code in your blog by adding a single line of JavaScript to your pages
 * [bstrie's map of Rust contributors](http://seleniac.org/map/)
 * ["Is Rust fast yet?"](http://huonw.github.io/isrustfastyet/) - graphs of the build/test times of each merge into incoming
