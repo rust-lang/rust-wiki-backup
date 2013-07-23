@@ -89,7 +89,7 @@ Using `mingw-get` alone will open a GUI interface for package management.
 
 (OPTIONAL - if using another Git installer or method other than the Quick Steps) :
 
-* Put the git binary path *after* the MinGW path. So add a line like the following to your `.bashrc`:
+* Put the git binary path *after* the MinGW path. So add a line like the following to your `/etc/profile` or `.bashrc`:
 
     export PATH=$PATH:/c/Program\ Files/Git/bin
 
