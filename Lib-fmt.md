@@ -8,8 +8,8 @@ Module editing plan template
 
 ###  Notes from discussion on mailing list
 
-  - [A trait based system for overloading the format specifiers, among other proposals](https://mail.mozilla.org/pipermail/rust-dev/2013-May/003999.html)
-  - _note_
+  - ["A trait based system for overloading the format specifiers, among other proposals"](https://mail.mozilla.org/pipermail/rust-dev/2013-May/003999.html) 2013-05-03
+  - ["Redesigning fmt!"](https://mail.mozilla.org/pipermail/rust-dev/2013-July/004961.html) 2013-07-26
   - _note_
 
 ## 2. Research of standards and techniques
