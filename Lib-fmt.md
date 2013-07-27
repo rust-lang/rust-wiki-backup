@@ -10,7 +10,7 @@ Module editing plan template
 
   - ["RFC: User-implementable format specifiers w/ compile-time checks"](https://mail.mozilla.org/pipermail/rust-dev/2013-May/003999.html) 2013-05-03
   - ["Redesigning fmt!"](https://mail.mozilla.org/pipermail/rust-dev/2013-July/004961.html) 2013-07-26
-  - _note_
+  - Some notes in ["bikeshedding println() and friends"](https://mail.mozilla.org/pipermail/rust-dev/2013-July/004836.html)
 
 ## 2. Research of standards and techniques
 
@@ -20,16 +20,16 @@ Module editing plan template
   2. Standard: _standard_
     - _link to docs_
     - ...
-  1. Technique: _technique_
-    - _link to docs_
-    - ...
-  2. Technique: _technique_
-    - _link to docs_
-    - ...
+  1. Technique: ICU/Java-stype MessageFormat
+    - http://www.icu-project.org/apiref/icu4j/com/ibm/icu/text/MessageFormat.html
+    - http://docs.oracle.com/javase/1.4.2/docs/api/java/text/MessageFormat.html
 
 ### Summary of research on standards and leading techniques
 #### Relevant standards and techniques exist?
 #### Those intended to follow (and why)
+
+Something like the MessageFormat specifier should be our default, given that it's the leading approach to the needs of i18n.
+
 #### Those intended to ignore (and why)
 
 ## 3. Research of libraries from other languages
