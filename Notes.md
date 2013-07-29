@@ -23,7 +23,6 @@ Listing of notes for developers working on the Rust compiler and tools.
 ## Language and implementation notes
 
 * [[Note defined attributes]]
-* [[Note tasks and communication]]
 * [[Note metadata format]]
 
 ## Miscellaneous notes
