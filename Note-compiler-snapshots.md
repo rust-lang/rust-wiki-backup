@@ -52,7 +52,7 @@ uploading rust-stage0-2013-07-29-63c9b11-freebsd-x86_64-e2aa76ac1d3edd5385cb572b
        winnt-i386 5d3279a2dd0e3179b0e982432d63d79f87cac221
 ```
 
-    These are examples; you should use the values from the lines you pulled out of the logs. The thing to notice is that the first part `S 2011-05-13 0d32ff7` names the git revision you pushed, and the subsequent 3 indented lines name the per-platform snapshots and give their sha1 values, that you pulled out of the builder logs. Be sure to actually add the same number of lines as were included in the previous snapshot, otherwise you'll be leaving some platform out in the cold. That's not cool.
+These are examples; you should use the values from the lines you pulled out of the logs. The thing to notice is that the first part `S 2011-05-13 0d32ff7` names the git revision you pushed, and the subsequent 3 indented lines name the per-platform snapshots and give their sha1 values, that you pulled out of the builder logs. Be sure to actually add the same number of lines as were included in the previous snapshot, otherwise you'll be leaving some platform out in the cold. That's not cool.
 
 * Save `src/snapshots.txt` and make check in your workspace. Make sure everything's cool. You are now building with your new snapshot locally.
 
