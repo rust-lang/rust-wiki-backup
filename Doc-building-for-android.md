@@ -31,7 +31,7 @@ These are preliminary build instructions for Android. Note that ARM and Android 
 
         make
   
-        make install  
+        make install (Optional) 
 
     It will copy rustc binaries and libraries into /usr/local (or as defined with --prefix)
     
@@ -47,14 +47,15 @@ These are preliminary build instructions for Android. Note that ARM and Android 
 
     Push arm libs and Android GNU STL shared lib
 
-        adb push /usr/local/lib/rustc/arm-unknown-android/libcore-c3ca5d77d81b46c1-0.6.so /system/lib
+        adb push /usr/local/lib/rustc/arm-unknown-android/libextra-a7c050cfd46b2c9a-0.7.so /system/lib
         adb push /usr/local/lib/rustc/arm-unknown-android/librustrt.so /system/lib
-        adb push /usr/local/lib/rustc/arm-unknown-android/libstd-4782a756585a81-0.6.so /system/lib
-        e.g) adb push YOUR_NDK_TOOLCHAIN_PATH/arm-linux-androideabi/lib/libgnustl_shared.so /system/lib
+        adb push /usr/local/lib/rustc/arm-unknown-android/libstd-6c65cf4b443341b1-0.7.so /system/lib
+        e.g) adb push YOUR_NDK_TOOLCHAIN_PATH/build/x86_64-unknown-linux-gnu/stage2/lib/rustc/arm-linux-androideabi/liblibrustrt.so /system/lib
 
     Push your binary
 
         adb push hello /system/bin
+        chmod 777 hello
 
     Run using adb shell
 
