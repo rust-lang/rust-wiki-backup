@@ -106,7 +106,7 @@ This is Tim's attempt to come up with a schedule for finishing rustpkg, with a p
    
    At the same time, teach rustpkg about branches and tags (#6411)
 
-   Due: 2013-06-07
+   ~~Due: 2013-06-07~~ Done (#8032)
 
 8. Finish implementing all other commands (#7242)
        * do, fetch, info, prefer, test, uninstall, unprefer
