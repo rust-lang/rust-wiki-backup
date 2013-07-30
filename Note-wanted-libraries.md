@@ -44,6 +44,7 @@ Notes taken at rust work week, 2011/06/23
  * [json](https://github.com/mozilla/rust/blob/master/src/libextra/json.rs)
  * protobuf
  * thrift
+ * [Cap'n Proto](https://github.com/dwrensha/capnproto-rust) (external)
  * [tnetstring](https://github.com/erickt/rust-tnetstring) (external)
  * xml
 * file formats
