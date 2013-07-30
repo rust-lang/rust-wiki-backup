@@ -34,7 +34,7 @@ fn foo(message: ~str, chan_opt: Option<Chan<~str>>) {
 ...or, if no such alternate exists, use the ```std::cell::Cell``` type:
 ```
 fn foo(message: ~str, chan_opt: Option<Chan<~str>>) {
-    let message_cell == Cell::new(message);
+    let message_cell = Cell::new(message);
     do chan_opt.map |chan| {
         // NOTE: If the closure is called twice, the 2nd take() will fail!
         chan.send(message_cell.take());
