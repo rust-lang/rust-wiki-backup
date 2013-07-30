@@ -46,6 +46,7 @@ These are preliminary build instructions for Android. Note that ARM and Android 
         adb remount
 
     Push arm libs and Android GNU STL shared lib
+
         adb push NDK_TOOLCHAIN_PATH/arm-linux-androideabi/lib/libgnustl_shared.so
         adb push /usr/local/lib/rustc/arm-unknown-android/libextra-a7c050cfd46b2c9a-0.7.so /system/lib
         adb push /usr/local/lib/rustc/arm-unknown-android/librustrt.so /system/lib
