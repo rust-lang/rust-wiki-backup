@@ -82,6 +82,7 @@ Mozilla employees have a weekly Rust planning meeting on Tuesday mornings at 9:0
 * [[Meeting-weekly-2013-07-09]] (split stacks & ffi)
 * [[Meeting-weekly-2013-07-16]] (short meeting, admin only)
 * [[Meeting-weekly-2013-07-23]] (OSCON; MPS; benchmarks; unsafe extern; Self; Drop; etc)
+* [[Meeting-weekly-2013-07-30]] (OSCON; for; overloadable *; * and lifetimes; 'as' precedence; etc)
 
 ## Other meetings:
 
