@@ -5,7 +5,7 @@ Rust has built in support for simple unit testing. Functions can be marked as un
 ```rust
 #[test]
 fn return_none_if_empty() {
-   ... test code ...
+    // ... test code ...
 }
 ```
 
@@ -16,10 +16,10 @@ When compiling a crate with the '--test' flag '--cfg test' is also implied, so t
 ```rust
 #[cfg(test)]
 mod tests {
-  #[test]
-  fn return_none_if_empty() {
-    ... test code ...
-  }
+    #[test]
+    fn return_none_if_empty() {
+      // ... test code ...
+    }
 }
 ```
 
@@ -33,8 +33,8 @@ Tests that are intended to fail can be annotated with the 'should_fail' attribut
 #[test]
 #[should_fail]
 fn test_out_of_bounds_failure() {
-  let v: [int] = [];
-  v[0];
+    let v: [int] = [];
+    v[0];
 }
 ```
 
