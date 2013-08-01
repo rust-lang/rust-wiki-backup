@@ -48,21 +48,34 @@ By default, tests are run in parallel, which can make interpreting failure outpu
 
 The test runner also understands a simple form of benchmark execution. Benchmark functions are marked with the `#[bench]` attribute, rather than `#[test]`, and have a different form and meaning. They are compiled along with `#[test]` functions when a crate is compiled with `--test`, but they are not run by default. To run the benchmark component of your testsuite, pass `--bench` to the compiled test runner.
 
-The type signature of a benchmark function differs from a unit test: it takes a mutable reference to type `test::BenchHarness`. Inside the benchmark function, any time-variable or "setup" code should execute first, followed by a call to `iter` on the benchmark harness, passing a closure that contains the portion of the benchmark you wish to actually measure the per-iteration speed of. For example:
+The type signature of a benchmark function differs from a unit test: it takes a mutable reference to type `test::BenchHarness`. Inside the benchmark function, any time-variable or "setup" code should execute first, followed by a call to `iter` on the benchmark harness, passing a closure that contains the portion of the benchmark you wish to actually measure the per-iteration speed of. 
+
+For benchmarks relating to processing/generating data, one can set the `bytes` field to the number of bytes consumed/produced in each iteration; this will used to show the throughput of the benchmark. This must be the amount used in each iteration, *not* the total amount.
+
+For example:
 
 ```rust
 extern mod extra;
+use std::vec;
 
 #[bench]
 fn bench_sum_1024_ints(b: &mut extra::test::BenchHarness) {
     let v = vec::from_fn(1024, |n| n);
     do b.iter {
-        v.foldl(|a, b| *a + *b);
+        v.iter().fold(0, |old, new| old + *new);
     }
+}
+
+#[bench]
+fn initialise_a_vector(b: &mut extra::test::BenchHarness) {
+    do b.iter {
+         vec::from_elem(1024, 0u64);
+    }
+    b.bytes = 1024 * 8;
 }
 ```
 
-The benchmark runner will calibrate measurement of the benchmark function to run the `iter` block "enough" times to get a reliable measure of the per-iteration speed. 
+The benchmark runner will calibrate measurement of the benchmark function to run the `iter` block "enough" times to get a reliable measure of the per-iteration speed.
 
 Advice on writing benchmarks:
 
@@ -135,10 +148,11 @@ result: ok. 11 passed; 0 failed; 1 ignored
 ```
 > mytests --bench
 
-running 1 test
-test bench_sum_1024_ints ... bench: 14 ns/iter (+/- 0)
+running 2 tests
+test bench_sum_1024_ints ... bench: 709 ns/iter (+/- 82)
+test initialise_a_vector ... bench: 424 ns/iter (+/- 99) = 19320 MB/s
 
-result: ok. 0 passed; 0 failed; 0 ignored
+test result: ok. 0 passed; 0 failed; 0 ignored; 2 measured
 ```
 
 ## Saving and ratcheting metrics
