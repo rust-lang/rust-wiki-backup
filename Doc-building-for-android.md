@@ -6,7 +6,7 @@ These are preliminary build instructions for Android. Note that ARM and Android 
     
     example command to setup standalone tool chain:
     
-        ~/android-ndk-r8d/build/tools$ ./make-standalone-toolchain.sh --platform=android-14 --install-dir=/opt/ndk_standalone --ndk-dir=~/android-ndk-r8d
+        ~/android-ndk-r8d/build/tools/make-standalone-toolchain.sh --platform=android-14 --install-dir=/opt/ndk_standalone --ndk-dir=~/android-ndk-r8d
 
 
     In case of 64bit linux system, android ndk needs 32bit linux libraries.
