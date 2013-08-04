@@ -52,6 +52,8 @@ A library/module for escaping/unescaping of special HTML characters.
 
 ## 4. Module writing
 
+See https://github.com/veddan/rust-htmlescape
+
   - Pull request: _link to bug_
 
 ### Additional implementation notes
