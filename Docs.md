@@ -89,3 +89,4 @@ Some Rust classics:
 * [Reasoning about the heap in Rust](http://johnbender.us/2013/04/30/reasoning-about-the-heap-in-rust)
 * [The Option Type](http://nickdesaulniers.github.io/blog/2013/05/07/rust-pattern-matching-and-the-option-type/)
 * [How I got started hacking rustc](http://cmr.github.io/blog/2013/06/23/how-i-got-started-with-rust/)
+* [Abstraction penalties, stack allocation, and ownership types](http://robert.ocallahan.org/2007/10/abstraction-penalties-stack-allocation_23.html)
