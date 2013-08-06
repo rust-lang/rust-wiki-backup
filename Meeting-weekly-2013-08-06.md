@@ -16,16 +16,16 @@ graydon, jack, kmc, brson, tjc, dherman, jld, sully, toddaaro
 - dherman: we came a long road from structural types to nominal types. it's extremely tricky to get right.
 - brson: it's not just samsung. the last time someone brought this up in a blog post
 
-newer: http://blog.aventine.se/post/55669497784/my-vision-for-rust-simd
-older: https://github.com/mozilla/rust/wiki/Lib-simd
+newer: http://blog.aventine.se/post/55669497784/my-vision-for-rust-simd  
+older: https://github.com/mozilla/rust/wiki/Lib-simd  
 
 - graydon: jens points out that nominal tuples don't work cross crate right now.
 
 - graydon: We had a number of conversations, myself, Jens, Seo and a few others, ending up on a consensus (I though!) on IRC to use nominal tuple types with special lang-item status. Links to the conversation:
 
-https://botbot.me/mozilla/rust/msg/4615603/
-https://botbot.me/mozilla/rust/msg/4616169/
-https://botbot.me/mozilla/rust/msg/4615944/
+https://botbot.me/mozilla/rust/msg/4615603/  
+https://botbot.me/mozilla/rust/msg/4616169/  
+https://botbot.me/mozilla/rust/msg/4615944/  
 
 That is, we'd define (in the stdlib) a bunch of types like:
 
