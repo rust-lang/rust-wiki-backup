@@ -23,6 +23,7 @@ Notes taken at rust work week, 2011/06/23
     * client
       * [rust-http-client](https://github.com/mozilla-servo/rust-http-client) (external)
     * server
+      * [rusthttpserver](http://hg.chrismorgan.info/rusthttpserver)
       * [rwebserve](https://github.com/jesse99/rwebserve) (external)
  * [URI/URL](https://github.com/mozilla/rust/blob/master/src/libextra/net_url.rs)
  * [UUID](https://github.com/erickt/rust-uuid) (external)
