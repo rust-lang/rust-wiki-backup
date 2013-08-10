@@ -90,3 +90,8 @@ Some Rust classics:
 * [The Option Type](http://nickdesaulniers.github.io/blog/2013/05/07/rust-pattern-matching-and-the-option-type/)
 * [How I got started hacking rustc](http://cmr.github.io/blog/2013/06/23/how-i-got-started-with-rust/)
 * [Abstraction penalties, stack allocation, and ownership types](http://robert.ocallahan.org/2007/10/abstraction-penalties-stack-allocation_23.html)
+
+## Videos
+
+* [Dave Herman's StrangeLoop 2012 talk](http://www.infoq.com/presentations/Rust)
+* [A work stealing runtime for Rust](https://air.mozilla.org/2013-intern-todd/) - Aaron Todd discusses the Rust scheduler.
