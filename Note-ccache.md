@@ -1,6 +1,6 @@
 [ccache](http://ccache.samba.org/) is a tool which provides a cache for C/C++/Objective-C compiler operations.  We've found that it makes LLVM recompilation a bit easier to handle, and not everyone knows about it yet!
 
-After installing the `ccache` package using your preferred package manager (i.e. `apt-get`, `yum`, `pacman`), you need to prioritize `ccache` so that it intercepts calls to the compiler. There are three methods for doing so.
+After installing the `ccache` package using your preferred package manager (i.e. `apt-get`, `yum`, `pacman`, `brew`), you need to prioritize `ccache` so that it intercepts calls to the compiler. There are three methods for doing so.
 
 The first method is to pass `--enable-ccache` when you run `configure`.
 
