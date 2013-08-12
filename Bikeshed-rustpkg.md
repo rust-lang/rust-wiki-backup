@@ -83,7 +83,7 @@ This is Tim's attempt to come up with a schedule for finishing rustpkg, with a p
 8. `extern mod` should name a package ID
       * fix #6407 (change what's allowed in an `extern mod` directive)
 
-    Done pending #8176
+    Done ~~pending #8176~~
 
 8. Track dependencies between Rust packages
       * test case:
