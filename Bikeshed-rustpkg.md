@@ -110,14 +110,12 @@ This is Tim's attempt to come up with a schedule for finishing rustpkg, with a p
 
    ~~Due: 2013-06-07~~ Done (#8032)
 
-8. Finish implementing all other commands (#7242)
-       * do, fetch, info, prefer, test, uninstall, unprefer
-
-   Due: 2013-06-14
-
 8. Expose the ability to clone a git repository (#6409)
 
 8. Build C libraries (#6403 and #6404)
+
+8. Finish implementing all other commands (#7242)
+       * do, fetch, info, prefer, test, uninstall, unprefer
 
 8. (wishlist) Track non-Rust dependencies
        * test case:
