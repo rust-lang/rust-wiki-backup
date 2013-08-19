@@ -26,7 +26,7 @@ Notes taken at rust work week, 2011/06/23
       * [rusthttpserver](http://hg.chrismorgan.info/rusthttpserver) (external)
       * [rwebserve](https://github.com/jesse99/rwebserve) (external)
  * [URI/URL](https://github.com/mozilla/rust/blob/master/src/libextra/net_url.rs)
- * [UUID](https://github.com/erickt/rust-uuid) (external)
+ * [UUID](https://github.com/mozilla/rust/blob/master/src/libextra/uuid.rs)
  * GUID
 * date and time
   * [rust_datetime](https://github.com/tedhorst/rust_datetime) (external)
