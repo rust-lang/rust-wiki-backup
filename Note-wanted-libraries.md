@@ -6,6 +6,8 @@ Notes taken at rust work week, 2011/06/23
 * [compression](https://github.com/elly/rustzlib) (external)
  * zip file format
  * tar file format
+* concurrency
+ * task management, actor, OTP, [[Bikeshed mapreduce]], pools
 * [crypto](https://github.com/mozilla/rust/tree/master/src/libextra/crypto)
 * date and time
   * [rust_datetime](https://github.com/tedhorst/rust_datetime) (external)
@@ -51,31 +53,29 @@ Notes taken at rust work week, 2011/06/23
  * Convertions between text encodings. Ideally, with a customizable way of handling conversion errors.
  * Unicode normalization (NFD, NFC, NFKD, NFKC)
  * Collator (locale sensitive string comparison), with a configurable degree of strictness
-* concurrency
- * task management, actor, OTP, [[Bikeshed mapreduce]], pools
 * low-level OS services
 * Simple search on a filesystem (eg Ruby's [glob](http://ruby-doc.org/core-2.0/Dir.html#method-c-glob))
 * unit testing
 * FFI, ctypes
-* dlopen, os proceses
+* dlopen, os processes
 * standard predicates
  * text, numeric, sorted
 * error-trapping wrappers, in-place task?
  * Consistent error handling
-* quotas, accounting
 * reflection
 
 ## Things that do not belong in std
-* DB API (sql, nosql)
+* Datbase access (sql, nosql)
   * [mongodb](https://github.com/10gen-interns/mongo-rust-driver-prototype) (external)
   * [postgres](https://github.com/sfackler/rust-postgres) (external)
   * [redis](https://github.com/mneumann/rust-redis) (external)
   * [sqlite](https://github.com/linuxfood/rustsqlite) (external)
+* GUI
+ * [Cocoa](https://github.com/mozilla-servo/rust-cocoa) (external)
+* quotas, accounting
 * [ZeroMQ](https://github.com/erickt/rust-zmq) (external)
  * How will libs like this be integrated with regular nonblocking io?
  * ZeroMQ sockets need to be used from a fixed thread, can we do this in rust?
-* GUI
- * [Cocoa](https://github.com/mozilla-servo/rust-cocoa) (external)
 
 ## Missing language features
 * big
