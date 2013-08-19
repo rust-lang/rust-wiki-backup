@@ -3,6 +3,21 @@ Notes taken at rust work week, 2011/06/23
 ## Things that standard libraries might want
 
 * collections (see [[Containers]])
+* [compression](https://github.com/elly/rustzlib) (external)
+ * zip file format
+ * tar file format
+* [crypto](https://github.com/mozilla/rust/tree/master/src/libextra/crypto)
+* date and time
+  * [rust_datetime](https://github.com/tedhorst/rust_datetime) (external)
+* encoding
+ * [base64](https://github.com/mozilla/rust/blob/master/src/libextra/base64.rs)
+ * [CSV](https://github.com/grahame/rust-csv) (external)
+ * [json](https://github.com/mozilla/rust/blob/master/src/libextra/json.rs)
+ * protobuf
+ * thrift
+ * [Cap'n Proto](https://github.com/dwrensha/capnproto-rust) (external)
+ * [tnetstring](https://github.com/erickt/rust-tnetstring) (external)
+ * xml
 * IO
  * AIO, SIO, stdio
  * [filesystem](https://github.com/mozilla/rust/blob/master/src/libstd/os.rs)
@@ -18,6 +33,9 @@ Notes taken at rust work week, 2011/06/23
  * one aspect of L10n is to map a key to a text, based on the current locale (eg Java's [ResourceBundle](http://docs.oracle.com/javase/7/docs/api/java/util/ResourceBundle.html) or [GNU gettext](http://www.gnu.org/software/gettext/))
  * another aspect is to format a string based on the current locale (eg Java's [MessageFormat](http://docs.oracle.com/javase/7/docs/api/java/text/MessageFormat.html))
  * See [issue #4630](https://github.com/mozilla/rust/issues/4630)
+* math
+  * [lmath](https://github.com/bjz/lmath-rs) (external)
+  * [rusty-math](https://github.com/z0w0/rusty-math) (external)
 * networking
   * HTTP
     * client
@@ -28,30 +46,11 @@ Notes taken at rust work week, 2011/06/23
  * [URI/URL](https://github.com/mozilla/rust/blob/master/src/libextra/net_url.rs)
  * [UUID](https://github.com/mozilla/rust/blob/master/src/libextra/uuid.rs)
  * GUID
-* date and time
-  * [rust_datetime](https://github.com/tedhorst/rust_datetime) (external)
-* math
-  * [lmath](https://github.com/bjz/lmath-rs) (external)
-  * [rusty-math](https://github.com/z0w0/rusty-math) (external)
 * [random](https://github.com/mozilla/rust/blob/master/src/libcstd/rand.rs)
-* [compression](https://github.com/elly/rustzlib) (external)
-* [libicu](https://github.com/mozilla/rust/blob/master/src/libextra/unicode.rs)
+* [Unicode](https://github.com/mozilla/rust/blob/master/src/libextra/unicode.rs)
  * Convertions between text encodings. Ideally, with a customizable way of handling conversion errors.
  * Unicode normalization (NFD, NFC, NFKD, NFKC)
  * Collator (locale sensitive string comparison), with a configurable degree of strictness
-* serialization/encoding
- * [base64](https://github.com/mozilla/rust/blob/master/src/libextra/base64.rs)
- * [CSV](https://github.com/grahame/rust-csv) (external)
- * [json](https://github.com/mozilla/rust/blob/master/src/libextra/json.rs)
- * protobuf
- * thrift
- * [Cap'n Proto](https://github.com/dwrensha/capnproto-rust) (external)
- * [tnetstring](https://github.com/erickt/rust-tnetstring) (external)
- * xml
-* file formats
- * zip file format
- * tar file format
-* [crypto](https://github.com/mozilla/rust/tree/master/src/libextra/crypto)
 * concurrency
  * task management, actor, OTP, [[Bikeshed mapreduce]], pools
 * low-level OS services
