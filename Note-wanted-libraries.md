@@ -76,7 +76,7 @@ Notes taken at rust work week, 2011/06/23
  * How will libs like this be integrated with regular nonblocking io?
  * ZeroMQ sockets need to be used from a fixed thread, can we do this in rust?
 * GUI
- * [Cocoa](https://github.com/pcwalton/rust-cocoa) (external)
+ * [Cocoa](https://github.com/mozilla-servo/rust-cocoa) (external)
 
 ## Missing language features
 * big
