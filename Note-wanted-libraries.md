@@ -12,7 +12,7 @@ Notes taken at rust work week, 2011/06/23
 * string manipulation
  * slicing w/o copy, stringref
  * [regexp](https://github.com/elly/rustpcre) (external)
- * [ropes](https://github.com/mozilla/rust/blob/master/src/libextra/rope.rs)
+ * ropes
  * simple tokenizer
 * Localizability
  * one aspect of L10n is to map a key to a text, based on the current locale (eg Java's [ResourceBundle](http://docs.oracle.com/javase/7/docs/api/java/util/ResourceBundle.html) or [GNU gettext](http://www.gnu.org/software/gettext/))
