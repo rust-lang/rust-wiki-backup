@@ -51,7 +51,7 @@ Notes taken at rust work week, 2011/06/23
 * file formats
  * zip file format
  * tar file format
-* [crypto](https://github.com/elly/rustcrypto) (external)
+* [crypto](https://github.com/mozilla/rust/tree/master/src/libextra/crypto)
 * concurrency
  * task management, actor, OTP, [[Bikeshed mapreduce]], pools
 * low-level OS services
