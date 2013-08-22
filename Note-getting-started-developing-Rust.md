@@ -105,6 +105,30 @@ Get the command line tools for xcode from  [Apple Developer Downloads](https://d
 
 Then, optionally get Valgrind and pandoc. Vallgrind is available in machomebrew: `brew install valgrind`. pandoc must be installed manually according to the [installation instructions](http://johnmacfarlane.net/pandoc/installing.html). ccache can also be installed from machomebrew: `brew install ccache`.
 
+Sometimes, on OS X, compiling Rust might fail with a "too many open files" error.  One solution for this is to raise the open file limit on OS X.  One method that has been tested on 10.7.5 is the following:
+
+1. Raise the number of maximum files allowed on the system: `sudo sysctl -w kern.maxfiles=1048600` and `sudo sysctl -w kern.maxfilesperproc=1048576`.  This can be made persistent by adding the following lines to `/etc/sysctl.conf`:
+
+        kern.maxfiles=1048600
+        kern.maxfilesperproc=1048576
+
+2. Raise the launchd limits: `sudo launchctl limit maxfiles 1048576`.  Can be made persistent by adding `  limit maxfiles 1048576` to `/etc/launchd.conf`.
+
+3. Verify the changes.  If all goes well, `sudo launchctl limit` should show something like this:
+
+        [...]
+        maxproc     709            1064
+        maxfiles    1048575        1048575
+
+4. Run the compiler.  Note that if the changes aren't made persistent, you need to run as root, since the per-user launchd won't inherit the settings.  If you do change the config files, you need to reboot to apply the appropriate settings.
+
+In summary:
+
+    $ sudo sysctl -w kern.maxfiles=1048600
+    $ sudo sysctl -w kern.maxfilesperproc=1048576
+    $ sudo launchctl limit maxfiles 1048575
+    $ sudo make check
+
 ### FreeBSD
 
 Rust builds on FreeBSD but is not officially supported. It is only known to work on 9.0-RELEASE. You'll need some prerequisites:
