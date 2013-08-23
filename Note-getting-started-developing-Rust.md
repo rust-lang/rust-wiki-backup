@@ -122,13 +122,6 @@ Sometimes, on OS X, compiling Rust might fail with a "too many open files" error
 
 4. Run the compiler.  Note that if the changes aren't made persistent, you need to run as root, since the per-user launchd won't inherit the settings.  If you do change the config files, you need to reboot to apply the appropriate settings.
 
-In summary:
-
-    $ sudo sysctl -w kern.maxfiles=1048600
-    $ sudo sysctl -w kern.maxfilesperproc=1048576
-    $ sudo launchctl limit maxfiles 1048575
-    $ sudo make check
-
 ### FreeBSD
 
 Rust builds on FreeBSD but is not officially supported. It is only known to work on 9.0-RELEASE. You'll need some prerequisites:
