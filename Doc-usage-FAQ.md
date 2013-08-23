@@ -14,6 +14,10 @@ If you aren't sure which paths you need, try setting RUST_LOG to `::help` and ru
 
 [1]:http://doc.rust-lang.org/doc/rust.html#logging-system
 
+### How do I get my program to display the output of `debug!` statements?
+
+This is much like the answer for `log` statements, except that you also need to compile your program in debug mode (that is, pass `--cfg debug` to `rustc`).  Note that if you want to see the instrumentation of the `debug!` statements within `rustc` itself, you need a debug version of `rustc`; you can get one by invoking `configure` with the `--enable-debug` option.
+
 ### What does it mean when a program exits with `leaked memory in rust main loop (2 objects)' failed, rt/memory_region.cpp:99 2 objects`?
 
 This message indicates a memory leak, and is mostly likely to happen on rarely exercised failure paths. Note that failure unwinding is not yet implemented on windows so this is expected. If you see this on Linux or Mac it's a compiler bug; please report it.
