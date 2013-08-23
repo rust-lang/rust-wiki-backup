@@ -105,7 +105,9 @@ Get the command line tools for xcode from  [Apple Developer Downloads](https://d
 
 Then, optionally get Valgrind and pandoc. Vallgrind is available in machomebrew: `brew install valgrind`. pandoc must be installed manually according to the [installation instructions](http://johnmacfarlane.net/pandoc/installing.html). ccache can also be installed from machomebrew: `brew install ccache`.
 
-Sometimes, on OS X, compiling Rust might fail with a "too many open files" error.  One solution for this is to raise the open file limit on OS X.  One method that has been tested on 10.7.5 is the following:
+Sometimes, on OS X, compiling Rust might fail with a "too many open files" error, especially when running `make check`.
+ * One solution is to limit the number of concurrent threads during the run, via the environment variable `RUST_THREADS`, e.g. `% RUST_THREADS=2 make check`.
+ * Another solution for this is to raise the open file limit on OS X.  One method to achieve the latter that has been tested on 10.7.5 is the following:
 
 1. Raise the number of maximum files allowed on the system: `sudo sysctl -w kern.maxfiles=1048600` and `sudo sysctl -w kern.maxfilesperproc=1048576`.  This can be made persistent by adding the following lines to `/etc/sysctl.conf`:
 
