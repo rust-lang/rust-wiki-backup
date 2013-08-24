@@ -11,8 +11,8 @@ This is an archive of all the existing Rust release artifacts. Each release is s
 * [Windows installer][0.7-exe] ([signature][0.7-exe-sig])
 * [Tutorial][0.7-tutorial]
 * [Manual][0.7-manual] ([PDF][0.7-manual-pdf])
-* [Core library docs][0.7-core]
 * [Standard library docs][0.7-std]
+* [Extra library docs][0.7-extra]
 
 [0.7-announce]: https://mail.mozilla.org/pipermail/rust-dev/2013-July/004667.html
 [0.7-notes]: https://github.com/mozilla/rust/blob/release-0.7/RELEASES.txt
@@ -23,8 +23,8 @@ This is an archive of all the existing Rust release artifacts. Each release is s
 [0.7-tutorial]: http://doc.rust-lang.org/doc/0.7/tutorial.html
 [0.7-manual]: http://doc.rust-lang.org/doc/0.7/rust.html
 [0.7-manual-pdf]: http://doc.rust-lang.org/doc/0.7/rust.pdf
-[0.7-core]: http://doc.rust-lang.org/doc/0.7/core/index.html
 [0.7-std]: http://doc.rust-lang.org/doc/0.7/std/index.html
+[0.7-extra]: http://doc.rust-lang.org/doc/0.7/extra/index.html
 
 ## 0.6
 
