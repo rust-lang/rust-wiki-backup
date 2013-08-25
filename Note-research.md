@@ -23,3 +23,5 @@ Papers that have had more or less influence on Rust, or which one might want to 
 
 ## Papers *about* Rust
 
+* [GPU programming in Rust](http://www.cs.indiana.edu/~eholk/papers/hips2013.pdf)
+
