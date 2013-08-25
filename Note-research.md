@@ -22,6 +22,10 @@ Papers that have had more or less influence on Rust, or which one might want to 
 * [Non-blocking steal-half work queues](http://www.cs.bgu.ac.il/%7Ehendlerd/papers/p280-hendler.pdf)
 * [Reagents: expressing and composing fine-grained concurrency](http://www.mpi-sws.org/~turon/reagents.pdf)
 
+## Other
+
+* [Crash-only software](https://www.usenix.org/legacy/events/hotos03/tech/full_papers/candea/candea.pdf)
+
 ## Papers *about* Rust
 
 * [GPU programming in Rust](http://www.cs.indiana.edu/~eholk/papers/hips2013.pdf)
