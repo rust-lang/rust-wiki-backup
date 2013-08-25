@@ -2,6 +2,8 @@ Papers that have had more or less influence on Rust, or which one might want to 
 
 ## Type system
 
+* [Region based memory management in Cyclone](http://209.68.42.137/ucsd-pages/Courses/cse227.w03/handouts/cyclone-regions.pdf)
+
 ## Concurrency
 
 * [Singularity: rethinking the software stack](https://research.microsoft.com/pubs/69431/osr2007_rethinkingsoftwarestack.pdf)
