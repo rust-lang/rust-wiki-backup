@@ -25,7 +25,6 @@
 * [Tasks](http://doc.rust-lang.org/doc/tutorial-tasks.html)
 * [Macros](http://doc.rust-lang.org/doc/tutorial-macros.html)
 * [FFI](http://doc.rust-lang.org/doc/tutorial-ffi.html)
-* [Conditions and Error-handling](http://static.rust-lang.org/doc/tutorial-conditions.html)
 
 ## FAQs
 
