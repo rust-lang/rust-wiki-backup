@@ -3,6 +3,7 @@ Papers that have had more or less influence on Rust, or which one might want to 
 ## Type system
 
 * [Region based memory management in Cyclone](http://209.68.42.137/ucsd-pages/Courses/cse227.w03/handouts/cyclone-regions.pdf)
+* [Traits: composable units of behavior](http://scg.unibe.ch/archive/papers/Scha03aTraits.pdf)
 
 ## Concurrency
 
@@ -24,4 +25,5 @@ Papers that have had more or less influence on Rust, or which one might want to 
 ## Papers *about* Rust
 
 * [GPU programming in Rust](http://www.cs.indiana.edu/~eholk/papers/hips2013.pdf)
+* [Parallel closures: a new twist on an old idea](https://www.usenix.org/conference/hotpar12/parallel-closures-new-twist-old-idea) - not exactly about rust, but by nmatsakis
 
