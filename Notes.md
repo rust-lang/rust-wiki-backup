@@ -29,6 +29,7 @@ Listing of notes for developers working on the Rust compiler and tools.
 
 * [[Note seeing LLVM output from rust]]
 * [[Note packaging]]
+* [[Note research]] - Links to research that influenced Rust.
 
 ## Tools
 
