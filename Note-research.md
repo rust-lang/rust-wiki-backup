@@ -1,4 +1,4 @@
-Papers that have had more or less influence on Rust.
+Papers that have had more or less influence on Rust, or which one might want to consult for inspiration or to understand Rust's background.
 
 ## Type system
 
