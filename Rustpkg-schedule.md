@@ -1,4 +1,4 @@
-## "Ready for use" as per metabug:
+### "Ready for use" as per metabug:
  Due September 30
 
 * 7075: rustpkg should use workcache
@@ -8,22 +8,22 @@
 * 8405: Semantic versions
 * 7240: Multi-crate packages
 
-## Port Servo to rustpkg (concurrently with the following)
+### Port Servo to rustpkg (concurrently with the following)
 
-## Milestone 1: well-defined
+### Milestone 1: well-defined
   Due October 15
 
 * 7447: Possible refinements to version handling
 * 6746: Module file names should be resolved relatively to the referring module
 * 6365: rustpkg usage messages need work
 
-## Milestone 2: backwards-compatible
+### Milestone 2: backwards-compatible
   Due October 25
 
 * 8523: RFC: remove linkage attributes
 * 6480: rustpkg should make locally cached files read-only
 
-## Milestone 3: feature-complete
+### Milestone 3: feature-complete
    Due December 16
 
 * 8673: Specifying a revision in an `extern mod` directive can lead to duplication
@@ -38,13 +38,13 @@
 * 5012: `rustpkg`'s `-c` does not work.
 * 2219: --attr flag
 
-## Milestone 4: self-hosting
+### Milestone 4: self-hosting
   Due January 15
 
 * 5363: Build all rust libraries and binaries with rustpkg
 * 4019: Rewrite tests.mk in Rust
 
-## Milestone 5: production-ready
+### Milestone 5: production-ready
    Due February 7
 
 * 8711: When searching the RUST_PATH, rustpkg ignores versions
@@ -53,7 +53,7 @@
 * 5219: Make rpath usage optional 
 * 3346: crate name in log map is taken from name of output binary, not the crate name
 
-## Milestone 6: far-future (everything else)
+### Milestone 6: far-future (everything else)
 
 * 7243: Teach rustpkg how to unpack tarball packages and fetch via curl
 * 6481: Add a lint command to rustpkg
