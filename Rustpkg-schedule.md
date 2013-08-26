@@ -1,5 +1,5 @@
 "Ready for use" as per metabug:
-Due September 30
+    Due September 30
 
 * 7075: rustpkg should use workcache
 * 6408: Package IDs pointing into a subdirectory
@@ -11,20 +11,20 @@ Due September 30
 Port Servo to rustpkg (concurrently with the following)
 
 Milestone 1: well-defined
-Due October 15
+    Due October 15
 
 * 7447: Possible refinements to version handling
 * 6746: Module file names should be resolved relatively to the referring module
 * 6365: rustpkg usage messages need work
 
 Milestone 2: backwards-compatible
-Due October 25
+    Due October 25
 
 * 8523: RFC: remove linkage attributes
 * 6480: rustpkg should make locally cached files read-only
 
 Milestone 3: feature-complete
-Due December 16
+    Due December 16
 
 * 8673: Specifying a revision in an `extern mod` directive can lead to duplication
 * 8672: rustpkg should put build output in a target-specific subdirectory
@@ -39,13 +39,13 @@ Due December 16
 * 2219: --attr flag
 
 Milestone 4: self-hosting
-Due January 15
+    Due January 15
 
 * 5363: Build all rust libraries and binaries with rustpkg
 * 4019: Rewrite tests.mk in Rust
 
 Milestone 5: production-ready
-Due February 7
+    Due February 7
 
 * 8711: When searching the RUST_PATH, rustpkg ignores versions
 * 8690: rustpkg test package_script_with_default_build makes bogus assumptions about the build directory layout
