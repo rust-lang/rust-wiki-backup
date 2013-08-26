@@ -3,7 +3,11 @@ Papers that have had more or less influence on Rust, or which one might want to 
 ## Type system
 
 * [Region based memory management in Cyclone](http://209.68.42.137/ucsd-pages/Courses/cse227.w03/handouts/cyclone-regions.pdf)
+* [Typeclasses: making ad-hoc polymorphism less ad hoc](http://www.ps.uni-sb.de/courses/typen-ws99/class.ps.gz)
+* [Macros that work together](https://www.cs.utah.edu/plt/publications/jfp12-draft-fcdf.pdf)
 * [Traits: composable units of behavior](http://scg.unibe.ch/archive/papers/Scha03aTraits.pdf)
+* [Alias burying](http://www.cs.uwm.edu/faculty/boyland/papers/unique-preprint.ps) - We tried something similar and abandoned it.
+* [External uniqueness is unique enough](http://www.computingscience.nl/research/techreps/repo/CS-2002/2002-048.pdf)
 
 ## Concurrency
 
@@ -31,3 +35,4 @@ Papers that have had more or less influence on Rust, or which one might want to 
 * [GPU programming in Rust](http://www.cs.indiana.edu/~eholk/papers/hips2013.pdf)
 * [Parallel closures: a new twist on an old idea](https://www.usenix.org/conference/hotpar12/parallel-closures-new-twist-old-idea) - not exactly about rust, but by nmatsakis
 
+Missing topics: L4, linear types, typestate
