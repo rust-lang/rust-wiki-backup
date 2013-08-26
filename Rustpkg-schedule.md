@@ -1,5 +1,5 @@
 # "Ready for use" as per metabug:
-    ## Due September 30
+## Due September 30
 
 * 7075: rustpkg should use workcache
 * 6408: Package IDs pointing into a subdirectory
