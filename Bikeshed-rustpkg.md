@@ -1,3 +1,4 @@
+**This page is out of date; see [[Rustpkg schedule]]**
 This is Tim's attempt to come up with a schedule for finishing rustpkg, with a proposed deadline for each milestone.
 
 0. Check in concrete test cases and/or English descriptions of how to test for this, for each item below
