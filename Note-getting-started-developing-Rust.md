@@ -157,7 +157,9 @@ This will build and test the compiler, standard libraries, and supporting tools.
 
 *Note:* You can use `make -j8` (if you have an 8-core machine) to speed up the build (at least the LLVM part and the tests). On Linux or OS X, if you have Valgrind installed, the tests will run slowly because they are running under Valgrind. If you define `CFG_DISABLE_VALGRIND=1` in your build environment or run configure with the `--disable-valgrind` flag, you can see the tests running at full speed.
 
-If you are going to be hacking on the Rust compiler itself then it is recommended that you configure with `--disable-optimize`, since this will greatly reduce up your compilation time.
+If you are going to be hacking on the Rust compiler itself, then you may want to configure with `--disable-optimize`. This sometimes reduces compilation time (but sometimes doesn't, so you are advised to do the comparison for yourself).
+
+*Note:* If you need to pass in extra flags to `make`, you can add `RUSTFLAGS=...` to the argument list for `make`. For example, `make check RUSTFLAGS="-Z debug-info"` builds the compiler and runs tests with debug info enabled. 
 
 *Note:* Some make targets are only exercised by `make check-full`.  If you want to see what commands a make invocation is running, you can add `VERBOSE=1` to the argument list for make.  (Also, if you use make options like `--print-data-base` to see other targets, note that some rules in the database are only generated dynamically.)  See also: [Build system notes](note-build-system)
 
