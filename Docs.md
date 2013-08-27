@@ -80,6 +80,7 @@ Some Rust classics:
 * [A taste of Rust](https://lwn.net/Articles/547145/)
 * [An overview of memory management in Rust](http://pcwalton.github.com/blog/2013/03/18/an-overview-of-memory-management-in-rust/)
 * [Which pointer should I use?](http://pcwalton.github.com/blog/2013/03/09/which-pointer-should-i-use/)
+* [Lifetimes explained](http://maikklein.github.io/2013/08/27/lifetimes-explained/)
 * [Little things that matter in language design](http://lwn.net/Articles/553131/)
 * [Operator overloading in Rust](http://maniagnosis.crsr.net/2013/04/operator-overloading-in-rust.html)
 * [Embedding Rust in Ruby](http://brson.github.com/2013/03/10/embedding-rust-in-ruby/)
@@ -94,4 +95,6 @@ Some Rust classics:
 ## Videos
 
 * [Dave Herman's StrangeLoop 2012 talk](http://www.infoq.com/presentations/Rust)
-* [A work stealing runtime for Rust](https://air.mozilla.org/2013-intern-todd/) - Aaron Todd discusses the Rust scheduler.
+* [A work stealing runtime for Rust](https://air.mozilla.org/2013-intern-todd/) - Aaron Todd's intern presentation on the Rust scheduler.
+* [Default methods in Rust](https://air.mozilla.org/intern-presentation-sullivan/) - Michael Sullivan's intern presentation on default methods
+* [Types of Types](https://air.mozilla.org/ben-blum-from-the-research-team-presents-types-of-types-in-rust/) - Ben Blum's intern presentation on 'kinds'
