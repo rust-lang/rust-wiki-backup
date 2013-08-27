@@ -2,7 +2,7 @@ Various build targets. Fill me out.
 
 ## Triples
 
-Rust is a cross compiler. At various stages of the build a distinction is made between several different logical architectures, each of which is represented as a `target triple`. These triples have three names, which are best thought of from the perspective of the *output* compilers.
+Rust is a cross compiler. At various stages of the build a distinction is made between several different logical architectures, each of which is represented as a "target triple". These triples have three names, which are best thought of from the perspective of the *output* compilers.
 
 * `build` - The triple for the native platform on which the build is being performed. The compiler is always bootstrapped from the build architecture. There is only one build triple.
 * `host` - The triples for which the build process produces executable rustc's. 'host' then refers to the host platforms on which the compiler artifacts run. There may be multiple host triples, but the build triple is always in the set of host triples. Each host triple gets its own subdirectory in the build output.
