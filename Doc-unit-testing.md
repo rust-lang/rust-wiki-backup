@@ -42,7 +42,7 @@ A test runner built with the '--test' flag supports a limited set of arguments t
 
 ## Parallelism
 
-By default, tests are run in parallel, which can make interpreting failure output difficult. In these cases you can set the RUST_THREADS environment variable to 1 to make the tests run sequentially.
+By default, tests are run in parallel, which can make interpreting failure output difficult. In these cases you can set the `RUST_TEST_TASKS` environment variable to 1 to make the tests run sequentially.
 
 ## Benchmarking
 
