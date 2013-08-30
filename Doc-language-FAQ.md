@@ -63,8 +63,8 @@ The syntax is still evolving, but here's a snippet from the hash map in core::ha
         }
 
         fn clear(&mut self) {
-            for uint::range(0, self.buckets.len()) |idx| {
-                self.buckets[idx] = None;
+            for bkt in self.buckets.mut_iter() {
+                *bkt = None;
             }
             self.size = 0;
         }
