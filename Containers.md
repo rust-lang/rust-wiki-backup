@@ -28,9 +28,6 @@
 
 # Issues
 
-* Add range searches to TreeMap/TreeSet - [#4604](https://github.com/mozilla/rust/issues/4604)
-* add shrink_to_fit method for vec and hashmap - [#4960](https://github.com/mozilla/rust/issues/4960)
-* split the Map and Set traits into Map, MutableMap, PersistentMap and Set, MutableSet, PersistentSet - [#4989](https://github.com/mozilla/rust/issues/4989)
 * benchmark whether 1.5x is a better growth factor for vectors - [#4961](https://github.com/mozilla/rust/issues/4961)
 
 # Stack/Queue-like containers
