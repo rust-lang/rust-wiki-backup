@@ -47,12 +47,12 @@ All meta items within a link attribute contribute to the versioning of a crate, 
 
 An example of a typical crate link attribute and linking to another crate:
 
-    #[link(name = "std",
-           vers = "0.1",
+    #[link(name = "extra",
+           vers = "0.8-pre",
            uuid = "122bed0b-c19b-4b82-b0b7-7ae8aead7297",
-           url = "http://rust-lang.org/src/std")];
+           url = "https://github.com/mozilla/rust/tree/master/src/libextra")];
 
-    extern mod core(vers = "0.1");
+    extern mod std(vers = "0.8-pre");
 
 ## Build Configuration
 
@@ -86,14 +86,14 @@ Rust includes a built-in [unit testing](Note unit testing) facility which makes 
     // Tell the compiler to output a library by default
     #[crate_type = "lib"];
 
-    // Don't link to core by default
-    #[no_core];
+    // Don't link to std by default
+    #[no_std];
 
 Both of these are just informational, and no tool actually uses them yet.
 
     // A very short description of the crate
-    #[comment = "The Rust core library"];
-    #[license = "MIT"];
+    #[comment = "The Rust standard library"];
+    #[license = "MIT/ASL2"];
 
 ## Rustdoc
 
