@@ -10,19 +10,23 @@ Previous discussions about rustpkg planning:
 ## Build all of servo: 9/30/2013
  * [#6408](https://github.com/mozilla/rust/issues/6408) - pkgids with subdirs - 9/14/2013                 
  * [#8524](https://github.com/mozilla/rust/issues/8524) - recursive dependencies - 9/19/2013              
+ * [#7879](https://github.com/mozilla/rust/issues/7879) - infinite loop compiling dependencies - 9/23/2013 (Needs to be reproduced)
  * [#6403](https://github.com/mozilla/rust/issues/6403) - building c libs - 9/26/2013                     
  * [#8672](https://github.com/mozilla/rust/issues/8672) - target specific output directory - 9/30/2013   
 
-## Community adoption: 12/13/2013
+## Community adoption I: 11/6/2013
  * [#6480](https://github.com/mozilla/rust/issues/6480) - make locally-cached files read only - 10/9/2013
  * [#8520](https://github.com/mozilla/rust/issues/8520) - find sources in $CWD - 10/16/2013
  * [#7240](https://github.com/mozilla/rust/issues/7240) - multi-crate packages - 10/22/2013
  * [#8711](https://github.com/mozilla/rust/issues/8711) - correctly deal with versions of installed pkgs - 10/29/2013
  * [#9045](https://github.com/mozilla/rust/issues/9045) - rustpkg init (graydon's .rust_workspace suggestion) - 11/6/2013
+
+## Community adoption II: 12/13/2013
  * [#7401](https://github.com/mozilla/rust/issues/7401) - support custom commands - 11/14/2013
  * [#6365](https://github.com/mozilla/rust/issues/6365) - usage messages - 11/16/2013
+ * [#8892](https://github.com/mozilla/rust/issues/8892) - suppress installation of some crate files (the "glfw/examples" problem) - 11/20/2013
  * [#8405](https://github.com/mozilla/rust/issues/8405) - semantic versions - 11/25/2013
- * [#7242](https://github.com/mozilla/rust/issues/7242) - finish all commands - 12/4/2013
+ * [#7242](https://github.com/mozilla/rust/issues/7242) - finish all commands - 12/4/2013 (particularly `do` and `info`)
  * [#6005](https://github.com/mozilla/rust/issues/6005) - rustdoc integration - 12/13/2013
 
 ## Everything else (To be scheduled once community adoption is complete or close to complete)
@@ -37,12 +41,10 @@ Previous discussions about rustpkg planning:
  * #8523 - forbid linkage attributes for rustpkg crates
  * #8673 - extern mod duplication
  * #6481 - lint command
- * #7879 - infinite loop compiling dependencies
  * #8711 - version matching
  * #7744 - error handling with bad package IDs
  * #2219 - --attr flag
  * #8871 - where to install remote packages
- * #8892 - suppress installation of some crate files
  * #8952 - executable naming
  * #7243 - unpacking tarball packages, fetching via curl
  * #9003 - `rustpkg test` cleanup
