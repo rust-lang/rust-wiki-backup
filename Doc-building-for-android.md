@@ -2,11 +2,11 @@ These are preliminary build instructions for Android. Note that ARM and Android 
 
 1. setup android ndk standalone tool chain with platform=14 option
 
-    Android NDK can be downloaded from http://developer.android.com/tools/sdk/ndk/index.html
+    Downlonad android NDK version _r9_ or later(you might not be able to build jemalloc with previous version) from http://developer.android.com/tools/sdk/ndk/index.html
     
     example command to setup standalone tool chain:
     
-        ~/android-ndk-r8d/build/tools/make-standalone-toolchain.sh --platform=android-14 --install-dir=/opt/ndk_standalone --ndk-dir=~/android-ndk-r8d
+        ~/android-ndk-r9/build/tools/make-standalone-toolchain.sh --platform=android-14 --install-dir=/opt/ndk_standalone --ndk-dir=~/android-ndk-r9
 
 
     In case of 64bit linux system, android ndk needs 32bit linux libraries.
