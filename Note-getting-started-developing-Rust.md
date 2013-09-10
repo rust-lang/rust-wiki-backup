@@ -99,6 +99,11 @@ Using `mingw-get` alone will open a GUI interface for package management.
 
     C:\MinGW\bin>mingw-get.exe upgrade "libpthread==2.8.0-3"
 
+* If while building you receive an error that `libpthreadGC2.dll` is not found (e.g. when llvm-config tries to run), here is one workaround. (There may be a mingw-get solution too... anyone? I've done windows dev but I'm new to mingw):
+
+1. download pthreads for win32, e.g. here ftp://sourceware.org/pub/pthreads-win32/pthreads-w32-2-9-1-release.zip
+2. unzip the zip file, and copy the pthreads-w32-2-9-1-release/Pre-built.d/dll/*.dll to c:/mingw/bin/
+
 ### OSX
 
 Get the command line tools for xcode from  [Apple Developer Downloads](https://developer.apple.com/downloads/index.action) or Xcode.app -> Preferences -> Downloads -> Components.
