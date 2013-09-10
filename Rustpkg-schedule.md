@@ -5,7 +5,7 @@ Previous discussions about rustpkg planning:
 
 ## First 10 servo crates: 9/11/2013
  * ~~[#7075](https://github.com/mozilla/rust/issues/7075) - workcache~~
- * [#8522](https://github.com/mozilla/rust/issues/8522) - rustc flags - 9/11/2013
+ * ~~[#8522](https://github.com/mozilla/rust/issues/8522) - rustc flags~~ - Pull request [#9107](https://github.com/mozilla/rust/pull/9107), pending review - 9/11/2013
 
 ## Build all of servo: 10/1/2013
  * [#6408](https://github.com/mozilla/rust/issues/6408) - pkgids with subdirs - 9/16/2013 (medium)                 
