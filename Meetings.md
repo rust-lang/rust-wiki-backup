@@ -87,6 +87,7 @@ Mozilla employees have a weekly Rust planning meeting on Tuesday mornings at 10:
 * [[Meeting-weekly-2013-08-13]] (Interns leaving; Method invocation ordering; stage0 stdtest; Default args)
 * [[Meeting-weekly-2013-08-20]] (Cycle time)
 * [[Meeting-weekly-2013-08-27]] (rustpkg timeline; extern fns; generic extern fns; LLVM asserts; meeting time)
+* [[Meeting-weekly-2013-09-10]] (commit policy; extern mod duplication; implicit copyability; patterns and default methods; &const; 0.8)
 
 ## Other meetings:
 
