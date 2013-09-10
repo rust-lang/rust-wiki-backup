@@ -7,27 +7,30 @@ Previous discussions about rustpkg planning:
  * ~~[#7075](https://github.com/mozilla/rust/issues/7075) - workcache~~
  * [#8522](https://github.com/mozilla/rust/issues/8522) - rustc flags - 9/11/2013
 
-## Build all of servo: 10/8/2013
+## Build all of servo: 10/1/2013
  * [#6408](https://github.com/mozilla/rust/issues/6408) - pkgids with subdirs - 9/16/2013 (medium)                 
- * [#8524](https://github.com/mozilla/rust/issues/8524) - recursive dependencies - 9/19/2013 (easy)              
- * [#7879](https://github.com/mozilla/rust/issues/7879) - infinite loop compiling dependencies - 9/26/2013 (Needs to be reproduced) (medium)
- * [#6403](https://github.com/mozilla/rust/issues/6403) - building c libs - 10/3/2013 (medium)                     
- * [#8672](https://github.com/mozilla/rust/issues/8672) - target specific output directory - 10/8/2013 (easy) 
+ * [#8524](https://github.com/mozilla/rust/issues/8524) - recursive dependencies - 9/18/2013 (easy) 
+ * Tim on PTO, 9/20             
+ * [#7879](https://github.com/mozilla/rust/issues/7879) - infinite loop compiling dependencies - 9/24/2013 (Needs to be reproduced) (medium)
+ * [#6403](https://github.com/mozilla/rust/issues/6403) - building c libs - 9/30/2013 (medium)                     
+ * [#8672](https://github.com/mozilla/rust/issues/8672) - target specific output directory - 10/1/2013 (easy) 
 
-## Community adoption I: 11/4/2013
- * [#6480](https://github.com/mozilla/rust/issues/6480) - make locally-cached files read only - 10/9/2013 (easy)
- * [#8520](https://github.com/mozilla/rust/issues/8520) - find sources in $CWD - 10/15/2013 (medium)
- * [#7240](https://github.com/mozilla/rust/issues/7240) - multi-crate packages - 10/23/2013 (hard)
- * [#8711](https://github.com/mozilla/rust/issues/8711) - correctly deal with versions of installed pkgs - 10/29/2013 (medium)
- * [#9045](https://github.com/mozilla/rust/issues/9045) - rustpkg init (graydon's .rust_workspace suggestion) - 11/4/2013 (medium)
+## Community adoption I: 10/29/2013
+ * [#6480](https://github.com/mozilla/rust/issues/6480) - make locally-cached files read only - 10/3/2013 (easy)
+ * Mozilla Summit, 10/4-10/7
+ * [#8520](https://github.com/mozilla/rust/issues/8520) - find sources in $CWD - 10/10/2013 (medium)
+ * [#7240](https://github.com/mozilla/rust/issues/7240) - multi-crate packages - 10/17/2013 (hard)
+ * [#8711](https://github.com/mozilla/rust/issues/8711) - correctly deal with versions of installed pkgs - 10/23/2013 (medium)
+ * [#9045](https://github.com/mozilla/rust/issues/9045) - rustpkg init (graydon's .rust_workspace suggestion) - 10/29/2013 (medium)
 
-## Community adoption II: 12/20/2013
- * [#7401](https://github.com/mozilla/rust/issues/7401) - support custom commands - 11/13/2013 (hard)
- * [#6365](https://github.com/mozilla/rust/issues/6365) - usage messages - 11/14/2013 (easy)
- * [#8892](https://github.com/mozilla/rust/issues/8892) - suppress installation of some crate files (the "glfw/examples" problem) - 11/20/2013 (medium)
- * [#8405](https://github.com/mozilla/rust/issues/8405) - semantic versions - 12/2/2013 (hard)
- * [#7242](https://github.com/mozilla/rust/issues/7242) - finish all commands - 12/10/2014 (particularly `do` and `info`) (hard)
- * [#6005](https://github.com/mozilla/rust/issues/6005) - rustdoc integration - 12/20/2014 (hard)
+## Community adoption II: 12/5/2013
+ * [#7401](https://github.com/mozilla/rust/issues/7401) - support custom commands - 11/6/2013 (hard)
+ * [#6365](https://github.com/mozilla/rust/issues/6365) - usage messages - 11/7/2013 (easy)
+ * [#8892](https://github.com/mozilla/rust/issues/8892) - suppress installation of some crate files (the "glfw/examples" problem) - 11/12/2013 (medium)
+ * [#8405](https://github.com/mozilla/rust/issues/8405) - semantic versions - 11/20/2013 (hard)
+ * [#7242](https://github.com/mozilla/rust/issues/7242) - finish all commands - 11/27/2013 (particularly `do` and `info`) (hard)
+ * Thanksgiving holiday 11/28-11/29
+ * [#6005](https://github.com/mozilla/rust/issues/6005) - rustdoc integration - 12/5/2013 (hard)
 
 ## Everything else (To be scheduled once community adoption is complete or close to complete)
  * #7447 - version improvements
