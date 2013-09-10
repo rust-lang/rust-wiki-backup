@@ -1,4 +1,4 @@
-    # Agenda
+# Agenda
 
 * Policy on github commit access (tjc)
 * rustpkg: `extern mod` duplication (see https://github.com/mozilla/rust/issues/8673 ) (tjc)
