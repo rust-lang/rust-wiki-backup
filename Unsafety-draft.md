@@ -1,6 +1,7 @@
 ### Things that are currently considered unsafe
 
-* Anything that can cause segfaults, invalid reads (memory unsafety)
+* Anything that can cause segfaults (memory unsafety)
+* Reads of undefined memory (http://llvm.org/docs/LangRef.html#undefined-values), even for plain old data
 * Anything that can create invalid utf8 strings
 * Anything that can invoke undefined behavior (ptr::offset)
 * Data races
