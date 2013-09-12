@@ -12,7 +12,7 @@ Storing invalid values in certain types, even in private fields:
 * Storing a value other than `false` (0) or `true` (1) in a `bool`
 * Storing a discriminant in an `enum` not included in the type definition
 * Storing a value in a `char` which is a surrogate or above `char::MAX`
-* Storing non-UTF-8 bytes in a `str`
+* Storing non-UTF-8 sequences bytes in a `str`
 
 ### Things that are not typically considered unsafe
 
