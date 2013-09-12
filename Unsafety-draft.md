@@ -18,6 +18,8 @@ Invalid values in primitive types, even in private fields/locals:
 
 ### Things that are not typically considered unsafe
 
+This is a list of behaviour usually considered *bad* but not *unsafe*.
+
 * Deadlocks
 * Reading data from private fields (`std::repr`, `format!("{:?}", x)`)
 * Leaks due to reference count cycles, even in the global heap
