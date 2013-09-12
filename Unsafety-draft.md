@@ -18,3 +18,7 @@ Storing invalid values in certain types, even in private fields:
 
 * Deadlocks
 * Reading data from private fields (`std::repr`, `format!("{:?}", x)`)
+
+## Questionable
+
+* shifts by more than the number of bits in the value (LLVM calls the result *undefined*, which may cause soundness issues if it's actually treated as `undef`)
