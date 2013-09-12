@@ -1,10 +1,9 @@
 ### Things that are currently considered unsafe
 
-* Anything that can cause segfaults (memory unsafety)
 * Anything that can invoke undefined behavior (ptr::offset)
 * Data races
 * Deadlocks (in extra::arc)
-* Dereferencing a null pointer
+* Dereferencing a raw pointer (may be null or dangling)
 * Reads of [undef](http://llvm.org/docs/LangRef.html#undefined-values) (uninitialized) memory
 * Mutating an immutable value/reference, if it is not marked as non-`Freeze`
 
