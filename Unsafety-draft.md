@@ -18,10 +18,11 @@ Invalid values in primitive types, even in private fields/locals:
 
 ### Things that are not typically considered unsafe
 
-This is a list of behaviour often considered *bad* but not *unsafe*.
+This is a list of behaviour not considered *unsafe* in Rust terms, but is often undesired.
 
 * Deadlocks
 * Reading data from private fields (`std::repr`, `format!("{:?}", x)`)
 * Leaks due to reference count cycles, even in the global heap
 * Exiting without calling destructors
 * Sending signals
+* Accessing/modifying the file system
