@@ -2,7 +2,6 @@
 
 * Anything that can cause segfaults (memory unsafety)
 * Reads of undefined memory (http://llvm.org/docs/LangRef.html#undefined-values), even for plain old data
-* Anything that can create invalid utf8 strings
 * Anything that can invoke undefined behavior (ptr::offset)
 * Data races
 * Deadlocks (in extra::arc)
@@ -13,6 +12,7 @@ Storing invalid values in certain types, even in private fields:
 * Storing a value other than `false` (0) or `true` (1) in a `bool`
 * Storing a discriminant in an `enum` not included in the type definition
 * Storing a value in a `char` which is a surrogate or above `char::MAX`
+* Storing non-UTF-8 bytes in a `str`
 
 ### Things that are not typically considered unsafe
 
