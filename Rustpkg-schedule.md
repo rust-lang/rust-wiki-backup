@@ -12,7 +12,7 @@ Previous discussions about rustpkg planning:
  * ~~[#8524](https://github.com/mozilla/rust/issues/8524) - recursive dependencies~~ Done pending review of pull request [#9132](https://github.com/mozilla/rust/pull/9132) - 9/18/2013 (easy)
  * [#7402](https://github.com/mozilla/rust/issues/7402) - install to RUST_PATH - 9/19/2013 (easy)
  * Tim on PTO, 9/20             
- * [#7879](https://github.com/mozilla/rust/issues/7879) - infinite loop compiling dependencies - 9/24/2013 (Needs to be reproduced) (medium)
+ * [#7879](https://github.com/mozilla/rust/issues/7879) - infinite loop compiling dependencies - 9/24/2013 (hard)
  * [#6403](https://github.com/mozilla/rust/issues/6403) - building c libs - 9/30/2013 (medium)                     
  * [#8672](https://github.com/mozilla/rust/issues/8672) - target specific output directory - 10/1/2013 (easy) 
 
