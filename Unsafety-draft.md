@@ -6,7 +6,7 @@ This is a list of behaviour `unsafe` blocks *must prevent*. These issues cannot 
 * Dereferencing a null/dangling raw pointer
 * Mutating an immutable value/reference, if it is not marked as non-`Freeze`
 * Reads of [undef](http://llvm.org/docs/LangRef.html#undefined-values) (uninitialized) memory
-* Anything considered undefined behaviour by LLVM, such as indexing more than one byte past the end of an object with `ptr::offset`
+* Indexing outside of the bounds of an object with `ptr::offset`, with the exception of one byte past the end which is permitted.
 
 Invalid values in primitive types, even in private fields/locals:
 
