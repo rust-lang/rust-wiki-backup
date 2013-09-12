@@ -1,6 +1,6 @@
 ### Things that are currently considered unsafe
 
-This is a non-exhaustive list of behaviour `unsafe` blocks *must prevent*. These issues cannot be caused by safe code, assuming all `unsafe` code is correct.
+This is a non-exhaustive list of behaviour `unsafe` blocks *must prevent*. These issues cannot be caused by safe code, if all `unsafe` code is correct.
 
 * Data races
 * Deadlocks (in extra::arc)
