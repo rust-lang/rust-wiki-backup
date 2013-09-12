@@ -5,6 +5,7 @@ This is always under debate. Here are some things that are currently considered 
 * Anything that can invoke undefined behavior (ptr::offset)
 * Data races
 * Deadlocks (in extra::arc)
+* Storing dangling/null pointers in non-raw pointers (even in private fields)
 
 Things that are not typically considered unsafe:
 
