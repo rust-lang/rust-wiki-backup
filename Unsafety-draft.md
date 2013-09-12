@@ -6,7 +6,7 @@
 * Data races
 * Deadlocks (in extra::arc)
 
-Storing invalid values in certain types, even in private fields:
+Storing invalid values in certain types, even in private fields/locals:
 
 * Storing dangling/null pointers in non-raw pointers
 * Storing a value other than `false` (0) or `true` (1) in a `bool`
