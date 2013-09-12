@@ -20,4 +20,4 @@ Invalid values in primitive types, even in private fields/locals:
 
 * Deadlocks
 * Reading data from private fields (`std::repr`, `format!("{:?}", x)`)
-* Leaks due to reference count cycles
+* Leaks due to reference count cycles, even in the global heap
