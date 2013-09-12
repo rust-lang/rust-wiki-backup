@@ -3,7 +3,6 @@
 This is a list of behaviour `unsafe` blocks *must prevent*. These issues cannot be caused by safe code, if all interfaces using `unsafe` code internally are correct.
 
 * Data races
-* Deadlocks (in extra::arc)
 * Dereferencing a null/dangling raw pointer
 * Mutating an immutable value/reference, if it is not marked as non-`Freeze`
 * Reads of [undef](http://llvm.org/docs/LangRef.html#undefined-values) (uninitialized) memory
