@@ -7,7 +7,7 @@
 * Deadlocks (in extra::arc)
 * Mutating an immutable value/reference, if it is not marked as non-`Freeze`
 
-Storing invalid values in certain types, even in private fields/locals:
+Storing invalid values in primitive types, even in private fields/locals:
 
 * Storing dangling/null pointers in non-raw pointers
 * Storing a value other than `false` (0) or `true` (1) in a `bool`
