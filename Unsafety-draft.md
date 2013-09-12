@@ -1,6 +1,6 @@
 ### Things that are currently considered unsafe
 
-* Anything that can invoke undefined behavior (ptr::offset)
+* Anything that can invoke undefined behavior as defined by LLVM (ptr::offset)
 * Data races
 * Deadlocks (in extra::arc)
 * Dereferencing a raw pointer (may be null or dangling)
