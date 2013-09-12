@@ -9,4 +9,4 @@ This is always under debate. Here are some things that are currently considered 
 Things that are not typically considered unsafe:
 
 * Deadlocks
-* Reading data from private fields (`std::repr`, `format!("{}", x)`)
+* Reading data from private fields (`std::repr`, `format!("{:?}", x)`)
