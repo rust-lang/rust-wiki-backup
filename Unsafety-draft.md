@@ -26,3 +26,5 @@ This is a list of behaviour not considered *unsafe* in Rust terms, but that may 
 * Exiting without calling destructors
 * Sending signals
 * Accessing/modifying the file system
+* Unsigned integer overflow (well-defined as wrapping)
+* Signed integer overflow (well-defined as two's complement representation wrapping)
