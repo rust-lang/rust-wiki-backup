@@ -13,7 +13,7 @@ Invalid values in primitive types, even in private fields/locals:
 * A value other than `false` (0) or `true` (1) in a `bool`
 * A discriminant in an `enum` not included in the type definition
 * A value in a `char` which is a surrogate or above `char::MAX`
-* non-UTF-8 sequences bytes in a `str`
+* non-UTF-8 byte sequences in a `str`
 
 ### Things that are not typically considered unsafe
 
