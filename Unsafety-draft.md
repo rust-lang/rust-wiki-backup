@@ -5,7 +5,7 @@
 * Anything that can invoke undefined behavior (ptr::offset)
 * Data races
 * Deadlocks (in extra::arc)
-* Mutating an immutable value, if it is not marked as non-`Freeze`, including mutating through `&T`
+* Mutating an immutable value/reference, if it is not marked as non-`Freeze`
 
 Storing invalid values in certain types, even in private fields/locals:
 
