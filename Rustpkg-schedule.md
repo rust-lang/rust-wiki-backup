@@ -8,7 +8,7 @@ Previous discussions about rustpkg planning:
  * ~~[#8522](https://github.com/mozilla/rust/issues/8522) - rustc flags~~ - 9/11/2013
 
 ## Build all of servo: 10/1/2013
- * [#6408](https://github.com/mozilla/rust/issues/6408) - pkgids with subdirs - 9/16/2013 (medium)                 
+ * ~~[#6408](https://github.com/mozilla/rust/issues/6408) - pkgids with subdirs~~ Done pending review of pull request [#9146](https://github.com/mozilla/rust/pull/9146) - 9/16/2013 (medium)                 
  * ~~[#8524](https://github.com/mozilla/rust/issues/8524) - recursive dependencies~~ Done pending review of pull request [#9132](https://github.com/mozilla/rust/pull/9132) - 9/18/2013 (easy) 
  * Tim on PTO, 9/20             
  * [#7879](https://github.com/mozilla/rust/issues/7879) - infinite loop compiling dependencies - 9/24/2013 (Needs to be reproduced) (medium)
