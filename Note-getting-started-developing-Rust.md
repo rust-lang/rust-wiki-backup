@@ -53,6 +53,8 @@ We recommend developing under [MSYS and MinGW](http://www.mingw.org) using their
 5. In the MinGW console, type the commands:
  * `mingw-get upgrade "gcc<4.6"` this ensures that the C compiler (GCC) is below 4.6.
  * `mingw-get upgrade "g++<4.6"` this ensures that the C++ compiler is also below version 4.6.
+ * `mingw-get install mingw32-libpthreadgc` this installs the new pthreads-w32 library (standard one)
+ * `mingw-get install mingw32-libpthread-old` this installs the old pthreads-w32 library (intended to be installed in parallel with above, mingw32-libpthreadgc to provide support for gcc 4.5.2 and older, and needed currently to build Rust's stage0, stage1, and stage2 successfully)
 5. Install Perl with `mingw-get install msys-perl`.
 6. Install Curl with ... Curl is not yet part of MSYS or MinGW, bummer, we know, but all it needs is a volunteer contributor to maintain it however, helping them, helps us, until then...ya gotta do this:
  * download [curl-7.30.0.tar.gz](http://curl.haxx.se/download/curl-7.30.0.tar.gz) or the latest version manually to your MSYS home, usually `C:\MinGW\msys\1.0\home\<your_name>`
@@ -110,14 +112,19 @@ Using `mingw-get` alone will open a GUI interface for package management.
 
 **Troubleshooting Windows environment setups:**
 
-* If while building you receive an error that `libpthread-2.dll` is not found, you need to install the [libpthread-2.8.0-3-mingw32-dll-2.tar.lzma package]
+* If while building you receive an error that `libpthread-2.dll` is not found, you forgot to install the mingw32-libpthread-old package into MinGW from Step 5, so do this:
 
-    C:\MinGW\bin>mingw-get.exe upgrade "libpthread==2.8.0-3"
+ * `mingw-get install mingw32-libpthread-old`
+
+* If while building you receive an error that `libpthreadGC.dll` is not found, you forgot to install libpthreadgc runtime library into MinGW from Step 5, so do this:
+
+ * `mingw-get install mingw32-libpthreadgc`
 
 * If while building you receive an error that `libpthreadGC2.dll` is not found (e.g. when llvm-config tries to run), here is one workaround. (There may be a mingw-get solution too... anyone? I've done windows dev but I'm new to mingw):
 
-1. download pthreads for win32, e.g. here ftp://sourceware.org/pub/pthreads-win32/pthreads-w32-2-9-1-release.zip
-2. unzip the zip file, and copy the pthreads-w32-2-9-1-release/Pre-built.d/dll/*.dll to c:/mingw/bin/
+ * download pthreads for win32, e.g. here ftp://sourceware.org/pub/pthreads-win32/pthreads-w32-2-9-1-release.zip
+ * unzip the zip file, and copy the pthreads-w32-2-9-1-release/Pre-built.d/dll/*.dll to c:/mingw/bin/
+
 
 ### OSX
 
