@@ -1,10 +1,12 @@
 ### Things that are currently considered unsafe
 
 * Anything that can cause segfaults (memory unsafety)
-* Reads of undefined memory (http://llvm.org/docs/LangRef.html#undefined-values), even for plain old data
+
 * Anything that can invoke undefined behavior (ptr::offset)
 * Data races
 * Deadlocks (in extra::arc)
+* Dereferencing a null pointer
+* Reads of [undef](http://llvm.org/docs/LangRef.html#undefined-values) (uninitialized) memory
 * Mutating an immutable value/reference, if it is not marked as non-`Freeze`
 
 Storing invalid values in primitive types, even in private fields/locals:
