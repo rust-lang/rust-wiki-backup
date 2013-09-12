@@ -1,7 +1,6 @@
 ### Things that are currently considered unsafe
 
 * Anything that can cause segfaults (memory unsafety)
-
 * Anything that can invoke undefined behavior (ptr::offset)
 * Data races
 * Deadlocks (in extra::arc)
