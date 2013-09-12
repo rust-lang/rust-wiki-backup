@@ -9,7 +9,7 @@ Previous discussions about rustpkg planning:
 
 ## Build all of servo: 10/1/2013
  * [#6408](https://github.com/mozilla/rust/issues/6408) - pkgids with subdirs - 9/16/2013 (medium)                 
- * [#8524](https://github.com/mozilla/rust/issues/8524) - recursive dependencies - 9/18/2013 (easy) 
+ * ~~[#8524](https://github.com/mozilla/rust/issues/8524) - recursive dependencies~~ Done pending review of pull request [#9132](https://github.com/mozilla/rust/pull/9132) - 9/18/2013 (easy) 
  * Tim on PTO, 9/20             
  * [#7879](https://github.com/mozilla/rust/issues/7879) - infinite loop compiling dependencies - 9/24/2013 (Needs to be reproduced) (medium)
  * [#6403](https://github.com/mozilla/rust/issues/6403) - building c libs - 9/30/2013 (medium)                     
