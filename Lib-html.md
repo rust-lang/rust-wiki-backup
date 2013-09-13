@@ -43,6 +43,11 @@ A library/module for escaping/unescaping of special HTML characters.
       - escapes only the 5 characters `< > & ' "`
     - [htmlspecialchars_decode ()](http://www.php.net/manual/en/function.htmlspecialchars-decode.php)
       - decodes only the characters handled by htmlspecialchars()
+  1. Language: RUby
+    - [CGI.escapeHTML](http://www.ruby-doc.org/stdlib-1.9.3/libdoc/cgi/rdoc/CGI.html#method-c-escapeHTML)
+      - escapes only the 5 characters `< > & ' "`
+    - [CGI.unescapeHTML](http://www.ruby-doc.org/stdlib-1.9.3/libdoc/cgi/rdoc/CGI.html#method-c-unescapeHTML)
+    - [htmlentities gem](https://github.com/threedaymonk/htmlentities)
 
 ### Summary of research from other languages:
 #### Structures and functions commonly appearing
