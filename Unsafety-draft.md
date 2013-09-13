@@ -7,6 +7,7 @@ This is a list of behaviour `unsafe` blocks *must prevent*. These issues cannot 
 * Mutating an immutable value/reference, if it is not marked as non-`Freeze`
 * Reads of [undef](http://llvm.org/docs/LangRef.html#undefined-values) (uninitialized) memory
 * Indexing outside of the bounds of an object with `ptr::offset`, with the exception of one byte past the end which is permitted.
+* Invoking undefined compiler behavior (`ptr::offset`)
 
 Invalid values in primitive types, even in private fields/locals:
 
