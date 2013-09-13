@@ -244,7 +244,7 @@ Options:
   1. Language: Haskell
     - [Data.Time](http://www.haskell.org/ghc/docs/latest/html/libraries/time-1.4.0.1/index.html)
   1. Language: Java
-    - [JSR-310](https://github.com/ThreeTen/threeten)
+    - [JSR-310](https://github.com/ThreeTen/threeten) ([new location](http://openjdk.java.net/projects/threeten/)) ([API](http://download.java.net/jdk8/docs/technotes/guides/datetime/index.html))
     - [Joda-Time](https://github.com/JodaOrg/joda-time)
         - [DateTime](http://joda-time.sourceforge.net/apidocs/org/joda/time/DateTime.html): the datetime as milliseconds from the Unix epoch and a Chronology (calendar system).
         - [Chronology](http://joda-time.sourceforge.net/apidocs/org/joda/time/chrono/ISOChronology.html)
