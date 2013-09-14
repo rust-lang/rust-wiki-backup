@@ -96,6 +96,7 @@ Some Rust classics:
 ## Videos
 
 * [Dave Herman's StrangeLoop 2012 talk](http://www.infoq.com/presentations/Rust)
-* [A work stealing runtime for Rust](https://air.mozilla.org/2013-intern-todd/) - Aaron Todd's intern presentation on the Rust scheduler.
+* [A work stealing runtime for Rust](https://air.mozilla.org/2013-intern-todd/) - Aaron Todd's intern presentation on the Rust scheduler
 * [Default methods in Rust](https://air.mozilla.org/intern-presentation-sullivan/) - Michael Sullivan's intern presentation on default methods
 * [Types of Types](https://air.mozilla.org/ben-blum-from-the-research-team-presents-types-of-types-in-rust/) - Ben Blum's intern presentation on 'kinds'
+* [An I/O system for Rust](https://air.mozilla.org/intern-presentations-reed/) - Eric Reed's intern presentation on I/O
