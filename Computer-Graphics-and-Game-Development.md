@@ -25,6 +25,10 @@ Rust is quickly becoming an excellent language for computer graphics and game de
 - [cgmath-rs](https://github.com/bjz/cgmath-rs)
 - [noise-rs](https://github.com/bjz/noise-rs)
 
+#### Import/Export
+
+- [rust-stb-image](https://github.com/mozilla-servo/rust-stb-image)
+
 #### Game Engines
 
 - [kiss3d](https://github.com/sebcrozet/kiss3d)
