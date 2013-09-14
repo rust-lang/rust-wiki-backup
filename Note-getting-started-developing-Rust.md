@@ -45,18 +45,16 @@ We recommend developing under [MSYS and MinGW](http://www.mingw.org) using their
 
 1. Download the latest mingw-get-inst (the auto-installer - Green button) directly from http://sourceforge.net/projects/mingw/.
 2. Run the mingw-get-inst-########.exe
-3. Check the boxes to select the following components to install:
- * C compiler
- * C++ compiler
- * Scroll down and check the box for the MSYS Basic System.
-4. After installing MinGW/MSYS, start the MSYS shell console from the desktop or Start menu.
-5. In the MinGW console, type the commands:
- * `mingw-get upgrade "gcc<4.6"` this ensures that the C compiler (GCC) is below 4.6.
- * `mingw-get upgrade "g++<4.6"` this ensures that the C++ compiler is also below version 4.6.
- * `mingw-get install mingw32-libpthreadgc` this installs the new pthreads-w32 library (standard one)
- * `mingw-get install mingw32-libpthread-old` this installs the old pthreads-w32 library (intended to be installed in parallel with above, mingw32-libpthreadgc to provide support for gcc 4.5.2 and older, and needed currently to build Rust's stage0, stage1, and stage2 successfully)
-5. Install Perl with `mingw-get install msys-perl`.
-6. Install Curl with ... Curl is not yet part of MSYS or MinGW, bummer, we know, but all it needs is a volunteer contributor to maintain it however, helping them, helps us, until then...ya gotta do this:
+3. In the Setup GUI, Check the boxes and _Mark for Installation_ the following components to install:
+    * Basic Setup ->
+        *  mingw32-gcc-g++
+        *  msys-base
+    * All Packages -> MinGW Libraries -> MinGW Standard Libraries ->
+        * mingw32-libpthread-old
+        * mingw32-libpthreadgc
+    * Menu - Installation ->
+        * Apply Changes
+4. Install Curl with ... Curl is not yet part of MSYS or MinGW, bummer, we know, but all it needs is a volunteer contributor to maintain it however, helping them, helps us, until then...ya gotta do this:
  * download [curl-7.30.0.tar.gz](http://curl.haxx.se/download/curl-7.30.0.tar.gz) or the latest version manually to your MSYS home, usually `C:\MinGW\msys\1.0\home\<your_name>`
  * `tar -zxvf curl-7.30.0.tar.gz`
  * `cd curl-7.30.0`
@@ -64,7 +62,7 @@ We recommend developing under [MSYS and MinGW](http://www.mingw.org) using their
  * `make`
  * `make install`
  * `curl --version` and `which curl` to ensure the build of Curl worked.
-7. Download and install Git for Windows following these steps:
+5. Download and install Git for Windows following these steps:
  * Download latest [Git for Windows on Google Code](https://code.google.com/p/msysgit/downloads/list?q=full+installer+official+git) and run it.
  * Change install path instead from `C:\Program Files(x86)` to just `C:\Git`.
  * Uncheck **Associate .sh files to be run with Bash**.
@@ -72,8 +70,9 @@ We recommend developing under [MSYS and MinGW](http://www.mingw.org) using their
  * Choose **Use OpenSSH**.
  * Choose **Checkout as-is, commit Unix-style line endings** (you'll have less problems).
  * After installing Git, close the MinGW console and reopen it, type `git --version` to verify installation and path is set correctly.
-8. Download Python 2.7 installer for your Windows version from http://www.python.org/getit/ and install it preferably to `C:\Python27`.
-9. Scroll down to **Downloading and building Rust** section.
+6. Download Python 2.7 installer for your Windows version from http://www.python.org/getit/ and install it preferably to `C:\Python27`.
+7. You can now start the MinGW / Msys Shell from your Desktop or Start Menu.
+8. Scroll down to **Downloading and building Rust** section.
 
 #### More info for Windows users.
 
@@ -95,7 +94,7 @@ Using `mingw-get` alone will open a GUI interface for package management.
 
     ``export PATH=$PATH:/c/Program\ Files/Git/bin``
 
-(OPTIONAL - working with multiple toolchains) :
+(OPTIONAL - working with multiple toolchains & modifying your PATH) :
 
 * In Windows, to try out or work with different toolchains for building Rust with MinGW, the easiest way is to modify and add at the end of your Msys profile file, `C:\MinGW\msys\1.0\etc\profile` something like the following, and uncomment whichever toolchain path you want to work with.  Remember to exit the Msys console and reopen it:
 
