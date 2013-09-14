@@ -34,11 +34,12 @@
 
 ## Community
 
-* IRC: [#rust on irc.mozilla.org][pound-rust]
+* IRC: [#rust on irc.mozilla.org][pound-rust] and [#rust-gamedev on irc.mozilla.org[pound-rust-gamedev]
 * Mailing list [rust-dev]
 * Reddit's [r/rust]
 
 [pound-rust]: http://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust
+[pound-rust-gamedev]: http://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-gamedev
 [rust-dev]: https://mail.mozilla.org/listinfo/rust-dev
 [r/rust]: http://reddit.com/r/rust
 
