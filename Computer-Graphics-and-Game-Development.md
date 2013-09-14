@@ -26,3 +26,4 @@
 ### Projects
 
 - [q3](https://github.com/Jeaye/q3)
+- [Angolmois BMS player, Rust edition](https://github.com/lifthrasiir/angolmois-rust)
