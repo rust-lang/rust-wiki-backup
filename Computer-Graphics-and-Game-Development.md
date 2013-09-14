@@ -24,6 +24,7 @@ Rust is quickly becoming an excellent language for computer graphics and game de
 - [nphysics](https://github.com/sebcrozet/nphysics)
 - [cgmath-rs](https://github.com/bjz/cgmath-rs)
 - [noise-rs](https://github.com/bjz/noise-rs)
+- [bullet-rs](https://github.com/bjz/bullet-rs/) - pretty rudimentary, needs a proper C++ wrapper
 
 #### Import/Export
 
