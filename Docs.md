@@ -34,7 +34,7 @@
 
 ## Community
 
-* IRC: [#rust on irc.mozilla.org][pound-rust] and [#rust-gamedev on irc.mozilla.org[pound-rust-gamedev]
+* IRC: [#rust on irc.mozilla.org][pound-rust] and [#rust-gamedev on irc.mozilla.org][pound-rust-gamedev]
 * Mailing list [rust-dev]
 * Reddit's [r/rust]
 
