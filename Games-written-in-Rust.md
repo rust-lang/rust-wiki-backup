@@ -1,1 +1,2 @@
+- [angolmois-rust](https://github.com/lifthrasiir/angolmois-rust)
 - [q3](https://github.com/Jeaye/q3)
