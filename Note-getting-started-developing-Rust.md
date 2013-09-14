@@ -47,8 +47,9 @@ We recommend developing under [MSYS and MinGW](http://www.mingw.org) using their
 2. Run the mingw-get-inst-########.exe
 3. In the Setup GUI, Check the boxes and _Mark for Installation_ the following components to install:
     * Basic Setup ->
-        *  mingw32-gcc-g++
-        *  msys-base
+        * mingw32-base
+        * mingw32-gcc-g++
+        * msys-base
     * All Packages -> MinGW Libraries -> MinGW Standard Libraries ->
         * mingw32-libpthread-old
         * mingw32-libpthreadgc
