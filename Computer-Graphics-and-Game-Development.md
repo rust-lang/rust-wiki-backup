@@ -1,3 +1,9 @@
+Rust is quickly becoming an excellent language for computer graphics and game development. Listed below are some useful resources and existing projects.
+
+### Community
+
+- [#rust-gamedev](http://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-gamedev) on irc.mozilla.org 
+
 ### Libraries
 
 #### Windowing
@@ -27,3 +33,4 @@
 
 - [q3](https://github.com/Jeaye/q3)
 - [Angolmois BMS player, Rust edition](https://github.com/lifthrasiir/angolmois-rust)
+- [Rustyhex](https://github.com/dpc/rustyhex/)
