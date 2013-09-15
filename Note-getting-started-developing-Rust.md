@@ -88,8 +88,7 @@ Once installed, we tend to work inside the MSYS shell.
 If you are a consistent user of MinGW or plan to be, you might also want to subscribe to their mailing list: [Mingw-users](https://lists.sourceforge.net/lists/listinfo/mingw-users)
 
 (OPTIONAL)
-* You can update MinGW components once you start it's console by using the command `mingw-get update`, this updates the package repository for MinGW.  After which you can upgrade packages with `mingw-get upgrade`. **mingw-get upgrade will overwrite to latest versions of GCC as well, so you might have to upgrade to a lower version afterwards.**
-Using `mingw-get` alone will open a GUI interface for package management.
+* Using `mingw-get` alone will open a GUI interface for package management.  You can update MinGW components once you start it's console by using the command `mingw-get update`, this updates the package repository for MinGW.  After which you can upgrade packages with `mingw-get upgrade`. **mingw-get upgrade will overwrite to latest versions of GCC as well, so you might have to upgrade to a lower version afterwards.**
 
 (OPTIONAL - if using another Git installer or method other than the Quick Steps) :
 
@@ -99,7 +98,7 @@ Using `mingw-get` alone will open a GUI interface for package management.
 
 (OPTIONAL - working with multiple toolchains & modifying your PATH) :
 
-* In Windows, to try out or work with different toolchains for building Rust with MinGW, the easiest way is to modify and add at the end of your Msys profile file, `C:\MinGW\msys\1.0\etc\profile` something like the following, and uncomment whichever toolchain path you want to work with.  Remember to exit the Msys console and reopen it:
+* In Windows, to try out or work with different toolchains for building Rust with MinGW, the easiest way is to modify and add at the end of your Msys profile file, `C:\MinGW\msys\1.0\etc\profile` something like the following, and uncomment whichever toolchain path you want to work with and Remember to exit the Msys console and reopen it:
 
 ``# Enable MinGW64 path by uncommenting one of the following lines:``
 ``# export PATH="/c/mingw-builds/x32-4.8.2-prerelease-20130717-rev200927-win32-dwarf/mingw32/bin:/usr/local:$PATH"``
