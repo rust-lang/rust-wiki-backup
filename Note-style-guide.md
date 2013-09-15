@@ -20,7 +20,7 @@ Here are some rough guidelines to Rust style. They are followed unevenly and the
 ## Trait naming
 
 - trait examples: Copy, Owned, Const, Add, Sub, Num, Shr, Index, Encode, Decode, Reader, Writer, GenericPath
-- extension traits: XUtil? When do you prefer default methods to extensions?
+- extension traits: FooUtil. However, prefer default methods to extension traits. 
 - avoid words with suffixes (able, etc). try to use transitive verbs, nouns, and then adjectives in that order
 
 # Function declarations
