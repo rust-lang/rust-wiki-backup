@@ -112,11 +112,11 @@ If you are a consistent user of MinGW or plan to be, you might also want to subs
 
 **Troubleshooting Windows environment setups:**
 
-* If while building you receive an error that `libpthread-2.dll` is not found, you forgot to install the mingw32-libpthread-old package into MinGW from Step 5, so do this:
+* If while building you receive an error that `libpthread-2.dll` is not found, you forgot to install the mingw32-libpthread-old package into MinGW from Step 3, so do this:
 
  * `mingw-get install mingw32-libpthread-old`
 
-* If while building you receive an error that `libpthreadGC.dll` is not found, you forgot to install libpthreadgc runtime library into MinGW from Step 5, so do this:
+* If while building you receive an error that `libpthreadGC.dll` is not found, you forgot to install libpthreadgc runtime library into MinGW from Step 3, so do this:
 
  * `mingw-get install mingw32-libpthreadgc`
 
