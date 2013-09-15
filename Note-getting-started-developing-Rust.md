@@ -56,7 +56,7 @@ We recommend developing under [MSYS and MinGW](http://www.mingw.org) using their
     * Menu - Installation ->
         * Apply Changes
 4. Create a shortcut on your desktop to Msys for `C:\MinGW\msys\1.0\msys.bat`
-5. Launch Msys and type `sh /postinstall/pi.sh`  (which configures /etc/fstab properly).
+5. Launch Msys and type `sh /postinstall/pi.sh`  (use `C:\MinGW` when asked - backslash is required).
 6. Install Curl with ... Curl is not yet part of MSYS or MinGW, bummer, we know, but all it needs is a volunteer contributor to maintain it however, helping them, helps us, until then...ya gotta do this:
  * download [curl-7.32.0.tar.gz](http://curl.haxx.se/download/curl-7.32.0.tar.gz) or the latest version manually to your MSYS home, usually `C:\MinGW\msys\1.0\home\<your_name>`
  * `tar -zxvf curl-7.32.0.tar.gz`
