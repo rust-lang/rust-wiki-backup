@@ -40,6 +40,3 @@ Rust is quickly becoming an excellent language for computer graphics and game de
 - [Q³](https://github.com/Jeaye/q3)
 - [Angolmois BMS player](https://github.com/lifthrasiir/angolmois-rust)
 - [Rustyhex](https://github.com/dpc/rustyhex/)
-
-### Documents
-- [Theory of Fun](http://www.raphkoster.com/gaming/gdco12/Koster_Raph_Theory_Fun_10.pdf)
