@@ -6,6 +6,21 @@ This page covers releases in more detail than the bullet-point list given in the
 
 ### New runtime and I/O
 
+### This week in Rust
+
+For even more information about what happened during this release cycle, see the past editions of 'This Week in Rust`.
+
+* http://cmr.github.io/blog/2013/07/13/this-week-in-rust/
+* http://cmr.github.io/blog/2013/07/21/this-week-in-rust/
+* http://cmr.github.io/blog/2013/07/29/last-week-in-rust/
+* http://cmr.github.io/blog/2013/08/04/this-week-in-rust/
+* http://cmr.github.io/blog/2013/08/10/this-week-in-rust/
+* http://cmr.github.io/blog/2013/08/19/this-week-in-rust/
+* http://cmr.github.io/blog/2013/08/25/this-week-in-rust/
+* http://cmr.github.io/blog/2013/08/31/this-week-in-rust/
+* http://cmr.github.io/blog/2013/09/07/this-week-in-rust/
+* http://cmr.github.io/blog/2013/09/15/this-week-in-rust/
+
 ## 0.7 July 2013
 
 This release didn't have many breaking language changes that require lengthy explanation beyond the short release notes, but there were many improvements to the libraries this time, and it feels like the standard library is beginning to reflect the final design.
