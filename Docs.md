@@ -94,10 +94,11 @@ Some Rust classics:
 * [How I got started hacking rustc](http://cmr.github.io/blog/2013/06/23/how-i-got-started-with-rust/)
 * [Abstraction penalties, stack allocation, and ownership types](http://robert.ocallahan.org/2007/10/abstraction-penalties-stack-allocation_23.html)
 
-## Videos
+## Presentations
 
 * [Dave Herman's StrangeLoop 2012 talk](http://www.infoq.com/presentations/Rust)
 * [A work stealing runtime for Rust](https://air.mozilla.org/2013-intern-todd/) - Aaron Todd's intern presentation on the Rust scheduler
 * [Default methods in Rust](https://air.mozilla.org/intern-presentation-sullivan/) - Michael Sullivan's intern presentation on default methods
 * [Types of Types](https://air.mozilla.org/ben-blum-from-the-research-team-presents-types-of-types-in-rust/) - Ben Blum's intern presentation on 'kinds'
 * [An I/O system for Rust](https://air.mozilla.org/intern-presentations-reed/) - Eric Reed's intern presentation on I/O
+* [Niko's presentation at Northeastern](http://smallcultfollowing.com/babysteps/blog/2013/07/18/rust-presentation-at-northeastern/) - Slides only
