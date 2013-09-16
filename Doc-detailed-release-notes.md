@@ -1,5 +1,11 @@
 This page covers releases in more detail than the bullet-point list given in the RELEASES.txt file in the source distribution, in particular focusing on _language level changes_ that will be immediately visible and/or disruptive to users trying to keep their Rust code compiling and working right between releases. It is intended to hold copied, cleaned-up versions of entries from the [[development roadmap|Note development roadmap]] as they are completed, to help users plan migration on their own code.
 
+## 0.8 October 2013
+
+### `for` loop and `Iterator`
+
+### New runtime and I/O
+
 ## 0.7 July 2013
 
 This release didn't have many breaking language changes that require lengthy explanation beyond the short release notes, but there were many improvements to the libraries this time, and it feels like the standard library is beginning to reflect the final design.
