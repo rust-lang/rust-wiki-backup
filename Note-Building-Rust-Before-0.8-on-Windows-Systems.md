@@ -1,4 +1,4 @@
-**Please note that this is a in-progress and temporary guide only intended for versions of Rust before 0.8 on Windows systems.**
+**Please note that this is an in-progress and temporary guide only intended for versions of Rust before 0.8 on Windows systems.**
 
 This temporary guide will cover building Rust < 0.8 on a Windows system through MSYS & MinGW using gcc 4.8 .
 
@@ -8,6 +8,7 @@ This temporary guide will cover building Rust < 0.8 on a Windows system through 
  * Latest: [http://sourceforge.net/projects/mingw/files/latest/download?source=files](http://sourceforge.net/projects/mingw/files/latest/download?source=files)
 2. Run the `mingw-get-setup` installer.
  * For simplicity use the default path of `C:\MinGW` , pretty please.
+ * I like to install for all users.
  * Run with Administrator privileges if possible.
 3. Make sure MinGW is on your system path.
  * `;C:\MinGW\bin` for example should be appended to the PATH environment variable, similar to these instructions: [http://stackoverflow.com/a/6318188/458550](http://stackoverflow.com/a/6318188/458550) .
@@ -19,7 +20,7 @@ This temporary guide will cover building Rust < 0.8 on a Windows system through 
 We have a few packages to add.
 
 1. Run the mingw-get GUI from your desktop by double clicking the "MinGW Installer" shortcut.
-2. Right click the following packages (bin) and select "Mark for Installation" using the left side for navigation
+2. Right click the following list of packages (bin) within the right pane and select "Mark for Installation". Use the left navigation tree to filter categories.
 	* Basic Setup
  		* `mingw-developer-toolkit`
  		* `mingw32-base`
@@ -35,7 +36,7 @@ We have a few packages to add.
 
 ## Git Installation
 
-If you already have Git installed and on the path please skip this section. You should be able to use the git command from your msys shell.
+If you already have Git installed and available on the path you may skip this section. You should be able to use the git command from your msys shell.
 
 1. Install git for windows from [http://git-scm.com/download/win](http://git-scm.com/download/win)
 2. Uncheck Associate .sh files to be run with Bash from within the components screen.
@@ -64,7 +65,9 @@ While the clone is taking place you can continue on to patching.
 
 ## Patches
 
-There are some issues with our environment that we need to patch up. This gets a little shady but it should get you down the path of building Rust on Windows. I won't lie, this is some greasy stuff but it will get you further down the compilation path. **Thanks to klutzy for all of these.**
+**If you care about your MinGW environment beyond building Rust stop right now and find another method!**
+
+There are some issues with our environment that we need to patch up. This is some greasy stuff but it will get you further down the compilation path. These patches should be applied within your MinGW installation folder. **Thanks to klutzy for all of these.**
 
 ### Patch for `WSAPOLLFD`
 
@@ -80,7 +83,7 @@ From: [http://sourceforge.net/p/mingw/bugs/1980/](http://sourceforge.net/p/mingw
 
 ### Patch for `FE_ALL_EXCEPT`
 
-For errors regarding FE_ALL_EXCEPT you must patch `\MinGW\lib\gcc\mingw32\4.8.1\include\c++\mingw32\bits\c++config.h` by inserting the following at line 597:
+For errors regarding `FE_ALL_EXCEPT` you must patch `\MinGW\lib\gcc\mingw32\4.8.1\include\c++\mingw32\bits\c++config.h` by inserting the following at line 597:
 
     #define _GLIBCXX_HAVE_FENV_H 1
 
@@ -110,3 +113,4 @@ If you have errors regarding the definition of `FILE_FLAG_FIRST_PIPE_INSTANCE` y
 5. Download `libstdc++-4.6.2-1-mingw32-dll-6.tar.lzma` from [http://sourceforge.net/projects/mingw/files/MinGW/Base/gcc/Version4/gcc-4.6.2-1/libstdc%2B%2B-4.6.2-1-mingw32-dll-6.tar.lzma/download](http://sourceforge.net/projects/mingw/files/MinGW/Base/gcc/Version4/gcc-4.6.2-1/libstdc%2B%2B-4.6.2-1-mingw32-dll-6.tar.lzma/download) and extract the contained libstdc++-6.dll into the `\rust\i686-pc-mingw32\stage0\bin` folder.
 	* Try running `rustc.exe` to confirm the fix.
 7. Run the `make` command again.
+	* This will take a really long time!
