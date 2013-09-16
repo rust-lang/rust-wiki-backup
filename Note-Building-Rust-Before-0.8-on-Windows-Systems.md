@@ -2,6 +2,11 @@
 
 This temporary guide will cover building Rust < 0.8 on a Windows system through MSYS & MinGW using gcc 4.8 .
 
+NOTE
+- Rust requires gcc < 4.6 to build, but recently mingw has upgraded whole system and it is currently not easy to match package versions. This guide directly uses gcc 4.8.
+- Latest mingw w32api package (4.0.0-1) contains some bugs. See "Patches" section below for instruction.
+- There are some abi change between gcc 4.6 and 4.8, and some tests are known to fail due to this. (https://github.com/mozilla/rust/issues/9205)
+
 ## MSYS & MinGW Installation
 
 1. Download the MinGW installer:
