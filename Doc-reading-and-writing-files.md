@@ -1,8 +1,6 @@
 #WARNING
 
-This is an tutorial for an ancient version of rust - both semantic, syntax and io library did change/are still changing quite a bit since then.
-
-Please use the irc channel for up to date instructions on how to read and write files.
+This tutorial is out of date. It was written for an ancient version of Rust. The semantics, syntax, and IO library of the language have changed a lot and will continue to change until a stable version of Rust has been released. Please use [the IRC channel](http://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust) to get up-to-date instructions on how to read and write files.
 
 ---
 
