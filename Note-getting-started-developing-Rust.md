@@ -40,6 +40,8 @@ For Ubuntu 11.10 there seems to be a conflict with texlive-latex-base, per [#169
 
 ### Windows
 
+**Note:** To build Rust < 0.8 on Windows systems using MSYS, MinGW, and **GCC 4.8** please see this temporary in-progress guide: [[Building Rust Before 0.8 on Windows Systems|Note-Building-Rust-Before-0.8-on-Windows-Systems]]
+
 #### Quick Steps for Windows environment setup.
 We recommend developing under [MSYS and MinGW](http://www.mingw.org) using their auto-installer.
 
