@@ -114,3 +114,12 @@ If you have errors regarding the definition of `FILE_FLAG_FIRST_PIPE_INSTANCE` y
 	* Try running `rustc.exe` to confirm the fix.
 7. Run the `make` command again.
 	* This will take a really long time!
+
+## Rust is Ready
+
+    User@Machine /c/projects/rust/i686-pc-mingw32/stage2/bin
+    $ rustc.exe hello.rs
+    
+    User@Machine /c/projects/rust/i686-pc-mingw32/stage2/bin
+    $ hello
+    Hello, world.
