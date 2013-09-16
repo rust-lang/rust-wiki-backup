@@ -57,14 +57,7 @@ We recommend developing under [MSYS and MinGW](http://www.mingw.org) using their
         * Apply Changes
 4. Create a shortcut on your desktop to Msys for `C:\MinGW\msys\1.0\msys.bat`
 5. Launch Msys and type `sh /postinstall/pi.sh`  (use `c:/mingw` when asked).
-6. Install Curl with ... Curl is not yet part of MSYS or MinGW, bummer, we know, but all it needs is a volunteer contributor to maintain it however, helping them, helps us, until then...ya gotta do this:
- * download [curl-7.32.0.tar.gz](http://curl.haxx.se/download/curl-7.32.0.tar.gz) or the latest version manually to your MSYS home, usually `C:\MinGW\msys\1.0\home\<your_name>`
- * `tar -zxvf curl-7.32.0.tar.gz`
- * `cd curl-7.32.0`
- * `./configure –prefix=/mingw`
- * `make`
- * `make install`
- * `curl --version` and `which curl` to ensure the build of Curl worked.
+6. Install wget with `mingw-get install msys-wget`.
 7. Download and install Git for Windows following these steps:
  * Download latest [Git for Windows on Google Code](https://code.google.com/p/msysgit/downloads/list?q=full+installer+official+git) and run it.
  * Change install path instead from `C:\Program Files(x86)` to just `C:\Git`.
