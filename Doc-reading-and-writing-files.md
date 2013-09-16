@@ -1,3 +1,11 @@
+#WARNING
+
+This is an tutorial for an ancient version of rust - both semantic, syntax and io library did change/are still changing quite a bit since then.
+
+Please use the irc channel for up to date instructions on how to read and write files.
+
+---
+
 _This document corresponds to 
 https://github.com/Havvy/rust-docs/blob/master/doc/readwrite.md so if you
 make edits, please notify Havvy or send a pull request there._
