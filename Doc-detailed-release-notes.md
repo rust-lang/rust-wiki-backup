@@ -4,6 +4,36 @@ This page covers releases in more detail than the bullet-point list given in the
 
 ### `for` loop and `Iterator`
 
+The closure-based `for` loop syntax has been replaced with one based on iterator objects. Iterator objects were already widely in use by Rust 0.7, so for most code the only difference will be the lack of a call to the `advance` compatibility method.
+
+Rust 0.7:
+
+```rust
+let xs = [1, 2, 3];
+let ys = [4, 5, 6];
+for xs.mut_iter().zip(ys.iter()).advance |(x, y)| {
+    *x = *y;
+}
+```
+
+Rust 0.8:
+
+```rust
+let xs = [1, 2, 3];
+let ys = [4, 5, 6];
+for (x, y) in xs.mut_iter().zip(ys.iter()) {
+    *x = *y;
+}
+```
+
+If there is still a function using the old iterator protocol, you can manually pass a closure or use a `do` loop:
+
+```rust
+do old_iteration_function() |_x| {
+    true
+};
+```
+
 ### New runtime and I/O
 
 ### Container naming conventions
