@@ -158,7 +158,7 @@ Proposal is to allow them to express it through an expression in the struct synt
 ## crypto
 - pcwalton: people we've talked to say do not implement any crypto in rust at all
 - brson: including digest functions?
-- pcwalton: didn't ask. But we should not implement it in rust. The Go folks have a worse FFI and have Adam Langely who likes to write it and they don't claim it's secure. We're not going to do the work required to write a secure version in all its glory (e.g., timing attacks). Opinions? The downside is that we will have a dependency on openssl/nss.
+- pcwalton: didn't ask. But we should not implement it in rust. The Go folks have a worse FFI and have Adam Langley who likes to write it and they don't claim it's secure. We're not going to do the work required to write a secure version in all its glory (e.g., timing attacks). Opinions? The downside is that we will have a dependency on openssl/nss.
 - brson: can be in the incubator instead of the main repo
 - pcwalton: lots of people will have to install/use this
 - kmc: high-quality openssl bindings that are memory safe will be a lot of work as well. But a better way forward. Constant-time memory compare we might have to do in-Rust.
