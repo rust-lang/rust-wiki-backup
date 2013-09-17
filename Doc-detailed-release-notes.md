@@ -6,6 +6,10 @@ This page covers releases in more detail than the bullet-point list given in the
 
 ### New runtime and I/O
 
+### Container naming conventions
+
+TODO: https://github.com/mozilla/rust/issues/7887
+
 ### This week in Rust
 
 For even more information about what happened during this release cycle, see the past editions of 'This Week in Rust`.
