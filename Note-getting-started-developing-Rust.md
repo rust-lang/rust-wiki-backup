@@ -96,9 +96,7 @@ If you are a consistent user of MinGW or plan to be, you might also want to subs
 * In Windows, to try out or work with different toolchains for building Rust with MinGW, the easiest way is to modify and add at the end of your Msys profile file, `C:\MinGW\msys\1.0\etc\profile` something like the following, and uncomment whichever toolchain path you want to work with and Remember to exit the Msys console and reopen it:
 
 ``# Enable MinGW64 path by uncommenting one of the following lines:``
-``# export PATH="/c/mingw-builds/x32-4.8.2-prerelease-20130717-rev200927-win32-dwarf/mingw32/bin:/usr/local:$PATH"``
-``# export PATH="/c/mingw-builds/x32-4.9.0-snapshot-20130718-rev201015-win32-dwarf/mingw32/bin:/usr/local:$PATH"``
-``# export PATH="/c/mingw-builds/x64-4.8.1-release-win32-seh-rev3/mingw64/bin:/usr/local:$PATH"``
+``# export PATH="/c/mingw-builds/x64-4.8.1-release-win32-seh-rev5/mingw64/bin:/usr/local:$PATH"``
 ``# export PATH="/c/drangon_mingw64/mingw64/bin:/usr/local:$PATH"``
 ``export PATH="/c/mingw-builds/x32-4.8.1-release-win32-dwarf-rev5/mingw32/bin:/usr/local:$PATH"``
 
