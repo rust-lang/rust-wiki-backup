@@ -24,7 +24,7 @@ Previous discussions about rustpkg planning:
  * [#8520](https://github.com/mozilla/rust/issues/8520) - find sources in $CWD - 10/10/2013 (medium)
  * [#7240](https://github.com/mozilla/rust/issues/7240) - multi-crate packages - 10/17/2013 (hard)
  * [#8711](https://github.com/mozilla/rust/issues/8711) - correctly deal with versions of installed pkgs - 10/23/2013 (medium)
- * [#9045](https://github.com/mozilla/rust/issues/9045) - rustpkg init (graydon's .rust_workspace suggestion) - 10/29/2013 (medium)
+ * ~~[#9045](https://github.com/mozilla/rust/issues/9045) - rustpkg init (graydon's .rust_workspace suggestion)~~ (Implemented by @steveklabnik) - 10/29/2013 (medium)
 
 ## Community adoption II: 12/5/2013
  * [#7401](https://github.com/mozilla/rust/issues/7401) - support custom commands - 11/6/2013 (hard)
