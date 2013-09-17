@@ -12,7 +12,7 @@ Rust 0.7:
 let mut xs = [1, 2, 3];
 let ys = [4, 5, 6];
 for xs.mut_iter().zip(ys.iter()).advance |(x, y)| {
-    *x = *y;
+    *x = *y + 5;
 }
 ```
 
@@ -22,7 +22,7 @@ Rust 0.8:
 let mut xs = [1, 2, 3];
 let ys = [4, 5, 6];
 for (x, y) in xs.mut_iter().zip(ys.iter()) {
-    *x = *y;
+    *x = *y + 5;
 }
 ```
 
