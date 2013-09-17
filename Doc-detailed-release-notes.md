@@ -34,6 +34,8 @@ do old_iteration_function() |_x| {
 };
 ```
 
+For more information, see the [iterator tutorial](http://static.rust-lang.org/doc/tutorial-container.html#iterators).
+
 ### New runtime and I/O
 
 ### Container naming conventions
