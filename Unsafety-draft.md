@@ -7,19 +7,15 @@ This is a list of behaviour `unsafe` blocks *must prevent*. These issues cannot 
 * Mutating an immutable value/reference, if it is not marked as non-`Freeze`
 * Reads of [undef](http://llvm.org/docs/LangRef.html#undefined-values) (uninitialized) memory
 * Breaking the [pointer aliasing rules](http://llvm.org/docs/LangRef.html#pointer-aliasing-rules) with raw pointers (a subset of the rules used by C)
-
-Invoking undefined behavior via compiler intrinsics:
-
-* Indexing outside of the bounds of an object with `std::ptr::offset` (`offset` intrinsic), with the exception of one byte past the end which is permitted.
-* Using `std::ptr::copy_nonoverlapping_memory` (`memcpy32`/`memcpy64` instrinsics) on overlapping buffers
-
-Invalid values in primitive types, even in private fields/locals:
-
-* Dangling/null pointers in non-raw pointers, or slices
-* A value other than `false` (0) or `true` (1) in a `bool`
-* A discriminant in an `enum` not included in the type definition
-* A value in a `char` which is a surrogate or above `char::MAX`
-* non-UTF-8 byte sequences in a `str`
+* Invoking undefined behavior via compiler intrinsics:
+    * Indexing outside of the bounds of an object with `std::ptr::offset` (`offset` intrinsic), with the exception of one byte past the end which is permitted.
+    * Using `std::ptr::copy_nonoverlapping_memory` (`memcpy32`/`memcpy64` instrinsics) on overlapping buffers
+* Invalid values in primitive types, even in private fields/locals:
+    * Dangling/null pointers in non-raw pointers, or slices
+    * A value other than `false` (0) or `true` (1) in a `bool`
+    * A discriminant in an `enum` not included in the type definition
+    * A value in a `char` which is a surrogate or above `char::MAX`
+    * non-UTF-8 byte sequences in a `str`
 
 ### Things that are not typically considered unsafe
 
