@@ -42,6 +42,10 @@ For more information, see the [iterator tutorial](http://static.rust-lang.org/do
 
 TODO: https://github.com/mozilla/rust/issues/7887
 
+### Cast naming conventions
+
+TODO: https://github.com/mozilla/rust/issues/7087
+
 ### This week in Rust
 
 For even more information about what happened during this release cycle, see the past editions of 'This Week in Rust'.
