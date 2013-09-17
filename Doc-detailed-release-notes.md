@@ -12,7 +12,7 @@ TODO: https://github.com/mozilla/rust/issues/7887
 
 ### This week in Rust
 
-For even more information about what happened during this release cycle, see the past editions of 'This Week in Rust`.
+For even more information about what happened during this release cycle, see the past editions of 'This Week in Rust'.
 
 * http://cmr.github.io/blog/2013/07/13/this-week-in-rust/
 * http://cmr.github.io/blog/2013/07/21/this-week-in-rust/
