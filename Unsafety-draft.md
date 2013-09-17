@@ -10,8 +10,8 @@ This is a list of behaviour `unsafe` blocks *must prevent*. These issues cannot 
 
 Invoking undefined behavior via compiler intrinsics:
 
-* Indexing outside of the bounds of an object with `ptr::offset` (`offset` intrinsic), with the exception of one byte past the end which is permitted.
-* Using `copy_nonoverlapping_memory` (`memcpy32`/`memcpy64` instrinsics) on overlapping buffers
+* Indexing outside of the bounds of an object with `std::ptr::offset` (`offset` intrinsic), with the exception of one byte past the end which is permitted.
+* Using `std::ptr::copy_nonoverlapping_memory` (`memcpy32`/`memcpy64` instrinsics) on overlapping buffers
 
 Invalid values in primitive types, even in private fields/locals:
 
