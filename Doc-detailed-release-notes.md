@@ -9,7 +9,7 @@ The closure-based `for` loop syntax has been replaced with one based on iterator
 Rust 0.7:
 
 ```rust
-let xs = [1, 2, 3];
+let mut xs = [1, 2, 3];
 let ys = [4, 5, 6];
 for xs.mut_iter().zip(ys.iter()).advance |(x, y)| {
     *x = *y;
@@ -19,7 +19,7 @@ for xs.mut_iter().zip(ys.iter()).advance |(x, y)| {
 Rust 0.8:
 
 ```rust
-let xs = [1, 2, 3];
+let mut xs = [1, 2, 3];
 let ys = [4, 5, 6];
 for (x, y) in xs.mut_iter().zip(ys.iter()) {
     *x = *y;
