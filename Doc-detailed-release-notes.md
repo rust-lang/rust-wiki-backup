@@ -26,7 +26,7 @@ for (x, y) in xs.mut_iter().zip(ys.iter()) {
 }
 ```
 
-If there is still a function using the old iterator protocol, you can manually pass a closure or use a `do` loop:
+If there is still a function using the old iterator protocol, you can manually pass a closure or use a `do` loop, as a stopgap until it is rewritten as an iterator:
 
 ```rust
 do old_iteration_function() |_x| {
