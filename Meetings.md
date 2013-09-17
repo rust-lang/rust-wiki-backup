@@ -88,6 +88,7 @@ Mozilla employees have a weekly Rust planning meeting on Tuesday mornings at 10:
 * [[Meeting-weekly-2013-08-20]] (Cycle time)
 * [[Meeting-weekly-2013-08-27]] (rustpkg timeline; extern fns; generic extern fns; LLVM asserts; meeting time)
 * [[Meeting-weekly-2013-09-10]] (commit policy; extern mod duplication; implicit copyability; patterns and default methods; &const; 0.8)
+* [[Meeting-weekly-2013-09-17]] (commit policy x 2; rustpkg dependency handling; macros requiring a feature flag; default arguments; \0 literal; linefeed in comments; OSX 10.9; crypto)
 
 ## Other meetings:
 
