@@ -25,7 +25,7 @@ acrichto, brson, jack, tjc, felix, azita, lbergstrom, pcwalton
 ## Points of order
 - brson: this meeting is optional for Servo folks. you're welcome to skip if you like.
 - jack: we'll send one delegate for a while
-- brson: etherpad is a new location. this is what servo does becausey ou don't have to figure out the date every week.
+- brson: etherpad is a new location. this is what servo does because you don't have to figure out the date every week.
 - brson: corey asked to be able to dial in to this conference. i gave him the number and we'll see how it goes.
 
 ## cached source code
