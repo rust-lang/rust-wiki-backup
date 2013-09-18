@@ -15,16 +15,16 @@
 
 #### In-development (git master)
 
-* [Tutorial](http://doc.rust-lang.org/doc/tutorial.html)  
-* [Manual](http://doc.rust-lang.org/doc/rust.html) ([PDF](http://doc.rust-lang.org/doc/rust.pdf))  
-* [Standard library](http://doc.rust-lang.org/doc/std/index.html)  
-* [Extra library](http://doc.rust-lang.org/doc/extra/index.html)
-* [Package manager](http://doc.rust-lang.org/doc/rustpkg.html)
-* [Borrowed pointers](http://doc.rust-lang.org/doc/tutorial-borrowed-ptr.html)
-* [Containers and iterators](http://doc.rust-lang.org/doc/tutorial-container.html)
-* [Tasks](http://doc.rust-lang.org/doc/tutorial-tasks.html)
-* [Macros](http://doc.rust-lang.org/doc/tutorial-macros.html)
-* [FFI](http://doc.rust-lang.org/doc/tutorial-ffi.html)
+* [Tutorial](http://doc.rust-lang.org/doc/master/tutorial.html)  
+* [Manual](http://doc.rust-lang.org/doc/master/rust.html) ([PDF](http://doc.rust-lang.org/doc/master/rust.pdf))  
+* [Standard library](http://doc.rust-lang.org/doc/master/std/index.html)  
+* [Extra library](http://doc.rust-lang.org/doc/master/extra/index.html)
+* [Package manager](http://doc.rust-lang.org/doc/master/rustpkg.html)
+* [Borrowed pointers](http://doc.rust-lang.org/doc/master/tutorial-borrowed-ptr.html)
+* [Containers and iterators](http://doc.rust-lang.org/doc/master/tutorial-container.html)
+* [Tasks](http://doc.rust-lang.org/doc/master/tutorial-tasks.html)
+* [Macros](http://doc.rust-lang.org/doc/master/tutorial-macros.html)
+* [FFI](http://doc.rust-lang.org/doc/master/tutorial-ffi.html)
 
 ## FAQs
 
