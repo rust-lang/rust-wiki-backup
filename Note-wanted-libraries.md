@@ -60,11 +60,13 @@ Notes taken at rust work week, 2011/06/23
 * reflection
 
 ## Things that do not belong in std
-* Datbase access (sql, nosql)
-  * [mongodb](https://github.com/10gen-interns/mongo-rust-driver-prototype) (external)
-  * [postgres](https://github.com/sfackler/rust-postgres) (external)
-  * [redis](https://github.com/mneumann/rust-redis) (external)
-  * [sqlite](https://github.com/linuxfood/rustsqlite) (external)
+* Database access
+  * SQL
+    * [postgres](https://github.com/sfackler/rust-postgres) (external)
+    * [sqlite](https://github.com/linuxfood/rustsqlite) (external)
+  * NoSql
+    * [mongodb](https://github.com/10gen-interns/mongo-rust-driver-prototype) (external)
+    * [redis](https://github.com/mneumann/rust-redis) (external)
 * GUI
  * [Cocoa](https://github.com/mozilla-servo/rust-cocoa) (external)
 * quotas, accounting
