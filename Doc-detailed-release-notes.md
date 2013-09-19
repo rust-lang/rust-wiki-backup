@@ -34,7 +34,7 @@ do old_iteration_function() |_x| {
 };
 ```
 
-For more information, see the [iterator tutorial](http://static.rust-lang.org/doc/tutorial-container.html#iterators).
+For more information, see the [iterator tutorial](http://static.rust-lang.org/doc/master/tutorial-container.html#iterators).
 
 ### New string formatting with `format!`
 
@@ -104,12 +104,12 @@ Further reading:
 * https://mail.mozilla.org/pipermail/rust-dev/2013-June/004364.html
 * https://mail.mozilla.org/pipermail/rust-dev/2013-June/004599.html
 
-[iterators]: http://journal.stuffwithstuff.com/2013/01/13/iteration-inside-and-out/  
-[containers]: http://doc.rust-lang.org/doc/tutorial-container.html
+[iterators]: http://journal.stuffwithstuff.com/2013/01/13/iteration-inside-and-out/
+[containers]: http://doc.rust-lang.org/doc/0.7/tutorial-container.html
 
 ### Numeric traits
 
-Rust now has a proper numerical tower, defined in [`std::num`](http://static.rust-lang.org/doc/std/num.html). All numeric types implement trait `Num`, which in turn inherits from the operator traits, `Neg`, `Add`, `Eq`, as well as the `Zero` and `One` traits. `Num` itself defines no methods.
+Rust now has a proper numerical tower, defined in [`std::num`](http://static.rust-lang.org/doc/0.7/std/num.html). All numeric types implement trait `Num`, which in turn inherits from the operator traits, `Neg`, `Add`, `Eq`, as well as the `Zero` and `One` traits. `Num` itself defines no methods.
 
 ```rust
 pub trait Num: Eq + Zero + One
@@ -207,14 +207,14 @@ fn foo<T:X + Y + Z, U:Q>() {
 
 #### Trait impls use `for`
 
-A trait implementation that was written this way in 0.5: 
+A trait implementation that was written this way in 0.5:
 ```
-impl Ty : Trait { 
+impl Ty : Trait {
 }
 ```
 is written this way in 0.6:
 ```
-impl Trait for Ty { 
+impl Trait for Ty {
 }
 ```
 
@@ -653,7 +653,7 @@ Classes were overhauled; the `class` syntax was removed from the language, in fa
 ```
 struct Cat {
   name: ~str,
-  tail_color: KittyColor 
+  tail_color: KittyColor
 }
 
 let my_cat = Cat {
@@ -833,7 +833,7 @@ We also have a powerful new way to define macros with the `macro_rules!` syntax 
 
 See also [the macro tutorial][macros].
 
-[macros]: http://dl.rust-lang.org/doc/tutorial-macros.html
+[macros]: http://static.rust-lang.org/doc/0.4/tutorial-macros.html
 
 ### Smaller syntax changes
 
@@ -1184,14 +1184,14 @@ The first line of a Rust source file can contain a shebang
 
 `be`, `prove`, `syntax`, `note` were unimplemented and removed from
 the language.  `mutable` is now written `mut`. `cont` was renamed
-to `again`. `bind` had too much overlap with other closure forms 
-while providing subtly different semantics so was removed. `do` 
+to `again`. `bind` had too much overlap with other closure forms
+while providing subtly different semantics so was removed. `do`
 loops were rarely used, so the `do` keyword was repurposed. Resources
 were removed in favor of class destructors.
 
 ### Reflection system
 
-A preliminary reflection system now exists. Type descriptors contain 
+A preliminary reflection system now exists. Type descriptors contain
 a compiler-generated function that calls visitor-methods on a predefined
 intrinsic visitor interface. This enables reflecting on a value without
 knowing its type (with some supporting library work). Much existing code

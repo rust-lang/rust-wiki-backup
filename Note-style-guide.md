@@ -20,7 +20,7 @@ Here are some rough guidelines to Rust style. They are followed unevenly and the
 ## Trait naming
 
 - trait examples: Copy, Owned, Const, Add, Sub, Num, Shr, Index, Encode, Decode, Reader, Writer, GenericPath
-- extension traits: FooUtil. However, prefer default methods to extension traits. 
+- extension traits: FooUtil. However, prefer default methods to extension traits.
 - avoid words with suffixes (able, etc). try to use transitive verbs, nouns, and then adjectives in that order
 
 ## Converting between types
@@ -94,7 +94,7 @@ mod test {
 
 # Match expressions
 
-deref the match target if you can. prefer 
+deref the match target if you can. prefer
 
 ```
 match *foo {
@@ -191,7 +191,7 @@ Error messages should use the pattern "expected \`X\`, found \`Y\`".
 
 # Traits
 
-[Trait](http://dl.rust-lang.org/doc/tutorial.html#traits) names should be capitalized and should follow the pattern of `Verb` or `Verber`, except in cases where no verb seems sensible.
+[Trait](http://doc.rust-lang.org/doc/master/tutorial.html#traits) names should be capitalized and should follow the pattern of `Verb` or `Verber`, except in cases where no verb seems sensible.
 
 Examples:
 

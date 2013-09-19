@@ -12,7 +12,7 @@ Long answer: RUST_LOG takes a 'logging spec' that consists of a comma-separated 
 
 If you aren't sure which paths you need, try setting RUST_LOG to `::help` and running your program. This will print a list of paths available for logging. For a full description see [the language reference][1].
 
-[1]:http://doc.rust-lang.org/doc/rust.html#logging-system
+[1]:http://doc.rust-lang.org/doc/master/rust.html#logging-system
 
 ### How do I get my program to display the output of `debug!` statements?
 

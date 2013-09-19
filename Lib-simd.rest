@@ -16,7 +16,7 @@ A vector type is defined by the element type and the number of elements.
 Rust recognizes 10 `machine types`_: ``i8``, ``i16``, ``i32``, ``i64``,
 ``u8``, ``u16``, ``u32``, ``u64``, ``f32``, ``f64``.
 
-.. _machine types: http://static.rust-lang.org/doc/rust.html#machine-types
+.. _machine types: http://static.rust-lang.org/doc/master/rust.html#machine-types
 
 OpenCL_ defines Built-in Vector Data Types intended to be compiled to SIMD.
 Possible element types are ``char``, ``short``, ``int``, ``long``,
