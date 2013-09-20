@@ -26,15 +26,17 @@ See ISO 8601, which relies on IEC 60050-111, IEC 60050-713.
 
 ## 1. Announcement to mailing list
 
-  - Proposed editor: _your name_
-  - Date proposed: _date of proposal_
-  - Link: _link to email_
+  - Proposed editor: Luis de Bethencourt
+  - Date proposed: 12-09-2013
+  - Link: https://mail.mozilla.org/pipermail/rust-dev/2013-September/005528.html
 
 ###  Notes from discussion on mailing list
 
-  - _note_
-  - _note_
-  - _note_
+  - http://noda-time.blogspot.com/2011/08/what-wrong-with-datetime-anyway.html
+  - http://en.wikipedia.org/wiki/Epoch_(reference_date)
+  - http://lucumr.pocoo.org/2011/7/15/eppur-si-muove/
+  - http://blog.joda.org/2009/11/why-jsr-310-isn-joda-time_4941.html?m=1
+  - http://naggum.no/lugm-time.html
 
 
 ## 2. Research of standards and techniques
