@@ -20,6 +20,7 @@ Notes taken at rust work week, 2011/06/23
  * [Cap'n Proto](https://github.com/dwrensha/capnproto-rust) (external)
  * [tnetstring](https://github.com/erickt/rust-tnetstring) (external)
  * xml
+    * [sax-rs](https://github.com/bjz/sax-rs) (external)
 * IO
  * AIO, SIO, stdio
  * [filesystem](https://github.com/mozilla/rust/blob/master/src/libstd/os.rs)
