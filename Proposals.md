@@ -7,6 +7,7 @@ Listing of proposals
 * [[Proposal for closure reform]]
 * [[Proposal for function objects]]
 * [[Proposal for effects]]
+* [[Proposal for character encoding API]]
 
 ## Historical
 
