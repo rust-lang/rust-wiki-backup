@@ -3,7 +3,7 @@
 
 ## Current proposal
 
-```
+```rust
 /// Each implementation of Encoding has one corresponding implementation
 /// of Decoder (and one of Encoder).
 trait Decoder {
@@ -88,3 +88,4 @@ trait Encoding {
          // This is a default method, but not meant to be overridden.
      }
 }
+```
