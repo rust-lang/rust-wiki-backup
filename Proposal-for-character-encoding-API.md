@@ -37,13 +37,19 @@ trait Decoder {
 /// Takes the invalid byte sequence.
 /// Return a replacement string, or None to abort with a DecodeError.
 condition! {
-     pub decoding_error : ~[u8] -> Option<~str>;
+     pub decoding_error : ~[u8] -> DecodingErrorResult;
+}
+
+enum DecodingErrorResult {
+     AbortDecoding,
+     ReplacementString(~str),
+     ReplacementChar(char),
 }
 
 /// Functions to be used with decoding_error::cond.trap
 mod decoding_error_handlers {
-     fn abort(_: ~[u8]) -> Option<~str> { None }
-     fn replacement(_: ~[u8]) -> Option<~str> { Some(~"\uFFFD") }
+     fn abort(_: ~[u8]) -> DecodingErrorResult { AbortDecoding }
+     fn replacement(_: ~[u8]) -> DecodingErrorResult { ReplacementChar('\uFFFD') }
 }
 
 struct DecodeError {
