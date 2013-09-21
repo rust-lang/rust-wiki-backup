@@ -8,7 +8,6 @@ Listing of notes for developers working on the Rust compiler and tools.
 * [[Note milestone nomination]] -- how to nominate issues for milestones
 * [[Note RFC process]] -- **read this for larger changes**
 * [[Note wiki conventions]]
-* [[Note bug janitors]]
 * [[Note development roadmap]]
 * [[Note compiler snapshots]]
 * [[Note git workflow]]
