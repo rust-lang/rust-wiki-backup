@@ -128,3 +128,10 @@ If you have errors regarding the definition of `FILE_FLAG_FIRST_PIPE_INSTANCE` y
     User@Machine /c/projects/rust/i686-pc-mingw32/stage2/bin
     $ hello
     Hello, world.
+
+### Moving Rust
+
+If you want to move rust to a more permanent location on your system (for example C:\Program Files) you must preserve a little bit of structure. If you fail to do this correctly you may receive errors such as ``can't find crate for `std` ``. The contents of the `stage2/bin` folder must be contained within a folder named `bin`. The simplest way to do this is the following:
+
+* Copy the contents of `stage2/bin` to `C:\Program Files\rust\bin`
+* Add `;C:\Program Files\rust\bin` to your system path
