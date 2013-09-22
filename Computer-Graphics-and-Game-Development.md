@@ -18,6 +18,10 @@ Rust is quickly becoming an excellent language for computer graphics and game de
 - [gl-rs](https://github.com/bjz/gl-rs)
 - [rust-opengles](https://github.com/mozilla-servo/rust-opengles)
 
+#### Audio
+
+- [openal-rs](https://github.com/bjz/openal-rs/)
+
 #### Mathematics, Collision Detection, Physics
 
 - [nalgebra](https://github.com/sebcrozet/nalgebra)
@@ -34,6 +38,7 @@ Rust is quickly becoming an excellent language for computer graphics and game de
 #### Game Engines
 
 - [kiss3d](https://github.com/sebcrozet/kiss3d)
+- [RustAllegro](https://github.com/SiegeLord/RustAllegro)
 
 ### Game Projects
 
