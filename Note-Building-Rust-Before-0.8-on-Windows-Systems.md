@@ -76,7 +76,7 @@ There are some issues with our environment that we need to patch up. This is som
 
 ### Patch for `WSAPOLLFD`
 
-If you receive errors regarding WSAPOLLFD (haha, you will!) you must patch `/mingw/include/winsock2.h` by inserting the following at line 915:
+If you receive errors regarding WSAPOLLFD (recently, you may not) you must patch `/mingw/include/winsock2.h` by inserting the following at line 915:
 
     typedef struct pollfd {
       SOCKET fd;
