@@ -40,6 +40,11 @@ Rust is quickly becoming an excellent language for computer graphics and game de
 - [kiss3d](https://github.com/sebcrozet/kiss3d)
 - [RustAllegro](https://github.com/SiegeLord/RustAllegro)
 
+#### Scripting Engines
+
+- [rust-mozjs (SpiderMonkey bindings)](https://github.com/mozilla-servo/rust-mozjs/)
+- [Apollo (Lua)](https://github.com/katis/apollo)
+
 ### Game Projects
 
 - [Q³](https://github.com/Jeaye/q3)
