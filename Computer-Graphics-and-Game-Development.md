@@ -45,6 +45,7 @@ Rust is quickly becoming an excellent language for computer graphics and game de
 
 - [rust-mozjs (SpiderMonkey bindings)](https://github.com/mozilla-servo/rust-mozjs/)
 - [Apollo (Lua)](https://github.com/katis/apollo)
+- [r5.rs (Scheme)](https://github.com/kimhyunkang/r5.rs)
 
 ### Game Projects
 
