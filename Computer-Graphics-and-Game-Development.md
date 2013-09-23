@@ -37,6 +37,8 @@ Rust is quickly becoming an excellent language for computer graphics and game de
 #### Import/Export
 
 - [rust-stb-image](https://github.com/mozilla-servo/rust-stb-image)
+- [freeimage-rs](https://github.com/h3r2tic/freeimage-rs)
+- [assimp-rs](https://github.com/h3r2tic/assimp-rs)
 
 #### Game Engines
 
