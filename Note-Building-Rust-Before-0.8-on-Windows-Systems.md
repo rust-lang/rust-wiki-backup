@@ -68,36 +68,6 @@ If you already have python installed and on the path, you may skip this section.
 
 While the clone is taking place you can continue on to patching.
 
-## Patches
-
-**If you care about your MinGW environment beyond building Rust stop right now and find another method!**
-
-There are some issues with our environment that we need to patch up. This is some greasy stuff but it will get you further down the compilation path. These patches should be applied within your MinGW installation folder. **Thanks to klutzy for all of these.**
-
-### Patch for `WSAPOLLFD`
-
-If you receive errors regarding WSAPOLLFD (recently, you may not) you must patch `/mingw/include/winsock2.h` by inserting the following at line 915:
-
-    typedef struct pollfd {
-      SOCKET fd;
-      short  events;
-      short  revents;
-    } WSAPOLLFD, *PWSAPOLLFD, *LPWSAPOLLFD;
-
-From: [http://sourceforge.net/p/mingw/bugs/1980/](http://sourceforge.net/p/mingw/bugs/1980/)
-
-### Patch for `FE_ALL_EXCEPT`
-
-For errors regarding `FE_ALL_EXCEPT` you must patch `\MinGW\lib\gcc\mingw32\4.8.1\include\c++\mingw32\bits\c++config.h` by inserting the following at line 597:
-
-    #define _GLIBCXX_HAVE_FENV_H 1
-
-### Patch for `FILE_FLAG_FIRST_PIPE_INSTANCE`
-
-If you have errors regarding the definition of `FILE_FLAG_FIRST_PIPE_INSTANCE` you must patch `\MinGW\include\winbase.h` by changing line 1986 from `#if (NTDDK_VERSION >= NTDDI_WIN2KSP2)` to the following:
-
-	#if (_WIN32_WINNT >= 0x0500)
-
 ## Configure & Build
 
 1. Navigate to the directory where you cloned rust from within the msys shell. For me that is `cd /C/Projects/rust`.
