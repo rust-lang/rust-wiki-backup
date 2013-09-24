@@ -35,7 +35,7 @@
 ## Community
 
 * IRC:
-  * [#rust on irc.mozilla.org][pound-rust] - the main channel
+  * [#rust on irc.mozilla.org][pound-rust] - general discussion
   * [#rust-internals on irc.mozilla.org][pound-rust-internals] - Rust compiler and library development
   * [#rust-gamedev on irc.mozilla.org][pound-rust-gamedev] - game development in Rust
 * Mailing list [rust-dev]
