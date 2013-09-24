@@ -69,8 +69,15 @@ We recommend developing under [MSYS and MinGW](http://www.mingw.org) using their
  * Choose **Checkout as-is, commit Unix-style line endings** (you'll have less problems).
  * After installing Git, close the MinGW console and reopen it, type `git --version` to verify installation and path is set correctly.
 8. Download Python 2.7 installer for your Windows version from http://www.python.org/getit/ and install it preferably to `C:\Python27`.
-9. You can now start the MinGW / Msys Shell from your Desktop or Start Menu.
-10. Scroll down to **Downloading and building Rust** section.
+9. (Do the following sub-steps also , until we bundle old dll's or get a workaround)
+ * Get old versions of these dlls:
+    * mingw-get upgrade "g++<4.6"
+    * mingw-get upgrade "libpthread=2.8.0-3"
+ *  Copy libgcc_s_dw2-1.dll, libstdc++-6.dll and libpthread-2.dll from %mingw%\bin into %build%\i686-pc-mingw32\stage0\bin
+ * Roll mingw back to the latest:
+        mingw-get upgrade 
+10. You can now start the MinGW / Msys Shell from your Desktop or Start Menu.
+11. Scroll down to **Downloading and building Rust** section.
 
 #### More info for Windows users.
 
