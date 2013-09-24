@@ -22,7 +22,7 @@
 * Emacs
   * included, see `src/etc/`
 * Gedit
-  * [gareth0's rust-gnome](https://bitbucket.org/gareth0/rust-gnome) - A syntax highlighting file for   GtkSourceView (Gedit) and a GNOME mime-database file.
+  * included, see `src/etc/`
 * Kate
   * included, see `src/etc/`
 * SublimeText
