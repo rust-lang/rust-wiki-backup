@@ -40,6 +40,8 @@ For more information, see the [iterator tutorial](http://static.rust-lang.org/do
 
 ### New runtime and I/O
 
+### FFI changes
+
 ### Container naming conventions
 
 TODO: https://github.com/mozilla/rust/issues/7887
