@@ -42,7 +42,31 @@ For more information, see the [iterator tutorial](http://static.rust-lang.org/do
 
 ### FFI changes
 
+The FFI was changed to be more efficient, introducing first-class foreign function pointers. All calls to foreign functions now happen directly, whereas previously they were called through a wrapper function that switched to a special C stack before the call. In order to ensure that there is enough stack space available to run foreign code, any function that calls a foreign function must be annotated with the `#[fixed_stack_segment]` attribute. This attribute ensures that the function executes with a large amount of stack available.
 
+```
+extern {
+    fn a_foreign_fn();
+}
+
+#[fixed_stack_segment]
+fn a_caller_of_a_foreign_fn() {
+    a_foreign_fn();
+}
+```
+
+Strategic placement of the `fixed_stack_segment` attribute can make FFI calls very efficient at the expense of extra annotations. When performance is not a concern, the `externfn!` macro can be used to declare the foreign function and the fixed-segment wrapper at once.
+
+```
+externfn!(fn a_foreign_fn());
+```
+
+Because they are now called directly, C foreign functions now have the type `extern "C" fn` and can be passed by value and called from Rust code:
+
+```
+let f: extern "C" fn() = a_foreign_fn;
+f();
+```
 
 ### Cast naming conventions
 
