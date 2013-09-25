@@ -38,15 +38,14 @@ For more information, see the [iterator tutorial](http://static.rust-lang.org/do
 
 ### New string formatting with `format!`
 
-### New runtime and I/O
+`format!` is a new macro for formatting strings, to eventually replace `fmt!`. Being based on formatting traits it is more flexible and extensible than the old printf-based system. See the primary [documentation](http://static.rust-lang.org/doc/master/std/fmt/index.html) for details.
 
 ### FFI changes
 
-### Container naming conventions
 
-TODO: https://github.com/mozilla/rust/issues/7887
 
 ### Cast naming conventions
+
 Functions for converting between types have been renamed (or added) to follow a new convention:
 - `as`: cheap conversions that are normally just converting a reference to a different type, but not changing the in-memory representation, e.g. `string.as_bytes()` gives a `&[u8]` view into a `&str`. These don't consume the convertee.
 - `to`: expensive conversions that may allocate and copy data, e.g. `string.to_owned()` copies a `&str` to a new `~str`. These also don't consume the convertee.
