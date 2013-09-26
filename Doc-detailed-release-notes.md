@@ -91,6 +91,7 @@ For even more information about what happened during this release cycle, see the
 * http://cmr.github.io/blog/2013/08/31/this-week-in-rust/
 * http://cmr.github.io/blog/2013/09/07/this-week-in-rust/
 * http://cmr.github.io/blog/2013/09/15/this-week-in-rust/
+* http://cmr.github.io/blog/2013/09/23/this-week-in-rust/
 
 ## 0.7 July 2013
 
