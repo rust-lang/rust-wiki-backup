@@ -1,7 +1,8 @@
-This is an archive of all the existing Rust release artifacts. Each release is signed with the Rust [GPG signing key][key] (older key [here][pre-0.5-key]). In addition to the included short-form release notes there is also a longer explanation of the changes in each release in the [[detailed release notes|Doc detailed release notes]].
+This is an archive of all the existing Rust release artifacts. Each release is signed with the Rust [GPG signing key][key] ([older key][pre-0.8-key], [even older key][pre-0.5-key]). In addition to the included short-form release notes there is also a longer explanation of the changes in each release in the [[detailed release notes|Doc detailed release notes]].
 
 [key]: http://www.rust-lang.org/rust-key.gpg.ascii
-[pre-0.5-key]: http://www.rust-lang.org/rust-key-old.gpg.ascii
+[pre-0.8-key]: http://www.rust-lang.org/rust-key-old.gpg.ascii
+[pre-0.5-key]: http://www.rust-lang.org/rust-key-very-old.gpg.ascii
 
 ## 0.8
 
