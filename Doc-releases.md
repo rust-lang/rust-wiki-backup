@@ -10,21 +10,37 @@ This is an archive of all the existing Rust release artifacts. Each release is s
 * [Source code][0.8-tar] ([signature][0.8-tar-sig])
 * [Windows installer][0.8-exe] ([signature][0.8-exe-sig])
 * [Tutorial][0.8-tutorial]
+  * [borrowed pointers][0.8-tutorial-borrowed-ptr] |
+    [conditions][0.8-tutorial-conditions] |
+    [containers][0.8-tutorial-container] |
+    [ffi][0.8-tutorial-ffi] |
+    [macros][0.8-tutorial-macros] |
+    [rustpkg][0.8-tutorial-rustpkg] |
+    [tasks][0.8-tutorial-tasks]
 * [Manual][0.8-manual] ([PDF][0.8-manual-pdf])
+* [Rustpkg manual][0.8-rustpkg-manual]
 * [Standard library docs][0.8-std]
 * [Extra library docs][0.8-extra]
 
 [0.8-announce]: todo
 [0.8-notes]: https://github.com/mozilla/rust/blob/release-0.8/RELEASES.txt
-[0.8-tar]: http://static.rust-lang.org/dist/rust-0.7.tar.gz
-[0.8-tar-sig]: http://static.rust-lang.org/dist/rust-0.7.tar.gz.asc
-[0.8-exe]: http://static.rust-lang.org/dist/rust-0.7-install.exe
-[0.8-exe-sig]: http://static.rust-lang.org/dist/rust-0.7-install.exe.asc
-[0.8-tutorial]: http://doc.rust-lang.org/doc/0.7/tutorial.html
-[0.8-manual]: http://doc.rust-lang.org/doc/0.7/rust.html
-[0.8-manual-pdf]: http://doc.rust-lang.org/doc/0.7/rust.pdf
-[0.8-std]: http://doc.rust-lang.org/doc/0.7/std/index.html
-[0.8-extra]: http://doc.rust-lang.org/doc/0.7/extra/index.html
+[0.8-tar]: http://static.rust-lang.org/dist/rust-0.8.tar.gz
+[0.8-tar-sig]: http://static.rust-lang.org/dist/rust-0.8.tar.gz.asc
+[0.8-exe]: http://static.rust-lang.org/dist/rust-0.8-install.exe
+[0.8-exe-sig]: http://static.rust-lang.org/dist/rust-0.8-install.exe.asc
+[0.8-tutorial]: http://doc.rust-lang.org/doc/0.8/tutorial.html
+[0.8-tutorial-borrowed-ptr]: http://doc.rust-lang.org/doc/0.8/tutorial-borrowed-ptr.html
+[0.8-tutorial-conditions]: http://doc.rust-lang.org/doc/0.8/tutorial-conditions.html
+[0.8-tutorial-container]: http://doc.rust-lang.org/doc/0.8/tutorial-container.html
+[0.8-tutorial-ffi]: http://doc.rust-lang.org/doc/0.8/tutorial-ffi.html
+[0.8-tutorial-macros]: http://doc.rust-lang.org/doc/0.8/tutorial-macros.html
+[0.8-tutorial-rustpkg]: http://doc.rust-lang.org/doc/0.8/tutorial-rustpkg.html
+[0.8-tutorial-tasks]: http://doc.rust-lang.org/doc/0.8/tutorial-tasks.html
+[0.8-manual]: http://doc.rust-lang.org/doc/0.8/rust.html
+[0.8-manual-pdf]: http://doc.rust-lang.org/doc/0.8/rust.pdf
+[0.8-rustpkg-manual]: http://doc.rust-lang.org/doc/0.8/rustpkg.html
+[0.8-std]: http://doc.rust-lang.org/doc/0.8/std/index.html
+[0.8-extra]: http://doc.rust-lang.org/doc/0.8/extra/index.html
 
 ## 0.7
 
