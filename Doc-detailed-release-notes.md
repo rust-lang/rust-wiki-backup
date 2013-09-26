@@ -77,6 +77,16 @@ Functions for converting between types have been renamed (or added) to follow a 
 
 These are not hard rules, since generically implemented functions mean that an `into` conversion that doesn't copy/allocate is impossible for some types, e.g. `string.into_owned()` (from the `Str` trait) doesn't copy when `string` is `~str`, but it is forced to when `string` is `&str` or `@str`.
 
+### New runtime and experimental I/O subsystem
+
+The Rust runtime, which includes the task scheduler, previously written in C++, was rewritten in Rust, making Rust almost completely self-hosting. For the most part this does not have visible changes, though there are a few regressions in message passing functionality (particularly related to 'select' - receiving on multiple ports) and lurking bugs. The largest regression is the temporary removal of segmented stacks. For the time being all Rust tasks run with large stacks and *no overflow protection*. This means that it is possible to cause segfaults and other odd behavior by recursing deeply.
+
+The runtime rewrite was performed in order to facilitate a new I/O subsystem that integrates an I/O event loop such that I/O does not block the task scheduler. This I/O system is temporarily located in `std::rt::io` and implements TCP, UDP, files, timers, and process spawning. It is incompatible with the old, still-used `std::io`, but will replace it in the future, and should be considered experimental.
+
+Related links:
+  * Turning on the runtime: https://mail.mozilla.org/pipermail/rust-dev/2013-August/005158.html
+  * Scheduler rewrite issue: https://github.com/mozilla/rust/issues/4419
+
 ### This week in Rust
 
 For even more information about what happened during this release cycle, see the past editions of 'This Week in Rust'.
