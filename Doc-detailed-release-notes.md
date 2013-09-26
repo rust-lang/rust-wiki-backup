@@ -38,7 +38,30 @@ For more information, see the [iterator tutorial](http://static.rust-lang.org/do
 
 ### New string formatting with `format!`
 
-`format!` is a new macro for formatting strings, to eventually replace `fmt!`. Being based on formatting traits it is more flexible and extensible than the old printf-based system. See the primary [documentation](http://static.rust-lang.org/doc/master/std/fmt/index.html) for details.
+`format!` is a new macro for formatting strings, to eventually replace `fmt!`. The main reasons for this change were:
+
+* `format!` is much higher performance than `fmt!`, namely 0 allocations are performed
+* `format!` has less code bloat at callsites (and generally on object size)
+* `format!` uses traits to format arguments, meaning that formatting is extensible to all types
+* `format!` was designed with future i18n efforts in mind, leading to the newer syntax.
+* `format!` supports formatting into generic `rt::io::Writer` streams instead of only to strings
+
+Some examples of the new formatting syntax are:
+
+```rust
+format!("Hello")                  // => ~"Hello"
+format!("Hello, {:s}!", "world")  // => ~"Hello, world!"
+format!("The number is {:d}", 1)  // => ~"The number is 1"
+format!("{:?}", ~[3, 4])          // => ~"~[3, 4]"
+format!("{value}", value=4)       // => ~"4"
+format!("{} {}", 1, 2)            // => ~"1 2"
+```
+
+This change also means that other macros based on `fmt!` will be migrating to `format!` syntax soon. None of the macros were removed from 0.8, but they will likely be removed in the next release. In the meantime, new macros were introduced using the `format!` sytnax by appending a `2` at the end of the name (`debug2!()`, `fail2!()`, `info2!()`, etc.). The `assert!` macro does not have a `format!` equivalent, it still used the old `fmt!` syntax.
+
+Additionally, a new macro, `format_args!` was added. This can be used to support `format!`-style logging/printing without requiring an allocation to be performed. The idea of this macro is to create a `va_args`-like struct which is opaque to the user but validated at compile-time. This is then passed around and can eventually be handed back to `std::fmt` to print/create a string. usage of this macro can be found in the documentation.
+
+Extensive documentation about this syntax extension can be found in the [module's header](http://static.rust-lang.org/doc/master/std/fmt/index.html).
 
 ### FFI changes
 
