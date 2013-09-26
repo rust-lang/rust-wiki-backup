@@ -69,7 +69,8 @@ Notes taken at rust work week, 2011/06/23
     * [mongodb](https://github.com/10gen-interns/mongo-rust-driver-prototype) (external)
     * [redis](https://github.com/mneumann/rust-redis) (external)
 * GUI
- * [Cocoa](https://github.com/mozilla-servo/rust-cocoa) (external)
+ * [rust-cocoa](https://github.com/mozilla-servo/rust-cocoa) (external)
+ * [wxRust](https://github.com/kenz-gelsoft/wxRust) (external)
 * quotas, accounting
 * [ZeroMQ](https://github.com/erickt/rust-zmq) (external)
  * How will libs like this be integrated with regular nonblocking io?
