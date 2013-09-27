@@ -38,6 +38,7 @@ We have a few packages to add.
 				* `mingw32-libpthreadgc`
 3. From the GUI menu navigate to Installation > Apply Changes
 	* This will take some time to complete.
+	* Currently some packages should be downgraded (https://github.com/mozilla/rust/issues/5878)
 
 ## Git Installation
 
