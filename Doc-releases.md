@@ -23,7 +23,7 @@ This is an archive of all the existing Rust release artifacts. Each release is s
 * [Standard library docs][0.8-std]
 * [Extra library docs][0.8-extra]
 
-[0.8-announce]: todo
+[0.8-announce]: https://mail.mozilla.org/pipermail/rust-dev/2013-September/005804.html
 [0.8-notes]: https://github.com/mozilla/rust/blob/0.8/RELEASES.txt
 [0.8-tar]: http://static.rust-lang.org/dist/rust-0.8.tar.gz
 [0.8-tar-sig]: http://static.rust-lang.org/dist/rust-0.8.tar.gz.asc
