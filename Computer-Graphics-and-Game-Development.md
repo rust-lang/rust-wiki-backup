@@ -58,3 +58,4 @@ Rust is quickly becoming an excellent language for computer graphics and game de
 - [Rustyhex](https://github.com/dpc/rustyhex/)
 - [rustenstein3D](https://github.com/JeremyLetang/rustenstein3D/)
 - [clio](https://github.com/eevee/clio)
+- [Claymore](http://claymore-game.googlecode.com)
