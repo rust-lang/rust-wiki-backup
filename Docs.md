@@ -3,13 +3,13 @@
 #### Current (0.8)
 
 * [Tutorial](http://doc.rust-lang.org/doc/0.8/tutorial.html)  
-  * [borrowed pointers][http://doc.rust-lang.org/doc/0.8/tutorial-borrowed-ptr.html] |
-    [conditions][http://doc.rust-lang.org/doc/0.8/tutorial-conditions.html] |
-    [containers][http://doc.rust-lang.org/doc/0.8/tutorial-container.html] |
-    [ffi][http://doc.rust-lang.org/doc/0.8/tutorial-ffi.html] |
-    [macros][http://doc.rust-lang.org/doc/0.8/tutorial-macros.html] |
-    [rustpkg][http://doc.rust-lang.org/doc/0.8/tutorial-rustpkg.html] |
-    [tasks][http://doc.rust-lang.org/doc/0.8/tutorial-tasks.html]
+  * [borrowed pointers](http://doc.rust-lang.org/doc/0.8/tutorial-borrowed-ptr.html) |
+    [conditions](http://doc.rust-lang.org/doc/0.8/tutorial-conditions.html) |
+    [containers](http://doc.rust-lang.org/doc/0.8/tutorial-container.html) |
+    [ffi](http://doc.rust-lang.org/doc/0.8/tutorial-ffi.html) |
+    [macros](http://doc.rust-lang.org/doc/0.8/tutorial-macros.html) |
+    [rustpkg](http://doc.rust-lang.org/doc/0.8/tutorial-rustpkg.html) |
+    [tasks](http://doc.rust-lang.org/doc/0.8/tutorial-tasks.html)
 * [Manual](http://doc.rust-lang.org/doc/0.8/rust.html) ([PDF](http://doc.rust-lang.org/doc/0.8/rust.pdf))  
 * [Standard library](http://doc.rust-lang.org/doc/0.8/std/index.html)  
 * [Extra library](http://doc.rust-lang.org/doc/0.8/extra/index.html)
