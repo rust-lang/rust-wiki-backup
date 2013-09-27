@@ -1,30 +1,34 @@
 ## Reference docs
 
-#### Current (0.7)
+#### Current (0.8)
 
-* [Tutorial](http://doc.rust-lang.org/doc/0.7/tutorial.html)  
-* [Manual](http://doc.rust-lang.org/doc/0.7/rust.html) ([PDF](http://doc.rust-lang.org/doc/0.7/rust.pdf))  
-* [Standard library](http://doc.rust-lang.org/doc/0.7/std/index.html)  
-* [Extra library](http://doc.rust-lang.org/doc/0.7/extra/index.html)
-* [Package manager](http://doc.rust-lang.org/doc/0.7/rustpkg.html)
-* [Borrowed pointers](http://doc.rust-lang.org/doc/0.7/tutorial-borrowed-ptr.html)
-* [Containers and iterators](http://doc.rust-lang.org/doc/0.7/tutorial-container.html)
-* [Tasks](http://doc.rust-lang.org/doc/0.7/tutorial-tasks.html)
-* [Macros](http://doc.rust-lang.org/doc/0.7/tutorial-macros.html)
-* [FFI](http://doc.rust-lang.org/doc/0.7/tutorial-ffi.html)
+* [Tutorial](http://doc.rust-lang.org/doc/0.8/tutorial.html)  
+  * [borrowed pointers][http://doc.rust-lang.org/doc/0.8/tutorial-borrowed-ptr.html] |
+    [conditions][http://doc.rust-lang.org/doc/0.8/tutorial-conditions.html] |
+    [containers][http://doc.rust-lang.org/doc/0.8/tutorial-container.html] |
+    [ffi][http://doc.rust-lang.org/doc/0.8/tutorial-ffi.html] |
+    [macros][http://doc.rust-lang.org/doc/0.8/tutorial-macros.html] |
+    [rustpkg][http://doc.rust-lang.org/doc/0.8/tutorial-rustpkg.html] |
+    [tasks][http://doc.rust-lang.org/doc/0.8/tutorial-tasks.html]
+* [Manual](http://doc.rust-lang.org/doc/0.8/rust.html) ([PDF](http://doc.rust-lang.org/doc/0.8/rust.pdf))  
+* [Standard library](http://doc.rust-lang.org/doc/0.8/std/index.html)  
+* [Extra library](http://doc.rust-lang.org/doc/0.8/extra/index.html)
+* [Package manager](http://doc.rust-lang.org/doc/0.8/rustpkg.html)
 
 #### In-development (git master)
 
 * [Tutorial](http://doc.rust-lang.org/doc/master/tutorial.html)  
+  * [borrowed pointers][http://doc.rust-lang.org/doc/master/tutorial-borrowed-ptr.html] |
+    [conditions][http://doc.rust-lang.org/doc/master/tutorial-conditions.html] |
+    [containers][http://doc.rust-lang.org/doc/master/tutorial-container.html] |
+    [ffi][http://doc.rust-lang.org/doc/master/tutorial-ffi.html] |
+    [macros][http://doc.rust-lang.org/doc/master/tutorial-macros.html] |
+    [rustpkg][http://doc.rust-lang.org/doc/master/tutorial-rustpkg.html] |
+    [tasks][http://doc.rust-lang.org/doc/master/tutorial-tasks.html]
 * [Manual](http://doc.rust-lang.org/doc/master/rust.html) ([PDF](http://doc.rust-lang.org/doc/master/rust.pdf))  
 * [Standard library](http://doc.rust-lang.org/doc/master/std/index.html)  
 * [Extra library](http://doc.rust-lang.org/doc/master/extra/index.html)
 * [Package manager](http://doc.rust-lang.org/doc/master/rustpkg.html)
-* [Borrowed pointers](http://doc.rust-lang.org/doc/master/tutorial-borrowed-ptr.html)
-* [Containers and iterators](http://doc.rust-lang.org/doc/master/tutorial-container.html)
-* [Tasks](http://doc.rust-lang.org/doc/master/tutorial-tasks.html)
-* [Macros](http://doc.rust-lang.org/doc/master/tutorial-macros.html)
-* [FFI](http://doc.rust-lang.org/doc/master/tutorial-ffi.html)
 
 ## FAQs
 
