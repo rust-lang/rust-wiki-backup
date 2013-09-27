@@ -41,7 +41,7 @@ Notes taken at rust work week, 2011/06/23
   * [rusty-math](https://github.com/z0w0/rusty-math) (external)
 * networking
  * [HTTP](https://github.com/chris-morgan/rust-http) (external)
- * [URI/URL](https://github.com/mozilla/rust/blob/master/src/libextra/net_url.rs)
+ * [URI/URL](https://github.com/mozilla/rust/blob/master/src/libextra/url.rs)
  * [UUID](https://github.com/mozilla/rust/blob/master/src/libextra/uuid.rs)
  * GUID
 * [random](https://github.com/mozilla/rust/blob/master/src/libcstd/rand.rs)
