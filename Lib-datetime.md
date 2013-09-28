@@ -283,5 +283,7 @@ Options:
     - [SRFI 19](http://srfi.schemers.org/srfi-19/srfi-19.html)
 
 ## 4. Module writing
+  - https://github.com/luisbg/rust-datetime
 
-  - Pull request: _link to bug_
+## 5. Use cases
+   - http://sourceforge.net/apps/mediawiki/threeten/index.php?title=Use_cases
