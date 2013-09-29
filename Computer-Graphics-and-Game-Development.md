@@ -24,21 +24,23 @@ Rust is quickly becoming an excellent language for computer graphics and game de
 - [openal-rs](https://github.com/bjz/openal-rs/)
 - [rust-portaudio](https://github.com/JeremyLetang/rust-portaudio)
 
-#### Mathematics, Collision Detection, Physics
-
+#### Mathematics
+- [cgmath-rs](https://github.com/bjz/cgmath-rs)
 - [nalgebra](https://github.com/sebcrozet/nalgebra)
+- [noise-rs](https://github.com/bjz/noise-rs)
+
+#### Collision Detection, Physics
+
+- [bullet-rs](https://github.com/bjz/bullet-rs/) - pretty rudimentary, needs a proper C++ wrapper
 - [ncollide](https://github.com/sebcrozet/ncollide)
 - [nphysics](https://github.com/sebcrozet/nphysics)
-- [cgmath-rs](https://github.com/bjz/cgmath-rs)
-- [noise-rs](https://github.com/bjz/noise-rs)
-- [bullet-rs](https://github.com/bjz/bullet-rs/) - pretty rudimentary, needs a proper C++ wrapper
 - [roft (softbody simulation)](https://github.com/natal/roft/)
 
 #### Import/Export
 
-- [rust-stb-image](https://github.com/mozilla-servo/rust-stb-image)
-- [freeimage-rs](https://github.com/h3r2tic/freeimage-rs)
 - [assimp-rs](https://github.com/h3r2tic/assimp-rs)
+- [freeimage-rs](https://github.com/h3r2tic/freeimage-rs)
+- [rust-stb-image](https://github.com/mozilla-servo/rust-stb-image)
 
 #### Game Engines
 
@@ -47,15 +49,15 @@ Rust is quickly becoming an excellent language for computer graphics and game de
 
 #### Scripting Engines
 
-- [rust-mozjs (SpiderMonkey bindings)](https://github.com/mozilla-servo/rust-mozjs/)
 - [Apollo (Lua)](https://github.com/katis/apollo)
 - [r5.rs (Scheme)](https://github.com/kimhyunkang/r5.rs)
+- [rust-mozjs (SpiderMonkey bindings)](https://github.com/mozilla-servo/rust-mozjs/)
 
 ### Game Projects
 
-- [Q³](https://github.com/Jeaye/q3)
 - [Angolmois BMS player](https://github.com/lifthrasiir/angolmois-rust)
-- [Rustyhex](https://github.com/dpc/rustyhex/)
-- [rustenstein3D](https://github.com/JeremyLetang/rustenstein3D/)
-- [clio](https://github.com/eevee/clio)
 - [Claymore](http://claymore-game.googlecode.com)
+- [clio](https://github.com/eevee/clio)
+- [Q³](https://github.com/Jeaye/q3)
+- [rustenstein3D](https://github.com/JeremyLetang/rustenstein3D/)
+- [Rustyhex](https://github.com/dpc/rustyhex/)
