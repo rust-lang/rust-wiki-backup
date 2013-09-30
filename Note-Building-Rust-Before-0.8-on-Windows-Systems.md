@@ -103,4 +103,5 @@ If you already have python installed and on the path, you may skip this section.
 If you want to move rust to a more permanent location on your system (for example C:\Program Files) you must preserve a little bit of structure. If you fail to do this correctly you may receive errors such as ``can't find crate for `std` ``. The contents of the `stage2/bin` folder must be contained within a folder named `bin`. The simplest way to do this is the following:
 
 * Copy the contents of `stage2/bin` to `C:\Program Files\rust\bin`
+  * Be sure to include the `rustc` folder too
 * Add `;C:\Program Files\rust\bin` to your system path
