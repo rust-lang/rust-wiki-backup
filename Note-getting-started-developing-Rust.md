@@ -9,7 +9,7 @@ the instructions in the [tutorial](http://doc.rust-lang.org/doc/master/tutorial.
 Version numbers listed here are "what we're using"; the code may well work with earlier versions of these tools, but we don't know minimum version requirements.
 
 * A recent Linux, OS X 10.6 or later, Win32 or FreeBSD system
-* 1.6 GiB RAM _available for the build process_ (see note below about memory usage)
+* 2.1 GiB RAM _available for the build process_ (see note below about memory usage)
 * [Python 2.x](http://www.python.org/download/) (version 2.7 is known to work)
 * GNU make 3.81
 * git 1.7
@@ -22,7 +22,7 @@ Version numbers listed here are "what we're using"; the code may well work with 
 
 ### Memory usage
 
-The Rust build peaks at around 1.6GiB, so at least that much memory should be available for the build to avoid excessive swapping or out-of-memory. If you only have 2 GiB of RAM total, you may have a difficult time building Rust while doing anything else, such as using a browser.
+The Rust build peaks at around 2.1GiB, so at least that much memory should be available for the build to avoid excessive swapping or out-of-memory. If you only have 2 GiB of RAM total, you may have a difficult time building Rust while doing anything else, such as using a browser.
 
 ### Debian-based Linux distributions
 
