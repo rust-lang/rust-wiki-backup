@@ -67,8 +67,6 @@ If you already have python installed and on the path, you may skip this section.
 	* `C:\projects` is a nice cozy spot!
 2. execute `git clone git://github.com/mozilla/rust.git` to clone the Rust repository into a new `rust` directory.
 
-While the clone is taking place you can continue on to patching.
-
 ## Configure & Build
 
 1. Navigate to the directory where you cloned rust from within the msys shell. For me that is `cd /C/Projects/rust`.
