@@ -90,6 +90,7 @@ Mozilla employees have a weekly Rust planning meeting on Tuesday mornings at 10:
 * [[Meeting-weekly-2013-09-10]] (commit policy; extern mod duplication; implicit copyability; patterns and default methods; &const; 0.8)
 * [[Meeting-weekly-2013-09-17]] (commit policy x 2; rustpkg dependency handling; macros requiring a feature flag; default arguments; \0 literal; linefeed in comments; OSX 10.9; crypto)
 * [[Meeting-weekly-2013-09-24]] (0.8 status; continue vs. loop; struct-like enums; lint; braces; nested comments; raw strings; IRC for devs; authors.txt; linkage attributes; name of clone; resolve; overflow; string escapes; default priv/pub)
+* [[Meeting-weekly-2013-10-01]] (rustpkg submodules; clone fn; option API; raw strings; removing float)
 
 ## Other meetings:
 
