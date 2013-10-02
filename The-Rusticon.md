@@ -51,7 +51,7 @@ syntax | name
 `~fn()` | An owned *closure*.
 `&fn()` | A borrowed *closure*. 
 `&[Foo]`, `&'a [Foo]` | A vector *slice* with element type `Foo` and possibly with a *lifetime*.
-`~[Foo]` | An owned vector.
+`~[Foo]` | A vector.
 `~Trait:Send` | A *trait object* where `:Send` are the *trait bounds*.
 `foo!()` | Either a *macro* or *syntax extension*.
 `#[xyz]` | An *attribute*.
