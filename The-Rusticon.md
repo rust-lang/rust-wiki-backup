@@ -2,9 +2,9 @@ This is currently a work in progress - feel free to alter or add definitions as 
 
 term | definition
 -----|-----------
-bikeshed | An important discussion about some non-fundamental part of the language (such as syntax or the libraries). [*See also*](http://www.catb.org/jargon/html/B/bikeshedding.html)
+bikeshed | An important discussion about some non-fundamental part of the language (such as syntax or the libraries). [*See also*](http://www.catb.org/jargon/html/B/bikeshedding.html).
 borrowed pointer |
-bors |
+bors | The most prolific Rust contributor,  our robotic overlord. A [fairly small Python script](https://github.com/graydon/bors) that checks for reviewed pull requests and runs the test on it, merging it if they pass.
 box |
 closure |
 crate |
