@@ -19,6 +19,7 @@ lifetime | A piece of metadata that borrowed pointers have. They reference the s
 macro | A type of syntax extension, defined with `macro_rules! name_of_macro`. Are a way of declaratively generating Rust from arbitrary tokens. For example, `assert!`, `debug!`, and `fail!` are macros. The standard macros can be found [here](https://github.com/mozilla/rust/blob/master/src/libsyntax/ext/expand.rs#L806).
 managed pointer | `@T`, a pointer to a mutable, garbage-collected box.
 monomorphise | The act of generating specialized versions of generic constructs at compile time to improve run time performance. See [_Whole-Program Compilation in MLton_](http://mlton.org/References.attachments/060916-mlton.pdf) and Niko Matsakis's answer on [Stackoverflow](http://stackoverflow.com/a/14198060).
+newtype struct | A *tuple structure* with a single unnamed field. For example `struct NodeIndex(int)`. Useful to create wrapper types.
 owned pointer | `~T`, a pointer to an owned box.
 raw pointer | `*T`, a pointer to anything. Requires unsafe code to dereference, no static verification is done on them.
 rustdoc | The Rust documentation generator.
@@ -30,5 +31,8 @@ stack allocation | All local variables are a stack allocation.
 syntax extension | Code generation at runtime, broken into three groups: declarative macros, which are described above as `macros`; procedural macros, which are written as Rust code that processes a token tree and produce an AST (currently requires editing the compiler), and attributes.
 task | Rust's fundamental unit of computation. Similar to a thread but far more lightweight.
 trait | Rust's approach to ad-hoc polymorphism, and used for generics and dynamic dispatch. Also known as [type classes](http://en.wikipedia.org/wiki/Type_class).
+tuple structure | A struct declared without named fields, for example `struct Point(f32, f32)`
 TWiR | This Week in Rust. cmr's [weekly summary](http://cmr.github.io/blog/categories/this-week-in-rust/) of Rust's development.
+unit type | The unit type, denoted `()`, permits only one value, also denoted `()`. Functions without return value have return type `()`. Sometimes called `nil`.
+unit-like structure | A struct that only has one value, for example `struct Foo;` where `Foo` becomes the name of both the type and its only value. Works just the same as the *unit type* `()`, except it is distinct.
 IRFY | Is Rust Fast Yet. Graphs tracking [how long the buildbots take to build + test](http://huonw.github.io/isrustfastyet/buildbot/). Also see its companion, [Is Rust Slim Yet](http://huonw.github.io/isrustfastyet/mem/).
