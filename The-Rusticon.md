@@ -25,5 +25,5 @@ rustpkg | The official package manager for Rust programs and libraries.
 sigil | A character placed in front of a type, identifier or literal. In the context of Rust, this usually refers to the pointer symbols: `&`, `~`, `@`, and `*`.
 stack allocation | 
 syntax extension |
-task | 
+task | Rust's fundamental unit of computation. Similar to a thread.
 trait | Sort of like an interface. Identical (or nearly identical) to [Haskell's typeclasses](http://en.wikipedia.org/wiki/Type_class). Used for generics and dynamic dispatch.
