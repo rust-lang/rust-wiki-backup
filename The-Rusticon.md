@@ -55,4 +55,4 @@ syntax | name
 `~Trait:Send` | A *trait object* where `:Send` are the *trait bounds*.
 `foo!()` | Either a *macro* or *syntax extension*.
 `#[xyz]` | An *attribute*.
-`::<int>` | 
+`::<int>` | Type hint. For example, `f::<int>()` correpsonds to `fn f<T>()`. Usually you don't need these, but they are necessary sometimes to help along type inference.
