@@ -26,4 +26,4 @@ sigil | A character placed in front of a type, identifier or literal. In the con
 stack allocation | 
 syntax extension |
 task | 
-trait | 
+trait | Sort of like an interface. Identical (or nearly identical) to [Haskell's typeclasses](http://en.wikipedia.org/wiki/Type_class). Used for generics and dynamic dispatch.
