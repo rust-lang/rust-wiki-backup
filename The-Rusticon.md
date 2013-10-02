@@ -6,7 +6,7 @@ bikeshed | A [highly important discussion](http://www.catb.org/jargon/html/B/bik
 borrowed pointer |
 bors | A [Python script](https://github.com/graydon/bors) that checks for reviewed pull requests and runs the test on it, merging it if they pass.
 box |
-closure | Refers both to the type (`&fn`, `~fn`) and the literal notation: `∣args∣ expression` (where expression can be a block, ie `∣x|∣{ println(x.to_str()); 5}`). It is said to "close over" its environment; it can "capture" values from surrounding code.
+closure | Refers both to the type (`&fn`, `~fn`) and the literal notation: `∣args∣ expression` (where expression can be a block, ie `∣x∣{ println(x.to_str()); 5}`). It is said to "close over" its environment; it can "capture" values from surrounding code.
 crate |
 FFI | See _foreign function interface_.
 foreign function interface |
