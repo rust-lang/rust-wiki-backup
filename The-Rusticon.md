@@ -2,8 +2,9 @@ This is currently a work in progress - feel free to alter or add definitions as 
 
 term | definition
 -----|-----------
-bikeshed | ([*Original meaning*](http://www.catb.org/jargon/html/B/bikeshedding.html)) Has grown to mean an important discussion about some non-fundamental part of the language (such as syntax or the libraries).
+bikeshed | An important discussion about some non-fundamental part of the language (such as syntax or the libraries). [*See also*](http://www.catb.org/jargon/html/B/bikeshedding.html)
 borrowed pointer |
+bors |
 box |
 closure |
 crate |
