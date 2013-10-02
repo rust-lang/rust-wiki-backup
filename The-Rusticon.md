@@ -3,18 +3,18 @@ This is currently a work in progress - feel free to alter or add definitions as 
 term | definition
 -----|-----------
 bikeshed | A [highly important discussion](http://www.catb.org/jargon/html/B/bikeshedding.html) about some non-fundamental part of the language (such as syntax or identifier names).
-borrowed pointer |
+borrowed pointer | Also known as a "reference". It references an object without taking ownership of it. Has an associated lifetime, to assert that it is always valid.
 bors | A [Python script](https://github.com/graydon/bors) that checks for reviewed pull requests and runs the test on it, merging it if they pass.
 box |
 closure | Refers both to the type (`&fn`, `~fn`) and the literal notation: `∣args∣ expression` (where expression can be a block, ie `∣x∣ { println(x.to_str()); 5}`). It is said to "close over" its environment; it can "capture" values from surrounding code. (*Note:* This is using a non-pipe unicode character because github doesn't like using that character in tables.)
-crate |
+crate | Rust's compilation unit, a single library or executable. Is the root of a namespace.
 FFI | See _foreign function interface_.
 foreign function interface | Calling code written in another language. Rust has a native C FFI, using `extern "C" fn`.
-heap allocation | A dynamic allocation performed either by `~` or `@`, which call to `malloc` in the default runtime (which is a statically-linked `jemalloc`)
-inline |
+heap allocation | A dynamic allocation performed either by `~` or `@`, which call to `malloc` in the default runtime (which is a statically-linked `jemalloc`).
+inlining | Inlining is removal of a function call by including the function body directly into the callsite, enabling further optimizations. Controlled with the `inline` attribute: `#[inline(never)]`, `#[inline]` for a standard (though very strong) inline hint, and `#[inline(always)]`. Note that `#[inline]` is required for cross-crate inline.
 lifetime |
 macro |
-managed pointer |
+managed pointer | 
 monomorphise | The act of generating specialized versions of generic constructs at compile time to improve run time performance. See [_Whole-Program Compilation in MLton_](http://mlton.org/References.attachments/060916-mlton.pdf) and Niko Matsakis's answer on [Stackoverflow](http://stackoverflow.com/a/14198060).
 owned pointer |
 raw pointer | 
