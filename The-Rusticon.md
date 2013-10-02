@@ -14,7 +14,7 @@ inline |
 lifetime |
 macro |
 managed pointer |
-monomorphise | The act of generating specialized versions of generic constructs at compile time to improve run time performance. [Stackoverflow](http://stackoverflow.com/a/14198060/679485)
+monomorphise | The act of generating specialized versions of generic constructs at compile time to improve run time performance. Perhaps best known from the MLton compiler: ["Whole-Program Compilation in MLton"](http://mlton.org/References.attachments/060916-mlton.pdf) Also see Niko Matsakis's answer on [Stackoverflow](http://stackoverflow.com/a/14198060) (the other answer is incorrect).
 owned pointer |
 raw pointer | 
 rustdoc | The Rust documentation generator.
