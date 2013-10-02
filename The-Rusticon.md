@@ -36,3 +36,23 @@ TWiR | This Week in Rust. cmr's [weekly summary](http://cmr.github.io/blog/categ
 unit type | The unit type, denoted `()`, permits only one value, also denoted `()`. Functions without return value have return type `()`. Sometimes called `nil`.
 unit-like structure | A struct that only has one value, for example `struct Foo;` where `Foo` becomes the name of both the type and its only value. Works just the same as the *unit type* `()`, except it is distinct.
 IRFY | Is Rust Fast Yet. Graphs tracking [how long the buildbots take to build + test](http://huonw.github.io/isrustfastyet/buildbot/). Also see its companion, [Is Rust Slim Yet](http://huonw.github.io/isrustfastyet/mem/).
+
+
+## Syntaxicon
+
+What is the syntax called?
+
+syntax | name
+-------|-----------
+`()` | The *unit type*.
+`'static`, `'self`, `'a` | A *lifetime*. May also be used to name a `loop` or a `for` clause.
+`~T` | If `T` is a type, an *owned pointer* to `T`.
+`&T`, `&'a T` | If `T` is a type, a *borrowed pointer* to `T`, possibly with a *lifetime*.
+`~fn()` | An owned *closure*.
+`&fn()` | A borrowed *closure*. 
+`&[Foo]`, `&'a [Foo]` | A vector *slice* with element type `Foo` and possibly with a *lifetime*.
+`~[Foo]` | An owned vector.
+`~Trait:Send` | A *trait object* where `:Send` are the *trait bounds*.
+`foo!()` | Either a *macro* or *syntax extension*.
+`#[xyz]` | An *attribute*.
+`::<int>` | 
