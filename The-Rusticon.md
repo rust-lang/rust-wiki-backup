@@ -9,7 +9,7 @@ closure |
 crate |
 FFI | See _foreign function interface_.
 foreign function interface |
-heap allocation |
+heap allocation | A dynamic allocation performed either by `~` or `@`, which call to `malloc` in the default runtime (which is a statically-linked `jemalloc`)
 inline |
 lifetime |
 macro |
