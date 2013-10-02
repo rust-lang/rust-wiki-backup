@@ -13,6 +13,8 @@ FFI | See _foreign function interface_.
 foreign function interface | Calling code written in another language. Rust has a native C FFI, using `extern "C" fn`.
 heap allocation | A dynamic allocation performed either by `~` or `@`, which call to `malloc` in the default runtime (which is a statically-linked `jemalloc`).
 inlining | Inlining is removal of a function call by including the function body directly into the callsite, enabling further optimizations. Controlled with the `inline` attribute: `#[inline(never)]`, `#[inline]` for a standard (though very strong) inline hint, and `#[inline(always)]`. Note that `#[inline]` is required for cross-crate inline.
+IR | See _Intermediate Representation_.
+Intermediate Representation | LLVM IR Code. It can be printed by passing`-S -emit-llvm` to the compiler.
 lifetime | A piece of metadata that borrowed pointers have. They reference the scope that the pointer is valid for.
 macro | A type of syntax extension, defined with `macro_rules! name_of_macro`. Are a way of declaratively generating Rust from arbitrary tokens. For example, `assert!`, `debug!`, and `fail!` are macros. The standard macros can be found [here](https://github.com/mozilla/rust/blob/master/src/libsyntax/ext/expand.rs#L806).
 managed pointer | `@T`, a pointer to a mutable, garbage-collected box.
