@@ -6,7 +6,7 @@ bikeshed | An important discussion about some non-fundamental part of the langua
 borrowed pointer |
 bors | The most prolific Rust contributor,  our robotic overlord. A [fairly small Python script](https://github.com/graydon/bors) that checks for reviewed pull requests and runs the test on it, merging it if they pass.
 box |
-closure |
+closure | Refers both to the type (`&fn`, `~fn`) and the literal notation: `|args| expression` (where expression can be a block, ie `|x| { println(x.to_str()); 5}`). It is said to "close over" its environment; it can "capture" values from surrounding code.
 crate |
 FFI | See _foreign function interface_.
 foreign function interface |
