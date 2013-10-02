@@ -9,7 +9,7 @@ box |
 closure | Refers both to the type (`&fn`, `~fn`) and the literal notation: `∣args∣ expression` (where expression can be a block, ie `∣x∣ { println(x.to_str()); 5}`). It is said to "close over" its environment; it can "capture" values from surrounding code. (*Note:* This is using a non-pipe unicode character because github doesn't like using that character in tables.)
 crate |
 FFI | See _foreign function interface_.
-foreign function interface |
+foreign function interface | Calling code written in another language. Rust has a native C FFI, using `extern "C" fn`.
 heap allocation | A dynamic allocation performed either by `~` or `@`, which call to `malloc` in the default runtime (which is a statically-linked `jemalloc`)
 inline |
 lifetime |
