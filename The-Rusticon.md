@@ -2,22 +2,23 @@ This is currently a work in progress - feel free to alter or add definitions as 
 
 term | definition
 -----|-----------
-attribute | A way of adding metadata to an item. Written as `#[attribute_name]` (other examples being `#[doc="Foo"]`, `#[doc(hidden="true")]`).
+<a name="attribute" />attribute | A way of adding metadata to an item. Written as `#[attribute_name]` (other examples being `#[doc="Foo"]`, `#[doc(hidden="true")]`).
 bikeshed | A [highly important discussion](http://www.catb.org/jargon/html/B/bikeshedding.html) about some non-fundamental part of the language (such as syntax or identifier names).
-borrowed pointer | Also known as a "reference". It references an object without taking ownership of it. Has an associated lifetime, to assert that it is always valid.
+<a name="borrowed_pointer" /> borrowed pointer | Also known as a "reference". It references an object without taking ownership of it. Has an associated lifetime, to assert that it is always valid.
 bors | The name of our continuous integration bot, a [Python script](https://github.com/graydon/bors) that checks for reviewed pull requests and runs the test on it, merging it if they pass.
 box | An allocated chunk of memory.
 built-in trait | A compiler-defined trait that is implicitly implemented for each eligible type. They are `Send`, `Freeze` and `'static`.
-closure | Refers both to the type (`&fn`, `~fn`) and the literal notation: `∣args∣ expression` (where expression can be a block, ie `∣x∣ { println(x.to_str()); 5}`). It is said to "close over" its environment; it can "capture" values from surrounding code. (*Note:* This is using a non-pipe unicode character because github doesn't like using that character in tables.)
+<a name="closure" />closure | Refers both to the type (`&fn`, `~fn`) and the literal notation: `∣args∣ expression` (where expression can be a block, ie `∣x∣ { println(x.to_str()); 5}`). It is said to "close over" its environment; it can "capture" values from surrounding code. (*Note:* This is using a non-pipe unicode character because github doesn't like using that character in tables.)
 crate | Rust's compilation unit, a single library or executable. Is the root of a namespace.
 FFI | See _foreign function interface_.
 foreign function interface | Calling code written in another language. Rust has a native C FFI, using `extern "C" fn`.
 heap allocation | A dynamic allocation performed either by `~` or `@`, which call to `malloc` in the default runtime (which is a statically-linked `jemalloc`).
 inlining | Inlining is removal of a function call by including the function body directly into the callsite, enabling further optimizations. Controlled with the `inline` attribute: `#[inline(never)]`, `#[inline]` for a standard (though very strong) inline hint, and `#[inline(always)]`. Note that `#[inline]` is required for cross-crate inline.
-IR | See _Intermediate Representation_.
 Intermediate Representation | LLVM IR Code. It can be printed by passing`-S -emit-llvm` to the compiler.
+IR | See _Intermediate Representation_.
+IRFY | Is Rust Fast Yet. Graphs tracking [how long the buildbots take to build + test](http://huonw.github.io/isrustfastyet/buildbot/). Also see its companion, [Is Rust Slim Yet](http://huonw.github.io/isrustfastyet/mem/).
 lifetime | A piece of metadata that borrowed pointers have. They reference the scope that the pointer is valid for.
-macro | A type of syntax extension, defined with `macro_rules! name_of_macro`. Are a way of declaratively generating Rust from arbitrary tokens. For example, `assert!`, `debug!`, and `fail!` are macros. The standard macros can be found [here](https://github.com/mozilla/rust/blob/master/src/libsyntax/ext/expand.rs#L806).
+<a name="macro"/>macro | A type of syntax extension, defined with `macro_rules! name_of_macro`. Are a way of declaratively generating Rust from arbitrary tokens. For example, `assert!`, `debug!`, and `fail!` are macros. The standard macros can be found [here](https://github.com/mozilla/rust/blob/master/src/libsyntax/ext/expand.rs#L806).
 managed pointer | `@T`, a pointer to a mutable, garbage-collected box.
 monomorphise | The act of generating specialized versions of generic constructs at compile time to improve run time performance. See [_Whole-Program Compilation in MLton_](http://mlton.org/References.attachments/060916-mlton.pdf) and Niko Matsakis's answer on [Stackoverflow](http://stackoverflow.com/a/14198060).
 newtype struct | A *tuple structure* with a single unnamed field. For example `struct NodeIndex(int)`. Useful to create wrapper types.
@@ -34,9 +35,10 @@ task | Rust's fundamental unit of computation. Similar to a thread but far more 
 trait | Rust's approach to ad-hoc polymorphism, and used for generics and dynamic dispatch. Also known as [type classes](http://en.wikipedia.org/wiki/Type_class).
 tuple structure | A struct declared without named fields, for example `struct Point(f32, f32)`
 TWiR | This Week in Rust. cmr's [weekly summary](http://cmr.github.io/blog/categories/this-week-in-rust/) of Rust's development.
-unit type | The unit type, denoted `()`, permits only one value, also denoted `()`. Functions without return value have return type `()`. Sometimes called `nil`.
+<a name="type_hint" />type hint | A syntax like `foo::<int>()` to give an explicit type for a generic function, method or struct constructor. Usually redundant due to type inference.
+<a name="unit_type" />unit type | The unit type, denoted `()`, permits only one value, also denoted `()`. Functions without return value have return type `()`. Sometimes called `nil`.
 unit-like structure | A struct that only has one value, for example `struct Foo;` where `Foo` becomes the name of both the type and its only value. Works just the same as the *unit type* `()`, except it is distinct.
-IRFY | Is Rust Fast Yet. Graphs tracking [how long the buildbots take to build + test](http://huonw.github.io/isrustfastyet/buildbot/). Also see its companion, [Is Rust Slim Yet](http://huonw.github.io/isrustfastyet/mem/).
+
 
 
 ## Syntaxicon
@@ -45,15 +47,15 @@ What is the syntax called?
 
 syntax | name
 -------|-----------
-`()` | The *unit type*.
+`()` | The [*unit type*](#unit_type).
 `'static`, `'self`, `'a` | A *lifetime*. May also be used to name a `loop` or a `for` clause.
 `~T` | If `T` is a type, an *owned pointer* to `T`.
-`&T`, `&'a T` | If `T` is a type, a *borrowed pointer* to `T`, possibly with a *lifetime*.
-`~fn()` | An owned *closure*.
-`&fn()` | A borrowed *closure*. 
+`&T`, `&'a T` | If `T` is a type, a [*borrowed pointer*](#borrowed_pointer) to `T`, possibly with a *lifetime*.
+`~fn()` | An owned [*closure*](#closure).
+`&fn()` | A borrowed [*closure*](#closure). 
 `&[Foo]`, `&'a [Foo]` | A vector *slice* with element type `Foo` and possibly with a *lifetime*.
 `~[Foo]` | A vector.
 `~Trait:Send` | A *trait object* where `:Send` are the *trait bounds*.
-`foo!()` | Either a *macro* or *syntax extension*.
-`#[xyz]` | An *attribute*.
-`::<int>` | Type hint. For example, `f::<int>()` correpsonds to `fn f<T>()`. Usually you don't need these, but they are necessary sometimes to help along type inference.
+`foo!()` | Either a [*macro*](#macro) or *syntax extension*.
+`#[xyz]` | An [*attribute*](#attribute).
+`::<int>` | A [*type hint*](#type_hint). 
