@@ -1,4 +1,8 @@
-These are preliminary build instructions for Android. Note that ARM and Android integration are still very early and incomplete. Some [features](https://github.com/mozilla/rust/issues?labels=A-android&page=1&state=open) do not work yet, and as such this information is primarily for hackers that want to work on the ARM port.
+Rust has been ported to Android OS running on ARM architecture. Android on other architectures is not yet supported.
+
+In the issue tracker, [Android-related issues](https://github.com/mozilla/rust/issues?labels=A-android) are labelled `A-android`, and [ARM-related issues](https://github.com/mozilla/rust/issues?labels=A-ARM) are labelled `A-ARM`.
+
+Instructions to build a cross compiler to Android on ARM, to cross compile Rust sources, and to run resulting binaries follow.
 
 1. setup android ndk standalone tool chain with platform=14 option
 
