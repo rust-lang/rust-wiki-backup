@@ -30,7 +30,7 @@ rusti | The Rust interactive environment.
 rustpkg | The official package manager for Rust programs and libraries.
 sigil | A character placed in front of a type, identifier or literal. In the context of Rust, this usually refers to the pointer symbols: `&`, `~`, `@`, and `*`.
 stack allocation | All local variables are a stack allocation.
-syntax extension | Code generation at runtime, broken into three groups: declarative macros, which are described above as `macros`; procedural macros, which are written as Rust code that processes a token tree and produce an AST (currently requires editing the compiler), and attributes.
+syntax extension | Code generation at compiletime, broken into three groups: declarative macros, which are described above as `macros`; procedural macros, which are written as Rust code that processes a token tree and produce an AST (currently requires editing the compiler), and attributes.
 task | Rust's fundamental unit of computation. Similar to a thread but far more lightweight.
 trait | Rust's approach to ad-hoc polymorphism, and used for generics and dynamic dispatch. Also known as [type classes](http://en.wikipedia.org/wiki/Type_class).
 <a name="tuple_structure" />tuple structure | A struct declared without named fields, for example `struct Point(f32, f32)`
