@@ -19,7 +19,7 @@ IR | See _Intermediate Representation_.
 IRFY | Is Rust Fast Yet. Graphs tracking [how long the buildbots take to build + test](http://huonw.github.io/isrustfastyet/buildbot/). Also see its companion, [Is Rust Slim Yet](http://huonw.github.io/isrustfastyet/mem/).
 lifetime | A piece of metadata that borrowed pointers have. They reference the scope that the pointer is valid for.
 <a name="macro"/>macro | A type of syntax extension, defined with `macro_rules! name_of_macro`. Are a way of declaratively generating Rust from arbitrary tokens. For example, `assert!`, `debug!`, and `fail!` are macros. The standard macros can be found [here](https://github.com/mozilla/rust/blob/master/src/libsyntax/ext/expand.rs#L806).
-managed pointer | `@T`, a pointer to a mutable, garbage-collected box.
+managed pointer | `@T`, a pointer to an immutable, garbage-collected box. Also `@mut`, a pointer to a mutable, garbage-collected box.
 monomorphise | The act of generating specialized versions of generic constructs at compile time to improve run time performance. See [_Whole-Program Compilation in MLton_](http://mlton.org/References.attachments/060916-mlton.pdf) and Niko Matsakis's answer on [Stackoverflow](http://stackoverflow.com/a/14198060).
 newtype struct | A [*tuple structure*](#tuple_structure) with a single unnamed field. For example `struct NodeIndex(int)`. Useful to create wrapper types.
 owned pointer | `~T`, a pointer to an owned box.
