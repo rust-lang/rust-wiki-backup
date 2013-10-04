@@ -6,7 +6,7 @@ Instructions to build a cross compiler to Android on ARM, to cross compile Rust 
 
 1. setup android ndk standalone tool chain with platform=14 option
 
-    Downlonad android NDK version _r9_ or later(you might not be able to build jemalloc with previous version) from http://developer.android.com/tools/sdk/ndk/index.html
+    Download android NDK version _r9_ or later(you might not be able to build jemalloc with previous version) from http://developer.android.com/tools/sdk/ndk/index.html
     
     example command to setup standalone tool chain:
     
