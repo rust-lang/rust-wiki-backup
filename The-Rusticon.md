@@ -52,8 +52,9 @@ syntax | name
 `&T`, `&'a T` | If `T` is a type, a [*borrowed pointer*](#borrowed_pointer) to `T`, possibly with a *lifetime*.
 `~fn()` | An owned [*closure*](#closure).
 `&fn()` | A borrowed [*closure*](#closure). 
-`&[Foo]`, `&'a [Foo]` | A vector *slice* with element type `Foo` and possibly with a *lifetime*.
-`~[Foo]` | A vector.
+`&[T]`, `&'a [T]` | A vector *slice* with element type `T` and possibly with a *lifetime*.
+`~[T]` | A vector.
+`[T, ..n]` | A *fixed length vector* of length `n`.
 `~Trait:Send` | A *trait object* where `:Send` are the *trait bounds*.
 `foo!()` | Either a [*macro*](#macro) or *syntax extension*.
 `#[xyz]` | An [*attribute*](#attribute).
