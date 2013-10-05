@@ -19,7 +19,7 @@ Previous discussions about rustpkg planning:
  * ~~[#8672](https://github.com/mozilla/rust/issues/8672) - target specific output directory~~ - 10/1/2013 (easy) 
 
 ## Community adoption I: 10/29/2013
- * [#6480](https://github.com/mozilla/rust/issues/6480) - make locally-cached files read only - 10/3/2013 (easy)
+ * ~~[#6480](https://github.com/mozilla/rust/issues/6480) - make locally-cached files read only~~ Done pending review of pull request [9732](https://github.com/mozilla/rust/pull/9732) - 10/3/2013 (easy)
  * Mozilla Summit, 10/4-10/7
  * [#8520](https://github.com/mozilla/rust/issues/8520) - find sources in $CWD - 10/10/2013 (medium)
  * [#7240](https://github.com/mozilla/rust/issues/7240) - multi-crate packages - 10/17/2013 (hard)
