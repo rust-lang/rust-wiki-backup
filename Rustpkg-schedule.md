@@ -38,7 +38,7 @@ Previous discussions about rustpkg planning:
 ## Everything else (To be scheduled once community adoption is complete or close to complete)
  * #7447 - version improvements
  * #3346 - crate name in log map
- * #6409 - API for `git clone`
+ * ~~#6409 - API for `git clone`~~ Done pending review of pull request [9732](https://github.com/mozilla/rust/pull/9732)
  * #6410 - libgit2 bindings
  * #1453 - continuous integration server
  * #1642 - continuous documentation server
@@ -50,7 +50,7 @@ Previous discussions about rustpkg planning:
  * #8711 - version matching
  * #7744 - error handling with bad package IDs
  * #2219 - --attr flag
- * #8871 - where to install remote packages
+ * #8871 - where to install remote packages - pull request [9732](https://github.com/mozilla/rust/pull/9732) will fix this, except for the test
  * #8952 - executable naming
  * #7243 - unpacking tarball packages, fetching via curl
  * #9003 - `rustpkg test` cleanup
