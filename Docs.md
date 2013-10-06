@@ -34,7 +34,8 @@
 
 [[Language FAQ|Doc language FAQ]]  
 [[Project FAQ|Doc project FAQ]]  
-[[Usage FAQ|Doc usage FAQ]]  
+[[Usage FAQ|Doc usage FAQ]]
+[[HOWTO submit a bug report|HOWTO submit a Rust bug report]]
 
 ## Community
 
