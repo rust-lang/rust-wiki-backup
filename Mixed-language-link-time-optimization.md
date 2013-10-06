@@ -2,7 +2,7 @@ This can be done with or without the runtime enabled, but the example here will 
 
 main.c
 
-~~~
+```c
 #include <stdint.h>
 
 uint32_t *foo();
@@ -10,11 +10,11 @@ uint32_t *foo();
 int main() {
     free(foo());
 }
-~~~
+```
 
 foo.rs
 
-~~~
+```rust
 #[no_std];
 #[allow(ctypes, cstack)];
 
@@ -42,7 +42,7 @@ unsafe fn exchange_free(ptr: *mut u8) {
 
 #[no_mangle]
 extern "C" fn foo() -> ~u32 { ~5 }
-~~~
+```
 
 Build LLVM bytecode from the Rust code:
 
