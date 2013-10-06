@@ -25,12 +25,11 @@ extern {
 #[lang = "exchange_malloc"]
 #[inline(always)]
 unsafe fn exchange_malloc(size: uint) -> *mut u8 {
-  let ptr = malloc(size);
-  if ptr == 0 as *mut u8 {
-    abort()
-  }
-
-  ptr
+    let ptr = malloc(size);
+    if ptr == 0 as *mut u8 {
+        abort()
+    }
+    ptr
 }
 
 #[lang = "exchange_free"]
@@ -40,9 +39,7 @@ unsafe fn exchange_free(ptr: *mut u8) {
 }
 
 #[no_mangle]
-extern "C" fn foo() -> ~u32 {
-    ~5
-}
+extern "C" fn foo() -> ~u32 { ~5 }
 ~~~
 
 Build LLVM bytecode from the Rust code:
