@@ -12,4 +12,4 @@
 
 * I submitted a bug, but nobody has commented on it! I'm sad.
 
-   This is sad, but does happen sometimes, since we're short-staffed. If you submit a bug and you haven't received a comment on it within 3 business days, it's entirely reasonable to either ask on the #rust IRC channel, or post on the [https://mail.mozilla.org/listinfo/rust-dev rust-dev mailing list] to ask what the status of the bug is.
+   This is sad, but does happen sometimes, since we're short-staffed. If you submit a bug and you haven't received a comment on it within 3 business days, it's entirely reasonable to either ask on the #rust IRC channel, or post on the [rust-dev mailing list](https://mail.mozilla.org/listinfo/rust-dev) to ask what the status of the bug is.
