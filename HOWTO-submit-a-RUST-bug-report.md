@@ -6,7 +6,7 @@
 
 * I don't want to waste the Rust devs' time! How do I know the bug I found isn't a bug that already exists in the issue tracker?
 
-   If you don't have much time, then don't worry about that. Just submit the bug. If it's a duplicate, somebody will notice that and close it. No one will laugh at you, we promise (and if someone did, they would be violating the Rust [[Note-development-policy|code of conduct]]).
+   If you don't have much time, then don't worry about that. Just submit the bug. If it's a duplicate, somebody will notice that and close it. No one will laugh at you, we promise (and if someone did, they would be violating the Rust [[Note development policy|code of conduct]]).
 
    If you have more time, it's very helpful if you can type the text of the error message you got [https://github.com/mozilla/rust/issues into the issue tracker search box] to see if there's an existing bug that resembles your problem. If there is, and it's an open bug, you can comment on that issue and say you ran into it too. This will encourage devs to fix it. But again, don't let this stop you from submitting a bug. We'd rather have to do the work of closing duplicates than miss out on valid bug reports.
 
