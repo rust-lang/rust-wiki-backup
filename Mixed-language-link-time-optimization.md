@@ -4,6 +4,7 @@ main.c
 
 ```c
 #include <stdint.h>
+#include <stdlib.h>
 
 uint32_t *foo();
 
