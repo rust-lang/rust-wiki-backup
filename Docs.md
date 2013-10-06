@@ -5,7 +5,7 @@
 * [Tutorial](http://doc.rust-lang.org/doc/0.8/tutorial.html)  
   * [borrowed pointers](http://doc.rust-lang.org/doc/0.8/tutorial-borrowed-ptr.html) |
     [conditions](http://doc.rust-lang.org/doc/0.8/tutorial-conditions.html) |
-    [containers](http://doc.rust-lang.org/doc/0.8/tutorial-container.html) |
+    [containers & iterators](http://doc.rust-lang.org/doc/0.8/tutorial-container.html) |
     [ffi](http://doc.rust-lang.org/doc/0.8/tutorial-ffi.html) |
     [macros](http://doc.rust-lang.org/doc/0.8/tutorial-macros.html) |
     [rustpkg](http://doc.rust-lang.org/doc/0.8/tutorial-rustpkg.html) |
@@ -20,7 +20,7 @@
 * [Tutorial](http://doc.rust-lang.org/doc/master/tutorial.html)  
   * [borrowed pointers](http://doc.rust-lang.org/doc/master/tutorial-borrowed-ptr.html) |
     [conditions](http://doc.rust-lang.org/doc/master/tutorial-conditions.html) |
-    [containers](http://doc.rust-lang.org/doc/master/tutorial-container.html) |
+    [containers & iterators](http://doc.rust-lang.org/doc/master/tutorial-container.html) |
     [ffi](http://doc.rust-lang.org/doc/master/tutorial-ffi.html) |
     [macros](http://doc.rust-lang.org/doc/master/tutorial-macros.html) |
     [rustpkg](http://doc.rust-lang.org/doc/master/tutorial-rustpkg.html) |
