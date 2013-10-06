@@ -9,6 +9,7 @@ uint32_t *foo();
 
 int main(void) {
     free(foo());
+    return 0;
 }
 ```
 
