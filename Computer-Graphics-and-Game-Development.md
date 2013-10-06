@@ -13,6 +13,7 @@ Rust is quickly becoming an excellent language for computer graphics and game de
 - [sdl2](https://github.com/AngryLawyer/rust-sdl2)
 - [sfml](https://github.com/JeremyLetang/rust-sfml)
 - [rust-glut](https://github.com/mozilla-servo/rust-glut)
+- [RustAllegro](https://github.com/SiegeLord/RustAllegro)
 
 #### OpenGL
 
@@ -45,7 +46,6 @@ Rust is quickly becoming an excellent language for computer graphics and game de
 #### Game Engines
 
 - [kiss3d](https://github.com/sebcrozet/kiss3d)
-- [RustAllegro](https://github.com/SiegeLord/RustAllegro)
 
 #### Scripting Engines
 
