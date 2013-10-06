@@ -27,7 +27,6 @@ extern {
 }
 
 #[lang = "exchange_malloc"]
-#[inline(always)]
 unsafe fn exchange_malloc(size: uint) -> *mut u8 {
     let ptr = malloc(size);
     if ptr == 0 as *mut u8 {
@@ -37,7 +36,6 @@ unsafe fn exchange_malloc(size: uint) -> *mut u8 {
 }
 
 #[lang = "exchange_free"]
-#[inline(always)]
 unsafe fn exchange_free(ptr: *mut u8) {
     free(ptr)
 }
