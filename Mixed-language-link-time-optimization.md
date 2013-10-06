@@ -1,3 +1,5 @@
+This can be done with or without the runtime enabled, but the example here will disable it in order to demonstrate a very simple optimization enabled by LTO.
+
 main.c
 
 ~~~
