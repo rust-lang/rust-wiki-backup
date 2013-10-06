@@ -62,3 +62,5 @@ allocation as a dead store:
        0x00000000004005b0 <+0>:	xor    %eax,%eax
        0x00000000004005b2 <+2>:	retq   
     End of assembler dump.
+
+To do this with the Rust runtime on, define a regular `main` function in Rust and pass the necessary link flags to `clang`. The necessary switches can be obtained with `rustc -Z print-link-args foo.rs`.
