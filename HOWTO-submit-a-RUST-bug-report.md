@@ -1,6 +1,6 @@
 * I think I found a bug in the compiler! 
 
-   If you see this message:" ''error: internal compiler error: unexpected failure'', then you have definitely found a bug in the compiler. It's also possible that your code is not well-typed, but if you saw this message, it's still a bug in error reporting.
+   If you see this message: ''error: internal compiler error: unexpected failure'', then you have definitely found a bug in the compiler. It's also possible that your code is not well-typed, but if you saw this message, it's still a bug in error reporting.
 
    If you see a message about an LLVM assertion failure, then you have also definitely found a bug in the compiler. In both of these cases, it's not your fault and you should report a bug!
 
