@@ -7,7 +7,7 @@ main.c
 
 uint32_t *foo();
 
-int main() {
+int main(void) {
     free(foo());
 }
 ```
