@@ -8,7 +8,7 @@
 
    If you don't have much time, then don't worry about that. Just submit the bug. If it's a duplicate, somebody will notice that and close it. No one will laugh at you, we promise (and if someone did, they would be violating the Rust [code of conduct](https://github.com/mozilla/rust/wiki/Note-development-policy code of conduct)).
 
-   If you have more time, it's very helpful if you can type the text of the error message you got [https://github.com/mozilla/rust/issues into the issue tracker search box] to see if there's an existing bug that resembles your problem. If there is, and it's an open bug, you can comment on that issue and say you ran into it too. This will encourage devs to fix it. But again, don't let this stop you from submitting a bug. We'd rather have to do the work of closing duplicates than miss out on valid bug reports.
+   If you have more time, it's very helpful if you can type the text of the error message you got [into the issue tracker search box](https://github.com/mozilla/rust/issues) to see if there's an existing bug that resembles your problem. If there is, and it's an open bug, you can comment on that issue and say you ran into it too. This will encourage devs to fix it. But again, don't let this stop you from submitting a bug. We'd rather have to do the work of closing duplicates than miss out on valid bug reports.
 
 * I submitted a bug, but nobody has commented on it! I'm sad.
 
