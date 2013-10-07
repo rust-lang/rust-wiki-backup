@@ -232,6 +232,14 @@ They start small (ideally in the hundreds of bytes) and expand dynamically by ca
 * The same simplification goes double for human readers. A reader does not need an IDE running an inference algorithm across an entire crate to be able to guess at a function's argument types; it's always explicit and nearby.
 * Parameters in Rust can be passed by reference or by value. We can't automatically infer which one the programmer means.
 
+### Why does a type parameter `T` need explicit trait bounds if I want to call `t.foo()` (for `t` of type `T`), when C++ template parameters do not?
+
+* Requiring explicit bounds means that the compiler can provide good error messages at the point where the type-parametric item is *defined*, rather than delaying to when its type parameters are instantiated.  You know that *any* set of type parameters fulfilling the bounds listed in the API will compile. It's an enforced minimal level of documentation and results in very clean error messages.
+
+* C++ needs Koenig lookup/argument dependent lookup, which comes with its own host of problems. Explicit bounds avoid this issue.
+
+* There is further discussion on [this thread on the Rust mailing list](https://mail.mozilla.org/pipermail/rust-dev/2013-September/005603.html).
+
 ### Will Rust implement automatic semicolon insertion, like in Go?
 
 For simplicity, we do not plan to do so. Implementing automatic semicolon insertion for Rust would be tricky because the absence of a trailing semicolon means "return a value".
