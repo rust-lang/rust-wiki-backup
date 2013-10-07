@@ -234,7 +234,7 @@ They start small (ideally in the hundreds of bytes) and expand dynamically by ca
 
 ### Why does a type parameter `T` need explicit trait bounds if I want to call `t.foo()` (for `t` of type `T`), when C++ template parameters do not?
 
-* Requiring explicit bounds means that the compiler can provide good error messages at the point where the type-parametric item is *defined*, rather than delaying to when its type parameters are instantiated.  You know that *any* set of type parameters fulfilling the bounds listed in the API will compile. It's an enforced minimal level of documentation and results in very clean error messages.
+* Requiring explicit bounds means that the compiler can type-check the code at the point where the type-parametric item is *defined*, rather than delaying to when its type parameters are instantiated.  You know that *any* set of type parameters fulfilling the bounds listed in the API will compile. It's an enforced minimal level of documentation, and results in very clean error messages.
 
 * C++ needs Koenig lookup/argument dependent lookup, which comes with its own host of problems. Explicit bounds avoid this issue.
 
