@@ -232,7 +232,7 @@ They start small (ideally in the hundreds of bytes) and expand dynamically by ca
 * The same simplification goes double for human readers. A reader does not need an IDE running an inference algorithm across an entire crate to be able to guess at a function's argument types; it's always explicit and nearby.
 * Parameters in Rust can be passed by reference or by value. We can't automatically infer which one the programmer means.
 
-### Why does a type parameter `T` need explicit trait bounds if I want to call `t.foo()` (for `t` of type `T`), when C++ template parameters do not?
+### Why does a type parameter `T` need explicit trait bounds to call `t.foo()`, when C++ templates do not?
 
 * Requiring explicit bounds means that the compiler can type-check the code at the point where the type-parametric item is *defined*, rather than delaying to when its type parameters are instantiated.  You know that *any* set of type parameters fulfilling the bounds listed in the API will compile. It's an enforced minimal level of documentation, and results in very clean error messages.
 
