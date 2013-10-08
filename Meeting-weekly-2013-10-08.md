@@ -14,7 +14,9 @@
 - Weekly triage emails (tjc)
   - email didn't seem to go out on 10/7. Should we offer to take over the script from Graydon, and implement a somewhat less ad-hoc reminder system?
 
-Legend: B = brson, T = tjc, F = pnkfelix, N = nmatsakis, P = pcwalton, A = acrichto, D = dherman, K = kmc
+# Attending
+
+acrichto (A), arashed, brson (B), dherman (D), pnkfelix (F), kmc (K) nmatsakis (N), pcwalton (P), tjc (T)
 
 # Admin
 
