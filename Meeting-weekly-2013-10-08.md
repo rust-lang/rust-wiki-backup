@@ -24,6 +24,8 @@ Legend: B = brson, T = tjc, F = pnkfelix, N = nmatsakis, P = pcwalton, A = acric
 
 ## How we talk about status updates
 
+*Editor's note: for the present, the following section only applies to paid Mozilla staff who work on Rust*
+
 - B: Remoties sometimes feel out-of-the-loop. Main concern is sometimes 2 people work on the same subsystem but don't communicate with each other. Want more effective communication method that's lightweight. Some people feel writing statuses takes up a lot of time/effort. 
 - N: Lightweight thing at top of weekly agenda where each person notes what they're working on. Just written down in the Etherpad, people don't have to say it out loud in the meeting.
 - B: I'm wary of adding new process without removing old process. It's just piling on more work for people every week.
