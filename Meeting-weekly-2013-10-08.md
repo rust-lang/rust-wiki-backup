@@ -29,12 +29,15 @@ Legend: B = brson, T = tjc, F = pnkfelix, N = nmatsakis, P = pcwalton, A = acric
 - B: I'm wary of adding new process without removing old process. It's just piling on more work for people every week.
 - N: Should be something you do in 30 seconds when you log in.
 - B: Starting next week, we'll add a status section and if people choose, they can add a very brief summary of what they're working on
-# Code review
+
+## Code review
 - alex: does anybody else think code review on github is terrible?
 - alex: (missed)
 - tjc: I think we could punt this.
 - niko: think it's pretty bad, don't know what to do instead
+
 # rustpkg test
+
 - tjc: discussion about what 'rustpkg test' should do. #9003
 https://github.com/mozilla/rust/issues/9003
 - tjc: three possibilities. kimundi wrote up. now it encourages you to have test.rs file, a second crate root. could also have tests in-crate, or have test.rs as out of crate tests.
@@ -60,7 +63,9 @@ https://github.com/mozilla/rust/issues/9003
 - tjc: so make sure no test.rs works, document the other three ways?
 - N: I think we shouldn't support the "repeat yourself" way
 - T: Maybe I should just take out the "alternate crate root" way. Okay, I'll take it out and document the other two scenarios in #9003
+
 # Removing crypto code
+
 - A: We got a pull request to remove all crypto code from rustc, use siphash instead. However, siphash is not meant for preventing collisions. So what do we think? I'm OK with very common digests like SHA1 and MD5 with a disclaimer about not using them for serious crypto. I don't know if that's too much in the realm of us having to maintain crypto code.
 - B: We informally decided to not implement crypto in Rust. Should we remove all hashes?
 - P: We should ask a crypto expert.
@@ -70,7 +75,9 @@ https://github.com/mozilla/rust/issues/9003
 - P: ok, we'll ask him if digests count as "scary crypto code". I don't think so
 - K: Sometimes they can be scary. There are timing issues, even with digests. Still can have data-dependent memory access.
 Conclusion: we'll ask the expert (Brian Smith). Alex will talk to him.
-# 'rust' tool
+
+# `rust` tool
+
 - tjc: there have been some bugs about the rust tool. it's orphaned. new people try to use it find it doesn't work. what should we do?
 - B: It's the thing you would expect to use, but if new people try to use it and it doesn't work, it's a trap. It's also not in scope for 1.0. Maybe we should scrap it. 
 - (many nods)
@@ -162,7 +169,9 @@ fn f<T:Func:K<A,B>> { ... }
 - A: It's hard to tell.
 - B: I think we should use exactly what github uses. Github *was* using sundown. Let's stick with it.
 - A: I'll look into it and make sure what github is using.
+
 # Fixing on OS X 10.9
+
 - A: We're broken on 10.9 because of some linker flag we supply for the morestack function. Does anyone know why we have it? If you rm the linker flag, everything runs on 10.9, but I'm not sure if it breaks on 10.8 and earlier.
 - B: If we remove no-compact-unwind, it fixes the problem?
 - P: Has someone grepped the history to find out why it was introduced?
