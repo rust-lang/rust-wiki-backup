@@ -127,7 +127,7 @@ scoped!(expr { ... })
 - N: I agree with strcat; I think the way we do traits and object types is the perfect model in that it lets you choose between monomorphization or polymorphism. Closures are essentially similar to objects. If we extended object types with additional capabilities (the ones closure types already have), we could make closure types syntactic sugar.
 - P: Our proposed closure type syntax doesn't have the & in it, so it's not a DST, and can't be made into a DST.
 - N: Why is that a problem?
-- P: Didn't we want something like fn f<T:|A|->B> { ... }?
+- P: Didn't we want something like fn `f<T:|A|->B> { ... }`?
 - N: To unify closures and traits, I think we would wind up with
 ```
 |T, U|:'r -> R 
@@ -141,13 +141,13 @@ to be syntactic sugar for
 - P: I don't care where it goes, but I want to decide on something. Let's do what you [Niko] did.
 - F: Only problem I can see is some people complained about -> R being our syntax for return, and if we put :K there, they might think it's the return type
 - N: I think we won't be writing it often, but it does potentially confuse people
-- P: Do we want to be able to say fn f<T:|A|->B> { ... } in Rust 2.0?
+- P: Do we want to be able to say `fn f<T:|A|->B> { ... }` in Rust 2.0?
 - N: Uh... sure.
 - T: Is that higher-rank polymorphism?
 - P: No, it's just sugar for:
-fn f<T:|A|:K->B> { ... }
+`fn f<T:|A|:K->B> { ... }`
 desugars to
-fn f<T:Func:K<A,B>> { ... }
+`fn f<T:Func:K<A,B>> { ... }`
 - P: strcat was going to make a Func trait and just impl it for closures. Will that mess anything up?
 - B: This doesn't seem like something we'd "just go implement". It's a lang item?
 - P: He's implementing it as a non-lang-item. I'm concerned about backwards compatibility
