@@ -13,6 +13,7 @@ crate | Rust's compilation unit, a single library or executable. Is the root of 
 FFI | See _foreign function interface_.
 foreign function interface | Calling code written in another language. Rust has a native C FFI, using `extern "C" fn`.
 heap allocation | A dynamic allocation performed either by `~` or `@`, which call to `malloc` in the default runtime (which is a statically-linked `jemalloc`).
+ICE | Internal Compiler Error
 inlining | Inlining is removal of a function call by including the function body directly into the callsite, enabling further optimizations. Controlled with the `inline` attribute: `#[inline(never)]`, `#[inline]` for a standard (though very strong) inline hint, and `#[inline(always)]`. Note that `#[inline]` is required for any cross-crate inlining.
 Intermediate Representation | LLVM IR Code. It can be seen in text form by passing`-S --emit-llvm` to rustc.
 IR | See _Intermediate Representation_.
