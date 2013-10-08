@@ -37,8 +37,8 @@ The copyright header at the top of the file should include a date range that inc
 * Respect that people have differences of opinion and that every design or implementation choice carries a trade-off and numerous costs. There is seldom a right answer.
 * Please keep unstructured critique to a minimum. If you have solid ideas you want to experiment with, make a fork and see how it works.
 * We will exclude you from interaction if you insult, demean or harass anyone. That is not welcome behaviour. We interpret the term "harassment" as including the definition in the <a href="http://citizencodeofconduct.org/">Citizen Code of Conduct</a>; if you have any lack of clarity about what might be included in that concept, please read their definition.
-    * Specifically: please ask permission from that person in the channel before you private-message (```/msg```) anybody in #rust who you do not already know.
-    * Private-messaging somebody on #rust who you do not already know with off-topic content (for example: "I don't like your political views"; "Will you go out on a date with me?"; "Hey, why don't you check out this cool web site?") is unacceptable. If this happens to you, please notify one of the channel ops. If you do this to someone else, we reserve the right to exclude you from interaction.
+    * Specific examples (not an exhaustive list of forms of harassment): first, please ask permission from that person in the channel before you private-message (```/msg```) anybody in #rust who you do not already know.
+    * Also, private-messaging somebody on #rust who you do not already know with off-topic content (for example: "I don't like your political views"; "Will you go out on a date with me?"; "Hey, why don't you check out this cool web site?") is unacceptable. If this happens to you, please notify one of the channel ops. If you do this to someone else, we reserve the right to exclude you from interaction.
 * Likewise any spamming, trolling, flaming, baiting or other attention-stealing behaviour is not welcome.
 
 ## Contributed code requirements:
