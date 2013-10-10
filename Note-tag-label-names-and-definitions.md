@@ -72,12 +72,13 @@ meaning of the label and does not think it is self-evident.
 | I-wishlist               | Importance: would be nice but can do without      |
 | I-wrong                  | Importance: behavior does not match specification |
 | &nbsp;                                                                       |
-| *uncategorized tags*     |                                                   |
-| metabug                  | Collects several related issues together          |
 | *PRIORITY TAGS*          |                                                   |
 | P-backcompat-lang        | Priority: Language backward-compatible            |
 | P-backcompat-lib         | Priority: Library backward-compatible             |
 | P-high                   | Priority: High                                    |
 | P-low                    | Priority: Low                                     |
+| &nbsp;                                                                       |
+| *uncategorized tags*     |                                                   |
+| metabug                  | Collects several related issues together          |
 
 [1]: http://en.wikipedia.org/wiki/Finalizer
