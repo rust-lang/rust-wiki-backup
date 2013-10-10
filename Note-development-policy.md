@@ -86,8 +86,9 @@ Add "FIXME (issue #NN): blah blah" in the source anywhere you see room for impro
 
 ## Milestone and priority nomination and triage
 
+While Rust point releases are time-based (not feature-based) we still prioritize which issues to work on, particularly as we progress toward the first major release. High-priority issues are tagged with the `P` tags, and optionally assigned to a major release milestone (which is feature-based). Issues that impact backwards compatibility are always high priority, but there are [additional criteria](Note-priority-issue-criteria) as well.
 
-Maturity milestones have a more formal process to establish consensus. When you see an issue that fits the criteria for a maturity milestone:
+When you see an issue that fits the criteria:
 
 - Add the `I-nominated` tag
 - Add a comment to the bug saying 'nominated' and, preferably, the milestone it should be added to. If you aren't certain which milestone is appropriate then that information can be left off. It's important to add the comment so reviewers can later ask about why the issue is nominated.
