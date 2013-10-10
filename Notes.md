@@ -6,6 +6,7 @@ Listing of notes for developers working on the Rust compiler and tools.
 * [[Note getting started developing Rust]] -- How to **Build Rust** on your platform
 * [[Note development policy]] -- **please read this**
 * [[Note RFC process]] -- **read this for larger changes**
+* [[Note priority issue criteria]] -- criteria used for evaluating high priority issues
 * [[Note wiki conventions]]
 * [[Note development roadmap]]
 * [[Note compiler snapshots]]
