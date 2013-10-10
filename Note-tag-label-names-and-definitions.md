@@ -74,5 +74,10 @@ meaning of the label and does not think it is self-evident.
 | &nbsp;                                                                       |
 | *uncategorized tags*     |                                                   |
 | metabug                  | Collects several related issues together          |
+| *PRIORITY TAGS*          |                                                   |
+| P-backcompat-lang        | Priority: Language backward-compatible            |
+| P-backcompat-lib         | Priority: Library backward-compatible             |
+| P-high                   | Priority: High                                    |
+| P-low                    | Priority: Low                                     |
 
 [1]: http://en.wikipedia.org/wiki/Finalizer
