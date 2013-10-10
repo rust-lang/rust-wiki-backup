@@ -80,8 +80,21 @@ Tags in the tracker have [specific definitions](Note-tag-label-names-and-definit
   - `[B-foo]` tags mean that the bug is **blocked** in a particular state, such as "wanting clarification" or "RFC". These are effectively workflow-oriented tags, so we can see try to attack bugs that are stuck in a particular state of their life and could possibly become unstuck. Just "awaiting someone to do the work" is not a blocked state. A bug should be in _zero or one_ `[B-foo]` states, no more than one.
   - `[E-foo]` tags indicate a guess of the **effort** required by a bug. Most bugs are "medium" and don't need such tags; but some are especially easy or hard, and this can be helpful to highlight.
   - `[I-foo]` tags area subjective judgment of **importance**. A bug should be in only one `[I-foo]` state. "Wishlist" is the least important: used for non-core features that would be nice to have, but don't need to be scheduled for any particular time.
+  - `[P-foo]` **priority** tags are used for release planning. These are the only tags that should not be applied based on individual judgement - they are instead applied as part of the triage process, described below.
 
 Add "FIXME (issue #NN): blah blah" in the source anywhere you see room for improvement, where #NN is the issue number in the tracker here. If you fix an issue on commit, remove the associated FIXMEs (grep for other occurrences) and put the exact phrase "Closes #NN" (with that capitalization) in the commit message and github will pick it up and link to the commit, close the issue.
+
+## Milestone and priority nomination and triage
+
+
+Maturity milestones have a more formal process to establish consensus. When you see an issue that fits the criteria for a maturity milestone:
+
+- Add the `I-nominated` tag
+- Add a comment to the bug saying 'nominated' and, preferably, the milestone it should be added to. If you aren't certain which milestone is appropriate then that information can be left off. It's important to add the comment so reviewers can later ask about why the issue is nominated.
+
+Do *not* assign the issue to a milestone or a priority tag yourself.
+
+Every week there is a bug triage meeting. At that meeting the attendees will review the issues tagged `I-nominated` and decide whether the nomination is accepted. If accepted, the issue will be added to a milestone and/or tagged; if not, then a comment will be added explaining why. In either case the `I-nominated` tag will then be removed.
 
 ## Language changes
 
