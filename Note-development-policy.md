@@ -86,7 +86,7 @@ Add "FIXME (issue #NN): blah blah" in the source anywhere you see room for impro
 
 ## Milestone and priority nomination and triage
 
-While Rust point releases are time-based (not feature-based) we still prioritize which issues to work on, particularly as we progress toward the first major release. High-priority issues are tagged with the `P` tags, and optionally assigned to a major release milestone (which is feature-based). Issues that impact backwards compatibility are always high priority, but there are [additional criteria](Note-priority-issue-criteria) as well.
+While Rust point releases are time-based (not feature-based) we still prioritize which issues to work on, particularly as we progress toward the first major release. High-priority issues are tagged with the `P` tags, and optionally assigned to a major release milestone (which are feature-based). Issues that impact backwards compatibility are always high priority, but there are [additional criteria](Note-priority-issue-criteria) as well.
 
 When you see an issue that fits the criteria:
 
