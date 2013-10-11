@@ -62,7 +62,7 @@
 [[Unit testing|Doc unit testing]] - Writing tests and running them with the built-in test driver  
 [[Using rustpkg|Rustpkg]] - Managing packages  
 [[Using rustdoc|Doc using rustdoc]] - How to extract Markdown and HTML documentation from code  
-[[Continuous integration|Doc continuous integration]] - Test your GitHub-hosted packages with Travis CI
+[[Continuous integration|Doc continuous integration]] - Test your GitHub-hosted packages with Travis CI  
 [[Reading and writing files|Doc Reading and writing files]]  
 [[Attributes|Doc attributes]] - The role of metadata in Rust code, with descriptions of many applications  
 [[Packages, editors, and other tools|Doc packages, editors, and other tools]]  
