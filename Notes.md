@@ -36,4 +36,5 @@ Listing of notes for developers working on the Rust compiler and tools.
 * [buildbot](http://buildbot.rust-lang.org) - All pull requests go through buildbot, via bors.
 * [isrustfastyet](http://huonw.github.io/isrustfastyet/mem/)
 * [IRC quotes](http://quotes.burntelectrons.org/search?query=tag%3A%23rust)
+* [IRC logs](https://botbot.me/mozilla/rust) and [more IRC logs](http://irclog.gr/#browse/irc.mozilla.org/rust)
 * [MXR](http://mxr.mozilla.org/rust/)
