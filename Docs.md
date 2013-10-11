@@ -56,7 +56,7 @@
 ## Other documentation
 
 [[Releases|Doc releases]] - Links to current and old releases and documentation  
-[[Detailed release notes|Doc detailed release notes]] - Further explanation of language changes 
+[[Detailed release notes|Doc detailed release notes]] - Further explanation of language changes  
 [[Rust for C++ programmers|Rust for CXX programmers]] - A cheat sheet  
 [[Rusticon|The Rusticon]] - A glossary of terms commonly used in Rust and Rust tools.  
 [[Unit testing|Doc unit testing]] - Writing tests and running them with the built-in test driver  
