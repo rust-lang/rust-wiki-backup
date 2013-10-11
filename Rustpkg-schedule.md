@@ -24,10 +24,12 @@ Previous discussions about rustpkg planning:
  * ~~[#8520](https://github.com/mozilla/rust/issues/8520) - find sources in $CWD - 10/10/2013~~ Done pending merge (medium)
  * ~~[#9193](https://github.com/mozilla/rust/issues/9193) - remote packages regression~~ - 10/12/2013 (medium)
  * [#7240](https://github.com/mozilla/rust/issues/7240) - multi-crate packages - 10/17/2013 (hard)
- * [#8711](https://github.com/mozilla/rust/issues/8711) - correctly deal with versions of installed pkgs - 10/23/2013 (medium)
+ * [#8711](https://github.com/mozilla/rust/issues/8711) - correctly deal with versions of installed pkgs - 10/22/2013 (medium)
+ * Tim on PTO, 10/23/2013
  * ~~[#9045](https://github.com/mozilla/rust/issues/9045) - rustpkg init (graydon's .rust_workspace suggestion)~~ (Implemented by @steveklabnik) - 10/29/2013 (medium)
 
 ## Community adoption II: 12/5/2013
+ * Tim on PTO, 11/1/2013
  * [#7401](https://github.com/mozilla/rust/issues/7401) - support custom commands - 11/6/2013 (hard)
  * [#6365](https://github.com/mozilla/rust/issues/6365) - usage messages - 11/7/2013 (easy)
  * [#8892](https://github.com/mozilla/rust/issues/8892) - suppress installation of some crate files (the "glfw/examples" problem) - 11/12/2013 (medium)
@@ -48,10 +50,9 @@ Previous discussions about rustpkg planning:
  * #8523 - forbid linkage attributes for rustpkg crates
  * #8673 - extern mod duplication
  * #6481 - lint command
- * #8711 - version matching
  * #7744 - error handling with bad package IDs
  * #2219 - --attr flag
- * #8871 - where to install remote packages - pull request [9732](https://github.com/mozilla/rust/pull/9732) will fix this, except for the test
+ * #8871 - where to install remote packages (needstest)
  * #8952 - executable naming
  * #7243 - unpacking tarball packages, fetching via curl
  * #9003 - `rustpkg test` cleanup
