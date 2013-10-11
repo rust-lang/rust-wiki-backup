@@ -21,7 +21,7 @@ Previous discussions about rustpkg planning:
 ## Community adoption I: 10/29/2013
  * ~~[#6480](https://github.com/mozilla/rust/issues/6480) - make locally-cached files read only~~ Done pending review of pull request [#9732](https://github.com/mozilla/rust/pull/9732), which also closes [#9514](https://github.com/mozilla/rust/pull/9514) - 10/3/2013 (easy)
  * Mozilla Summit, 10/4-10/7
- * ~~[#8520](https://github.com/mozilla/rust/issues/8520) - find sources in $CWD - 10/10/2013~~ Done pending review of pull request [#9736](https://github.com/mozilla/rust/pull/9736) (medium)
+ * ~~[#8520](https://github.com/mozilla/rust/issues/8520) - find sources in $CWD - 10/10/2013~~ (medium)
  * ~~[#9193](https://github.com/mozilla/rust/issues/9193) - remote packages regression~~ - 10/12/2013 (medium)
  * [#7240](https://github.com/mozilla/rust/issues/7240) - multi-crate packages - 10/17/2013 (hard)
  * [#8711](https://github.com/mozilla/rust/issues/8711) - correctly deal with versions of installed pkgs - 10/23/2013 (medium)
