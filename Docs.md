@@ -57,12 +57,12 @@
 
 [[Releases|Doc releases]] - Links to current and old releases and documentation  
 [[Detailed release notes|Doc detailed release notes]] - Further explanation of language changes 
-[Package documentation](http://docs.octayn.net/) - Documentation for rust packages 
 [[Rust for C++ programmers|Rust for CXX programmers]] - A cheat sheet  
 [[Rusticon|The Rusticon]] - A glossary of terms commonly used in Rust and Rust tools.  
 [[Unit testing|Doc unit testing]] - Writing tests and running them with the built-in test driver  
 [[Using rustpkg|Rustpkg]] - Managing packages  
 [[Using rustdoc|Doc using rustdoc]] - How to extract Markdown and HTML documentation from code  
+[Package documentation](http://docs.octayn.net/) - Documentation for rust packages  
 [[Continuous integration|Doc continuous integration]] - Test your GitHub-hosted packages with Travis CI  
 [[Reading and writing files|Doc Reading and writing files]]  
 [[Attributes|Doc attributes]] - The role of metadata in Rust code, with descriptions of many applications  
