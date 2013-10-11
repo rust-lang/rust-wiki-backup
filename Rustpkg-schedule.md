@@ -41,7 +41,7 @@ Previous discussions about rustpkg planning:
 ## Everything else (To be scheduled once community adoption is complete or close to complete)
  * #7447 - version improvements
  * #3346 - crate name in log map
- * ~~#6409 - API for `git clone`~~ Done pending review of pull request [9732](https://github.com/mozilla/rust/pull/9732)
+ * ~~#6409 - API for `git clone`~~
  * #6410 - libgit2 bindings
  * #1453 - continuous integration server
  * #1642 - continuous documentation server
