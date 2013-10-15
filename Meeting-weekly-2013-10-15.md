@@ -63,12 +63,12 @@
    https://gist.github.com/pnkfelix/6992779
 
 - pnkfelix: might keep around id=RHS, but we need an end delimiter.
-
+```
    # foo = bar :  struct S;  // outer attribute with end-delimiter
 
   #[outer(attribute)]
   #^ inner(attribute) ;
-
+```
 - brson: did you prefer the brackets?
 - pnkfelix: I liked them, but the community was strongly supportive of their removal.
 - brson: if we had the brackets, we could keep the ! and say that your program can't call a program called `[`
