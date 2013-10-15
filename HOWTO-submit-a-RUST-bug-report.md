@@ -4,7 +4,7 @@
 
    If you see a message about an LLVM assertion failure, then you have also definitely found a bug in the compiler. In both of these cases, it's not your fault and you should report a bug!
 
-   If you see a compiler error message that you think is meant for users to see, but it confuses you, ''that's a bug too''. If it wasn't clear to you, it's an error message we want to improve, so please report it so that we can try to make it better.
+   If you see a compiler error message that you think is meant for users to see, but it confuses you, *that's a bug too*. If it wasn't clear to you, it's an error message we want to improve, so please report it so that we can try to make it better.
 
 * I don't want to waste the Rust devs' time! How do I know the bug I found isn't a bug that already exists in the issue tracker?
 
