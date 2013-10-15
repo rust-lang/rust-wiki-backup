@@ -8,7 +8,6 @@ Notes taken at rust work week, 2011/06/23
  * tar file format
 * concurrency
  * task management, actor, OTP, [[Bikeshed mapreduce]], pools
-* [crypto](https://github.com/mozilla/rust/tree/master/src/libextra/crypto)
 * date and time
   * [rust_datetime](https://github.com/tedhorst/rust_datetime) (external)
 * encoding
@@ -61,6 +60,10 @@ Notes taken at rust work week, 2011/06/23
 * reflection
 
 ## Things that do not belong in std
+
+* Crypto
+  * [crypto](https://github.com/mozilla/rust/tree/master/src/libextra/crypto)
+  * [rustcrypto](https://github.com/erickt/rustcrypto) (external)
 * Database access
   * SQL
       * [postgres](https://github.com/sfackler/rust-postgres) (external)
