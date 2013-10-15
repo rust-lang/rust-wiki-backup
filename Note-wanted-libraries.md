@@ -6,6 +6,7 @@ Notes taken at rust work week, 2011/06/23
 * compression
  * zip file format
  * tar file format
+ * [rust-snappy](https://github.com/thestinger/rust-snappy) (external)
  * [rustzlib](https://github.com/elly/rustzlib) (external)
 * concurrency
  * task management, actor, OTP, [[Bikeshed mapreduce]], pools
