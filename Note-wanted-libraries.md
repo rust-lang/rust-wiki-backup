@@ -3,9 +3,10 @@ Notes taken at rust work week, 2011/06/23
 ## Things that standard libraries might want
 
 * collections (see [[Containers]])
-* [compression](https://github.com/elly/rustzlib) (external)
+* compression
  * zip file format
  * tar file format
+ * [rustzlib](https://github.com/elly/rustzlib) (external)
 * concurrency
  * task management, actor, OTP, [[Bikeshed mapreduce]], pools
 * date and time
