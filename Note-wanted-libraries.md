@@ -72,6 +72,7 @@ Notes taken at rust work week, 2011/06/23
       * [postgres](https://github.com/sfackler/rust-postgres) (external)
       * [sqlite](https://github.com/linuxfood/rustsqlite) (external)
   * NoSql
+      * [leveldb](https://github.com/lht/rust-leveldb) (external)
       * [mongodb](https://github.com/10gen-interns/mongo-rust-driver-prototype) (external)
       * [redis](https://github.com/mneumann/rust-redis) (external)
 * GUI
