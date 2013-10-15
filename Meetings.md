@@ -92,6 +92,7 @@ Mozilla employees have a weekly Rust planning meeting on Tuesday mornings at 10:
 * [[Meeting-weekly-2013-09-24]] (0.8 status; continue vs. loop; struct-like enums; lint; braces; nested comments; raw strings; IRC for devs; authors.txt; linkage attributes; name of clone; resolve; overflow; string escapes; default priv/pub)
 * [[Meeting-weekly-2013-10-01]] (rustpkg submodules; clone fn; option API; raw strings; removing float)
 * [[Meeting-weekly-2013-10-08]] (triage emails; status emails; code review; rustpkg test; removing crypto code from libraries; `rust` tool maintenance; function types; Hoedown/Sundown; OS X 10.9 bustage)
+* [[Meeting-weekly-2013-10-15]] (removing rusti; attribute syntax; drop in static items; multi-crate packages)
 
 ## Other meetings:
 
