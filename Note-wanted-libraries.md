@@ -10,6 +10,7 @@ Notes taken at rust work week, 2011/06/23
  * task management, actor, OTP, [[Bikeshed mapreduce]], pools
 * date and time
   * [rust_datetime](https://github.com/tedhorst/rust_datetime) (external)
+  * [rust-datetime](https://github.com/luisbg/rust-datetime) (external)
 * encoding
  * [base64](https://github.com/mozilla/rust/blob/master/src/libextra/base64.rs)
  * [CSV](https://github.com/grahame/rust-csv) (external)
