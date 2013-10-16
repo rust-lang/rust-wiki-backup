@@ -121,3 +121,7 @@ See https://github.com/mozilla/rust/issues/3591
   * Convertions between text encodings. Ideally, with a customizable way of handling conversion errors.
   * Unicode normalization (NFD, NFC, NFKD, NFKC)
   * Collator (locale sensitive string comparison), with a configurable degree of strictness
+
+
+## Web Programming
+  * [skade/widmann](https://github.com/skade/widmann): [<img src="https://travis-ci.org src="https://travis-ci.org/skade/widmann.png?branch=master">](https://travis-ci.org/skade/widmann)
