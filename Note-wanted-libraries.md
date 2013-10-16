@@ -48,6 +48,10 @@ Do not belong in std.
  * XML
       * [sax-rs](https://github.com/bjz/sax-rs) (external)
 
+## Graphics
+
+See [[Computer Graphics and Game Development]].
+
 ## GUI
  * [rust-cocoa](https://github.com/mozilla-servo/rust-cocoa) (external)
  * [wxRust](https://github.com/kenz-gelsoft/wxRust) (external)
