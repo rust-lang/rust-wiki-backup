@@ -95,7 +95,8 @@ Do not belong in std.
 
 ## String manipulation
 * Slicing w/o copy, stringref
-* [regexp](https://github.com/elly/rustpcre) (external)
+* Regular Expressions
+  * [rustpcre](https://github.com/elly/rustpcre) (external)
 * Ropes
 * Tokenizer
 * Unicode
