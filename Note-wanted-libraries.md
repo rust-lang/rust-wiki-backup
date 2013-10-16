@@ -56,7 +56,7 @@ Do not belong in std.
  * Thrift
  * [tnetstring](https://github.com/erickt/rust-tnetstring) (external)
  * XML
-    * [bjz/sax-rs](https://github.com/bjz/sax-rs):  [<img src="https://travis-ci.org/bjz/sax-rs.png?branch=master">](https://travis-ci.org/bjz/sax-rs)
+    * [bjz/sax-rs](https://github.com/bjz/sax-rs): bindings to libxml2's SAX parser [<img src="https://travis-ci.org/bjz/sax-rs.png?branch=master">](https://travis-ci.org/bjz/sax-rs)
 
 ## Graphics
 
