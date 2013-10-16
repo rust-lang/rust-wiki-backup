@@ -43,7 +43,7 @@ Do not belong in std.
   * [mongodb](https://github.com/10gen-interns/mongo-rust-driver-prototype) (external)
   * [redis](https://github.com/mneumann/rust-redis) (external)
 * SQL
-  * [postgres](https://github.com/sfackler/rust-postgres) (external)
+  * [sfackler/rust-postgres](https://github.com/sfackler/rust-postgres): [<img src="https://travis-ci.org/sfackler/rust-postgres.png?branch=master">](https://travis-ci.org/sfackler/rust-postgres)
   * [linuxfood/sqlite](https://github.com/linuxfood/rustsqlite): Sqlite3 bindings [<img src="https://travis-ci.org/linuxfood/rustsqlite.png?branch=master">](https://travis-ci.org/linuxfood/rustsqlite)
  
 ## Date and Time
