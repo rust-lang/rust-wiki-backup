@@ -1,12 +1,12 @@
 [Travis CI Status](http://hiho.io/rust-ci/)
 
-## Collections
-
-See [[Containers]].
-
 ## Audio
 
 See [[Computer Graphics and Game Development]].
+
+## Collections
+
+See [[Containers]].
 
 ## Compression
  * zip file format
