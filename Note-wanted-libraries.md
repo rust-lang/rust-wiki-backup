@@ -79,8 +79,7 @@ See [[Computer Graphics and Game Development]].
  * See [issue #4630](https://github.com/mozilla/rust/issues/4630)
  
 ## Mathematics
-  * [lmath](https://github.com/bjz/lmath-rs) (external)
-  * [rusty-math](https://github.com/z0w0/rusty-math) (external)
+  * [bjz/lmath-rs](https://github.com/bjz/lmath-rs) (external)
 
 ## Misc
 * low-level OS services
