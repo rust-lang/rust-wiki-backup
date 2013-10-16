@@ -56,7 +56,7 @@ Do not belong in std.
  * AIO, SIO, stdio
  * [filesystem](https://github.com/mozilla/rust/blob/master/src/libstd/os.rs)
  * [path manipulation](https://github.com/mozilla/rust/blob/master/src/libstd/path.rs)
- * [<> or fileinput](https://github.com/mozilla/rust/blob/incoming/src/libextra/fileinput.rs)
+ * [<> or fileinput](https://github.com/mozilla/rust/blob/master/src/libextra/fileinput).
  * timers
  
 ## Localizability
