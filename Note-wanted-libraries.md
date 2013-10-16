@@ -25,7 +25,8 @@ We want compression/decompression support for TAR and ZIP file formats.
 Do not belong in std.
 
 * [crypto](https://github.com/mozilla/rust/tree/master/src/libextra/crypto)
-* [rustcrypto](https://github.com/erickt/rustcrypto) (external)
+* [erickt/rustcrypto](https://github.com/erickt/rustcrypto): OpenSSL libcrypto bindings
+  * Status: last commit in August 2013
   
 ## Database Access
 
