@@ -124,4 +124,4 @@ See https://github.com/mozilla/rust/issues/3591
 
 
 ## Web Programming
-  * [skade/widmann](https://github.com/skade/widmann): [<img src="https://travis-ci.org src="https://travis-ci.org/skade/widmann.png?branch=master">](https://travis-ci.org/skade/widmann)
+  * [skade/widmann](https://github.com/skade/widmann): [<img src="https://travis-ci.org/skade/widmann.png?branch=master">](https://travis-ci.org/skade/widmann)
