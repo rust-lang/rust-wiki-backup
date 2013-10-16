@@ -11,7 +11,7 @@ Rust is quickly becoming an excellent language for computer graphics and game de
 - [glfw-rs](https://github.com/bjz/glfw-rs) [<img src="https://travis-ci.org/bjz/glfw-rs.png?branch=master">](https://travis-ci.org/bjz/glfw-rs)
 - [sdl](https://github.com/brson/rust-sdl) [<img src="https://travis-ci.org/brson/rust-sdl.png?branch=master">](https://travis-ci.org/brson/rust-sdl)
 - [sdl2](https://github.com/AngryLawyer/rust-sdl2)
-- [sfml](https://github.com/JeremyLetang/rust-sfml)
+- [sfml](https://github.com/JeremyLetang/rust-sfml) [<img src="https://travis-ci.org/JeremyLetang/rust-sfml.png?branch=master">](https://travis-ci.org/JeremyLetang/rust-sfml)
 - [rust-glut](https://github.com/mozilla-servo/rust-glut)
 - [RustAllegro](https://github.com/SiegeLord/RustAllegro)
 
