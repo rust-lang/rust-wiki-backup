@@ -96,7 +96,8 @@ See [[Computer Graphics and Game Development]].
 * reflection
 
 ## Networking
-* [HTTP](https://github.com/chris-morgan/rust-http) (external)
+* HTTP
+    * [rust-http](https://github.com/chris-morgan/rust-http):  [<img src="https://travis-ci.org/chris-morgan/rust-http.png?branch=master">](https://travis-ci.org/chris-morgan/rust-http)
 * [URI/URL](https://github.com/mozilla/rust/blob/master/src/libextra/url.rs)
 * [UUID](https://github.com/mozilla/rust/blob/master/src/libextra/uuid.rs)
 * GUID
