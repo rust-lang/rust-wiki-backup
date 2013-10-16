@@ -59,17 +59,6 @@ Do not belong in std.
  * [<> or fileinput](https://github.com/mozilla/rust/blob/incoming/src/libextra/fileinput.rs)
  * timers
  
-## String manipulation
-* Slicing w/o copy, stringref
-* [regexp](https://github.com/elly/rustpcre) (external)
-* Ropes
-* Tokenizer
-* Unicode
-  * [Unicode](https://github.com/mozilla/rust/blob/master/src/libextra/unicode.rs)
-  * Convertions between text encodings. Ideally, with a customizable way of handling conversion errors.
-  * Unicode normalization (NFD, NFC, NFKD, NFKC)
-  * Collator (locale sensitive string comparison), with a configurable degree of strictness
- 
 ## Localizability
  * one aspect of L10n is to map a key to a text, based on the current locale (eg Java's [ResourceBundle](http://docs.oracle.com/javase/7/docs/api/java/util/ResourceBundle.html) or [GNU gettext](http://www.gnu.org/software/gettext/))
  * another aspect is to format a string based on the current locale (eg Java's [MessageFormat](http://docs.oracle.com/javase/7/docs/api/java/text/MessageFormat.html))
@@ -103,3 +92,14 @@ Do not belong in std.
  
 ## Random Numbers
 * [random](https://github.com/mozilla/rust/blob/master/src/libcstd/rand.rs)
+
+## String manipulation
+* Slicing w/o copy, stringref
+* [regexp](https://github.com/elly/rustpcre) (external)
+* Ropes
+* Tokenizer
+* Unicode
+  * [Unicode](https://github.com/mozilla/rust/blob/master/src/libextra/unicode.rs)
+  * Convertions between text encodings. Ideally, with a customizable way of handling conversion errors.
+  * Unicode normalization (NFD, NFC, NFKD, NFKC)
+  * Collator (locale sensitive string comparison), with a configurable degree of strictness
