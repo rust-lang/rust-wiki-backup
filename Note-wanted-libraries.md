@@ -12,7 +12,7 @@ See [[Containers]].
  * zip file format
  * tar file format
  * [rust-snappy](https://github.com/thestinger/rust-snappy) (external)
- * [rustzlib](https://github.com/elly/rustzlib) (external)
+ * [rustzlib](https://github.com/erickt/rustzlib) (external)
  
 ## Concurrency
  * task management, actor, OTP, [[Bikeshed mapreduce]], pools
