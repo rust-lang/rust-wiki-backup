@@ -53,6 +53,7 @@ Do not belong in std.
  * [JSON](https://github.com/mozilla/rust/blob/master/src/libextra/json.rs)
  * [ProtocolBuffers](https://github.com/stepancheg/rust-protobuf) (external)
  * Thrift
+   * see https://github.com/mozilla/rust/issues/1677
  * [tnetstring](https://github.com/erickt/rust-tnetstring) (external)
  * XML
     * [bjz/sax-rs](https://github.com/bjz/sax-rs): bindings to libxml2's SAX parser [<img src="https://travis-ci.org/bjz/sax-rs.png?branch=master">](https://travis-ci.org/bjz/sax-rs)
