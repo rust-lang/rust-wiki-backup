@@ -20,7 +20,7 @@ We want compression/decompression support for TAR and ZIP file formats.
 ## Computation
 
 * OpenCL
-  * [luqmana/rust-opencl](https://github.com/luqmana/rust-opencl): OpenCL bindings [<img src="https://travis-ci.org/luqmana/rust-opencl.png?branch=master">](https://travis-ci.org/luqmana/rust-opencl)
+  * [eholk/rust-opencl](https://github.com/eholk/rust-opencl): OpenCL bindings [<img src="https://travis-ci.org/eholk/rust-opencl.png?branch=master">](https://travis-ci.org/eholk/rust-opencl)
  
 ## Concurrency
  * task management, actor, OTP, [[Bikeshed mapreduce]], pools
