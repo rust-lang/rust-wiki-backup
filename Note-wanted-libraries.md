@@ -96,8 +96,9 @@ Do not belong in std.
 ## String manipulation
 * Slicing w/o copy, stringref
 * Regular Expressions
+  * https://github.com/mozilla/rust/issues/3591
   * [rust-pcre](https://github.com/uasi/rust-pcre) (external)
-  * [rustpcre](https://github.com/elly/rustpcre) (external)
+  * [rustpcre](https://github.com/erickt/rustpcre) (external)
 * Ropes
 * Tokenizer
 * Unicode
