@@ -93,12 +93,13 @@ Do not belong in std.
 ## Random Numbers
 * [random](https://github.com/mozilla/rust/blob/master/src/libcstd/rand.rs)
 
+## Regular Expressions
+See https://github.com/mozilla/rust/issues/3591
+* [rust-pcre](https://github.com/uasi/rust-pcre) (external)
+* [rustpcre](https://github.com/erickt/rustpcre) (external)
+
 ## String manipulation
 * Slicing w/o copy, stringref
-* Regular Expressions
-  * https://github.com/mozilla/rust/issues/3591
-  * [rust-pcre](https://github.com/uasi/rust-pcre) (external)
-  * [rustpcre](https://github.com/erickt/rustpcre) (external)
 * Ropes
 * Tokenizer
 * Unicode
