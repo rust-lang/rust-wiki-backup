@@ -25,8 +25,7 @@ We want compression/decompression support for TAR and ZIP file formats.
 Do not belong in std.
 
 * [crypto](https://github.com/mozilla/rust/tree/master/src/libextra/crypto)
-* [DaGenix/rust-crypto](https://github.com/DaGenix/rust-crypto)
-  * Status: brand new
+* [DaGenix/rust-crypto](https://github.com/DaGenix/rust-crypto): [<img src="https://travis-ci.org/DaGenix/rust-crypto.png?branch=master">](https://travis-ci.org/DaGenix/rust-crypto)
 * [erickt/rustcrypto](https://github.com/erickt/rustcrypto): OpenSSL libcrypto bindings
   * Status: last commit in August 2013
   
