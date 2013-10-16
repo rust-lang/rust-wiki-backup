@@ -14,13 +14,13 @@ Notes taken at rust work week, 2011/06/23
   * [rust_datetime](https://github.com/tedhorst/rust_datetime) (external)
   * [rust-datetime](https://github.com/luisbg/rust-datetime) (external)
 * encoding
- * [base64](https://github.com/mozilla/rust/blob/master/src/libextra/base64.rs)
+ * [Base64](https://github.com/mozilla/rust/blob/master/src/libextra/base64.rs)
  * [Cap'n Proto](https://github.com/dwrensha/capnproto-rust) (external)
  * [CSV](https://github.com/grahame/rust-csv) (external)
  * [HTML](https://github.com/veddan/rust-htmlescape) (external)
- * [json](https://github.com/mozilla/rust/blob/master/src/libextra/json.rs)
- * [protobuf](https://github.com/stepancheg/rust-protobuf) (external)
- * thrift
+ * [JSON](https://github.com/mozilla/rust/blob/master/src/libextra/json.rs)
+ * [ProtocolBuffers](https://github.com/stepancheg/rust-protobuf) (external)
+ * Thrift
  * [tnetstring](https://github.com/erickt/rust-tnetstring) (external)
  * xml
       * [sax-rs](https://github.com/bjz/sax-rs) (external)
