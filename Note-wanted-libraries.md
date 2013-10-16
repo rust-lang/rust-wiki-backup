@@ -16,6 +16,11 @@ We want compression/decompression support for TAR and ZIP file formats.
   * Status: last commit in December 2012
 * [thestinger/rust-snappy](https://github.com/thestinger/rust-snappy): libsnappy bindings
   * Status: last commit in September 2013
+
+## Computation
+
+* OpenCL
+  * [luqmana/rust-opencl](https://github.com/luqmana/rust-opencl): OpenCL bindings [<img src="https://travis-ci.org/luqmana/rust-opencl.png?branch=master">](https://travis-ci.org/luqmana/rust-opencl)
  
 ## Concurrency
  * task management, actor, OTP, [[Bikeshed mapreduce]], pools
