@@ -17,7 +17,7 @@ Rust is quickly becoming an excellent language for computer graphics and game de
 
 #### OpenGL
 
-- [gl-rs](https://github.com/bjz/gl-rs)
+- [gl-rs](https://github.com/bjz/gl-rs) [<img src="https://travis-ci.org/bjz/gl-rs.png?branch=master">](https://travis-ci.org/bjz/gl-rs)
 - [rust-opengles](https://github.com/mozilla-servo/rust-opengles)
 
 #### Audio
