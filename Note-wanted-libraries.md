@@ -40,7 +40,7 @@ Do not belong in std.
   * [redis](https://github.com/mneumann/rust-redis) (external)
 * SQL
   * [postgres](https://github.com/sfackler/rust-postgres) (external)
-  * [sqlite](https://github.com/linuxfood/rustsqlite) (external)
+  * [linuxfood/sqlite](https://github.com/linuxfood/rustsqlite): Sqlite3 bindings [<img src="https://travis-ci.org/linuxfood/rustsqlite.png?branch=master">](https://travis-ci.org/linuxfood/rustsqlite)
  
 ## Date and Time
   * [rust_datetime](https://github.com/tedhorst/rust_datetime) (external)
