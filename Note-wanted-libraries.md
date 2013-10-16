@@ -1,4 +1,4 @@
-Notes taken at rust work week, 2011/06/23
+[Travis CI Status](http://hiho.io/rust-ci/)
 
 ## Things that standard libraries might want
 
