@@ -10,12 +10,12 @@ See [[Containers]].
 
 ## Compression
 
-We want compression/decomapression support for TAR and ZIP file formats.
+We want compression/decompression support for TAR and ZIP file formats.
 
- * [rust-snappy](https://github.com/thestinger/rust-snappy) (external)
-   * Status: last commit in September 2013
- * [rustzlib](https://github.com/erickt/rustzlib) (external)
-   * Status: last commit in December 2012
+* [erickt/rustzlib](https://github.com/erickt/rustzlib): libzlib bindings.
+  * Status: last commit in December 2012
+* [thestinger/rust-snappy](https://github.com/thestinger/rust-snappy): libsnappy bindings
+  * Status: last commit in September 2013
  
 ## Concurrency
  * task management, actor, OTP, [[Bikeshed mapreduce]], pools
