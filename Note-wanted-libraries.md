@@ -43,8 +43,10 @@ Do not belong in std.
   * [mongodb](https://github.com/10gen-interns/mongo-rust-driver-prototype) (external)
   * [redis](https://github.com/mneumann/rust-redis) (external)
 * SQL
-  * [sfackler/rust-postgres](https://github.com/sfackler/rust-postgres): [<img src="https://travis-ci.org/sfackler/rust-postgres.png?branch=master">](https://travis-ci.org/sfackler/rust-postgres)
-  * [linuxfood/sqlite](https://github.com/linuxfood/rustsqlite): Sqlite3 bindings [<img src="https://travis-ci.org/linuxfood/rustsqlite.png?branch=master">](https://travis-ci.org/linuxfood/rustsqlite)
+  * PostrgreSql
+      * [sfackler/rust-postgres](https://github.com/sfackler/rust-postgres): [<img src="https://travis-ci.org/sfackler/rust-postgres.png?branch=master">](https://travis-ci.org/sfackler/rust-postgres)
+  * Sqlite
+      * [linuxfood/sqlite](https://github.com/linuxfood/rustsqlite): Sqlite3 bindings [<img src="https://travis-ci.org/linuxfood/rustsqlite.png?branch=master">](https://travis-ci.org/linuxfood/rustsqlite)
  
 ## Date and Time
   * [rust_datetime](https://github.com/tedhorst/rust_datetime) (external)
@@ -56,7 +58,8 @@ Do not belong in std.
 * Character Encoding
     * [lifthrasiir/rust-encoding](https://github.com/lifthrasiir/rust-encoding)
 * [CSV](https://github.com/grahame/rust-csv) (external)
-* [HTML](https://github.com/veddan/rust-htmlescape) (external)
+* HTML
+    * [veddan/rust-htmlescape](https://github.com/veddan/rust-htmlescape):  [<img src="https://travis-ci.org/veddan/rust-htmlescape.png?branch=master">](https://travis-ci.org/veddan/rust-htmlescape)
 * [JSON](https://github.com/mozilla/rust/blob/master/src/libextra/json.rs)
 * [ProtocolBuffers](https://github.com/stepancheg/rust-protobuf) (external)
 * Thrift
