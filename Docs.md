@@ -114,3 +114,4 @@ Some Rust classics:
 * [Types of Types](https://air.mozilla.org/ben-blum-from-the-research-team-presents-types-of-types-in-rust/) - Ben Blum's intern presentation on 'kinds'
 * [An I/O system for Rust](https://air.mozilla.org/intern-presentations-reed/) - Eric Reed's intern presentation on I/O
 * [Niko's presentation at Northeastern](http://smallcultfollowing.com/babysteps/blog/2013/07/18/rust-presentation-at-northeastern/) - Slides only
+* [Tim's presentation at OS Bridge 2013](http://opensourcebridge.org/sessions/970) - And [slides](http://opensourcebridge.org/wiki/2013/Rust%3A_A_Friendly_Introduction)
