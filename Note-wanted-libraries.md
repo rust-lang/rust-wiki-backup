@@ -107,9 +107,10 @@ See [[Computer Graphics and Game Development]].
 * [URI/URL](https://github.com/mozilla/rust/blob/master/src/libextra/url.rs)
 * [UUID](https://github.com/mozilla/rust/blob/master/src/libextra/uuid.rs)
 * GUID
-* [ZeroMQ](https://github.com/erickt/rust-zmq) (external)
-  * How will libs like this be integrated with regular nonblocking io?
-  * ZeroMQ sockets need to be used from a fixed thread, can we do this in rust?
+* ZeroMQ
+  * [erickt/rust-zmq](https://github.com/erickt/rust-zmq):  [<img src="https://travis-ci.org/erickt/rust-zmq.png?branch=master">](https://travis-ci.org/erickt/rust-zmq)
+    * How will libs like this be integrated with regular nonblocking io?
+    * ZeroMQ sockets need to be used from a fixed thread, can we do this in rust?
  
 ## Random Numbers
 * [random](https://github.com/mozilla/rust/blob/master/src/libcstd/rand.rs)
