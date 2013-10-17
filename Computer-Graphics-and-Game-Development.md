@@ -62,3 +62,4 @@ Rust is quickly becoming an excellent language for computer graphics and game de
 - [Q³](https://github.com/Jeaye/q3)
 - [rustenstein3D](https://github.com/JeremyLetang/rustenstein3D/)
 - [Rustyhex](https://github.com/dpc/rustyhex/)
+- [xxo](https://github.com/mynery/xxo)
