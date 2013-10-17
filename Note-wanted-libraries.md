@@ -54,7 +54,8 @@ Do not belong in std.
   
 ## Encoding
 * [Base64](https://github.com/mozilla/rust/blob/master/src/libextra/base64.rs)
-* [Cap'n Proto](https://github.com/dwrensha/capnproto-rust) (external)
+* Cap'n Proto
+    * [dwrensha/capnproto-rust](https://github.com/dwrensha/capnproto-rust):  [<img src="https://travis-ci.org/dwrensha/capnproto-rust.png?branch=master">](https://travis-ci.org/dwrensha/capnproto-rust)
 * Character Encoding
     * [lifthrasiir/rust-encoding](https://github.com/lifthrasiir/rust-encoding)
 * [CSV](https://github.com/grahame/rust-csv) (external)
