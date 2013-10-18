@@ -16,4 +16,4 @@ Here is a short list of some OS projects in Rust. Feel free to add your own:
 
 Contents to come..
 
-* [The OS-dev wiki](https://wiki.osdev.org/)
+* [The OS-dev wiki](http://wiki.osdev.org/)
