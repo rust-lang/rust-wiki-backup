@@ -18,3 +18,4 @@ Here is a short list of some OS projects in Rust. Feel free to add your own:
 Contents to come..
 
 * [The OS-dev wiki](http://wiki.osdev.org/)
+* [Rust's __morestack implementation](https://github.com/mozilla/rust/blob/master/src/rt/arch/i386/morestack.S)
