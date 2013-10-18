@@ -4,10 +4,11 @@ This page aims at referencing here resources and documentation about operating s
 
 * [#rust-osdev on irc.mozilla.org](http://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-osdev)
 
-### Projets
+### Projects
 
-Here is a short list of some OS projects in Rust. Feel free to add your own :
+Here is a short list of some OS projects in Rust. Feel free to add your own:
 
+* [thestinger/rust-core](https://github.com/thestinger/rust-core/), a freestanding standard library clone that can even be configured to avoid libc.
 * [LeoTestard/Quasar](https://github.com/LeoTestard/Quasar.git)
 * [pcmattman/rustic](https://github.com/pcmattman/rustic.git)
 
