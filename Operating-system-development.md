@@ -2,7 +2,7 @@ This page aims at referencing here resources and documentation about operating s
 
 ### Community
 
-* #rust-osdev on irc.mozilla.org
+* [#rust-osdev on irc.mozilla.org](http://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-osdev)
 
 ### Projets
 
