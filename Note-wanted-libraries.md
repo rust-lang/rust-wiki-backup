@@ -46,7 +46,7 @@ Do not belong in std.
   * PostrgreSql
       * [sfackler/rust-postgres](https://github.com/sfackler/rust-postgres): [<img src="https://travis-ci.org/sfackler/rust-postgres.png?branch=master">](https://travis-ci.org/sfackler/rust-postgres)
   * Sqlite
-      * [linuxfood/rustsqlite](https://github.com/linuxfood/rustsqlite): Sqlite3 bindings [<img src="https://travis-ci.org/linuxfood/rustsqlite.png?branch=master">](https://travis-ci.org/linuxfood/rustsqlite)
+      * [kud1ing/rustsqlite](https://github.com/kud1ing/rustsqlite): Sqlite3 bindings [<img src="https://travis-ci.org/kud1ing/rustsqlite.png?branch=master">](https://travis-ci.org/kud1ing/rustsqlite)
  
 ## Date and Time
   * [rust_datetime](https://github.com/tedhorst/rust_datetime) (external)
