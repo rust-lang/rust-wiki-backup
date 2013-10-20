@@ -39,9 +39,12 @@ Do not belong in std.
 Do not belong in std.
 
 * NoSql
-  * [leveldb](https://github.com/lht/rust-leveldb) (external)
-  * [mongodb](https://github.com/10gen-interns/mongo-rust-driver-prototype) (external)
-  * [redis](https://github.com/mneumann/rust-redis) (external)
+  * LevelDB
+      * [lht/rust-leveldb](https://github.com/lht/rust-leveldb) (external)
+  * MongoDB
+      * [10gen-interns/mongo-rust-driver-prototype](https://github.com/10gen-interns/mongo-rust-driver-prototype) (external)
+  * Redis
+      * [mneumann/rust-redis](https://github.com/mneumann/rust-redis) (external)
 * SQL
   * PostrgreSql
       * [sfackler/rust-postgres](https://github.com/sfackler/rust-postgres): [<img src="https://travis-ci.org/sfackler/rust-postgres.png?branch=master">](https://travis-ci.org/sfackler/rust-postgres)
