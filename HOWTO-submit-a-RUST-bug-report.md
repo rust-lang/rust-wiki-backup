@@ -14,7 +14,7 @@
 
 * What information should I include in a bug report?
 
-It's helpful to include your specific OS (for example: Mac OS X 10.8.3, Windows 7, Ubuntu 12.0.4) and your hardware architecture (for example: i686, x86_64). It's also helpful to copy/paste the output of re-running the erroneous rustc commmand with the `-v` flag. Finally, if you can run the offending command under gdb, pasting a stack trace can be useful; to do so, you will need to set a breakpoint on `begin_unwind`.
+    It's helpful to include your specific OS (for example: Mac OS X 10.8.3, Windows 7, Ubuntu 12.0.4) and your hardware architecture (for example: i686, x86_64). It's also helpful to copy/paste the output of re-running the erroneous rustc commmand with the `-v` flag. Finally, if you can run the offending command under gdb, pasting a stack trace can be useful; to do so, you will need to set a breakpoint on `begin_unwind`.
 
 * I submitted a bug, but nobody has commented on it! I'm sad.
 
