@@ -128,6 +128,9 @@ See [[Computer Graphics and Game Development]].
 * ZeroMQ
   * [erickt/rust-zmq](https://github.com/erickt/rust-zmq):  [<img src="https://travis-ci.org/erickt/rust-zmq.png?branch=master">](https://travis-ci.org/erickt/rust-zmq)
 
+## Parser
+* S-Expressions
+  * [darkf/rust_sexpr](https://github.com/darkf/rust_sexpr)
 
 ## Random Numbers
 * [random](https://github.com/mozilla/rust/blob/master/src/libcstd/rand.rs)
