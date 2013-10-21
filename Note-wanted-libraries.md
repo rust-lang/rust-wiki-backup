@@ -142,7 +142,14 @@ See https://github.com/mozilla/rust/issues/3591
 
 * Mustache
   * [erickt/rust-mustache](https://github.com/erickt/rust-mustache): [<img src="https://travis-ci.org/erickt/rust-mustache.png?branch=master">](https://travis-ci.org/erickt/rust-mustache)
- 
+
+
+## Testing
+
+* QuickCheck
+  * [mcandre/rustcheck](https://github.com/mcandre/rustcheck)
+
 
 ## Web Programming
-  * [skade/widmann](https://github.com/skade/widmann): [<img src="https://travis-ci.org/skade/widmann.png?branch=master">](https://travis-ci.org/skade/widmann)
+
+* [skade/widmann](https://github.com/skade/widmann): [<img src="https://travis-ci.org/skade/widmann.png?branch=master">](https://travis-ci.org/skade/widmann)
