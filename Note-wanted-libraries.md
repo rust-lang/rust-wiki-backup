@@ -135,6 +135,7 @@ See [[Computer Graphics and Game Development]].
 ## Regular Expressions
 See https://github.com/mozilla/rust/issues/3591
 
+* [sanxiyn/rree](https://github.com/sanxiyn/rree)
 * PCRE
   * [cadencemarseille/rust-pcre](https://github.com/cadencemarseille/rust-pcre)
   * [erickt/rustpcre](https://github.com/erickt/rustpcre)
