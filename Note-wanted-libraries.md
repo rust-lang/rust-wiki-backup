@@ -83,6 +83,7 @@ See [[Computer Graphics and Game Development]].
 ## GUI
 * [apribadi/rust-termbox](https://github.com/apribadi/rust-termbox)
 * [drhodes/rust-ncurses](https://github.com/drhodes/rust-ncurses)
+* [eevee/amulet](https://github.com/eevee/amulet)
 * [rust-cocoa](https://github.com/mozilla-servo/rust-cocoa) (external)
 * [wxRust](https://github.com/kenz-gelsoft/wxRust) (external)
 	  
