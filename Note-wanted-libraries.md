@@ -65,10 +65,14 @@ Do not belong in std.
 * HTML
     * [veddan/rust-htmlescape](https://github.com/veddan/rust-htmlescape):  [<img src="https://travis-ci.org/veddan/rust-htmlescape.png?branch=master">](https://travis-ci.org/veddan/rust-htmlescape)
 * [JSON](https://github.com/mozilla/rust/blob/master/src/libextra/json.rs)
-* [ProtocolBuffers](https://github.com/stepancheg/rust-protobuf) (external)
+* MsgPck
+  * [mneumann/rust-msgpack](https://github.com/mneumann/rust-msgpack)
+* ProtocolBuffers
+  * [stepancheg/rust-protobuf](https://github.com/stepancheg/rust-protobuf)
 * Thrift
   * see https://github.com/mozilla/rust/issues/1677
-* [tnetstring](https://github.com/erickt/rust-tnetstring) (external)
+* Tnetstring
+  * [erickt/rust-tnetstring](https://github.com/erickt/rust-tnetstring)
 * XML
    * [bjz/sax-rs](https://github.com/bjz/sax-rs): bindings to libxml2's SAX parser [<img src="https://travis-ci.org/bjz/sax-rs.png?branch=master">](https://travis-ci.org/bjz/sax-rs)
 
