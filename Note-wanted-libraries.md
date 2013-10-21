@@ -73,6 +73,8 @@ Do not belong in std.
   * [omasanori/msgpack-rust](https://github.com/omasanori/msgpack-rust)
 * ProtocolBuffers
   * [stepancheg/rust-protobuf](https://github.com/stepancheg/rust-protobuf)
+* S-Expressions
+  * [darkf/rust_sexpr](https://github.com/darkf/rust_sexpr)
 * Thrift
   * see https://github.com/mozilla/rust/issues/1677
 * Tnetstring
@@ -130,13 +132,11 @@ See [[Computer Graphics and Game Development]].
 * ZeroMQ
   * [erickt/rust-zmq](https://github.com/erickt/rust-zmq):  [<img src="https://travis-ci.org/erickt/rust-zmq.png?branch=master">](https://travis-ci.org/erickt/rust-zmq)
 
-## Parser
+## Parser Generator
 
 * [erickt/ragel](https://github.com/erickt/ragel)
 * [jesse99/rparse](https://github.com/jesse99/rparse)
 * [kevinmehall/rust-peg](https://github.com/kevinmehall/rust-peg)
-* S-Expressions
-  * [darkf/rust_sexpr](https://github.com/darkf/rust_sexpr)
 
 ## Random Numbers
 * [random](https://github.com/mozilla/rust/blob/master/src/libcstd/rand.rs)
