@@ -138,7 +138,7 @@ See https://github.com/mozilla/rust/issues/3591
 * PCRE
   * [cadencemarseille/rust-pcre](https://github.com/cadencemarseille/rust-pcre)
   * [erickt/rustpcre](https://github.com/erickt/rustpcre)
-  * (luqmana/rust-regex2)[https://github.com/luqmana/rust-regex2]
+  * [luqmana/rust-regex2](https://github.com/luqmana/rust-regex2)
   * [uasi/rust-pcre](https://github.com/uasi/rust-pcre):  [<img src="https://travis-ci.org/uasi/rust-pcre.png?branch=master">](https://travis-ci.org/uasi/rust-pcre)
 
 ## String manipulation
