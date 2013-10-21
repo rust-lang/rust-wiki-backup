@@ -12,6 +12,10 @@
 
    If you have more time, it's very helpful if you can type the text of the error message you got [into the issue tracker search box](https://github.com/mozilla/rust/issues) to see if there's an existing bug that resembles your problem. If there is, and it's an open bug, you can comment on that issue and say you ran into it too. This will encourage devs to fix it. But again, don't let this stop you from submitting a bug. We'd rather have to do the work of closing duplicates than miss out on valid bug reports.
 
+* What information should I include in a bug report?
+
+It's helpful to include your specific OS (for example: Mac OS X 10.8.3, Windows 7, Ubuntu 12.0.4) and your hardware architecture (for example: i686, x86_64). It's also helpful to copy/paste the output of re-running the erroneous rustc commmand with the `-v` flag. Finally, if you can run the offending command under gdb, pasting a stack trace can be useful; to do so, you will need to set a breakpoint on `begin_unwind`.
+
 * I submitted a bug, but nobody has commented on it! I'm sad.
 
    This is sad, but does happen sometimes, since we're short-staffed. If you submit a bug and you haven't received a comment on it within 3 business days, it's entirely reasonable to either ask on the #rust IRC channel, or post on the [rust-dev mailing list](https://mail.mozilla.org/listinfo/rust-dev) to ask what the status of the bug is.
