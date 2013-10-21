@@ -52,8 +52,8 @@ Do not belong in std.
       * [kud1ing/rustsqlite](https://github.com/kud1ing/rustsqlite): Sqlite3 bindings [<img src="https://travis-ci.org/kud1ing/rustsqlite.png?branch=master">](https://travis-ci.org/kud1ing/rustsqlite)
  
 ## Date and Time
-  * [rust_datetime](https://github.com/tedhorst/rust_datetime) (external)
-  * [rust-datetime](https://github.com/luisbg/rust-datetime) (external)
+  * [luisbg/rust-datetime](https://github.com/luisbg/rust-datetime)
+  * [tedhorst/rust_datetime](https://github.com/tedhorst/rust_datetime)
   
 ## Encoding
 * [Base64](https://github.com/mozilla/rust/blob/master/src/libextra/base64.rs)
