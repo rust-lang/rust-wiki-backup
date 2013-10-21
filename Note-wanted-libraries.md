@@ -42,11 +42,11 @@ Do not belong in std.
 
 * NoSql
   * LevelDB
-      * [lht/rust-leveldb](https://github.com/lht/rust-leveldb) (external)
+      * [lht/rust-leveldb](https://github.com/lht/rust-leveldb)
   * MongoDB
-      * [10gen-interns/mongo-rust-driver-prototype](https://github.com/10gen-interns/mongo-rust-driver-prototype) (external)
+      * [10gen-interns/mongo-rust-driver-prototype](https://github.com/10gen-interns/mongo-rust-driver-prototype)
   * Redis
-      * [mneumann/rust-redis](https://github.com/mneumann/rust-redis) (external)
+      * [mneumann/rust-redis](https://github.com/mneumann/rust-redis)
 * SQL
   * PostrgreSql
       * [sfackler/rust-postgres](https://github.com/sfackler/rust-postgres): [<img src="https://travis-ci.org/sfackler/rust-postgres.png?branch=master">](https://travis-ci.org/sfackler/rust-postgres)
@@ -63,7 +63,8 @@ Do not belong in std.
     * [dwrensha/capnproto-rust](https://github.com/dwrensha/capnproto-rust):  [<img src="https://travis-ci.org/dwrensha/capnproto-rust.png?branch=master">](https://travis-ci.org/dwrensha/capnproto-rust)
 * Character Encoding
     * [lifthrasiir/rust-encoding](https://github.com/lifthrasiir/rust-encoding)
-* [grahame/rust-csv](https://github.com/grahame/rust-csv)
+* CSV
+  * [grahame/rust-csv](https://github.com/grahame/rust-csv)
 * HTML
     * [veddan/rust-htmlescape](https://github.com/veddan/rust-htmlescape):  [<img src="https://travis-ci.org/veddan/rust-htmlescape.png?branch=master">](https://travis-ci.org/veddan/rust-htmlescape)
 * [JSON](https://github.com/mozilla/rust/blob/master/src/libextra/json.rs)
@@ -86,8 +87,8 @@ See [[Computer Graphics and Game Development]].
 * [apribadi/rust-termbox](https://github.com/apribadi/rust-termbox)
 * [drhodes/rust-ncurses](https://github.com/drhodes/rust-ncurses)
 * [eevee/amulet](https://github.com/eevee/amulet)
-* [rust-cocoa](https://github.com/mozilla-servo/rust-cocoa) (external)
-* [wxRust](https://github.com/kenz-gelsoft/wxRust) (external)
+* [mozilla-servo/rust-cocoa](https://github.com/mozilla-servo/rust-cocoa)
+* [kenz-gelsoft/wxRust](https://github.com/kenz-gelsoft/wxRust)
 	  
 ## IO
  * AIO, SIO, stdio
@@ -102,7 +103,7 @@ See [[Computer Graphics and Game Development]].
  * See [issue #4630](https://github.com/mozilla/rust/issues/4630)
  
 ## Mathematics
-  * [bjz/lmath-rs](https://github.com/bjz/lmath-rs) (external)
+  * [bjz/lmath-rs](https://github.com/bjz/lmath-rs)
 
 ## Misc
 * low-level OS services
