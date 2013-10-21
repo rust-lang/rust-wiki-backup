@@ -70,6 +70,7 @@ Do not belong in std.
 * [JSON](https://github.com/mozilla/rust/blob/master/src/libextra/json.rs)
 * MsgPck
   * [mneumann/rust-msgpack](https://github.com/mneumann/rust-msgpack)
+  * [omasanori/msgpack-rust](https://github.com/omasanori/msgpack-rust)
 * ProtocolBuffers
   * [stepancheg/rust-protobuf](https://github.com/stepancheg/rust-protobuf)
 * Thrift
