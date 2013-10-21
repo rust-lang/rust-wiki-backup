@@ -131,6 +131,9 @@ See [[Computer Graphics and Game Development]].
   * [erickt/rust-zmq](https://github.com/erickt/rust-zmq):  [<img src="https://travis-ci.org/erickt/rust-zmq.png?branch=master">](https://travis-ci.org/erickt/rust-zmq)
 
 ## Parser
+
+* [erickt/ragel](https://github.com/erickt/ragel)
+* [kevinmehall/rust-peg](https://github.com/kevinmehall/rust-peg)
 * S-Expressions
   * [darkf/rust_sexpr](https://github.com/darkf/rust_sexpr)
 
