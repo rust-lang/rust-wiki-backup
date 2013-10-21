@@ -61,7 +61,7 @@ Do not belong in std.
     * [dwrensha/capnproto-rust](https://github.com/dwrensha/capnproto-rust):  [<img src="https://travis-ci.org/dwrensha/capnproto-rust.png?branch=master">](https://travis-ci.org/dwrensha/capnproto-rust)
 * Character Encoding
     * [lifthrasiir/rust-encoding](https://github.com/lifthrasiir/rust-encoding)
-* [CSV](https://github.com/grahame/rust-csv) (external)
+* [grahame/rust-csv](https://github.com/grahame/rust-csv)
 * HTML
     * [veddan/rust-htmlescape](https://github.com/veddan/rust-htmlescape):  [<img src="https://travis-ci.org/veddan/rust-htmlescape.png?branch=master">](https://travis-ci.org/veddan/rust-htmlescape)
 * [JSON](https://github.com/mozilla/rust/blob/master/src/libextra/json.rs)
