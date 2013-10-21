@@ -65,6 +65,7 @@ Do not belong in std.
     * [lifthrasiir/rust-encoding](https://github.com/lifthrasiir/rust-encoding)
 * CSV
   * [grahame/rust-csv](https://github.com/grahame/rust-csv)
+  * [koko1000ban/rust-csv-parser](https://github.com/koko1000ban/rust-csv-parser)
 * HTML
     * [veddan/rust-htmlescape](https://github.com/veddan/rust-htmlescape):  [<img src="https://travis-ci.org/veddan/rust-htmlescape.png?branch=master">](https://travis-ci.org/veddan/rust-htmlescape)
 * [JSON](https://github.com/mozilla/rust/blob/master/src/libextra/json.rs)
