@@ -19,6 +19,8 @@ We want compression/decompression support for TAR and ZIP file formats.
 
 ## Computation
 
+* GMP
+  * [thestinger/rust-gmp](https://github.com/thestinger/rust-gmp)
 * OpenCL
   * [eholk/rust-opencl](https://github.com/eholk/rust-opencl): OpenCL bindings [<img src="https://travis-ci.org/eholk/rust-opencl.png?branch=master">](https://travis-ci.org/eholk/rust-opencl)
  
