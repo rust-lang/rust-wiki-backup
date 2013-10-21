@@ -133,6 +133,7 @@ See [[Computer Graphics and Game Development]].
 ## Parser
 
 * [erickt/ragel](https://github.com/erickt/ragel)
+* [jesse99/rparse](https://github.com/jesse99/rparse)
 * [kevinmehall/rust-peg](https://github.com/kevinmehall/rust-peg)
 * S-Expressions
   * [darkf/rust_sexpr](https://github.com/darkf/rust_sexpr)
