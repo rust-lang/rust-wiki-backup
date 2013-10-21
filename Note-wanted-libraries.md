@@ -153,4 +153,5 @@ See https://github.com/mozilla/rust/issues/3591
 
 ## Web Programming
 
+* [erickt/rust-mongrel2](https://github.com/erickt/rust-mongrel2)
 * [skade/widmann](https://github.com/skade/widmann): [<img src="https://travis-ci.org/skade/widmann.png?branch=master">](https://travis-ci.org/skade/widmann)
