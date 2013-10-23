@@ -1,4 +1,7 @@
-# Operator Overloading
+---
+**Moved into [the standard library documentation for `std::ops`](http://static.rust-lang.org/doc/master/std/ops/index.html).**
+
+---
 
 We currently (May 2013) have a simple form of operator overloading. There are a few traits (in `std::ops`), that provide methods that are called for each operator, e.g.
 
