@@ -14,7 +14,7 @@ impl Add<Point, Point> for Point {
     }
 }
 
-impl Sub<Point, Point> for Point
+impl Sub<Point, Point> for Point {
     fn sub(&self, other: &Point) -> Point {
         Point {x: self.x - other.x, y: self.y - other.y}
     }
