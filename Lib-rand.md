@@ -32,6 +32,7 @@ Generating random numbers, and sampling from random distributions.
        - "The algorithm in its native form is not suitable for cryptography"
        - [SIMD-oriented Fast Mersenne Twister (SFMT)](http://www.math.sci.hiroshima-u.ac.jp/~m-mat/MT/SFMT/)
           - dSFMT is used by Julia, and possibly Erlang
+       - A fairly straight translation of the C of the 32 and 64 bit variants of MT19937 appears to be ~10% slower than ISAAC and ISAAC-64 respectively ([benchmarks here](https://github.com/mozilla/rust/pull/10029#issuecomment-26983157))
     - [Xorshift](http://en.wikipedia.org/wiki/Xorshift)
        - Not crypto quality, but simple, small and fast
        - Currently the only other RNG in Rust
