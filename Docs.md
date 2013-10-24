@@ -17,7 +17,7 @@
 
 #### In-development (git master)
 
-* [Tutorial](http://doc.rust-lang.org/doc/master/tutorial.html)  
+* [Tutorial](http://doc.rust-lang.org/doc/master/tutorial.html) ([PDF](http://doc.rust-lang.org/doc/master/tutorial.pdf))  
   * [borrowed pointers](http://doc.rust-lang.org/doc/master/tutorial-borrowed-ptr.html) |
     [conditions](http://doc.rust-lang.org/doc/master/tutorial-conditions.html) |
     [containers & iterators](http://doc.rust-lang.org/doc/master/tutorial-container.html) |
