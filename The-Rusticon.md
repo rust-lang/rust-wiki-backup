@@ -59,4 +59,4 @@ syntax | name
 `~Trait:Send` | A *trait object* where `:Send` are the *trait bounds*.
 `foo!()` | Either a [*macro*](#macro) or *syntax extension*.
 `#[xyz]` | An [*attribute*](#attribute).
-`::<int>` | A [*type hint*](#type_hint). 
+`::<int>`, `: int` (in `let x: int ...`) | A [*type hint*](#type_hint). 
