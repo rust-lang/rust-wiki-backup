@@ -89,3 +89,103 @@ trait Encoding {
      }
 }
 ```
+
+## Alternative without conditions
+
+```
+trait Decoder {
+     fn decode(input: &[u8], error_handling: DecodingErrorHandling)
+            -> Result<~str, DecodeError> {
+     }
+
+     fn new(error_handling: DecodingErrorHandling) -> Self;
+
+     fn feed<W: StringWriter>(&self, input: &[u8], output: &mut W)
+                           -> Option<DecodeError>;
+
+     fn finish<W: StringWriter>(&self, output: &mut W)
+                             -> Option<DecodeError>;
+}
+
+enum DecodingErrorHandling {
+     StrictDecoding,
+     Replacement,
+}
+
+struct DecodeError {
+     input_byte_offset: uint,
+     invalid_byte_sequence: ~[u8],
+}
+
+trait StringWriter {
+     fn write_char(&mut self, c: char);
+     fn write_str(&mut self, s: &str);
+}
+
+
+fn encoding_from_label(label: &str) -> &'static Encoding {
+}
+
+trait Encoding {
+     fn new_decoder(&self, error_handling: DecodingErrorHandling) -> ~Decoder;
+
+     fn decode(&self, input: &[u8], error_handling: DecodingErrorHandling)
+            -> Result<~str, DecodeError> {
+     }
+}
+```
+
+## Alternative without `Result` for the non-strict case
+
+```
+// Note: RecoveringEncoding woud have a "error handling mode" enum parameter.
+trait RecoveringDecoder {
+     fn decode(input: &[u8]) -> ~str {
+     }
+
+     fn new() -> Self;
+
+     fn feed<W: StringWriter>(&self, input: &[u8], output: &mut W);
+
+     fn finish<W: StringWriter>(&self, output: &mut W);
+}
+
+trait StrictDecoder {
+     fn decode(input: &[u8]) -> Result<~str, DecodeError> {
+     }
+
+     fn new() -> Self;
+
+     fn feed<W: StringWriter>(&self, input: &[u8], output: &mut W)
+                           -> Option<DecodeError>;
+
+     fn finish<W: StringWriter>(&self, output: &mut W)
+                             -> Option<DecodeError>;
+}
+
+struct DecodeError {
+     input_byte_offset: uint,
+     invalid_byte_sequence: ~[u8],
+}
+
+trait StringWriter {
+     fn write_char(&mut self, c: char);
+     fn write_str(&mut self, s: &str);
+}
+
+
+fn encoding_from_label(label: &str) -> &'static Encoding {
+}
+
+trait Encoding {
+     fn new_replace_decoder(&self) -> ~RecoveringDecoder;
+
+     fn new_strict_decoder(&self) -> ~StrictDecoder;
+
+     fn decode_replace(&self, input: &[u8]) -> ~str {
+     }
+
+     fn decode_strict(&self, input: &[u8]) -> Result<~str, DecodeError> {
+     }
+}
+```
