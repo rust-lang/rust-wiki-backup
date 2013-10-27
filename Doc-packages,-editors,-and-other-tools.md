@@ -25,6 +25,7 @@
   * included, see `src/etc/`
 * Kate
   * included, see `src/etc/`
+    (the file can be copied or linked to ~/.kde/share/apps/katepart/syntax/)
 * Netbeans
   * [drrb's NetBeans Plugin](https://github.com/drrb/rust-netbeans) - Rust NetBeans Plugin
 * SublimeText
