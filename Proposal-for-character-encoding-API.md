@@ -92,7 +92,7 @@ trait Encoding {
 
 ## Alternative without conditions
 
-```
+```rust
 trait Decoder {
      fn decode(input: &[u8], error_handling: DecodingErrorHandling)
             -> Result<~str, DecodeError> {
@@ -137,7 +137,7 @@ trait Encoding {
 
 ## Alternative without `Result` for the non-strict case
 
-```
+```rust
 // Note: RecoveringEncoding woud have a "error handling mode" enum parameter.
 trait RecoveringDecoder {
      fn decode(input: &[u8]) -> ~str {
