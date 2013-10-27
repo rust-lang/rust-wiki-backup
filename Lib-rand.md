@@ -74,6 +74,7 @@ Generating random numbers, and sampling from random distributions.
     - Normal
       - [Box-Muller transform](https://en.wikipedia.org/wiki/Box%E2%80%93Muller_transform) and [Marsaglia polar method](https://en.wikipedia.org/wiki/Marsaglia_polar_method) (normal distribution, both are almost certainly inferior to the ziggurat algorithm)
       - ["Gaussian Random Number Generators" Thomas, Luk, Leong, Villasenor 2007](http://www.cse.cuhk.edu.hk/~phwl/mt/public/archives/papers/grng_acmcs07.pdf) (extremely comprehensive overview of many algorithms for normal RVs, including performance and statistical comparisons. Their conclusion is Ziggurat is fast and statistically good.)
+      - ["Efficient generation of exponential and normal deviates" Rubin, Johnson 2006](http://dx.doi.org/10.1080/10629360500108004) (also describes/addresses deficiencies of the plain Marsaglia Ziggurat implementation)
     - Gamma
       - ["A simple method for generating gamma variables" Marsaglia & Tsang 2000](http://dl.acm.org/citation.cfm?id=358414)
       - ["A Simple Gamma Random Number Generator for Arbitrary Shape Parameters" Tanizaki 2008](http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.158.3866)
