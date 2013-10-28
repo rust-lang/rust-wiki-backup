@@ -118,3 +118,4 @@ Some Rust classics:
 * [Niko's presentation at Northeastern](http://smallcultfollowing.com/babysteps/blog/2013/07/18/rust-presentation-at-northeastern/) - Slides only
 * [Tim's presentation at OS Bridge 2013](http://opensourcebridge.org/sessions/970) - And [slides](http://opensourcebridge.org/wiki/2013/Rust%3A_A_Friendly_Introduction)
 * Steve's presentation at RuPy 2013 "Nobody Knows Rust." [slides](http://steveklabnik.github.io/nobody_knows_rust/#/), video to come soon
+* Geoffroy Couprie's [Scala.IO 2013 slides](http://dev.unhandledexpression.com/slides/rust-scalaio/)
