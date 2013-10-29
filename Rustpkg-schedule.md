@@ -25,7 +25,7 @@ Previous discussions about rustpkg planning:
  * ~~[#9193](https://github.com/mozilla/rust/issues/9193) - remote packages regression~~ - 10/12/2013 (medium)
  * [#7240](https://github.com/mozilla/rust/issues/7240) - multi-crate packages - 10/17/2013 (hard)
  * [#8711](https://github.com/mozilla/rust/issues/8711) - correctly deal with versions of installed pkgs - 10/22/2013 (medium)
- * Tim on PTO, 10/23/2013
+ * ~~Tim on PTO, 10/23/2013~~
  * ~~[#9045](https://github.com/mozilla/rust/issues/9045) - rustpkg init (graydon's .rust_workspace suggestion)~~ (Implemented by @steveklabnik) - 10/29/2013 (medium)
 
 ## Community adoption II: 12/5/2013
