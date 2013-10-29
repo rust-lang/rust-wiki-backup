@@ -44,12 +44,12 @@ CFG_LDPATH_arm-apple-darwin :=
 CFG_RUN_arm-apple-darwin=$(2)
 CFG_RUN_TARG_arm-apple-darwin=$(call CFG_RUN_arm-apple-darwin,,$(2))
 ```
-1. edit [mk/rt.mk](https://github.com/mozilla/rust/blob/master/mk/rt.mk)?
+
 1. Build rust:
 ```
-mkdir build && cd build
+mkdir build; cd build
 ../configure --target-triples=arm-apple-darwin
-make
+make VERBOSE=1
 ```
 
 This fails with
