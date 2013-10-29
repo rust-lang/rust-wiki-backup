@@ -5,10 +5,10 @@
 - placement new (pcwalton)
 
 # Status
-acrichto: landing #9901, organizing rt::io::file, extracting uv, 
-nmatsakis: landing multiple lifetimes, fixing mut permissiveness, dtors/temp-lifetimes
-pnkfelix: hacking on DST
-pcwalton: function reform
+- acrichto: landing #9901, organizing rt::io::file, extracting uv, 
+- nmatsakis: landing multiple lifetimes, fixing mut permissiveness, dtors/temp-lifetimes
+- pnkfelix: hacking on DST
+- pcwalton: function reform
 
 ## segmented stacks
 - acrichto: Using the morestack function from LLVM to detect stack overflow and abort. There has been discussion on the mailing list about this. The first thing I want to do is that we haven't officially said if we're going to use segmeneted stacks or not. There's code ofr it but it's all turned off. It seems the opinion is that we'll remove segmeented stacks but we should make this deicision.
