@@ -70,8 +70,8 @@
 [[Packaging Terminology|Doc Packaging Terminology]]  
 [[Crate Hashes|Doc crate hashes]] - How Rust generates crate filenames, versions symbols, and why  
 [[Computer Graphics and Game Development]] - Libraries and example projects  
-[[Building for Android|Doc building for Android]]
-[[Building for iOS|Doc building for iOS]]
+[[Building for Android|Doc building for Android]]  
+[[Building for iOS|Doc building for iOS]]  
 
 ## Blogs
 
