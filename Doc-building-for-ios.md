@@ -9,9 +9,6 @@ rustc foo.rs -o foo.stage2 -O --save-temps
 llc -march=c foo.bc -o foo.c
 ```
 
-1. Create `foo.c` from `foo.ll`:
-TODO: something using `llc`
-
 ### Option 2: Rust's Android-ARM assembler code
 
 TODO: something using `rustc --emit-llvm -S --target=arm-linux-androideabi`
