@@ -15,7 +15,7 @@ Previous discussions about rustpkg planning:
  * ~~[#7879](https://github.com/mozilla/rust/issues/7879) - infinite loop compiling dependencies~~ - 9/24/2013 (hard)
 *  ~~[#9112](https://github.com/mozilla/rust/issues/9112) - install doesn't depend on build~~ - 9/26/2013
  * ~~[#7401](https://github.com/mozilla/rust/issues/7242) - remaining rustpkg commands; *just* `test` for now~~ - 9/27/2013 (medium) 
- * ~~[#6403](https://github.com/mozilla/rust/issues/6403) - building c libs~~ (https://github.com/mozilla/rust/pull/9654) - 9/30/2013 (medium)
+ * ~~[#6403](https://github.com/mozilla/rust/issues/6403) - building c libs~~ - 9/30/2013 (medium)
  * ~~[#8672](https://github.com/mozilla/rust/issues/8672) - target specific output directory~~ - 10/1/2013 (easy) 
 
 ## Community adoption I: 10/29/2013
