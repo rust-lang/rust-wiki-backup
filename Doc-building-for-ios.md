@@ -23,6 +23,7 @@ See some approaches: https://github.com/mozilla/rust/issues/6170
 
 ## Resources
 
+* [[Doc building for android]]
 * [iOS ABI Function Call Guide](https://developer.apple.com/library/ios/documentation/Xcode/Conceptual/iPhoneOSABIReference/Articles/ARMv6FunctionCallingConventions.html)
 * [llc](http://llvm.org/docs/CommandGuide/llc.html)
 * [llvm-dis](http://llvm.org/docs/CommandGuide/llvm-dis.html)
