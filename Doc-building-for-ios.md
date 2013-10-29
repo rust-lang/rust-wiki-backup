@@ -14,6 +14,8 @@ See some approaches: https://github.com/mozilla/rust/issues/6170
 
 ### Option 2: Rust's Android-ARM assembler code
 
+1. TODO: something using `rustc --emit-llvm -S --target=arm-linux-androideabi`
+
 ### Option 3: Native iOS-support
 
 ## Resources
