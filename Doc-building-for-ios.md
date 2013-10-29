@@ -51,7 +51,7 @@ CFG_RUN_arm-apple-darwin=$(2)
 CFG_RUN_TARG_arm-apple-darwin=$(call CFG_RUN_arm-apple-darwin,,$(2))
 ```
 1. edit [mk/rt.mk](https://github.com/mozilla/rust/blob/master/mk/rt.mk)?
-1. `../configure --host-triples=arm-apple-darwin`
+1. `../configure --target-triples=arm-apple-darwin`
 1. `make`
 
 ## Resources
