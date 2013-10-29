@@ -25,7 +25,7 @@ TODO: something using `rustc --emit-llvm -S --target=arm-linux-androideabi`
 ```
 #arm-apple-darwin configuration for iOS
 CFG_IOS_TOOLS=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin
-CFG_IOS_FLAGS = -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/ -I /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/usr/include -I /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/usr/include/c++/4.2.1 -I/usr/include
+CFG_IOS_FLAGS = -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/ -I /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/usr/include -I /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/usr/include/c++/4.2.1 -I /usr/include
 CC_arm-apple-darwin= $(CFG_IOS_TOOLS)/arm-apple-darwin10-llvm-gcc-4.2
 CXX_arm-apple-darwin= $(CFG_IOS_TOOLS)/arm-apple-darwin10-llvm-g++-4.2
 CPP_arm-apple-darwin= $(CFG_IOS_TOOLS)/arm-apple-darwin10-llvm-g++-4.2
@@ -51,7 +51,7 @@ CFG_RUN_arm-apple-darwin=$(2)
 CFG_RUN_TARG_arm-apple-darwin=$(call CFG_RUN_arm-apple-darwin,,$(2))
 ```
 1. edit [mk/rt.mk](https://github.com/mozilla/rust/blob/master/mk/rt.mk)?
-1. `configure --host=arm-apple-darwin`
+1. `../configure --host=arm-apple-darwin`
 1. `make`
 
 ## Resources
