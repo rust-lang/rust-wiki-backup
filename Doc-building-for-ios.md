@@ -18,6 +18,9 @@ See some approaches: https://github.com/mozilla/rust/issues/6170
 
 ### Option 3: Native iOS-support
 
+1. add an `arm-apple-darwin` target triple to `mk/platform.mk`
+1. TODO
+
 ## Resources
 
 * [iOS ABI Function Call Guide](https://developer.apple.com/library/ios/documentation/Xcode/Conceptual/iPhoneOSABIReference/Articles/ARMv6FunctionCallingConventions.html)
