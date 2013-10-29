@@ -51,7 +51,7 @@ CFG_LDPATH_arm-apple-darwin :=
 CFG_RUN_arm-apple-darwin=$(2)
 CFG_RUN_TARG_arm-apple-darwin=$(call CFG_RUN_arm-apple-darwin,,$(2))
 ```
-1. `configure`
+1. `configure --host arm-apple-darwin`
 1. `make`
 
 ## Resources
