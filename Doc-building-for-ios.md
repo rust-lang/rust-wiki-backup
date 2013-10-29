@@ -14,4 +14,5 @@ See some approaches: https://github.com/mozilla/rust/issues/6170
 ## Resources
 
 * [llc](http://llvm.org/docs/CommandGuide/llc.html)
+* [llvm-dis](http://llvm.org/docs/CommandGuide/llvm-dis.html)
 * [[Note seeing LLVM output from rust]]
