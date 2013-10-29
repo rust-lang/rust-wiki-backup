@@ -94,6 +94,7 @@ Mozilla employees have a weekly Rust planning meeting on Tuesday mornings at 10:
 * [[Meeting-weekly-2013-10-08]] (triage emails; status emails; code review; rustpkg test; removing crypto code from libraries; `rust` tool maintenance; function types; Hoedown/Sundown; OS X 10.9 bustage)
 * [[Meeting-weekly-2013-10-15]] (removing rusti; attribute syntax; drop in static items; multi-crate packages)
 * [[Meeting-weekly-2013-10-22]] (crypto; mut self vs. mut ~self; drop by value; ~Any; volunteers; GC)
+* [[Meeting-weekly-2013-10-29]] (segmented stacks; rustpkg; placement new)
 
 ## Other meetings:
 
