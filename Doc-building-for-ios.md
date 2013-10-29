@@ -7,14 +7,17 @@ See some approaches: https://github.com/mozilla/rust/issues/6170
 ### Option 1: C-code from Rust's LLVM bitcode
 
 1. Produce a `foo.ll` from a `foo.rs`:
-  1. `rustc foo.rs -o foo.stage2 -O --save-temps`
-  1. `llvm-dis foo.bc`
+```
+rustc foo.rs -o foo.stage2 -O --save-temps
+llvm-dis foo.bc
+```
+
 1. Create `foo.c` from `foo.ll`:
-  1. TODO: something using `llc`
+TODO: something using `llc`
 
 ### Option 2: Rust's Android-ARM assembler code
 
-1. TODO: something using `rustc --emit-llvm -S --target=arm-linux-androideabi`
+TODO: something using `rustc --emit-llvm -S --target=arm-linux-androideabi`
 
 ### Option 3: Native iOS-support
 
