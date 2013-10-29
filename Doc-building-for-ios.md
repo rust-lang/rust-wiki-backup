@@ -1,7 +1,5 @@
 This currently does not work.
 
-See some approaches: https://github.com/mozilla/rust/issues/6170
-
 ## Options
 
 ### Option 1: C-code from Rust's LLVM bitcode
@@ -76,6 +74,7 @@ rustc --target=arm-apple-darwin foo.rs
 
 ## Resources
 
+* https://github.com/mozilla/rust/issues/6170
 * [Building a GHC cross-compiler for Apple iOS targets](http://ghc.haskell.org/trac/ghc/wiki/Building/CrossCompiling/iOS)
 * [[Doc building for android]]
 * [iOS ABI Function Call Guide](https://developer.apple.com/library/ios/documentation/Xcode/Conceptual/iPhoneOSABIReference/Articles/ARMv6FunctionCallingConventions.html)
