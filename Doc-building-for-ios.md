@@ -6,10 +6,9 @@ See some approaches: https://github.com/mozilla/rust/issues/6170
 
 ### Option 1: C-code from Rust's LLVM bitcode
 
-1. Produce a `foo.ll` from a `foo.rs`:
 ```
 rustc foo.rs -o foo.stage2 -O --save-temps
-llvm-dis foo.bc
+llc -march=c foo.bc -o foo.c
 ```
 
 1. Create `foo.c` from `foo.ll`:
