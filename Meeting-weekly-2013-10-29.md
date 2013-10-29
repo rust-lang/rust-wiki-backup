@@ -181,12 +181,12 @@ impl Alloc for AtPtr {
 - tjc: Prevents the four different types of pointers argument.
 - jld: Syntax of types?
 - p: Opinion ~ to * conversion from dherman and myself. Then * is just a normal pointer.
-- n: The main question is would owned pointers also have a name or be vestigal? Still special: linear values and so forth. FEels like a gratuitous change.
+- n: The main question is would owned pointers also have a name or be vestigal? Still special: linear values and so forth. Feels like a gratuitous change.
 - a: Need pattern matching over values contained in smart pointers.
 - p: Need to destructure for Okasaki-style red-black trees. At least for unique pointers. Pattern matchin over others can be saved for Rust 2.0.
 - jld: Does the pattern syntax have to specify what kind of pointer?
 - n: No. I was thinking what you might be thinking. We could have a dereference pattern. We currently have patterns for matching the construction styles. It's known for sure that you're dereferncing the exact kind of pointer.
-- p: That woudl be nice. Not writing new(GC(x) on the LHS would be nice.
+- p: That would be nice. Not writing new(GC) on the LHS would be nice.
 - n: That syntax is a non-starter. Just one step too far.
 - p: Everything complex is weird when you destructure it.
 - p: Obj-C uses alloc and init. Multiple options here.
@@ -200,7 +200,7 @@ impl Alloc for AtPtr {
 - n: It opens up the doors...
 - p: Fine with allowing @ to be rebound. Feeling when we start writing in this, we'll quickly forget the pain of the change or requirement to use the @ symbol.
 - pnkfelix: But some common coding patterns would be easily abstracted with just a little bit of sugar here.
-- n: Do we jsut need @?
+- n: Do we just need @?
 - pnkfelix: Multiple sigils. One for RC, one for GC, one for owned would be nice. Maybe not the right call, but avoiding the wordiness is good.
 - a: Let's make a formal document / blog post, put it on the mailing list. Discuss more with the community.
 - n: Not just renaming a lot of stuff; this is a big change. Don't object to it, though, but we'd better be sure. Don't want to do this and then go back.
