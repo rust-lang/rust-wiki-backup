@@ -57,6 +57,7 @@ CFG_RUN_TARG_arm-apple-darwin=$(call CFG_RUN_arm-apple-darwin,,$(2))
 
 ## Resources
 
+* [Building a GHC cross-compiler for Apple iOS targets](http://ghc.haskell.org/trac/ghc/wiki/Building/CrossCompiling/iOS)
 * [[Doc building for android]]
 * [iOS ABI Function Call Guide](https://developer.apple.com/library/ios/documentation/Xcode/Conceptual/iPhoneOSABIReference/Articles/ARMv6FunctionCallingConventions.html)
 * [llc](http://llvm.org/docs/CommandGuide/llc.html)
