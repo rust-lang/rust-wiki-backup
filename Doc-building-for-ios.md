@@ -6,11 +6,11 @@ See some approaches: https://github.com/mozilla/rust/issues/6170
 
 ### Option 1: C-code from Rust's LLVM bitcode
 
-* Produce a `foo.ll` from a `foo.rs`:
-  * `rustc foo.rs -o foo.stage2 -O --save-temps`
-  * `llvm-dis foo.bc`
-* Create `foo.c` from `foo.ll`:
-  * TODO: something using `llc`
+1. Produce a `foo.ll` from a `foo.rs`:
+  1. `rustc foo.rs -o foo.stage2 -O --save-temps`
+  1. `llvm-dis foo.bc`
+1. Create `foo.c` from `foo.ll`:
+  1. TODO: something using `llc`
 
 ### Option 2: Rust's Android-ARM assembler code
 
