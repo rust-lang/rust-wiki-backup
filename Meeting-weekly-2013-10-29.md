@@ -11,15 +11,15 @@
 - pcwalton: function reform
 
 ## segmented stacks
-- acrichto: Using the morestack function from LLVM to detect stack overflow and abort. There has been discussion on the mailing list about this. The first thing I want to do is that we haven't officially said if we're going to use segmeneted stacks or not. There's code ofr it but it's all turned off. It seems the opinion is that we'll remove segmeented stacks but we should make this deicision.
+- acrichto: Using the morestack function from LLVM to detect stack overflow and abort. There has been discussion on the mailing list about this. The first thing I want to do is that we haven't officially said if we're going to use segmented stacks or not. There's code for it but it's all turned off. It seems the opinion is that we'll remove segmented stacks but we should make this decision.
 - tjc: What are guard zones?
 - a: No stack checks, you round up the page size and the runtime puts two unmapped pages at the ened, so you'd hit that if you overflowed. You'd lazily map in your entire stack up to that point and when you hit it you abort somehow.
 - tjc: What are the alternatives?
-- a: The thing with segemented stacks is that you want them on 32 bit because the stacks can expand as needed. What we currently do is a giant 4MB stack. THe bad parts of what we do now (it's still not clear) is some correct way to deal with stack overflow. Ideally we'd just have task failure. The biggest problem with that is that currently you'd leak the arguments to the last function frame. it's correct if you don't have any arguments. Becuase of that is why I decided to make it abort. Segmented stacks wouldn't fix that.
+- a: The thing with segmented stacks is that you want them on 32 bit because the stacks can expand as needed. What we currently do is a giant 4MB stack. THe bad parts of what we do now (it's still not clear) is some correct way to deal with stack overflow. Ideally we'd just have task failure. The biggest problem with that is that currently you'd leak the arguments to the last function frame. it's correct if you don't have any arguments. Because of that is why I decided to make it abort. Segmented stacks wouldn't fix that.
 - tjc: Why would we leak the last argument frame?
-- a: Right now with segemented stacks we'd abort. But you leak them because there is no landing pad for the arguments. When you throw a c++ exception and it triggers unwindows, it blows right past that. There are ways to fix that, but they are all very painful and there doesn't seem to be an elegant solution.
-- brson: It gets harder if we use a gaurd page.
-- jld: becuase you'd segfault on some access.
+- a: Right now with segmented stacks we'd abort. But you leak them because there is no landing pad for the arguments. When you throw a c++ exception and it triggers unwindows, it blows right past that. There are ways to fix that, but they are all very painful and there doesn't seem to be an elegant solution.
+- brson: It gets harder if we use a guard page.
+- jld: because you'd segfault on some access.
 - a: The good part about unwinding at the beginning is that you know you are unwinding. It's also an LLVM opt problem if we unwind. LLVM marks functions as no-unwind and then optimizes based on that. So if we have arbitrary unwinding then the only functions.. ???
 - niko: Using a guard page doesn't rule out graceful handling of errors. The usual technique is to touch the stack in the prolog. I think windows even requires this. Moreover I think we should agree that aborting is not really an option. Does anyone disagree with that? Aborting when we run out of stack seems like an ungraceful exit.
 - tjc: It's failsafe behavior
@@ -28,7 +28,7 @@
 - niko: If guard pages prove too challenging we could have some check in the prolog like morestack. We could just have LLVM subsitute the final stack size and have some code that loads the stack frame and compare against the desired limit. There are other options.
 - jld: Does -fasync-unwind-tables exist and work in this world?
 - a: With morestack?
-- jld: with LLVM. The gcc option gives you extra unwind info at every instruction boundary. I don't know if anything liek this exists in the LLVM world.
+- jld: with LLVM. The gcc option gives you extra unwind info at every instruction boundary. I don't know if anything like this exists in the LLVM world.
 - a: Not sure.
 - jld: I know GCC has unwind tables for ARM that are wrong if you are in the prolog or epilog. If that could work it might allow dealing with guard page segfaults coming from something in the function.
 - a: This is kind of intertwined with how do we protect against stack overflow. We initially said we'd do segmented stacks. Are we agreed that a monolithic stack with overflow protection is where we're going to go from now on?
