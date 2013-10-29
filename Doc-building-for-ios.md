@@ -56,6 +56,19 @@ mkdir build && cd build
 ../configure --target-triples=arm-apple-darwin
 make
 ```
+
+This fails with
+```
+compile: arm-apple-darwin/rt/stage2/sync/lock_and_signal.o
+In file included from /Users/lenny/Github/rust_iphone/src/rt/sync/lock_and_signal.cpp:12:
+In file included from /Users/lenny/Github/rust_iphone/src/rt/sync/../rust_globals.h:44:
+In file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/usr/include/stdlib.h:63:
+In file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/usr/include/_types.h:27:
+In file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/usr/include/sys/_types.h:32:
+/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/usr/include/sys/cdefs.h:655:2: error: Unsupported architecture
+#error Unsupported architecture
+```
+
 1. Compile code:
 ```
 rustc --target=arm-apple-darwin foo.rs
