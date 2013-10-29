@@ -57,6 +57,10 @@ mkdir build && cd build
 ../configure --target-triples=arm-apple-darwin
 make
 ```
+1. Compile code:
+```
+rustc --target=arm-apple-darwin foo.rs
+```
 
 ## Resources
 
