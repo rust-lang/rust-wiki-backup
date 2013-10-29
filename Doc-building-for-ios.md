@@ -23,7 +23,7 @@ TODO: something using `rustc --emit-llvm -S --target=arm-linux-androideabi`
 
 1. add an `arm-apple-darwin` target triple to [mk/platform.mk](https://github.com/mozilla/rust/blob/master/mk/platform.mk):
 ```
-#arm-apple-darwin configuration for iOS
+# arm-apple-darwin configuration
 CFG_IOS_TOOLS=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/
 CFG_IOS_FLAGS = -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/ -I /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/usr/include -I /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/usr/include/c++/4.2.1 -I /usr/include
 CC_arm-apple-darwin= $(CFG_IOS_TOOLS)/clang
