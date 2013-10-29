@@ -21,7 +21,7 @@ TODO: something using `rustc --emit-llvm -S --target=arm-linux-androideabi`
 
 ### Option 3: Native iOS-support
 
-1. add an `arm-apple-darwin` target triple to `mk/platform.mk`
+1. add an `arm-apple-darwin` target triple to [mk/platform.mk](https://github.com/mozilla/rust/blob/master/mk/platform.mk).
 1. TODO
 
 ## Resources
