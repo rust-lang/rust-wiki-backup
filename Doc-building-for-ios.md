@@ -83,8 +83,7 @@ make VERBOSE=1
 
 fails with 
 ```
-/src/rt/arch/arm/_context.S:9:7: error: unknown token in expression
-.align
+../../../../src/libuv/include/uv-errno.h:25:10: fatal error: 'errno.h' file not found
 ```
 
 1. Use Rust:
