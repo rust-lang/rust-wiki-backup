@@ -73,6 +73,12 @@ mkdir build; cd build
 make VERBOSE=1
 ```
 
+fails with 
+```
+/src/rt/arch/arm/_context.S:9:7: error: unknown token in expression
+.align
+```
+
 1. Use Rust:
 ```
 rustc --target=arm-apple-darwin foo.rs
