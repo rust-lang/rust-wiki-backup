@@ -65,6 +65,14 @@ rust_env_pairs() {
     char **environ = 0L;
     #endif
 ```
+1. Adjust `src/rt/arch/arm/_context.S`:
+```
+.align 4
+```
+1. Adjust `src/rt/arch/arm/record_sp.S`:
+```
+.align 4
+```
 
 1. Build Rust:
 ```
