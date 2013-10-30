@@ -44,6 +44,14 @@ CFG_LDPATH_arm-apple-darwin :=
 CFG_RUN_arm-apple-darwin=$(2)
 CFG_RUN_TARG_arm-apple-darwin=$(call CFG_RUN_arm-apple-darwin,,$(2))
 ```
+1. Adjust `src/rt/rust_builtin.cpp`:
+```
+#ifdef __APPLE__
+#include <TargetConditionals.h>
+#endif
+#if defined(__APPLE__) && !defined(TARGET_OS_IPHONE)
+#include <crt_externs.h>
+```
 
 1. Build Rust:
 ```
