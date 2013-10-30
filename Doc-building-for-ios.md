@@ -55,6 +55,16 @@ CFG_RUN_TARG_arm-apple-darwin=$(call CFG_RUN_arm-apple-darwin,,$(2))
     #endif
 #endif
 ```
+and
+```
+rust_env_pairs() {
+#ifdef __APPLE__
+    #if !defined(TARGET_OS_IPHONE)
+    char **environ = *_NSGetEnviron();
+    #else
+    char **environ = 0L;
+    #endif
+```
 
 1. Build Rust:
 ```
