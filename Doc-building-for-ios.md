@@ -48,10 +48,10 @@ CFG_RUN_TARG_arm-apple-darwin=$(call CFG_RUN_arm-apple-darwin,,$(2))
 ```
 #ifdef __APPLE__
     #include <TargetConditionals.h>
+    #include <mach/mach_time.h>
 
     #if !defined(TARGET_OS_IPHONE)
         #include <crt_externs.h>
-        #include <mach/mach_time.h>
     #endif
 #endif
 ```
