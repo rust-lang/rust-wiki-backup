@@ -45,7 +45,7 @@ CFG_RUN_arm-apple-darwin=$(2)
 CFG_RUN_TARG_arm-apple-darwin=$(call CFG_RUN_arm-apple-darwin,,$(2))
 ```
 
-1. Build rust:
+1. Build Rust:
 ```
 mkdir build; cd build
 ../configure --target-triples=arm-apple-darwin
