@@ -73,6 +73,10 @@ rust_env_pairs() {
 ```
 .align 4
 ```
+1. Adjust `src/libuv/include/uv-errno.h`:
+```
+#include <sys/errno.h>
+```
 
 1. Build Rust:
 ```
