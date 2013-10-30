@@ -52,15 +52,17 @@ mkdir build; cd build
 make VERBOSE=1
 ```
 
-Maybe adjust:
-* [src/librustc/back/arm.rs](https://github.com/mozilla/rust/blob/master/src/librustc/back/arm.rs)
-* [src/rt/arch/arm/record_sp.S](https://github.com/mozilla/rust/blob/master/src/rt/arch/arm/record_sp.S)
-
-
 1. Compile code:
 ```
 rustc --target=arm-apple-darwin foo.rs
 ```
+
+### Possible adjustments
+
+* Linkflag: `-arch armv7s`
+* Code:
+  * [src/librustc/back/arm.rs](https://github.com/mozilla/rust/blob/master/src/librustc/back/arm.rs)
+  * [src/rt/arch/arm/record_sp.S](https://github.com/mozilla/rust/blob/master/src/rt/arch/arm/record_sp.S)
 
 ## Resources
 
