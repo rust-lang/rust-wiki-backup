@@ -73,16 +73,18 @@ rust_env_pairs() {
 ```
 .align 4
 ```
-1. Adjust `src/libuv/include/uv-errno.h`:
-```
-#include <sys/errno.h>
-```
+
 
 1. Build Rust:
 ```
 mkdir build; cd build
 ../configure --target-triples=arm-apple-darwin
 make VERBOSE=1
+```
+
+Fails with
+```
+src/libuv/include/uv-errno.h:25:10: fatal error: 'errno.h' file not found
 ```
 
 
