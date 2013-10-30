@@ -2,18 +2,18 @@ This currently does not work.
 
 ## Options
 
-### Option 1: C-code from Rust's LLVM bitcode
+### Option 1: Convert Rust's LLVM bitcode to C-code
 
 ```
 rustc foo.rs -o foo.stage2 -O --save-temps
 llc -march=c foo.bc -o foo.c
 ```
 
-### Option 2: Rust's Android-ARM assembler code
+### Option 2: Use Rust's Android-ARM assembler code
 
 TODO: something using `rustc --emit-llvm -S --target=arm-linux-androideabi`
 
-### Option 3: Native iOS-support
+### Option 3: Add native iOS-support to Rust
 
 1. add an `arm-apple-darwin` target triple to [mk/platform.mk](https://github.com/mozilla/rust/blob/master/mk/platform.mk):
 ```
