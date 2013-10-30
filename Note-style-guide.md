@@ -10,7 +10,7 @@ Here are some rough guidelines to Rust style. They are followed unevenly and the
 ## General
 
 * Type names and enumeration variants should be in `CamelCase`.
-* Acrynoms too should be camel case: `Uuid`, not `UUID`.
+* Acronyms should be camel case, too: `Uuid`, not `UUID`.
 * Functions, methods, and variables should be `lowercase_with_underscores` where it helps readability.
 * Static variables should be in `ALL_CAPS`.
 * Constructors are methods called `new` or `new_with_more_details`.
