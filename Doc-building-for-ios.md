@@ -52,7 +52,7 @@ mkdir build; cd build
 make VERBOSE=1
 ```
 
-1. Compile code:
+1. Use Rust:
 ```
 rustc --target=arm-apple-darwin foo.rs
 ```
