@@ -59,7 +59,8 @@ rustc --target=arm-apple-darwin foo.rs
 
 ### Possible adjustments
 
-* Linkflag: `-arch armv7s`
+* Linking:
+  * add flag `-arch armv7s` for the A6 processor in the iPhone 5
 * Code:
   * [src/librustc/back/arm.rs](https://github.com/mozilla/rust/blob/master/src/librustc/back/arm.rs)
   * [src/rt/arch/arm/record_sp.S](https://github.com/mozilla/rust/blob/master/src/rt/arch/arm/record_sp.S)
