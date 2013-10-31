@@ -106,6 +106,7 @@ rustc --target=arm-apple-darwin foo.rs
 ## Resources
 
 * https://github.com/mozilla/rust/issues/6170
+* [ARM Machine Directives](http://stuff.mit.edu/afs/athena/project/rhel-doc/3/rhel-as-en-3/arm-directives.html)
 * [Building a GHC cross-compiler for Apple iOS targets](http://ghc.haskell.org/trac/ghc/wiki/Building/CrossCompiling/iOS)
 * [[Doc building for android]]
 * [iOS ABI Function Call Guide](https://developer.apple.com/library/ios/documentation/Xcode/Conceptual/iPhoneOSABIReference/Articles/ARMv6FunctionCallingConventions.html)
