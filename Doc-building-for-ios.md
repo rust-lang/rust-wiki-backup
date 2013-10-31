@@ -68,11 +68,11 @@ rust_env_pairs() {
 ```
 1. Adjust [src/rt/arch/arm/_context.S](https://github.com/mozilla/rust/blob/master/src/rt/arch/arm/_context.S):
 ```
-.align 4
+.align 2
 ```
 1. Adjust [src/rt/arch/arm/record_sp.S](https://github.com/mozilla/rust/blob/master/src/rt/arch/arm/record_sp.S):
 ```
-.align 4
+.align 2
 ```
 
 
