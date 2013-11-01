@@ -29,7 +29,7 @@ Instructions to build a cross compiler to Android on ARM, to cross compile Rust 
 
         mkdir build; cd build
 
-        ../configure --target-triples=arm-linux-androideabi --android-cross-path=[path of standalone toolchain dir]
+        ../configure --target=arm-linux-androideabi --android-cross-path=[path of standalone toolchain dir]
 
 4. Build
 
