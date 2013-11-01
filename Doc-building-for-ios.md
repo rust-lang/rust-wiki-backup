@@ -51,7 +51,9 @@ CFG_RUN_TARG_arm-apple-darwin=$(call CFG_RUN_arm-apple-darwin,,$(2))
     #include <TargetConditionals.h>
     #include <mach/mach_time.h>
 
-    #if !defined(TARGET_OS_IPHONE)
+    #if defined(TARGET_OS_IPHONE)
+        extern char **environ;
+    #else
         #include <crt_externs.h>
     #endif
 #endif
@@ -59,12 +61,9 @@ CFG_RUN_TARG_arm-apple-darwin=$(call CFG_RUN_arm-apple-darwin,,$(2))
 and
 ```
 rust_env_pairs() {
-#ifdef __APPLE__
-    #if !defined(TARGET_OS_IPHONE)
+#ifdef __APPLE__ && !defined(TARGET_OS_IPHONE)
     char **environ = *_NSGetEnviron();
-    #else
-    char **environ = 0L;
-    #endif
+#endif
 ```
 1. Adjust [src/rt/arch/arm/_context.S](https://github.com/mozilla/rust/blob/master/src/rt/arch/arm/_context.S):
 ```
