@@ -56,19 +56,18 @@ mkdir build; cd build
 make VERBOSE=1
 ```
 
-#### TODO
-  - remove "-I/usr/include" from mk/platform.mk
-
-Fails with
-```
-src/libuv/include/uv-errno.h:25:10: fatal error: 'errno.h' file not found
-```
-
-
 1. Use Rust:
 ```
 rustc --target=arm-apple-darwin foo.rs
 ```
+
+#### TODO
+- Compilation currently fails with
+```
+src/libuv/include/uv-errno.h:25:10: fatal error: 'errno.h' file not found
+```
+  - remove "-I/usr/include" from [mk/platform.mk](https://github.com/mozilla/rust/blob/master/mk/platform.mk)
+
 
 ### Possible adjustments
 
