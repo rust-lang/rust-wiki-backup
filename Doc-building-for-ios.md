@@ -15,7 +15,9 @@ TODO: something using `rustc --emit-llvm -S --target=arm-linux-androideabi`
 
 ### Option 3: Add native iOS-support to Rust
 
-1. add an `arm-apple-darwin` target triple to [mk/platform.mk](https://github.com/mozilla/rust/blob/master/mk/platform.mk). This is fixed in https://github.com/mozilla/rust/pull/10203
+1. add an `arm-apple-darwin` target triple to [mk/platform.mk](https://github.com/mozilla/rust/blob/master/mk/platform.mk).
+  - This is fixed in https://github.com/mozilla/rust/pull/10203
+  - TODO: remove "-I/usr/include"
 
 1. Adjust [src/rt/rust_builtin.cpp](https://github.com/mozilla/rust/blob/master/src/rt/rust_builtin.cpp):
 ```
