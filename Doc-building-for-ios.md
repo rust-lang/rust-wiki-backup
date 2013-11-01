@@ -39,14 +39,14 @@ rust_env_pairs() {
 ```
 .align 2
 ```
-TODO: this needs a guard which makes sures, this is affects only ARM and/or iOS
+TODO: this needs a guard which makes sures that this affects only iOS
 
 
 1. Adjust [src/rt/arch/arm/record_sp.S](https://github.com/mozilla/rust/blob/master/src/rt/arch/arm/record_sp.S):
 ```
 .align 2
 ```
-TODO: this needs a guard which makes sures, this is affects only ARM and/or iOS
+TODO: this needs a guard which makes sures that this affects only iOS
 
 
 1. Build Rust:
