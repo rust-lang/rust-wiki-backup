@@ -37,16 +37,21 @@ rust_env_pairs() {
 ```
 1. Adjust [src/rt/arch/arm/_context.S](https://github.com/mozilla/rust/blob/master/src/rt/arch/arm/_context.S):
 ```
+#if defined(__APPLE__)
 .align 2
+#else
+.align
+#endif
 ```
-TODO: this needs a guard which makes sures that this affects only iOS
-
 
 1. Adjust [src/rt/arch/arm/record_sp.S](https://github.com/mozilla/rust/blob/master/src/rt/arch/arm/record_sp.S):
 ```
+#if defined(__APPLE__)
 .align 2
+#else
+.align
+#endif
 ```
-TODO: this needs a guard which makes sures that this affects only iOS
 
 
 1. Build Rust:
