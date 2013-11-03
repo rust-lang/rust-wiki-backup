@@ -1,3 +1,5 @@
+This currently does not work completely.
+
 1. Adjust [src/rt/rust_builtin.cpp](https://github.com/mozilla/rust/blob/master/src/rt/rust_builtin.cpp):
 ```
 #ifdef __APPLE__
@@ -50,7 +52,7 @@ rustc --target=arm-apple-darwin foo.rs
 ```
 
 #### TODO
-- Compilation currently fails in libuv, see #10249.
+- Compilation currently fails in libuv, see [#10249](https://github.com/mozilla/rust/issues/10249).
 
 
 ### Possible adjustments
