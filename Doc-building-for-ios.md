@@ -1,4 +1,5 @@
-This currently does not work completely.
+Compilation currently fails in libuv, see [#10249](https://github.com/mozilla/rust/issues/10249).
+
 
 1. Adjust [src/rt/rust_builtin.cpp](https://github.com/mozilla/rust/blob/master/src/rt/rust_builtin.cpp):
 ```
@@ -52,8 +53,6 @@ rustc --target=arm-apple-darwin foo.rs
 ```
 
 #### TODO
-- Compilation currently fails in libuv, see [#10249](https://github.com/mozilla/rust/issues/10249).
-
 
 ### Possible adjustments
 
