@@ -69,9 +69,11 @@ rustc --target=arm-apple-darwin foo.rs
 #### TODO
 - Compilation currently fails with
 ```
-src/libuv/include/uv-errno.h:25:10: fatal error: 'errno.h' file not found
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang '-D_LARGEFILE_SOURCE' '-D_FILE_OFFSET_BITS=64' '-DHAVE_CONFIG_H' '-D_DARWIN_USE_64_BIT_INODE=1' '-DNDEBUG' -I../../../../src/libuv/include -I../../../../src/libuv/src  -Os -gdwarf-2 -fvisibility=hidden -Wnewline-eof -arch i386 -Wall -Wendif-labels -W -Wno-unused-parameter -fstrict-aliasing -MMD -MF ./.deps/obj.target/libuv/src/fs-poll.o.d.raw -DRUST_DEBUG -fno-omit-frame-pointer -O2 -fPIC -std=gnu99  -c -o obj.target/libuv/src/fs-poll.o ../../../../src/libuv/src/fs-poll.c
+In file included from ../../../../src/libuv/src/fs-poll.c:22:
+In file included from ../../../../src/libuv/include/uv.h:48:
+../../../../src/libuv/include/uv-errno.h:25:10: fatal error: 'errno.h' file not found
 ```
-  - remove "-I/usr/include" from [mk/platform.mk](https://github.com/mozilla/rust/blob/master/mk/platform.mk)
 
 
 ### Possible adjustments
