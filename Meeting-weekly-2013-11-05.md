@@ -133,6 +133,7 @@ fn slice_all<'a>(x: &'a [~T]) -> &'a [&'a [T]] {
 - nmatsakis: Probably going to want to do initially as part of the GC / DST work, and might make this patch easier if there aren't as many cases to handle. Probably doable separately. 
 - pnkfelix: strcat's PR is ready to go, isn't it?
 - nmatsakis: Yeah, I think so. Let's do the change to owned vectors. Will open another one for the change to slices.
+
 ## temporary lifetimes
 - nmatsakis: This week. Two options: when you create temp values (address of an rvalue), what lifetime do they get? a) syntactically based on where they appear
 ```
