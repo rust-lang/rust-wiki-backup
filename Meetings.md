@@ -95,6 +95,7 @@ Mozilla employees have a weekly Rust planning meeting on Tuesday mornings at 10:
 * [[Meeting-weekly-2013-10-15]] (removing rusti; attribute syntax; drop in static items; multi-crate packages)
 * [[Meeting-weekly-2013-10-22]] (crypto; mut self vs. mut ~self; drop by value; ~Any; volunteers; GC)
 * [[Meeting-weekly-2013-10-29]] (segmented stacks; rustpkg; placement new)
+* [[Meeting-weekly-2013-11-05]] (wildcards; libextra; rustpkg; stacks; octal literals; empty enums; vec representation; temp lifetimes)
 
 ## Other meetings:
 
