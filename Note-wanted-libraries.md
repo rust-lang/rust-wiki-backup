@@ -102,7 +102,7 @@ See [[Computer Graphics and Game Development]].
 * Termbox
   * [apribadi/rust-termbox](https://github.com/apribadi/rust-termbox)
 * wxWidgets
-  * [kenz-gelsoft/wxRust](https://github.com/kenz-gelsoft/wxRust)
+  * [kenz-gelsoft/wxRust](https://github.com/kenz-gelsoft/wxRust): [<img src="https://travis-ci.org/kenz-gelsoft/wxRust.png?branch=master">](https://travis-ci.org/kenz-gelsoft/wxRust)
 	  
 ## IO
  * AIO, SIO, stdio
