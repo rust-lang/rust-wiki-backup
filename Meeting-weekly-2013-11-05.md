@@ -23,7 +23,8 @@
 ## wildcard pattern syntax
 - brson: make the syntax for wildcard patterns consistent. Matching multiple things at a time is not uniform. strcat has a plan for * for "multiple things I am going to ignore". bjz suggested .. which is also used in vectors. I'm thinking go with .. Any opposition? Or thoughts?
 - acrichto: in:
-``` let Foo(..) = ...
+``` 
+let Foo(..) = ...
 ```
 - nmatsakis: in vector patterns ..  is followed by a pattern. But in tuples and structs we probably shouldn't do that for now. Not necessary from a parsing point of view. Could even make it optional in vectors.
 - brson: No strong feelings, so let's move on.
