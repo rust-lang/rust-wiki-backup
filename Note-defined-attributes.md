@@ -74,5 +74,4 @@ Obsolete
 ???
 ---
 
-* missing_doc
 * no_implicit_prelude
