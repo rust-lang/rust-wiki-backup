@@ -92,11 +92,17 @@ Do not belong in std.
 See [[Computer Graphics and Game Development]].
 
 ## GUI
-* [apribadi/rust-termbox](https://github.com/apribadi/rust-termbox)
-* [drhodes/rust-ncurses](https://github.com/drhodes/rust-ncurses)
-* [eevee/amulet](https://github.com/eevee/amulet)
-* [mozilla-servo/rust-cocoa](https://github.com/mozilla-servo/rust-cocoa)
-* [kenz-gelsoft/wxRust](https://github.com/kenz-gelsoft/wxRust)
+
+* Cocoa
+  * [mozilla-servo/rust-cocoa](https://github.com/mozilla-servo/rust-cocoa)
+* ncurses
+  * [drhodes/rust-ncurses](https://github.com/drhodes/rust-ncurses)
+  * [eevee/amulet](https://github.com/eevee/amulet)
+  * [jeaye/ncurses-rs](https://github.com/jeaye/ncurses-rs): [<img src="https://travis-ci.org/jeaye/ncurses-rs.png?branch=master">](https://travis-ci.org/jeaye/ncurses-rs)
+* Termbox
+  * [apribadi/rust-termbox](https://github.com/apribadi/rust-termbox)
+* wxWidgets
+  * [kenz-gelsoft/wxRust](https://github.com/kenz-gelsoft/wxRust)
 	  
 ## IO
  * AIO, SIO, stdio
