@@ -68,7 +68,6 @@ Function
 Obsolete
 --------
 
-* lint
 * abi - use `extern "ABI" fn` syntax
 * auto_encode, auto_decode - use `#[deriving(Encodable)]` and `#[deriving(Decodable)]`
 
