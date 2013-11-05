@@ -44,21 +44,21 @@ let Foo(..) = ...
 
 ## rustpkg
 - tjc: I'm out in two weeks and will volunteer, but can't own it. Will triage the remaining issues. Started an etherpad. Add things that you need me to get done in the last few days. Trying to help kmc port servo right now. rustpkg is fairly stable, but not so stable that it should be without an owner. In a pretty good state to hand over. Please follow up with me.
- - brson: I would like to take it. But not set to commit. Let's talk later. What's the state of rustpkg support for native code?
- - tjc: Not terribly well-tested. Have a basic one. Native libraries are done with rustpkg knowing nothing about them. Write a build script that specifies files that are declared inputs (e.g. text files, libraries). Then also write code that replaces the build step that calls out to make the file. Would be nice to have a better model as the DIY expectation seems poor for the long term, but that has not been designed.
- - acrichto: Also not a lot of documentation. 
- - tjc: OK, deferred to later.
+- brson: I would like to take it. But not set to commit. Let's talk later. What's the state of rustpkg support for native code?
+- tjc: Not terribly well-tested. Have a basic one. Native libraries are done with rustpkg knowing nothing about them. Write a build script that specifies files that are declared inputs (e.g. text files, libraries). Then also write code that replaces the build step that calls out to make the file. Would be nice to have a better model as the DIY expectation seems poor for the long term, but that has not been designed.
+- acrichto: Also not a lot of documentation. 
+- tjc: OK, deferred to later.
  
- ## stacks stuff
+## stacks stuff
  
- - nmatsakis: getting rid of segmented stacks. But what do we do when we call C functions? I assumed we would just remove all the machiner around annotating C functions with requirements, just say it's unsafe, and if the C function overruns it, it happens. Try to use a guard page, but that's it. Acrichto was suggesting we could require minimum stack requirements. And then start with 4MB and usually have 2MB left over when we get to C calls. 
- - acrichto: I dislike signal handlers. If we do have growable stacks (guard page kills you, but auto map in otherwise), then we have to use a signal handler. If the C functions don't do the work themselves, then if we have a growable stack, we need signal handler machinery.
- - nmatsakis: Still can use morestack to check for overruns. Now, we call malloc and rely on the OS to be lazy. Why does that not work in guard page scenario?
- - acrichto: Though we were going to manually lazily map it in.
- - pcwalton: Because I don't think the lazy mapping happens on Mac or Windows.
- - nmatsakis: Then when we called a C function we'd be forced to allocate everything, right? We could handle it by inserting a bit in the code of functions that call C functions. What should the user model be? Do we expect users to annotate functions?
- - acrichto: If you call a C function, the compiler automatically requests more stack (e.g., 2MB), but you can also personally require more or less. By default, no annotations, but a C call implies at least 2MB, but you can configure it up or down.
- - nmatsakis: Just gets away some of the appeal, as it got rid of the whole complexity in C FFI calls.
+- nmatsakis: getting rid of segmented stacks. But what do we do when we call C functions? I assumed we would just remove all the machiner around annotating C functions with requirements, just say it's unsafe, and if the C function overruns it, it happens. Try to use a guard page, but that's it. Acrichto was suggesting we could require minimum stack requirements. And then start with 4MB and usually have 2MB left over when we get to C calls. 
+- acrichto: I dislike signal handlers. If we do have growable stacks (guard page kills you, but auto map in otherwise), then we have to use a signal handler. If the C functions don't do the work themselves, then if we have a growable stack, we need signal handler machinery.
+- nmatsakis: Still can use morestack to check for overruns. Now, we call malloc and rely on the OS to be lazy. Why does that not work in guard page scenario?
+- acrichto: Though we were going to manually lazily map it in.
+- pcwalton: Because I don't think the lazy mapping happens on Mac or Windows.
+- nmatsakis: Then when we called a C function we'd be forced to allocate everything, right? We could handle it by inserting a bit in the code of functions that call C functions. What should the user model be? Do we expect users to annotate functions?
+- acrichto: If you call a C function, the compiler automatically requests more stack (e.g., 2MB), but you can also personally require more or less. By default, no annotations, but a C call implies at least 2MB, but you can configure it up or down.
+- nmatsakis: Just gets away some of the appeal, as it got rid of the whole complexity in C FFI calls.
 - pcwalton: I agree with niko. Wanted to get out of the business of managing stacks.
 - brson: Also has a limitation that you can't request a small stack at all. And servo will probably want to minimize.
 - nmatsakis: If all C functions ask for 2MB by default, you would have to annotate every single C call in servo to have the [small_stack] annotation and any one messes it up.
