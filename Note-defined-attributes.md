@@ -44,6 +44,7 @@ Mod
 * link_args
 * nolink - Don't perform the default linking for a native module
 * macro_escape
+* no_implicit_prelude
 
 Function
 --------
@@ -68,8 +69,3 @@ Obsolete
 
 * abi - use `extern "ABI" fn` syntax
 * auto_encode, auto_decode - use `#[deriving(Encodable)]` and `#[deriving(Decodable)]`
-
-???
----
-
-* no_implicit_prelude
