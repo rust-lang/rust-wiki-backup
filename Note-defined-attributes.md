@@ -29,12 +29,15 @@ Item
 * address_insignificant
 * crate_map
 * static_assert
-* no_freeze, no_send
-* unsafe_no_drop_flag
-* packed
-* simd
-* repr
 * unsafe_destructor
+
+Types
+-----
+* unsafe_no_drop_flag
+* no_freeze, no_send
+* packed (struct only)
+* simd (tuple struct only(?))
+* repr (enum only)
 * deriving
 
 Mod
