@@ -31,8 +31,8 @@ Item
 * static_assert
 * unsafe_destructor
 
-Types
------
+Type declarations
+-----------------
 * unsafe_no_drop_flag
 * no_freeze, no_send
 * packed (struct only)
