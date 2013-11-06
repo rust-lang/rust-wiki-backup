@@ -35,6 +35,7 @@ Item
 * simd
 * repr
 * unsafe_destructor
+* deriving
 
 Mod
 ---
