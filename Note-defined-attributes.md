@@ -9,9 +9,7 @@ Crate
  * vers
  * uuid
  * url
-* comment
-* license
-* copyright
+* comment, license, copyright - (actually not used now)
 * crate_type
 * no_std - Don't link libstd automatically
 * no_uv
