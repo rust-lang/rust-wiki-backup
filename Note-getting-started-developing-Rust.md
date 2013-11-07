@@ -49,9 +49,9 @@ We recommend developing under [MSYS and MinGW](http://www.mingw.org) using their
 2. Run the mingw-get-inst-########.exe
 3. In the Setup GUI, Check the boxes and _Mark for Installation_ the following components to install:
     * Basic Setup ->
-        * mingw-developer-toolkit  (has Perl, etc)
         * mingw32-base  (has GCC C Compiler)
         * mingw32-gcc-g++ (has GCC C++ Compiler)
+        * msys-base  (has essential tools, etc)
     * All Packages -> MinGW Libraries -> MinGW Standard Libraries ->
         * mingw32-libpthread-old
         * mingw32-libpthreadgc
@@ -59,24 +59,23 @@ We recommend developing under [MSYS and MinGW](http://www.mingw.org) using their
         * Apply Changes
 4. Create a shortcut on your desktop to Msys for `C:\MinGW\msys\1.0\msys.bat`
 5. Launch Msys and type `sh /postinstall/pi.sh`  (use `c:/mingw` when asked).
+6. Install Perl with `mingw-get install msys-perl`.
 6. Install wget with `mingw-get install msys-wget`.
-7. Download and install Git for Windows following these steps:
+8. Download and install Git for Windows following these steps:
  * Download latest [Git for Windows on Google Code](https://code.google.com/p/msysgit/downloads/list?q=full+installer+official+git) and run it.
- * Change install path instead from `C:\Program Files(x86)` to just `C:\Git`.
- * Uncheck **Associate .sh files to be run with Bash**.
+ * 5 clicks on Next
  * Choose to **Run Git from the Windows Command Prompt** instead of Use Git Bash only.
- * Choose **Use OpenSSH**.
  * Choose **Checkout as-is, commit Unix-style line endings** (you'll have less problems).
  * After installing Git, close the MinGW console and reopen it, type `git --version` to verify installation and path is set correctly.
-8. Download Python 2.7 installer for your Windows version from http://www.python.org/getit/ and install it preferably to `C:\Python27`.
-9. (Do the following sub-steps also , until we bundle old dll's or get a workaround)
+9. Download Python 2.7 installer for your Windows version from http://www.python.org/getit/ and install it preferably to `C:\Python27`.
+10. (Do the following sub-steps also , until we bundle old dll's or get a workaround)
  * Get old versions of these dlls:
     * `mingw-get upgrade "g++<4.6"`
     * `mingw-get upgrade "libpthread=2.8.0-3"`
  *  Copy libgcc_s_dw2-1.dll, libstdc++-6.dll and libpthread-2.dll from `%mingw%\bin` into `%build%\i686-pc-mingw32\stage0\bin`
  * Roll mingw back to the latest: `mingw-get upgrade` 
-10. You can now start the MinGW / Msys Shell from your Desktop or Start Menu.
-11. Scroll down to **Downloading and building Rust** section.
+11. You can now start the MinGW / Msys Shell from your Desktop or Start Menu.
+12. Scroll down to **Downloading and building Rust** section.
 
 #### More info for Windows users.
 
