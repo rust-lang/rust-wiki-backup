@@ -68,7 +68,6 @@ We recommend developing under [MSYS and MinGW](http://www.mingw.org) using their
 7. Launch Msys and type `sh /postinstall/pi.sh`  (use `c:/mingw` when asked).
 8. Install Perl with `mingw-get install msys-perl`.
 9. Install wget with `mingw-get install msys-wget`.
-
 10. (Do the following sub-steps also , until we bundle old dll's or get a workaround)
  * Get old versions of these dlls:
     * `mingw-get upgrade "g++<4.6"`
