@@ -75,7 +75,7 @@ We recommend developing under [MSYS and MinGW](http://www.mingw.org) using their
  *  Copy libgcc_s_dw2-1.dll, libstdc++-6.dll and libpthread-2.dll from `%mingw%\bin` into `%build%\i686-pc-mingw32\stage0\bin`
  * Roll mingw back to the latest: `mingw-get upgrade` 
 11. You can now start the MinGW / Msys Shell from your Desktop or Start Menu.
-12. Scroll down to **Downloading and building Rust** section.
+12. Scroll down to [Downloading and building Rust](https://github.com/mozilla/rust/wiki/Note-getting-started-developing-Rust#downloading-and-building-rust) section.
 
 #### More info for Windows users.
 
