@@ -1,45 +1,5 @@
 Compilation currently fails in libuv, see [#10249](https://github.com/mozilla/rust/issues/10249).
 
-
-1. Adjust [src/rt/rust_builtin.cpp](https://github.com/mozilla/rust/blob/master/src/rt/rust_builtin.cpp):
-```
-#ifdef __APPLE__
-    #include <TargetConditionals.h>
-    #include <mach/mach_time.h>
-
-    #if defined(TARGET_OS_IPHONE)
-        extern char **environ;
-    #else
-        #include <crt_externs.h>
-    #endif
-#endif
-```
-and
-```
-rust_env_pairs() {
-#ifdef __APPLE__ && !defined(TARGET_OS_IPHONE)
-    char **environ = *_NSGetEnviron();
-#endif
-```
-1. Adjust [src/rt/arch/arm/_context.S](https://github.com/mozilla/rust/blob/master/src/rt/arch/arm/_context.S):
-```
-#if defined(__APPLE__)
-.align 2
-#else
-.align
-#endif
-```
-
-1. Adjust [src/rt/arch/arm/record_sp.S](https://github.com/mozilla/rust/blob/master/src/rt/arch/arm/record_sp.S):
-```
-#if defined(__APPLE__)
-.align 2
-#else
-.align
-#endif
-```
-
-
 1. Build Rust:
 ```
 mkdir build; cd build
