@@ -1,5 +1,7 @@
 Compilation currently fails in libuv, see [#10249](https://github.com/mozilla/rust/issues/10249).
 
+You need XCode 5.
+
 1. Build Rust:
 ```
 mkdir build; cd build
