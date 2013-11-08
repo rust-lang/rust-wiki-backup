@@ -5,7 +5,7 @@ You need XCode 5.
 1. Build Rust:
 ```
 mkdir build; cd build
-../configure --target-triples=arm-apple-darwin
+../configure --target=arm-apple-darwin
 make VERBOSE=1
 ```
 
