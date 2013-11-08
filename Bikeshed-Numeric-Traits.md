@@ -366,6 +366,7 @@ LLVM provides [various intrinsic functions](http://llvm.org/docs/LangRef.html#in
 
 The functions here are copied from OpenCL, and are intended to map to lower level instructions, and are (possibly) not as accurate as the normal ones. The idea is that many applications (graphics mostly) does not need highly accurate functions, but can work fine with much faster, lower precision versions.
 
+( Thad thinks that having a --relaxed-math compilation flag would be a novel way to solve this, as Intel does for OpenCL with Xeon Phi programming.  Applications that do not need accuracy but instead faster math processing, could just use the --relaxed-math compilation flag. [Reference - Comparing OpenCL and Native Code Performance](http://software.intel.com/sites/products/documentation/ioclsdk/2013XE/OG/Comparing_OpenCL_and_Native_Code_Performance.htm) )
 ~~~
 trait NativeMath {
   fn native_cos(&self) -> Self;
