@@ -61,6 +61,7 @@ Rust is quickly becoming an excellent language for computer graphics and game de
 - [Angolmois BMS player](https://github.com/lifthrasiir/angolmois-rust)
 - [Claymore](http://claymore-game.googlecode.com)
 - [clio](https://github.com/eevee/clio)
+- [pong-rs](https://github.com/zokier/pong-rs)
 - [Q³](https://github.com/Jeaye/q3) [<img src="https://travis-ci.org/jeaye/q3.png?branch=master">](https://travis-ci.org/jeaye/q3)
 - [rust-airhockey](https://github.com/FrozenCow/rust-airhockey)
 - [rustenstein3D](https://github.com/JeremyLetang/rustenstein3D/)
