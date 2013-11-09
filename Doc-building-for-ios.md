@@ -14,8 +14,6 @@ make VERBOSE=1
 rustc --target=arm-apple-darwin foo.rs
 ```
 
-#### TODO
-
 ### Possible adjustments
 
 * Compilation:
