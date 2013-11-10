@@ -110,6 +110,9 @@ If you are a consistent user of MinGW or plan to be, you might also want to subs
 
 **Troubleshooting Windows environment setups:**
 
+* If Python cannot be found during ./configure, then you need to add its path to the end of `/c/mingw/msys/1.0/etc/profile`, like this:
+ * `export PATH="/c/PYTHON27:$PATH"`
+
 * If while building you receive an error that `libpthread-2.dll` is not found, you forgot to install the mingw32-libpthread-old package into MinGW from Step 3, so do this:
 
  * `mingw-get install mingw32-libpthread-old`
