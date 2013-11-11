@@ -68,8 +68,14 @@ Function
 * cold
 * rust_stack
 
+Special
+-------
+
+* !resolve_unexported - internally used to build test binary. Ignore any privacy rules
+
 Obsolete
 --------
 
 * abi - use `extern "ABI" fn` syntax
 * auto_encode, auto_decode - use `#[deriving(Encodable)]` and `#[deriving(Decodable)]`
+* fast_ffi - just remove it
