@@ -2,6 +2,8 @@
 
 ##  Known packages that build with rustpkg ##
 
+If you maintain (or know of) another package that builds with rustpkg, then edit this page to add it! When [#10041](https://github.com/mozilla/rust/issues/10041) is implemented, the central package database will track this information automatically.
+
 * [alexcrichton/rs-splay](https://github.com/alexcrichton/rs-splay) (Splay tree library)
 * [alexcrichton/rust-compress](https://github.com/alexcrichton/rust-compress) (Data compression)
 * [bjz/cgmath-rs](https://github.com/bjz/cgmath-rs) (Linear algebra and math library for graphics)
