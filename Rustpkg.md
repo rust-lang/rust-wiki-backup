@@ -1,6 +1,6 @@
 [Rustpkg manual](https://github.com/mozilla/rust/blob/master/doc/rustpkg.md)
 
-== Known packages that build with rustpkg ==
+##  Known packages that build with rustpkg ##
 
 * [alexcrichton/rs-splay](https://github.com/alexcrichton/rs-splay) (Splay tree library)
 * [alexcrichton/rust-compress](https://github.com/alexcrichton/rust-compress) (Data compression)
