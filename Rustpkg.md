@@ -21,7 +21,7 @@ If you maintain (or know of) another package that builds with rustpkg, then edit
 * [erickt/rust-zmq](https://github.com/erickt/rust-zmq) (Rust Zeromq bindings)
 * [JeremyLetang/rust-sfml](https://github.com/JeremyLetang/rust-sfml) (Rust SFML bindings)
 * [Heather/Mirana](https://github.com/Heather/Mirana) (Repositories synchronization util)
-* [kud1ing/rustsqlite](https://github.com/kud1ing/rustsqlite) (SQLite 3 bindings for Rust)
+* [linuxfood/rustsqlite](https://github.com/linuxfood/rustsqlite) (SQLite 3 bindings for Rust)
 * [mozilla-servo/rust-core-graphics](https://github.com/mozilla-servo/rust-core-graphics) (Core graphics library)
 * [mozilla-servo/rust-opengles](https://github.com/mozilla-servo/rust-opengles) (OpenGLES bindings)
 * [mozilla-servo/rust-xlib](https://github.com/mozilla-servo/rust-xlib) (Xlib bindings for Rust)
