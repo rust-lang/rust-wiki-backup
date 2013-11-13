@@ -66,7 +66,7 @@ Do not belong in std.
 * Cap'n Proto
     * [dwrensha/capnproto-rust](https://github.com/dwrensha/capnproto-rust):  [<img src="https://travis-ci.org/dwrensha/capnproto-rust.png?branch=master">](https://travis-ci.org/dwrensha/capnproto-rust)
 * Character Encoding
-    * [lifthrasiir/rust-encoding](https://github.com/lifthrasiir/rust-encoding)
+    * [lifthrasiir/rust-encoding](https://github.com/lifthrasiir/rust-encoding): [<img src="https://travis-ci.org/lifthrasiir/rust-encoding.png?branch=rust-0.9-pre">](https://travis-ci.org/lifthrasiir/rust-encoding)
 * CSV
   * [grahame/rust-csv](https://github.com/grahame/rust-csv)
   * [koko1000ban/rust-csv-parser](https://github.com/koko1000ban/rust-csv-parser)
