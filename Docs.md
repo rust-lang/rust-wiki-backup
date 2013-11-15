@@ -43,14 +43,19 @@
   * [#rust on irc.mozilla.org][pound-rust] - general discussion
   * [#rust-internals on irc.mozilla.org][pound-rust-internals] - Rust compiler and library development
   * [#rust-gamedev on irc.mozilla.org][pound-rust-gamedev] - game development in Rust
+  * [#rust on irc.ozinger.org][pound-rust-korea] - Korean Rust community
 * Mailing list [rust-dev]
 * Reddit's [r/rust]
+* User groups
+  * [Rust Bay Area][rust-bay-area] - SF Bay Rust user group
 
 [pound-rust]: http://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust
 [pound-rust-internals]: http://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-internals
 [pound-rust-gamedev]: http://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-gamedev
+[pound-rust-korea]: http://chat.mibbit.com/?server=irc.ozinger.org&channel=%23rust
 [rust-dev]: https://mail.mozilla.org/listinfo/rust-dev
 [r/rust]: http://reddit.com/r/rust
+[rust-bay-area]: http://www.meetup.com/Rust-Bay-Area/
 
 
 ## Other documentation
