@@ -47,7 +47,9 @@
 * Mailing list [rust-dev]
 * Reddit's [r/rust]
 * User groups
-  * [Rust Bay Area][rust-bay-area] - SF Bay Rust user group
+  * [Rust Bay Area][rust-bay-area]
+  * [Rust Korea][rust-korea]
+  * [Rust Skåne][rust-skane]
 
 [pound-rust]: http://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust
 [pound-rust-internals]: http://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-internals
@@ -56,6 +58,8 @@
 [rust-dev]: https://mail.mozilla.org/listinfo/rust-dev
 [r/rust]: http://reddit.com/r/rust
 [rust-bay-area]: http://www.meetup.com/Rust-Bay-Area/
+[rust-korea]: http://rust-kr.org/
+[rust-skane]: http://www.meetup.com/rust-skane/
 
 
 ## Other documentation
