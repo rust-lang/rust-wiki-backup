@@ -136,11 +136,6 @@ vulnerable to races for in-memory data (data races). Instead of sharing data, me
 passing is used instead - either by copying data, or by moving owned pointers
 between tasks.
 
-There are `several scheduling models available
-<http://static.rust-lang.org/doc/0.6/core/task.html#enum-schedmode>`_, which
-allows for either mapping tasks N:N with OS threads, or using N:M scheduling
-like Go and Erlang for lightweight concurrency.
-
 Exceptions
 ----------
 
