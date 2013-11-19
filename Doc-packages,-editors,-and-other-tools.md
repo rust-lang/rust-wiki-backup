@@ -20,7 +20,8 @@
   * [ianb's Eclipse plugin](https://github.com/ianbollinger/oxide) - Eclipse!
   * [Reidar Sollid's Eclipse plugin](http://reidarsollid.github.com/RustyCage/) - A newer Eclipse plugin.
 * Emacs
-  * included, see `src/etc/`
+  * included, see `src/etc/`. 
+  * Flycheck has support for on-the-fly syntax error detection. Use the Package Manager (ELPA) to install `flycheck-mode`
 * Gedit
   * included, see `src/etc/`
 * Kate
