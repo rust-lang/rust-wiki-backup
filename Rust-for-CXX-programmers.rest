@@ -4,6 +4,7 @@
 Rust for C++ programmers
 ========================
 
+
 Pointers and references
 -----------------------
 
