@@ -49,6 +49,7 @@ meaning of the label and does not think it is self-evident.
 | A-traits                 | Trait system provides bounded polymorphism + OOP  |
 | A-typesystem             | Rust's static type system, type check (aka typeck)|
 | A-versioning             | Version numbers/handling for language + libraries |
+| A-visibility             | Visibility aka privacy: pub/priv on mods/crates   |
 | A-windows                | Related to Microsoft Windows operating system     |
 | &nbsp;                                                                       |
 | *BLOCKER TAGS*           |                                                   |
