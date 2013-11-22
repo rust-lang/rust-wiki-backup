@@ -18,7 +18,7 @@ foo.rs
 
 ```rust
 #[no_std];
-#[allow(ctypes, cstack)];
+#[allow(ctypes)];
 
 extern {
     fn malloc(size: uint) -> *mut u8;
