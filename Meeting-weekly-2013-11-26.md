@@ -1,4 +1,4 @@
-# Agenda 11/25/2013
+# Agenda 11/26/2013
 - Result api redesign (acrichto) https://github.com/mozilla/rust/pull/10364
 - thread_local - https://github.com/mozilla/rust/pull/10312
 - "enum mod" (acrichto) https://github.com/mozilla/rust/issues/10090
@@ -125,7 +125,7 @@
 - larsberg: Do we know anyone who's made LLVM GC work? Corpses of grad students here.
 - nmatsakis: I've heard such a person exists! But it was 2nd hand.
 
-## reducing size of
+## reducing size of NodeId, CrateNum, Name and Mrk
 - pcwalton: 32 bits is plenty
 
 ## strict doc comments
