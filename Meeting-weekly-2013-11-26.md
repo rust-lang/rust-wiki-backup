@@ -11,7 +11,7 @@
 
 # Status (?)
 - pnkfelix: GC, preparing Codemesh talk
-- acrichto: 
+- acrichto: rewriting channels, polishing off static linking, I/O bugs, chase-lev deque.
 - pcwalton: closure reform, "new"
 
 ## LLVM compile speed when bootstrapping
