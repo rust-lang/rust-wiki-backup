@@ -61,16 +61,12 @@ use std::vec;
 #[bench]
 fn bench_sum_1024_ints(b: &mut extra::test::BenchHarness) {
     let v = vec::from_fn(1024, |n| n);
-    do b.iter {
-        v.iter().fold(0, |old, new| old + *new);
-    }
+    b.iter (|| v.iter().fold(0, |old, new| old + *new));
 }
 
 #[bench]
 fn initialise_a_vector(b: &mut extra::test::BenchHarness) {
-    do b.iter {
-         vec::from_elem(1024, 0u64);
-    }
+    b.iter(|| vec::from_elem(1024, 0u64));
     b.bytes = 1024 * 8;
 }
 ```
