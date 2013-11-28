@@ -61,7 +61,7 @@ use std::vec;
 #[bench]
 fn bench_sum_1024_ints(b: &mut extra::test::BenchHarness) {
     let v = vec::from_fn(1024, |n| n);
-    b.iter (|| v.iter().fold(0, |old, new| old + *new));
+    b.iter(|| v.iter().fold(0, |old, new| old + *new));
 }
 
 #[bench]
