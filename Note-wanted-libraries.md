@@ -77,7 +77,7 @@ Do not belong in std.
   * [mneumann/rust-msgpack](https://github.com/mneumann/rust-msgpack)
   * [omasanori/msgpack-rust](https://github.com/omasanori/msgpack-rust)
 * ProtocolBuffers
-  * [stepancheg/rust-protobuf](https://github.com/stepancheg/rust-protobuf)
+  * [stepancheg/rust-protobuf](https://github.com/stepancheg/rust-protobuf):  [<img src="https://travis-ci.org/stepancheg/rust-protobuf.png?branch=master">](https://travis-ci.org/stepancheg/rust-protobuf)
 * S-Expressions
   * [darkf/rust_sexpr](https://github.com/darkf/rust_sexpr)
 * Thrift
