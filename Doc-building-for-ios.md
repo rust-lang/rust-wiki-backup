@@ -18,7 +18,7 @@ rustc --target=arm-apple-darwin foo.rs
 
 * Compilation:
   * Compile twice, with both `-arch armv7` and `-arch armv7s` (A6 processor) ?
-    * See https://github.com/ghc-ios/ghc-ios-scripts/blob/master/arm-apple-darwin10-gcc
+    * See https://github.com/ghc-ios/ghc-ios-scripts/blob/master/arm-apple-darwin10-clang
 * Code:
   * [src/librustc/back/arm.rs](https://github.com/mozilla/rust/blob/master/src/librustc/back/arm.rs)
   * [src/rt/arch/arm/record_sp.S](https://github.com/mozilla/rust/blob/master/src/rt/arch/arm/record_sp.S)
