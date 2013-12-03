@@ -97,7 +97,8 @@ Mozilla employees have a weekly Rust planning meeting on Tuesday mornings at 10:
 * [[Meeting-weekly-2013-10-29]] (segmented stacks; rustpkg; placement new)
 * [[Meeting-weekly-2013-11-05]] (wildcards; libextra; rustpkg; stacks; octal literals; empty enums; vec representation; temp lifetimes)
 * [[Meeting-weekly-2013-11-19]] (static linking; wildcards; task join; autoderef; user-defined vecs)
-* [[Meeting-weekly-2013-11-26]] (boostrap compile speed; mutexes; GC; size of some stuff; strict doc comments; result API)
+* [[Meeting-weekly-2013-11-26]] (bootstrap compile speed; mutexes; GC; size of some stuff; strict doc comments; result API)
+* [[Meeting-weekly-2013-12-03]] (placement new/box keyword; rustpkg; strings; libstdc++)
 
 ## Other meetings:
 
