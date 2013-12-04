@@ -7,4 +7,3 @@ Rust's development is sponsored by Mozilla, which employs several people to work
 | Felix Klock        | pnkfelix   | pnkfelix     | pnkfelix@mozilla.com   |
 | Niko Matsakis      | nmatsakis  | nikomatsakis | nmatsakis@mozilla.com  |
 | Patrick Walton     | pcwalton   | pcwalton     | pcwalton@mozilla.com   |
-| Tim Chevalier      | tjc        | catamorphism | tchevalier@mozilla.com |
