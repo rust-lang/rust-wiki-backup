@@ -30,7 +30,7 @@
 - nmatsakis: If you write:
 ```
  enum mod Foo 
- ```
+```
 Then Foo is bound to the enum type you created, not a fresh module named Foo. Today, a name cannot be bound to both a module and a type.
 - pnkfelix: So Foo would still be how you specify the namespace?
 - nmatsakis: Yes, `Foo::variant_1`, etc. The definition does not desugar into a definition form we have today. I sympathize, but this feels like it is not a high priority for me. Maybe a better keyword choice would help?
