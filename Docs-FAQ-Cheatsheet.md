@@ -1,15 +1,22 @@
-## How do I convert an int to a string?
+## How do I convert *X* to *Y*?
+
+### number to string
 
 ```rust
 let x: int = 42;
 let y: ~str = x.to_str();
-```
 
-## How do I convert a string to an int?
+let a: f64 = 3.14;
+let b: ~str = x.to_str();
+```
+### String to number
 
 ```rust
 let x: Option<int> = from_str("42");
 let y: int = x.unwrap();
+
+let a: Option<f64> = from_str("3.14");
+let b: f64 = x.unwrap();
 ```
 
 
