@@ -51,7 +51,9 @@ let str = "Hello, this is some random string";
 let index: Option<uint> = str.find_str("rand");
 ```
 
-## How do I get the length of a vector?
+## Containers
+
+### How do I get the length of a vector?
 
 The [`Container`](http://static.rust-lang.org/doc/master/std/container/trait.Container.html) trait provides the `len` method.
 
@@ -63,6 +65,16 @@ let w: [u32, .. 3] = [0, 1, 2, 3, 4];
 println!("u: {}, v: {}, w: {}", u.len(), v.len(), w.len()); // 3, 4, 5
 ```
 
+### How do I iterate over a vector?
+
+Use the [`iter`](http://static.rust-lang.org/doc/master/std/vec/trait.ImmutableVector.html#tymethod.iter) method.
+
+```rust
+let values: ~[int] = ~[1, 2, 3, 4, 5];
+for value in values.iter() {
+    println(value.to_str());
+}
+```
 
 # Contributing to this page
 
