@@ -18,6 +18,18 @@ let x: Option<int> = from_str("42");
 let y: int = x.unwrap();
 ```
 
+## How do I get the length of a vector?
+
+The [`Container`](http://static.rust-lang.org/doc/master/std/container/trait.Container.html) trait provides the `len` method.
+
+```rust
+let u: ~[u32] = ~[0, 1, 2];
+let v: &[u32] = &[0, 1, 2, 3];
+let w: [u32, .. 3] = [0, 1, 2, 3, 4];
+
+println!("u: {}, v: {}, w: {}", u.len(), v.len(), w.len()); // 3, 4, 5
+```
+
 
 # Contributing to this page
 
