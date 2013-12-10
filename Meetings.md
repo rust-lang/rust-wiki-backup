@@ -1,6 +1,7 @@
 Mozilla employees have a weekly Rust planning meeting on Tuesday mornings at 10:00 AM Pacific (UTC-8). Minutes are recorded [on Etherpad](https://etherpad.mozilla.org/Rust-meeting-weekly) and then archived here.
 
 ## Weekly meetings:
+* [[Meeting-weekly-2013-12-10]] (enum mod, nightlies, inference, grammar, imports, struct patterns, trailing commas, RevOrd, unwind)
 * [[Meeting-weekly-2013-12-03]] (placement new/box keyword; rustpkg; strings; libstdc++)
 * [[Meeting-weekly-2013-11-26]] (bootstrap compile speed; mutexes; GC; size of some stuff; strict doc comments; result API)
 * [[Meeting-weekly-2013-11-19]] (static linking; wildcards; task join; autoderef; user-defined vecs)
