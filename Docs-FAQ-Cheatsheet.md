@@ -11,3 +11,8 @@ let y: ~str = x.to_str();
 let x: Option<int> = from_str("42");
 let y: int = x.unwrap();
 ```
+
+
+# Contributing to this page
+
+For small examples, have full type annotations, as much as is reasonable, to keep it clear what, exactly, everything is doing.
