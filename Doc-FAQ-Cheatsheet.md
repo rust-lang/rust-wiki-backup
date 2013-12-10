@@ -1,4 +1,12 @@
 ## How do I convert *X* to *Y*?
+### Int to string
+
+Use [`ToStr`](http://static.rust-lang.org/doc/master/std/to_str/trait.ToStr.html).
+
+```rust
+let x: int = 42;
+let y: ~str = x.to_str();
+```
 
 ### Int to string
 
@@ -17,6 +25,17 @@ Use [`FromStr`](http://static.rust-lang.org/doc/master/std/from_str/trait.FromSt
 let x: Option<int> = from_str("42");
 let y: int = x.unwrap();
 ```
+### Int to string, in non-base-10
+
+Use [`ToStrRadix`](http://static.rust-lang.org/doc/master/std/num/trait.ToStrRadix.html).
+
+```rust
+use std::num::ToStrRadix;
+
+let x: int = 42;
+let y: ~str = x.to_str_radix(16);
+```
+
 ### String to int, in non-base-10
 
 Use [`FromStrRadix`](http://static.rust-lang.org/doc/master/std/num/trait.FromStrRadix.html), and its helper function, [`from_str_radix`](http://static.rust-lang.org/doc/master/std/num/fn.from_str_radix.html).
