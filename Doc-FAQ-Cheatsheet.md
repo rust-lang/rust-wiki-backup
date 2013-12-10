@@ -60,7 +60,7 @@ The [`Container`](http://static.rust-lang.org/doc/master/std/container/trait.Con
 ```rust
 let u: ~[u32] = ~[0, 1, 2];
 let v: &[u32] = &[0, 1, 2, 3];
-let w: [u32, .. 3] = [0, 1, 2, 3, 4];
+let w: [u32, .. 5] = [0, 1, 2, 3, 4];
 
 println!("u: {}, v: {}, w: {}", u.len(), v.len(), w.len()); // 3, 4, 5
 ```
