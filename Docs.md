@@ -131,3 +131,4 @@ Some Rust classics:
 * [Tim's presentation at OS Bridge 2013](http://opensourcebridge.org/sessions/970) - And [slides](http://opensourcebridge.org/wiki/2013/Rust%3A_A_Friendly_Introduction)
 * Steve's presentation at RuPy 2013 "Nobody Knows Rust." [slides](http://steveklabnik.github.io/nobody_knows_rust/#/), video to come soon
 * Geoffroy Couprie's [Scala.IO 2013 slides](http://dev.unhandledexpression.com/slides/rust-scalaio/)
+* [Felix's Codemesh 2013 slides](http://pnkfelix.github.io/present-rust-codemesh2013/fklock-rust-codemesh2013.pdf)
