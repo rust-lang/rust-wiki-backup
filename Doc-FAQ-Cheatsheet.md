@@ -40,6 +40,17 @@ let x: Option<int> = from_str_radix("deadbeef", 16);
 let y: int = x.unwrap();
 ```
 
+## String operations
+
+### How do I search for a substring?
+
+Use the [`find_str`](http://static.rust-lang.org/doc/master/std/str/trait.StrSlice.html#tymethod.find_str) method.
+
+```rust
+let str = "Hello, this is some random string";
+let index: Option<uint> = str.find_str("rand");
+```
+
 ## How do I get the length of a vector?
 
 The [`Container`](http://static.rust-lang.org/doc/master/std/container/trait.Container.html) trait provides the `len` method.
