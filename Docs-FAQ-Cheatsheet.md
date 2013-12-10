@@ -1,4 +1,6 @@
-## How do I convert an int to a string?
+## How do I convert *X* to *Y*?
+
+### Int to string
 
 Use [`ToStr`](http://static.rust-lang.org/doc/master/std/to_str/trait.ToStr.html).
 
@@ -7,7 +9,7 @@ let x: int = 42;
 let y: ~str = x.to_str();
 ```
 
-## How do I convert a string to an int?
+### String to int
 
 Use [`FromStr`](http://static.rust-lang.org/doc/master/std/from_str/trait.FromStr.html), and its helper function, [`from_str`](http://static.rust-lang.org/doc/master/std/from_str/fn.from_str.html).
 
