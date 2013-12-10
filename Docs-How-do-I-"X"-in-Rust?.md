@@ -1,4 +1,4 @@
-- Converting an int to a string
+# Converting an int to a string
 
 ```rust
 let x: int = 42;
