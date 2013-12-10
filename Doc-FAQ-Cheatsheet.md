@@ -17,6 +17,16 @@ Use [`FromStr`](http://static.rust-lang.org/doc/master/std/from_str/trait.FromSt
 let x: Option<int> = from_str("42");
 let y: int = x.unwrap();
 ```
+### String to int, in non-base-10
+
+Use [`FromStrRadix`](http://static.rust-lang.org/doc/master/std/num/trait.FromStrRadix.html), and its helper function, [`from_str_radix`](http://static.rust-lang.org/doc/master/std/num/fn.from_str_radix.html).
+
+```rust
+use std::num::from_str_radix;
+
+let x: Option<int> = from_str_radix("deadbeef", 16);
+let y: int = x.unwrap();
+```
 
 ## How do I get the length of a vector?
 
