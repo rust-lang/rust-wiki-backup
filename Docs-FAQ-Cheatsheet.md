@@ -22,3 +22,6 @@ let y: int = x.unwrap();
 # Contributing to this page
 
 For small examples, have full type annotations, as much as is reasonable, to keep it clear what, exactly, everything is doing. Try to link to the API docs, as well.
+
+Similar documents for other programming languages:
+  * http://pleac.sourceforge.net/
