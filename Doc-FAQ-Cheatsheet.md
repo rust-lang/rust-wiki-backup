@@ -40,6 +40,34 @@ let x: Option<int> = from_str_radix("deadbeef", 16);
 let y: int = x.unwrap();
 ```
 
+## File operations
+
+### How do I read from a file?
+
+Use [`File::open`](http://static.rust-lang.org/doc/master/std/io/fs/struct.File.html#method.open) to create a [`File`](http://static.rust-lang.org/doc/master/std/io/fs/struct.File.html) struct, which implements the [`Reader`](http://static.rust-lang.org/doc/master/std/io/trait.Reader.html) trait.
+
+```rust
+use std::path::Path;
+use std::io::fs::File;
+
+let path : Path   = Path::new("Doc-FAQ-Cheatsheet.md");
+let on_error      = || fail!("open of {:?} failed", path);
+let reader : File = File::open(&path).unwrap_or_else(on_error);
+```
+
+## How do I iterate over the lines in a file?
+
+Make a [`BufferedReader`](http://static.rust-lang.org/doc/master/std/io/buffered/struct.BufferedReader.html) on an instance of [`File`](http://static.rust-lang.org/doc/master/std/io/fs/struct.File.html) (or any other implementation of the [`Reader`](http://static.rust-lang.org/doc/master/std/io/trait.Reader.html) trait).  Then use the [`lines`](http://static.rust-lang.org/doc/master/std/io/trait.Buffer.html#method.lines) method it implements from the [`Buffer`](http://static.rust-lang.org/doc/master/std/io/trait.Buffer.html) trait.
+
+```rust
+use std::io::buffered::BufferedReader;
+
+let mut reader = BufferedReader::new(reader);
+for line in reader.lines() {
+    print!("line: {}", line);
+}
+```
+
 ## String operations
 
 ### How do I search for a substring?
