@@ -34,7 +34,7 @@ Do not belong in std.
 
 * [crypto](https://github.com/mozilla/rust/tree/master/src/libextra/crypto)
 * [DaGenix/rust-crypto](https://github.com/DaGenix/rust-crypto): [<img src="https://travis-ci.org/DaGenix/rust-crypto.png?branch=master">](https://travis-ci.org/DaGenix/rust-crypto)
-* [dnaq/sodiumoxide)](https://github.com/dnaq/sodiumoxide): bindings to libsodium
+* [dnaq/sodiumoxide](https://github.com/dnaq/sodiumoxide): bindings to libsodium
 * LibNSS
   * [mletterle/rust-nss](https://github.com/mletterle/rust-nss)
 * OpenSSL
