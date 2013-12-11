@@ -82,7 +82,7 @@
 [[Packaging Terminology|Doc Packaging Terminology]]  
 [[Crate Hashes|Doc crate hashes]] - How Rust generates crate filenames, versions symbols, and why  
 [[Computer Graphics and Game Development]] - Libraries and example projects  
-[Pr&eacute;sentation du langage Rust](http://lea-linux.org/documentations/Rust) - Detailed documentation in French about the langage, with examples  
+[Pr&eacute;sentation du langage Rust](http://lea-linux.org/documentations/Rust) - Detailed documentation in French, with examples  
 [[Building for Android|Doc building for Android]]  
 [[Building for iOS|Doc building for iOS]]  
 
