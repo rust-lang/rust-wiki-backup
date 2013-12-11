@@ -71,10 +71,12 @@ Use the [`iter`](http://static.rust-lang.org/doc/master/std/vec/trait.ImmutableV
 
 ```rust
 let values: ~[int] = ~[1, 2, 3, 4, 5];
-for value in values.iter() {
+for value in values.iter() {  // value: &int
     println(value.to_str());
 }
 ```
+
+(See also [`mut_iter`](http://static.rust-lang.org/doc/master/std/vec/trait.MutableVector.html#tymethod.mut_iter) which yields `&mut int` and [`move_iter`](http://static.rust-lang.org/doc/master/std/vec/trait.OwnedVector.html#tymethod.move_iter) which yields `int` while consuming the `values` vector.)
 
 # Contributing to this page
 
