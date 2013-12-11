@@ -72,7 +72,7 @@ Use the [`iter`](http://static.rust-lang.org/doc/master/std/vec/trait.ImmutableV
 ```rust
 let values: ~[int] = ~[1, 2, 3, 4, 5];
 for value in values.iter() {  // value: &int
-    println(value.to_str());
+    println!("{}", *value);
 }
 ```
 
