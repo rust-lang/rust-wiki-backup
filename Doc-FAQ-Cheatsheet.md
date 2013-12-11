@@ -57,7 +57,7 @@ let reader : File = File::open(&path).unwrap_or_else(on_error);
 
 ## How do I iterate over the lines in a file?
 
-Make a [`BufferedReader`](http://static.rust-lang.org/doc/master/std/io/buffered/struct.BufferedReader.html) on an instance of [`File`](http://static.rust-lang.org/doc/master/std/io/fs/struct.File.html) (or any other implementation of the [`Reader`](http://static.rust-lang.org/doc/master/std/io/trait.Reader.html) trait).  Then use the [`lines`](http://static.rust-lang.org/doc/master/std/io/trait.Buffer.html#method.lines) method it implements from the [`Buffer`](http://static.rust-lang.org/doc/master/std/io/trait.Buffer.html) trait.
+Use the [`lines`](http://static.rust-lang.org/doc/master/std/io/trait.Buffer.html#method.lines) method on a [`BufferedReader`](http://static.rust-lang.org/doc/master/std/io/buffered/struct.BufferedReader.html).
 
 ```rust
 use std::io::buffered::BufferedReader;
