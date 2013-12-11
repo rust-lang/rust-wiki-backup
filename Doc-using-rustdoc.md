@@ -1,3 +1,5 @@
+**This page is out-of-date, see the latest documentation on the subject at http://static.rust-lang.org/doc/master/rustdoc.html**
+
 A rustdoc is just a snippet of markdown that is associated in some way
 with a unit of Rust code. There is very little structure imposed on the
 documentation itself. Unlike javadoc and other tools there is no internal
