@@ -96,6 +96,8 @@ See [[Computer Graphics and Game Development]].
 
 * Cocoa
   * [mozilla-servo/rust-cocoa](https://github.com/mozilla-servo/rust-cocoa)
+* Gtk
+  * [JeremyLetang/rgtk](https://github.com/JeremyLetang/rgtk)
 * ncurses
   * [drhodes/rust-ncurses](https://github.com/drhodes/rust-ncurses)
   * [eevee/amulet](https://github.com/eevee/amulet)
