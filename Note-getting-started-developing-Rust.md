@@ -40,8 +40,6 @@ For Ubuntu 11.10 there seems to be a conflict with texlive-latex-base, per [#169
 
 ### Windows
 
-**Note:** To build Rust < 0.8 on Windows systems using MSYS, MinGW, and **GCC 4.8** please see this temporary in-progress guide: [[Building Rust Before 0.8 on Windows Systems|Note-Building-Rust-Before-0.8-on-Windows-Systems]]
-
 #### Quick Steps for Windows environment setup.
 We recommend developing under [MSYS and MinGW](http://www.mingw.org) using their auto-installer.
 
@@ -68,21 +66,13 @@ We recommend developing under [MSYS and MinGW](http://www.mingw.org) using their
 7. Launch Msys and type `sh /postinstall/pi.sh`  (use `c:/mingw` when asked).
 8. Install Perl with `mingw-get install msys-perl`.
 9. Install wget with `mingw-get install msys-wget`.
-10. (Do the following sub-steps also , until we bundle old dll's or get a workaround)
- * Get old versions of these dlls:
-    * `mingw-get upgrade "g++<4.6"`
-    * `mingw-get upgrade "libpthread=2.8.0-3"`
- *  Copy libgcc_s_dw2-1.dll, libstdc++-6.dll and libpthread-2.dll from `%mingw%\bin` into `%build%\i686-pc-mingw32\stage0\bin`
- * Roll mingw back to the latest: `mingw-get upgrade` 
-11. You can now start the MinGW / Msys Shell from your Desktop or Start Menu.
-12. Scroll down to [Downloading and building Rust](https://github.com/mozilla/rust/wiki/Note-getting-started-developing-Rust#downloading-and-building-rust) section.
+10. You can now start the MinGW / Msys Shell from your Desktop or Start Menu.
+11. Scroll down to [Downloading and building Rust](https://github.com/mozilla/rust/wiki/Note-getting-started-developing-Rust#downloading-and-building-rust) section.
+
+- Currently buildbot uses GCC version < 4.6, although it is known to work GCC 4.7/4.8 except for [small parts](https://github.com/mozilla/rust/issues/9205).
+- It is known that msys make freezes randomly i[f `-jN` option is given](http://sourceforge.net/mailarchive/message.php?msg_id=29801372).
 
 #### More info for Windows users.
-
-**You currently need to ensure that you are using GCC version < 4.6. for the LLVM / Rust build to complete successfully.**
-This is a requirement on Windows 64 bit for LLVM to compile correctly, according to their docs.
-
-Rust will download a git submodule for LLVM during the build and compile it, so you do not need to download LLVM and build it yourself.
 
 Once installed, we tend to work inside the MSYS shell.
 If you are a consistent user of MinGW or plan to be, you might also want to subscribe to their mailing list: [Mingw-users](https://lists.sourceforge.net/lists/listinfo/mingw-users)
