@@ -130,8 +130,8 @@ fn open(Door(name): Door<Closed>) -> Door<Open> {
     Door(name)
 }
 
-close(Door::<Open>(~"front"));   // ok
-close(Door::<Closed>(~"front")); // error: mismatched types: expected `main::Door<main::Open>` but found `main::Door<main::Closed>`
+let _ = close(Door::<Open>(~"front"));   // ok
+let _ = close(Door::<Closed>(~"front")); // error: mismatched types: expected `main::Door<main::Open>` but found `main::Door<main::Closed>`
 ```
 
 # Contributing to this page
