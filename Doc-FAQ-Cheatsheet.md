@@ -123,11 +123,11 @@ Phantom types are useful for enforcing state at compile time. For example:
 struct Door<State>(~str);
 
 fn close(Door(name): Door<Open>) -> Door<Closed> {
-    Door(name)
+    Door::<Closed>(name)
 }
 
 fn open(Door(name): Door<Closed>) -> Door<Open> {
-    Door(name)
+    Door::<Open>(name)
 }
 
 let _ = close(Door::<Open>(~"front"));   // ok
