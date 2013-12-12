@@ -106,6 +106,34 @@ for value in values.iter() {  // value: &int
 
 (See also [`mut_iter`](http://static.rust-lang.org/doc/master/std/vec/trait.MutableVector.html#tymethod.mut_iter) which yields `&mut int` and [`move_iter`](http://static.rust-lang.org/doc/master/std/vec/trait.OwnedVector.html#tymethod.move_iter) which yields `int` while consuming the `values` vector.)
 
+## Type system
+
+### How do I express phantom types in Rust?
+
+[Phantom types](http://www.haskell.org/haskellwiki/Phantom_type) are types that cannot be constructed at compile time. To express these in rust, zero-variant `enum`s can be used:
+
+~~~rust
+enum Open {}
+enum Closed {}
+~~~
+
+Phantom types are useful for enforcing state at compile time. For example:
+
+~~~rust
+struct Door<State>(~str);
+
+fn close(Door(name): Door<Open>) -> Door<Closed> {
+    Door(name)
+}
+
+fn open(Door(name): Door<Closed>) -> Door<Open> {
+    Door(name)
+}
+
+close(Door::<Open>(~"front"))      // ok
+close(Door::<Closed>(~"front"))    // error: mismatched types: expected `main::Door<main::Open>` but found `main::Door<main::Closed>`
+~~~
+
 # Contributing to this page
 
 For small examples, have full type annotations, as much as is reasonable, to keep it clear what, exactly, everything is doing. Try to link to the API docs, as well.
