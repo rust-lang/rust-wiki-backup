@@ -134,4 +134,4 @@ Some Rust classics:
 * Steve's presentation at RuPy 2013 "Nobody Knows Rust." [slides](http://steveklabnik.github.io/nobody_knows_rust/#/), video to come soon
 * Geoffroy Couprie's [Scala.IO 2013 slides](http://dev.unhandledexpression.com/slides/rust-scalaio/)
 * [Felix's Codemesh 2013 slides](http://pnkfelix.github.io/present-rust-codemesh2013/fklock-rust-codemesh2013.pdf)
-* [John Clements, 10-minute talk (video) at SoCal PLS on Rust, Macros, and Hygiene](http://www.youtube.com/audio?v=_KgXy7jnwhY)
+* [John Clements, 10-minute talk (video)](http://www.youtube.com/watch?v=_KgXy7jnwhY) at SoCal PLS on Rust, Macros, and Hygiene.
