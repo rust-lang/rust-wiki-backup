@@ -134,6 +134,28 @@ let _ = close(Door::<Open>(~"front"));   // ok
 let _ = close(Door::<Closed>(~"front")); // error: mismatched types: expected `main::Door<main::Open>` but found `main::Door<main::Closed>`
 ```
 
+## FFI (Foreign Function Interface)
+
+### Representing opaque handles
+
+You might see things like this in C APIs:
+
+```c
+typedef struct Window Window;
+Window* createWindow(int width, int height);
+```
+
+You can use a zero-element `enum` ([phantom type](#how-do-i-express-phantom-types)) to represent the opaque object handle. The FFI would look like this:
+
+```rust
+enum Window {}
+extern "C" {
+    fn createWindow(width: c_int, height: c_int) -> *Window;
+}
+```
+
+Using a phantom type ensures that the handles cannot be (safely) constructed in client code.
+
 # Contributing to this page
 
 For small examples, have full type annotations, as much as is reasonable, to keep it clear what, exactly, everything is doing. Try to link to the API docs, as well.
