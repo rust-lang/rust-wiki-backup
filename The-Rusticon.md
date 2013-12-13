@@ -2,6 +2,7 @@ This is currently a work in progress - feel free to alter or add definitions as 
 
 term | definition
 -----|-----------
+<a name="algebraic_data_type" /> algebraic data type | A type with a set of possible variants. These are declared in Rust using the `enum` keyword. More information can be found on [the Wikipedia article](http://en.wikipedia.org/wiki/Algebraic_data_type).
 <a name="attribute" />attribute | A way of adding metadata to an item. Written as `#[attribute_name]` (other examples being `#[doc="Foo"]`, `#[doc(hidden="true")]`).
 bikeshed | A [highly important discussion](http://www.catb.org/jargon/html/B/bikeshedding.html) about some non-fundamental part of the language (such as syntax or identifier names).
 <a name="borrowed_pointer" /> borrowed pointer | Also known as a "reference". It references an object without taking ownership of it. Has an associated lifetime, to assert that it is always valid.
@@ -24,22 +25,25 @@ managed pointer | `@T`, a pointer to an immutable, garbage-collected box. Also `
 monomorphise | The act of generating specialized versions of generic constructs at compile time to improve run time performance. See [_Whole-Program Compilation in MLton_](http://mlton.org/References.attachments/060916-mlton.pdf) and Niko Matsakis's answer on [Stackoverflow](http://stackoverflow.com/a/14198060).
 newtype struct | A [*tuple structure*](#tuple_structure) with a single unnamed field. For example `struct NodeIndex(int)`. Useful to create wrapper types.
 owned pointer | `~T`, a pointer to an owned box.
+<a name="phantom_type" />phantom type | An `enum` with no variants. This cannot be constructed in safe code. See the [cheetsheet](https://github.com/mozilla/rust/wiki/Doc-FAQ-Cheatsheet#how-do-i-express-phantom-types) for an example.
 raw pointer | `*T`, a pointer to anything. Requires unsafe code to dereference, no static verification is done on them.
 rustdoc | The Rust documentation generator.
 rustc | The Rust source code compiler.
 rusti | The Rust interactive environment.
 rustpkg | The official package manager for Rust programs and libraries.
 sigil | A character placed in front of a type, identifier or literal. In the context of Rust, this usually refers to the pointer symbols: `&`, `~`, `@`, and `*`.
+<a name="record_structure" />record structure | A struct declared with named fields, for example `struct Point { x: f32, y: f32 }`
 stack allocation | All local variables are a stack allocation.
 syntax extension | Code generation at compiletime, broken into three groups: declarative macros, which are described above as `macros`; procedural macros, which are written as Rust code that processes a token tree and produce an AST (currently requires editing the compiler), and attributes.
 task | Rust's fundamental unit of computation. Similar to a thread but far more lightweight.
 trait | Rust's approach to ad-hoc polymorphism, and used for generics and dynamic dispatch. Also known as [type classes](http://en.wikipedia.org/wiki/Type_class).
-<a name="tuple_structure" />tuple structure | A struct declared without named fields, for example `struct Point(f32, f32)`
+<a name="tuple_structure" />tuple structure | A struct declared [without named fields](#record_structure), for example `struct Point(f32, f32)`
 TWiR | This Week in Rust. cmr's [weekly summary](http://cmr.github.io/blog/categories/this-week-in-rust/) of Rust's development.
 <a name="type_hint" />type hint | A syntax like `foo::<int>()` to give an explicit type for a generic function, method or struct constructor. Usually redundant due to type inference.
 <a name="unit_type" />unit type | The unit type, denoted `()`, permits only one value, also denoted `()`. Functions without return value have return type `()`. Sometimes called *nil*.
-unit-like structure | A struct that only has one value, for example `struct Foo;` where `Foo` becomes the name of both the type and its only value. Works just the same as the *unit type* `()`, except it is distinct.
-
+unit structure | A struct that only has one value, for example `struct Foo;` where `Foo` becomes the name of both the type and its only value. Works just the same as the *unit type* `()`, except it is distinct.
+<a name="variant" />variant | One of the set of possible values that can be represented by an `enum`.
+<a name="zero_variant_enum" />zero-variant enum | See [*phantom type*](#phantom_type).
 
 ## Syntaxicon
 
