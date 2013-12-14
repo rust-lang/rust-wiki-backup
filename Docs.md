@@ -41,6 +41,10 @@
 ## Community
 
 * IRC:
+
+    *Note that to guard against botnet attacks we occasionally turn on moderation, disallowing
+    unregistered users from joining or talking. You may need to [register](https://wiki.mozilla.org/IRC#Register_your_nickname) your nickname. Sorry for the inconvenience.*
+
   * [#rust on irc.mozilla.org][pound-rust] - Main Rust channel - general discussion
   * [#rust-internals on irc.mozilla.org][pound-rust-internals] - Rust compiler and library development
   * [#rust-gamedev on irc.mozilla.org][pound-rust-gamedev] - game development in Rust
