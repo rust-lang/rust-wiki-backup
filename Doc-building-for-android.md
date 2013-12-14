@@ -53,14 +53,6 @@ wget -c http://dl.google.com/android/ndk/android-ndk-r9b-linux-x86_64.tar.bz2
 
         adb remount
 
-    Push arm libs and Android GNU STL shared lib
-
-        adb push NDK_TOOLCHAIN_PATH/arm-linux-androideabi/lib/libgnustl_shared.so
-        adb push /usr/local/lib/rustc/arm-unknown-android/libextra-a7c050cfd46b2c9a-0.7.so /system/lib
-        adb push /usr/local/lib/rustc/arm-unknown-android/librustrt.so /system/lib
-        adb push /usr/local/lib/rustc/arm-unknown-android/libstd-6c65cf4b443341b1-0.7.so /system/lib
-        e.g) adb push YOUR_NDK_TOOLCHAIN_PATH/build/x86_64-unknown-linux-gnu/stage2/lib/rustc/arm-linux-androideabi/liblibrustrt.so /system/lib
-
     Push your binary
 
         adb push hello /system/bin
