@@ -12,6 +12,7 @@ If you maintain (or know of) another package that builds with rustpkg, then edit
 * [bjz/noise-rs](https://github.com/bjz/noise-rs) (Procedural noise generation)
 * [bjz/sax-rs](https://github.com/bjz/sax-rs) (XML library bindings)
 * [brson/rust-sdl](https://github.com/brson/rust-sdl) (SDL library bindings)
+* [AngryLawyer/rust-sdl2](https://github.com/AngryLawyer/rust-sdl2) (SDL2 library bindings)
 * [cadencemarseille/rust-pcre](https://github.com/cadencemarseille/rust-pcre) (PCRE library bindings)
 * [chris-morgan/rust-http](https://github.com/chris-morgan/rust-http) (HTTP client and server)
 * [cmr/linalg](https://github.com/cmr/linalg) (Linear algebra library)
