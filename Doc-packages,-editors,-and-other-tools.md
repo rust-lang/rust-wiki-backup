@@ -5,7 +5,7 @@
 * Linux
   * [Arch Linux Official](https://www.archlinux.org/packages/community/x86_64/rust/)
   * [Arch Linux Nightly Build Repository](http://pkgbuild.com/~thestinger/repo/)
-  * [Fedora Copr](http://copr-fe.cloud.fedoraproject.org/coprs/detail/fabiand/rust/) - ([instructions](http://dummdida.blogspot.de/2013/05/mozillas-rust-in-fedoras-ppa-copr.html)) maintained by fabiand
+  * [Fedora Copr](http://copr-fe.cloud.fedoraproject.org/coprs/fabiand/rust-unofficial/) - ([instructions](http://dummdida.blogspot.de/2013/05/mozillas-rust-in-fedoras-ppa-copr.html)) maintained by fabiand
   * [Ubuntu PPA](https://launchpad.net/~hansjorg/+archive/rust)
   * [Gentoo, overlay rust](https://github.com/Heather/gentoo-rust)
 * Mac
