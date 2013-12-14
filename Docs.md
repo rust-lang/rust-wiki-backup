@@ -124,14 +124,14 @@ Some Rust classics:
 
 ## Presentations
 
-* [Dave Herman's StrangeLoop 2012 talk](http://www.infoq.com/presentations/Rust)
-* [A work stealing runtime for Rust](https://air.mozilla.org/2013-intern-todd/) - Aaron Todd's intern presentation on the Rust scheduler
-* [Default methods in Rust](https://air.mozilla.org/intern-presentation-sullivan/) - Michael Sullivan's intern presentation on default methods
-* [Types of Types](https://air.mozilla.org/ben-blum-from-the-research-team-presents-types-of-types-in-rust/) - Ben Blum's intern presentation on 'kinds'
-* [An I/O system for Rust](https://air.mozilla.org/intern-presentations-reed/) - Eric Reed's intern presentation on I/O
-* [Niko's presentation at Northeastern](http://smallcultfollowing.com/babysteps/blog/2013/07/18/rust-presentation-at-northeastern/) - Slides only
-* [Tim's presentation at OS Bridge 2013](http://opensourcebridge.org/sessions/970) - And [slides](http://opensourcebridge.org/wiki/2013/Rust%3A_A_Friendly_Introduction)
-* Steve's presentation at RuPy 2013 "Nobody Knows Rust." [slides](http://steveklabnik.github.io/nobody_knows_rust/#/), video to come soon
-* Geoffroy Couprie's [Scala.IO 2013 slides](http://dev.unhandledexpression.com/slides/rust-scalaio/)
-* [Felix's Codemesh 2013 slides](http://pnkfelix.github.io/present-rust-codemesh2013/fklock-rust-codemesh2013.pdf)
 * [John Clements, 10-minute talk (video)](http://www.youtube.com/watch?v=_KgXy7jnwhY) at SoCal PLS on Rust, Macros, and Hygiene. December 2013.
+* [Felix's Codemesh 2013 slides](http://pnkfelix.github.io/present-rust-codemesh2013/fklock-rust-codemesh2013.pdf)
+* Geoffroy Couprie's [Scala.IO 2013 slides](http://dev.unhandledexpression.com/slides/rust-scalaio/)
+* Steve's presentation at RuPy 2013 "Nobody Knows Rust." [slides](http://steveklabnik.github.io/nobody_knows_rust/#/), video to come soon
+* [Tim's presentation at OS Bridge 2013](http://opensourcebridge.org/sessions/970) - And [slides](http://opensourcebridge.org/wiki/2013/Rust%3A_A_Friendly_Introduction)
+* [Niko's presentation at Northeastern](http://smallcultfollowing.com/babysteps/blog/2013/07/18/rust-presentation-at-northeastern/) - Slides only
+* [An I/O system for Rust](https://air.mozilla.org/intern-presentations-reed/) - Eric Reed's intern presentation on I/O
+* [Types of Types](https://air.mozilla.org/ben-blum-from-the-research-team-presents-types-of-types-in-rust/) - Ben Blum's intern presentation on 'kinds'
+* [Default methods in Rust](https://air.mozilla.org/intern-presentation-sullivan/) - Michael Sullivan's intern presentation on default methods
+* [A work stealing runtime for Rust](https://air.mozilla.org/2013-intern-todd/) - Aaron Todd's intern presentation on the Rust scheduler
+* [Dave Herman's StrangeLoop 2012 talk](http://www.infoq.com/presentations/Rust)
