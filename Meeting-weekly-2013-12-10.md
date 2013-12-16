@@ -12,6 +12,7 @@
 - 'self? (pcwalton)
 
 # Status
+NB: "tvland" refers to remote people in the meeting, since they appear on a TV screen.
 
 - acrichto: landed LTO, fixing races in std::comm, extracting libgreen/libnative
 - pnkfelix: borrowck bugs, GC
