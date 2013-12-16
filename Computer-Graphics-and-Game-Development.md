@@ -30,7 +30,7 @@ Rust is quickly becoming an excellent language for computer graphics and game de
 
 #### Mathematics
 - [cgmath-rs](https://github.com/bjz/cgmath-rs) [<img src="https://travis-ci.org/bjz/cgmath-rs.png?branch=master">](https://travis-ci.org/bjz/cgmath-rs)
-- [nalgebra](https://github.com/sebcrozet/nalgebra)
+- [nalgebra](https://github.com/sebcrozet/nalgebra) [![Build Status](https://travis-ci.org/sebcrozet/nalgebra.png?branch=master)](https://travis-ci.org/sebcrozet/nalgebra)
 - [noise-rs](https://github.com/bjz/noise-rs)
 
 #### Collision Detection, Physics
