@@ -26,7 +26,7 @@ Rust is quickly becoming an excellent language for computer graphics and game de
 
 - [openal-rs](https://github.com/bjz/openal-rs/)
 - [rust-portaudio](https://github.com/JeremyLetang/rust-portaudio)
-- [ears](https://github.com/JeremyLetang/ears) (simple audio API on top of OpenAL)
+- [ears](https://github.com/JeremyLetang/ears) (simple audio API on top of OpenAL) [![Build Status](https://travis-ci.org/JeremyLetang/ears.png?branch=master)](https://travis-ci.org/JeremyLetang/ears)
 
 #### Mathematics
 - [cgmath-rs](https://github.com/bjz/cgmath-rs) [<img src="https://travis-ci.org/bjz/cgmath-rs.png?branch=master">](https://travis-ci.org/bjz/cgmath-rs)
