@@ -42,9 +42,11 @@ Assuming RUST_ROOT is where the Rust source is, and PROJECT_DIR is your project
     RUST_ROOT=~/rust
     RUST_OPTIONS_FILE=$RUST_ROOT/src/compiler/rust/src/etc/ctags.rust
     PROJECT_DIR=~/project
-    ctags-exuberant -e -f TAGS.emacs --options=$RUST_OPTIONS_FILE -R $PROJECT_DIR
+    ctags-exuberant -e -f TAGS.emacs --languages=rust --options=$RUST_OPTIONS_FILE -R $PROJECT_DIR
 ```
-will build the tags table in TAGS.emacs (may take a while if it is a big project like Servo or Rust itself)
+will build the tags table in TAGS.emacs (may take a couple of seconds if it is a big project like Servo or Rust itself).
+
+Note that this only creates tags for Rust files (`--languages=rust`). Otherwise, there are too many name clashes with random structs in C or C++ files.
 
 You can then jump to the definition of any function or struct or enum by using `M-.` (`Alt + .`)
 
