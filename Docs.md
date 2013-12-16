@@ -56,6 +56,7 @@
   * [Rust Bay Area][rust-bay-area]
   * [Rust Korea][rust-korea]
   * [Rust Skåne][rust-skane]
+  * [Rust 中文圈][rust-zh] (on Google+)
 
 [pound-rust]: http://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust
 [pound-rust-internals]: http://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-internals
@@ -67,7 +68,7 @@
 [rust-bay-area]: http://www.meetup.com/Rust-Bay-Area/
 [rust-korea]: http://rust-kr.org/
 [rust-skane]: http://www.meetup.com/rust-skane/
-
+[rust-zh]: https://plus.google.com/communities/100629002107624231185/
 
 ## Other documentation
 
