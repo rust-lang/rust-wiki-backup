@@ -2,11 +2,9 @@ Development policy for Rust.
 
 ## Contributions and commit access
 
-We request that contributions are made via pull request and review. Core contributors (those with direct push access to github.com/mozilla/rust.git) will review and integrate your work. Note that **everyone gets reviewed**, even those with direct push access. Upon review, pull requests are tested and merged automatically by our integration bot, [bors](https://github.com/bors).
+We request that contributions are made via pull request and review. Note that *all patches from all contributors get reviewed*. After a pull request is made other contributors will offer feedback, and if the patch passes review someone with official review privileges will accept it with an "r+" comment. Upon successful review, pull requests are tested and merged automatically by our integration bot, [bors](http://buildbot.rust-lang.org/bors/bors.html). When pull requests fail integration testing authors are expected to update their pull requests to address the failures until the tests pass and the pull request merges successfully.
 
-If your contribution is nontrivial, we ask that you [file a Mozilla "committer agreement"](https://www.mozilla.org/hacking/notification/). This is a short (1-page) legal agreement that asserts certain claims of originality, absence of conflict with other agreements, and similar terms associated with licensing and authorization. If you already have Level 1 or higher commit rights within the Mozilla project, you have already filled out such a form.
-
-Direct push access to the github.com/mozilla/rust.git repository should only be necessary if you want to take on review, integration and other "janitorial" work as part of your day-to-day contribution to the project. If so, please discuss it with the other core contributors through IRC or email.
+Those with review privileges or direct push access are required to [file a Mozilla "committer agreement"](https://www.mozilla.org/hacking/notification/). This is a short (1-page) legal agreement that asserts certain claims of originality, absence of conflict with other agreements, and similar terms associated with licensing and authorization. If you already have Level 1 or higher commit rights within the Mozilla project, you have already filled out such a form. *Committer agreements are generally only required for reviewers and those with direct push access to the master repository, though we will occasionally also request agreements for large, non-trivial contributions.* If you would like to be a reviewer then please discuss in with one of the [core contributors](Note-core-team) through IRC or email.
 
 ## Getting involved: how to pick your first bug
 
