@@ -37,7 +37,7 @@ Rust is quickly becoming an excellent language for computer graphics and game de
 
 - [bullet-rs](https://github.com/bjz/bullet-rs/) - pretty rudimentary, needs a proper C++ wrapper
 - [ncollide](https://github.com/sebcrozet/ncollide)
-- [nphysics](https://github.com/sebcrozet/nphysics)
+- [nphysics](https://github.com/sebcrozet/nphysics) [![Build Status](https://travis-ci.org/sebcrozet/nphysics.png?branch=master)](https://travis-ci.org/sebcrozet/nphysics)
 - [roft (softbody simulation)](https://github.com/natal/roft/)
 
 #### Import/Export
