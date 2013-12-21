@@ -19,7 +19,7 @@ The rust test suite has several sets of tests for different purposes. As the com
     will just not execute any tests. For more precise control, call
     `make` on one of the targets below.
 * Run without parallelism: `make check RUST_TEST_TASKS=1` - This can make it easier to understand failure output.
-* Build and test std without re-bootstrapping: `make check-stage1-std NO_REBUILD=1` - This makes the build/test cycle **much** faster.
+* Build and test std without re-bootstrapping: `make check-stage1-std NO_REBUILD=1` - This makes the build/test cycle **much** faster. (Note: `NO_REBUILD` can also prevent compile tests from being rebuilt. If you want to rebuild those but not the compiler, look for files with the `.ok` extension in the `tmp` subdirectory and remove the appropriate ones.)
 
 These options can be combined.  For instance, `make check CHECK_XFAILS=1 TESTNAME=test/run-pass/foobar.rs` runs the xfailed test `foobar.rs` in the `run-pass` directory.
 
