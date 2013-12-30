@@ -13,10 +13,8 @@ See [[Containers]].
 We want compression/decompression support for TAR and ZIP file formats.
 
 * [alexcrichton/rust-compress](https://github.com/alexcrichton/rust-compress): compression algorithms, all written in rust [<img src="https://travis-ci.org/alexcrichton/rust-compress.png?branch=master">](https://travis-ci.org/alexcrichton/rust-compress)
-* [erickt/rustzlib](https://github.com/erickt/rustzlib): libzlib bindings.
-  * Status: last commit in December 2012
+* [erickt/rustzlib](https://github.com/erickt/rustzlib): libzlib bindings
 * [thestinger/rust-snappy](https://github.com/thestinger/rust-snappy): libsnappy bindings
-  * Status: last commit in September 2013
 
 ## Computation
 
