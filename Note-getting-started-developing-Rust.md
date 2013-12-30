@@ -22,7 +22,7 @@ Version numbers listed here are "what we're using"; the code may well work with 
 
 ### Memory usage
 
-The Rust build peaks at around 1.5 GiB, so at least that much memory should be available for the build to avoid excessive swapping or out-of-memory. If you only have 2 GiB of RAM total, you may have a difficult time building Rust while doing anything else, such as using a browser.
+The Rust build peaks at around 1.3 GiB, so at least that much memory should be available for the build to avoid excessive swapping or out-of-memory. If you only have 2 GiB of RAM total, you may have a difficult time building Rust while doing anything else, such as using a browser.
 
 ### Debian-based Linux distributions
 
