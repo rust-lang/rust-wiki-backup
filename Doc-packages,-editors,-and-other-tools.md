@@ -38,6 +38,8 @@
   * included, see `src/etc/`. Syntastic has syntax error matching based on rustc.
 * NEdit
   * [NEdit syntax highlighting for Rust](https://mail.mozilla.org/pipermail/rust-dev/2013-September/005822.html)
+* Notepad++
+  * [Notepad++ syntax highlighting](https://github.com/pfalabella/Rust-notepadplusplus)
 
 ## And more!
 
