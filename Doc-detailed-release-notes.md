@@ -14,7 +14,7 @@ closure type syntax, procs and onceness, do, future unboxedness
 
 ### Changes to libraries and linkage
 
-#[link] -> #[crate_id], static libraries, LTO
+`#[link]` -> `#[crate_id]`, static libraries, LTO
 
 ### Runtime improvements and I/O
 
