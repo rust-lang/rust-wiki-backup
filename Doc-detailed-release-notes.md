@@ -14,7 +14,62 @@ closure type syntax, procs and onceness, do, future unboxedness
 
 ### Changes to libraries and linkage
 
-`#[link]` -> `#[crate_id]`, static libraries, LTO
+This release brought many changes to how rust libraries and native libraries link together. The compiler now supports a much larger set of functionality when dealing with static and dynamic linkage with both rust and native libraries.
+
+#### Naming a rust crate
+
+The `#[link]` attribute at the *crate level* has been deprecated in favor of the `#[crate_id]` attribute. Crates should now name themselves like:
+
+```rust
+#[crate_id = "foo#0.9"];
+```
+
+This indicates that the crate is named `foo` with a version number of `0.9`. Some other examples of crate attributes are:
+
+| `crate_id` | path | name | version |
+|------------|------|------|---------|
+| `foo`      | foo  | foo  | 0.0     |
+| `foo#1.0`  | foo  | foo  | 1.0     |
+| `github.com/foo/bar;foo#1.0`  | github.com/foo/bar | foo  | 1.0     |
+
+#### Linking Rust crates
+
+Before 0.9, generating a rust library meant that a dynamic library was always generated, and all rust crates were linked to one another dynamically. As of 0.9, the compiler can now generate static rust libraries so that there will be no dynamic rust dependencies. Detailed documentation can be found [in the rust manual](http://static.rust-lang.org/doc/master/rust.html#linkage).
+
+There are now more flavors of rust crates which can be generated, summarized here:
+
+* `bin` - an executable
+* `dylib` - a dynamic rust library
+* `rlib` - a static rust library. An `rlib` is Rust's version of a `libfoo.a` file, and is used to statically link libraries together. 
+* `staticlib` - a static archive used to integrate rust into an existing application
+
+Each of these flavors can be passed to the compiler via flags (`--bin`, `--rlib`, etc), and they may also be an attribute inside the crate (`#[crate_type = "staticlib"]`). The compiler can generate multiple outputs simultaneously if more than one format is specified.
+
+#### Linking native libraries
+
+Native libraries are now supported as first-class citizens in rust. Usage of the `link_args` attribute to link native libraries is deprecated and now behind a feature gate (`feature(link_args)`). Native libraries are now linked with a `#[link]` attribute (different than the deprecated crate version) on `extern` blocks. Examples are shown below:
+
+```rust
+// Dynamically link to a native library called "foo"
+#[link(name = "foo")]
+extern {
+    fn foo_function();
+}
+
+// Statically link to a native library called "bar"
+#[link(name = "bar", kind = "static")]
+extern {
+    fn bar_function();
+}
+
+// Dynamically link to an OSX framework called "baz"
+#[link(name = "baz", kind = "framework")]
+extern {
+    fn baz_function();
+}
+```
+
+With the advent of linking to static native libraries, it is now possible to have a native library that is purely a build dependency and need not be distributed alongside the rust library.
 
 ### Runtime improvements and I/O
 
