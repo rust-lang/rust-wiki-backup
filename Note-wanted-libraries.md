@@ -93,16 +93,19 @@ See [[Computer Graphics and Game Development]].
 
 * Cocoa
   * [mozilla-servo/rust-cocoa](https://github.com/mozilla-servo/rust-cocoa)
+* Curses
+  * [pnkfelix/rust-curses](https://github.com/pnkfelix/rust-curses)
 * Gtk
   * [JeremyLetang/rgtk](https://github.com/JeremyLetang/rgtk)
 * ncurses
+  * [doomsplayer/ncurses-rust](https://github.com/doomsplayer/ncurses-rust)
   * [drhodes/rust-ncurses](https://github.com/drhodes/rust-ncurses)
   * [eevee/amulet](https://github.com/eevee/amulet)
-  * [jeaye/ncurses-rs](https://github.com/jeaye/ncurses-rs): [<img src="https://travis-ci.org/jeaye/ncurses-rs.png?branch=master">](https://travis-ci.org/jeaye/ncurses-rs)
+  * [jeaye/ncurses-rs](https://github.com/jeaye/ncurses-rs): [![Build Status](https://travis-ci.org/jeaye/ncurses-rs.png?branch=master)](https://travis-ci.org/jeaye/ncurses-rs.png)
 * Termbox
   * [apribadi/rust-termbox](https://github.com/apribadi/rust-termbox)
 * wxWidgets
-  * [kenz-gelsoft/wxRust](https://github.com/kenz-gelsoft/wxRust): [<img src="https://travis-ci.org/kenz-gelsoft/wxRust.png?branch=master">](https://travis-ci.org/kenz-gelsoft/wxRust)
+  * [kenz-gelsoft/wxRust](https://github.com/kenz-gelsoft/wxRust): [![Build Status](https://travis-ci.org/kenz-gelsoft/wxRust.png?branch=master)](https://travis-ci.org/kenz-gelsoft/wxRust)
 	  
 ## IO
  * AIO, SIO, stdio
