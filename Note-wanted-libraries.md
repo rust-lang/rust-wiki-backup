@@ -1,4 +1,6 @@
-[Travis CI Status](http://hiho.io/rust-ci/)
+See also:
+* [Known packages that build with rustpkg](https://github.com/mozilla/rust/wiki/Rustpkg)
+* [Travis CI Status](http://hiho.io/rust-ci/)
 
 ## Audio
 
@@ -120,7 +122,10 @@ See [[Computer Graphics and Game Development]].
  * See [issue #4630](https://github.com/mozilla/rust/issues/4630)
  
 ## Mathematics
-  * [bjz/lmath-rs](https://github.com/bjz/lmath-rs)
+
+* [bjz/cgmath-rs](https://github.com/bjz/cgmath-rs) (Linear algebra and math library for graphics)
+* [bjz/lmath-rs](https://github.com/bjz/lmath-rs)
+* [cmr/linalg](https://github.com/cmr/linalg) (Linear algebra library)
 
 ## Misc
 * low-level OS services
