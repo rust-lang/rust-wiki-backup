@@ -25,9 +25,9 @@ rustc --target=arm-apple-darwin foo.rs
 
 ## Resources
 
-* https://github.com/mozilla/rust/issues/6170
 * [ARM Machine Directives](http://stuff.mit.edu/afs/athena/project/rhel-doc/3/rhel-as-en-3/arm-directives.html): `.align`
 * [Building a GHC cross-compiler for Apple iOS targets](http://ghc.haskell.org/trac/ghc/wiki/Building/CrossCompiling/iOS)
+* [CMOSS](https://github.com/mevansam/cmoss/tree/master/build-ios): scripts for building cross-platform c/c++ open source software libraries for iOS and Android.
 * [Cross-compilation using Clang](http://clang.llvm.org/docs/CrossCompilation.html)
 * [[Doc building for android]]
 * [environ.7](https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man7/environ.7.html): `_NSGetEnviron()`
