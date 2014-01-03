@@ -1,4 +1,4 @@
-Compilation currently does not link, see [#10384](https://github.com/mozilla/rust/issues/10384).
+Compilation currently is not successful, see the [open issues](https://github.com/mozilla/rust/issues?labels=A-iOS&milestone=13&page=1&state=open).
 
 You need XCode 5.
 
