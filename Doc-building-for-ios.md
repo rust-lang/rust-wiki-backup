@@ -14,7 +14,9 @@ make VERBOSE=1
 rustc --target=arm-apple-darwin foo.rs
 ```
 
-## Current adjustments
+## Adjustments
+
+### Current adjustments
 
 For the current adjustments:
 * see for ```arm-apple-darwin``` in [mk/platform.mk](https://github.com/mozilla/rust/blob/master/mk/platform.mk)
