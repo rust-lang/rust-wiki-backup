@@ -4,7 +4,7 @@ You need XCode 5.
 
 1. Build Rust:
 ```
-mkdir build; cd build
+mkdir build_ios; cd build_ios
 ../configure --target=arm-apple-darwin
 make VERBOSE=1
 ```
