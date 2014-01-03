@@ -14,7 +14,14 @@ make VERBOSE=1
 rustc --target=arm-apple-darwin foo.rs
 ```
 
-### Possible adjustments
+## Current adjustments
+
+For the current adjustments, see
+* [mk/platform.mk](https://github.com/mozilla/rust/blob/master/mk/platform.mk)
+* [mk/rt.mk](https://github.com/mozilla/rust/blob/master/mk/rt.mk)
+* in the source files grep for [```__APPLE__```](https://github.com/mozilla/rust/search?q=__APPLE__&ref=cmdform)
+
+### Possible future adjustments
 
 * Compilation:
   * Compile twice, with both `-arch armv7` and `-arch armv7s` (A6 processor) ?
