@@ -17,8 +17,8 @@ rustc --target=arm-apple-darwin foo.rs
 ## Current adjustments
 
 For the current adjustments, see
-* [mk/platform.mk](https://github.com/mozilla/rust/blob/master/mk/platform.mk)
-* [mk/rt.mk](https://github.com/mozilla/rust/blob/master/mk/rt.mk)
+* see for ```arm-apple-darwin``` in [mk/platform.mk](https://github.com/mozilla/rust/blob/master/mk/platform.mk)
+* see for ```apple-darwin``` in [mk/rt.mk](https://github.com/mozilla/rust/blob/master/mk/rt.mk)
 * in the source files grep for [```__APPLE__```](https://github.com/mozilla/rust/search?q=__APPLE__&ref=cmdform)
 
 ### Possible future adjustments
