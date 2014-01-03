@@ -30,3 +30,4 @@ If you maintain (or know of) another package that builds with rustpkg, then edit
 * [sfackler/rust-postgres](https://github.com/sfackler/rust-postgres) (PostgreSQL driver)
 * [sfackler/rust-ssl](https://github.com/sfackler/rust-ssl) (SSL bindings)
 * [rust-htmlescape](https://github.com/veddan/rust-htmlescape) (HTML entity encoding library)
+* [rust-msgpack](https://github.com/mneumann/rust-msgpack) (Msgpack.org implementation)
