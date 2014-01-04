@@ -59,6 +59,10 @@ Do not belong in std.
   * [luisbg/rust-datetime](https://github.com/luisbg/rust-datetime)
   * [tedhorst/rust_datetime](https://github.com/tedhorst/rust_datetime)
   
+## Embedded Languages
+* Lua
+  * [kballard/rust-lua](https://github.com/kballard/rust-lua) (Lua 5.1): [<img src="https://travis-ci.org/kballard/rust-lua.png?branch=master">](https://travis-ci.org/kballard/rust-lua)
+
 ## Encoding
 * [Base64](https://github.com/mozilla/rust/blob/master/src/libextra/base64.rs)
 * Cap'n Proto
