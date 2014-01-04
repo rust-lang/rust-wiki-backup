@@ -28,6 +28,8 @@
 * [Manual](http://doc.rust-lang.org/doc/master/rust.html) ([PDF](http://doc.rust-lang.org/doc/master/rust.pdf))  
 * [Standard library](http://doc.rust-lang.org/doc/master/std/index.html)  
 * [Extra library](http://doc.rust-lang.org/doc/master/extra/index.html)
+* [libgreen](http://static.rust-lang.org/doc/master/green/index.html)
+* [libnative](http://static.rust-lang.org/doc/master/native/index.html)
 * [Package manager](http://doc.rust-lang.org/doc/master/rustpkg.html)
 
 ## FAQs
