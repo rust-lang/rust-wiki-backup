@@ -34,7 +34,7 @@ For the current adjustments:
 
 ## Resources
 
-* [ARM Machine Directives](http://stuff.mit.edu/afs/athena/project/rhel-doc/3/rhel-as-en-3/arm-directives.html): `.align`
+* [ARM Machine Directives](https://sourceware.org/binutils/docs/as/ARM-Directives.html):
 * [Building a GHC cross-compiler for Apple iOS targets](http://ghc.haskell.org/trac/ghc/wiki/Building/CrossCompiling/iOS)
 * [CMOSS](https://github.com/mevansam/cmoss/blob/master/build-ios/build-all.sh): scripts for building cross-platform c/c++ open source software libraries for iOS and Android.
 * [Cross-compilation using Clang](http://clang.llvm.org/docs/CrossCompilation.html)
