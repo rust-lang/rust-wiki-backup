@@ -44,7 +44,7 @@ Do not belong in std.
 
 * NoSql
   * LevelDB
-      * [lht/rust-leveldb](https://github.com/lht/rust-leveldb)
+      * [thestinger/rust-leveldb](https://github.com/thestinger/rust-leveldb)
   * MongoDB
       * [10gen-interns/mongo-rust-driver-prototype](https://github.com/10gen-interns/mongo-rust-driver-prototype)
   * Redis
