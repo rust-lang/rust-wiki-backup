@@ -161,6 +161,11 @@ See [[Computer Graphics and Game Development]].
 * ZeroMQ
   * [erickt/rust-zmq](https://github.com/erickt/rust-zmq):  [<img src="https://travis-ci.org/erickt/rust-zmq.png?branch=master">](https://travis-ci.org/erickt/rust-zmq)
 
+## Operating system specific
+
+* Windows
+  * [klutzy/rust-windows](https://github.com/klutzy/rust-windows): Win32/Win64 wrapper for Rust
+
 ## Parser Generator
 
 * [erickt/ragel](https://github.com/erickt/ragel)
