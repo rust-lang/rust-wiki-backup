@@ -28,6 +28,6 @@ If you maintain (or know of) another package that builds with rustpkg, then edit
 * [mozilla-servo/rust-xlib](https://github.com/mozilla-servo/rust-xlib) (Xlib bindings for Rust)
 * [omasanori/msgpack-rust](https://github.com/omasanori/msgpack-rust) (Rust implementation of MessagePack)
 * [sfackler/rust-postgres](https://github.com/sfackler/rust-postgres) (PostgreSQL driver)
-* [sfackler/rust-ssl](https://github.com/sfackler/rust-ssl) (SSL bindings)
+* [sfackler/rust-openssl](https://github.com/sfackler/rust-openssl) (OpenSSL bindings)
 * [rust-htmlescape](https://github.com/veddan/rust-htmlescape) (HTML entity encoding library)
 * [rust-msgpack](https://github.com/mneumann/rust-msgpack) (Msgpack.org implementation)
