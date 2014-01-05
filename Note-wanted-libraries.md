@@ -48,7 +48,8 @@ Do not belong in std.
   * MongoDB
       * [10gen-interns/mongo-rust-driver-prototype](https://github.com/10gen-interns/mongo-rust-driver-prototype)
   * Redis
-      * [mneumann/rust-redis](https://github.com/mneumann/rust-redis)
+      * [mneumann/rust-redis](https://github.com/mneumann/rust-redis) [<img src="https://travis-ci.org/mneumann/rust-redis.png?branch=master">](https://travis-ci.org/mneumann/rust-redis)
+  * Sqlite
 * SQL
   * PostgreSql
       * [sfackler/rust-postgres](https://github.com/sfackler/rust-postgres): [<img src="https://travis-ci.org/sfackler/rust-postgres.png?branch=master">](https://travis-ci.org/sfackler/rust-postgres)
