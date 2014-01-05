@@ -77,7 +77,7 @@ Do not belong in std.
     * [veddan/rust-htmlescape](https://github.com/veddan/rust-htmlescape):  [<img src="https://travis-ci.org/veddan/rust-htmlescape.png?branch=master">](https://travis-ci.org/veddan/rust-htmlescape)
 * [JSON](https://github.com/mozilla/rust/blob/master/src/libextra/json.rs)
 * MsgPck
-  * [mneumann/rust-msgpack](https://github.com/mneumann/rust-msgpack):  [<img src="https://travis-ci.org/mneumann/rust-msgpack?branch=master">](https://travis-ci.org/mneumann/rust-msgpack)
+  * [mneumann/rust-msgpack](https://github.com/mneumann/rust-msgpack):  [<img src="https://travis-ci.org/mneumann/rust-msgpack.png?branch=master">](https://travis-ci.org/mneumann/rust-msgpack)
   * [omasanori/msgpack-rust](https://github.com/omasanori/msgpack-rust)
 * ProtocolBuffers
   * [stepancheg/rust-protobuf](https://github.com/stepancheg/rust-protobuf):  [<img src="https://travis-ci.org/stepancheg/rust-protobuf.png?branch=master">](https://travis-ci.org/stepancheg/rust-protobuf)
