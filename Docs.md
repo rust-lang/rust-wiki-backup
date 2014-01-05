@@ -42,6 +42,7 @@
 
 ## Community
 
+* [[Community libraries]]
 * IRC:
 
     *Note that to guard against botnet attacks we occasionally turn on moderation, disallowing
