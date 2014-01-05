@@ -40,8 +40,6 @@ We want compression/decompression support for TAR and ZIP file formats.
   
 ## Database Access
 
-Do not belong in std.
-
 * NoSql
   * LevelDB
       * [thestinger/rust-leveldb](https://github.com/thestinger/rust-leveldb)
