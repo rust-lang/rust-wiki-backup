@@ -86,6 +86,8 @@ Do not belong in std.
   * [darkf/rust_sexpr](https://github.com/darkf/rust_sexpr)
 * Thrift
   * see https://github.com/mozilla/rust/issues/1677
+* TOML
+  * [mneumann/rust-toml](https://github.com/mneumann/rust-toml)
 * Tnetstring
   * [erickt/rust-tnetstring](https://github.com/erickt/rust-tnetstring):  [<img src="https://travis-ci.org/erickt/rust-tnetstring.png?branch=master">](https://travis-ci.org/erickt/rust-tnetstring)
 * XML
