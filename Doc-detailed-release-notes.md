@@ -2,7 +2,34 @@ This page covers releases in more detail than the bullet-point list given in the
 
 ## 0.9 January 2014
 
-### The deprecation of `@` and its alternatives
+### The deprecation of `@`, its alternatives, and interior mutability
+
+As part of the final sequence of major language changes, Rust is being overhauled to have fewer baked-in pointer types, and be more extensible to custom pointer types (smart pointers). In this release what have previously been termed 'managed boxes' or 'managed pointers' - the pointer type preceded with the `@` sigil - have been deprecated and placed behind a feature gate. Although you may regain access to these types by applying the `#[feature(managed_boxes)];` attribute to a crate, managed boxes will be completely removed very soon, so all code should begin transitioning to the `Rc` or `Gc` types now included in the standard library.
+
+`Rc` is a reference counted pointer located in `std::rc`, and `Gc` is *intended* to be a garbage collected pointer, located in `std::gc`. `Gc` is currently just a wrapper around `@`, which is reference counted.
+
+Here's an example of using `Rc` and `Gc`.
+
+```
+use std::rc::Rc;
+use std::gc::Gc;
+
+fn main() {
+    let rc1 = Rc::new(1);
+    let rc2 = rc1.clone();
+    println!("{}", *rc1.borrow() + *rc2.borrow());
+
+    let gc1 = Gc::new(1);
+    let gc2 = gc1.clone();
+    println!("{}", *gc1.borrow() + *gc2.borrow());
+}
+```
+
+Note that to get the value inside one of these boxes you first call the `borrow()` method, which returns `&T`, then dereference *that*. This is indeed verbose, but in the future Rust will provide an overloadable dereference operator to make these operations easier.
+
+In addition to the deprecation of `@`, `@mut` has been completely removed from the language.
+
+TODO
 
 ### The future of interior mutability
 
