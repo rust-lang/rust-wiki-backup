@@ -108,6 +108,31 @@ for value in values.iter() {  // value: &int
 
 ## Type system
 
+### How do I store a function in a struct?
+
+```rust
+struct Foo {
+    myfunc: fn(int, uint) -> i32
+}
+
+struct FooClosure<'a> {
+    myfunc: 'a |int, uint| -> i32
+}
+
+fn a(a: int, b: uint) -> i32 {
+    (a as uint + b) as i32
+}
+
+fn main() {
+    let f = Foo { myfunc: a };
+    let g = FooClosure { myfunc: |a, b|  { (a - b as int) as i32 } };
+    println!("{}", (f.myfunc)(1, 2));
+    println!("{}", (g.myfunc)(3, 4));
+}
+```
+
+Note that the parenthesis surrounding `f.myfunc` are necessary: they are how Rust disambiguates field lookup and method call. The `'a` on `FooClosure` is the lifetime of the closure's environment pointer.
+
 ### How do I express phantom types?
 
 [Phantom types](http://www.haskell.org/haskellwiki/Phantom_type) are those that cannot be constructed at compile time. To express these in Rust, zero-variant `enum`s can be used:
