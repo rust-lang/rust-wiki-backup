@@ -154,6 +154,7 @@ See [[Computer Graphics and Game Development]].
 * GUID
 * HTTP
     * [rust-http](https://github.com/chris-morgan/rust-http):  [<img src="https://travis-ci.org/chris-morgan/rust-http.png?branch=master">](https://travis-ci.org/chris-morgan/rust-http)
+    * [WebeWizard/libhttpd](https://github.com/WebeWizard/libhttpd)
 * [URI/URL](https://github.com/mozilla/rust/blob/master/src/libextra/url.rs)
     * [SimonSapin/rust-url](https://github.com/SimonSapin/rust-url)
 * [UUID](https://github.com/mozilla/rust/blob/master/src/libextra/uuid.rs)
