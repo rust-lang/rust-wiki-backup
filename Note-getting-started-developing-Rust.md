@@ -36,7 +36,7 @@ build HTML docs on Ubuntu, you'll need to install pandoc manually
 according to the [installation
 instructions](http://johnmacfarlane.net/pandoc/installing.html).
 
-For Ubuntu 11.10 there seems to be a conflict with texlive-latex-base, per [#1692](https://github.com/mozilla/rust/issues/1692).
+For Ubuntu users willing to build LaTeX doc; you might need to additionally install `lmodern` font package, see [#1692](https://github.com/mozilla/rust/issues/3989).
 
 ### Windows
 
