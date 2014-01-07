@@ -164,3 +164,10 @@ With this way, I fear it'd be too easy to screw up and allow the function to be 
 fn f1<%e>(blk: fn() effect(%e)) effect(%e) wont(X)
 fn f2    (blk: fn()           )            wont(X)
 ```
+
+
+### question about design style
+(added by carter / @cartazio )
+it seems like the current proposed design is partly a work around to the lack of higher kinded types. Would some of the features of this proposal be easier in that context? Theres some pretty good modern work in that context, both wrt the Disciple language http://disciple.ouroborus.net/ and Edwin Brady's Eff work for modelling effects in Idris https://edwinb.wordpress.com/2013/03/28/programming-and-reasoning-with-algebraic-effects-and-dependent-types/ http://eb.host.cs.st-andrews.ac.uk/drafts/effects.pdf
+
+I realize these works are all respectively focused on different points in the effects typing space/language space, they seem to provide better syntactic support for effects. 
