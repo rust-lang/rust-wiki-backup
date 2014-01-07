@@ -1,0 +1,1 @@
+https://github.com/mozilla/rust/wiki/Meeting-weekly-2014-01-07
