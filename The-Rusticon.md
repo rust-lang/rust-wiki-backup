@@ -29,7 +29,6 @@ owned pointer | `~T`, a pointer to an owned box.
 raw pointer | `*T`, a pointer to anything. Requires unsafe code to dereference, no static verification is done on them.
 rustdoc | The Rust documentation generator.
 rustc | The Rust source code compiler.
-rusti | The Rust interactive environment.
 rustpkg | The official package manager for Rust programs and libraries.
 sigil | A character placed in front of a type, identifier or literal. In the context of Rust, this usually refers to the pointer symbols: `&`, `~`, `@`, and `*`.
 <a name="record_structure" />record structure | A struct declared with named fields, for example `struct Point { x: f32, y: f32 }`
@@ -52,7 +51,7 @@ What is the syntax called?
 syntax | name
 -------|-----------
 `()` | The [*unit type*](#unit_type).
-`'static`, `'self`, `'a` | A *lifetime*. May also be used to name a `loop` or a `for` clause.
+`'static`, `'a` | A *lifetime*. May also be used to name a `loop` or a `for` clause.
 `~T` | If `T` is a type, an *owned pointer* to `T`.
 `&T`, `&'a T` | If `T` is a type, a [*borrowed pointer*](#borrowed_pointer) to `T`, possibly with a *lifetime*.
 `~fn()` | An owned [*closure*](#closure).
