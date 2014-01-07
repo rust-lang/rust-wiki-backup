@@ -25,7 +25,7 @@
 ## Friend of the Tree
 
 - brson: Vadim Chugunov has contributed to Rust since June. He has done a lot of work that we have been putting of. He has fixed numerous bugs on Windows, including fixing our test suite. He also got us working with newer versions of MinGW. Recently, he also completely elmininated our dependency on C++ by rewriting our exception handling. Make sure to thank him!
-- all: <clapping!> 
+- all: (clapping!)
 
 ## 0.9 & PRs
 
