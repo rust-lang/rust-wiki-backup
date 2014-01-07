@@ -133,7 +133,65 @@ With the advent of linking to static native libraries, it is now possible to hav
 
 ### Runtime improvements and I/O
 
-Talk about new runtime extensibilility, how to use I/O.
+The rust runtime has received yet another round of lots of love for the 0.9 release. You'll find that lots of things have been moved around, but all functionality should still exist in one form or another. Major components of the 0.9 release was a complete I/O overhaul and a complete `std::comm` (channels) overhaul.
+
+#### I/O movement
+
+All I/O now lives in the top-level `std::io` module with sub-functionality underneath it. This is mostly a movement of the old `std::rt::io` to `std::io`, but some interfaces have been improved and tweaked along the way.
+
+Most of the "filesystem functionality" in 0.8 was spread out across std::os, std::rt::io, std::path and friends. This has now all been consolidated into std::io::fs. For green threads, none of this continues to use a blocking implementation (it's all an appropriate libuv implementation).
+
+#### `std::comm` rewrite
+
+In addition to an I/O update, the `std::comm` interface has been completely overhauled and redone. You'll find that all the old traits are gone, oneshots are gone, and `SharedChan` is no longer constructed from `Chan`. The new channels are much faster than their older counterparts, and the constructors are now done through the types rather than top-level functions.
+
+```rust
+let (p, c) = Chan::new();
+c.send(());
+p.recv();
+
+let (p, c) = SharedChan::new();
+let c2 = c.clone();
+c2.send(());
+p.recv();
+```
+
+You'll also find that the `std::comm::select` module supports selection over channels, but the interface is not fully baked yet. You can see an example usage of the macro defined in that module for using `select!`, but it is not currently available to all programs.
+
+A major improvement of channels from before is that they now work seamlessly in and out green and native modes. You must have a local rust Task to receive on a channel (that's how it knows to block), but you can send on a channel from essentially any context.
+
+#### libgreen vs libnative
+
+All I/O implementations have been refactored into two separate libraries, libgreen and libnative. The green-threading library (libgreen) is a libuv-backed implementation of all I/O (just refactored outside of libstd). The native-threading library (libnative) is a pthread/libc-backed implementation of all I/O (much of it new code).
+
+You can explicitly link to one or the other in order to use I/O handles, but this is not recommended. If a library or application is compiled against libstd, then it will work seamlessly among native and green threads with no modifications.
+
+Details on how to use libgreen and libnative can be found in a [mailing list post](https://mail.mozilla.org/pipermail/rust-dev/2013-December/007565.html), and more extensive documentation will be available for the next release (a few portions are still in flux).
+
+For now, libgreen is still used as the default for booting programs, but it is planned that for the 1.0 release of Rust to use libnative by default.
+
+#### `start_on_main_thread`
+
+Users of the old `start_on_main_thread` function should now use code similar to this:
+
+```rust
+extern mod native;
+
+#[start]
+fn start(argc: int, argv: **u8) -> int {
+    do native::start(argc, argv) {
+        main();
+    }
+}
+
+fn main() {
+    // This function is running on the main native thread
+}
+```
+
+Keep in mind that not all I/O is implemented for native threads at this time. Missing components are timers, signals, unix sockets, and DNS.
+
+Note that this code will probably look different in the future (opting into a main-thread libnative startup).
 
 ## 0.8 September 2013
 
