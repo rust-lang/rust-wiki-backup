@@ -27,13 +27,26 @@ fn main() {
 
 Note that to get the value inside one of these boxes you first call the `borrow()` method, which returns `&T`, then dereference *that*. This is indeed verbose, but in the future Rust will provide an overloadable dereference operator to make these operations easier.
 
-In addition to the deprecation of `@`, `@mut` has been completely removed from the language.
+In addition to the deprecation of `@`, `@mut` has been completely removed from the language. The new `Cell` and `RefCell` types in `std::cell` can be used to introduce interior mutability to any types; `Gc<RefCell<T>>` is the equivalent of `@mut T`. The difference between `Cell` and `RefCell` is that `RefCell` features dynamic borrowing, by which the interior can be borrowed with the `borrow` method, and additional borrows are prevented dynamically at runtime. The `Cell` type in contrast only allows access through a copying getter and mutation through a setter; it has no dynamic borrowing, but is limited to POD types (plain old data). In practice, we've found that dynamic borrowing is a common source of errors when dealing with mutable types with complex lifecycles, so it's probably preferable to use `Cell` over `RefCell` when possible.
 
-TODO
+```
+let x = Cell::new(10);
+assert_eq!(x.get(), 10);
+x.set(20);
+assert_eq!(x.get(), 20);
 
-### The future of interior mutability
+let y = Cell::new((30, 40));
+assert_eq!(y.get(), (30, 40));
+```
 
-@mut, Cell, RefCell
+```
+let x = RefCell::new(0);
+x.with_mut(|x| *x += 1);
+let b = x.borrow();
+assert_eq!(1, *b.get());
+```
+
+This change again makes dealing with non-owned boxes more verbose. The next few releases will involve a lot of continued work overhauling how pointers work in Rust, so expect to see improvements to usability in the near future.
 
 ### Changes to closures
 
