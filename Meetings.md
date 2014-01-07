@@ -1,6 +1,7 @@
 Mozilla employees have a weekly Rust planning meeting on Tuesday mornings at 10:00 AM Pacific (UTC-8). Minutes are recorded [on Etherpad](https://etherpad.mozilla.org/Rust-meeting-weekly) and then archived here.
 
 ## Weekly meetings:
+* [[Meeting-weekly-2013-01-07]] (Friend of the Tree; 0.9; XP; channels; conduct; failure; Rc; guard pages; loadable syntax extensions; foo_opt)
 * [[Meeting-weekly-2013-12-17]] (0.9; attribute enums; pkgid; extern mod; extern crate; return in closures; option/result apis; stdlib hierarchy; push/pop/shift/unshift)
 * [[Meeting-weekly-2013-12-10]] (enum mod, nightlies, inference, grammar, imports, struct patterns, trailing commas, RevOrd, unwind)
 * [[Meeting-weekly-2013-12-03]] (placement new/box keyword; rustpkg; strings; libstdc++)
