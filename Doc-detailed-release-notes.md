@@ -50,7 +50,27 @@ This change again makes dealing with non-owned boxes more verbose. The next few 
 
 ### Changes to closures
 
-closure type syntax, procs and onceness, do, future unboxedness
+Closures have changed extensively, on the surface. `~fn`, `&fn`, and `@fn` have all been removed. `&'a fn()` is now written `'a ||`. That is, closure types now look like their declaration. Another example, `&fn(int, int) -> uint` is now `|int, int| -> uint`. Additionally, plain functions can now be written as `fn()` rather than `extern fn()`. `fn(int, int) -> uint` is now a valid type.
+
+Another function type, `proc()` has been added. This represents functions which can only be called once, and are similar to `~once fn`. Their environment is stored on the heap. One can move into a `proc`. They are primarily used for task bodies. `do` now works exclusively with `proc`s. Example: `proc(int, int) -> uint`. A longer example:
+
+```rust
+use std::io::File;
+use std::io::buffered::BufferedReader;
+
+fn main() {
+    let f = BufferedReader::new(File::open(&Path::new("rust_is_awesome.txt")).unwrap());
+    do std::task::spawn() {
+        let mut f = f; // this is a move!;
+        let l = f.read_line();
+        println!("{}", l);
+    }
+}
+```
+
+Uses of the other closure types (`~fn`, `@fn`) should instead use trait objects.
+
+todo: future unboxedness
 
 ### Changes to libraries and linkage
 
