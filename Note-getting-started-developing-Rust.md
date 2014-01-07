@@ -36,7 +36,7 @@ build HTML docs on Ubuntu, you'll need to install pandoc manually
 according to the [installation
 instructions](http://johnmacfarlane.net/pandoc/installing.html).
 
-For Ubuntu users willing to build LaTeX doc; you might need to additionally install `lmodern` font package, see [#1692](https://github.com/mozilla/rust/issues/3989).
+For Ubuntu users willing to build LaTeX doc; you might need to additionally install `lmodern` font package, see [#3989](https://github.com/mozilla/rust/issues/3989).
 
 ### Windows
 
