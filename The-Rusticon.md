@@ -58,7 +58,7 @@ syntax | name
 `||`, `|T| -> U` | A borrowed [*closure*](#closure). 
 `&[T]`, `&'a [T]` | A vector *slice* with element type `T` and possibly with a *lifetime*.
 `~[T]` | A vector.
-`[T, ..n]` | A *fixed length vector* of length `n`.
+`[T, ..n]` | A *array* (sometimes I know as a "fixed length vector") of length `n`.
 `~Trait:Send` | A *trait object* where `:Send` are the *trait bounds*.
 `foo!()` | Either a [*macro*](#macro) or *syntax extension*.
 `#[xyz]` | An [*attribute*](#attribute).
