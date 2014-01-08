@@ -56,9 +56,10 @@ syntax | name
 `~T` | If `T` is a type, an *owning pointer* to `T`, and the pointer is to an *owned box*.
 `&T`, `&'a T` | If `T` is a type, a [*reference*](#reference) to `T`, possibly with a *lifetime* (`'a`).
 `||`, `|T| -> U` | A borrowed [*closure*](#closure). 
-`&[T]`, `&'a [T]` | A vector *slice* with element type `T` and possibly with a *lifetime*.
+`&[T]`, `&'a [T]` | An (immutable) *slice* with element type `T` and possibly with a *lifetime*.
+`&mut [T]`, `&'a mut [T]` | A *mutable slice* with element type `T` and possibly with a *lifetime*. One can modify the elements of the slice.
 `~[T]` | A vector.
-`[T, ..n]` | A *array* (sometimes I know as a "fixed length vector") of length `n`.
+`[T, ..n]` | A *array* (sometimes also known as a "fixed length vector") of length `n`.
 `~Trait:Send` | A *trait object* where `:Send` are the *trait bounds*.
 `foo!()` | Either a [*macro*](#macro) or *syntax extension*.
 `#[xyz]` | An [*attribute*](#attribute).
