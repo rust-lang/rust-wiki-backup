@@ -37,7 +37,7 @@
 * [[Language FAQ|Doc language FAQ]]  
 * [[Project FAQ|Doc project FAQ]]  
 * [[Usage FAQ|Doc usage FAQ]]
-* [[Code cheatsheet|Doc FAQ Cheatsheet]] - "How do I do X?"
+* [Code cheatsheet](http://static.rust-lang.org/doc/master/complement-cheatsheet.html) - "How do I do X?"
 * [[HOWTO submit a bug report|HOWTO submit a Rust bug report]]
 
 ## Community
