@@ -4,6 +4,23 @@ This is an archive of all the existing Rust release artifacts. Each release is s
 [pre-0.8-key]: http://www.rust-lang.org/rust-key-old.gpg.ascii
 [pre-0.5-key]: http://www.rust-lang.org/rust-key-very-old.gpg.ascii
 
+
+## 0.8
+
+* [Announcement][0.9-announce]
+* [Release notes][0.9-notes]
+* [Source code][0.9-tar] ([signature][0.9-tar-sig])
+* [Windows installer][0.9-exe] ([signature][0.9-exe-sig])
+* [Documentation][0.9-docs]
+
+[0.9-notes]: https://github.com/mozilla/rust/blob/0.9/RELEASES.txt
+[0.9-tar]: http://static.rust-lang.org/dist/rust-0.9.tar.gz
+[0.9-tar-sig]: http://static.rust-lang.org/dist/rust-0.9.tar.gz.asc
+[0.9-exe]: http://static.rust-lang.org/dist/rust-0.9-install.exe
+[0.9-exe-sig]: http://static.rust-lang.org/dist/rust-0.9-install.exe.asc
+[0.9-rustpkg-manual]: http://doc.rust-lang.org/doc/0.9/rustpkg.html
+[0.9-docs]: http://doc.rust-lang.org/doc/0.9/index.html
+
 ## 0.8
 
 * [Announcement][0.8-announce]
