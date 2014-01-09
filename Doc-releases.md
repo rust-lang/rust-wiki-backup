@@ -13,7 +13,7 @@ This is an archive of all the existing Rust release artifacts. Each release is s
 * [Windows installer][0.9-exe] ([signature][0.9-exe-sig])
 * [Documentation][0.9-docs]
 
-[0.9-announce]:
+[0.9-announce]: http://rust-lang.org
 [0.9-notes]: https://github.com/mozilla/rust/blob/0.9/RELEASES.txt
 [0.9-tar]: http://static.rust-lang.org/dist/rust-0.9.tar.gz
 [0.9-tar-sig]: http://static.rust-lang.org/dist/rust-0.9.tar.gz.asc
