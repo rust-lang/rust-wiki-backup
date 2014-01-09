@@ -9,6 +9,7 @@ Additional supplementary documentation is maintained here on the wiki.
 
 [[Releases|Doc releases]] - Links to current and old releases and documentation  
 [[Detailed release notes|Doc detailed release notes]] - Further explanation of language changes  
+[[Community libraries]] - A curated list of external libraries for Rust  
 [[Rust for C++ programmers|Rust for CXX programmers]] - A cheat sheet  
 [[Rusticon|The Rusticon]] - A glossary of terms commonly used in Rust and Rust tools.  
 [[Unit testing|Doc unit testing]] - Writing tests and running them with the built-in test driver  
@@ -28,7 +29,6 @@ Additional supplementary documentation is maintained here on the wiki.
 
 ## Community
 
-* [[Community libraries]]
 * IRC:
 
     *Note that to guard against botnet attacks we occasionally turn on moderation, disallowing
