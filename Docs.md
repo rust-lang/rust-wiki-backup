@@ -1,46 +1,9 @@
-## Reference docs
+Rust's primary documentation, including the tutorial, guides and manual, are on the rust-lang.org website.
 
-#### Current (0.8)
+* [Master](http://static.rust-lang.org/doc/master/index.html) - documentation for the 'master' branch of the git repository.
+* [Release 0.9](http://static.rust-lang.org/doc/0.9/index.html) - documentation for the latest release.
 
-* [Tutorial](http://doc.rust-lang.org/doc/0.8/tutorial.html)  
-  * [borrowed pointers](http://doc.rust-lang.org/doc/0.8/tutorial-borrowed-ptr.html) |
-    [conditions](http://doc.rust-lang.org/doc/0.8/tutorial-conditions.html) |
-    [containers & iterators](http://doc.rust-lang.org/doc/0.8/tutorial-container.html) |
-    [ffi](http://doc.rust-lang.org/doc/0.8/tutorial-ffi.html) |
-    [macros](http://doc.rust-lang.org/doc/0.8/tutorial-macros.html) |
-    [rustpkg](http://doc.rust-lang.org/doc/0.8/tutorial-rustpkg.html) |
-    [tasks](http://doc.rust-lang.org/doc/0.8/tutorial-tasks.html)
-* [Manual](http://doc.rust-lang.org/doc/0.8/rust.html) ([PDF](http://doc.rust-lang.org/doc/0.8/rust.pdf))  
-* [Standard library](http://doc.rust-lang.org/doc/0.8/std/index.html)  
-* [Extra library](http://doc.rust-lang.org/doc/0.8/extra/index.html)
-* [Package manager](http://doc.rust-lang.org/doc/0.8/rustpkg.html)
-
-#### In-development (git master)
-
-* [Tutorial](http://doc.rust-lang.org/doc/master/tutorial.html) ([PDF](http://doc.rust-lang.org/doc/master/tutorial.pdf))  
-  * [borrowed pointers](http://doc.rust-lang.org/doc/master/guide-borrowed-ptr.html) |
-    [conditions](http://doc.rust-lang.org/doc/master/guide-conditions.html) |
-    [containers & iterators](http://doc.rust-lang.org/doc/master/guide-container.html) |
-    [ffi](http://doc.rust-lang.org/doc/master/guide-ffi.html) |
-    [macros](http://doc.rust-lang.org/doc/master/guide-macros.html) |
-    [rustpkg](http://doc.rust-lang.org/doc/master/guide-rustpkg.html) |
-    [tasks](http://doc.rust-lang.org/doc/master/guide-tasks.html)
-* [Manual](http://doc.rust-lang.org/doc/master/rust.html) ([PDF](http://doc.rust-lang.org/doc/master/rust.pdf))  
-* [Standard library](http://doc.rust-lang.org/doc/master/std/index.html)  
-* [Extra library](http://doc.rust-lang.org/doc/master/extra/index.html)
-* [libgreen](http://static.rust-lang.org/doc/master/green/index.html)
-* [libnative](http://static.rust-lang.org/doc/master/native/index.html)
-* [Package manager](http://doc.rust-lang.org/doc/master/rustpkg.html)
-
-## FAQs
-
-* [[Language FAQ|Doc language FAQ]]  
-* [[Project FAQ|Doc project FAQ]]  
-* [[Usage FAQ|Doc usage FAQ]]
-* [[HOWTO submit a bug report|HOWTO submit a Rust bug report]]
-
-### In-development (git master)
-* [Code cheatsheet](http://static.rust-lang.org/doc/master/complement-cheatsheet.html) - "How do I do X?"
+Additional supplementary documentation is maintained here on the wiki.
 
 ## Community
 
