@@ -5,6 +5,27 @@ Rust's primary documentation, including the tutorial, guides and manual, are on 
 
 Additional supplementary documentation is maintained here on the wiki.
 
+## Other documentation
+
+[[Releases|Doc releases]] - Links to current and old releases and documentation  
+[[Detailed release notes|Doc detailed release notes]] - Further explanation of language changes  
+[[Rust for C++ programmers|Rust for CXX programmers]] - A cheat sheet  
+[[Rusticon|The Rusticon]] - A glossary of terms commonly used in Rust and Rust tools.  
+[[Unit testing|Doc unit testing]] - Writing tests and running them with the built-in test driver  
+[[Using rustpkg|Rustpkg]] - Managing packages  
+[[Using rustdoc|Doc using rustdoc]] - How to extract Markdown and HTML documentation from code  
+[Package documentation](http://docs.octayn.net/) - Documentation for rust packages  
+[[Continuous integration|Doc continuous integration]] - Test your GitHub-hosted packages with Travis CI  
+[[Reading and writing files|Doc Reading and writing files]]  
+[[Attributes|Doc attributes]] - The role of metadata in Rust code, with descriptions of many applications  
+[[Packages, editors, and other tools|Doc packages, editors, and other tools]]  
+[[Packaging Terminology|Doc Packaging Terminology]]  
+[[Crate Hashes|Doc crate hashes]] - How Rust generates crate filenames, versions symbols, and why  
+[[Computer Graphics and Game Development]] - Libraries and example projects  
+[Pr&eacute;sentation du langage Rust](http://lea-linux.org/documentations/Rust) - Detailed documentation in French, with examples  
+[[Building for Android|Doc building for Android]]  
+[[Building for iOS|Doc building for iOS]]  
+
 ## Community
 
 * [[Community libraries]]
@@ -38,26 +59,6 @@ Additional supplementary documentation is maintained here on the wiki.
 [rust-skane]: http://www.meetup.com/rust-skane/
 [rust-zh]: https://plus.google.com/communities/100629002107624231185/
 
-## Other documentation
-
-[[Releases|Doc releases]] - Links to current and old releases and documentation  
-[[Detailed release notes|Doc detailed release notes]] - Further explanation of language changes  
-[[Rust for C++ programmers|Rust for CXX programmers]] - A cheat sheet  
-[[Rusticon|The Rusticon]] - A glossary of terms commonly used in Rust and Rust tools.  
-[[Unit testing|Doc unit testing]] - Writing tests and running them with the built-in test driver  
-[[Using rustpkg|Rustpkg]] - Managing packages  
-[[Using rustdoc|Doc using rustdoc]] - How to extract Markdown and HTML documentation from code  
-[Package documentation](http://docs.octayn.net/) - Documentation for rust packages  
-[[Continuous integration|Doc continuous integration]] - Test your GitHub-hosted packages with Travis CI  
-[[Reading and writing files|Doc Reading and writing files]]  
-[[Attributes|Doc attributes]] - The role of metadata in Rust code, with descriptions of many applications  
-[[Packages, editors, and other tools|Doc packages, editors, and other tools]]  
-[[Packaging Terminology|Doc Packaging Terminology]]  
-[[Crate Hashes|Doc crate hashes]] - How Rust generates crate filenames, versions symbols, and why  
-[[Computer Graphics and Game Development]] - Libraries and example projects  
-[Pr&eacute;sentation du langage Rust](http://lea-linux.org/documentations/Rust) - Detailed documentation in French, with examples  
-[[Building for Android|Doc building for Android]]  
-[[Building for iOS|Doc building for iOS]]  
 
 ## Blogs
 
