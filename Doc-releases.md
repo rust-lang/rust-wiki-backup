@@ -5,7 +5,7 @@ This is an archive of all the existing Rust release artifacts. Each release is s
 [pre-0.5-key]: http://www.rust-lang.org/rust-key-very-old.gpg.ascii
 
 
-## 0.8
+## 0.9
 
 * [Announcement][0.9-announce]
 * [Release notes][0.9-notes]
@@ -13,6 +13,7 @@ This is an archive of all the existing Rust release artifacts. Each release is s
 * [Windows installer][0.9-exe] ([signature][0.9-exe-sig])
 * [Documentation][0.9-docs]
 
+[0.9-announce]:
 [0.9-notes]: https://github.com/mozilla/rust/blob/0.9/RELEASES.txt
 [0.9-tar]: http://static.rust-lang.org/dist/rust-0.9.tar.gz
 [0.9-tar-sig]: http://static.rust-lang.org/dist/rust-0.9.tar.gz.asc
