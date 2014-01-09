@@ -134,6 +134,8 @@ Some Rust classics:
 
 ## Presentations
 
+* [Bay Area Meetup, December 2013](https://air.mozilla.org/rust-meetup-december-2013/) - Alex Crichton - Channel Performance; Steve Klabnik - documentation; Chris Morgan - documentation; Luqman Aden - Minecraft chat client.
+* [Bay Area Meetup, November 2013](https://air.mozilla.org/sprocketnes-practical-systems-programming-in-rust/) - Brian Anderson - Rust community; Patrick Walton - SprocketNES; Frank Denis - Rust at OpenDNS; Yehuda Katz - Embedding Rust in C.
 * [John Clements, 10-minute talk (video)](http://www.youtube.com/watch?v=_KgXy7jnwhY) at SoCal PLS on Rust, Macros, and Hygiene. December 2013.
 * [Felix's Codemesh 2013 slides](http://pnkfelix.github.io/present-rust-codemesh2013/fklock-rust-codemesh2013.pdf)
 * Geoffroy Couprie's [Scala.IO 2013 slides](http://dev.unhandledexpression.com/slides/rust-scalaio/)
