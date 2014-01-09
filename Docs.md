@@ -1,4 +1,4 @@
-Rust's primary documentation, including the tutorial, guides and manual, are on the rust-lang.org website.
+Rust's primary documentation, including the tutorial, guides and manual, are on the Rust website.
 
 * [Master](http://static.rust-lang.org/doc/master/index.html) - documentation for the 'master' branch of the git repository.
 * [Release 0.9](http://static.rust-lang.org/doc/0.9/index.html) - documentation for the latest release.
