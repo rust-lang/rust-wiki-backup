@@ -1,4 +1,4 @@
-As of release 0.9, Rust still depends on GCC for platform linker and C runtime libraries, so you will need to install one before installing Rust itself.
+As of release 0.9, Rust still depends on GCC for platform linker and C runtime libraries, so you will need to install one before installing Rust itself. Follow these instructions to set up the environment, then run the [installer][installer].
 
 ## MinGW
 The standard way of running Rust on Windows is via the [MinGW/MSYS](http://www.mingw.org/) environment:
@@ -23,4 +23,6 @@ If you are feeling a bit adventurous, you may also try using a standalone MinGW 
 
 ## Install Rust
 
-Now just run [the installer](http://static.rust-lang.org/dist/rust-0.9-install.exe)
+Now just run the [installer].
+
+[installer]: http://static.rust-lang.org/dist/rust-0.9-install.exe
