@@ -1,7 +1,7 @@
 As of release 0.9, Rust still depends on GCC for platform linker and C runtime libraries, so you will need to install one:
 
 ## MinGW
-The standard way of using Rust on Windows is to install the [MinGW/MSYS](http://www.mingw.org/) environment:
+The standard way of running Rust on Windows is via the [MinGW/MSYS](http://www.mingw.org/) environment:
 
 1. Click "Downloads" at the top of the page, download and run mingw-get-setup.exe.
 2. Once the package manager window opens, check the "mingw32-base" option.
