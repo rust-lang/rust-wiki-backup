@@ -7,7 +7,8 @@ The standard way of running Rust on Windows is via the [MinGW/MSYS](http://www.m
 2. Once package manager window opens, check the "mingw32-base" option.
 3. Optionally, check "msys-base" to install MSYS shell.
 4. Apply changes (Installation/Apply Changes).
-5. Use Rust compiler from MSYS shell, if you installed it (bonus: rustc will output colored error messages!).  Or, simply add \<mingw\>\bin to your PATH and use it from the Windows Command Prompt.
+5. Use Rust compiler from MSYS shell (\<mingw\>\msys\1.0\msys.bat), if you installed it (bonus: rustc will output colored error messages!).  
+Or, simply add \<mingw\>\bin to your PATH and use it from the Windows Command Prompt.
 
 For the absolutely minimal installed footprint, don't mark any packages for installation, but simply run `mingw-get install gcc` from the command prompt.
 
