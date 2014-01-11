@@ -36,6 +36,7 @@
   * [dyluke's textmate bundle](https://github.com/DylanLukes/Rust.tmbundle) - Rust TextMate mode
 * Vim
   * included, see `src/etc/`. Syntastic has syntax error matching based on rustc.
+  * [wting's rust.vim syntax](https://github.com/wting/rust.vim) - Vundle compatible plugin updated daily.
 * NEdit
   * [NEdit syntax highlighting for Rust](https://mail.mozilla.org/pipermail/rust-dev/2013-September/005822.html)
 * Notepad++
