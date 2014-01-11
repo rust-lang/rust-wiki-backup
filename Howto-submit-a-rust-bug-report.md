@@ -1,0 +1,1 @@
+[This page has moved](http://static.rust-lang.org/doc/master/complement-bugreport.html)
