@@ -31,7 +31,7 @@
   * [drrb's NetBeans Plugin](https://github.com/drrb/rust-netbeans) - Rust NetBeans Plugin
 * SublimeText
   * [kib2's SublimeText2 language file](http://kib2.free.fr/Falcon/blog/25-01-2012-SublimeText2-Rust.html) - Highlighting for SublimeText 2
-  * [dbp's SublimeText2](https://github.com/dbp/sublime-rust) - Probably more up to date than the above.
+  * [dbp's SublimeText2 (now maintained by jhasse)](https://github.com/jhasse/sublime-rust) - Probably more up to date than the above.
 * TextMate
   * [dyluke's textmate bundle](https://github.com/DylanLukes/Rust.tmbundle) - Rust TextMate mode
 * Vim
