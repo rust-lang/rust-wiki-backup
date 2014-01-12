@@ -73,6 +73,7 @@ Wanted library: [[Lib datetime]]
 * Character Encoding
     * [lifthrasiir/rust-encoding](https://github.com/lifthrasiir/rust-encoding): [<img src="https://travis-ci.org/lifthrasiir/rust-encoding.png?branch=rust-0.9-pre">](https://travis-ci.org/lifthrasiir/rust-encoding)
 * CSV
+  * [Geal/rust-csv](https://github.com/Geal/rust-csv): [<img src="https://travis-ci.org/Geal/rust-csv.png?branch=master">](https://travis-ci.org/Geal/rust-csv)
   * [grahame/rust-csv](https://github.com/grahame/rust-csv)
   * [koko1000ban/rust-csv-parser](https://github.com/koko1000ban/rust-csv-parser)
 * HTML
