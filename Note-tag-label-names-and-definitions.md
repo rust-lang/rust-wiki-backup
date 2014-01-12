@@ -68,7 +68,7 @@ meaning of the label and does not think it is self-evident.
 | I-crash                  | Importance: Rust runtime/program is crashing      |
 | I-enhancement            | Importance: Potential tools/language enhancement  |
 | I-nominated              | Importance: Nominated for a milestone             |
-| I-papercut               | ? |
+| I-papercut               | Importance: easily fixable usability bug          |
 | I-slow                   | Importance: slow (in compile or running time)     |
 | I-wishlist               | Importance: would be nice but can do without      |
 | I-wrong                  | Importance: behavior does not match specification |
