@@ -14,7 +14,7 @@ Rust is quickly becoming an excellent language for computer graphics and game de
 [![Build Status](https://travis-ci.org/AngryLawyer/rust-sdl2.png?branch=master)](https://travis-ci.org/AngryLawyer/rust-sdl2)
 - [sfml](https://github.com/JeremyLetang/rust-sfml) [<img src="https://travis-ci.org/JeremyLetang/rust-sfml.png?branch=master">](https://travis-ci.org/JeremyLetang/rust-sfml)
 - [rust-glut](https://github.com/mozilla-servo/rust-glut)
-- [RustAllegro](https://github.com/SiegeLord/RustAllegro)
+- [RustAllegro](https://github.com/SiegeLord/RustAllegro) [![Build Status](https://travis-ci.org/SiegeLord/RustAllegro.png?branch=master)](https://travis-ci.org/SiegeLord/RustAllegro)
 - [ncurses-rs](https://github.com/jeaye/ncurses-rs) [<img src="https://travis-ci.org/jeaye/ncurses-rs.png?branch=master">](https://travis-ci.org/jeaye/ncurses-rs)
 
 #### OpenGL
