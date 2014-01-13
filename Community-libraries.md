@@ -153,8 +153,11 @@ See [[Computer Graphics and Game Development]].
 
 * GUID
 * HTTP
+    * [Earlz/rustymvc](https://github.com/Earlz/rustymvc)
     * [rust-http](https://github.com/chris-morgan/rust-http):  [<img src="https://travis-ci.org/chris-morgan/rust-http.png?branch=master">](https://travis-ci.org/chris-morgan/rust-http)
     * [WebeWizard/libhttpd](https://github.com/WebeWizard/libhttpd)
+    * [wycats/route-recognizer.rs](https://github.com/wycats/route-recognizer.rs)
+    * [wycats/routed-http.rs](https://github.com/wycats/routed-http.rs)
 * [URI/URL](https://github.com/mozilla/rust/blob/master/src/libextra/url.rs)
     * [SimonSapin/rust-url](https://github.com/SimonSapin/rust-url)
 * [UUID](https://github.com/mozilla/rust/blob/master/src/libextra/uuid.rs)
