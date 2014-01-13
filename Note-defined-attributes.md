@@ -1,6 +1,8 @@
 This page catalogs the item attributes known to the compiler or used by convention.
 See [Rust Reference Manual](http://static.rust-lang.org/doc/master/rust.html#attributes) for documentation of frequently used attributes.
 
+Note: there is much overlap between this page and [[Doc attributes]], which is older, potentially out-of-date, but potentially of use.
+
 Crate
 -----
 
