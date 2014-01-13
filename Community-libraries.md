@@ -98,7 +98,10 @@ Wanted library: [[Lib datetime]]
 
 ## Graphics
 
-See [[Computer Graphics and Game Development]].
+* Gnuplot
+   * [SiegeLord/RustGnuplot] (https://github.com/SiegeLord/RustGnuplot) [![Build Status](https://travis-ci.org/SiegeLord/RustGnuplot.png)](https://travis-ci.org/SiegeLord/RustGnuplot)
+
+See also [[Computer Graphics and Game Development]].
 
 ## GUI
 
