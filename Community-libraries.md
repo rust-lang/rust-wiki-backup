@@ -185,13 +185,14 @@ See [[Computer Graphics and Game Development]].
 ## Regular Expressions
 See https://github.com/mozilla/rust/issues/3591
 
+* [glennsl/rust-re](https://github.com/glennsl/rust-re)
 * [sanxiyn/rree](https://github.com/sanxiyn/rree)
 * PCRE
   * [cadencemarseille/rust-pcre](https://github.com/cadencemarseille/rust-pcre): [![cadencemarseille/rust-pcre Build Status](https://travis-ci.org/cadencemarseille/rust-pcre.png?branch=master)](https://travis-ci.org/cadencemarseille/rust-pcre)
   * [erickt/rustpcre](https://github.com/erickt/rustpcre)
-  * [glennsl/rust-re](https://github.com/glennsl/rust-re)
-  * [nickdesaulniers/rust-re2](https://github.com/nickdesaulniers/rust-re2): re2 bindings
   * [uasi/rust-pcre](https://github.com/uasi/rust-pcre):  [<img src="https://travis-ci.org/uasi/rust-pcre.png?branch=master">](https://travis-ci.org/uasi/rust-pcre)
+* re2
+  * [nickdesaulniers/rust-re2](https://github.com/nickdesaulniers/rust-re2): re2 bindings
 
 ## String manipulation
 * Slicing w/o copy, stringref
