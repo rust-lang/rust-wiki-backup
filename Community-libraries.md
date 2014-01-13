@@ -152,17 +152,19 @@ See [[Computer Graphics and Game Development]].
 ## Networking
 
 * GUID
-* HTTP
-    * [Earlz/rustymvc](https://github.com/Earlz/rustymvc)
-    * [rust-http](https://github.com/chris-morgan/rust-http):  [<img src="https://travis-ci.org/chris-morgan/rust-http.png?branch=master">](https://travis-ci.org/chris-morgan/rust-http)
-    * [WebeWizard/libhttpd](https://github.com/WebeWizard/libhttpd)
-    * [wycats/route-recognizer.rs](https://github.com/wycats/route-recognizer.rs)
-    * [wycats/routed-http.rs](https://github.com/wycats/routed-http.rs)
-* [URI/URL](https://github.com/mozilla/rust/blob/master/src/libextra/url.rs)
-    * [SimonSapin/rust-url](https://github.com/SimonSapin/rust-url)
 * [UUID](https://github.com/mozilla/rust/blob/master/src/libextra/uuid.rs)
 * NanoMsg
   * [glycerine/rust-nanomsg](https://github.com/glycerine/rust-nanomsg)
+* Web Programming
+    * [Earlz/rustymvc](https://github.com/Earlz/rustymvc)
+    * [erickt/rust-mongrel2](https://github.com/erickt/rust-mongrel2): bindings for the [Mongrel2](http://mongrel2.org) webserver
+    * [rust-http](https://github.com/chris-morgan/rust-http):  [<img src="https://travis-ci.org/chris-morgan/rust-http.png?branch=master">](https://travis-ci.org/chris-morgan/rust-http)
+    * [SimonSapin/rust-url](https://github.com/SimonSapin/rust-url)
+    * [skade/widmann](https://github.com/skade/widmann): [<img src="https://travis-ci.org/skade/widmann.png?branch=master">](https://travis-ci.org/skade/widmann)
+    * [url.rs](https://github.com/mozilla/rust/blob/master/src/libextra/url.rs)
+    * [WebeWizard/libhttpd](https://github.com/WebeWizard/libhttpd)
+    * [wycats/route-recognizer.rs](https://github.com/wycats/route-recognizer.rs)
+    * [wycats/routed-http.rs](https://github.com/wycats/routed-http.rs)
 * ZeroMQ
   * [erickt/rust-zmq](https://github.com/erickt/rust-zmq):  [<img src="https://travis-ci.org/erickt/rust-zmq.png?branch=master">](https://travis-ci.org/erickt/rust-zmq)
 
@@ -210,9 +212,3 @@ See https://github.com/mozilla/rust/issues/3591
 
 * QuickCheck
   * [mcandre/rustcheck](https://github.com/mcandre/rustcheck)
-
-
-## Web Programming
-
-* [erickt/rust-mongrel2](https://github.com/erickt/rust-mongrel2): bindings for the [Mongrel2](http://mongrel2.org) webserver
-* [skade/widmann](https://github.com/skade/widmann): [<img src="https://travis-ci.org/skade/widmann.png?branch=master">](https://travis-ci.org/skade/widmann)
