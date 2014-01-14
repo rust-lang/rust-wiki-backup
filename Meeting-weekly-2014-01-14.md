@@ -76,7 +76,9 @@
 - pcwalton: We could just optimize the case in LLVM & then it would be the same as C/C++ and we could keep the same environment. For register-based, just don't load anything into the register. Even on the stack, we could just not push something.
 - nmatsakis: LLVM probably doesn't do anything today... adjusts stack in the beginning... we should compare the machine code.
 - brson: Niko, can you own this and work with eddyb?
+
 ## Language feature freeze for 1.0
+
 - brson: Mentioned multiple times that people are worried about random changes to the language in PRs that we keep debating. Seems like a source of ongoing maintenance burden and instability. Should we officially have a feature freeze?
 - pcwalton: Maybe be "slushy" instead of frozen? A feature freeze would mean not changing the borrow checker, etc. We still haven't proved all this safe. So we can't freeze until we have safety. But, we can institute "no new features outside target areas."
 - nmatsakis: What concerns me is PRs for well-intentioned things like variadic generics that are big changes...
