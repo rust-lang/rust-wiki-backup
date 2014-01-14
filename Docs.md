@@ -12,7 +12,7 @@ Additional supplementary documentation is maintained here on the wiki.
 [[Community libraries]] - A curated list of external libraries for Rust  
 [[Rust for C++ programmers|Rust for CXX programmers]] - A cheat sheet  
 [[Rusticon|The Rusticon]] - A glossary of terms commonly used in Rust and Rust tools.  
-[The Periodic Table of Rust Types](http://cosmic.mearie.org/tmp/periodic-table-of-rust-types)
+[The Periodic Table of Rust Types](http://cosmic.mearie.org/tmp/periodic-table-of-rust-types)  
 [[Unit testing|Doc unit testing]] - Writing tests and running them with the built-in test driver  
 [[Using rustpkg|Rustpkg]] - Managing packages  
 [[Using rustdoc|Doc using rustdoc]] - How to extract Markdown and HTML documentation from code  
