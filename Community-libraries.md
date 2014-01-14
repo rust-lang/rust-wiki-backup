@@ -141,6 +141,7 @@ See also [[Computer Graphics and Game Development]].
 
 ## Misc
 * low-level OS services
+  * [zargony/rust-fuse](https://github.com/zargony/rust-fuse): Library for filesystems in userspace (FUSE)  [<img src="https://travis-ci.org/zargony/rust-fuse.png?branch=master">](https://travis-ci.org/zargony/rust-fuse)
 * Simple search on a filesystem (eg Ruby's [glob](http://ruby-doc.org/core-2.0/Dir.html#method-c-glob))
 * unit testing
 * FFI, ctypes
