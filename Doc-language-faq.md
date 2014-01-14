@@ -1,1 +1,1 @@
-hello
+See [[http://static.rust-lang.org/doc/master/complement-lang-faq.html]]
