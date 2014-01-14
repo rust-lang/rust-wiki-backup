@@ -22,9 +22,13 @@
 - pnkfelix - GC (dbaupp's, and bdw hackery)
 - nmatsakis: temporary lifetimes (almost, ALMOST building!)
 - pcwalton: removing @, getting backlogged servo patches landed
+
 ## Friend of the tree
+
 - brson: Eduard Burtescu (eddyb) has been contributing since October. A lot has been on the compiler, including trans. He has reduced rustc memory usage, optimized vector operations, removed deprecated features, and cleaned up ancient code. Finally, he cleaned up our misuse of the environment structure to pass the self param.
+
 ## Static method on a trait
+
 - acrichto: Unless you're calling on a type parameter, nobody does it. But it's easy to do. 
 - pcwalton: Keep the original syntax. But, should add something that allows you to do T::whatever or Int::whatever. Now, should search like the . operator.
 - nmatsakis: trait:: would be the same as recv. in terms of the algorithm.
