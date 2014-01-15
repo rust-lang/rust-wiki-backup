@@ -1,3 +1,13 @@
+There are two possible routes to support iOS:
+* either let Rust generate LLVM bitcode and use the from Xcode
+* or try to add crocc-compilation support to Rust.
+
+## a) LLVM Bitcode
+
+See https://github.com/shilgapira/ObjCrust
+
+## b) Cross-compiler
+
 Compilation currently is not successful, see the [open issues](https://github.com/mozilla/rust/issues?labels=A-iOS&milestone=13&page=1&state=open).
 
 You need XCode 5.
@@ -14,16 +24,16 @@ make VERBOSE=1
 rustc --target=arm-apple-darwin foo.rs
 ```
 
-## Adjustments
+### Adjustments
 
-### Current adjustments
+#### Current adjustments
 
 For the current adjustments:
 * see for ```arm-apple-darwin``` in [mk/platform.mk](https://github.com/mozilla/rust/blob/master/mk/platform.mk)
 * see for ```apple-darwin``` in [mk/rt.mk](https://github.com/mozilla/rust/blob/master/mk/rt.mk)
 * in the source files grep for [```__APPLE__```](https://github.com/mozilla/rust/search?q=__APPLE__&ref=cmdform)
 
-### Possible future adjustments
+#### Possible future adjustments
 
 * Compilation:
   * Compile twice, with both `-arch armv7` and `-arch armv7s` (A6 processor) ?
