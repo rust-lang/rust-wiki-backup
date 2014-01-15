@@ -1,5 +1,5 @@
-There are two possible routes to write code in Rust for iOS:
-* either let Rust generate LLVM bitcode and use the from Xcode
+There are two possible routes for writing code in Rust for iOS:
+* either let Rust generate LLVM bitcode and use that using the Xcode toolchain
 * or try to add crocc-compilation support to Rust.
 
 ## a) LLVM Bitcode
