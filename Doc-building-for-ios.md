@@ -8,7 +8,7 @@ See https://github.com/shilgapira/ObjCrust
 
 ## b) Cross-compiler
 
-Smoe issues need to be resolved yet, see the [open issues](https://github.com/mozilla/rust/issues?labels=A-iOS&milestone=13&page=1&state=open).
+Some issues need to be resolved yet, see the [open issues](https://github.com/mozilla/rust/issues?labels=A-iOS&milestone=13&page=1&state=open).
 
 You need XCode 5.
 
