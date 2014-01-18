@@ -32,6 +32,19 @@ Functions for converting between types should attempt to follow this:
 
 These are not hard rules, since generically implemented functions mean that an `into` conversion that doesn't copy/allocate is impossible for some types, e.g. `string.into_owned()` (from the `Str` trait) doesn't copy when `string` is `~str`, but it is forced to when `string` is `&str` or `@str`.
 
+## Iterators
+
+Naming iterators are often a little tricky because their names can get quite verbose quite quickly. Since #11001 landed, we've standardized on iterator naming conventions. When naming an iterator, follow these rules from top-to bottom (short circuiting when you hit a relevant one).
+
+1. If the iterator is yielding something that can be described with a noun, the iterator should be called the pluralization of the noun (an iterator yielding words is called Words)
+2. An iterator over the members of a container should have the base name of `Items`, with different flavors deriving from this name. Different flavors are applied in order of top-to-bottom in this list
+  * Moving iterators have the prefix of `Move`
+  * If the default iterator yields an immutable reference, an iterator yielding a mutable reference has the prefix `Mut`
+  * Reverse iterators have the prefix of `Rev`
+3. If these rules would result in a name that might cause confusion, pick a less confusing name.
+
+These rules are a little vague, and that's partly on purpose. The general idea is to be concise and consistent. Examples through libstd and libextra should showcase how we expect iterators to be named.
+
 # Function declarations
 
 Wrapped functions:
