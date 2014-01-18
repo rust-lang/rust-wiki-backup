@@ -31,3 +31,4 @@ If you maintain (or know of) another package that builds with rustpkg, then edit
 * [sfackler/rust-openssl](https://github.com/sfackler/rust-openssl) (OpenSSL bindings)
 * [rust-htmlescape](https://github.com/veddan/rust-htmlescape) (HTML entity encoding library)
 * [rust-msgpack](https://github.com/mneumann/rust-msgpack) (Msgpack.org implementation)
+* [mitsuhiko/redis-rs](https://github.com/mitsuhiko/redis-rs/) (Redis library for rust)
