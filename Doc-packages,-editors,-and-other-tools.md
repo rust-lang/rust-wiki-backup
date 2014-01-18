@@ -12,7 +12,7 @@
   * [Fink](http://fink.cvs.sourceforge.net/viewvc/fink/dists/10.7/stable/main/finkinfo/languages/rust.info?view=log) Also available through fink's apt at `deb http://brendan.users.finkproject.org/10.8 stable main` - maintained by bcully
   * [Homebrew](https://github.com/mxcl/homebrew/blob/master/Library/Formula/rust.rb)
 * Windows
-  * [Nuget](https://www.nuget.org/packages/Rust/)
+  * [NuGet package for nightly builds](https://www.nuget.org/packages/Rust/)
 
 ## Editors
 
