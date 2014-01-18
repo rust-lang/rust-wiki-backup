@@ -13,6 +13,7 @@
   * [Homebrew](https://github.com/mxcl/homebrew/blob/master/Library/Formula/rust.rb)
 * Windows
   * [NuGet package for nightly builds](https://www.nuget.org/packages/Rust/)
+    * [[How to install an unofficial nightly for Windows|Doc how to install an unofficial nightly for Windows]]
 
 ## Editors
 
