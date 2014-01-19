@@ -20,6 +20,7 @@ make VERBOSE=1
 ```
 
 1. Use Rust:
+(noone has ever getting this far)
 ```
 rustc --target=arm-apple-darwin foo.rs
 ```
