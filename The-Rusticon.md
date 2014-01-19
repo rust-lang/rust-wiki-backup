@@ -47,7 +47,7 @@ unit structure | A struct that only has one value, for example `struct Foo;` whe
 
 ## Syntaxicon
 
-What is the syntax called?
+What is this syntax called?
 
 syntax | name
 -------|-----------
@@ -60,7 +60,7 @@ syntax | name
 `&mut [T]`, `&'a mut [T]` | A *mutable slice* with element type `T` and possibly with a *lifetime*. One can modify the elements of the slice.
 `~[T]` | A vector.
 `[T, ..n]` | A *array* (sometimes also known as a "fixed length vector") of length `n`.
-`~Trait:Send` | A *trait object* where `:Send` are the *trait bounds*.
+`~Trait:Send` | A *trait object* where `:Send` are the *kind bounds*.
 `foo!()` | Either a [*macro*](#macro) or *syntax extension*.
 `#[xyz]` | An [*attribute*](#attribute).
 `::<int>`, `: int` (in `let x: int ...`) | A [*type hint*](#type_hint). 
