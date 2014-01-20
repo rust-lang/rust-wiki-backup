@@ -36,6 +36,8 @@ For the current adjustments:
 
 #### Possible future adjustments
 
+See also https://github.com/lht/rust/commits/ios-wip
+
 * Compilation:
   * Compile twice, with both `-arch armv7` and `-arch armv7s` (A6 processor) ?
     * See https://github.com/ghc-ios/ghc-ios-scripts/blob/master/arm-apple-darwin10-clang
