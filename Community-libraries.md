@@ -219,3 +219,7 @@ See https://github.com/mozilla/rust/issues/3591
 
 * QuickCheck
   * [mcandre/rustcheck](https://github.com/mcandre/rustcheck)
+
+## XML
+
+See [Encoding](#encoding)
