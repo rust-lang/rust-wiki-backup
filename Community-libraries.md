@@ -222,4 +222,4 @@ See https://github.com/mozilla/rust/issues/3591
 
 ## XML
 
-See [Encoding](#encoding)
+See [Encoding](Community-libraries#encoding)
