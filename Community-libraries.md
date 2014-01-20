@@ -37,7 +37,10 @@ We want compression/decompression support for TAR and ZIP file formats.
   * [dnaq/sodiumoxide](https://github.com/dnaq/sodiumoxide)
 * OpenSSL
   * [sfackler/rust-openssl](https://github.com/sfackler/rust-openssl): [<img src="https://travis-ci.org/sfackler/rust-openssl.png?branch=master">](https://travis-ci.org/sfackler/rust-openssl)
-  
+ 
+## CSV
+See [Encoding](Community-libraries#encoding)
+
 ## Database Access
 
 * NoSql
@@ -221,5 +224,4 @@ See https://github.com/mozilla/rust/issues/3591
   * [mcandre/rustcheck](https://github.com/mcandre/rustcheck)
 
 ## XML
-
 See [Encoding](Community-libraries#encoding)
