@@ -2,6 +2,7 @@
 
 There is an auto-merge robot running on mozilla/rust; its name is "bors";
 it has a github account and is listed as a collaborator in the `rust-push` group.
+Its source is available [on GitHub](https://github.com/graydon/bors).
 
 Its status URL is: http://buildbot.rust-lang.org/bors/bors.html
 
@@ -48,12 +49,6 @@ commits, they need to be reviewed anew.
 
 Not all commits go through it, because from time to time
 we bypass it and break the tree ourselves; but we have made much use of it.
-
-If you have feature requests or want it to behave differently, please
-let us know.  We are conducting a security review with some
-mozilla folks and will be open-sourcing it soon for others who want to apply
-similar behavior to their own repositories. It's a very small, simple
-script.
 
 It is somewhat slow: github has a rate-limited API so it only cycles one step every 2
 minutes. Which is plenty fast enough to integrate changes, but not
