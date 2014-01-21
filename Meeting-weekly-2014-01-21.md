@@ -19,7 +19,7 @@ pcwalton: servo, mutexarc fixes, Scheduler<T>
 
 # Friend of the Tree
 
-brson: Just one thing to do.  This weeks' FotT: steven fackler (sfackler).  Been contributing since last may; yet another CMU grad!  Increble amount of library improvements: base64, bitvector, IO modules.  RefCell.  io::util module [[Felix missed some stuff there...]] and most recently, external macro (syntax extension) loading.
+brson: Just one thing to do.  This weeks' FotT: steven fackler (sfackler).  Been contributing since last may; yet another CMU grad!  Increble amount of library improvements: base64, bitvector, IO modules.  RefCell.  io::util module, and most recently, external macro (syntax extension) loading.
 everyone: *clapping*
 
 # POPL update
