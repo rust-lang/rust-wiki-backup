@@ -18,6 +18,7 @@ Listing of notes for developers working on the Rust compiler and tools.
 * [[Note testsuite]] - How Rust's tests are organized and operated
 * [[Note rustc hacking guide]]
 * [[Note ccache]]
+* [[Note code review]]
 
 ## Language and implementation notes
 
