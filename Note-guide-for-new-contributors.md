@@ -22,6 +22,8 @@ Outstanding bugs or feature requests in Rust often have a corresponding test in 
 
 The source is also littered with hundreds of comments marked with 'FIXME' and 'XXX'. In Rust, FIXME comments come with an issue number; sometimes these refer to issues that may be resolved easily.
 
+Another easy way to get involved is to participate in bug triage. Every week we send out lists of bugs to contributors along with instructions on how to move them forward. If you would like to participate email Brian at banderson@mozilla.com.
+
 If in doubt, ask on IRC. Somebody will surely have a task that needs to be done.
 
 ## Ideas for newbies
