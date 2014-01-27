@@ -49,6 +49,8 @@ unit structure | A struct that only has one value, for example `struct Foo;` whe
 
 What is this syntax called?
 
+*Note*: these names represent the current consensus on desired naming by #rust-internals and brson. Ask there before changing them.
+
 syntax | name
 -------|-----------
 `()` | The [*unit type*](#unit_type).
