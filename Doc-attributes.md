@@ -1,6 +1,6 @@
 # The many uses of attributes
 
-*Note: This page has not been updated in a long time. There are many more attributes in use now.*
+*Note: This page has not been updated in a long time. There are many more attributes in use now. A complete list of attributes is available from https://github.com/mozilla/rust/blob/master/src/librustc/middle/lint.rs in the items "crate_attrs" and "other_attrs".*
 
 ## Meta items
 
@@ -10,9 +10,7 @@ Attributes are built from _meta items_, which have three forms:
 * the _name-value_ meta item, an ident/literal pair, as in `target_os = "win32"`
 * the _list_ meta item, a named list of additional meta items, as in `names(fred, barney, wilma)`
 
-In _name-value_ items the literal may be any Rust literal type, though strings are seen most often.Meta items may nest arbitrarily: `args(yes, count = 10, names(fred, barny, wilma))`
-
-Meta items occasionally show up outside of attributes, particularly in crate linkage specifications.
+In _name-value_ items the literal may be any Rust literal type, though strings are seen most often. Meta items may nest arbitrarily: `args(yes, count = 10, names(fred, barny, wilma))`
 
 ## Attributes
 
@@ -41,18 +39,15 @@ Similarly, to apply attributes to a crate, they should be specified at the begin
 
 ## Crate Linkage Attributes
 
-A crate's version is determined by the _link_ attribute, which is a list meta item containing metadata about the crate. This metadata can, in turn, be used in providing partial matching parameters to crate importing directives, denoted by the *extern mod* keyword.
+A crate's name and version are determined by the <em>crate_id</em> attribute, which is a name-value meta item containing a string like "my_crate#0.5". This metadata can, in turn, be used in providing a string RHS to the *extern mod* keyword.
 
-All meta items within a link attribute contribute to the versioning of a crate, and two meta items, _name_ and _vers_, have special meaning and must be present in all crates compiled as shared libraries.
+An example of a typical crate link attribute and various ways of linking to another crate:
 
-An example of a typical crate link attribute and linking to another crate:
+    #[crate_id = "std#0.10-pre"];
 
-    #[link(name = "extra",
-           vers = "0.8-pre",
-           uuid = "122bed0b-c19b-4b82-b0b7-7ae8aead7297",
-           url = "https://github.com/mozilla/rust/tree/master/src/libextra")];
-
-    extern mod std(vers = "0.8-pre");
+    extern mod std;
+    extern mod std010 = "std#0.10-pre";
+    extern mod std_anyversion = "std";
 
 ## Build Configuration
 
