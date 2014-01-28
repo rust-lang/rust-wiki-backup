@@ -71,7 +71,9 @@
 - brson: He will definitely have an opinion; we should skip it.
 - pcwalton: Idea was an allocator provides a unique ownership semantics and you can build other things on top of that (Refcounting, etc.). Separates ownership semantics from allocation, which was the important thing. I don't remember the details.
 - brson: I will forward around the notes.
+
 ## removing dynamic lib to extra
+
 - pnkfelix: syntax extensions require this. Can libstd depend on something in extra?
 - brson: Yes.
 - acrichto: I think the crate map uses dynamic lookup... maybe we can just use the C lib functions directly for Windows.
