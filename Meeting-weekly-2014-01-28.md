@@ -5,7 +5,7 @@
 * warn(unused_must_use) (acrichto) https://github.com/mozilla/rust/pull/11754
 * optional type parameters (pcwalton)
 * allocators (pcwalton)
-* remove #[foo="bar"] (pcwalton)
+* remove #\[foo="bar"\] (pcwalton)
 * dynamic_lib in std, or "extra"? (pnkfelix) https://github.com/mozilla/rust/issues/8157
 
 # Attending
