@@ -25,6 +25,8 @@ by copying the command line in the website and pasting it into the Command Promp
 
     > @powershell -NoProfile -ExecutionPolicy unrestricted -Command "iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))" && SET PATH=%PATH%;%systemdrive%\chocolatey\bin
 
+> TIP: When you get an error (mostly due to older versions of PowerShell), use an [alternative method](https://github.com/chocolatey/chocolatey/wiki/Installation#wiki-powershell-through-batch-method) to install.
+
 Then install Rust using Chocolatey.
 We will use the [NuGet Rust package](https://www.nuget.org/packages/Rust/) maintained by Heather.
 It would take some time as it weighs about 120 MB.
