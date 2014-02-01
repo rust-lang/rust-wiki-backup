@@ -8,6 +8,7 @@ Additional supplementary documentation is maintained here on the wiki.
 ## Other documentation
 
 [Rust for Rubyists](http://www.rustforrubyists.com/) - Excellent introduction to Rust  
+[[Examples|Doc examples]] - Where to look for examples of Rust  
 [[Releases|Doc releases]] - Links to current and old releases and documentation  
 [[Detailed release notes|Doc detailed release notes]] - Further explanation of language changes  
 [[Community libraries]] - A curated list of external libraries for Rust  
