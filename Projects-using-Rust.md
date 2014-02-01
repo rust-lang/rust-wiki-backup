@@ -8,7 +8,7 @@ Applications
 ------------
 
 * Q^3 Quake-like game: https://github.com/Jeaye/q3
-* `rustboot` tiny 32-bit kernal: https://github.com/charliesome/rustboot
+* `rustboot` tiny 32-bit kernel: https://github.com/charliesome/rustboot
 * `rustray` raytracer: https://github.com/brson/rustray
 * `rust-airhockey`: https://github.com/FrozenCow/rust-airhockey
 * `shorai` OS: https://github.com/jmgrosen/shorai
