@@ -1,6 +1,7 @@
 Mozilla employees have a weekly Rust planning meeting on Tuesday mornings at 10:00 AM Pacific (UTC-8). Minutes are recorded [on Etherpad](https://etherpad.mozilla.org/Rust-meeting-weekly) and then archived here.
 
 ## Weekly meetings:
+* [[Meeting-weekly-2014-02-04]] (libprim; operator overloading; using system LLVM)
 * [[Meeting-weekly-2014-01-28]] (Friend of the Tree; default type params; allocators; dylib to extra; unused Result warning; attributes; I/O; visit_glue)
 * [[Meeting-weekly-2014-01-21]] (primitive impl lang items; env ptrs; boehm; fmt::Default; foo_opt => foo; \xNN; #[no_mangle]; crate_type="lib")
 * [[Meeting-weekly-2014-01-14]] (Friend of the Tree; statics on traits; env pointers; lang freeze; iterator naming; statics; docs on primitives)
