@@ -29,20 +29,22 @@ by copying the command line in the website and pasting it into the Command Promp
 
 Then install Rust using Chocolatey.
 We will use the [NuGet Rust package](https://www.nuget.org/packages/Rust/) maintained by Heather.
-It would take some time as it weighs about 120 MB.
+Since NuGet is not a default package feed as of 2014-02, we will manually add it to the available sources.
+Installing Rust would take some time as it weighs about 120 MB.
 
-    > cinst Rust
+    > choco sources add -name nuget -source https://www.nuget.org/api/v2/
+    > choco install Rust
 
 > TIP: If you get the "Unable to read package from path" error shortly after `cinst`,
 > you have the incomplete NuGet package cache.
 > Delete everything starting with `Rust` in `%AppData%\Local\NuGet\Cache` and try again.
 
-`cinst` would install `C:\Chocolatey\lib\Rust.VERSION\bin\rustc.exe` and so on.
+`choco install` would install `C:\Chocolatey\lib\Rust.VERSION\bin\rustc.exe` and so on.
 Try `rustc -v` out in the Command Prompt and check if it installs the correct version.
 
 You can update the Rust installation using Chocolatey later.
 
-    > cup Rust
+    > choco update Rust
 
 ## Using with MSYS
 
