@@ -35,7 +35,7 @@ Installing Rust would take some time as it weighs about 120 MB.
     > choco sources add -name nuget -source https://www.nuget.org/api/v2/
     > choco install Rust
 
-> TIP: If you get the "Unable to read package from path" error shortly after `cinst`,
+> TIP: If you get the "Unable to read package from path" error shortly after `choco install`,
 > you have the incomplete NuGet package cache.
 > Delete everything starting with `Rust` in `%AppData%\Local\NuGet\Cache` and try again.
 
