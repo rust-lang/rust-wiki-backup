@@ -19,6 +19,7 @@ Listing of notes for developers working on the Rust compiler and tools.
 * [[Note rustc hacking guide]]
 * [[Note ccache]]
 * [[Note code review]]
+* [[Note contribution opportunities]]
 
 ## Language and implementation notes
 
