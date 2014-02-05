@@ -2,7 +2,7 @@ Archive of brson's suggestions for how to contribute to Rust.
 
 # 2014/01/26
 
-## Break up libextra (#8784)
+## Break up libextra [#8784]
 
 Getting our library ecosystem in shape in critical for Rust 1.0. We want 
 Rust to be a "batteries included" language, distributed with many crates 
