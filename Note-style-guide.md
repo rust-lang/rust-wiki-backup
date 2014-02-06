@@ -48,27 +48,15 @@ These rules are a little vague, and that's partly on purpose. The general idea i
 
 # Function declarations
 
-Wrapped functions:
-
 ```
-fn frobnicate(a: Bar,
-              b: Bar)
-              -> Bar {
-    code;
+fn frobnicate(a: Bar, b: Bar) -> Bar {
+    // code;
 }
 
-fn foo<T:This,
-       U:That>(
-       a: Bar,
-       b: Bar)
-       -> Baz {
-    code;
+fn foo<T:This, U:That>(a: Bar, b: Bar) -> Baz {
+    // code;
 }
 ```
-
-(Note: We need to adjust editors to do this automatically. This is not the current convention.)
-
-The downside of this is, that the indendation level of many lines of code may change when the length of the function name changes.
 
 # Platform-specific code
 
@@ -130,11 +118,8 @@ multiple patterns in a single arm:
 
 ```
 match  foo {
-    bar(*)
-    | baz => quux,
-    x
-    | y
-    | z => {
+    bar(*) | baz => quux,
+    x | y | z => {
         quuux
     }
 }
