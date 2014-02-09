@@ -250,7 +250,7 @@ format!("{value}", value=4)       // => ~"4"
 format!("{} {}", 1, 2)            // => ~"1 2"
 ```
 
-This change also means that other macros based on `fmt!` will be migrating to `format!` syntax soon. None of the macros were removed from 0.8, but they will likely be removed in the next release. In the meantime, new macros were introduced using the `format!` sytnax by appending a `2` at the end of the name (`debug2!()`, `fail2!()`, `info2!()`, etc.). The `assert!` macro does not have a `format!` equivalent, it still used the old `fmt!` syntax.
+This change also means that other macros based on `fmt!` will be migrating to `format!` syntax soon. None of the macros were removed from 0.8, but they will likely be removed in the next release. In the meantime, new macros were introduced using the `format!` syntax by appending a `2` at the end of the name (`debug2!()`, `fail2!()`, `info2!()`, etc.). The `assert!` macro does not have a `format!` equivalent, it still used the old `fmt!` syntax.
 
 Additionally, a new macro, `format_args!` was added. This can be used to support `format!`-style logging/printing without requiring an allocation to be performed. The idea of this macro is to create a `va_args`-like struct which is opaque to the user but validated at compile-time. This is then passed around and can eventually be handed back to `std::fmt` to print/create a string. usage of this macro can be found in the documentation.
 
