@@ -6,12 +6,18 @@
 * crate keyword (brson) https://github.com/mozilla/rust/pull/12017
 * install media (brson)
 * pizza/food at rust meetup (pnkfelix)
+
 # Attending
+
 dherman, acrichto, azita, brson, larsberg, pcwalton, niko, jack, nrc
+
 # Status
+
 acrichto: channel rewrite, backtraces, green optimizations, unix sockets, compiler flags
 brson: installation, diagnostics, docs, roadmap
+
 # friend of the tree
+
 - brson: Flavio Percoco (FlaPer87). Contributing since September. Doing issue triage and organizing community events in Italy. Done some optimization in the stdlib, including the `pow` function. Has been really helping with a lot of important but thankless bugs, which I appreciate.
 # binding in struct patterns
 - acrichto: Right now, you don't need to use the name of the field if you want the variable to have the same name. We wanted to do this for creation so you don't have to duplicate the name (e.g. `for x in Foo {x, y, z}.iter()`. There are some ambiguities in parsing, though, related to for loops, that require an extra comma. What should we do?
@@ -38,7 +44,9 @@ brson: installation, diagnostics, docs, roadmap
 - pnkfelix: Thought it was cute but don't care.
 - pcwalton: Don't like this change.
 - brson: Decided.
+
 # rules on static values
+
 - nmatsakis: We discussed the rules on static values should be w.r.t. linear types or types that need destructors. Setttled on type of a static variable should not be affine/linear. It shouldn't contain anything that needs a destructor. Flavio was trying to implement it, but he found places where we violate it in the codebase. We were thinking about a subtler rule. Can have things like Option<~T>, which is optional linear things that are not there in that constant but are in others:
 ```
 static DEFAULT_VALUE: Option<~int> = None
@@ -73,7 +81,9 @@ fn DUMMY_SPAN() -> Foo { ... }
 - brson: Let us please do it. Niko: make it be done!
 - pnkfelix: Should we have Flavio wait?
 - nmatsakis: He was willing to work on this.
+
 # crate keyword
+
 - brson: Changed extern mod to extern crate (decision). But making crate a keyword raised some issues (in 12017).
 - acrichto: Why did we do that change again?
 - pcwalton: Because it's not a module; it's a crate.
@@ -109,7 +119,9 @@ fn DUMMY_SPAN() -> Foo { ... }
 - pcwalton: the_crate. krate? I like that.
 - nmatsakis: I like it too, but thought everybody would shoot it down.
 - pcwalton: maybe in servo: box_ to boks? bawks?
+
 # Pizza
+
 - pnkfelix: Pizza. In SF, have you had food provided? Does the team pay?
 - brson: Eventually.
 - pnkfelix: So, in paris, can I do that?
@@ -117,7 +129,9 @@ fn DUMMY_SPAN() -> Foo { ... }
 - brson: Here, we file a ServiceNow ticket and it happens.
 - pnkfelix: Wanted to check because a game meetup happened and paris did not reimburse.
 - azita: Probably the same way. Just file via ServiceNow, talk to me if it doesn't work.
+
 # finally macro
+
 - acrichto: I think niko's try...finally change nullifies it. Did you leave the finally method in there?
 - nmatsakis: Yes, though I dislike it. It's there for back-compat for the simple case, though I don't know how often that arises. Does everyone know what happened there?
 - brson: yes.
@@ -165,7 +179,9 @@ let _ = &TheThingWithTheDestructor(|| ...)
 - pcwalton: The function will borrow things for too long. Probably needs to be a macro to do the unsafe borrows, etc.
 - nmatsakis: How would it look as a function?
 - acrichto: `let _ = defer...`... nevermind. Let's do a macro.
+
 # Implicit Trait Bounds
+
 - nmatsakis: couple of places where we do implicit bounds on things. Example:
 ```
 ~Trait => ~Trait:Send
