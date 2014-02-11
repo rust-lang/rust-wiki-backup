@@ -6,7 +6,7 @@ The rust test suite has several sets of tests for different purposes. As the com
 
 * Run the test suite: `make check`. This runs all stage2 tests. This is the criterion for a successful build.
 * Run the test suite without benchmarks: `make check NO_BENCH=1`
-* Run only xfailed (ignored, broken) tests: `make check CHECK_XFAILS=1`
+* Run only ignored (broken) tests: `make check CHECK_IGNORED=1`
 * Run with verbose output: `make check VERBOSE=1`. This will print useful information like the exact commands being run.
 * Run with valgrind: `make check CFG_ENABLE_VALGRIND=1`
 * Run a specific test: `make check TESTNAME=[...]`
@@ -21,7 +21,7 @@ The rust test suite has several sets of tests for different purposes. As the com
 * Run without parallelism: `make check RUST_TEST_TASKS=1` - This can make it easier to understand failure output.
 * Build and test std without re-bootstrapping: `make check-stage1-std NO_REBUILD=1` - This makes the build/test cycle **much** faster. (Note: `NO_REBUILD` can also prevent compile tests from being rebuilt. If you want to rebuild those but not the compiler, look for files with the `.ok` extension in the `tmp` subdirectory and remove the appropriate ones.)
 
-These options can be combined.  For instance, `make check CHECK_XFAILS=1 TESTNAME=test/run-pass/foobar.rs` runs the xfailed test `foobar.rs` in the `run-pass` directory.
+These options can be combined.  For instance, `make check CHECK_IGNORED=1 TESTNAME=test/run-pass/foobar.rs` runs the ignored test `foobar.rs` in the `run-pass` directory.
 
 ## Language and compiler tests
 
@@ -32,7 +32,7 @@ The test runner for these tests is at src/test/compiletest and is compiled to te
 A typical test might look like:
 
 ```rust
-// xfail-pretty 'bool' doesn't pretty-print (#XXX)
+// ignore-pretty 'bool' doesn't pretty-print (#XXX)
 // Regression test for issue #YYY
 
 fn main() {
@@ -54,9 +54,9 @@ Valid directives include:
 * `compile-flags:[...]` - Additional arguments to pass to the compiler
 * `pp-exact` - The test should pretty-print exactly as written
 * `pp-exact:[filename]` - The pretty-printed test should match the example in `filename`
-* `xfail-test` - Test is broken, don't run it
-* `xfail-fast` - Don't run as part of check-fast, a special win32 test runner (some tests don't work with it)
-* `xfail-pretty` - Test doesn't pretty-print correctly
+* `ignore-test` - Test is broken, don't run it
+* `ignore-fast` - Don't run as part of check-fast, a special win32 test runner (some tests don't work with it)
+* `ignore-pretty` - Test doesn't pretty-print correctly
 * `error-pattern:[...]` - A message that should be expected on standard out. If multiple patterns are provided then they must all be matched, in order (**Note:** error-patterns are somewhat deprecated, see the section on Expected Errors below).
 * `no-reformat` - Don't reformat the code when running the test through the pretty-printer
 * `aux-build:foo.rs` - Compiles an auxiliary library for use in multi-crate tests.  See the section on multi-crate testing below.
@@ -158,7 +158,7 @@ run-pass/cci_iter_exe.rs:
 * Running the run-pass tests for stage1: `make check-stage1-rpass`
 * Running a specific compile-fail test: `make check-stage2-cfail TESTNAME=type-mismatch`
 * Finding the command to compile a failing test: `make check-stage1-rpass TESTNAME=hello VERBOSE=1`
-* Running xfailed tests: `make check-stage1-rpass CHECK_XFAILS=1`
+* Running ignored tests: `make check-stage1-rpass CHECK_IGNORED=1`
 
 ## Unit Tests
 
