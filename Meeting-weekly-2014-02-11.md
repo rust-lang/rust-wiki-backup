@@ -19,7 +19,9 @@ brson: installation, diagnostics, docs, roadmap
 # friend of the tree
 
 - brson: Flavio Percoco (FlaPer87). Contributing since September. Doing issue triage and organizing community events in Italy. Done some optimization in the stdlib, including the `pow` function. Has been really helping with a lot of important but thankless bugs, which I appreciate.
+
 # binding in struct patterns
+
 - acrichto: Right now, you don't need to use the name of the field if you want the variable to have the same name. We wanted to do this for creation so you don't have to duplicate the name (e.g. `for x in Foo {x, y, z}.iter()`. There are some ambiguities in parsing, though, related to for loops, that require an extra comma. What should we do?
 ```
     for x in Foo { x } { }
