@@ -13,8 +13,8 @@ dherman, acrichto, azita, brson, larsberg, pcwalton, niko, jack, nrc
 
 # Status
 
-acrichto: channel rewrite, backtraces, green optimizations, unix sockets, compiler flags
-brson: installation, diagnostics, docs, roadmap
+- acrichto: channel rewrite, backtraces, green optimizations, unix sockets, compiler flags
+- brson: installation, diagnostics, docs, roadmap
 
 # friend of the tree
 
