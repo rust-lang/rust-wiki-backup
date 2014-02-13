@@ -1,5 +1,6 @@
 [Rustpkg manual](https://github.com/mozilla/rust/blob/master/doc/rustpkg.md)
 
+Note that Rustpkg [has currently been removed](https://mail.mozilla.org/pipermail/rust-dev/2014-January/008224.html).
 ##  Known packages that build with rustpkg ##
 
 If you maintain (or know of) another package that builds with rustpkg, then edit this page to add it! When [#10041](https://github.com/mozilla/rust/issues/10041) is implemented, the central package database will track this information automatically.
