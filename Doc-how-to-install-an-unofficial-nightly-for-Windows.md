@@ -42,6 +42,8 @@ Installing Rust would take some time as it weighs about 120 MB.
 `choco install` would install `C:\Chocolatey\lib\Rust.VERSION\bin\rustc.exe` and so on.
 Try `rustc -v` out in the Command Prompt and check if it installs the correct version.
 
+> TIP: If you get an error about not being able to find `libstdc++-6.dll` or other dlls when running `rustc`, install the `mingw32-gcc-g++` package from mingw as well.
+
 You can update the Rust installation using Chocolatey later.
 
     > choco update Rust
