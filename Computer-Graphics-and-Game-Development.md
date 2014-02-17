@@ -6,6 +6,8 @@ Rust is quickly becoming an excellent language for computer graphics and game de
 
 ### Libraries
 
+- [rust-gamedev-kit](https://github.com/rlane/rust-gamedev-kit) [<img src="https://travis-ci.org/rlane/rust-gamedev-kit.png?branch=master">](https://travis-ci.org/rlane/rust-gamedev-kit)
+
 #### Windowing
 
 - [glfw-rs](https://github.com/bjz/glfw-rs) [<img src="https://travis-ci.org/bjz/glfw-rs.png?branch=master">](https://travis-ci.org/bjz/glfw-rs)
@@ -31,6 +33,7 @@ Rust is quickly becoming an excellent language for computer graphics and game de
 
 #### Mathematics
 - [cgmath-rs](https://github.com/bjz/cgmath-rs) [<img src="https://travis-ci.org/bjz/cgmath-rs.png?branch=master">](https://travis-ci.org/bjz/cgmath-rs)
+- [color-rs](https://github.com/bjz/color-rs) [<img src="https://travis-ci.org/bjz/color-rs.png?branch=master">](https://travis-ci.org/bjz/color-rs)
 - [nalgebra](https://github.com/sebcrozet/nalgebra) [![Build Status](https://travis-ci.org/sebcrozet/nalgebra.png?branch=master)](https://travis-ci.org/sebcrozet/nalgebra)
 - [noise-rs](https://github.com/bjz/noise-rs)
 
