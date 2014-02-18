@@ -33,7 +33,7 @@
 
 # issue numbers in commits
 
-- nrc: I proposed we stick issue numbers on the commit message because it's hard tracking down the comments on a commit that broke code when I tried to rebase. In FF we always put a bug# on the commit message, but the mailing list seemed like people were not in favor of it. Huonw posted a script to make it easier to get back to the actual issue instead of the PR. Maybe just use that? Or should we require issue numbers? One thing I didn't realize is that most PRs do not have an associated issue logged with them. That makes the proposal less appealing.
+- nrc: I proposed we stick issue numbers on the commit message because it's hard tracking down the comments on a commit that broke code when I tried to rebase. In FF we always put a bug# on the commit message, but the mailing list seemed like people were not in favor of it. Huon posted a script to make it easier to get back to the actual issue instead of the PR. Maybe just use that? Or should we require issue numbers? One thing I didn't realize is that most PRs do not have an associated issue logged with them. That makes the proposal less appealing.
 - pcwalton: Because PRs and Issues are unified (every PR is an Issue), it's hard with GitHub. But the weird thing is that you can't transform an Issue into a PR easily (without the API). If you could transform it easily, this would be no real problem...
 - brson: If there's an issue, it should definitely be tagged in the PR. It also seems like we would like people to start having issues backing up their PR more often. Today, we often get PRs that have not had discussion before code was proposed.
 - nrc: I'd thought that we should have an issue for basically everything because for code to be so trivial that there is no discussion required about it seems rare.
@@ -87,7 +87,7 @@
 
 # debug assertions
 
-- acrichto: Huonw opened a PR to add debug assertions. At the same time renamed assert to enforce. The idea was that assert in C can be turned off with -NDEBUG. With that, the idea is that assertions should be assumed not to be on by default. Everybody agrees that there should be both "debug only" and "appears in all configurations." But there's no consensus on names. Enforce always there; assert compiles away. Or assert always there and debug_assert compiles away.
+- acrichto: Huon opened a PR to add debug assertions. At the same time renamed assert to enforce. The idea was that assert in C can be turned off with -NDEBUG. With that, the idea is that assertions should be assumed not to be on by default. Everybody agrees that there should be both "debug only" and "appears in all configurations." But there's no consensus on names. Enforce always there; assert compiles away. Or assert always there and debug_assert compiles away.
 - nmatsakis: Longstanding practice of assert as the one that gets compiled away. 
 - pcwalton: Yes, aborting in production is something we should support, but it should have a different name. Graydon wanted it to be impossible to turn off asserts. In practice, what happens is that I don't use assertions (in Servo) because I know they'll be slow. 
 - nmatsakis: D uses enforce for always check this.
