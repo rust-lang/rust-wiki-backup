@@ -12,6 +12,7 @@ Here is a short list of some OS projects in Rust. Feel free to add your own:
 * [LeoTestard/Quasar](https://github.com/LeoTestard/Quasar.git)
 * [pcmattman/rustic](https://github.com/pcmattman/rustic.git)
 * [pczarn/rustboot](https://github.com/pczarn/rustboot.git)
+* [wbthomason/ironkernel)(https://github.com/wbthomason/ironkernel), a fork of rustboot.
 * [Arcterus/kRnel](https://github.com/Arcterus/kRnel.git)
 * [cmr/cmoss](https://github.com/cmr/cmoss), a rather inactive OS project
 * [mahrz/rv6](https://github.com/mahrz/rv6.git), a port of xv6 an educational unix clone by MIT (doesn't do much yet, currently inactive)
