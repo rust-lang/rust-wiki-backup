@@ -41,6 +41,7 @@
   * [dyluke's textmate bundle](https://github.com/DylanLukes/Rust.tmbundle) - Rust TextMate mode
 * Textadept
   * [abaez's Textadept module/lexer](https://bitbucket.org/a_baez/ta-rust)
+  * [suhr/ta-rust](https://github.com/suhr/ta-rust)
 * Vim
   * included, see `src/etc/`. Syntastic has syntax error matching based on rustc.
   * [wting's rust.vim syntax](https://github.com/wting/rust.vim) - Vundle compatible plugin updated daily.
