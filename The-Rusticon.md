@@ -27,6 +27,7 @@ monomorphise | The act of generating specialized versions of generic constructs 
 newtype struct | A [*tuple structure*](#tuple_structure) with a single unnamed field. For example `struct NodeIndex(int)`. Useful to create wrapper types.
 owning pointer | `~T`, a pointer to an owned box.
 <a name="phantom_type" />phantom type | An `enum` with no variants. This cannot be constructed in safe code. See the [cheetsheet](https://github.com/mozilla/rust/wiki/Doc-FAQ-Cheatsheet#how-do-i-express-phantom-types) for an example.
+plain old data (Pod) | Any value that can be copied by moving bits, including scalars, references, and structs containing only Pod.
 raw pointer | `*T`, a pointer to anything. Requires unsafe code to dereference, no static verification is done on them.
 rustdoc | The Rust documentation generator.
 rustc | The Rust source code compiler.
