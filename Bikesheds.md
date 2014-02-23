@@ -13,6 +13,7 @@ When you're done with a bikeshed page, please either abandon it or move it to a 
 * [[Bikeshed rustpkg]]
 * [[Bikeshed task reuse]]
 * [[Bikeshed rustdoc]]
+* [[Bikeshed crate metadata]]
 
 ## Abandoned
 
