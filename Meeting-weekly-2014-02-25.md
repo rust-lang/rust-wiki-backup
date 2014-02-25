@@ -22,7 +22,7 @@
 
 # Friend of the tree
 
-- brson: Erick Tryzelaar (erickt). Since May 2011, he has done countless things. One was the syncrhonization crate. He organizes the local Rust meetups. He made a big effort to fix our Hash trait and landed that this week after a month of issue talks.
+- brson: Erick Tryzelaar (erickt). Since May 2011, he has done countless things. One was the serialization crate. He organizes the local Rust meetups. He made a big effort to fix our Hash trait and landed that this week after a month of issue talks.
 
 # Notes
 
