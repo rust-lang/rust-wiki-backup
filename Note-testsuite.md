@@ -147,7 +147,7 @@ auxiliary/cci_iter_lib.rs:
 
 run-pass/cci_iter_exe.rs:
   // aux-build:cci_iter_lib.rs
-  extern mod cci_iter_lib;
+  extern crate cci_iter_lib;
   fn main() {
     cci_iter_lib::iter([1, 2, 3]) {|i| ... }
   }
