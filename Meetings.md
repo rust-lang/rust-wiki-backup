@@ -1,6 +1,7 @@
 Mozilla employees have a weekly Rust planning meeting on Tuesday mornings at 10:00 AM Pacific (UTC-8). Minutes are recorded [on Etherpad](https://etherpad.mozilla.org/Rust-meeting-weekly) and then archived here.
 
 ## Weekly meetings:
+* [[Meeting-weekly-2014-02-25]] (Friend of the Tree; TotalEq; weak extern fn; channel names; relative paths)
 * [[Meeting-weekly-2014-02-18]] (`if_ok!`, issue numbers in commits, debug assertions, hash trait, vector syntax)
 * [[Meeting-weekly-2014-02-11]] (Friend of the Tree; binding in struct patterns; rules on static values; crate keyword; pizza; finally macro; implicit trait bounds)
 * [[Meeting-weekly-2014-02-04]] (libprim; operator overloading; using system LLVM)
