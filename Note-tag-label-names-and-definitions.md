@@ -48,6 +48,7 @@ meaning of the label and does not think it is self-evident.
 | A-tools                  | For Rust user: syntax highlighting, profiling, etc|
 | A-traits                 | Trait system provides bounded polymorphism + OOP  |
 | A-typesystem             | Rust's static type system, type check (aka typeck)|
+| A-unicode                | Unicode handling, parsing or conversion           |
 | A-versioning             | Version numbers/handling for language + libraries |
 | A-visibility             | Visibility/privacy: item pub/priv and their access|
 | A-windows                | Related to Microsoft Windows operating system     |
@@ -60,6 +61,7 @@ meaning of the label and does not think it is self-evident.
 | *EFFORT TAGS*            |                                                   |
 | E-easy                   | Effort: easy                                      |
 | E-hard                   | Effort: hard                                      |
+| E-needtest               | Effort: requires a unit test to be closed         |
 | &nbsp;                                                                       |
 | *IMPORTANCE TAGS*        |                                                   |
 | I-ICE                    | Importance: error internal to rustc               |
