@@ -46,6 +46,8 @@ See [Encoding](Community-libraries#encoding)
 * NoSql
   * LevelDB
       * [thestinger/rust-leveldb](https://github.com/thestinger/rust-leveldb)
+  * LMDB
+      * [esummers/rust-lightning](https://github.com/esummers/rust-lightning)
   * MongoDB
       * [10gen-interns/mongo-rust-driver-prototype](https://github.com/10gen-interns/mongo-rust-driver-prototype)
   * Redis
@@ -176,6 +178,9 @@ See also [[Computer Graphics and Game Development]].
 * ZeroMQ
   * [erickt/rust-zmq](https://github.com/erickt/rust-zmq):  [<img src="https://travis-ci.org/erickt/rust-zmq.png?branch=master">](https://travis-ci.org/erickt/rust-zmq)
 
+## NoSQL
+See [Database Access](Database Access)
+
 ## Operating system specific
 
 * Windows
@@ -211,6 +216,9 @@ See https://github.com/mozilla/rust/issues/3591
   * Convertions between text encodings. Ideally, with a customizable way of handling conversion errors.
   * Unicode normalization (NFD, NFC, NFKD, NFKC)
   * Collator (locale sensitive string comparison), with a configurable degree of strictness
+
+## SQL
+See [Database Access](Database Access)
 
 ## Template engine
 
