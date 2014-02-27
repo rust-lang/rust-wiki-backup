@@ -51,7 +51,7 @@ See [Encoding](Community-libraries#encoding)
   * MongoDB
       * [10gen-interns/mongo-rust-driver-prototype](https://github.com/10gen-interns/mongo-rust-driver-prototype)
   * Redis
-      * [mitsuhiko/redis-rs](https://github.com/mitsuhiko/redis-rs)
+      * [mitsuhiko/redis-rs](https://github.com/mitsuhiko/redis-rs) [<img src="https://travis-ci.org/mitsuhiko/redis-rs.png?branch=master">](https://travis-ci.org/mitsuhiko/redis-rs)
       * [mneumann/rust-redis](https://github.com/mneumann/rust-redis) [<img src="https://travis-ci.org/mneumann/rust-redis.png?branch=master">](https://travis-ci.org/mneumann/rust-redis)
   * Sqlite
 * SQL
