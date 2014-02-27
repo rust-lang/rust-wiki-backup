@@ -79,8 +79,6 @@ Wanted library: [[Lib datetime]]
     * [lifthrasiir/rust-encoding](https://github.com/lifthrasiir/rust-encoding): [<img src="https://travis-ci.org/lifthrasiir/rust-encoding.png?branch=rust-0.9-pre">](https://travis-ci.org/lifthrasiir/rust-encoding)
 * CSV
   * [Geal/rust-csv](https://github.com/Geal/rust-csv): [<img src="https://travis-ci.org/Geal/rust-csv.png?branch=master">](https://travis-ci.org/Geal/rust-csv)
-  * [grahame/rust-csv](https://github.com/grahame/rust-csv)
-  * [koko1000ban/rust-csv-parser](https://github.com/koko1000ban/rust-csv-parser)
 * HTML
     * [veddan/rust-htmlescape](https://github.com/veddan/rust-htmlescape):  [<img src="https://travis-ci.org/veddan/rust-htmlescape.png?branch=master">](https://travis-ci.org/veddan/rust-htmlescape)
 * [JSON](https://github.com/mozilla/rust/blob/master/src/libextra/json.rs)
@@ -91,8 +89,6 @@ Wanted library: [[Lib datetime]]
   * [tildeio/buffoon](https://github.com/tildeio/buffoon)
 * S-Expressions
   * [darkf/rust_sexpr](https://github.com/darkf/rust_sexpr)
-* Thrift
-  * see https://github.com/mozilla/rust/issues/1677
 * TOML
   * [mneumann/rust-toml](https://github.com/mneumann/rust-toml)
 * Tnetstring
