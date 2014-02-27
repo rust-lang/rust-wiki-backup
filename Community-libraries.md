@@ -1,5 +1,4 @@
 See also:
-* [Known packages that build with rustpkg](https://github.com/mozilla/rust/wiki/Rustpkg)
 * [Travis CI Status](http://hiho.io/rust-ci/)
 
 ## Audio
