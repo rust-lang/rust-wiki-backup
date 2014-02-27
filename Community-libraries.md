@@ -109,8 +109,6 @@ See also [[Computer Graphics and Game Development]].
 
 * Cocoa
   * [mozilla-servo/rust-cocoa](https://github.com/mozilla-servo/rust-cocoa)
-* Curses
-  * [pnkfelix/rust-curses](https://github.com/pnkfelix/rust-curses)
 * Gtk
   * [JeremyLetang/rgtk](https://github.com/JeremyLetang/rgtk)
 * ncurses
@@ -118,6 +116,7 @@ See also [[Computer Graphics and Game Development]].
   * [drhodes/rust-ncurses](https://github.com/drhodes/rust-ncurses)
   * [eevee/amulet](https://github.com/eevee/amulet)
   * [jeaye/ncurses-rs](https://github.com/jeaye/ncurses-rs): [![Build Status](https://travis-ci.org/jeaye/ncurses-rs.png?branch=master)](https://travis-ci.org/jeaye/ncurses-rs.png)
+  * [pnkfelix/rust-curses](https://github.com/pnkfelix/rust-curses)
 * Termbox
   * [apribadi/rust-termbox](https://github.com/apribadi/rust-termbox)
 * wxWidgets
