@@ -179,7 +179,7 @@ See also [[Computer Graphics and Game Development]].
   * [erickt/rust-zmq](https://github.com/erickt/rust-zmq):  [<img src="https://travis-ci.org/erickt/rust-zmq.png?branch=master">](https://travis-ci.org/erickt/rust-zmq)
 
 ## NoSQL
-See [Database Access](Database Access)
+See [Database Access](Community-libraries#wiki-database-access)
 
 ## Operating system specific
 
@@ -218,7 +218,7 @@ See https://github.com/mozilla/rust/issues/3591
   * Collator (locale sensitive string comparison), with a configurable degree of strictness
 
 ## SQL
-See [Database Access](Database Access)
+See [Database Access](Community-libraries#wiki-database-access)
 
 ## Template engine
 
