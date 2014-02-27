@@ -90,7 +90,7 @@ Wanted library: [[Lib datetime]]
 * S-Expressions
   * [darkf/rust_sexpr](https://github.com/darkf/rust_sexpr)
 * TOML
-  * [mneumann/rust-toml](https://github.com/mneumann/rust-toml)
+  * [mneumann/rust-toml](https://github.com/mneumann/rust-toml):  [<img src="https://travis-ci.org/mneumann/rust-toml.png?branch=master">](https://travis-ci.org/mneumann/rust-toml)
 * Tnetstring
   * [erickt/rust-tnetstring](https://github.com/erickt/rust-tnetstring):  [<img src="https://travis-ci.org/erickt/rust-tnetstring.png?branch=master">](https://travis-ci.org/erickt/rust-tnetstring)
 * XML
