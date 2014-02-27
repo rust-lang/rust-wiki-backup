@@ -14,6 +14,7 @@ When you're done with a bikeshed page, please either abandon it or move it to a 
 * [[Bikeshed task reuse]]
 * [[Bikeshed rustdoc]]
 * [[Bikeshed crate metadata]]
+* [[Bikeshed crate packaging system]]
 
 ## Abandoned
 
