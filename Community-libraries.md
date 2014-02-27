@@ -160,17 +160,6 @@ See also [[Computer Graphics and Game Development]].
 * [UUID](https://github.com/mozilla/rust/blob/master/src/libextra/uuid.rs)
 * NanoMsg
   * [glycerine/rust-nanomsg](https://github.com/glycerine/rust-nanomsg)
-* Web Programming
-    * [Earlz/rustymvc](https://github.com/Earlz/rustymvc)
-    * [erickt/rust-mongrel2](https://github.com/erickt/rust-mongrel2): bindings for the [Mongrel2](http://mongrel2.org) webserver
-    * [Ogeon/rustful](https://github.com/Ogeon/rustful):  [<img src="https://travis-ci.org/Ogeon/rustful.png?branch=master">](https://travis-ci.org/Ogeon/rustful)
-    * [rust-http](https://github.com/chris-morgan/rust-http):  [<img src="https://travis-ci.org/chris-morgan/rust-http.png?branch=master">](https://travis-ci.org/chris-morgan/rust-http)
-    * [SimonSapin/rust-url](https://github.com/SimonSapin/rust-url)
-    * [skade/widmann](https://github.com/skade/widmann): [<img src="https://travis-ci.org/skade/widmann.png?branch=master">](https://travis-ci.org/skade/widmann)
-    * [url.rs](https://github.com/mozilla/rust/blob/master/src/libextra/url.rs)
-    * [WebeWizard/libhttpd](https://github.com/WebeWizard/libhttpd)
-    * [wycats/route-recognizer.rs](https://github.com/wycats/route-recognizer.rs)
-    * [wycats/routed-http.rs](https://github.com/wycats/routed-http.rs)
 * ZeroMQ
   * [erickt/rust-zmq](https://github.com/erickt/rust-zmq):  [<img src="https://travis-ci.org/erickt/rust-zmq.png?branch=master">](https://travis-ci.org/erickt/rust-zmq)
 
@@ -226,6 +215,18 @@ See [Database Access](Community-libraries#wiki-database-access)
 
 * QuickCheck
   * [mcandre/rustcheck](https://github.com/mcandre/rustcheck)
+
+## Web Programming
+  * [Earlz/rustymvc](https://github.com/Earlz/rustymvc)
+  * [erickt/rust-mongrel2](https://github.com/erickt/rust-mongrel2): bindings for the [Mongrel2](http://mongrel2.org) webserver
+  * [Ogeon/rustful](https://github.com/Ogeon/rustful):  [<img src="https://travis-ci.org/Ogeon/rustful.png?branch=master">](https://travis-ci.org/Ogeon/rustful)
+  * [rust-http](https://github.com/chris-morgan/rust-http):  [<img src="https://travis-ci.org/chris-morgan/rust-http.png?branch=master">](https://travis-ci.org/chris-morgan/rust-http)
+  * [SimonSapin/rust-url](https://github.com/SimonSapin/rust-url)
+  * [skade/widmann](https://github.com/skade/widmann): [<img src="https://travis-ci.org/skade/widmann.png?branch=master">](https://travis-ci.org/skade/widmann)
+  * [url.rs](https://github.com/mozilla/rust/blob/master/src/libextra/url.rs)
+  * [WebeWizard/libhttpd](https://github.com/WebeWizard/libhttpd)
+  * [wycats/route-recognizer.rs](https://github.com/wycats/route-recognizer.rs)
+  * [wycats/routed-http.rs](https://github.com/wycats/routed-http.rs)
 
 ## XML
 See [Encoding](Community-libraries#encoding)
