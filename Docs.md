@@ -7,6 +7,7 @@ Additional supplementary documentation is maintained here on the wiki.
 
 ## Other documentation
 
+[[Teaching Rust]]  
 [Rust for Rubyists](http://www.rustforrubyists.com/) - Excellent introduction to Rust  
 [[Examples|Doc examples]] - Where to look for examples of Rust  
 [[Releases|Doc releases]] - Links to current and old releases and documentation  
