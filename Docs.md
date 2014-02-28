@@ -104,8 +104,8 @@ Some Rust classics:
 
 ## Presentations
 
-* Bay Area Meetup, February 2014](https://air.mozilla.org/rust-meetup-february-2014/) - David Renshaw - Cap'n'Proto, Steven Fackler - macro export, Kevin Cantu - testing.
-* Bay Area Meetup, January 2014](https://air.mozilla.org/rust-meetup-january-2014/) - Brian Anderson - Rust 1.0; Niko Matsakis - dynamically sized types; Kevin Ballard - Lua bindings; Corey Richardson - evangelism.
+* [Bay Area Meetup, February 2014](https://air.mozilla.org/rust-meetup-february-2014/) - David Renshaw - Cap'n'Proto, Steven Fackler - macro export, Kevin Cantu - testing.
+* [Bay Area Meetup, January 2014](https://air.mozilla.org/rust-meetup-january-2014/) - Brian Anderson - Rust 1.0; Niko Matsakis - dynamically sized types; Kevin Ballard - Lua bindings; Corey Richardson - evangelism.
 * [Niko's linux.conf.au talk 2014](https://t.co/aaYgMqZprC) - Memory ownership and Lifetimes. January 10, 2014.
 * [Bay Area Meetup, December 2013](https://air.mozilla.org/rust-meetup-december-2013/) - Alex Crichton - Channel Performance; Steve Klabnik - documentation; Chris Morgan - documentation; Luqman Aden - Minecraft chat client.
 * [Bay Area Meetup, November 2013](https://air.mozilla.org/sprocketnes-practical-systems-programming-in-rust/) - Brian Anderson - Rust community; Patrick Walton - SprocketNES; Frank Denis - Rust at OpenDNS; Yehuda Katz - Embedding Rust in C.
