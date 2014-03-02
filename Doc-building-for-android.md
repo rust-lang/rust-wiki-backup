@@ -45,7 +45,7 @@ wget -c http://dl.google.com/android/ndk/android-ndk-r9b-linux-x86_64.tar.bz2
     
 5. How to cross compile
     
-        rustc --target=arm-linux-androideabi --android-cross-path=[path of standalone toolchain dir] hello.rs
+        rustc --target=arm-linux-androideabi -C android-cross-path=[path of standalone toolchain dir] hello.rs
  
 6. How to run on Android
 
