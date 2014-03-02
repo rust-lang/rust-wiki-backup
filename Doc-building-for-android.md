@@ -61,3 +61,5 @@ wget -c http://dl.google.com/android/ndk/android-ndk-r9b-linux-x86_64.tar.bz2
     Run using adb shell
 
         adb shell /system/bin/hello
+
+Use rustc with --crate-type=staticlib etc to emit rust code which can be linked with C/C++ sources compiled by the android standalone toolchain's G++. From here is it possible to create an APK as with NDK examples. Use #[no_mangle] extern "C" functions to export functions which can be called by android frameworks
