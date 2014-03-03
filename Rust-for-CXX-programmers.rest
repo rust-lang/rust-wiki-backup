@@ -211,6 +211,11 @@ Function Overloading
 Rust can only select function overloads based on the receiver (and sometimes through return values due to HN type inference). To overload functions on multiple parameters, one must create an extra layer of traits for something that looks like double-dispatch, with each parameter being moved to the receiver by an intermediate function.
 Although this is extra boilerplate, the benefit is that its' also ready for runtime polymorphism through trait-objects if needed.
 
+Runtime Polymorphism
+--------------------
+Instead of adding virtual functions to classes, Rust uses Trait Objects. A trait object is a fat pointer to data and an associated vtable. Any number of traits can be implemented for an existing type without needing to establish an inheritance heirachy, and there is no 'diamond inheritance problem'.
+It is possible to attach a new vtable to an existing struct instance with &<expr> as &<Trait> - so one library can use datastructures from another library, without the other having to have even known the interfaces required.
+
 Metaprogramming
 ---------------
 
