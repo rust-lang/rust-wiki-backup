@@ -48,6 +48,10 @@ can enforce this with the `managed-heap-memory` lint check). Garbage collection
 will be avoided in the standard library except for concepts like persistent
 (copy-on-write, with shared substructures) containers that require them.
 
+pointer aliasing rules
+----------------------
+thanks to memory safety rust can guarantee that immutable data really is immutable, so there are more opportunities for the compiler to keep values in registers - avoiding the need for 'restrict' that some C/C++ compilers have for low level optimization.
+
 Strings
 -------
 
@@ -205,6 +209,18 @@ module-level, and not for nested closures where it is inferred.
 
 Despite the different model in the type system, traits are compiled to code
 similar to what templates would produce.
+
+Function Overloading
+--------------------
+There is extra effort organizing functions into traits before overloading is possible - however this gives the benefit of better error messages for generics, and allows runtime polymorphism through trait objects
+
+Overloading is only possible on the receiver - other parameters can only be polymorphic through traits. To implement polymorphic functions dispatched on multiple parameters (eg collide(Spaceship& a,Asteroid& b)... ), you need to add an extra layer of traits for 'double-dispatch' or more. Again whilst this may seem like boiler plate, the benefit is its' ready for use with runtime vtables if needed.
+
+Runtime Polymorphism
+--------------------
+Instead of adding virtual functions to classes, you create Trait Objects which are fat-pointers to a data structure and a vtable. This avoids the 'diamond inheritance' problem, as you can cleanly implement any number of traits for a type in a generalized graph.
+You can also create a new trait object 'viewing' the data in an existing structure - one library needn't have exposed all the interfaces required for another library to use it's data.
+enums provide another form of polymorphism.
 
 Metaprogramming
 ---------------
