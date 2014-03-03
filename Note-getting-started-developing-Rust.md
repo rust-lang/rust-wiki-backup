@@ -49,7 +49,7 @@ We recommend developing under [MSYS and MinGW](http://www.mingw.org) using their
  * Choose to **Run Git from the Windows Command Prompt** instead of Use Git Bash only.
  * Choose **Checkout as-is, commit Unix-style line endings** (you'll have less problems).
  * After installing Git, close the MinGW console and reopen it, type `git --version` to verify installation and path is set correctly.
-2. Download Python 2.7 installer for your Windows version from http://www.python.org/getit/ and install it preferably to `C:\Python27`.
+2. Download Python 2.7 installer for your Windows version from http://www.python.org/downloads/windows/ and install it preferably to `C:\Python27`.
 3. Download the latest mingw-get-inst (the auto-installer - Green button) directly from http://sourceforge.net/projects/mingw/.
 4. Run the mingw-get-inst-########.exe
 5. In the Setup GUI, Check the boxes and _Mark for Installation_ the following components to install:
