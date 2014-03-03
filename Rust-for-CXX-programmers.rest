@@ -94,9 +94,9 @@ can be used.
 +===================+================================================+
 | `enum`            | `enum`, but can only store the given variants  |
 +-------------------+------------------------------------------------+
-| `boost::variant`  | `enum`, `Either` (an `enum`) for 2 types       |
+| `boost::variant`  | `enum`, `Result` (an `enum`) for 2 types       |
 +-------------------+------------------------------------------------+
-| `boost::optional` | `Option` (an `enum`)                           |
+| `boost::optional` | `Result` (an `enum`)                           |
 +-------------------+------------------------------------------------+
 
 `Option` and `Either` are very common patterns, so they're predefined along
