@@ -163,6 +163,11 @@ function or expression must also return a correctly typed value, or fail.
 This also means indexing a string/vector will do bounds checking like
 `vector<T>::at()` (though there are unsafe functions in `vec::raw` that allow bypassing the bounds checks)
 
+Pointer Aliasing
+----------------
+Thanks to memory/pointer safety and more rigorous immutability, rust can guarantee when multiple writable pointers don't access the same object, giving more opportunities for caching values in registers and hence low level scheduling optimizations by the compiler. This avoids the need for 'restrict' that is used as an extension in some C/C++ compilers for performance sensitive code.
+
+
 Methods
 -------
 
@@ -213,8 +218,8 @@ Although this is extra boilerplate, the benefit is that its' also ready for runt
 
 Runtime Polymorphism
 --------------------
-Instead of adding virtual functions to classes, Rust uses Trait Objects. A trait object is a fat pointer to data and an associated vtable. Any number of traits can be implemented for an existing type without needing to establish an inheritance heirachy, and there is no 'diamond inheritance problem'.
-It is possible to attach a new vtable to an existing struct instance - so one library can take data from another library, without the other having to have even known the interfaces required.
+Instead of adding virtual functions to classes, Rust uses Trait Objects. A trait object is a fat pointer to data and an associated vtable, created by "[~|&]<expr> as [~|&]<traitname>". Any number of traits can be implemented for an existing type without needing to establish an inheritance heirachy, and there is no 'diamond inheritance problem'.
+It is possible to attach a new vtable to an existing struct instance (with a borrowed pointer) - so one library can take data from another library, without the other having to have even known the interfaces required.
 
 Metaprogramming
 ---------------
