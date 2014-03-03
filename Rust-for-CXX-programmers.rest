@@ -165,7 +165,7 @@ This also means indexing a string/vector will do bounds checking like
 
 Pointer Aliasing
 ----------------
-Thanks to memory/pointer safety and more rigorous immutability, rust can guarantee when multiple writable pointers don't access the same object, giving more opportunities for caching values in registers and hence low level scheduling optimizations by the compiler. This avoids the need for 'restrict' that is used as an extension in some C/C++ compilers for performance sensitive code.
+Thanks to memory/pointer safety and more rigorous immutability, rust can guarantee when multiple writable pointers don't access the same object. This gives more opportunities for caching values in registers, reducing loads and stores, and low level scheduling optimizations by the compiler. This avoids the need for 'restrict' that is used as an extension in some C/C++ compilers for performance sensitive code.
 
 
 Methods
