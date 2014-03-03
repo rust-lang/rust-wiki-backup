@@ -206,6 +206,11 @@ module-level, and not for nested closures where it is inferred.
 Despite the different model in the type system, traits are compiled to code
 similar to what templates would produce.
 
+Function Overloading
+--------------------
+Rust can only select function overloads based on the receiver (and sometimes through return values due to HN type inference). To overload functions on multiple parameters, one must create an extra layer of traits for something that looks like double-dispatch, with each parameter being moved to the receiver by an intermediate function.
+Although this is extra boilerplate, the benefit is that its' also ready for runtime polymorphism through trait-objects if needed.
+
 Metaprogramming
 ---------------
 
