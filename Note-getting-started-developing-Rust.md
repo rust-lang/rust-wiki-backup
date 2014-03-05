@@ -40,6 +40,8 @@ For Ubuntu users willing to build LaTeX doc; you might need to additionally inst
 
 ### Windows
 
+(If you are interested in *using* Rust binary rather than *building* source, see [[Using Rust on Windows]])
+
 #### Quick Steps for Windows environment setup.
 We recommend developing under [MSYS and MinGW](http://www.mingw.org) using their auto-installer.
 
