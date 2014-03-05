@@ -40,3 +40,4 @@ Listing of notes for developers working on the Rust compiler and tools.
 * [IRC quotes](http://quotes.burntelectrons.org/search?query=tag%3A%23rust)
 * [IRC logs](https://botbot.me/mozilla/rust) and [more IRC logs](http://irclog.gr/#browse/irc.mozilla.org/rust)
 * [MXR](http://mxr.mozilla.org/rust/)
+* [PR Triage](https://prs.paas.allizom.org/mozilla/rust)
