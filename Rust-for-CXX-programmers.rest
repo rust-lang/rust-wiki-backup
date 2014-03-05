@@ -215,6 +215,7 @@ Function Overloading
 --------------------
 Rust can only select function overloads based on the receiver (and sometimes through return values due to HN type inference). To overload functions on multiple parameters, one must create an extra layer of traits for something that looks like double-dispatch, with each parameter being moved to the receiver by an intermediate function.
 Although this is extra boilerplate, the benefit is that its' also ready for runtime polymorphism through trait-objects if needed.
+Without overloading multiple parameters, the information you pay in writing more specific function calls is sometimes recovered back with HN type inference feeding back to its' arguments. You can also consider Enums for conviniently passing varied options to a function.
 
 Runtime Polymorphism
 --------------------
