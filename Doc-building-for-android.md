@@ -62,9 +62,11 @@ wget -c http://dl.google.com/android/ndk/android-ndk-r9b-linux-x86_64.tar.bz2
 
         adb shell /system/bin/hello
 
+
+### How to compile rust code into an APK to deploy on a device
 Use rustc with --crate-type=staticlib etc to emit rust code which can be linked with C/C++ sources compiled by the android standalone toolchain's g++. From here is it possible to create an APK as with NDK examples. Use #[no_mangle] extern "C" rust functions to export functions which can be called by android frameworks
 
-Sample modification to android-ndk native-activity sample makefile (jni/Android.mk)
+Sample of modifications to the android-ndk native-activity sample makefile (jni/Android.mk) :-
 
     LOCAL_PATH := $(call my-dir)
     include $(CLEAR_VARS)
@@ -84,7 +86,7 @@ Sample modification to android-ndk native-activity sample makefile (jni/Android.
 
     $(call import-module,android/native_app_glue)
 
-This requires that you compiled rust code into a library beforehand:-
+This requires that you compiled rust code into a library beforehand, eg if 'hello_android.rs' is your crate root
 
     rustc --target=arm-linux-androideabi hello_android.rs --android-cross-path=/opt/ndk-standalone-arm/ --staticlib -o jni/librust_android.a
 
