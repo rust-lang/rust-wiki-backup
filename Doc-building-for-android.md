@@ -63,3 +63,29 @@ wget -c http://dl.google.com/android/ndk/android-ndk-r9b-linux-x86_64.tar.bz2
         adb shell /system/bin/hello
 
 Use rustc with --crate-type=staticlib etc to emit rust code which can be linked with C/C++ sources compiled by the android standalone toolchain's g++. From here is it possible to create an APK as with NDK examples. Use #[no_mangle] extern "C" rust functions to export functions which can be called by android frameworks
+
+Sample modification to android-ndk native-activity sample makefile (jni/Android.mk)
+
+    LOCAL_PATH := $(call my-dir)
+    include $(CLEAR_VARS)
+
+    LOCAL_MODULE    := rust-prebuilt
+    LOCAL_SRC_FILES := librust_android.a
+
+    include $(PREBUILT_STATIC_LIBRARY)
+    include $(CLEAR_VARS)
+
+    LOCAL_MODULE    := native-activity
+    LOCAL_SRC_FILES := main.c
+    LOCAL_LDLIBS    := -llog -landroid -lEGL -lGLESv1_CM
+    LOCAL_STATIC_LIBRARIES := android_native_app_glue rust-prebuilt
+
+    include $(BUILD_SHARED_LIBRARY)
+
+    $(call import-module,android/native_app_glue)
+
+This requires that you compiled rust code into a library beforehand:-
+
+    rustc --target=arm-linux-androideabi hello_android.rs --android-cross-path=/opt/ndk-standalone-arm/ --staticlib -o jni/librust_android.a
+
+execute ndk-build, ant debug|release etc to compile it into a native code .so and package,deploy it
