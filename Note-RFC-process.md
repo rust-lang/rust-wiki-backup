@@ -1,6 +1,6 @@
 Many changes can be reviewed after-the-fact, or via bugs or the usual code-review mechanisms of github.
 
-Some changes are "substantial", and we ask that these be put through a bit of a design process and produce a consensus among the **core developers** (those with administrative access to the `mozilla/rust` repository, currently: andreasgal, BrendanEich, brson, catamorphism, dherman, erickt, graydon, jdm, jruderman, lht, marijnh, nikomatsakis, pcwalton).
+Some changes are "substantial", and we ask that these be put through a bit of a design process and produce a consensus among the [core team](https://github.com/mozilla/rust/wiki/Note-core-team).
 
 ## When you need to follow this process
 
