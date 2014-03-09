@@ -10,15 +10,14 @@ Version numbers listed here are "what we're using"; the code may well work with 
 
 * A recent Linux, OS X 10.6 or later, Win32 or FreeBSD system
 * 1.5 GiB RAM _available for the build process_ (see note below about memory usage)
-* [Python 2.x](http://www.python.org/download/) (version 2.7 is known to work)
-* GNU make 3.81
-* git 1.7
-* g++ 4.4 at least on Linux, 4.5 on Windows, and the 4.x gcc in Apple's SDK for OS X.
-* curl
-* Valgrind 3.8.0 or later (recommended, but not required for Linux)
-* [pandoc](http://johnmacfarlane.net/pandoc/) 1.8 at least (optional, if you wish to build HTML docs)
-* pdflatex (optional, if you wish to build PDF docs)
-* ccache ([[optional|Note ccache]])
+* [`python` 2.x](http://www.python.org/download/) (version 2.7 is known to work)
+* GNU `make` 3.81
+* `git` 1.7
+* `g++` 4.4 at least on Linux, 4.5 on Windows, and the 4.x `gcc` in Apple's SDK for OS X.
+* `curl`
+* recommended: `valgrind` 3.8.0 or later (not required for Linux)
+* optional: if you wish to build LaTeX PDF docs, [`pandoc`](http://johnmacfarlane.net/pandoc/) 1.9.1 at least, with one or more of `pdflatex`/`xelatex`/`lualatex`
+* optional: [[ccache|Note ccache]] to shorten your rebuild times
 
 ### Memory usage
 
@@ -26,23 +25,30 @@ The Rust build peaks at around 1.3 GiB, so at least that much memory should be a
 
 ### Debian-based Linux distributions
 
-You can install all the prerequisites you need to build Rust by running
+You can install all the prerequisites you need to build Rust by running:
 
-    sudo apt-get install python make git g++ curl valgrind pandoc texlive-latex-recommended
+~~~~bash
+sudo apt-get install python make git g++ curl valgrind
+~~~~
 
-Incidentally, the pandoc that's packaged for certain Linux
-distributions (Ubuntu, for instance) is older than 1.8, so in order to
-build HTML docs on Ubuntu, you'll need to install pandoc manually
-according to the [installation
-instructions](http://johnmacfarlane.net/pandoc/installing.html).
+For Ubuntu users willing to build LaTeX doc, you will need some more packages:
 
-For Ubuntu users willing to build LaTeX doc; you might need to additionally install `lmodern` font package, see [#3989](https://github.com/mozilla/rust/issues/3989).
+~~~~bash
+sudo apt-get install pandoc texlive-latex-recommended lmodern
+~~~~
+
+Incidentally, the `pandoc` that's packaged for certain Linux
+distributions (Ubuntu, for instance) is sometimes quite old, so make sure that
+`pandoc -V` gives version 1.9.1 at least, otherwise follow the [building
+instructions](http://johnmacfarlane.net/pandoc/installing.html).  
+Also, make sure you have the `lmodern` font package (see [#3989](https://github.com/mozilla/rust/issues/3989)).
 
 ### Windows
 
 (If you are interested in *using* Rust binary rather than *building* source, see [[Using Rust on Windows]])
 
 #### Quick Steps for Windows environment setup.
+
 We recommend developing under [MSYS and MinGW](http://www.mingw.org) using their auto-installer.
 
 1. Download and install Git for Windows following these steps:
@@ -82,23 +88,27 @@ If you are a consistent user of MinGW or plan to be, you might also want to subs
 (OPTIONAL)
 * Using `mingw-get` alone will open a GUI interface for package management.  You can update MinGW components once you start it's console by using the command `mingw-get update`, this updates the package repository for MinGW.  After which you can upgrade packages with `mingw-get upgrade`. **mingw-get upgrade will overwrite to latest versions of GCC as well, so you might have to upgrade to a lower version afterwards.**
 
-(OPTIONAL - if using another Git installer or method other than the Quick Steps) :
+(OPTIONAL - if using another Git installer or method other than the Quick Steps):
 
 * Put the git binary path *after* the MinGW path. So add a line like the following to your `/etc/profile` or `.bashrc`:
 
-    ``export PATH=$PATH:/c/Program\ Files/Git/bin``
+~~~~bash
+export PATH=$PATH:/c/Program\ Files/Git/bin
+~~~~
 
-(OPTIONAL - working with multiple toolchains & modifying your PATH) :
+(OPTIONAL - working with multiple toolchains & modifying your PATH):
 
 * In Windows, to try out or work with different toolchains for building Rust with MinGW, the easiest way is to modify and add at the end of your Msys profile file, `C:\MinGW\msys\1.0\etc\profile` something like the following, and uncomment whichever toolchain path you want to work with and Remember to exit the Msys console and reopen it:
 
-``# Enable MinGW64 path by uncommenting one of the following lines:``
-``# export PATH="/c/mingw-builds/x64-4.8.1-release-win32-seh-rev5/mingw64/bin:/usr/local:$PATH"``
-``# export PATH="/c/drangon_mingw64/mingw64/bin:/usr/local:$PATH"``
-``export PATH="/c/mingw-builds/x32-4.8.1-release-win32-dwarf-rev5/mingw32/bin:/usr/local:$PATH"``
+~~~~bash
+# Enable MinGW64 path by uncommenting one of the following lines:
+# export PATH="/c/mingw-builds/x64-4.8.1-release-win32-seh-rev5/mingw64/bin:/usr/local:$PATH"
+# export PATH="/c/drangon_mingw64/mingw64/bin:/usr/local:$PATH"
+export PATH="/c/mingw-builds/x32-4.8.1-release-win32-dwarf-rev5/mingw32/bin:/usr/local:$PATH"
 
-``# Enable LLVM path by uncommenting the following line:``
-``# export PATH="$HOME/build/Release+Asserts/bin:$PATH"``
+# Enable LLVM path by uncommenting the following line:
+# export PATH="$HOME/build/Release+Asserts/bin:$PATH"
+~~~~
 
 **Troubleshooting Windows environment setups:**
 
@@ -131,16 +141,20 @@ Sometimes, on OS X, compiling Rust might fail with a "too many open files" error
 
 1. Raise the number of maximum files allowed on the system: `sudo sysctl -w kern.maxfiles=1048600` and `sudo sysctl -w kern.maxfilesperproc=1048576`.  This can be made persistent by adding the following lines to `/etc/sysctl.conf`:
 
-        kern.maxfiles=1048600
-        kern.maxfilesperproc=1048576
+~~~~
+kern.maxfiles=1048600
+kern.maxfilesperproc=1048576
+~~~~
 
 2. Raise the launchd limits: `sudo launchctl limit maxfiles 1048576`.  Can be made persistent by adding `  limit maxfiles 1048576` to `/etc/launchd.conf`.
 
 3. Verify the changes.  If all goes well, `sudo launchctl limit` should show something like this:
 
-        [...]
-        maxproc     709            1064
-        maxfiles    1048575        1048575
+~~~~
+  [...]
+  maxproc     709            1064
+  maxfiles    1048575        1048575
+~~~~
 
 4. Run the compiler.  Note that if the changes aren't made persistent, you need to run as root, since the per-user launchd won't inherit the settings.  If you do change the config files, you need to reboot to apply the appropriate settings.
 
@@ -148,7 +162,9 @@ Sometimes, on OS X, compiling Rust might fail with a "too many open files" error
 
 Rust builds on FreeBSD but is not officially supported. It is only known to work on 9.0-RELEASE. You'll need some prerequisites:
 
-    pkg_add -r git gmake libexecinfo libunwind
+~~~~bash
+pkg_add -r git gmake libexecinfo libunwind
+~~~~
 
 The gcc included with FreeBSD is old, so your best bet is to run the `configure` script with `--enable-clang`. Installing gcc 4.6 can also work. Build with `gmake` instead of `make`.
 
@@ -160,18 +176,24 @@ See [[building for Android|Doc-building-for-android]]
 
 Before you get started, you should quickly review the [Build system notes here](note-build-system) which describes the Make targets among other things.
 
-    git clone git://github.com/mozilla/rust.git
-    cd rust
-    ./configure   # this may take a while if this is your first time, as it downloads LLVM
+~~~~bash
+git clone git://github.com/mozilla/rust.git
+cd rust
+./configure   # this may take a while if this is your first time, as it downloads LLVM
+~~~~
 
 If you already have one of the prereqs installed, like Python or Perl, make sure the PATH environment variable is set so the configure script can find it, otherwise you will get errors during configure.
 
-    make    # this will definitely take a while if this is your first time, as it builds LLVM
+~~~~bash
+make    # this will definitely take a while if this is your first time, as it builds LLVM
+~~~~
 
 Optional steps:
 
-    make check   # run the test suite
-    make install   # install the compiler and associated tools
+~~~~bash
+make check   # run the test suite
+make install   # install the compiler and associated tools
+~~~~
 
 This will build and test the compiler, standard libraries, and supporting tools.
 
