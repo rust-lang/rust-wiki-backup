@@ -95,6 +95,4 @@ Every week there is a bug triage meeting. At that meeting the attendees will rev
 
 ## Language changes
 
-If you have some vague ideas, add an entry to [[Bikesheds]]. If you have a worked-out idea, we suggest you look at the [[Note RFC Process]] to see how we manage larger changes.
-
-Library additions are probably the most likely to be accepted. See [[Note wanted libraries]] for possible candidates.
+Major changes (including all language enhancements) must go through the [[RFC process|Note RFC Process]].
