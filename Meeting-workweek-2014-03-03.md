@@ -1,13 +1,9 @@
 *Note: These are the notes and minutes for the work week from March 3-7, 2014.
-They are compiled from etherpads and are *very* incomplete.*
+They are compiled from etherpads and are very incomplete.*
 
 # Hey y'all, it's the Rust winter workweek for 2014!
 
 March 3-7, Santa Cruz, CA
-
-Schedule: https://docs.google.com/a/mozilla.com/spreadsheet/ccc?key=0AlWBWplsaTZvdFhua1lOVXpNU2hJRDJ3VmVvbHI4R0E#gid=0
-
-The 1.0 spreadsheet: https://docs.google.com/a/mozilla.com/spreadsheet/ccc?key=0AlWBWplsaTZvdGdSdEVzZW1BeDA5dm0zM2FFeW0ySEE#gid=0
 
 # Attending
 
