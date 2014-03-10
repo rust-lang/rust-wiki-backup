@@ -1,6 +1,6 @@
 Rust has a community-driven development process where most decisions are made through consensus, under the stewardship of a 'core team'. The core team is responsible for steering the design and development process, overseeing the introduction of new features, and ultimately making decisions for which there is no consensus.
 
-All of the core team is currently employed by Mozilla.
+At the moment, all of the core team is currently employed by Mozilla, but this will likely change.
 
 | Name               | IRC        | GitHub       | email                  |
 |:-------------------|:-----------|:-------------|:-----------------------|
