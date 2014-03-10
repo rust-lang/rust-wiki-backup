@@ -1,4 +1,4 @@
-u*Note: These are the notes and minutes for the work week from March 3-7, 2014 in Santa Cruz.
+*Note: These are the notes and minutes for the work week from March 3-7, 2014 in Santa Cruz.
 They are compiled from etherpads and are very incomplete.*
 
 # Attending
