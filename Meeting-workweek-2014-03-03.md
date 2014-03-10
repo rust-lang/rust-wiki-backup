@@ -394,8 +394,8 @@ mostly like http://smallcultfollowing.com/babysteps/blog/2014/01/05/dst-take-5/
 * put dst items in metabug (nrc)
 
 
-** Note: everything after this is scattered notes and minutes from individual
-   topics. It will be mostly unreadable  **
+**Note: everything after this is scattered notes and minutes from individual
+   topics. It will be mostly unreadable**
 
 
 # 2014/03/03 DST
