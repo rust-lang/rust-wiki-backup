@@ -1,9 +1,5 @@
-*Note: These are the notes and minutes for the work week from March 3-7, 2014.
+*Note: These are the notes and minutes for the work week from March 3-7, 2014 in Santa Cruz.
 They are compiled from etherpads and are very incomplete.*
-
-# Hey y'all, it's the Rust winter workweek for 2014!
-
-March 3-7, Santa Cruz, CA
 
 # Attending
 
@@ -24,8 +20,7 @@ March 3-7, Santa Cruz, CA
 
 The  primary objective of this work week is to make final decisions on all  remaining design questions impacting the release of Rust, address the  issues of highest risk.
 
-The output of this week will be RFCs for major features, FAQs for difficult decisions (https://github.com/mozilla/rust/issues/4047), and possibly some rough documentation
-about The Rust Way.
+The output of this week will be RFCs for major features, FAQs for difficult decisions (https://github.com/mozilla/rust/issues/4047), and possibly some rough documentation about The Rust Way.
 
 We will take a lot of minutes for posterity.
 
@@ -61,7 +56,7 @@ Each  topic has an advocate (in parens) who should be prepared to lead a  discus
 * Attribute syntax (brson) (RFC) (2569)
 * Operator overloading (nmatsakis) (RFC)
 * self-type parameter syntax (nrc) (8888)
-* Error handling policy (the rust way) (acrichto) (docs, The Rust Way)
+* Error handling policy (acrichto) (docs)
   * Fail unwind semantics vs. abort
   * What happens in a kernel? (__morestack alternatives, etc.)
   * `try!` and conversions between error types
@@ -87,7 +82,7 @@ Each  topic has an advocate (in parens) who should be prepared to lead a  discus
 
 ### Who knows
 
-* packaging (wycats)
+* packaging
   - too broad of a discussion for workweek?
 * library API stabilization (brson)
   - what is the set of libraries we plan to stabilize?
@@ -96,25 +91,6 @@ Each  topic has an advocate (in parens) who should be prepared to lead a  discus
   - how to we do it without globs? can globs be simplified and made to work?
 * logging - it's lame (brson)
 * totalord/totaleq
-
-# Minutes
-
-Note: 
-
-DST: https://etherpad.mozilla.org/AVCPr7p95O
-static/const: https://etherpad.mozilla.org/F3TS5u32xf
-cargo: https://etherpad.mozilla.org/9V1ZuMHJki
-GC: https://etherpad.mozilla.org/5lSeDLVuh9
-Allocators: https://etherpad.mozilla.org/Z9lc1uzBIz
-built-in traits: https://etherpad.mozilla.org/WGIJPr399v
-opt-in built-in-traits: https://etherpad.mozilla.org/SsHKu0MfmD
-struct fields: https://etherpad.mozilla.org/RWnDop7T0D
-small topics (integer sizes, well-behaved iters): https://etherpad.mozilla.org/C3KuJg5Gyy
-trait method resolution: https://etherpad.mozilla.org/9BRwPabx16
-UFCS: https://etherpad.mozilla.org/NNZa0AX5gP
-Error handling: https://etherpad.mozilla.org/WIjYrOWEuf
-struct inheritance: https://etherpad.mozilla.org/QecHfJwdQx
-RFC process: https://etherpad.mozilla.org/AD6HtkCJWw
 
 # Decisions
 
