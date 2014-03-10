@@ -491,11 +491,13 @@ impl<unsized T> Deref<T> for Rc<T> {
 }
 ```
 
+```
 acrichto: seems magical for compiler to bring the length along
 pcwalton: required to make traits work
 niko: simplifies traits/object interaction (will discuss later)
 nrc: tangent: fixed size arrays specify length ([int, ..3]). plans for types to be polymorphic over integers ([int, ...T])?
 niko: someday. think it will work
+```
 
 ```
 In this scenario, we lose sight of the fact that foo.x and foo.y must have same length, in principle in the future, we could support some sort of capture/existential-open mechanism to track that. 
@@ -506,6 +508,7 @@ struct TwoVecs2<unsized T> {
 foo: TwoVecs2<[int]> --> foo.x, foo.y
 ```
 
+```
 brson: stil not clear to me that unsafe fat pointers are necessary. makes ffi worse
 niko: i think it is for Deref to be impl'd on Rc
 brson: we'll just need to have lots of lints for ffi
@@ -517,6 +520,7 @@ pcwalton: probably uncommon. you only use this if you want coercion
 
 acrichto: coercion only works with structs with typarams?
 niko: yep
+```
 
 ```
 // you want this
