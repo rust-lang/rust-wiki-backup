@@ -195,13 +195,17 @@ mod test {
 
 ## Documentation tests
 
-The build system is able to extract Rust code snippets from documentation and run them using the compiletest driver. Currently the tutorial and reference manual are tested this way. The targets are `make check-stage[N]-doc-tutorial` and `make check-stage[N]-doc-rust`, respectively. There are also several auxiliary tutorials; to run the tests extracted from them, do:
+The build system is able to extract Rust code snippets from documentation and run them using the compiletest driver. Currently the tutorial and reference manual are tested this way. The targets are `make check-stage[N]-doc-tutorial` and `make check-stage[N]-doc-rust`, respectively. There are also several auxiliary guides; to run the tests extracted from them, do:
 
 * `make check-stage[N]-doc-guide-borrowed-ptr`
 * `make check-stage[N]-doc-guide-tasks`
 * `make check-stage[N]-doc-guide-ffi`
 * `make check-stage[N]-doc-guide-macros`
 * `make check-stage[N]-doc-guide-testing`
+
+Crate API docs are tested as well:
+
+* `make check-stage[N]-doc-crate-std`
 
 To run all doc tests use `make check-stage[N]-doc`.
 
