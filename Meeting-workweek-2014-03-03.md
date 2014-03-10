@@ -586,9 +586,9 @@ illegal unless accompanied by
 impl Unsized for Tree<T> { ... }
 ```
 
--felix: why not have an attribute on a type parameter?
--dherman: attributes makes things look not-so-core
--pcwalton: this is quite a core feature to the language, seems to warrant a keyword
+- felix: why not have an attribute on a type parameter?
+- dherman: attributes makes things look not-so-core
+- pcwalton: this is quite a core feature to the language, seems to warrant a keyword
 
 strawman future solution 1:
 ```
@@ -611,10 +611,10 @@ Not having unsized on Option means:
 - Option<Rc<[T]>> -- OK
 - Rc<Option<[T]>> -- Not OK
 
--acrichto: Can you write `unsized struct` without an `unsized T` typaram?
--nmatsakis: yes, but useless. could add lint for it
--nmatsakis: although, why do we need 'unsized struct'? always redundant
--nmatsakis: what we *really* want is `impl<T:Unsized> Unsized for Foo<T>`, but not using a trait doesn't permit us to write that
+- acrichto: Can you write `unsized struct` without an `unsized T` typaram?
+- nmatsakis: yes, but useless. could add lint for it
+- nmatsakis: although, why do we need 'unsized struct'? always redundant
+- nmatsakis: what we *really* want is `impl<T:Unsized> Unsized for Foo<T>`, but not using a trait doesn't permit us to write that
 
 # Objects implementing Traits
 
