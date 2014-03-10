@@ -306,12 +306,13 @@ trait A {
 
 what about
 
+```
 (~Trait:Send: Trait2)::method()
 ((~Trait : Send) : Trait2)::method() // a? This one
 (~Trait : (Send : Trait2))::method() // b?
 
 ((G: Graph)::Node : (Trait: Kind))::method() // c?
-
+```
 
 ## struct inheritance
 
