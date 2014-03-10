@@ -1386,7 +1386,218 @@ Axes:
 
 # 2014/03/4 Allocators
 
-*The minutes for this topic were mostly corrupted.*
+```
+trait Alloc<E, P> {
+      fn new(&self, value: ||->E) -> P
+}
+ 
+structu Rc<T, A=Heap> { ... }
+```
+ 
+- nmatsakis: Motivation: we want to be able to paramaterize data structures over the allocation scheme that they're using to allocate their memory. Then, you can instrument and measure. Might want to redirect to the JS allocator in Servo; might want to instrument memory allocations.
+ 
+- pcwalton: Segregated fit is extremely common. It's used in Gecko for the frame tree, which knows how to allocate, using segregated fit (fixed-sized allocation bucket pools). It's one of the most common use cases for allocators.
+ 
+- nmatsakis: Idea is that you would call Alloc::new to initialize the memory. E is the type of object that's in there, and P is the pointer that results. These would be linked; P would be a wrapper (e.g. smart pointer) around E that manages it. An example of such an allocator is for ~ in our standard library.
+ 
+```
+impl <T> Alloc<T, ~T> for Heap {
+    fn new(&self, value : ||->T) => ~T {
+         ~value()
+    }
+    }
+```
+ 
+- nmatsakis: Rc doesn't care where it gets its memory; only that it gets some. So, it might be:
+```
+struct Rc<T, A=Heap> {}
+```
+- nmatsakis: Note that Heap does not need a <T> here. 
+```
+impl<T, A> Alloc<T, Rc<T>> {
+  fn new(...) {
+    let ptr = self.alloc.new(|| RcBox{ rc: 1, value: value());
+    ptr
+ }
+}
+```
+ 
+- nmatsakis: That's what we laid out before. So, you can build up chains of these from there.
+- acrichto: Allocator per smart pointer?
+- nmatsakis: If you use Heap, it's a singleton type, and just falls out.
+- pcwalton: Two important things here. 1) allocators must not be specialized to a single type and must be able to allocate many different types. 
+- nmatsakis: You could write such an allocator!
+- pcwalton: But any API we come up with must be able to allocate multiple types into the same thing. Users must be able to define such allocators themselves. That's required for b-trees because you might have to allocate tuples of the objects. 2) Some allocators may have custom instance data.
+- brson: IF you need back pointers to the allocator, don't you need a stack discipline for the allocator? or Gc on it?
+- pcwalton: Or a reference count to the allocator. There's no way around it; fundamental limitation. I think most people will have an allocator that lives forever.
+- nmatsakis: I don't think there are back pointers in this design except for destructors and where the call free on the allocator. 
+```
+struct HashMap<K, V, A=Heap> {
+      buckets: Vec<Option<(K, V)>, A>
+}
+```
+- acrichto: Seems backwards to require an allocator for every smart pointer. You might have the heap and the gc heap, possibly...
+- nmatsakis: We're hoping to unify the box keyword. You give it a value and it allocates memory within that allocator with that value.
+- acrichto: If you have an allocator for some heap, how do you allocate a bunch of different types on it?
+- pcwalton: Eventually, the semantics just come down to - when do you call free?
+- acrichto: But, if I have an allocator and want to allocate some Rc things, a hashmap, etc. how do I do that? So the allocator has to implement clone...
+- pcwalton: They have to be reference counted. I suspect games have a fixed set of bins (enemies, etc.) and they're each fixed-sized and live forever. Everything is `&'static`
+- brson: What about heavily-typed allocators?
+- pcwalton: Question is not dealing with typed vs. untyped. The mistake of the STL allocators is that an allocator in it can only allocate an object of one type. That's not the case in this. Or maybe it's multiple, but you have to supply them all up front. You really want to be able to use an allocator separately from the set of types.
+- dherman: Is this a perf or programming problem?
+- pcwalton: This is a programming problem (though there are perf problems, too, related to virtual function calls). The question we have is do we want to unify the unique pointer and the interface you use with the allocator. In this proposal, we hand back a unique pointer and the destructor. In the EASTL, you need a wrapper because there are no safe lifetime semantics, requiring some kind of unique pointer wrapper. With niko's, you have the allocator itself providing a more safe interface, though the interface is slightly more complicated.
+- pcwalton: If you did the EASTL approach in Rust, you would need a thing like a unique pointer (or ~). Then it just gives you back an object that you don't manage explicitly, it does.
+- huon: How do vectors work? Want to make one of size 100...
+- pcwalton: They are just another safe wrapper around the allocator in the EASTL appraoch. I think it would be a separate method....
+- nmatsakis: Might want a separate one around uninitialized memory. Vecs are one example; hashmaps are another. Often want to reserve but not fill in the memory yet.
+- pcwalton: EASTL always gives you uninitialized memory.
+- nmatsakis: That's not very Rust-y. box operator would not do it. box should just be sugar like:
+```
+box(alloc) expr ==> alloc.new(|| expr)
+```
+- nmatsakis: I was thinking that the allocator would give you a *T that is uninitalized...
+- pcwalton: Probably don't want sized & aligned (can get from intrinsics).
+- brson: The EASTL alignment requirements are much more so than that.
+- pcwalton: Use newtype. Don't want people passing alignment information down to Rc. Rc::with_alignment is bad.
+- pcwalton: I like separating ownership questions from allocation questions. Our two proposals agree on those fronts; mainly just aesthetic issues. Hrm, maybe EASTL makes it easier to allocate *T. 
+- brson: What's the back pointer?
+- pcwalton: All of the smart pointers have one.
+- brson: So ~ does? Every ~ has a back pointer to the allocator? So ~ is now two words?
+- pnkfelix: In practice, usually zero-sized. 
+- pcwalton: Not a pointer to the allocator; copy of the allocator! So that can be of size zero. 
+- brson: One thing the EA people complained about was copying the allocators in STL. I don't know how they could work around it.
+- pnkfelix: Is there a way to allocate an array of some elmeents with only a single clone? Where in API?
+- pcwalton: Wrapper for vec just has it. Responsibility of the smart pointer. Probably just falls out of ~ and DST. Because all the elements are one "thing" as far as DST is concerned anyway.
+- pnkfelix: So it'd be laid out as (allocator, elements)?
+- pcwalton: No. (ptr, allocator) where ptr is to the elements. Might be able to collapse it.
+- huon: isn't putting the allocator behind the pointer like putting the box headers on everything?
+- pnkfelix: Difficulties with headers were unsafe code... and inefficiency?
+- huon: Biggest was differences in representation between @ pointers and non-@.
+- pcwalton: It's going back to having headers if you have a non-zero size headers.
+- nmatsakis: Used to use different layouts depending on if T was managed or not, which was a real pain in trans (and it was in the language). The default allocations would just be a straight call to malloc. Just when using custom allocators that things look different.
+- pcwalton: Generalized (malloc/free). Fixed-sized ones with common size/alignment. Small block allocators just do those. Stack allocators are just bumping (users can't free). Page-protected trigger h/w exceptions when writing out of bounds. Non-local deal with memory that's slow to read with stuff in system memory separate from the data, which is elsewhere. Handles allow compactions; reference through the allocator. Page allocators use system allocators like mmap.
+- larsberg: COM used fixed block sizes and always allocated certain word-sized chunks, with the size of the chunk as a header, etc.
+- pcwalton: Similar to JS.
+- nmatsakis: 
+ 
+```
+trait Alloc<T> : Clone {
+    // Failure semantics?
+    fn malloc(&self) -> *T;
+    fn malloc_many(&self, n: uint) -> *T;
+    
+    // We will want to noodle around with the precise set
+    // of free operations due to DST.
+    fn free(&self, ptr: *T);
+}
+ 
+trait Box<T,P> { // "Smaht"
+    fn box(&self, value: once || -> T) -> P;
+}
+ 
+// "System heap": libc malloc and free
+struct DefaultAlloc;
+impl<T> Alloc<T> for DefaultAlloc {
+    fn malloc(&self) -> *T { ... }
+    fn free(&self, ptr: *T) { ... }
+}
+ 
+// fixed type allocator
+struct FixedTypeAllocator<T> { .. }
+impl<T> Alloc<T> for FixedTypeAllocator<T> {
+}
+ 
+// arena allocator
+struct MyArena { ... }
+struct Arena<'a> { theArena: &'a MyArena }
+impl<'arena,T> Alloc<T> for Arena<'arena> {
+    ...
+}
+ 
+// Owned pointers
+// box(OWNED) 22
+// box(OwnedIn(myAllocator)) 22
+struct Owned<T,A=DefaultAlloc> { box: *T, alloc: A }
+struct OwnedIn<A>(A);
+static OWNED = OwnedIn(DefaultAlloc);
+impl<T,A: Alloc<T>> Box<T,Owned<T,A>> for OwnedIn<A> {
+    fn box(&self, value: once || -> T) -> Owned<T,A> {
+        let ptr: *T = self.alloc.malloc();
+        // Cleanup: ptr
+        ?? *ptr = value();
+        Heap { box: ptr, alloc: self.alloc.clone() }
+    }
+}
+impl<T,A: Alloc<T>> Drop for Owned<T,A> {
+    fn drop(&mut self) {
+        self.alloc.free(self.box);
+    }
+}
+ 
+// Rc pointers
+// box(RC) 22
+// box(RcIn(myAlloc)) 22
+struct Rc<T,A=DefaultAlloc>> { box: *RcBox<T,A> }
+struct RcBox<T,A> {
+    alloc: A,
+    ref_count: Cell<uint>,
+    value: T
+}
+struct RcIn<A>(A);
+static RC: RcIn<DefaultAlloc> = RcIn(DefaultAlloc);
+impl<T,A: Alloc<RcBox<T, A>>> Box<T,Rc<T,A>> for RcIn<A> {
+    fn box(&self, value: once || -> T) -> Rc<T,A> {
+        let ptr: *RcBox<T,A> = self.alloc.malloc();
+        // Missing: cleanup ptr
+        ptr.alloc = self.alloc.clone();
+        ptr.refcount = Cell(1);
+        ptr.value = value();
+        Rc { box: ptr }
+    }
+}
+ 
+// Containers
+struct Vec<T,A> {
+    data: *T
+}
+ 
+ 
+```
+ 
+ 
+- Not everything is compatible.
+- If you had a fixed type allocator for uints, you couldn't do `box(RcIn(fixedAlloc)) 22`
+- With HKT, you should be able to avoid leaking all details
+ 
+Using the arena allocator
+```
+let arena: Arena<'a> = ...;
+let data: Owned<uint,Arena<'a>> = box(OwnedIn(arena)) 22;
+ 
+impl<'a, T> Box<T, &'a T> for Arena<'a> {
+    fn box(&self, value: once || -> T) -> &'a T {
+        let memory = self.theArena.alloc_slot();
+        *memory = value();
+        return transmute(memory);
+    }
+}
+```
+ 
+# EASTL
+ 
+- Throw
+- 
+ 
+# NDM -- things to consider
+ 
+- DST: Allocators must be aware that alloc can be called with [T, ..5] and then converted to [T]?
+- GC: Can GC trace through all allocated memory? No -- might be uninitialized!
+ 
+# Where do we need generics over allocators?
+ 
+- Data structures: yes
+- Sort (temporary arrays): no, probably not, leaks data
+- Higher-level APIs: no?
 
 # 2014/03/4 Built-in traits
 
