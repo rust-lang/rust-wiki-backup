@@ -1,4 +1,4 @@
-*Note: These are the notes and minutes for the work week from March 3-7, 2014 in Santa Cruz.
+u*Note: These are the notes and minutes for the work week from March 3-7, 2014 in Santa Cruz.
 They are compiled from etherpads and are very incomplete.*
 
 # Attending
@@ -186,6 +186,7 @@ impl<T,A: Alloc<RcBox<T, A>>> Box<T,Rc<T,A>> for RcIn<A> {
         Rc { box: ptr }
     }
 }
+```
 
 ## built-in traits
 
@@ -253,8 +254,7 @@ local_data_key!(local_logger: ~Logger);
 pub trait Logger {
     fn log(&mut self, lvl: uint, s: &str, arg: &fmt::Arguments);
 }
-
-````
+```
 
 * logging is initialized *lazily* the first time the log level is checked
 * change logging spec to be more like
@@ -1125,7 +1125,7 @@ static foo: int = 3;
 
 - What kinds of values can go in there
 
-# Current rules, see https://github.com/mozilla/rust/pull/11979
+## Current rules, see https://github.com/mozilla/rust/pull/11979
    * For each mutable static item, check that the type:  
      * cannot own any value whose type has a dtor
      * cannot own any values whose type is an owned pointer
@@ -1211,7 +1211,7 @@ let x = &SOME_STATIC_VARIABLE; // does not allocate stack space
   - if static mut, yes
   - if static, no, unless tagged with some attribute or other
 - Permit non-freeze types in statics
-f
+
 #### Second possibility
 
 - Remove static mut altogether
