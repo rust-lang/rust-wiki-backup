@@ -552,9 +552,9 @@ trait Foo {
 
 # When can't you use `unsized`:
 
-<T>
-<T:Sized>
-<T:...>
+`<T>`
+`<T:Sized>`
+`<T:...>`
 
 ```
 fn foo<unsized T>(x: ~T) {
@@ -573,8 +573,8 @@ fn foo<unsized T>(x: ~T) {
     impl Unsized for MyStructType { } // (3)
 ```
 
--acrichto: why not some sort of bound? (T: Unsized or T: !Sized)
--dherman: weird that a struct definition is only valid if it's accomanied with "impl Unsized for ..."
+- acrichto: why not some sort of bound? (T: Unsized or T: !Sized)
+- dherman: weird that a struct definition is only valid if it's accomanied with "impl Unsized for ..."
 
 ```
 struct Tree<T:Unsized> {
@@ -608,8 +608,8 @@ megafoopy struct Foo {
 
 Not having unsized on Option means:
 
-- Option<Rc<[T]>> -- OK
-- Rc<Option<[T]>> -- Not OK
+- `Option<Rc<[T]>>` -- OK
+- `Rc<Option<[T]>>` -- Not OK
 
 - acrichto: Can you write `unsized struct` without an `unsized T` typaram?
 - nmatsakis: yes, but useless. could add lint for it
@@ -799,26 +799,33 @@ niko: strings are just [u8]. natural way to make this work is to have fixed-leng
 
 Today:
 
+```
 "abc"   ----> &'static str
+```
 
 Most analogous to vecs:
 
+```
 "abc" --> str/3
 &"abc" ---> &'static str/3 (coercable to &'static str)
 ~"abc"  --> ~str/3 (coercable to ~str)
 format!("...") -> ~str
+```
 
 Alternative pcwalton proposal:
 
+```
 "foo" --> String<'static>
 ~"foo" --> ~String<'static>
 pub struct String<'a>(&'a [u8]);
 pub struct StringBuffer(Vec<u8>);
 format!("abc") => StringBuffer
 could rename: String to: Substring, StringView, StringSlice
+```
 
 Ideal:
 
+```
 "foo" -> &'static String
 ~"foo" / "foo".to_owned() --> ~String
 pub unsized struct String([u8]);
@@ -862,30 +869,38 @@ impl<unsized T: StringRepr> String<T> {
 
 "foo" => &'static String
 format!("foo") => ~String
+```
 
 - No way to create a `~String` except for format! or creating a buffer 
-- RC<String> --> 
+- `RC<String>` --> 
 
+```
 Rc<String> = Rc<String<[u8]>> ... ?? Rc::new("foo") ??
 
 Rc::from_slice("...");
 
 fn from_slice<E:Clone>(s: &[E]) -> Rc<[E]> { ... }
+```
 
-- creating a Rc<[int]>??
-   let foo: Rc<[int]> = Rc::new([1, 2, 3]);
+- creating a `Rc<[int]>??`
+
+````
+let foo: Rc<[int]> = Rc::new([1, 2, 3]);
+````
 
 - Issue that arises:
   - cannot create a newtyped [T], essentially, though it seems like it...should work.
 
-ms2ger's DOMstring example:
-https://github.com/Ms2ger/servo/commit/f3653f2615e71a08c5b57e0017637f46387a6d67#diff-69
+ms2ger's DOMstring example:  
+https://github.com/Ms2ger/servo/commit/f3653f2615e71a08c5b57e0017637f46387a6d67#diff-69  
 ms2ger's concerns:
+
 - lack of auto-slicing
 - lack of auto-borrow
 
 #### Fixed length strings:
 
+```
 Rc::new("abc") -> Rc<str>
 fn from_str(s: &str) -> Rc<str> { ... }
 fn from_slice<E:Clone>(s: &[E]) -> Rc<[E]> { ... }
@@ -943,6 +958,7 @@ fn new_three() -> TempRc<T> { .. }
   calls malloc, adds a failure-only cleanup (in case of failure), evaluates expr
 
 Rc::new_box(|| 22); // assuming that `||` yielded a closure
+```
 
 - why have box?
   - closures are kinda ugly probably don't want to write them all the time
@@ -1082,8 +1098,8 @@ let foo = "bar";
 
 `box "bar"` yields error and suggests using `Heap::new`
 
-let foo: Vec<File> = ...;
-let bar: Rc<[File]> = Rc::new(*foo.get()); // get() ==> ~[File]
+`let foo: Vec<File> = ...;  
+let bar: Rc<[File]> = Rc::new(*foo.get()); // get() ==> ~[File]`
 
 
 
@@ -1101,15 +1117,15 @@ let bar: Rc<[File]> = Rc::new(*foo.get()); // get() ==> ~[File]
 
 ## Work plan
 
-* convert ~[T] -> Vec<T>
+* convert `~[T]` -> `Vec<T>`
 * add unsized keyword and compute whether type is sized
 * remove Sized trait
 * check all exprs w/ unsized type for validity
-* add [T] type ( '{T}'?) and implement coercion rules from [T, .. N] -> [T]
+* add `[T]` type ( `{T}`?) and implement coercion rules from `[T, .. N]` -> `[T]`
   - add fat pointer notion
-* indexing of &[T] in trans
+* indexing of `&[T]` in trans
   - extracting length and bounds checks
-* switch &[T] to &([T])
+* switch `&[T]` to `&([T])`
 * structs with unsized final field propagate fat value
 * reimpl strings
 * switch traits
@@ -1192,8 +1208,10 @@ static z: Type = MyConst;
 enum Option<T> { Some(T), None }
 ```
 
+```
 let x = &None; // allocates stack space and initializes it with None
 let x = &SOME_STATIC_VARIABLE; // does not allocate stack space
+```
 
 - Significant addresses:
   - used by TLS
@@ -1293,37 +1311,37 @@ Axes:
 
 ####
 
--felix: GC abstraction for storage. objects in shared GC heap being managed. Things outside that space are often thought of as roots.
+- felix: GC abstraction for storage. objects in shared GC heap being managed. Things outside that space are often thought of as roots.
 
 (whiteboard)
 
--felix: Goal is to find connected components that include roots, specifically identify the (approximately) smallest connected component.
--felix: how? tracing is a fixed-point algorithm. three sets: 1) unknown state, 2) scheduled to be scanned (enqueued in work set) 3) things that have been scanned. 2 + 3 are marked as live or dead.
--felix: fixed point: start with everything unknown, enque everything reachable from roots, scan everything in the work set to find what they point to.
--felix: main impls: mark/sweep - objects don't move in memory, mark bit exists somewhere, flag it when enqueued to be scanned;
--felix: copying - every time you encounter object, you make a copy and install a forwarding pointer
--felix: with mark/sweep you have a bark bit; with cheney copying collector. (details)
+- felix: Goal is to find connected components that include roots, specifically identify the (approximately) smallest connected component.
+- felix: how? tracing is a fixed-point algorithm. three sets: 1) unknown state, 2) scheduled to be scanned (enqueued in work set) 3) things that have been scanned. 2 + 3 are marked as live or dead.
+- felix: fixed point: start with everything unknown, enque everything reachable from roots, scan everything in the work set to find what they point to.
+- felix: main impls: mark/sweep - objects don't move in memory, mark bit exists somewhere, flag it when enqueued to be scanned;
+- felix: copying - every time you encounter object, you make a copy and install a forwarding pointer
+- felix: with mark/sweep you have a bark bit; with cheney copying collector. (details)
 
--nrc: can you discuss adv/disadv of both? mark/sweep doesn't require copy
--felix: not doing copy is adv, but by doing copy you get compaction, reducing fragmentation
--nrc: js guys do huge amount of work to go from mark/sweep -> moving. why?
--felix: frag is one. nurserey can be fixed area of memory which makes it easy to determine which objects are in the nursery, makes write barriers easier
--nrc: why write barriers?
--felix: in generational you need to be able to identifiy pointers from outside of nursery to inside (remembered set)
--pcwalton: another: if you are doing copying allocation then nursery allocator can be a bump allocator
--nrc: can mark/sweep do generational?
--felix: yes
--pcwalton: boehm does it
+- nrc: can you discuss adv/disadv of both? mark/sweep doesn't require copy
+- felix: not doing copy is adv, but by doing copy you get compaction, reducing fragmentation
+- nrc: js guys do huge amount of work to go from mark/sweep -> moving. why?
+- felix: frag is one. nurserey can be fixed area of memory which makes it easy to determine which objects are in the nursery, makes write barriers easier
+- nrc: why write barriers?
+- felix: in generational you need to be able to identifiy pointers from outside of nursery to inside (remembered set)
+- pcwalton: another: if you are doing copying allocation then nursery allocator can be a bump allocator
+- nrc: can mark/sweep do generational?
+- felix: yes
+- pcwalton: boehm does it
 
--dherman: what's the prescription for rust?
--felix: want to leave door open to either in the future
+- dherman: what's the prescription for rust?
+- felix: want to leave door open to either in the future
 
 ## Issues for Rust
 
--felix: choice: fully conservative vs. fully precise, vs. mostly-precise/mostly-copying.
--felix: fully conservative: look at all words and guess whether they are pointers. won't find true minimum connected components. scan stack and objects conservatively.
--felix: fully precise: precise knowledge of roots in the stack and every object. llvm can't do this now, which is fine. mostly-copying is good enough for us
--felix: mostly-copying: roots conservatively scanned, objects precisely. any object that is only reachable via heap can be moved
+- felix: choice: fully conservative vs. fully precise, vs. mostly-precise/mostly-copying.
+- felix: fully conservative: look at all words and guess whether they are pointers. won't find true minimum connected components. scan stack and objects conservatively.
+- felix: fully precise: precise knowledge of roots in the stack and every object. llvm can't do this now, which is fine. mostly-copying is good enough for us
+- felix: mostly-copying: roots conservatively scanned, objects precisely. any object that is only reachable via heap can be moved
 
 - brson: why move but not use a generational algorithm? write barriers
 - felix: compaction
@@ -1419,14 +1437,14 @@ impl Unsafe<T> {
 - felix: You can always have Unsafe<()>
 - niko: reserving the right to be unsafe in the future
 - brson: doesn't this seem bad?
-- niko: this is only for statics, and perhaps some invisible anlyses
+- niko: this is only for statics, and perhaps some invisible analyses
 - all: ok, sounds good
 
 - niko: All except Sized require an impl or deriving.
 - niko: unsafe pointers have all these kinds, but before it was unlikely your API fulfulled all the kinds requirements.
 
-- acrichto: lets see example of Mutex.  Make sure we can't do Mutex<RC<U>>.
-- niko: Why again is Mutex<RC> bad?
+- acrichto: lets see example of Mutex.  Make sure we can't do `Mutex<RC<U>>`.
+- niko: Why again is `Mutex<RC>` bad?
 - acrichto: because then someone can clone() the rc and obtain non-mutex-guarded access
 - niko: (whiteboard prototyping:)
 
@@ -1441,10 +1459,10 @@ impl <T:Share> Share for Mutex<T> { }
 
 Important counter examples:
 
-- Why not unify Send / Share => Cell<T>
-- Mutex<T> wants Send || Share because Mutex<Cell<T>> is ok, and Mutex<&mut T> is ok (wacky)
-- RwArc<T> wants Share but not Send, because you can get multiple readers
-- but maybe Mutex<T> can just take Send because you already have RwArc for Share
+- Why not unify `Send` / `Share` => `Cell<T>`
+- `Mutex<T>` wants `Send || Shar`e because `Mutex<Cell<T>>` is ok, `and Mutex<&mut T>` is ok (wacky)
+- `RwArc<T>` wants `Share` but not `Send`, because you can get multiple readers
+- but maybe `Mutex<T>` can just take `Send` because you already have `RwArc` for `Share`
 
 
 ## deriving(Data)
@@ -1540,6 +1558,7 @@ statistics: https://gist.github.com/9376568
 
 ## SERVO RESULTS
 
+```
 Structs  # Private fields  # Public fields  # strustc all private fields  # structs all public fields
 
 alert
@@ -1591,8 +1610,10 @@ script
         89      144     209     38      51
 util
         40      74      56      22      16
+```
 
 ### Servo itself
+```
 [larsberg@lbergstrom components]$ ~/tmp/analyze util/util.rs 
         20      37      28      11      8
 [larsberg@lbergstrom components]$ ~/tmp/analyze gfx/gfx.rs 
@@ -1608,8 +1629,11 @@ util
 [larsberg@lbergstrom components]$ ~/tmp/analyze script/script.rs 
         146     25      315     14      130
 [larsberg@lbergstrom components]$ 
+```
 
 ### Servo platform components
+
+```
 [larsberg@lbergstrom linux]$ ~/tmp/analyze rust-fontconfig/fontconfig.rc
         6       0       17      0       6
 [larsberg@lbergstrom linux]$ ~/tmp/analyze rust-freetype/freetype.rc 
@@ -1626,8 +1650,11 @@ util
         3       2       1       2       1
 [larsberg@lbergstrom macos]$ ~/tmp/analyze rust-io-surface/lib.rs 
         1       0       1       0       1
-        
+```
+     
 ### Servo support components
+
+```
 alert
         2       0       3       0       2
 azure
@@ -1665,7 +1692,7 @@ spidermonkey
         31      0       126     0       31
 stb-image
         2       3       4       1       1
-
+```
 
 # 2014/03/05 small topics
 
@@ -1855,10 +1882,9 @@ fn f<Y: T1, X: T1 + T2>(x, y) {
     T1::method(); // does this call X's impl or Y's impl
     x.method2() // is it T1.method or T2.method?
 }
+```
 
 ### Proposal 1
-
-```
 
 - nrc: UFCS uses '.' for both static and instance methods. 
 
