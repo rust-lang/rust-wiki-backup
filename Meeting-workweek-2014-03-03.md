@@ -21,6 +21,8 @@ The 1.0 spreadsheet: https://docs.google.com/a/mozilla.com/spreadsheet/ccc?key=0
 * Nif Ward
 * Nick Cameron
 * Lars Bergstrom
+* Huon Wilson (remote)
+* Corey Richardson (remote)
 
 # Agenda
 
