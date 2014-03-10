@@ -30,6 +30,7 @@ Additional supplementary documentation is maintained here on the wiki.
 [Pr&eacute;sentation du langage Rust](http://lea-linux.org/documentations/Rust) - Detailed documentation in French, with examples  
 [[Building for Android|Doc building for Android]]  
 [[Building for iOS|Doc building for iOS]]  
+[UVA Rust tutorial](http://aml3.github.io/RustTutorial/)
 
 ## Community
 
