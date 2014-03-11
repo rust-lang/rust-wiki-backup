@@ -69,21 +69,21 @@
 - acrichto: I was thinking ?, but that doesn't match. `_` is probably the right syntax.
 - brson: Let's do it.
 
-# coersion rules on return
+# coercion rules on return
 
-- nmatsakis: Ordinarily, we apply type coersions any place where the type is known. Parameter passing, struct field assignments, and lets with a specified type... but not returns. I put in an issue with an example of some code that doesn't work though I feel like it should if we did this. See PR.
-- brson: Why is that a coersion in the linked PR?
+- nmatsakis: Ordinarily, we apply type coercions any place where the type is known. Parameter passing, struct field assignments, and lets with a specified type... but not returns. I put in an issue with an example of some code that doesn't work though I feel like it should if we did this. See PR.
+- brson: Why is that a coercion in the linked PR?
 - nmatsakis: ... it's a corner case.
 - brson: What are the examples other than &mut?
 - acrichto: a ~T field and want to return an &T, need an as_slice, etc.
-- nmatsakis: Probably still need it, because that's how our coersion rules work. Or if you want to return a Trait object and have a value instead and have to do `as T`.
+- nmatsakis: Probably still need it, because that's how our coercion rules work. Or if you want to return a Trait object and have a value instead and have to do `as T`.
 - brson: Same routine that we use today?
 - nmatsakis: Yes.
 - brson: May even add more &s to make it work, for autoref, etc?
 - nmatsakis: Only autoref on `.`. For now. I just want to use the same rules that we use on parameters, whatever they are.
 - brson: You said this was non-controversial. Does anybody not want to do this?
 - acrichto: It looks like you're moving out of a field, but that's how it works in the other cases. We should just try to be consistent.
-- nmatsakis: Yes, most of the complaints seem to be around the coersion rules themselves.
+- nmatsakis: Yes, most of the complaints seem to be around the coercion rules themselves.
 - brson: Let's do it.
 
 # unsafe ptrs, *mut
@@ -124,7 +124,7 @@
 - brson: Can we prevent the "wrong" direction on these casts?
 - nmatsakis: Yes. Then people can force it with transmute... it's appealing to just have `*T`.
 - pnkfelix: Seems like a lot of commenters on the ticket want the two variants because it lets them accurately translate their C bindings. But, this discussion about the guarantees has made me worry that if we act like we support this like C but we don't in reality, it will be bad. 
-- nmatsakis: An argument for having `*const` is that we allow implicit coersion from `&T` to `*T` and `&mut T` to `*mut T`. Seems unfortunate to allow implicit from `&T` (immutable) to new `*T` (mutable). That was huon's example:
+- nmatsakis: An argument for having `*const` is that we allow implicit coercion from `&T` to `*T` and `&mut T` to `*mut T`. Seems unfortunate to allow implicit from `&T` (immutable) to new `*T` (mutable). That was huon's example:
 ```
 extern "C" fn inc(x: *T); // 
 fn foo() {
@@ -133,13 +133,13 @@ fn foo() {
     // voila, x == 4, might be nice if &T -> *T were an invalid coercion, but &T -> *const T is valid
 }
 ```
-- nmatsakis: Kind of unfortunate that there is no warning here. Always possible if the C signature is wrong, but if we had `const` might be able to make this an invalid coersion.
+- nmatsakis: Kind of unfortunate that there is no warning here. Always possible if the C signature is wrong, but if we had `const` might be able to make this an invalid coercion.
 - brson: So, Rust semantics don't allow this optimization... can we make this miscompile.
 - nmatsakis: Certainly, a later reference to `x` might be replaced via constant propagation with 3, which would not be the expected behavior. Our inability to express as much as the C typesystem would prevent our ability to catch this, for better or worse.
-- brson: That coersion seems really wrong to me, now that you point it out.
+- brson: That coercion seems really wrong to me, now that you point it out.
 - nmatsakis: I was initially in favor of one pointer type, but this example is what put me back on the fence.
 - acrichto: In theory the signature of the inc method should be *mut.
-- nmatsakis: I agree that there are a lot of potential ways it could go wrong. Signature could be wrongly transcribed. But, if we only had one pointer type, this would be correct. We have a bug, but it's correctly transcribed. If `*T` were the only type we had and we keep this coersion, then it's just something you have to know and watch out for.
+- nmatsakis: I agree that there are a lot of potential ways it could go wrong. Signature could be wrongly transcribed. But, if we only had one pointer type, this would be correct. We have a bug, but it's correctly transcribed. If `*T` were the only type we had and we keep this coercion, then it's just something you have to know and watch out for.
 - acrichto: Can we forbid `&T` to `*T` and require `&mut T`? Arguably `*const` is still wrong because you can follow the inner pointer, which you can't do...
 - pcwalton: Not so worried about this. It's in an `unsafe` block and you violated the promise. Wouldn't the analog to this in C be `const T*x`. So, you pass your reference to a function, but it casts away const. Also, could happen if you do `extern C void inc(const int *x);` but link to an object that takes a `int *`, which will compile...
 - nmatsakis: But you could read the declaration and notice that. Here, there is nothing to see.
@@ -149,7 +149,7 @@ fn foo() {
 - nmatsakis: In other case, becuase `&mut` prevents aliasing, it might not be suitable.
 - acrichto: `&mut` is probably stricter than any C function would require.
 - nmatsakis: I'm concerned that for `Rc<Arc<>>`, which can't provide you an `&mut`. There's no way to express it in Rust.
-- brson: Not bad if `&mut` coerses to `*T`, right?
+- brson: Not bad if `&mut` coerces to `*T`, right?
 - nmatsakis: If you can't get from `&T` to `*T`, that's annoying. So, either way have a way to say it in the type system and be stricter (the `const` approach) or we leave it to the user to validate that use of an `&T` is safe. Alex is right that because const is shallow, it's nothing more than a lint, really - no guarantees when you call C code. This is just a way to catch some possible bugs.
 - brson: If there are no guarantees, doesn't that transitively make us unable to optimize things around `&T`?
 - nmatsakis: It's undefined behavior to mutate the contents of a `*const`. Maybe another question here is to what extend, when we're interfacing with C code, do we get to act like an optimizing C compiler and where do we have to be conservative? I've been assuming we will act like a C compiler.
@@ -158,8 +158,8 @@ fn foo() {
 - pcwalton: Not with just one pointer type, though... so maybe let's keep `*T` and `*const T`?
 - brson: I think that's what Niko wants.
 - pcwalton: That's kinda like C... I like that...
-- brson: I've been beaten down and am willing to accept this. I'd like to know what restrictions you want on reference coersions. 
-- nmatsakis: `&T` coerses to `*const T`, `&mut` coerses to both.
+- brson: I've been beaten down and am willing to accept this. I'd like to know what restrictions you want on reference coercions. 
+- nmatsakis: `&T` coerces to `*const T`, `&mut` coerces to both.
 - pnkfelix: Any deep analysis we can do on T to push constness through it?
 - nmatsakis: If there are *-pointers in there, I think we're fine. It's just if you reach an & through a *-pointer that you reach a problem with the semantics. I kinda feel like we can't solve this. I'm not inclined to do anything more advanced than what we proposed.
 - pnkfelix: Maybe a lint for an unsafe function that has a raw pointer with a & inside of it... weird.
