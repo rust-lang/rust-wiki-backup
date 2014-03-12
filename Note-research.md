@@ -27,6 +27,7 @@ Papers that have had more or less influence on Rust, or which one might want to 
 * [Three layer cake](http://www.upcrc.illinois.edu/workshops/paraplop10/papers/paraplop10_submission_8.pdf)
 * [Non-blocking steal-half work queues](http://www.cs.bgu.ac.il/%7Ehendlerd/papers/p280-hendler.pdf)
 * [Reagents: expressing and composing fine-grained concurrency](http://www.mpi-sws.org/~turon/reagents.pdf)
+* [Algorithms for scalable synchronization of shared-memory multiprocessors(https://www.cs.rochester.edu/u/scott/papers/1991_TOCS_synch.pdf)
 
 ## Other
 
