@@ -104,7 +104,7 @@
 - brson: At least, we need to change `*mut` to `*`.
 - nmatsakis: So, `*T` is the same as `T*`? I can get behind this.
 - pnkfelix: Do we want two variants? If just one, then it should be `*T`. The interesting question is: do we want two at all? 
-- nmatsakis: Not sure. Three possible schemes I like. `*T` by itself, which is exactly what C's `T*` means. There is `*T` for C and `*cont T`. Third, `*T`, `*const T`, and `*mut T`. Doesn't make a lot of sense to use a different keyword than const (just copy C).
+- nmatsakis: Not sure. Three possible schemes I like. `*T` by itself, which is exactly what C's `T*` means. There is `*T` for C and `*const T`. Third, `*T`, `*const T`, and `*mut T`. Doesn't make a lot of sense to use a different keyword than const (just copy C).
 - acrichto: Could we add `*const` in a back-compat way later?
 - nmatsakis: I think the answer is mostly.
 - pnkfelix: I'm mainly concerned with higher-order functions that take a `*const`. I think the more interesting question is what LLVM might do to optimize your code. It's more about sanity-checking and safeguards, but I don't even know if we provide you any of that.
