@@ -1,4 +1,4 @@
-**This page must be merged into https://github.com/mozilla/rust/blob/master/doc/guide-testing.md**
+**This page must be merged into http://static.rust-lang.org/doc/master/guide-testing.html**
 
 # Unit testing in Rust
 
