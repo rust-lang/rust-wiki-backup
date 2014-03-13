@@ -95,4 +95,4 @@ Every week there is a bug triage meeting. At that meeting the attendees will rev
 
 ## Language changes
 
-Major changes (including all language enhancements) must go through the [[RFC process|Note RFC Process]].
+Major changes (including all language enhancements) must go through the [RFC process](https://github.com/rust-lang/rfcs/blob/master/active/0001-rfc-process.md).
