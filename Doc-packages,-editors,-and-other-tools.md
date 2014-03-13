@@ -52,6 +52,7 @@
 
 ## And more!
 
+* [cargo-lite](https://github.com/cmr/cargo-lite) - A simple package manager
 * [Prism's pastebin](http://kib2.free.fr/pastebin) - A pastebin instance that support Rust syntax highlighting using the Prism library
 * [startling's pygments plugin](https://github.com/startling/pygments-rust) - Pygments syntax highlighting
 * [GitHub linguist](https://github.com/github/linguist) - GitHub's language detection supports Rust
