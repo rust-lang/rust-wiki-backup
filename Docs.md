@@ -87,6 +87,7 @@ Some Rust classics:
 
 * [A 30 minute introduction to Rust](http://words.steveklabnik.com/a-30-minute-introduction-to-rust)
 * [Pointers in Rust: A Guide](http://words.steveklabnik.com/pointers-in-rust-a-guide)
+* [Garbage collection thoughts](http://sebastiansylvan.com/2012/12/01/garbage-collection-thoughts/)
 * [Understanding pointers, ownership and lifetimes in Rust](http://paulkoerbitz.de/posts/Understanding-Pointers-Ownership-and-Lifetimes-in-Rust.html)
 * [A taste of Rust](https://lwn.net/Articles/547145/)
 * [An overview of memory management in Rust](http://pcwalton.github.com/blog/2013/03/18/an-overview-of-memory-management-in-rust/)
