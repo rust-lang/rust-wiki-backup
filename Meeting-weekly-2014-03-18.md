@@ -16,9 +16,9 @@ acrichto, brson, larsberg, jack, felix, niko, cmr
 
 - brson: This week's friend of the tree is Clark Gaebel. He just landed a huge first contribution to Rust. He dove in and made our hashmaps significantly faster by implementing Robin Hood hashing. He is an excellent friend of the tree.
 
-# rfcs
+# RFCs and GitHub
 
-- pnkfelix: Had a contribution on IRC. The question is: is github merely weak or totally unusable? May be too soon to make a call, but wanted to bring it up. The main points that people had were: in particular, if you're not careful, you can lose comment history. So, if you force-push after a comment was on a commit, then the comment is lost, so you lose some history in the development of the RFC. The other part is that if you don't ever force-push and have a long history, if someone comments on diffs, the comments are considered outdated on github and not shown. Most importantly, you can't search through all of those comments. I was most concerned about retaining the history of the comments on the RFC, as well as the user interface. Others were concerned about migrating to a proprietary service. Mainly discussed with cmr and ChrisMorgan.
+- pnkfelix: Had a conversation on IRC. The question is: is github merely weak or totally unusable? May be too soon to make a call, but wanted to bring it up. The main points that people had were: in particular, if you're not careful, you can lose comment history. So, if you force-push after a comment was on a commit, then the comment is lost, so you lose some history in the development of the RFC. The other part is that if you don't ever force-push and have a long history, if someone comments on diffs, the comments are considered outdated on github and not shown. Most importantly, you can't search through all of those comments. I was most concerned about retaining the history of the comments on the RFC, as well as the user interface. Others were concerned about migrating to a proprietary service. Mainly discussed with cmr and ChrisMorgan.
 - brson: Any other venues?
 - pnkfelix: cmr was looking at discourse? They found it didn't have good e-mail notification. They also looked at fabricator (from Facebook?).
 - larsberg: Have you looked at Critic? We use it on Servo and it integrates with Github.
