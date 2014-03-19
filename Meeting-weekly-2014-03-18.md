@@ -20,10 +20,10 @@ acrichto, brson, larsberg, jack, felix, niko, cmr
 
 - pnkfelix: Had a conversation on IRC. The question is: is github merely weak or totally unusable? May be too soon to make a call, but wanted to bring it up. The main points that people had were: in particular, if you're not careful, you can lose comment history. So, if you force-push after a comment was on a commit, then the comment is lost, so you lose some history in the development of the RFC. The other part is that if you don't ever force-push and have a long history, if someone comments on diffs, the comments are considered outdated on github and not shown. Most importantly, you can't search through all of those comments. I was most concerned about retaining the history of the comments on the RFC, as well as the user interface. Others were concerned about migrating to a proprietary service. Mainly discussed with cmr and ChrisMorgan.
 - brson: Any other venues?
-- pnkfelix: cmr was looking at discourse? They found it didn't have good e-mail notification. They also looked at fabricator (from Facebook?).
+- pnkfelix: cmr was looking at discourse? They found it didn't have good e-mail notification. They also looked at phabricator (from Facebook).
 - larsberg: Have you looked at Critic? We use it on Servo and it integrates with Github.
 - nmatsakis: Seems early to be coming up with a new RFC process, especially given the lack of a compelling alternative.
-- acrichto: I've used fabricator at dropbox and facebook and it's great, though I've only used it for code reviews. Seems weird to have RFCs on one tool and other stuff in another tool.
+- acrichto: I've used phabricator at dropbox and facebook and it's great, though I've only used it for code reviews. Seems weird to have RFCs on one tool and other stuff in another tool.
 - nmatsakis: Question is: how much do we care about the complete comment history and searchability? 
 - brson: It's a bad problem for our source, too. It's just a problem with git.
 - acrichto: For the RFCs, we should request commenting on diffs by going to the files changed and comment there instead of commenting through the actual commits. The bad part is that it sends far more e-mails commenting that way.
