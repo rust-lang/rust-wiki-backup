@@ -109,11 +109,16 @@ compatible with C structs. Members are public by default but can be marked with
 `priv`. There is no concept of a `friend` function or type, because `priv`
 applies only at a module level.
 
-Rust has no special syntax or semantics for constructors, and just uses static
-methods that return the type.
+Rust has no special syntax or semantics for constructors, and just uses static methods that return the type. Struct initializer syntax `SomeStruct{field:value..}` avoids the boilerplate of manually creating simple constructors that just copy values into fields.
+
+Similarly rust has no conversion operators - it is necessary to call explicit methods such as `.to_str()` to perform conversions. The philosophy is to make the cost (no hidden allocations) & code-path clearer. 
 
 Custom destructors for non-memory resources can be provided by implementing the
 `Drop` trait.
+
+Tuples and destructuring
+--------------------------
+Tuples are built into the language syntax and along with destructuring assignment (available in arguments, match, let) they provide a convenient way of grouping multiple values. There are also 'tuple structs', where the type is named but the fields are not.
 
 Copying and move semantics
 --------------------------
@@ -214,7 +219,7 @@ Function Overloading
 --------------------
 Rust can only select function overloads based on the receiver (and sometimes through return values due to HN type inference). To overload functions on multiple parameters, one must create an extra layer of traits for something that looks like double-dispatch, with each parameter being moved to the receiver by an intermediate function.
 Although this is extra boilerplate, the benefit is that its' also ready for runtime polymorphism through trait-objects if needed.
-Without overloading multiple parameters, the information you pay in writing more specific function calls is sometimes recovered back with HN type inference feeding back to its' arguments.
+Without overloading multiple parameters, the information you pay in writing more specific function calls is sometimes recovered back with HN type inference feeding back through its' arguments.
 
 You can also consider Enums for conviniently passing varied options to a function - or use rusts powerful macros for wrapping extra convinience around function calls (eg, it is possible to annotate arguments with keywords & special syntax, handle variadics etc)
 
