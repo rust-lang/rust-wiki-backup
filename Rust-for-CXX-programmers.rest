@@ -72,7 +72,7 @@ Vectors
 +====================================================+======================================================+
 | `std::array<int, 3> {{1, 2, 3}}`                   | `[1, 2, 3]` (`[int, ..3]`)                           |
 +----------------------------------------------------+------------------------------------------------------+
-| `std::vector<int> {1, 2, 3}`                       | `let myvec:Vec<int>= `vec!{1, 2, 3}`                 |
+| `std::vector<int> {1, 2, 3}`                       | `let myvec:Vec<int> = `vec!{1, 2, 3}`                |
 +----------------------------------------------------+------------------------------------------------------+
 | `std::shared<std::vector<int>>                     | `Rc<Vec<int> >`                                      |
 +----------------------------------------------------+------------------------------------------------------+
@@ -214,7 +214,9 @@ Function Overloading
 --------------------
 Rust can only select function overloads based on the receiver (and sometimes through return values due to HN type inference). To overload functions on multiple parameters, one must create an extra layer of traits for something that looks like double-dispatch, with each parameter being moved to the receiver by an intermediate function.
 Although this is extra boilerplate, the benefit is that its' also ready for runtime polymorphism through trait-objects if needed.
-Without overloading multiple parameters, the information you pay in writing more specific function calls is sometimes recovered back with HN type inference feeding back to its' arguments. You can also consider Enums for conviniently passing varied options to a function.
+Without overloading multiple parameters, the information you pay in writing more specific function calls is sometimes recovered back with HN type inference feeding back to its' arguments.
+
+You can also consider Enums for conviniently passing varied options to a function - or use rusts powerful macros for wrapping extra convinience around function calls (eg, it is possible to annotate arguments with keywords & special syntax, handle variadics etc)
 
 Runtime Polymorphism
 --------------------
@@ -224,7 +226,8 @@ It is possible to attach a new vtable to an existing struct instance (with a bor
 Metaprogramming
 ---------------
 
-Rust includes macros (not textual ones) and syntax extensions which can be used
-for many of the other use cases of templates and `constexpr`. Syntax extensions
-can also be used in place of user-defined literals.
+Rust includes macros (not textual ones) and syntax extensions which can be used for many of the other use cases of templates and `constexpr`. 
+These macros handle repeated items in patterns, can match expressions,blocks parsed properly, and seperate arguments with custom syntax elements. As such they can achieve what the 'x-macros' pattern in C does in a single macro definition/invocation.
+Syntax extensions can also be used in place of user-defined literals. 
+Being handled within the AST, these do not have many of the hazards of C macros and should be considered a valid language feature, rather than an obselete anti-pattern as in C++.
 
