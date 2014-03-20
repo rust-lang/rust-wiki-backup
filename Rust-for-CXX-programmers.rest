@@ -240,6 +240,6 @@ Module System
 -------------
 Rust's modules dont work like other languages. Modules are namespaces, not 'imported' into individual sources. 
 `mod <module_name>;` is used from the crate root file to reference other source files by mounting their contents in the module tree. 
-"use" directives are a little like a cross between #include and 'using namespace' - within a crate you can always directly access other module contents with the full path (relative to root ::foo::bar) but `use` is common to create shortcuts and aliases.  It cab also bring individual symbols into scope.  
+"use" directives are a little like a cross between #include and 'using namespace' - within a crate you can always directly access other module contents with the full path (relative to root ::foo::bar) but `use` is common to create shortcuts and aliases.  It can also bring individual symbols into scope.  
 'mod <name> { ..definitions..}' statements can create nested namespaces containing items, replacing the use of nested classes in C++. 
 'mod.rs' files are a special workaround to allow rust's modules tree to mimick a directory structure. 
