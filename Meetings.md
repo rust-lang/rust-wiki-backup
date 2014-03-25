@@ -1,6 +1,7 @@
 The Rust team has a weekly Rust planning meeting on Tuesday mornings at 10:00 AM Pacific (UTC-8). Minutes are recorded [on Etherpad](https://etherpad.mozilla.org/Rust-meeting-weekly) and then archived here.
 
 ## Weekly meetings:
+* [[Meeting-weekly-2014-03-25]] (attributes in macros, opt-in traits, SIMD, [] on macros, counting matches, bounds on type params, private fields by default, collections::list, bounds on trait paths)
 * [[Meeting-weekly-2014-03-18]] (Friend of the Tree; RFCs; 0.10; documentation; RFC review)
 * [[Meeting-weekly-2014-03-11]] (self argument destructuring; type hints; coercion rules; unsafe ptrs)
 * [[Meeting-weekly-2014-02-25]] (Friend of the Tree; TotalEq; weak extern fn; channel names; relative paths)
