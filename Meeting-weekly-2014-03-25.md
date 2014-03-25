@@ -167,7 +167,9 @@ pnkfelix: FYI: we were above discusing this post: http://blog.pnkfx.org/blog/201
 - brson: nrc, do you have the info you need for this?
 - nrc: Sounds like nobody really objects, so I'll write up an RFC and see if there are any wider objects. Doesn't block DST for now, so I can go forwad.
 - brson: Sounds good.
+
 # private fields by defaul
+
 - acrichto: Getting close to merging. One major alternative linked on the RFC. Idea was instead of "private everywhere", it's like class but calling class abstract instead. In his, field-level visiblity cannot be controlled fine-grained. Either all-public or all-private. Idea of an abstract struct or enum, where everything is private to a module. Everything abstract is private everything not is public. Few keywords to make it more terse. In my opinion, it sounds like something we could add on later, but I still feel private fields are the way to go. The argument was the we don't need field-level visibility, but I think we need it for the Formatter structure. Any opinions from others?
 - pcwalton: I agree with you.
 - nrc: I do as well.
