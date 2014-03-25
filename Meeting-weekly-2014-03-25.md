@@ -71,7 +71,7 @@ lars, huon, pcwalton, pnkfelix, niko, azita, acrichto, nrc, brson, cmr
 - nmatsakis: Lots of existing SIMD approaches. Still not sure which fits best for Rust... this RFC is one, but I don't know yet.
 - pnkfelix: Future features (e.g., associated items) that would invalidate any decision we make here?
 - nmatsakis: Not associated types. But there are some C++ libraries to do SIMD-level stuff that might be worth looking at, though they likely use features we don't have. Also, CilkPlus has various operations, as do other Intel compilers, for vector ops. And of course there's the JS work, which is semi-related. I don't know that any of that is any better than what's being done here.
-- brson: Well, details aren't clear to me and some of this looks scary, but it would be good to have people working on SIMD, so long as it's under a gate. I'm just a little hesitent about this proposal. I'm also not sure how this shuffle syntax is implemented.
+- brson: Well, details aren't clear to me and some of this looks scary, but it would be good to have people working on SIMD, so long as it's under a gate. I'm just a little hesitant about this proposal. I'm also not sure how this shuffle syntax is implemented.
 - cmr: So far, it looks at the field and then checks if it's a recognized shuffle for that type (using the field name) and then emits the proper intrinsics. These field names correspond to positional elements - the syntax is straight out of OpenCL.
 - brson: Init syntax looks like a vector, but it's a struct?
 - nmatsakis: They're both.
@@ -103,7 +103,7 @@ https://github.com/Aatch/rust/tree/simd-support
 
 # [] on macros
 
-- huon: Recently added {} on macro invocations. There's another PR adding [] as well, so you can have vec[1,2,3]. 
+- huon: Recently added {} on macro invocations. There's another PR adding [] as well, so you can have vec![1,2,3]. 
 - brson: So this supports the last RFC?
 - acrichto: Independent.
 - pnkfelix: Use case is that our current vec macro uses parens, but we really want square brackets.
@@ -163,14 +163,14 @@ https://mail.mozilla.org/pipermail/rust-dev/2014-March/009175.html
 - pnkfelix: nmatsakis and I have been talking about that, but I'm not sure what that means - I don't think we can really add new bounds post-1.0.
 - nmatsakis: I do like that proposal because it's good for handline uints, higher-kinded types, etc. Good place to write down a kind. I originally agreed with you, brson, but you'd have to make every type parameter only have the defaults to avoid having new automatic bounds appear post-1.0.
 - brson: Didn't mean to derail, but that helps.
-pnkfelix: FYI: we were above discusing this post: http://blog.pnkfx.org/blog/2014/03/13/an-insight-regarding-dst-grammar-for-rust/ (or this reddit discussion, I guess: http://www.reddit.com/r/rust/comments/20bfc1/dst_syntax_proposal_to_avert_a_bikeshed_use_type/ )
+pnkfelix: FYI: we were above discussing this post: http://blog.pnkfx.org/blog/2014/03/13/an-insight-regarding-dst-grammar-for-rust/ (or this reddit discussion, I guess: http://www.reddit.com/r/rust/comments/20bfc1/dst_syntax_proposal_to_avert_a_bikeshed_use_type/ )
 - brson: nrc, do you have the info you need for this?
-- nrc: Sounds like nobody really objects, so I'll write up an RFC and see if there are any wider objects. Doesn't block DST for now, so I can go forwad.
+- nrc: Sounds like nobody really objects, so I'll write up an RFC and see if there are any wider objects. Doesn't block DST for now, so I can go forward.
 - brson: Sounds good.
 
-# private fields by defaul
+# private fields by default
 
-- acrichto: Getting close to merging. One major alternative linked on the RFC. Idea was instead of "private everywhere", it's like class but calling class abstract instead. In his, field-level visiblity cannot be controlled fine-grained. Either all-public or all-private. Idea of an abstract struct or enum, where everything is private to a module. Everything abstract is private everything not is public. Few keywords to make it more terse. In my opinion, it sounds like something we could add on later, but I still feel private fields are the way to go. The argument was the we don't need field-level visibility, but I think we need it for the Formatter structure. Any opinions from others?
+- acrichto: Getting close to merging. One major alternative linked on the RFC. Idea was instead of "private everywhere", it's like class but calling class abstract instead. In his, field-level visibility cannot be controlled fine-grained. Either all-public or all-private. Idea of an abstract struct or enum, where everything is private to a module. Everything abstract is private everything not is public. Few keywords to make it more terse. In my opinion, it sounds like something we could add on later, but I still feel private fields are the way to go. The argument was the we don't need field-level visibility, but I think we need it for the Formatter structure. Any opinions from others?
 - pcwalton: I agree with you.
 - nrc: I do as well.
 - nmatsakis: I think in the alternative proposal, it's the wrong defaults, since people have to type more to get what they usually want. I'm also worried about adding more modifiers. So, basically, I agree.
