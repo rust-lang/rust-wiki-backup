@@ -214,7 +214,7 @@ See [Database Access](Community-libraries#wiki-database-access)
 
 * QuickCheck
   * [mcandre/rustcheck](https://github.com/mcandre/rustcheck)
-  * [BurntSushi/quickcheck](https://github.com/BurntSushi/quickcheck)
+  * [BurntSushi/quickcheck](https://github.com/BurntSushi/quickcheck): [<img src="https://api.travis-ci.org/BurntSushi/quickcheck.png">](https://travis-ci.org/BurntSushi/quickcheck)
 
 ## Web Programming
   * [Earlz/rustymvc](https://github.com/Earlz/rustymvc)
