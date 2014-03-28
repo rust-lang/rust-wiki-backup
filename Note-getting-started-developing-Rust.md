@@ -115,11 +115,11 @@ export PATH="/c/mingw-builds/x32-4.8.1-release-win32-dwarf-rev5/mingw32/bin:/usr
 * If Python cannot be found during ./configure, then you need to add its path to the end of `/c/mingw/msys/1.0/etc/profile`, like this:
  * `export PATH="/c/PYTHON27:$PATH"`
 
-* If while building you receive an error that `libpthread-2.dll` is not found, you forgot to install the mingw32-libpthread-old package into MinGW from Step 3, so do this:
+* If while building you receive an error that `libpthread-2.dll` is not found, you forgot to install the mingw32-libpthread-old package into MinGW from Step 5, so do this:
 
  * `mingw-get install mingw32-libpthread-old`
 
-* If while building you receive an error that `libpthreadGC.dll` is not found, you forgot to install libpthreadgc runtime library into MinGW from Step 3, so do this:
+* If while building you receive an error that `libpthreadGC.dll` is not found, you forgot to install libpthreadgc runtime library into MinGW from Step 5, so do this:
 
  * `mingw-get install mingw32-libpthreadgc`
 
