@@ -38,7 +38,8 @@
   * [kib2's SublimeText2 language file](http://kib2.free.fr/Falcon/blog/25-01-2012-SublimeText2-Rust.html) - Highlighting for SublimeText 2
   * [dbp's SublimeText2 (now maintained by jhasse)](https://github.com/jhasse/sublime-rust) - Probably more up to date than the above.
 * TextMate
-  * [dyluke's textmate bundle](https://github.com/DylanLukes/Rust.tmbundle) - Rust TextMate mode
+  * [tomgrohl's textmate bundle](https://github.com/tomgrohl/Rust.tmbundle) - TextMate 1
+  * [elia's textmate bundle](https://github.com/elia/rust.tmbundle) - TextMate 2
 * Textadept
   * [abaez's Textadept module/lexer](https://bitbucket.org/a_baez/ta-rust)
   * [suhr/ta-rust](https://github.com/suhr/ta-rust)
