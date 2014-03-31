@@ -4,6 +4,35 @@ This page covers releases in more detail than the bullet-point list given in the
 
 ### Removal of `libextra`
 
+The conglomerate crate `libextra` has been removed from the standard distribution. Its component modules have been split out into other crates as seen appropriate. In the future, these crates will live on a cargo server rather than in the main repository, but currently there is no other place for them to reliably reside.
+
+The full list of component crates is currently:
+
+* libarena
+* libcollections
+* libflate
+* libgetopts
+* libglob
+* libnum
+* libsemver
+* libserialize
+* libsync
+* libterm
+* libtest
+* libtime
+* libuuid
+* liburl
+* libworkcache
+
+In addition to this splitting of libextra, functionality has been split outside of `libstd`:
+
+* librand
+* liblog
+
+This effort to break up libraries into their components is part of an ongoing effort to distill libraries to their core set of dependencies in order to be usable in as many contexts as possible. As an added bonus, this also helps parallelize builds quite a bit when so many libraries can be built in parallel.
+
+As with the rest of Rust's current libraries, these names and interfaces are not yet stable. They are still likely to change over time as more stable apis evolve and emerge. Also note that while all of these crates are currently part of the standard distribution, that will likely not be the case in the future as they migrate to their own cargo packages outside of the Rust repository.
+
 ### Removal of conditions
 
 ### Cross-crate syntax extensions
