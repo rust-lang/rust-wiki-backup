@@ -33,7 +33,37 @@ This effort to break up libraries into their components is part of an ongoing ef
 
 As with the rest of Rust's current libraries, these names and interfaces are not yet stable. They are still likely to change over time as more stable apis evolve and emerge. Also note that while all of these crates are currently part of the standard distribution, that will likely not be the case in the future as they migrate to their own cargo packages outside of the Rust repository.
 
-### Removal of conditions
+### Removal of conditions, effect on I/O
+
+During this release cycle, the `std::conditions` module was removed. Details and rationale as to why can be found in the [relevant commit](https://github.com/mozilla/rust/commit/454882dcb7fdb03867d695a88335e2d2c8f7561a).
+
+This removal implies that all I/O no longer raise a condition when an error happens. Instead, all I/O operations now return a value of the `IoResult` type. This is a thin typedef: `type IoResult<T> = Result<T, IoError>;`. This change should enable handling I/O errors much more natural to write than watching for conditions being raised.
+
+One of the main benefits of conditions was the guarantee that no error would go unnoticed. In order to not entirely give up this benefit, two strategies are employed in the compiler to ensure that errors are handled:
+
+1. A new `unused_must_use` lint was introduced when will emit a warning whenever a type flagged with `#[must_use]` is not used. The formal definition is that any semicolon-delimited statement whose type is not `()` will have a warning emitted if the type is flagged as `#[must_use]`. This check will catch errors such as:
+
+    ```rust
+    let mut file = File::open(path);
+    file.write([10]); //~ ERROR: unused result
+    ```
+
+2. A new macro, `try!` is provided to short-circuit functions dealing with lots of I/O errors. Example usage looks like:
+
+    ```rust  
+    // try!(e) => match e { Ok(e) => e, Err(e) => return Err(e) }
+
+    fn has_valid_data(file: &mut File) -> io::IoResult<bool> {
+        let num_bytes = try!(file.read_be_u32());
+        let data = try!(file.read_exact(num_bytes));
+        let cksum_len = try!(file.read_be_u16());
+        let cksum = try!(file.read_exact(cksum_len));
+
+        Ok(checksum_matches(data, cksum))
+    }
+    ```
+
+These two tools provide the benefits of conditions while results provide a much more natural syntax for dealing with errors.
 
 ### Cross-crate syntax extensions
 
