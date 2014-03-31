@@ -62,6 +62,7 @@ See [Encoding](Community-libraries#encoding)
 
 Wanted library: [[Lib datetime]]
 
+  * [lifthrasiir/rust-chrono](https://github.com/lifthrasiir/rust-chrono)
   * [luisbg/rust-datetime](https://github.com/luisbg/rust-datetime)
   * [tedhorst/rust_datetime](https://github.com/tedhorst/rust_datetime)
   
