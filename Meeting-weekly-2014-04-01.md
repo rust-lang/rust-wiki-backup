@@ -1,6 +1,6 @@
 # Agenda 4/1/2014
 
-- DST Vec<T> vs ~[T] (acrichto) https://github.com/mozilla/rust/pull/13165
+- DST `Vec<T>` vs `~[T]` (acrichto) https://github.com/mozilla/rust/pull/13165
 - intrinsics RFC (acrichto) https://github.com/rust-lang/rfcs/pull/8
 - Virtual struct RFCs (larsberg) https://gist.github.com/jdm/9900569
 
