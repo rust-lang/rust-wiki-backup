@@ -191,7 +191,7 @@ make    # this will definitely take a while if this is your first time, as it bu
 Optional steps:
 
 ~~~~bash
-make check   # run the test suite
+make check   # run the test suite; on windows, `make check` may not pass well. in any case, make check-fast` should work. (See also #4193)
 make install   # install the compiler and associated tools
 ~~~~
 
