@@ -67,6 +67,38 @@ These two tools provide the benefits of conditions while results provide a much 
 
 ### Cross-crate syntax extensions
 
+Macros can be defined with `macro_rules!` in one crate and used in another. A new attribute, `#[macro_export]` (not to be confused with `#[macro_escape]`) has been added. A macro definition tagged with this attribute will be made available to code linking against the crate it's defined in.
+
+```rust
+#[macro_export]
+macro_rules! foo (
+    () => (println!("foo"))
+)
+```
+
+Crates that wish to use `foo!` should annotate the `extern crate` statement with another new attribute, `#[phase(syntax)]` to tell the compiler to load macro definitions from it:
+
+```rust
+#[phase(syntax)]
+extern crate my_crate;
+...
+foo!();
+```
+
+The `#[phase(syntax)]` attribute will cause the crate to be used *only* for macros. If you want to use the crate as you normally would, you can add the `link` argument to the attribute as well:
+
+```rust
+#[phase(syntax, link)]
+extern crate my_crate;
+...
+foo!();
+my_crate::bar();
+```
+
+An `extern crate` statement that is un-annotated is equivalent to one annotated with `#[phase(link)]`.
+
+In addition, procedural macros, such as `bytes!`, `env!`, and `println!` can now be defined in third-party crates outside of the compiler and imported into crates using the same `#[phase(..)]` syntax discussed above. The procedural macro API is currently tied closely to `rustc`'s internals and is therefore highly unstable. For more information on procedural macros, see the [relavent pull request](https://github.com/mozilla/rust/pull/11151) or the new [libfourcc](https://github.com/mozilla/rust/blob/b06b3667afb3ca85f118ca6f91dcc592afae4a42/src/libfourcc/lib.rs) and [libhexfloat](https://github.com/mozilla/rust/blob/b06b3667afb3ca85f118ca6f91dcc592afae4a42/src/libhexfloat/lib.rs) crates.
+
 ### Changes to temporary lifetimes
 
 ### The `Deref` and `DerefMut` traits
