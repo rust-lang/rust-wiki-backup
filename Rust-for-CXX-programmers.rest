@@ -151,10 +151,6 @@ method that fails will prevent that object from ever being used again.
 Generally, errors are handled by using a `enum` of the result type and the
 error type, and the `result` module implements related functionality.
 
-There is also a condition system, which allows a failure to be handled at the
-*site of the failure*, or otherwise just resorts to `fail` if it cannot be
-handled.
-
 Memory safety
 -------------
 
