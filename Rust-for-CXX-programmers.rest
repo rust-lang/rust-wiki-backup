@@ -105,8 +105,8 @@ Nominal types
 -------------
 
 A Rust `struct` is similar to `struct`/`class` in C++, and uses a memory layout
-compatible with C structs. Members are public by default but can be marked with
-`priv`. There is no concept of a `friend` function or type, because `priv`
+compatible with C structs. Members are private by default but can be marked with
+`pub`. There is no concept of a `friend` function or type, because `priv`
 applies only at a module level.
 
 Rust has no special syntax or semantics for constructors, and just uses static methods that return the type. Struct initializer syntax `SomeStruct{field:value..}` avoids the boilerplate of manually creating simple constructors that just copy values into fields.
