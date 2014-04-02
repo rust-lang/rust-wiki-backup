@@ -105,9 +105,7 @@ Nominal types
 -------------
 
 A Rust `struct` is similar to `struct`/`class` in C++, and uses a memory layout
-compatible with C structs. Members are private by default but can be marked with
-`pub`. There is no concept of a `friend` function or type, because `priv`
-applies only at a module level.
+compatible with C structs. 
 
 Rust has no special syntax or semantics for constructors, and just uses static methods that return the type. Struct initializer syntax `SomeStruct{field:value..}` avoids the boilerplate of manually creating simple constructors that just copy values into fields.
 
@@ -115,6 +113,12 @@ Similarly rust has no conversion operators - it is necessary to call explicit me
 
 Custom destructors for non-memory resources can be provided by implementing the
 `Drop` trait.
+
+Visibility
+----------
+Struct fields and functions are private by default, but can be marked with `pub`.  
+Privacy works at the module level: private fields are still visible to functions and methods throughout a module, and any submodules. 
+This eliminates the need for C++ 'friend' or 'protected'; C++ can in some situations use a class as a module-like entity. See Modules. Where a C++ programmer might use a class with friends, a rust programmer places the group of classes in a module.
 
 Tuples and destructuring
 --------------------------
