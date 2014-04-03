@@ -101,9 +101,52 @@ In addition, procedural macros, such as `bytes!`, `env!`, and `println!` can now
 
 ### Changes to temporary lifetimes
 
+Temporaries are frequently created as part of intermediate expressions in order to calculate a final result. A good example of this is the `borrow()` method on `RefCell`. This method returns a new temporary `Ref` which can be dereferenced to the contained data.
+
+Before 0.10, the lifetimes of temporaries were much shorter than often required, forbidding common code. The compiler now generates code where temporaries live to the "innermost enclosing statement." Essentially, code like this can now work on 0.10:
+
+```rust
+let slot = RefCell::new(1);
+*slot.borrow_mut() = 4;
+println!("{}", *slot.borrow());
+```
+
+In this example, the `slot.borrow_mut()` method returns a value of type `RefMut`, but it is a temporary because it is never named. This temporary is deallocate at the end of the innermost enclosing statement, which in this case is `*slot.borrow_mut() = 4;`. This causes the `RefCell` to not be borrowed by the time the second statement comes around.
+
+You'll likely notice that many temporary expressions which previously must have been lifted into a local will no longer need the special treatment.
+
+For the full details of this change, see #3511 and #11585.
+
 ### The `Deref` and `DerefMut` traits
 
-### Changes in treatment of `static mut` variables
+These two new lang item traits were added as the key ingredient to Rust's smart pointer story. These are essentially overloads of the `*` operator. For example:
+
+```rust
+struct Foo { a: int }
+impl Deref<int> for Foo {
+    fn deref<'a>(&'a self) -> &'a int { &self.a }
+}
+
+let test = Foo { a: 3 };
+println!("{}", *test); // prints "3"
+let borrowed: &int = &*test; // dereference, but don't move
+println!("{}", *borrowed);
+```
+
+The `DerefMut` trait allows overriding expressions of the form `*test = value;`, as well as allowing taking a mutable address to the contents as `&mut *test`.
+
+These two traits participate in the compiler's autoderef functionality, making "smart pointers" much easier to use. For example, `Rc<T>` now "implements the methods of T" by auto-dereferencing to `&T`. Given a value of `Rc<T>`, you can seamlessly invoke methods on the contained object.
+
+### Changes in treatment of `static` variables
+
+Values in `static` have seen some treatment as part of 0.10. The changes happened incrementally over the release, but the current semantics are described by:
+
+* `static` expressions must not be of a type that has a user-defined destructor
+* `static` expressions must not have a value which itself requires a destructor
+* `static` expressions which contain an `Unsafe<T>` cannot have their address taken
+* `static mut` expressions must not have a type which requires any destructor at all
+
+These rules should allow for non-copyable types in statics such as `AtomicUint` as well as `Option<~int>`, while disallowing types in mutable statics that need destructors because there is no time at which the destructors will be run.
 
 ## 0.9 January 2014
 
