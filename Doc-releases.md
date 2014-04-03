@@ -5,6 +5,40 @@ This is an archive of all the existing Rust release artifacts. Each release is s
 [pre-0.5-key]: http://www.rust-lang.org/rust-key-very-old.gpg.ascii
 
 
+## 0.10
+
+* [Announcement][0.10-announce]
+* [Release notes][0.10-notes]
+* [Source code][0.10-tar] ([signature][0.10-tar-sig])
+* [Windows installer][0.10-exe] ([signature][0.10-exe-sig])
+* [Linux x86_64 tarball][0.10-linux-x64] ([signature][0.10-linux-x64-sig])
+* [Linux i686 tarball][0.10-linux-x32] ([signature][0.10-linux-x32-sig])
+* [Mac OS X x86_64 pkg][0.10-osx-x64-pkg] ([signature][0.10-osx-x64-pkg-sig])
+* [Mac OS X i686 pkg][0.10-osx-x32-pkg] ([signature][0.10-osx-x32-pkg-sig])
+* [Mac OS X x86_64 tarball][0.10-osx-x64-tar] ([signature][0.10-osx-x64-tar-sig])
+* [Mac OS X i686 tarball][0.10-osx-x32-tar] ([signature][0.10-osx-x32-tar-sig])
+* [Documentation][0.10-docs]
+
+[0.10-announce]: https://mail.mozilla.org/pipermail/rust-dev/2014-January/007753.html
+[0.10-notes]: https://github.com/mozilla/rust/blob/0.10/RELEASES.txt
+[0.10-tar]: http://static.rust-lang.org/dist/rust-0.10.tar.gz
+[0.10-tar-sig]: http://static.rust-lang.org/dist/rust-0.10.tar.gz.asc
+[0.10-exe]: http://static.rust-lang.org/dist/rust-0.10-install.exe
+[0.10-exe-sig]: http://static.rust-lang.org/dist/rust-0.10-install.exe.asc
+[0.10-linux-x64]: http://static.rust-lang.org/dist/rust-0.10-x86_64-unknown-linux-gnu.tar.gz
+[0.10-linux-x64-sig]: http://static.rust-lang.org/dist/rust-0.10-x86_64-unknown-linux-gnu.tar.gz.asc
+[0.10-linux-x32]: http://static.rust-lang.org/dist/rust-0.10-i686-unknown-linux-gnu.tar.gz
+[0.10-linux-x32-sig]: http://static.rust-lang.org/dist/rust-0.10-i686-unknown-linux-gnu.tar.gz.asc
+[0.10-osx-x64-pkg]: http://static.rust-lang.org/dist/rust-0.10-x86_64-apple-darwin.pkg
+[0.10-osx-x64-pkg-sig]: http://static.rust-lang.org/dist/rust-0.10-x86_64-apple-darwin.pkg.asc
+[0.10-osx-x32-pkg]: http://static.rust-lang.org/dist/rust-0.10-i686-apple-darwin.pkg
+[0.10-osx-x32-pkg-sig]: http://static.rust-lang.org/dist/rust-0.10-i686-apple-darwin.pkg.asc
+[0.10-osx-x64-tar]: http://static.rust-lang.org/dist/rust-0.10-x86_64-apple-darwin.tar.gz
+[0.10-osx-x64-tar-sig]: http://static.rust-lang.org/dist/rust-0.10-x86_64-apple-darwin.tar.gz.asc
+[0.10-osx-x32-tar]: http://static.rust-lang.org/dist/rust-0.10-i686-apple-darwin.tar.gz
+[0.10-osx-x32-tar-sig]: http://static.rust-lang.org/dist/rust-0.10-i686-apple-darwin.tar.gz.asc
+[0.10-docs]: http://doc.rust-lang.org/doc/0.10/index.html
+
 ## 0.9
 
 * [Announcement][0.9-announce]
