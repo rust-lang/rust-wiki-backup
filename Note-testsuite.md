@@ -127,13 +127,16 @@ fn main() {
 }
 ```
 
-The older technique for specify error messages is to use an
+The older technique for specifying error messages was to use an
 `error-pattern` directive.  These directives are placed at the top of
 the file and each message found in an `error-pattern` directive must
-appear in the output.  Using error comments is preferred, however,
-because it is a more thorough test: (a) it verifies that the error is
-reported on the expected line number and (b) it verifies that no
-additional errors or warnings are reported.
+appear in the output. 
+
+Using error comments is preferred, however, because it is a more
+thorough test:
+
+- It verifies that the error is reported on the expected line number.
+- It verifies that no additional errors or warnings are reported.
 
 ### Multi-crate testing
 
