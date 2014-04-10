@@ -45,42 +45,11 @@ Also, make sure you have the `lmodern` font package (see [#3989](https://github.
 
 ### Windows
 
-(If you are interested in *using* Rust binary rather than *building* source, see [[Using Rust on Windows]])
-
-#### Quick Steps for Windows environment setup.
-
-We recommend developing under [MSYS and MinGW](http://www.mingw.org) using their auto-installer.
-
-1. Download and install Git for Windows following these steps:
- * Download latest [Git for Windows on Google Code](https://code.google.com/p/msysgit/downloads/list?q=full+installer+official+git) and run it.
- * 5 clicks on Next
- * Choose to **Run Git from the Windows Command Prompt** instead of Use Git Bash only.
- * Choose **Checkout as-is, commit Unix-style line endings** (you'll have less problems).
- * After installing Git, close the MinGW console and reopen it, type `git --version` to verify installation and path is set correctly.
-2. Download Python 2.7 installer for your Windows version from http://www.python.org/downloads/windows/ and install it preferably to `C:\Python27`.
-3. Download the latest mingw-get-inst (the auto-installer - Green button) directly from http://sourceforge.net/projects/mingw/.
-4. Run the mingw-get-inst-########.exe
-5. In the Setup GUI, Check the boxes and _Mark for Installation_ the following components to install:
-    * Basic Setup ->
-        * mingw32-base  (has GCC C Compiler)
-        * mingw32-gcc-g++ (has GCC C++ Compiler)
-        * msys-base  (has essential tools, etc)
-    * All Packages -> MinGW Libraries -> MinGW Standard Libraries ->
-        * mingw32-libpthread-old
-        * mingw32-libpthreadgc
-    * Menu - Installation ->
-        * Apply Changes
-6. Create a shortcut on your desktop to Msys for `C:\MinGW\msys\1.0\msys.bat`
-7. Launch Msys and type `sh /postinstall/pi.sh`  (use `c:/mingw` when asked).
-8. Install Perl with `mingw-get install msys-perl`.
-9. Install wget with `mingw-get install msys-wget`.
-10. You can now start the MinGW / Msys Shell from your Desktop or Start Menu.
-11. Scroll down to [Downloading and building Rust](https://github.com/mozilla/rust/wiki/Note-getting-started-developing-Rust#downloading-and-building-rust) section.
-
-- Currently buildbot uses GCC version < 4.6, although it is known to work GCC 4.7/4.8 except for [small parts](https://github.com/mozilla/rust/issues/9205).
-- It is known that msys make freezes randomly i[f `-jN` option is given](http://sourceforge.net/mailarchive/message.php?msg_id=29801372).
+Whether building from source or running the rustc binaries, see [[Using Rust on Windows]] for instructions on setting up MinGW.
 
 #### More info for Windows users.
+
+It is known that msys make freezes randomly i[f `-jN` option is given](http://sourceforge.net/mailarchive/message.php?msg_id=29801372).
 
 Once installed, we tend to work inside the MSYS shell.
 If you are a consistent user of MinGW or plan to be, you might also want to subscribe to their mailing list: [Mingw-users](https://lists.sourceforge.net/lists/listinfo/mingw-users)
