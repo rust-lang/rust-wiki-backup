@@ -15,7 +15,7 @@
 - acrichto: field privacy, tuple privacy, minor release things, send bound
 - brson: 0.10, cloud services presentation
 
-# DSC Vec<T> vs ~[T]
+# DST Vec<T> vs ~[T]
 
 - acrichto: There's a PR to remove ~[] vectors. It's brought up a few things. Vec<T> is growable. ~[T] is either frozen or an unfortunate fallout from DST. Lots of movement away from it because it was mainly used for growable vectors. Do we really want to be moving to Vec<T> for all of these? Or should we shun ~[T] everywhere? I'm curious: A) if we need to remove ~[] to implement DST, we should do it. Otherwise, it's nice to keep down churn and starting to use ~[T] where appropriate (e.g., by removing `push` and dealing with the fallout) would be good. Otherwise, people are just removing ~[T] all the time. Concretely, when you read an entire I/O Stream, ~[u8] seems right, whereas in this PR, it returns Vec<u8>, which is growable...
 - pcwalton: I was removing ~[T] because niko was going to need us to remove all of old ~[T] for the DST change. If we can just remove `push` instead, that would be great.
