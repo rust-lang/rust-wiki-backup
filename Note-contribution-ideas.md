@@ -2,21 +2,6 @@ Archive of brson's suggestions for how to contribute to Rust.
 
 # 2014/01/26
 
-## Break up libextra (#8784)
-
-Getting our library ecosystem in shape in critical for Rust 1.0. We want 
-Rust to be a "batteries included" language, distributed with many crates 
-for common uses, but the way our libraries are organized - everything 
-divided between std and extra - has long been very unsatisfactory. 
-libextra needs to be split up into a number of subject-specific crates, 
-setting the precedent for future expansion of the standard libraries, 
-and with the impending merging of #11787 the floodgates can be opened.
-
-This is simply a matter of identifing which modules in extra logically 
-belong in their own libraries, extracting them to a directory in src/, 
-and adding a minimal amount of boilerplate to the makefiles. Multiple 
-people can work on this, coordinating on the issue tracker.
-
 ## Improve the official cheatsheet
 
 We have the beginnings of a 'cheatsheet', documenting various common 
