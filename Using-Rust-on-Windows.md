@@ -1,4 +1,4 @@
-As of release 0.10, Rust still depends on GCC for platform linker and C runtime libraries, so you will need to install one before installing Rust itself. Follow these instructions to set up the environment, then run the [installer].
+As of release 0.10, Rust still depends on GCC for platform linker and C runtime libraries, so you will need to install one before installing Rust itself. Follow these instructions to set up the environment, then run the [Rust installer].
 
 ## MinGW
 
