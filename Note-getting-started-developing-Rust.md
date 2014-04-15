@@ -47,6 +47,10 @@ Also, make sure you have the `lmodern` font package (see [#3989](https://github.
 
 Whether building from source or running the rustc binaries, see [[Using Rust on Windows]] for instructions on setting up MinGW.
 
+#### MSYS
+
+The MinGW linked to from the above "using Rust" instructions should also be sufficient for building Rust. Note though that to build Rust, we additionally require MSYS, a collection of Unix utilities ported to Windows. We currently recommend the inclusive version of MSYS provided by the [mingw-builds project](http://sourceforge.net/apps/trac/mingw-w64/wiki/MSYS). Extract these to a directory somewhere and make sure they are on your path when building Rust. Using the MSYS shell can also be slightly more pleasant than building directly from the windows terminal.
+
 #### More info for Windows users.
 
 It is known that msys make freezes randomly i[f `-jN` option is given](http://sourceforge.net/mailarchive/message.php?msg_id=29801372).
