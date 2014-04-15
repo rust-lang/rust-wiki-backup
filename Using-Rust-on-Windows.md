@@ -11,3 +11,5 @@ The current recommended way of obtaining Rust's prerequisites is by using the [m
 4. Verify Rust installation at mingw-builds terminal by typing `rustc --help`
 
 [Rust installer]: http://static.rust-lang.org/dist/rust-nightly-install.exe
+
+**Note: these instructions are sufficient to run Rust from a binary installation. To build Rust see [further instructions|Note-getting-started-developing-Rust].**
