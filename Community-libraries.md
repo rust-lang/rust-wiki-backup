@@ -183,6 +183,7 @@ See [Database Access](Community-libraries#wiki-database-access)
 ## Regular Expressions
 See https://github.com/mozilla/rust/issues/3591
 
+* [BurntSushi/regexp](https://github.com/BurntSushi/regexp):  [<img src="https://travis-ci.org/BurntSushi/regexp.png?branch=master">](https://travis-ci.org/BurntSushi/regexp)
 * [glennsl/rust-re](https://github.com/glennsl/rust-re)
 * [sanxiyn/rree](https://github.com/sanxiyn/rree)
 * PCRE
