@@ -18,6 +18,7 @@ Here is a short list of some OS projects in Rust. Feel free to add your own:
 * [mahrz/rv6](https://github.com/mahrz/rv6.git), a port of xv6 an educational unix clone by MIT (doesn't do much yet, currently inactive)
 * [eholk/Boot2Rust](https://github.com/eholk/Boot2Rust) - A UEFI application written in Rust.
 * [uutils/coreutils] (https://github.com/uutils/coreutils) - coreutils written in Rust.
+* [vertexclique/trafo] (https://github.com/vertexclique/trafo) - util-linux written in Rust.
 
 ### Resources and docs
 
