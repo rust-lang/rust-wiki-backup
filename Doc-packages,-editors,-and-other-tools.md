@@ -26,7 +26,7 @@
   * included, see `src/etc/`. 
   * Flycheck has support for on-the-fly syntax error detection. Use the Package Manager (ELPA) to install `flycheck-mode`
 * Geany
-  * Need to use the [nightly builds](http://nightly.geany.org/) or the [git master](https://github.com/geany/geany) until 1.24 is released.
+  * Since 1.24. [Nightly builds](http://nightly.geany.org/) or the [git master](https://github.com/geany/geany) may have additional improvements.
 * Gedit
   * included, see `src/etc/`
 * Kate
