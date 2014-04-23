@@ -190,10 +190,10 @@ TODO
 
 TODO
 
-
 # Error messages and warnings
 
-Rust code in error messages should be enclosed in backquotes.
+1. Do not blame the user: avoid to address the user directly like in "did you forget ...?"
+1. Rust code in error messages should be enclosed in backquotes.
 
 Examples:
 
