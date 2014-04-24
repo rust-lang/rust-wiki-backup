@@ -77,7 +77,7 @@ The downside of this is, that the indendation level of many lines of code may ch
 
 # Imports
 
-* Write `extern mod` directives first, then a blank line.
+* Write `extern crate` directives first, then a blank line.
 * Put local imports first, then external imports, then `pub use`.
 * Avoid use of `use *`, except in tests.
 
