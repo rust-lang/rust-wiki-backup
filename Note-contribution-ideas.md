@@ -46,15 +46,6 @@ DOS-resistance by using weaker hash functions. This is fairly open-ended
 and researchy, but a solution to this could have a big impact on the 
 performance of rustc and other projects.
 
-## Replace 'extern mod' with 'extern crate' (#9880)
-
-Using 'extern mod' as the syntax for linking to another crate has long 
-been a bit cringeworthy. The consensus here is to simply rename it to 
-`extern crate`. This is a fairly easy change that involves adding 
-`crate` as a keyword, modifying the parser to parse the new syntax, then 
-changing all uses, either after a snapshot or using conditional 
-compilation. This is a 1.0 issue.
-
 ## Introduce a design FAQ to the official docs (#4047)
 
 There are many questions about languages' design asked repeatedly, so 
