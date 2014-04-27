@@ -50,6 +50,8 @@
   * [NEdit syntax highlighting for Rust](https://mail.mozilla.org/pipermail/rust-dev/2013-September/005822.html)
 * Notepad++
   * [Notepad++ syntax highlighting](https://github.com/pfalabella/Rust-notepadplusplus)
+* Brackets
+  * [Brackets syntax highlighting for Rust](https://github.com/frozzare/brackets-rust)
 
 ## And more!
 
