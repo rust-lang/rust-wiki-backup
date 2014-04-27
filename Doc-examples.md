@@ -2,7 +2,7 @@ There isn't a single comprehensive repository of Rust examples yet, but here are
 
 This is the most complete:
 
-* [Rust by Example (japaric)](https://rustbyexample.com)
+* [Rust by Example (japaric)](http://rustbyexample.com)
 
 And these also have good examples:
 
