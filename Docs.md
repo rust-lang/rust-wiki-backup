@@ -5,32 +5,43 @@ Rust's primary documentation, including the tutorial, guides and manual, are on 
 
 Additional supplementary documentation is maintained here on the wiki.
 
+## Tutorials/intros
+[[Rust for C++ programmers|Rust for CXX programmers]] - A cheat sheet  
+[Rust for Rubyists](http://www.rustforrubyists.com/) - Excellent introduction to Rust  
+[[Teaching Rust]]  
+[[Examples|Doc examples]] - Where to look for examples of Rust  
+[[Rusticon|The Rusticon]] - A glossary of terms commonly used in Rust and Rust tools.  
+
 ## Other documentation
 
-[[Teaching Rust]]  
-[Rust for Rubyists](http://www.rustforrubyists.com/) - Excellent introduction to Rust  
-[[Examples|Doc examples]] - Where to look for examples of Rust  
 [[Releases|Doc releases]] - Links to current and old releases and documentation  
 [[Detailed release notes|Doc detailed release notes]] - Further explanation of language changes  
 [[Community libraries]] - A curated list of external libraries for Rust  
-[[Rust for C++ programmers|Rust for CXX programmers]] - A cheat sheet  
-[[Rusticon|The Rusticon]] - A glossary of terms commonly used in Rust and Rust tools.  
 [The Periodic Table of Rust Types](http://cosmic.mearie.org/2014/01/periodic-table-of-rust-types)  
-[[Unit testing|Doc unit testing]] - Writing tests and running them with the built-in test driver  
-[[Using rustpkg|Rustpkg]] - Managing packages  
-[[Using rustdoc|Doc using rustdoc]] - How to extract Markdown and HTML documentation from code  
 [Package documentation](http://docs.octayn.net/) - Documentation for rust packages  
-[[Continuous integration|Doc continuous integration]] - Test your GitHub-hosted packages with Travis CI  
 [[Reading and writing files|Doc Reading and writing files]]  
 [[Attributes|Doc attributes]] - The role of metadata in Rust code, with descriptions of many applications  
-[[Packages, editors, and other tools|Doc packages, editors, and other tools]]  
-[[Packaging Terminology|Doc Packaging Terminology]]  
 [[Crate Hashes|Doc crate hashes]] - How Rust generates crate filenames, versions symbols, and why  
 [[Computer Graphics and Game Development]] - Libraries and example projects  
-[Pr&eacute;sentation du langage Rust](http://lea-linux.org/documentations/Rust) - Detailed documentation in French, with examples  
+[UVA Rust tutorial](http://aml3.github.io/RustTutorial/)
+
+## Tools
+[[Using rustpkg|Rustpkg]] - Managing packages  
+[[Using rustdoc|Doc using rustdoc]] - How to extract Markdown and HTML documentation from code  
+[[Packages, editors, and other tools|Doc packages, editors, and other tools]]  
+[[Packaging Terminology|Doc Packaging Terminology]]  
+[[Unit testing|Doc unit testing]] - Writing tests and running them with the built-in test driver  
+[[Continuous integration|Doc continuous integration]] - Test your GitHub-hosted packages with Travis CI  
+
+## Platforms
+getting Rust working on other platforms
+
 [[Building for Android|Doc building for Android]]  
 [[Building for iOS|Doc building for iOS]]  
-[UVA Rust tutorial](http://aml3.github.io/RustTutorial/)
+
+## Guides in other languages
+[Pr&eacute;sentation du langage Rust](http://lea-linux.org/documentations/Rust) - Detailed documentation in French, with examples  
+
 
 ## Community
 
