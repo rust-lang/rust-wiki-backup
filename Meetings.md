@@ -1,6 +1,7 @@
 The Rust team has a weekly Rust planning meeting on Tuesday mornings at 10:00 AM Pacific (UTC-8). Minutes are recorded [on Etherpad](https://etherpad.mozilla.org/Rust-meeting-weekly) and then archived here.
 
 ## Weekly meetings:
+* [[Meeting-weekly-2014-04-29]] (nullable pointers; module ownership; bitflags; smaller refcounts; rev_iter; std facade; trait matching)
 * [[Meeting-weekly-2014-04-22]] (Friend of the Tree; regex; numeric default typing; `Vec<T>`; disableable asserts; bounds on type params in structs; attributes on match arms; f128)
 * [[Meeting-weekly-2014-04-15]] (`~""`, breaking changes log, removing `priv`, mutex bounds, attributes, design faq, removing markers, assigning PRs)
 * [[Meeting-weekly-2014-04-01]] (`Vec<T>` vs. `~[T]`; virtual structs; intrinsics; strbuf; inheritance)
