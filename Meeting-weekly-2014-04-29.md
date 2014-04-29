@@ -13,18 +13,18 @@
 
 # Status
 
-acrichto: finishing up the bots, I/O timeouts, ffunction-sections, close_{read,write}
-brson: administrative, vpc, docs, box
-aturon: revamping process creation interface, c flags, adding some atomic ops
-pnkfelix: control-flow graph, check-stage1
+* acrichto: finishing up the bots, I/O timeouts, ffunction-sections, close_{read,write}
+* brson: administrative, vpc, docs, box
+* aturon: revamping process creation interface, c flags, adding some atomic ops
+* pnkfelix: control-flow graph, check-stage1
 
 # Action Items
 
-nmatsakis: close https://github.com/rust-lang/rfcs/pull/36
-nmatsakis: close https://github.com/rust-lang/rfcs/pull/41
-aturon: work with bjz to finish up https://github.com/mozilla/rust/pull/13072
-brson: close https://github.com/rust-lang/rfcs/pull/23
-nmatsakis: update https://github.com/rust-lang/rfcs/pull/48
+* nmatsakis: close https://github.com/rust-lang/rfcs/pull/36
+* nmatsakis: close https://github.com/rust-lang/rfcs/pull/41
+* aturon: work with bjz to finish up https://github.com/mozilla/rust/pull/13072
+* brson: close https://github.com/rust-lang/rfcs/pull/23
+* nmatsakis: update https://github.com/rust-lang/rfcs/pull/48
 
 # Nullable pointers
 
