@@ -42,19 +42,12 @@ The copyright header at the top of the file should include a date range that inc
 These are the policies for upholding our community's standards of conduct in our communication channels, most notably in Rust-related IRC channels.
 
 1. Remarks that violate the Rust standards of conduct, including hateful, hurtful, oppressive, or exclusionary remarks, are not allowed. (Cursing is allowed, but never targeting another user, and never in a hateful manner.)
-
 2. Remarks that moderators find inappropriate, whether listed in the code of conduct or not, are also not allowed.
-
 3. Moderators will first respond to such remarks with a warning.
-
 4. If the warning is unheeded, the user will be "kicked," i.e., kicked out of the communication channel to cool off.
-
 5. If the user comes back and continues to make trouble, they will be banned, i.e., indefinitely excluded.
-
 6. Moderators may choose at their discretion to un-ban the user if it was a first offense and they offer the offended party a genuine apology.
-
 7. If a moderator bans someone and you think it was unjustified, please take it up with that moderator, or with a different moderator, **in private**. Complaints about bans in-channel are not allowed.
-
 8. Moderators are held to a higher standard than other community members. If a moderator creates an inappropriate situation, they should expect less leeway than others.
 
 In the Rust community we strive to go the extra step to look out for each other. Don't just aim to be technically unimpeachable, try to be your best self. In particular, avoid flirting with offensive or sensitive issues, particularly if they're off-topic; this all too often leads to unnecessary fights, hurt feelings, and damaged trust; worse, it can drive people away from the community entirely.
