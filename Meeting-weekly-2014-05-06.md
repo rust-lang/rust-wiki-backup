@@ -1,16 +1,16 @@
 # Agenda 5/6/2014
 
-* Vec<T> vs Box<[T]> vs ~[T] (acrichto)
+* Vec\<T> vs Box\<\[T]> vs ~\[T] (acrichto)
 * Strbuf/str/chars/etc (acrichto) https://github.com/rust-lang/rfcs/pull/60
 * enum keyword (acrichto) https://github.com/rust-lang/rfcs/pull/27
 * module directory structure (acrichto) https://github.com/rust-lang/rfcs/pull/63
 * reserved keywords (acrichto) https://github.com/mozilla/rust/issues/10293
 * Box in the prelude (acrichto)
-* Box<self> (acrichto)
+* Box\<self> (acrichto)
 * unsized/type/Sized? keyword (nrc)
 * ufcs rfc (nrc) https://github.com/rust-lang/rfcs/pull/4
 * locally printing stickers for Rust Paris meetup; budget? (pnkfelix)
-* Trait[Bounds] (pcwalton)
+* Trait\[Bounds] (pcwalton)
 * significant addresses/statics (pcwalton)
 * unsafe extern C functions (#10025, pcwalton)
 * reflection behind a feature gate (pcwalton)
@@ -32,31 +32,31 @@
 
 # Action Items
 
-- pcwalton: Convert to Vec<T>
+- pcwalton: Convert to Vec\<T>
 - pcwalton: Remove ~str, &str as lang item
 - pcwalton: close uint8 issue
 - pcwalton: gate reflection
 - acrchto: #10025
 
-# Vec<T> vs Box<[T]> vs ~[T]
+# Vec\<T> vs Box\<\[T]> vs ~\[T]
 
-- acrichto: Just talking about vectors, today, we have Vec, ~[], and slices. ~ is being removed (per the accepted RFC). Seems inconsistent to leave ~[]. Natural extension is `box [T]`, which is really bad for My First Vector Type. This is pretty concrete evidence that maintaining owned slices for now is not a good idea; almost all internal apis should be Vec.
+- acrichto: Just talking about vectors, today, we have Vec, ~\[], and slices. ~ is being removed (per the accepted RFC). Seems inconsistent to leave ~\[]. Natural extension is `box [T]`, which is really bad for My First Vector Type. This is pretty concrete evidence that maintaining owned slices for now is not a good idea; almost all internal apis should be Vec.
 - pcwalton: I agree.
-- acrichto: This is influenced by the string decision, because Vec<u8> -> strings. How does this sit with everyone?
+- acrichto: This is influenced by the string decision, because Vec\<u8> -> strings. How does this sit with everyone?
 - nrc: The overhead of an extra word is insignificant, because we expect Vec to be a lot of data. Is that fair? We have SmallVec for when it matters.
-- acrichto: box [T] will be supported, but it will not be common. If you build a library, you will probably return Vec<T> instead. As a consumer, you can put it in Box<[T]>, which is not growable, and will not be very common.
-- pnkfelix: What about Vec<Vec<>>? A Box<Box<[T]>> and coersion to borrowed slices... 
+- acrichto: box \[T] will be supported, but it will not be common. If you build a library, you will probably return Vec\<T> instead. As a consumer, you can put it in Box\<\[T]>, which is not growable, and will not be very common.
+- pnkfelix: What about Vec\<Vec\<T>>? A Box\<Box\<\[T]>> and coersion to borrowed slices... 
 - brson: You can convert them, right?
 - pnkfelix: Yes, you can convert, but not coerse because they have a differently-sized representation. It's not a big deal to me.
 - acrichto: Definitely a legit concern, but probably not a big enough deal to prevent the migration.
 - brson: I agree. Saying "use Vec for vector types" is clear. This is basically just messaging, right?
-- acrichto: Probably just something to the mailing list. Also, code-wise, we need to change the standard library to stop using ~[].
+- acrichto: Probably just something to the mailing list. Also, code-wise, we need to change the standard library to stop using ~\[].
 - brson: aturon, you were talking about conventions? So, it would land in that document...
-- pcwalton: Can I just remove Box<[T]> transitionally? I originally implemented Box<[T]>... but I don't want ~Box<T>. I want to remove ~ from the language as soon as possible.
+- pcwalton: Can I just remove Box\<\[T]> transitionally? I originally implemented Box\<\[T]>... but I don't want ~Box\<T>. I want to remove ~ from the language as soon as possible.
 - brson: Can we deprecate it to make the transition easier? Or should we just remove it?
 - acrichto: I think people will follow the standard library. Once we don't take it, people will move to not use ~ anymore. It would be nice to mark it as deprecated for a little bit...
 - pcwalton: I already didn't do that for ~, but I can add it back.
-- nrc: Is ~[] used more than ~T?
+- nrc: Is ~\[] used more than ~T?
 - acrichto: It was THE vector, so yes. 
 - pcwalton: I don't agree. This is a major policy shift, and I don't think we need an obsolete for something like that...
 - brson: I'd like to give users more help. We don't have to.
@@ -78,7 +78,7 @@
 
 # Strbuf/str/chars/etc
 
-- acrichto: The name of one string type is easy, but we need two. We don't have a convenient syntax for slices like we do with vectors. There are two prevailing ideas: the main (owned) string would be Vec<u8>. Internally, that's the main string type. The Box<str> is almost never used. The questions are: what do we call it, and what do we call the slice types? String (capital S) for the owned string. And for the Box type, "chars" or "str". Within each, we could capitalize or not. chars or str would operate exactly as today. &chars or &str is the slice type. Thoughts?
+- acrichto: The name of one string type is easy, but we need two. We don't have a convenient syntax for slices like we do with vectors. There are two prevailing ideas: the main (owned) string would be Vec\<u8>. Internally, that's the main string type. The Box\<str> is almost never used. The questions are: what do we call it, and what do we call the slice types? String (capital S) for the owned string. And for the Box type, "chars" or "str". Within each, we could capitalize or not. chars or str would operate exactly as today. &chars or &str is the slice type. Thoughts?
 - pcwalton: Slight community preference for string vs. str. I have no opinion.
 - pnkfelix: My reading was that it was comparining String vs. Str. For slice type, they seemed OK with lower-s str.
 - acrichto: The biggest objection is that if the owned is capital-S, then will people be confused?
@@ -87,12 +87,12 @@
 - nrc: The two names should be different and not be distinguished by abbreviation or capitalization. I don't care which we choose, but they should be different.
 - acrichto: So you're opposed to String and Str?
 - nrc: Yes.
-- pcwalton: Community prefers String and Str. Failing that, Str and chars. Some people had visceral reactions to chars....
+- pcwalton: Community prefers String and str. Failing that, Str and chars. Some people had visceral reactions to chars....
 - pnkfelix: I was trying to understand Simon's post, but couldn't see if he wanted utf8 or didn't want utf8.
 - pcwalton: People expected chars to be an array of characters or an iterator over characters. objected to it not being a flat array of characters. I don't agree with this...
 - pnkfelix: Yeah, we're removing indexing anyway, so it doesn't really matter. (the current indexing returns a part of a character, not a char).
 - pcwalton: You could have an index that does the Right Thing...
-- nrc: With Str and chars, the growable string would be a Str. Slice would be &chars. And Box<chars> would be something you shouldn't use...
+- nrc: With Str and chars, the growable string would be a Str. Slice would be &chars. And Box\<chars> would be something you shouldn't use...
 - pcwalton: Question of whether chars should be built-in or a langitem. nmatsakis and I prefer a langitem, though acrichto prefers builtins.
 - acrichto: I like not having to define this in core and not have to have a langitem to write a string. I can have an integer literal without a langitem, etc. But I'd rather debate naming.
 - pcwalton: Affects naming - langitems are capitalized, and non-langitems are lowercase. nmatsakis also pointed out that with langitems the compiler is simpler because you can hand off the support to the stuff that already does this for user-defined types.
@@ -108,7 +108,7 @@
 - nrc: StrBuf and chars?
 - huon: Can we implement w/o DST?
 - pcwalton: Yes.
-- acrichto: Only for owned. Rc<chars> would not work.
+- acrichto: Only for owned. Rc\<chars> would not work.
 - pcwalton: Only the borrowed case, which is the important one anyway.
 - acrichto: I'm worried about big changes like this where we were trying to make incremental progress but others thing of it as signaling the One True Path.
 - pcwalton: The alternative is doing nothing.
@@ -182,7 +182,7 @@ fn foo<unsized T: Send> { ... }
 
 - pcwalton: I assume no sane people object, right? Good.
 
-# Box<self> 
+# Box\<self> 
 
 - pcwalton: In my patch, you can write a fully-explicit form:
 ```
@@ -208,7 +208,7 @@ impl Widget {
 - pcwalton: I did not understand that anyone wanted to move away from sugar. Still wanted &self for methods.
 - acrichto: Looking at the meeting notes, the biggest was that the sugary form of &self should be self:Self... nothing related to smart pointers there. We did say we should keep sugar during the workweek, but nothing about w.r.t. smart pointers.
 - pcwalton: I think we need nmatsakis here. I'm implementing the fully-explicit form for right now.
-- acrichto: Just for &self and Box<self>?
+- acrichto: Just for &self and Box\<self>?
 - pcwalton: And by-value self.
 - brson: Sounds good.
 
