@@ -139,20 +139,22 @@
 
 - nrc: This is the syntax for marking a type parameter as accepting DSTs as well as regular (statically sized types). Context on the naming decision is that the easiest thing is you can't just use a regular bound because accepting unsized as well as sized lets you do more, whereas bounds let you do less. The RIGHT thing to do is that most methods accept both and you narrow it down, but it would be way too noisy in practice. The next is proposal is unsized. The later one is type, which on a type variable denotes it accepts unsized & sized types. Even though that's slightly misleading, that's one alternative. The proposal that niko, felix, and I agree on is if we implicitly accept that all type variables have a bound (Sized), then you can say that a type variable doesn't have it by using that bound with a ? operator before that variable. Simplest case would still be T. You could then add `T:Bounds`, but make them optional by `T:Bounds?`. 
 compare:
-```
+```rust
   fn foo<T>(x: &T) { ... } // .. T is implicitly given the Sized bound here.
   fn foo<Sized? T>(x: &T) { ... } // T is now marked as *not* having the implicit Sized bound
-  
-hypothetical (assumes existence of `Unsized`
-  fn foo<Sized? T: Unsized>(x: &T) { ... } // T is now marked as *must* being Unsized.
-  fn foo<T:Unsized>(x: &T) { ... } // This would be an error, since you cannot have a T that is both Sized (which is an implicitly bound on T) and Unsized 
-  
+
 fn foo<T: Send> { ... }
 fn foo<Sized? T: Send> { ... }
 fn foo<Sized+Foo? T: Send+Freeze> { ... }
 fn foo<Sized? T: Send> { ... }
 fn foo<Sized? T: Sized> { ... } // lint warning: redundant (why would you say Sized? and then add Sized bound  --- potential answer: *macros*)
 ```
+hypothetical (assumes existence of `Unsized`, and a use-case for this feature):
+```rust
+  fn foo<Sized? T: Unsized>(x: &T) { ... } // T is now marked as *must* being Unsized.
+  fn foo<T:Unsized>(x: &T) { ... } // This would be an error, since you cannot have a T that is both Sized (which is an implicitly bound on T) and Unsized 
+```
+
 alternatively
 ```
 fn foo<unsized T> { ... }
