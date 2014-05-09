@@ -1,4 +1,4 @@
-Here are some rough guidelines to Rust style. They are followed unevenly and there's not necessarily consensus about everything here. More work is required.
+Here are some rough guidelines to Rust style. They are followed unevenly and there's not necessarily a consensus about everything in here. More work is required.
 
 # Editor settings
 
@@ -13,16 +13,16 @@ Here are some rough guidelines to Rust style. They are followed unevenly and the
 * Acronyms should be camel case, too: `Uuid`, not `UUID`.
 * Functions, methods, and variables should be `lowercase_with_underscores` where it helps readability.
 * Static variables should be in `ALL_CAPS`.
-* Constructors are methods called `new` or `new_with_more_details`.
-* Constructors that simply convert from another type are methods called `from_foo`.
+* Constructors should be methods called `new` or `new_with_more_details`.
+* Constructors that simply convert from another type should be methods called `from_foo`.
 * When writing a binding to an external library, put the raw C bindings in a module called `ffi` (rather than `ll`). Do not create high-level bindings called `hl`.
-* lifetime names are lowercase and are often simply 'a
+* lifetime names should be lowercase and are often simply 'a
 
 ## Trait naming
 
 - trait examples: Copy, Owned, Const, Add, Sub, Num, Shr, Index, Encode, Decode, Reader, Writer, GenericPath
 - extension traits: FooUtil. However, prefer default methods to extension traits.
-- avoid words with suffixes (able, etc). try to use transitive verbs, nouns, and then adjectives in that order
+- avoid words with suffixes (able, etc). Try to use transitive verbs, nouns, and then adjectives in that order.
 
 ## Converting between types
 Functions for converting between types should attempt to follow this:
@@ -35,13 +35,13 @@ These are not hard rules, since generically implemented functions mean that an `
 
 ## Iterators
 
-Naming iterators are often a little tricky because their names can get quite verbose quite quickly. Since #11001 landed, we've standardized on iterator naming conventions. When naming an iterator, follow these rules from top-to bottom (short circuiting when you hit a relevant one).
+Naming iterators is often a little tricky because their names can get quite verbose very quickly. Since #11001 landed, we've standardized iterator naming conventions. When naming an iterator, follow these rules from top-to bottom (short circuiting when you hit a relevant one).
 
-1. If the iterator is yielding something that can be described with a noun, the iterator should be called the pluralization of the noun (an iterator yielding words is called Words)
-2. An iterator over the members of a container should have the base name of `Items`, with different flavors deriving from this name. Different flavors are applied in order of top-to-bottom in this list
-  * Moving iterators have the prefix of `Move`
-  * If the default iterator yields an immutable reference, an iterator yielding a mutable reference has the prefix `Mut`
-  * Reverse iterators have the prefix of `Rev`
+1. If the iterator yields something that can be described with a noun, the iterator should be called the pluralization of that noun (e.g. an iterator yielding words is called Words)
+2. An iterator over the members of a container should have a base name of `Items`, with different flavors deriving from this name. Different flavors are applied top-to-bottom from this list
+  * Moving iterators have a prefix of `Move`
+  * If the default iterator yields an immutable reference, an iterator yielding a mutable reference has a prefix `Mut`
+  * Reverse iterators have a prefix of `Rev`
 3. If these rules would result in a name that might cause confusion, pick a less confusing name.
 
 These rules are a little vague, and that's partly on purpose. The general idea is to be concise and consistent. Examples through libstd and libextra should showcase how we expect iterators to be named.
@@ -68,7 +68,7 @@ fn foo<T:This,
 
 (Note: We need to adjust editors to do this automatically. This is not the current convention.)
 
-The downside of this is, that the indendation level of many lines of code may change when the length of the function name changes.
+The downside of this is, that the indentation level of many lines of code may change when the length of a function name changes.
 
 # Platform-specific code
 
@@ -79,9 +79,9 @@ The downside of this is, that the indendation level of many lines of code may ch
 
 * Write `extern crate` directives first, then a blank line.
 * Put local imports first, then external imports, then `pub use`.
-* Avoid use of `use *`, except in tests.
+* Avoid using  `use *`, except in tests.
 
-Prefer to fully import types while module-qualifying functions, e.g.
+Prefer fully importing types while module-qualifying functions, e.g.
 
 ```
 use option::Option;
@@ -108,7 +108,7 @@ mod test {
 
 # Match expressions
 
-deref the match target if you can. prefer
+Dereference the match target if you can. Prefer
 
 ```
 match *foo {
@@ -117,7 +117,7 @@ match *foo {
 }
 ```
 
-instead of
+over
 
 ```
 match foo {
@@ -126,7 +126,7 @@ match foo {
 }
 ```
 
-multiple patterns in a single arm:
+If you have multiple patterns in a single arm, prefer
 
 ```
 match  foo {
@@ -140,7 +140,7 @@ match  foo {
 }
 ```
 
-only omit braces for single expressions
+Only omit braces for single expressions.
 
 ```
 match foo {
@@ -154,12 +154,11 @@ match foo {
 
 # Comments
 
-Prefer line comments and avoid block comments. Reason: it avoids the debate about whether to put stars on every line, etc.
+Prefer line comments and avoid block comments. This avoids the debate about whether to put stars on every line, etc.
 
-In doc comments, write sentences that begin with capital letters and end in a period, even in the
-short summary description.
+In doc comments, write sentences that begin with capital letters and end in a period, even in the short summary description. Avoid fragments.
 
-Favor outer doc comments
+Favor outer doc comments:
 
 ```
 /// Function documentation.
@@ -168,7 +167,7 @@ fn foo() {
 }
 ```
 
-Only use inner doc comments to document crates and file-level modules.
+Only use inner doc comments to document crates and file-level modules:
 
 ```
 //! The core library.
@@ -180,7 +179,7 @@ Use full sentences that start with capitals and end with a period. See [[Doc-usi
 
 # Module organization
 
-Put types first, then implementations
+Put types first, then implementations.
 
 # Function definitions
 
@@ -192,10 +191,10 @@ TODO
 
 # Error messages and warnings
 
-1. Do not blame the user: avoid to address the user directly like in "did you forget ...?"
-1. Rust code in error messages should be enclosed in backquotes.
+1. Do not blame the user: avoid addressing the user directly with phrases like "did you forget ...?"
+2. Rust code in error messages should be enclosed in backquotes.
 
-Examples:
+For instance:
 
 * ```found `true` in restricted position```
 
@@ -213,13 +212,13 @@ Examples:
 
 # Impls
 
-* Avoid `pub impl Type { ... }`. Instead put `pub ` modifiers on the method names. This allows a reader to immediately tell which methods are public at a glance.
+* Avoid `pub impl Type { ... }`. Instead put `pub ` modifiers on method names. This allows a reader to immediately tell which methods are public quickly.
 
 # Predicates
 
 The names of simple boolean predicates should start with "is_" or similarly be expressed using a "small question word".
 
-The notable exception are generally established predicate names like "lt", "ge", etc.
+The notable exceptions are generally established predicate names like "lt", "ge", etc.
 
 Examples:
 
