@@ -52,6 +52,9 @@
   * [Notepad++ syntax highlighting](https://github.com/pfalabella/Rust-notepadplusplus)
 * Brackets
   * [Brackets syntax highlighting for Rust](https://github.com/frozzare/brackets-rust)
+* Atom
+  * [Atom Racer : intelligent code completion for Rust based on Racer](https://github.com/edubkendo/atom-racer)
+  * [Atom Rust: Syntax highlighting, snippets, etc](https://github.com/zargony/atom-language-rust)
 
 ## And more!
 
