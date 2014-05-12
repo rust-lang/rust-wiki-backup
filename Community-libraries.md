@@ -71,7 +71,7 @@ Wanted library: [[Lib datetime]]
   * [kballard/rust-lua](https://github.com/kballard/rust-lua) (Lua 5.1): [<img src="https://travis-ci.org/kballard/rust-lua.png?branch=master">](https://travis-ci.org/kballard/rust-lua)
 
 ## Encoding
-* [Base64](https://github.com/mozilla/rust/blob/master/src/libextra/base64.rs)
+* [Base64](https://github.com/mozilla/rust/blob/master/src/libserialize/base64.rs)
 * Cap'n Proto
     * [dwrensha/capnproto-rust](https://github.com/dwrensha/capnproto-rust):  [<img src="https://travis-ci.org/dwrensha/capnproto-rust.png?branch=master">](https://travis-ci.org/dwrensha/capnproto-rust)
 * Character Encoding
@@ -81,7 +81,7 @@ Wanted library: [[Lib datetime]]
   * [Geal/rust-csv](https://github.com/Geal/rust-csv): [<img src="https://travis-ci.org/Geal/rust-csv.png?branch=master">](https://travis-ci.org/Geal/rust-csv)
 * HTML
     * [veddan/rust-htmlescape](https://github.com/veddan/rust-htmlescape):  [<img src="https://travis-ci.org/veddan/rust-htmlescape.png?branch=master">](https://travis-ci.org/veddan/rust-htmlescape)
-* [JSON](https://github.com/mozilla/rust/blob/master/src/libextra/json.rs)
+* [JSON](https://github.com/mozilla/rust/blob/master/src/libserialize/json.rs)
 * MsgPck
   * [mneumann/rust-msgpack](https://github.com/mneumann/rust-msgpack):  [<img src="https://travis-ci.org/mneumann/rust-msgpack.png?branch=master">](https://travis-ci.org/mneumann/rust-msgpack)
 * ProtocolBuffers
@@ -157,7 +157,7 @@ See also [[Computer Graphics and Game Development]].
 ## Networking
 
 * GUID
-* [UUID](https://github.com/mozilla/rust/blob/master/src/libextra/uuid.rs)
+* [UUID](https://github.com/mozilla/rust/blob/master/src/libuuid/lib.rs)
 * NanoMsg
   * [glycerine/rust-nanomsg](https://github.com/glycerine/rust-nanomsg)
 * ZeroMQ
@@ -226,7 +226,7 @@ See [Database Access](Community-libraries#wiki-database-access)
   * [Ogeon/rustful](https://github.com/Ogeon/rustful):  [<img src="https://travis-ci.org/Ogeon/rustful.png?branch=master">](https://travis-ci.org/Ogeon/rustful)
   * [SimonSapin/rust-url](https://github.com/SimonSapin/rust-url)
   * [skade/widmann](https://github.com/skade/widmann): [<img src="https://travis-ci.org/skade/widmann.png?branch=master">](https://travis-ci.org/skade/widmann)
-  * [url.rs](https://github.com/mozilla/rust/blob/master/src/liburl/url.rs)
+  * [url.rs](https://github.com/mozilla/rust/blob/master/src/liburl/lib.rs)
   * [WebeWizard/libhttpd](https://github.com/WebeWizard/libhttpd)
   * [wycats/route-recognizer.rs](https://github.com/wycats/route-recognizer.rs)
   * [wycats/routed-http.rs](https://github.com/wycats/routed-http.rs)
