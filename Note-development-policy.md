@@ -56,7 +56,7 @@ And if someone takes issue you with something you said or did, resist the urge t
 
 *Adapted from the [Node.js Policy on Trolling](http://blog.izs.me/post/30036893703/policy-on-trolling)*
 
-## Contributed code requirements:
+## Contributed code requirements
 
 Pass the existing tests. If you have a good reason for breaking a test, XFAIL it. We aim for clean builds at all times.
 
