@@ -18,7 +18,6 @@ Additional supplementary documentation is maintained here on the wiki.
 [[Detailed release notes|Doc detailed release notes]] - Further explanation of language changes  
 [[Community libraries]] - A curated list of external libraries for Rust  
 [The Periodic Table of Rust Types](http://cosmic.mearie.org/2014/01/periodic-table-of-rust-types)  
-[Package documentation](http://docs.octayn.net/) - Documentation for rust packages  
 [[Reading and writing files|Doc Reading and writing files]]  
 [[Attributes|Doc attributes]] - The role of metadata in Rust code, with descriptions of many applications  
 [[Crate Hashes|Doc crate hashes]] - How Rust generates crate filenames, versions symbols, and why  
