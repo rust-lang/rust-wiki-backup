@@ -79,18 +79,19 @@ Trait[Send+Share]
 - nmatsakis: `as` takes a type grammar. Would need a paren. That's a good question we have to answer. It hurts my eyes to not see parens around types under pointer sigils. This is fine:
 ```
 Box<Trait1+Send>
-```
 foo as uint + 3
 ```
 - nmatsakis: Could have some subset of the type grammar available after the as, in support of the `foo` above. At worst, you require parens...
 - acrichto: I've added some bounds up by the `Trait[Send]`. With +, how would it extend to procedures & closures? And how do you know what the grouping is and precedence of -> vs. +?
 - pcwalton: What would it look like with + and procs and closures?
 - nmatsakis: you can extend it by saying:
+
 ```
    |T| -> int + Send
    (|T| -> int) + Send
    
 ```
+
 - pnkfelix: Is it that bad with the parens around the function types?
 - pcwalton: The + there looks strange.
 - nmatsakis: I think closures look strange. In an unboxed world, though, I think that closures might not be as much of a thing.
@@ -110,9 +111,11 @@ foo as uint + 3
 - nmatsakis: I see no reason we couldn't implement that if we wanted to. But I would make it only do exactly what you can do today for now.
 - brson: What is the solution?
 - nmatsakis: I'll write up an RFC for this.
+
 ```
 solution: Box<Trait + Send>, &(Trait + Send), leave closures and procs the way they are.
 ```
+
 - brson: So, is the first name in this list special?
 - nmatsakis: It would be today, depending on how general we make the code. It doesn't have to be. There must be exactly 1 normal trait and the rest must be built-in bounds. But it would be easier if it had to be first.
 - brson: Everything after that (needs to be casted?)... 
