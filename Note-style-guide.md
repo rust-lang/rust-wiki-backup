@@ -20,7 +20,7 @@ Here are some rough guidelines to Rust style. They are followed unevenly and the
 * Constructors should be methods called `new` or `new_with_more_details`.
 * Constructors that simply convert from another type should be methods called `from_foo`.
 * When writing a binding to an external library, put the raw C bindings in a module called `ffi` (rather than `ll`). Do not create high-level bindings called `hl`.
-* lifetime names should be lowercase and are often simply 'a
+* lifetime names should be lowercase and are often simply `'a`.
 
 ## Trait naming
 
