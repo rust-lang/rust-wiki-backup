@@ -5,6 +5,10 @@ Here are some rough guidelines to Rust style. They are followed unevenly and the
   * Lines should not be longer than 100 characters.
   * Use spaces for indentation, not tabs.
 
+# Attributes
+
+  * Key-value attributes should have spaces around the equals sign: `#[foo = "bar"]`
+
 # Naming conventions
 
 ## General
