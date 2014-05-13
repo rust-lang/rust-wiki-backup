@@ -1,6 +1,7 @@
 The Rust team has a weekly Rust planning meeting on Tuesday mornings at 10:00 AM Pacific (UTC-8). Minutes are recorded [on Etherpad](https://etherpad.mozilla.org/Rust-meeting-weekly) and then archived here.
 
 ## Weekly meetings:
+* [[Meeting-weekly-2014-05-13]] (interns; `String`; Trait bounds; spaces in attributes; gdb; quickcheck; let mut; 32-bit ABI; optimizing structs; module structure; significant addresses; reserving keywords)
 * [[Meeting-weekly-2014-05-06]] (vector types; string naming; Sized keywords; `unsafe extern fn`)
 * [[Meeting-weekly-2014-04-29]] (nullable pointers; module ownership; bitflags; smaller refcounts; rev_iter; std facade; trait matching)
 * [[Meeting-weekly-2014-04-22]] (Friend of the Tree; regex; numeric default typing; `Vec<T>`; disableable asserts; bounds on type params in structs; attributes on match arms; f128)
