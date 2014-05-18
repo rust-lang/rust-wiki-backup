@@ -214,10 +214,6 @@ Examples:
 
 * ```Iterate```
 
-# Impls
-
-* Avoid `pub impl Type { ... }`. Instead put `pub ` modifiers on method names. This allows a reader to immediately tell which methods are public quickly.
-
 # Predicates
 
 The names of simple boolean predicates should start with "is_" or similarly be expressed using a "small question word".
