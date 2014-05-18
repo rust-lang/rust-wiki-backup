@@ -206,14 +206,6 @@ Error messages should use the pattern "expected \`X\`, found \`Y\`".
 
 * ```mismatched types: expected `u16`, found `u8` ```
 
-# Traits
-
-[Trait](http://doc.rust-lang.org/doc/master/tutorial.html#traits) names should be capitalized and should follow the pattern of `Verb` or `Verber`, except in cases where no verb seems sensible.
-
-Examples:
-
-* ```Iterate```
-
 # Predicates
 
 The names of simple boolean predicates should start with "is_" or similarly be expressed using a "small question word".
