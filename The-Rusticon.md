@@ -59,7 +59,7 @@ syntax | name
 `'static`, `'a` | A *lifetime*. May also be used to name a `loop` or a `for` clause (a label).
 `Box<T>` | If `T` is a type, an *owning pointer* to `T`, and the pointer is to an *owned box*.
 `&T`, `&'a T` | If `T` is a type, a [*reference*](#reference) to `T`, possibly with a *lifetime* (`'a`).
-`||`, `|T| -> U` | A [*closure*](#closure). 
+`∣ ∣`, `∣T∣ -> U` | A [*closure*](#closure). 
 `&[T]`, `&'a [T]` | An *slice* with element type `T` and possibly with a *lifetime*.
 `&mut [T]`, `&'a mut [T]` | A *mutable slice* with element type `T` and possibly with a *lifetime*. One can borrow a `&mut` to the elements of the slice.
 `[T, ..n]` | An *array* of length `n`.
