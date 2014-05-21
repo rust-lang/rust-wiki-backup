@@ -65,5 +65,5 @@ syntax | name
 `[T, ..n]` | An *array* of length `n`.
 `Box<Trait>:Send`, `&'a Trait:Send` | A *trait object* where `:Send` are the *kind bounds*.
 `foo!()` | Either a [*macro*](#macro) or *syntax extension*.
-`#[xyz]` | An [*attribute*](#attribute).
+`#[xyz]`, `#![xyz]` | An [*attribute*](#attribute).
 `::<int>`, `: int` (in `let x: int ...`) | A [*type hint*](#type_hint). 
