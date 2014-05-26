@@ -33,7 +33,7 @@ Functions for converting between types should attempt to follow this:
 
 - `as`: cheap conversions that are normally just converting a reference to a different type, but not changing the in-memory representation, e.g. `string.as_bytes()` gives a `&[u8]` view into a `&str`. These don't consume the convertee.
 - `to`: expensive conversions that may allocate and copy data, e.g. `string.to_owned()` copies a `&str` to a new `~str`. These also don't consume the convertee.
-- `into`: conversions that consume the convertee and almost always don't allocate new memory (they may change the in-memory representation, but will normally do so in-place), these are cheaper than `to` conversions, e.g. `string.into_bytes()` converts a `~str` to a `~[u8]` without copying.
+- `into`: conversions that consume the convertee and almost always don't allocate new memory (they may change the in-memory representation, but will normally do so in-place), these are cheaper than `to` conversions, e.g. `string.into_bytes()` converts a `String` to a `Vec<u8>` without copying.
 
 These are not hard rules, since generically implemented functions mean that an `into` conversion that doesn't copy/allocate is impossible for some types, e.g. `string.into_owned()` (from the `Str` trait) doesn't copy when `string` is `~str`, but it is forced to when `string` is `&str` or `@str`.
 
