@@ -3,7 +3,7 @@ Here are some rough guidelines to Rust style. They are followed unevenly and the
 # Editor settings
 
   * Lines should not be longer than 100 characters.
-  * Use spaces for indentation, not tabs.
+  * Use 4 spaces for indentation, not tabs.
 
 # Attributes
 
