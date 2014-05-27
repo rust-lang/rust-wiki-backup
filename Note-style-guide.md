@@ -43,9 +43,9 @@ Naming iterators is often a little tricky because their names can get quite verb
 
 1. If the iterator yields something that can be described with a noun, the iterator should be called the pluralization of that noun (e.g. an iterator yielding words is called Words)
 2. An iterator over the members of a container should have a base name of `Items`, with different flavors deriving from this name. Different flavors are applied top-to-bottom from this list
+  * Reverse iterators have a prefix of `Rev`
   * Moving iterators have a prefix of `Move`
   * If the default iterator yields an immutable reference, an iterator yielding a mutable reference has a prefix `Mut`
-  * Reverse iterators have a prefix of `Rev`
 3. If these rules would result in a name that might cause confusion, pick a less confusing name.
 
 These rules are a little vague, and that's partly on purpose. The general idea is to be concise and consistent. Examples through libstd and libextra should showcase how we expect iterators to be named.
