@@ -1,4 +1,4 @@
-The Rust team has a weekly Rust planning meeting on Tuesday mornings at 2:00 PM Pacific (UTC-8). Minutes are recorded [on Etherpad](https://etherpad.mozilla.org/Rust-meeting-weekly) and then archived here.
+The Rust team has a weekly Rust planning meeting on Tuesdays at 2:00 PM Pacific (UTC-8). Minutes are recorded [on Etherpad](https://etherpad.mozilla.org/Rust-meeting-weekly) and then archived here.
 
 ## Weekly meetings:
 - [[Meeting-weekly-2014-05-27]] (make install & docs; Process::drop, lexer simplification; UFCS; pattern macros; unboxed closures; RFC PR 48)
