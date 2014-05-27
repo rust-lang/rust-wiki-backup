@@ -13,7 +13,7 @@
 
 # Attending
 
-aturon, acrichto, kmc, pcwalton, brson, luqman, bjz, nrc, nuon, erickt, pnkfelix, cmr, zwarich, nmatsakis, ecr, dherman, azita
+aturon, acrichto, kmc, pcwalton, brson, luqman, bjz, nrc, huon, erickt, pnkfelix, cmr, zwarich, nmatsakis, ecr, dherman, azita
 
 # Status
 
