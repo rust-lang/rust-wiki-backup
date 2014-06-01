@@ -117,6 +117,10 @@ Some Rust classics:
 
 ## Presentations
 
+* [Rust: Safe Systems Programming with the Fun of FP](http://www.techtalkshub.com/rust-safe-systems-programming-fun-fp/) - Felix Klock, CodeMesh 2014
+* [Guaranteeing Memory Safety in Rust](https://air.mozilla.org/guaranteeing-memory-safety-in-rust/) - Niko Matsakis
+* [Bay Area Meetup, May 2014](https://air.mozilla.org/rust-meetup-may-2014/) - John Regehr - Fuzzing and Reducing, testing topics.
+* [Bar Area Meetup, March 2014](https://air.mozilla.org/rust-meetup-march-2014/) - Julia Evans: Building a Kernel in Rust, more.
 * [Bay Area Meetup, February 2014](https://air.mozilla.org/rust-meetup-february-2014/) - David Renshaw - Cap'n'Proto, Steven Fackler - macro export, Kevin Cantu - testing.
 * [Bay Area Meetup, January 2014](https://air.mozilla.org/rust-meetup-january-2014/) - Brian Anderson - Rust 1.0; Niko Matsakis - dynamically sized types; Kevin Ballard - Lua bindings; Corey Richardson - evangelism.
 * [Niko's linux.conf.au talk 2014](https://t.co/aaYgMqZprC) - Memory ownership and Lifetimes. January 10, 2014.
