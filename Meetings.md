@@ -1,6 +1,7 @@
 The Rust team has a weekly Rust planning meeting on Tuesdays at 2:00 PM Pacific (UTC-8). Minutes are recorded [on Etherpad](https://etherpad.mozilla.org/Rust-meeting-weekly) and then archived here.
 
 ## Weekly meetings:
+- [[Meeting-weekly-2014-06-03]] (byte literals; plugins; removing markers; by-value upvars)
 - [[Meeting-weekly-2014-05-27]] (make install & docs; Process::drop, lexer simplification; UFCS; pattern macros; unboxed closures; RFC PR 48)
 - [[Meeting-weekly-2014-05-20]] (repo location; trait-bounded return types; string vs. str; removing ~str; P in the AST; removing "cross borrowing"; quickcheck; RFCs: effect system, undefined struct layout, struct literal syntax, by-value captures, tail calls, virtual structs)
 * [[Meeting-weekly-2014-05-13]] (interns; `String`; Trait bounds; spaces in attributes; gdb; quickcheck; let mut; 32-bit ABI; optimizing structs; module structure; significant addresses; reserving keywords)
