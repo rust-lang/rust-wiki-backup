@@ -117,6 +117,7 @@ Some Rust classics:
 
 ## Presentations
 
+* [Panel: Systems Programming in 2014 and Beyond](http://channel9.msdn.com/Events/Lang-NEXT/Lang-NEXT-2014/Panel-Systems-Programming-Languages-in-2014-and-Beyond) - Niko Matsakis, Andrei Alexandrescu, Rob Pike, Bjarne Stroustrup
 * [Rust: Safe Systems Programming with the Fun of FP](http://www.techtalkshub.com/rust-safe-systems-programming-fun-fp/) - Felix Klock, CodeMesh 2014
 * [Guaranteeing Memory Safety in Rust](https://air.mozilla.org/guaranteeing-memory-safety-in-rust/) - Niko Matsakis
 * [Bay Area Meetup, May 2014](https://air.mozilla.org/rust-meetup-may-2014/) - John Regehr - Fuzzing and Reducing, testing topics.
