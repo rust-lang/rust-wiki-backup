@@ -184,11 +184,10 @@ Methods
 +------------------------+---------------------------------------------------+
 | `static size_t foo()`  | `fn foo() -> uint`                                |
 +------------------------+---------------------------------------------------+
-| n/a                    | `fn foo(self)`, `fn foo(~self)`, `fn foo(@self)`  |
-+------------------------+---------------------------------------------------+
 
-Methods in Rust are similar to those in C++, but Rust uses explicit self, so
-referring to a member/method from within a method is done with `self.member`.
+Methods in Rust are similar to those in C++, but Rust uses explicit self, 
+(which must be declared in the parameter list) so referring to a member/method
+from within a method is done with `self.member`.
 It's also possible to take `self` by-value, which allows for moving out of
 `self` since the object will be consumed.
 
@@ -196,8 +195,6 @@ For an example, the `PriorityQueue` struct in the standard library has a
 `to_sorted_vec` method that takes self by-value, making
 `PriorityQueue::from_vec(xs).to_sorted_vec()` an in-place heap sort.
 
-The `~self` and `@self` forms are available for objects allocated as `~` or `@`
-respectively, but you usually want `&self`.
 
 Parametric polymorphism
 -----------------------
@@ -225,7 +222,7 @@ You can also consider Enums for conviniently passing varied options to a functio
 
 Runtime Polymorphism
 --------------------
-Instead of adding virtual functions to classes, Rust uses Trait Objects. A trait object is a fat pointer to data and an associated vtable, created by "[~|&]<expr> as [~|&]<traitname>". Any number of traits can be implemented for an existing type without needing to establish an inheritance heirachy, and there is no 'diamond inheritance problem'.
+Instead of adding virtual functions to classes, Rust uses Trait Objects. A trait object is a fat pointer to data and an associated vtable, created by "&<expr> as &<traitname>". Any number of traits can be implemented for an existing type without needing to establish an inheritance heirachy, and there is no 'diamond inheritance problem'.
 It is possible to attach a new vtable to an existing struct instance (with a borrowed pointer) - so one library can take data from another library, without the other having to have even known the interfaces required.
 
 Metaprogramming
