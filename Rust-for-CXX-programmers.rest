@@ -18,9 +18,9 @@ pointers are never dangling.
 +----------------------+---------------------------------------------------------------------------------+
 | `const&`             | `&` (points to immutable data - not just read-only through the reference)       |
 +----------------------+---------------------------------------------------------------------------------+
-| `std::unique_ptr<T>` | owned pointer: `Box<T>`                                                              |
+| `std::unique_ptr<T>` | owned pointer: `Box<T>`                                                         |
 +----------------------+---------------------------------------------------------------------------------+
-| `std::shared_ptr`    | * garbage collection: `@`, `@mut` (cycles allowed/collected)                    |
+| `std::shared_ptr<T>` | * garbage collection: `Gc<T>`,  (cycles allowed/collected)                      |
 |                      | * reference counting: `std::rc::{Rc, RcMut}` (acyclic, enforced by type bounds) |
 +----------------------+---------------------------------------------------------------------------------+
 
