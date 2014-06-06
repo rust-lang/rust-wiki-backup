@@ -63,6 +63,7 @@ syntax | name
 `&[T]`, `&'a [T]` | An *slice* with element type `T` and possibly with a *lifetime*.
 `&mut [T]`, `&'a mut [T]` | A *mutable slice* with element type `T` and possibly with a *lifetime*. One can borrow a `&mut` to the elements of the slice.
 `[T, ..n]` | An *array* of length `n`.
+`[T]` | An *array* whose length is unknown (a dynamically-sized type).
 `Box<Trait>:Send`, `&'a Trait:Send` | A *trait object* where `:Send` are the *kind bounds*.
 `foo!()` | Either a [*macro*](#macro) or *syntax extension*.
 `#[xyz]`, `#![xyz]` | An [*attribute*](#attribute).
