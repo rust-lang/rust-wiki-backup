@@ -7,7 +7,10 @@ Its source is available [on GitHub](https://github.com/graydon/bors).
 Its status URL is: http://buildbot.rust-lang.org/bors/bors.html
 
 It works by scanning pull requests for r+ _on the commit_ (*not* the pull request)
-from one of the reviewers.
+from one of the reviewers. It also accepts the following input:
+
+* `r=name[,name...]` to specify that the given person(s) should be marked as the reviewer(s), rather than whoever left the comment
+* `p=number` to specify the priority that the PR should be tested. Higher priority is tested first. Ties are resolved by date the PR was opened.
 
 For the most part no knowledge of bors is required of people submitting pull
 requests.  When a reviewer signs off on one of your commits by writing "r+" 
@@ -47,9 +50,6 @@ also does not merge "updates" to a pull request. It considers comments on
 commits only, not pull requests; if you update a pull request to contain new
 commits, they need to be reviewed anew.
 
-Not all commits go through it, because from time to time
-we bypass it and break the tree ourselves; but we have made much use of it.
-
-It is somewhat slow: github has a rate-limited API so it only cycles one step every 2
+It is somewhat slow: github has a rate-limited API so it only cycles one step every 5
 minutes. Which is plenty fast enough to integrate changes, but not
 instant-feedback fast.
