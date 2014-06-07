@@ -1,5 +1,3 @@
-(Adapted from e-mails from Graydon to mailing list.)
-
 There is an auto-merge robot running on mozilla/rust; its name is "bors";
 it has a github account and is listed as a collaborator in the `rust-push` group.
 Its source is available [on GitHub](https://github.com/graydon/bors).
@@ -24,21 +22,10 @@ in a comment on the final commit of a pull request, bors will automatically:
 
 Rebased pull requests require re-approval.
 
-This _should_ mean that, insofar as all commits go through bors, the tree
-will always be green.
-
 There is a certain degree of chatter from bors as it steps through its automation.
 It makes comments, such as in this pull request:
 
   https://github.com/mozilla/rust/pull/4832
-
-This is just automation of a somewhat tedious merge-making and
-testsuite-watching behavior that we were previously doing manually (and
-spending a lot of time at, and occasionally skipping steps of).
-Automating it frees up time, lets the robot do useful work overnight
-when reviewers are asleep, and ensures that we never skip running tests
-"optimistically". Incoming only ever advances to merge nodes that are
-_exactly_ the bits that tested OK.
 
 It retries if you move incoming while it's working, so tends to behave
 "mostly gracefully" with respect to disruption around it. If it
@@ -49,7 +36,3 @@ It ignores comments by non-reviewers. It
 also does not merge "updates" to a pull request. It considers comments on
 commits only, not pull requests; if you update a pull request to contain new
 commits, they need to be reviewed anew.
-
-It is somewhat slow: github has a rate-limited API so it only cycles one step every 5
-minutes. Which is plenty fast enough to integrate changes, but not
-instant-feedback fast.
