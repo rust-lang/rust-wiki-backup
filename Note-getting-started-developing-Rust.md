@@ -23,6 +23,8 @@ Version numbers listed here are "what we're using"; the code may well work with 
 
 The Rust build peaks at around 1.3 GiB, so at least that much memory should be available for the build to avoid excessive swapping or out-of-memory. If you only have 2 GiB of RAM total, you may have a difficult time building Rust while doing anything else, such as using a browser.
 
+Note that if you are compiling Rust from within a virtual OS (e.g. via `Vagrant`) you may need to change how much RAM your VM has access to.
+
 ### Debian-based Linux distributions
 
 You can install all the prerequisites you need to build Rust by running:
