@@ -202,7 +202,7 @@ Methods in Rust are similar to those in C++, but Rust uses explicit self,
 (which must be declared in the parameter list) so referring to a member/method
 from within a method is done with `self.member`.
 
-Methods for T are added in `impl T {}` blocks, rather than being declared inside a struct/class.
+Methods for T are added in `impl T {}` blocks, rather than being declared inside a struct/class. `impl <Trait> for <Type> {}` is required to declare methods useable in polymorphic code (generics or trait-objects)
 
 It's also possible to take `self` by-value, which allows for moving out of
 `self` since the object will be consumed.
