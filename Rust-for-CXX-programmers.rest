@@ -46,6 +46,8 @@ can enforce this with the `managed-heap-memory` lint check). Garbage collection
 will be avoided in the standard library except for concepts like persistent
 (copy-on-write, with shared substructures) containers that require them.
 
+Use Option<Box<T>> to represent a potentially null pointer acessable safely through `match` or its helper methods.
+
 Strings
 -------
 
@@ -106,7 +108,8 @@ can be used.
 +------------------------+------------------------------------------------+
 
 `Option` and `Either` are very common patterns, so they're predefined along
-with utility methods.
+with utility methods. 
+Option<Box<T>> and Option<&T> are optimised by the compiler to be stored as a single pointer, with a null value representing 'None'/
 
 Nominal types
 -------------
