@@ -171,6 +171,12 @@ function or expression must also return a correctly typed value, or fail.
 This also means indexing a string/vector will do bounds checking like
 `vector<T>::at()` (though there are unsafe functions in `vec::raw` that allow bypassing the bounds checks)
 
+`unsafe {}` blocks are used to enable the use of raw pointers, *T, on which you can do pointer-arithmetic and derefencing to recover all the power of C and C++. Functions may be marked as unsafe, hence only callable from unsafe blocks. 
+
+Unsafe code is used to implement standard library types, providing safe abstractions for most tasks.
+
+by contrast, an entire C++ program is effectively an 'unsafe block' - if a rust application does 'segfault', the fault lies with the design of an unsafe library, rather than any safe code using it.
+
 Pointer Aliasing
 ----------------
 Thanks to memory/pointer safety and more rigorous immutability, rust can guarantee when multiple writable pointers don't access the same object. This gives more opportunities for caching values in registers, reducing loads and stores, and low level scheduling optimizations by the compiler. This avoids the need for 'restrict' that is used as an extension in some C/C++ compilers for performance sensitive code.
