@@ -1,5 +1,7 @@
 A library for date and time.
 
+Work in progress: [datetime-rs](https://github.com/depp/datetime-rs) (far from ready for use)
+
 ### Concepts
 
   * **Instant**: an infinitesimal location in the time continuum.
