@@ -263,9 +263,13 @@ Being handled within the AST, they do not have many of the hazards of C macros a
 
 Module System
 -------------
-Rust's modules don't work like other languages. Modules are namespaces, not 'imported' into individual sources. 
-`mod <module_name>;` is used from the crate root file to reference other source files by mounting their contents in the module tree. 
-"use" directives are a little like a cross between #include and 'using namespace' - within a crate you can always directly access other module contents with the full path (relative to root ::foo::bar) but `use` is common to create shortcuts and aliases.  It can also bring individual symbols into scope.  
+Rust's modules don't work like most other languages. Modules are namespaces, not 'imported' into individual sources. 
+`mod <module_name>;` is used from the crate root or directory 'mod.rs' file to reference other source files by mounting their contents in the module tree. 
+'mod.rs' files are a special workaround to allow rust's modules tree to mimick a directory structure.
+
+Any public items can be referenced from other modules using the full root-relative path e.g. ::foo::bar, or relative using self:: , super::. 
+"use" directives are a little like 'using namespace' or 'using', and filling some of the role of '#include' - providing shorter aliases for paths, or bringing individual symbols into scope.
+
+A common point of confusion is that what appears in `use` directives is always crate relative, whilst throughout the rest of the source file, paths are relative to the current module.
+
 'mod <name> { ..definitions..}' statements can create nested namespaces containing items, replacing the use of nested classes in C++. 
-'use' statements are relative to the crate root, not the current module.
-'mod.rs' files are a special workaround to allow rust's modules tree to mimick a directory structure. 
