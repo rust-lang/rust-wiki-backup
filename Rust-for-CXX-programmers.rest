@@ -61,7 +61,11 @@ Strings
 | `std::string("foo")`                   | `String::from_str("foo")`         |
 +----------------------------------------+-----------------------------------+
 
-The `&str` type represents an immutable fixed-size slice of any kind of string.
+A `String` is a general purpose growable string;
+A string slice `&str` is a slice of a string, should be used as an immutable input where possible; you can obtain a `&str` from a `String` with `.as_slice()` 
+Rust strings are sequences of variable length unicode chars, so are not cheaply randomly accessible. use `.chars()` to iterate the characters sequentially.
+
+Rust strings are not null-terminated like C strings - length information is held in the collection or reference (e.g. a slice is a pointer + size)
 
 Vectors & Arrays
 ----------------
