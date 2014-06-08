@@ -181,19 +181,25 @@ Thanks to memory/pointer safety and more rigorous immutability, rust can guarant
 Methods
 -------
 
-+------------------------+---------------------------------------------------+
-| C++                    | Rust                                              |
-+========================+===================================================+
-| `size_t foo() const`   | `fn foo(&self) -> uint`                           |
-+------------------------+---------------------------------------------------+
-| `size_t foo()`         | `fn foo(&mut self) -> uint`                       |
-+------------------------+---------------------------------------------------+
-| `static size_t foo()`  | `fn foo() -> uint`                                |
-+------------------------+---------------------------------------------------+
++-------------------------+---------------------------------------------------+
+| C++                     | Rust                                              |
++=========================+===================================================+
+| `class Foo{ void bar()}`| `struct Foo{};`                                   |
+|                         | `impl Foo {  fn bar();   }`                       |
++-------------------------+---------------------------------------------------+
+| `size_t foo() const`    | `fn foo(&self) -> uint`                           |
++-------------------------+---------------------------------------------------+
+| `size_t foo()`          | `fn foo(&mut self) -> uint`                       |
++-------------------------+---------------------------------------------------+
+| `static size_t foo()`   | `fn foo() -> uint`                                |
++-------------------------+---------------------------------------------------+
 
 Methods in Rust are similar to those in C++, but Rust uses explicit self, 
 (which must be declared in the parameter list) so referring to a member/method
 from within a method is done with `self.member`.
+
+Methods for T are added in `impl T {}` blocks, rather than being declared inside a struct/class.
+
 It's also possible to take `self` by-value, which allows for moving out of
 `self` since the object will be consumed.
 
