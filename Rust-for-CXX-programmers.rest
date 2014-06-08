@@ -109,7 +109,7 @@ can be used.
 
 `Option` and `Either` are very common patterns, so they're predefined along
 with utility methods. 
-Option<Box<T>> and Option<&T> are optimised by the compiler to be stored as a single pointer, with a null value representing 'None'/
+Option<Box<T>> and Option<&T> are optimised by the compiler to be stored as a single pointer, with a null value representing 'None'.
 
 Nominal types
 -------------
