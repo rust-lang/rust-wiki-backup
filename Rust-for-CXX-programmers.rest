@@ -56,10 +56,9 @@ Strings
 +========================================+===================================+
 | `"foo"` (`const char *`)               | `"foo"` (`&'static str`)          |
 +----------------------------------------+-----------------------------------+
-| `std::string("foo")`                   | `~"foo"` (`~str`)                 |
+| std::string                            | `String`                          |
 +----------------------------------------+-----------------------------------+
-| `std::make_shared<std::string>("foo")` | `@"foo"` (`@str`, no indirection) |
-| (`std::shared_ptr<std::string>`)       |                                   |
+| `std::string("foo")`                   | `String::from_str("foo")`         |
 +----------------------------------------+-----------------------------------+
 
 The `&str` type represents an immutable fixed-size slice of any kind of string.
