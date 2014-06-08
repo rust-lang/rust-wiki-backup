@@ -119,12 +119,16 @@ Nominal types
 A Rust `struct` is similar to `struct`/`class` in C++, and uses a memory layout
 compatible with C structs. 
 
-Rust has no special syntax or semantics for constructors, and just uses static methods that return the type. Struct initializer syntax `SomeStruct{field:value..}` avoids the boilerplate of manually creating simple constructors that just copy values into fields.
+Rust has no conversion operators - it is necessary to call explicit methods such as `.to_str()` to perform conversions. The philosophy is to make the cost (no hidden allocations) & code-path clearer. 
 
-Similarly rust has no conversion operators - it is necessary to call explicit methods such as `.to_str()` to perform conversions. The philosophy is to make the cost (no hidden allocations) & code-path clearer. 
+RAII
+----
+Rust has no special syntax or semantics for constructors, and just uses static methods that return the type. Struct initializer syntax `SomeStruct{field:value..}` avoids the boilerplate of manually creating simple constructors that just copy values into fields.
 
 Custom destructors for non-memory resources can be provided by implementing the
 `Drop` trait.
+
+rust collections and smart pointers manage memory similarly to C++ RAII techniques.
 
 Visibility
 ----------
