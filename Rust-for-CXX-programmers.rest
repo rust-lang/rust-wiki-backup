@@ -11,18 +11,20 @@ Pointers in C++ are vulnerable to bugs involving dangling or null pointers. In
 Rust, pointers are non-nullable and the compiler enforces the invariant that
 pointers are never dangling.
 
-+----------------------+---------------------------------------------------------------------------------+
-| C++                  | Rust                                                                            |
-+======================+=================================================================================+
-| `&`                  | `&mut`                                                                          |
-+----------------------+---------------------------------------------------------------------------------+
-| `const&`             | `&` (points to immutable data - not just read-only through the reference)       |
-+----------------------+---------------------------------------------------------------------------------+
-| `std::unique_ptr<T>` | owned pointer: `Box<T>`                                                         |
-+----------------------+---------------------------------------------------------------------------------+
-| `std::shared_ptr<T>` | * garbage collection: `Gc<T>`,  (cycles allowed/collected)                      |
-|                      | * reference counting: `std::rc::{Rc, RcMut}` (acyclic, enforced by type bounds) |
-+----------------------+---------------------------------------------------------------------------------+
++--------------------------+-----------------------------------------------------------------------------+
+| C++                      | Rust                                                                        |
++==========================+=============================================================================+
+| `&`                      | `&mut`                                                                      |
++--------------------------+-----------------------------------------------------------------------------+
+| `const&`                 | `&` (points to immutable data - not just read-only through the reference)   |
++--------------------------+-----------------------------------------------------------------------------+
+| `std::unique_ptr<T>`     | owned pointer: `Box<T>`                                                     |
++--------------------------+-----------------------------------------------------------------------------+
+|`auto p=make_unique(...)` | let p= box ...;                                                             |
++--------------------------+-----------------------------------------------------------------------------+
+| `std::shared_ptr<T>`     | * garbage collection: `Gc<T>`,  (cycles allowed/collected)                  |
+|                          | * reference counting: `std::rc::{Rc, RcMut}` (acyclic, enforced by types)   |
++--------------------------+-----------------------------------------------------------------------------+
 
 Borrowed pointers (`&`) have the same representation as C pointers or C++
 references at runtime, but to enforce safety at compile-time they are more
@@ -39,14 +41,14 @@ iterator that wraps borrowed pointers, and makes them impossible to invalidate.
 Owned pointers are almost identical to `std::unique_ptr` in C++, and point to
 memory on a shared heap so they can be moved between tasks.
 
-Rc<T> pointers are reference counted , similar to std::shared_ptr. The reference count is embedded in a single allocation with the underlying type.
+`Rc<T>` pointers are reference counted , similar to `std::shared_ptr<T>`. The reference count is embedded in a single allocation with the underlying type.
 
-If managed Gc<T> pointers are avoided, the garbage collection runtime is not used (the compiler
+If managed `Gc<T>` pointers are avoided, the garbage collection runtime is not used (the compiler
 can enforce this with the `managed-heap-memory` lint check). Garbage collection
 will be avoided in the standard library except for concepts like persistent
 (copy-on-write, with shared substructures) containers that require them.
 
-Use Option<Box<T>> to represent a potentially null pointer acessable safely through `match` or its helper methods.
+Use `Option<Box<T>>` or `Option<&T>` to represent a potentially null pointer or reference acessable safely through `match` or its helper methods.
 
 Strings
 -------
