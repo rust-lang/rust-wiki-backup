@@ -20,10 +20,11 @@ pointers are never dangling.
 +----------------------------+-----------------------------------------------------------------------------+
 | `std::unique_ptr<T>`       | owned pointer: `Box<T>`                                                     |
 +----------------------------+-----------------------------------------------------------------------------+
-|`auto p=make_unique(...)`   | let p= box ...;                                                             |
+|`auto p = make_unique(...)` | `let p = box ...;`                                                          |
 +----------------------------+-----------------------------------------------------------------------------+
 | `std::shared_ptr<T>`       | * garbage collection: `Gc<T>`,  (cycles allowed/collected)                  |
-|                            | * reference counting: `std::rc::{Rc, RcMut}` (acyclic, enforced by types)   |
+|                            | * reference counting: `std::rc::{Rc, RcMut}`                                |
+|                            |   (cycles must manually be broken or leak)                                  |
 +----------------------------+-----------------------------------------------------------------------------+
 
 Borrowed pointers (`&`) have the same representation as C pointers or C++
