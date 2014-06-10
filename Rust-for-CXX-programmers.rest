@@ -28,6 +28,8 @@ pointers are never dangling.
 +----------------------------+---------------------------------------------------------------------------+
 | T *foo;                    |   unsafe{ ... foo:*mut T ... }                                            |
 +----------------------------+---------------------------------------------------------------------------+
+|potentially null pointer/ref| Option<Box<T>>, Option<&T>                                                |
++----------------------------+---------------------------------------------------------------------------+
 
 Borrowed pointers (`&`) have the same representation as C pointers or C++
 references at runtime, but to enforce safety at compile-time they are more
