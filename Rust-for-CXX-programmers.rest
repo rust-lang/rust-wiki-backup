@@ -253,15 +253,19 @@ similar to what templates would produce.
 
 Function Overloading
 --------------------
-Rust can only select function overloads based on the receiver (and sometimes through return values due to HN type inference). To overload functions on multiple parameters, one must create an extra layer of traits for something that looks like double-dispatch, with each parameter being moved to the receiver by an intermediate function.
-Although this is extra boilerplate, the benefit is that its' also ready for runtime polymorphism through trait-objects if needed.
-Without overloading multiple parameters, the information you pay in writing more specific function calls is sometimes recovered back with HN type inference feeding back through its' arguments.
+Rust can only select function overloads based on the receiver (and sometimes through return values due to HN type inference).
+
+To 'overload' functions on multiple parameters, one must create an extra layer of traits for something that looks like double-dispatch, with each parameter being moved to the receiver by an intermediate function.
+Although this is significantly more boilerplate, the benefit is that its' also ready for runtime polymorphism through trait-objects if needed, and traits improve error messages for generics(templates).
+
+Without overloading multiple parameters, the information you pay in writing more specific function calls is sometimes recovered with HN type inference feeding back through its' arguments.
 
 You can also consider Enums for conviniently passing varied options to a function - or use rusts powerful macros for wrapping extra convinience around function calls (eg, it is possible to annotate arguments with keywords & special syntax, handle variadics etc)
 
 Runtime Polymorphism
 --------------------
 Instead of adding virtual functions to classes, Rust uses Trait Objects. A trait object is a fat pointer to data and an associated vtable, created by "&<expr> as &<traitname>". Any number of traits can be implemented for an existing type without needing to establish an inheritance heirachy, and there is no 'diamond inheritance problem'.
+
 It is possible to attach a new vtable to an existing struct instance (with a borrowed pointer) - so one library can take data from another library, without the other having to have even known the interfaces required.
 
 Metaprogramming
