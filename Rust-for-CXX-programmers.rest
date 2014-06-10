@@ -14,9 +14,9 @@ pointers are never dangling.
 +----------------------------+-----------------------------------------------------------------------------+
 | C++                        | Rust                                                                        |
 +============================+=============================================================================+
-| `& T`                      | `&mut T`                                                                    |
+| `T& foo`                   | `foo:&mut T`                                                                |
 +----------------------------+-----------------------------------------------------------------------------+
-| `const& T`                 | `&T` (points to immutable data- not just read-only through the reference)   |
+| `const T& foo`             | `foo:&T` (immutable - not just read-only through this reference)           |
 +----------------------------+-----------------------------------------------------------------------------+
 | `std::unique_ptr<T>`       | owned pointer: `Box<T>`                                                     |
 +----------------------------+-----------------------------------------------------------------------------+
@@ -25,6 +25,8 @@ pointers are never dangling.
 | `std::shared_ptr<T>`       | * garbage collection: `Gc<T>`,  (cycles allowed/collected)                  |
 |                            | * reference counting: `std::rc::{Rc, RcMut}`                                |
 |                            |   (cycles must manually be broken or leak)                                  |
++----------------------------+-----------------------------------------------------------------------------+
+| T *foo;                    |   unsafe{ ... foo:*T ... }                                                    |
 +----------------------------+-----------------------------------------------------------------------------+
 
 Borrowed pointers (`&`) have the same representation as C pointers or C++
@@ -50,6 +52,8 @@ will be avoided in the standard library except for concepts like persistent
 (copy-on-write, with shared substructures) containers that require them.
 
 Use `Option<Box<T>>` or `Option<&T>` to represent a potentially null pointer or reference acessable safely through `match` or its helper methods.
+
+The use of Raw pointers is controlled through unsafe blocks.
 
 Strings
 -------
