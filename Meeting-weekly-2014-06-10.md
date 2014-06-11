@@ -89,7 +89,7 @@ zwarich, jbailey, aturon, acrichto, brson, cmr, pcwalton, luqman, erickt, niko, 
 * niko: I'm in favor.
 * erickt: I don't want to merge this quite yet.
 * huon: Have you applied to languages other than json? csv or something?
-* erickt: I've talked to burntsushi and drenshaw about csv and capnproto. I think this works for csv, but that we can't really do anything about capnproto. Want to port EBML to catch any edge case.
+* erickt: I've talked to burntsushi and dwrensha about csv and capnproto. I think this works for csv, but that we can't really do anything about capnproto. Want to port EBML to catch any edge case.
 * brson: It'd be great to see more encoders.
 * niko: It'd be nice to have a minimal decoder that is as-fast and as-compact as possible. It's what we want to encode rustc metadata. Doesn't really interact with this.
 * erickt: The overhead with this is tagging every type as you go through...
