@@ -220,13 +220,14 @@ See [Database Access](Community-libraries#wiki-database-access)
   * [BurntSushi/quickcheck](https://github.com/BurntSushi/quickcheck): [<img src="https://api.travis-ci.org/BurntSushi/quickcheck.png">](https://travis-ci.org/BurntSushi/quickcheck)
 
 ## Web Programming
-  * [chris-morgan/rust-http](https://github.com/chris-morgan/rust-http):  [<img src="https://travis-ci.org/chris-morgan/rust-http.png?branch=master">](https://travis-ci.org/chris-morgan/rust-http)
+  * [chris-morgan/rust-http](https://github.com/chris-morgan/rust-http): Superceeded by Teepee  [<img src="https://travis-ci.org/chris-morgan/rust-http.png?branch=master">](https://travis-ci.org/chris-morgan/rust-http)
   * [Earlz/rustymvc](https://github.com/Earlz/rustymvc)
   * [erickt/rust-mongrel2](https://github.com/erickt/rust-mongrel2): bindings for the [Mongrel2](http://mongrel2.org) webserver
   * [jroweboy/oxidize](https://github.com/jroweboy/oxidize)
   * [Ogeon/rustful](https://github.com/Ogeon/rustful):  [<img src="https://travis-ci.org/Ogeon/rustful.png?branch=master">](https://travis-ci.org/Ogeon/rustful)
   * [SimonSapin/rust-url](https://github.com/SimonSapin/rust-url)
   * [skade/widmann](https://github.com/skade/widmann): [<img src="https://travis-ci.org/skade/widmann.png?branch=master">](https://travis-ci.org/skade/widmann)
+  * [teepee/teepee](https://github.com/teepee/teepee)
   * [url.rs](https://github.com/mozilla/rust/blob/master/src/liburl/lib.rs)
   * [WebeWizard/libhttpd](https://github.com/WebeWizard/libhttpd)
   * [wycats/route-recognizer.rs](https://github.com/wycats/route-recognizer.rs)
