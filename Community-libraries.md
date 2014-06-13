@@ -176,6 +176,7 @@ See [Database Access](Community-libraries#wiki-database-access)
 * [erickt/ragel](https://github.com/erickt/ragel)
 * [jesse99/rparse](https://github.com/jesse99/rparse)
 * [kevinmehall/rust-peg](https://github.com/kevinmehall/rust-peg)
+* [Valloric/nailed](https://github.com/Valloric/nailed): A Rust PEG parser generator
 
 ## Random Numbers
 * [random](https://github.com/mozilla/rust/blob/master/src/libcstd/rand.rs)
