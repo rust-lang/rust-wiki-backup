@@ -5,7 +5,7 @@ You need XCode 5.
 Build Rust cross-compiler:
 ```
 mkdir build_ios; cd build_ios
-../configure --target=arm-apple-ios --target=i386-apple-ios
+../configure --target=arm-apple-ios,i386-apple-ios
 make VERBOSE=1
 ```
 
