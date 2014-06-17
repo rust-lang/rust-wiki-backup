@@ -8,3 +8,4 @@ At the moment, all of the core team is currently employed by Mozilla, but this w
 | Brian Anderson     | brson      | brson        | banderson@mozilla.com  |
 | Niko Matsakis      | nmatsakis  | nikomatsakis | nmatsakis@mozilla.com  |
 | Patrick Walton     | pcwalton   | pcwalton     | pcwalton@mozilla.com   |
+| Huon Wilson        | huon       | huonw        | dbau.pp@gmail.com      |
