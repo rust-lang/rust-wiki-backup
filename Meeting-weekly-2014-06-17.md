@@ -129,6 +129,7 @@ let x = Foo::new(&3, &5) // error
 - acrichto: I just don't want this to say we won't fix destructors for 1.0
 - pcwalton: I think 8142 is solved by this, 8861 not 
 - brson: Let's do this.
+
 # RFC PR 113 (Result API, https://github.com/rust-lang/rfcs/pull/113 )
 - bjz: I want to standardize the APIs for Option and Result where they make sense, using an adaptor type for operations that are biased towards `Err`, seems to be ...
 - acrichto: Looks like this also adds a new module to the standard library with the `Expect` trait.
