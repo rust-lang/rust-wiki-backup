@@ -83,6 +83,7 @@ zwarich, cmr, brson, nrc, huon, azita, dherman, bjz, aturon, pcwalton, niko, pnk
 - brson: I agree, someone should figure this out out-of-tree. Are you proposing to implement this yourself?
 - nrc: Yeah, I've put some work into this, but I don't want to do more if we don't want this.
 - acrichto: It's very useful for writing little command line utilities. I think we should postpone this and do it in a library.
+
 ## RFC PR 66 (Better temporary lifetimes, https://github.com/rust-lang/rfcs/pull/66 )
 - nrc: Niko said he was going to propose something possibly better.
 - nmatsakis: I changed my mind. I would consider accepting this RFC, but it has some under-specified parts. The basic idea is that currently we have syntax-based rules to decide what the lifetime of a temporary is, and if we decide that it's being assigned to a local variable we give it the lifetime of the block, otherwise we used the innermost enclosing statement (?). These rules cause problems (`let y`, `foo`). He proposes rather than doing a purely-syntactic rule, after typechecking, we will look at whether the argument also uses the lifetime of the return value, we will extend it to the lifetime we would otherwise (?). I think it's a good idea to address this, both for ergonomics and [to make our rules less anti-abstraction] (`Foo { ... }` vs `Foo::new`).
@@ -111,10 +112,12 @@ let x = Foo::new(&3, &5) // error
 - pnkfelix: Just in case we are worried about the potential complications to RAII, should we consider limiting the effects of this feature (namely the extension of object extent based on types and lifetimes), limiting those effects solely to objects that do not implement Drop
 - nmatsakis: I think that sounds more confusing.
 - pcwalton: I think we should reserve the right to change our destructor semantics post-1.0.  C++ is very squishy in this regard; e.g. there are cases in the standard that say that the implementation defines whether the destructor is run zero, one, or two times.
+
 # RFC PR 100 (partial_cmp, https://github.com/rust-lang/rfcs/pull/100 )
 - acrichto: Adds a `partial_cmp` method to the `PartialOrd` trait. It's easier to implement this one method than all of the other methods. The plans to the `Ord` trait would add all of the methods to the `Ord` trait, bringing the two traits in line. I believe the default methods were the impetus for this RFC. To me, `PartialOrd` is an implementation detail that almost no one is going to see. I view this as Ok.
 - pcwalton, nmatsakis: Yeah
 - brson: Let's take it.
+
 # Feature gate `#[unsafe_destructor]`
 - pcwalton: It's clear this isn't what we want, and there's been some malaise about this. We should feature gate this....
 - (general agreement)
@@ -135,6 +138,7 @@ let x = Foo::new(&3, &5) // error
 - aturon: I'm in favor of making the APIs consistent. I don't feel like there is consensus around this proposal yet, don't want to merge it yet.
 - bjz: We don't need to make any decisions here, I just want to bring it to people's attention.
 - brson: Let's get more feedback on this so we can make a decision.
+
 # RFC PR 115 (Removing int inference, https://github.com/rust-lang/rfcs/pull/115 )
 - brson: nmatsakis had already implemented, basically no disagreement. One open question about enum discriminants.
 - acrichto: I believe that the signedness of discriminants does not matter anymore.
