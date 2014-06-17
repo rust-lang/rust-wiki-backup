@@ -1,6 +1,7 @@
 The Rust team has a weekly Rust planning meeting on Tuesdays at 2:00 PM Pacific (UTC-8). Minutes are recorded [on Etherpad](https://etherpad.mozilla.org/Rust-meeting-weekly) and then archived here.
 
 ## Weekly meetings:
+- [[Meeting-weekly-2014-06-17]] (RFC's; unsafe fields; loadable lints; input macros; temporary lifetimes; partial_cmp; unsafe destructor; int inferences; cross borrowing)
 - [[Meeting-weekly-2014-06-10]] (RFC's; unsafe pointers; lifetime hygiene; format! i18n; stylistic lints)
 - [[Meeting-weekly-2014-06-03]] (byte literals; plugins; removing markers; by-value upvars)
 - [[Meeting-weekly-2014-05-27]] (make install & docs; Process::drop, lexer simplification; UFCS; pattern macros; unboxed closures; RFC PR 48)
