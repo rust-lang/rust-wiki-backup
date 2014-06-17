@@ -11,7 +11,7 @@ When submitting pull requests it is important to know your branch may be rebased
 
 One possible workflow that has worked for developers on the project is outlined below. This assumes that you have an 'origin' remote that represents your remote github repo, and a 'mozilla' remote that represents Mozilla's. To create the latter, you can execute:
 ```
-$ git remote add mozilla git://github.com/mozilla/rust.git
+$ git remote add mozilla https://github.com/rust-lang/rust
 ```
 
 1. Whenever you start working on anything new, create a new branch derived from mozilla's `master` branch:
