@@ -1,4 +1,5 @@
 # Agenda 6/17/2014
+
 * older RFCs (nrc) - https://etherpad.mozilla.org/RPT2iP80Iq
 * remove f128 (acrichto)
 * partial_cmp (acrichto) https://github.com/rust-lang/rfcs/pull/100
@@ -8,9 +9,13 @@
 * Index to three traits (pcwalton) https://github.com/rust-lang/rfcs/pull/111
 * int inference (brson) https://github.com/rust-lang/rfcs/pull/115
 * option/result API (bjz) https://github.com/rust-lang/rfcs/pull/113
+
 # Attending
+
 zwarich, cmr, brson, nrc, huon, azita, dherman, bjz, aturon, pcwalton, niko, pnkfelix, jbailey, luqman, acrichto
+
 # Status
+
 - brson: home stretch of automation overhaul, administrative
 - nrc: DST - remove TraitStore
 - felix: landing dataflow atop cfg; new dtor semantics analysis
@@ -20,7 +25,9 @@ zwarich, cmr, brson, nrc, huon, azita, dherman, bjz, aturon, pcwalton, niko, pnk
 - nmatsakis: #5527, 
 - aturon: lib guidelines, task API, stability index, Command improvements, COW
 - luqman: various coercions issues
+
 # Action Items
+
 - (brson) close https://github.com/rust-lang/rfcs/pull/80
 - (brson) accept  https://github.com/rust-lang/rfcs/pull/89
 - (acrichto) close https://github.com/rust-lang/rfcs/pull/67
@@ -30,8 +37,11 @@ zwarich, cmr, brson, nrc, huon, azita, dherman, bjz, aturon, pcwalton, niko, pnk
 - (brson) update https://github.com/rust-lang/rfcs/pull/115 and ping acrichto to merge
 - (pcwalton) update https://github.com/rust-lang/rfcs/pull/112 and ping niko to merge
 - (pcwalton) collect data on https://github.com/rust-lang/rfcs/pull/112
+
 #  Old RFCs (https://etherpad.mozilla.org/RPT2iP80Iq)
+
 ## RFC PR 80 (Unsafe Fields, https://github.com/rust-lang/rfcs/pull/80 )
+
 - nrc: What do we want to do here? Discussion seems to have stopped.
 - brson: This has come up many times and we've always said no.
 - acrichto: This looks a lot like Unsafe<T>
@@ -50,7 +60,9 @@ zwarich, cmr, brson, nrc, huon, azita, dherman, bjz, aturon, pcwalton, niko, pnk
 - pcwalton: Agreed.
 - brson: Can we punt this and move on?
 - nrc: I agree it can be postponed post-1.0
+
 ## RFC PR 89 (Loadable Lints, https://github.com/rust-lang/rfcs/pull/89 )
+
 - nrc: Conversation seems to have stopped there, but not definitively in either direction.
 - nmatsakis: I thought we discussed this?
 - brson: He had lints and plugins as separate RFCs, we discussed plugins.
@@ -62,7 +74,9 @@ zwarich, cmr, brson, nrc, huon, azita, dherman, bjz, aturon, pcwalton, niko, pnk
 - pcwalton: I really want loadable lints because I think it's needed to make Servo safe, and I'm automatically in favor of anything needed to make Servo safe.
 - nrc: Is user-loadable lints something we want?
 - brson, nmatsakis: yes
+
 ## RFC PR 67 (User-friendly input macros, https://github.com/rust-lang/rfcs/pull/67 )
+
 - nrc: This is something I want, there's no implementation though.
 - brson: I do think this is an area that we're clearly missing.
 - pcwalton: I think we want it but we should put it in a library and follow the normal library inclusion process.
@@ -137,7 +151,9 @@ let x = Foo::new(&3, &5) // error
 - cmr: Will we just truncate to a smaller integer type?
 - pcwalton: Yes, it will be exactly as if you had typed whatever the enum discriminant value is and then casted it.
 - brson: Ok, I'll modify the RFC and ping Alex to merge it.
+
 # RFC PR 112 (Remove cross-borrowing https://github.com/rust-lang/rfcs/pull/112 )
+
 - pcwalton: I think everyone wants this.
 - nmatsakis: I want to remove all special casing of Box, does this handle that?
 - pcwalton: I believe those should be separate RFCs.
@@ -170,6 +186,8 @@ fn foo(x: &Vec) { ... }
 - dherman: If what we end up with to ship something by a deadline is a messy implementation, that's success. The least of my concerns is if the implementation is messy, but rather whether we are shipping something on time and what we wanted to ship. If we ship something and say "it's really beautiful semantically and later we'll clean it up to make it something you want to use." I'm being hyperbolic here, but this is an important marketing issue.
 - pcwalton: How about we just remove the &mut for now, and leave in &
 - brson: Let's do this.
+
 # f128
+
 - acrichto: Does anyone object to removing f128? If anyone says yes, I'll bring it up next week.
 - huon: Yes!
