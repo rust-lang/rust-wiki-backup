@@ -13,7 +13,7 @@ Version numbers listed here are "what we're using"; the code may well work with 
 * [`python` 2.x](http://www.python.org/download/) (version 2.7 is known to work)
 * GNU `make` 3.81
 * `git` 1.7
-* `g++` 4.4 at least on Linux, 4.5 on Windows, and the 4.x `gcc` in Apple's SDK for OS X.
+* `g++` 4.7 at least on Linux, 4.5 on Windows, and the 4.x `gcc` in Apple's SDK for OS X.
 * `curl`
 * recommended: `valgrind` 3.8.0 or later (not required for Linux)
 * optional: if you wish to build LaTeX PDF docs, [`pandoc`](http://johnmacfarlane.net/pandoc/) 1.9.1 at least, with one or more of `pdflatex`/`xelatex`/`lualatex`
