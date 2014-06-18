@@ -4,6 +4,6 @@ Rust has a community-driven development process where most decisions are made th
 |:-------------------|:-----------|:-------------|:-----------------------|
 | Alex Crichton      | acrichto   | alexcrichton | acrichton@mozilla.com  |
 | Brian Anderson     | brson      | brson        | banderson@mozilla.com  |
+| Huon Wilson        | huon       | huonw        | dbau.pp@gmail.com      |
 | Niko Matsakis      | nmatsakis  | nikomatsakis | nmatsakis@mozilla.com  |
 | Patrick Walton     | pcwalton   | pcwalton     | pcwalton@mozilla.com   |
-| Huon Wilson        | huon       | huonw        | dbau.pp@gmail.com      |
