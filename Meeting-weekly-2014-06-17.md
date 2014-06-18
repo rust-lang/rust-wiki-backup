@@ -22,7 +22,7 @@ zwarich, cmr, brson, nrc, huon, azita, dherman, bjz, aturon, pcwalton, niko, pnk
 - cmr: libsyntax
 - pcwalton: unboxed closures, P-backcompat-lang burn down
 - acrichto: cleaning up the facade, cargo work ahead, removing @, removing ~[T]
-- nmatsakis: #5527, 
+- nmatsakis: [#5527](https://github.com/rust-lang/rust/issues/5527)
 - aturon: lib guidelines, task API, stability index, Command improvements, COW
 - luqman: various coercions issues
 
