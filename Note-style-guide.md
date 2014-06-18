@@ -2,7 +2,7 @@ Here are some rough guidelines to Rust style. They are followed unevenly and the
 
 # Editor settings
 
-  * Style dictates that lines should be under 80 characters.
+  * Lines should strive be under 80 characters.
     * There is, however, only a hard limit for 100 characters.
   * Use 4 spaces for indentation, not tabs.
 
