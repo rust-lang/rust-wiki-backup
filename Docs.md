@@ -7,9 +7,10 @@ Additional supplementary documentation is maintained here on the wiki.
 
 ## Tutorials/intros
 [[Rust for C++ programmers|Rust for CXX programmers]] - A cheat sheet  
-[Rust for Rubyists](http://www.rustforrubyists.com/) - Excellent introduction to Rust  
+[Rust for Rubyists](http://www.rustforrubyists.com/) - Excellent introduction to Rust 
+[Rust by Example](http://rustbyexample.com/) - Comprehensive examples
 [[Teaching Rust]]  
-[[Examples|Doc examples]] - Where to look for examples of Rust  
+[[More examples|Doc examples]] - Where to look for examples of Rust  
 [[Rusticon|The Rusticon]] - A glossary of terms commonly used in Rust and Rust tools.  
 
 ## Other documentation
@@ -50,7 +51,7 @@ getting Rust working on other platforms
   * [#rust on irc.ozinger.org][pound-rust-korea] - Korean Rust community
 * Mailing list [rust-dev]
 * Reddit's [r/rust]
-* [StackOverflow]
+* [Stack Overflow]
 * User groups
   * [Rust Bay Area][rust-bay-area]
   * [Rust Korea][rust-korea]
