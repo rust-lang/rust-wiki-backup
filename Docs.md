@@ -65,7 +65,7 @@ getting Rust working on other platforms
 [pound-rust-korea]: http://chat.mibbit.com/?server=irc.ozinger.org&channel=%23rust
 [rust-dev]: https://mail.mozilla.org/listinfo/rust-dev
 [r/rust]: http://reddit.com/r/rust
-[StackOverflow]: http://stackoverflow.com/questions/tagged/rust
+[Stack Overflow]: http://stackoverflow.com/questions/tagged/rust
 [rust-bay-area]: http://www.meetup.com/Rust-Bay-Area/
 [rust-korea]: http://rust-kr.org/
 [rust-skane]: http://www.meetup.com/rust-skane/
