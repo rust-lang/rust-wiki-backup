@@ -8,28 +8,18 @@ Listing of notes for developers working on the Rust compiler and tools.
 * [RFC process](https://github.com/rust-lang/rfcs/blob/master/active/0001-rfc-process.md) -- **read this for larger changes**
 * [[Note priority issue criteria]] -- criteria used for evaluating high priority issues
 * [[Note wiki conventions]]
-* [[Note development roadmap]]
 * [[Note compiler snapshots]]
 * [[Note git workflow]]
 * [[Note tag label names and definitions]]
 * [[Note style guide]]
-* [[Note build system]] - Makefile targets
 * [[Note bors usage]] - Instructing bors to build, check, and merge on github
 * [[Note testsuite]] - How Rust's tests are organized and operated
 * [[Note rustc hacking guide]]
-* [[Note ccache]]
 * [[Note code review]]
-* [[Note contribution ideas]]
-
-## Language and implementation notes
-
-* [[Note defined attributes]]
-* [[Note metadata format]]
 
 ## Miscellaneous notes
 
 * [[Note seeing LLVM output from rust]]
-* [[Note packaging]]
 * [[Note research]] - Links to research that influenced Rust.
 
 ## Tools
