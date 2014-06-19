@@ -9,9 +9,9 @@ General
 
 When submitting pull requests it is important to know your branch may be rebased, which will change its history and make your branch's history invalid.
 
-One possible workflow that has worked for developers on the project is outlined below. This assumes that you have an 'origin' remote that represents your remote github repo, and a 'mozilla' remote that represents Mozilla's. To create the latter, you can execute:
+One possible workflow that has worked for developers on the project is outlined below. This assumes that you have an 'origin' remote that represents your remote github repo, and a 'upstream' remote that represents rust-lang's. To create the latter, you can execute:
 ```
-$ git remote add mozilla https://github.com/rust-lang/rust
+$ git remote add upstream https://github.com/rust-lang/rust
 ```
 
 1. Whenever you start working on anything new, create a new branch derived from mozilla's `master` branch:
@@ -22,8 +22,8 @@ $ git checkout master -b mybranch
 2. While working, rebase your branch forwards regularly against the (daily) updates to `master`:
 ```
 $ git checkout mybranch
-$ git fetch mozilla
-$ git rebase mozilla/master
+$ git fetch upstream
+$ git rebase upstream/master
 ```
 
 > Sometimes there are conflicts during rebasing. If rebasing will cause some of your commits to not
@@ -37,9 +37,9 @@ $ git rebase mozilla/master
 $ git push origin mybranch
 ```
 
-4. File a pull request against `mozilla/rust`. Target the pull request to the `master` integration branch in `mozilla/rust`. Once your pull request is filed, you can create a new branch and do something else.
+4. File a pull request against `rust-lang/rust`. Target the pull request to the `master` integration branch in `rust-lang/rust`. Once your pull request is filed, you can create a new branch and do something else.
 
-5. Mozilla reviewers regularly look through the @bors integration queue, shown here: http://buildbot.rust-lang.org/bors/bors.html . Monitor your pull request for any additional comments or feedback from reviewers. Once an authorized reviewer leave a comment of the form `r+` on the end of the final commit in your pull request, @bors will attempt to merge your change to a temporary branch, test it, and advance `master` to that version if the tests pass. If any of these steps fail, it is your responsibility to address any problems that show up and refresh the pull request with updated code, so watch this process to ensure your change integrates.
+5. Reviewers regularly look through the @bors integration queue, shown here: http://buildbot.rust-lang.org/bors/bors.html . Monitor your pull request for any additional comments or feedback from reviewers. Once an authorized reviewer leaves a comment of the form `r+` on the end of the final commit in your pull request, @bors will attempt to merge your change to a temporary branch, test it, and advance `master` to that version if the tests pass. If any of these steps fail, it is your responsibility to address any problems that show up and refresh the pull request with updated code, so watch this process to ensure your change integrates.
 
 6. Pull `master` into your local repo and verify that it contains your changes:
 ```
@@ -59,19 +59,19 @@ $ git push origin :mybranch
 
 In order to create a git submodule, follow this procedure:
 
-1. First we have to prepare the submodule. If the project is hosted on http://github.com, fork it so we can apply changes. Otherwise check it out and push it into http://github.com/mozilla/ or wherever.
+1. First we have to prepare the submodule. If the project is hosted on http://github.com, fork it so we can apply changes. Otherwise check it out and push it into http://github.com/rust-lang/ or wherever.
 
 2. In the rust repository, create the submodule. Make sure that you specify a publicly accessible read-only url here, or else you may break the build for a non-rust developer:
 
 ```
-$ git submodule add https://github.com/mozilla/libuv.git src/rt/libuv
+$ git submodule add https://github.com/rust-lang/libuv.git src/rt/libuv
 ```
 
 3. Git will checkout the project into the subdirectory `src/rt/libuv`. We'll need to switch the origin to a writable repository so we can push to it.
 
 ```
 $ cd src/rt/libuv
-$ git remote set-url origin git@github.com:mozilla/libuv.git
+$ git remote set-url origin git@github.com:rust-lang/libuv.git
 ```
 
 4. I would suggest creating a branch to track the remote project, which we'll use to designate which revision we'll pin rust to. We'll also use this branch to track any rust customizations:
@@ -100,7 +100,7 @@ $ git commit -a
 6. To be safe, check to make sure you can clone and build rust from the read-only repository:
 
 ```
-$ git clone --recursive https://github.com/mozilla/rust.git
+$ git clone --recursive https://github.com/rust-lang/rust.git
 $ configure
 $ make
 ```
