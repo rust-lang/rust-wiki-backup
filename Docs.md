@@ -18,18 +18,12 @@ Additional supplementary documentation is maintained here on the wiki.
 [[Detailed release notes|Doc detailed release notes]] - Further explanation of language changes  
 [[Community libraries]] - A curated list of external libraries for Rust  
 [The Periodic Table of Rust Types](http://cosmic.mearie.org/2014/01/periodic-table-of-rust-types)  
-[[Reading and writing files|Doc Reading and writing files]]  
-[[Attributes|Doc attributes]] - The role of metadata in Rust code, with descriptions of many applications  
-[[Crate Hashes|Doc crate hashes]] - How Rust generates crate filenames, versions symbols, and why  
 [[Computer Graphics and Game Development]] - Libraries and example projects  
 [UVA Rust tutorial](http://aml3.github.io/RustTutorial/)
 
 ## Tools
-[[Using rustpkg|Rustpkg]] - Managing packages  
-[[Using rustdoc|Doc using rustdoc]] - How to extract Markdown and HTML documentation from code  
+
 [[Packages, editors, and other tools|Doc packages, editors, and other tools]]  
-[[Packaging Terminology|Doc Packaging Terminology]]  
-[[Unit testing|Doc unit testing]] - Writing tests and running them with the built-in test driver  
 [[Continuous integration|Doc continuous integration]] - Test your GitHub-hosted packages with Travis CI  
 
 ## Platforms
