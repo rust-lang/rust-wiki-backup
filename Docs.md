@@ -8,7 +8,7 @@ Additional supplementary documentation is maintained here on the wiki.
 ## Tutorials/intros
 [[Rust for C++ programmers|Rust for CXX programmers]] - A cheat sheet  
 [Rust for Rubyists](http://www.rustforrubyists.com/) - Excellent introduction to Rust 
-[Rust by Example](http://rustbyexample.com/) - Comprehensive examples
+[Rust by Example](http://rustbyexample.com/) - Comprehensive examples 
 [[Teaching Rust]]  
 [[More examples|Doc examples]] - Where to look for examples of Rust  
 [[Rusticon|The Rusticon]] - A glossary of terms commonly used in Rust and Rust tools.  
