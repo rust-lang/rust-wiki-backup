@@ -40,7 +40,7 @@ syntax extension | Code generation at compiletime, broken into three groups: dec
 task | Rust's fundamental unit of computation. Similar to a thread.
 trait | Rust's approach to ad-hoc polymorphism, and used for generics and dynamic dispatch. Also known as [type classes](http://en.wikipedia.org/wiki/Type_class).
 <a name="tuple_structure" />tuple structure | A struct declared [without named fields](#record_structure), for example `struct Point(f32, f32)`
-TWiR | This Week in Rust. cmr's [weekly summary](http://cmr.github.io/blog/categories/this-week-in-rust/) of Rust's development.
+TWiR | This Week in Rust. cmr's [weekly summary](http://blog.octayn.net/) of Rust's development.
 <a name="type_hint" />type hint | Syntax like `foo::<int>()` to give an explicit type for a generic function, method or struct constructor. Usually redundant due to type inference.
 <a name="unit_type" />unit type | The unit type, denoted `()`, permits only one value, also denoted `()`. Functions without return value have return type `()`. Sometimes called *nil*.
 unit structure | A struct that only has one value, for example `struct Foo;` where `Foo` becomes the name of both the type and its only value. Works just the same as the *unit type* `()`, except it is a distinct type.
