@@ -1,5 +1,9 @@
 # 2014-06-23
 
+# Attending
+
+luqman, cmr, brson, aturon, acrichto, bjz, niko, nrc, pcwalton
+
 # clone
 
 https://github.com/rust-lang/rust/blob/master/src/libcore/clone.rs
