@@ -14,22 +14,22 @@ https://github.com/rust-lang/rust/blob/master/src/libcore/clone.rs
 - Impls for `extern "Rust" fn`
 - Recommendation: call the whole thing unstable
 
-- Declare these unstable
+- Declare these unstable:
 
-impl clone for primitives
-../src/libcore/tuple.rs:107:            impl<$($T:Clone),+> Clone for ($($T,)+) {
-../src/libcore/cell.rs:195:impl<T:Copy> Clone for Cell<T> {
-../src/libcore/cell.rs:301:impl<T: Clone> Clone for RefCell<T> {
-../src/libcore/clone.rs:42:impl<'a, T> Clone for &'a T {
-../src/libcore/clone.rs:48:impl<'a, T> Clone for &'a [T] {
-../src/libcore/clone.rs:54:impl<'a> Clone for &'a str {
-../src/liballoc/rc.rs:146:impl<T> Clone for Rc<T> {
-../src/liballoc/rc.rs:227:impl<T> Clone for Weak<T> {
-../src/liballoc/arc.rs:113:impl<T: Share + Send> Clone for Arc<T> {
-../src/liballoc/arc.rs:239:impl<T: Share + Send> Clone for Weak<T> {
-../src/liballoc/owned.rs:45:impl<T: Clone> Clone for Box<T> {
-../src/libcollections/vec.rs:315:impl<T:Clone> Clone for Vec<T> {
-../src/libstd/gc.rs:40:impl<T> Clone for Gc<T> {
+- impl clone for primitives
+- ../src/libcore/tuple.rs:107:            impl<$($T:Clone),+> Clone for ($($T,)+) {
+- ../src/libcore/cell.rs:195:impl<T:Copy> Clone for Cell<T> {
+- ../src/libcore/cell.rs:301:impl<T: Clone> Clone for RefCell<T> {
+- ../src/libcore/clone.rs:42:impl<'a, T> Clone for &'a T {
+- ../src/libcore/clone.rs:48:impl<'a, T> Clone for &'a [T] {
+- ../src/libcore/clone.rs:54:impl<'a> Clone for &'a str {
+- ../src/liballoc/rc.rs:146:impl<T> Clone for Rc<T> {
+- ../src/liballoc/rc.rs:227:impl<T> Clone for Weak<T> {
+- ../src/liballoc/arc.rs:113:impl<T: Share + Send> Clone for Arc<T> {
+- ../src/liballoc/arc.rs:239:impl<T: Share + Send> Clone for Weak<T> {
+- ../src/liballoc/owned.rs:45:impl<T: Clone> Clone for Box<T> {
+- ../src/libcollections/vec.rs:315:impl<T:Clone> Clone for Vec<T> {
+- ../src/libstd/gc.rs:40:impl<T> Clone for Gc<T> {
 
 nmatsakis: cloning for fns is not good. might want to be careful. doesn't handle bound lifetimes correctly. 
 
