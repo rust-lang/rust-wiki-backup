@@ -82,4 +82,5 @@ The Rust team has a weekly Rust planning meeting on Tuesdays at 2:00 PM Pacific 
 * [[Meeting 2013-06-07]] (dynamically sized types; closures; GC)
 * [[Meeting workweek 2014-03-03]]
 * [[Meeting-RFC-triage-2014-06-19]]
+* [[Meeting-API-review-2014-06-23]]
 
