@@ -1,1 +1,0 @@
-Moved, see [[Meeting-weekly-2014-01-07]].
