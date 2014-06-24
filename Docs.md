@@ -1,4 +1,4 @@
-Rust's primary documentation, including the tutorial, guides and manual, are on the Rust website.
+Rust's primary documentation, including the tutorial, guides and manual, are on the Rust website. The wiki is mostly used for in-progress documentation or somewhat random pieces of advice/hints, as well as fast-evolving community maintained lists.
 
 * [Master](http://static.rust-lang.org/doc/master/index.html) - documentation for the 'master' branch of the git repository.
 * [Release 0.10](http://static.rust-lang.org/doc/0.10/index.html) - documentation for the latest release.
@@ -8,8 +8,9 @@ Additional supplementary documentation is maintained here on the wiki.
 ## Tutorials/intros
 [[Rust for C++ programmers|Rust for CXX programmers]] - A cheat sheet  
 [Rust for Rubyists](http://www.rustforrubyists.com/) - Excellent introduction to Rust  
+[Rust by Example](http://rustbyexample.com/) - Comprehensive examples  
 [[Teaching Rust]]  
-[[Examples|Doc examples]] - Where to look for examples of Rust  
+[[More examples|Doc examples]] - Where to look for examples of Rust  
 [[Rusticon|The Rusticon]] - A glossary of terms commonly used in Rust and Rust tools.  
 
 ## Other documentation
@@ -18,18 +19,12 @@ Additional supplementary documentation is maintained here on the wiki.
 [[Detailed release notes|Doc detailed release notes]] - Further explanation of language changes  
 [[Community libraries]] - A curated list of external libraries for Rust  
 [The Periodic Table of Rust Types](http://cosmic.mearie.org/2014/01/periodic-table-of-rust-types)  
-[[Reading and writing files|Doc Reading and writing files]]  
-[[Attributes|Doc attributes]] - The role of metadata in Rust code, with descriptions of many applications  
-[[Crate Hashes|Doc crate hashes]] - How Rust generates crate filenames, versions symbols, and why  
 [[Computer Graphics and Game Development]] - Libraries and example projects  
 [UVA Rust tutorial](http://aml3.github.io/RustTutorial/)
 
 ## Tools
-[[Using rustpkg|Rustpkg]] - Managing packages  
-[[Using rustdoc|Doc using rustdoc]] - How to extract Markdown and HTML documentation from code  
+
 [[Packages, editors, and other tools|Doc packages, editors, and other tools]]  
-[[Packaging Terminology|Doc Packaging Terminology]]  
-[[Unit testing|Doc unit testing]] - Writing tests and running them with the built-in test driver  
 [[Continuous integration|Doc continuous integration]] - Test your GitHub-hosted packages with Travis CI  
 
 ## Platforms
@@ -56,6 +51,7 @@ getting Rust working on other platforms
   * [#rust on irc.ozinger.org][pound-rust-korea] - Korean Rust community
 * Mailing list [rust-dev]
 * Reddit's [r/rust]
+* [Stack Overflow]
 * User groups
   * [Rust Bay Area][rust-bay-area]
   * [Rust Korea][rust-korea]
@@ -70,6 +66,7 @@ getting Rust working on other platforms
 [pound-rust-korea]: http://chat.mibbit.com/?server=irc.ozinger.org&channel=%23rust
 [rust-dev]: https://mail.mozilla.org/listinfo/rust-dev
 [r/rust]: http://reddit.com/r/rust
+[Stack Overflow]: http://stackoverflow.com/questions/tagged/rust
 [rust-bay-area]: http://www.meetup.com/Rust-Bay-Area/
 [rust-korea]: http://rust-kr.org/
 [rust-skane]: http://www.meetup.com/rust-skane/
