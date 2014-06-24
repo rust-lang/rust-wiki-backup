@@ -3,4 +3,4 @@ All Categories:
 * [[Docs]] -- For users
 * [[Notes]] -- For developers
 * [[Libs]] -- For library authors
-* [[Meetings]] -- Minutes
+* [Meeting minutes](https://github.com/rust-lang/meeting-minutes)
