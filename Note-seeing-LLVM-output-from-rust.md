@@ -16,7 +16,7 @@ less hello.ll
 
 ### I want to check the test result of the Rust compiler
 
-Recall that if the test you want to run is in `test/run-pass/hello.rs`, the invocation (as described in [[The Rust test suite]] page) is
+Recall that if the test you want to run is in `test/run-pass/hello.rs`, the invocation (as described in [[Note-testsuite]] page) is
 
 ```
 make check TESTNAME=test/run-pass/hello.rs
