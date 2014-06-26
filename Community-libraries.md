@@ -223,6 +223,7 @@ See [Database Access](Community-libraries#wiki-database-access)
   * [chris-morgan/rust-http](https://github.com/chris-morgan/rust-http): Superceeded by Teepee  [<img src="https://travis-ci.org/chris-morgan/rust-http.png?branch=master">](https://travis-ci.org/chris-morgan/rust-http)
   * [Earlz/rustymvc](https://github.com/Earlz/rustymvc)
   * [erickt/rust-mongrel2](https://github.com/erickt/rust-mongrel2): bindings for the [Mongrel2](http://mongrel2.org) webserver
+  * [floor-org/floor](https://github.com/floor-org/floor)
   * [jroweboy/oxidize](https://github.com/jroweboy/oxidize)
   * [Ogeon/rustful](https://github.com/Ogeon/rustful):  [<img src="https://travis-ci.org/Ogeon/rustful.png?branch=master">](https://travis-ci.org/Ogeon/rustful)
   * [SimonSapin/rust-url](https://github.com/SimonSapin/rust-url)
