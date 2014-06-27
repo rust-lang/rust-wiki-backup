@@ -149,7 +149,7 @@ See [[building for Android|Doc-building-for-android]]
 
 ## Downloading and building Rust
 
-Before you get started, you should quickly review the [Build system notes here](note-build-system) which describes the Make targets among other things.
+Before you get started, you should quickly review the [build system notes](https://github.com/rust-lang/rust/blob/master/Makefile.in#L11) which describes the Make targets among other things.
 
 ~~~~bash
 git clone git://github.com/mozilla/rust.git
