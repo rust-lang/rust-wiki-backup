@@ -17,7 +17,7 @@ Version numbers listed here are "what we're using"; the code may well work with 
 * `curl`
 * recommended: `valgrind` 3.8.0 or later (not required for Linux)
 * optional: if you wish to build LaTeX PDF docs, [`pandoc`](http://johnmacfarlane.net/pandoc/) 1.9.1 at least, with one or more of `pdflatex`/`xelatex`/`lualatex`
-* optional: [[ccache|Note ccache]] to shorten your rebuild times
+* optional: `ccache` to shorten your rebuild times
 
 ### Memory usage
 
