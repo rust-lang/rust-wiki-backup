@@ -1,6 +1,6 @@
 This page covers releases in more detail than the bullet-point list given in the RELEASES.txt file in the source distribution, in particular focusing on _language level changes_ that will be immediately visible and/or disruptive to users trying to keep their Rust code compiling and working right between releases. It is intended to hold copied, cleaned-up versions of entries from the [[development roadmap|Note development roadmap]] as they are completed, to help users plan migration on their own code.
 
-## 0.11 July 2014
+## 0.11.0 July 2014
 
 While this was a very active development cycle, it was largely focused on polishing the type system and libraries. The major technical focuses this time were implementing [dynamically sized types](http://smallcultfollowing.com/babysteps/blog/2014/01/05/dst-take-5/) and [refactoring the standard library](https://github.com/rust-lang/rfcs/blob/master/complete/0012-libstd-facade.md). This release also marks the complete removal of the `~` and `@` syntax in favor of library types `Box` and `Gc` (though there is still work to be done with the library integration: the compiler still has more knowledge of `Box` and `Gc` than it ultimately should, but the final syntax is in place).
 
@@ -11,6 +11,36 @@ Additionally, the Rust [RFC process](https://github.com/rust-lang/rfcs/blob/mast
 ### Removal of `~` and `@`
 
 ### The "`std`" facade
+
+The standard library, `libstd`, has been refactored to instead be an umbrella library encompassing a number of smaller libraries underneath it. The purpose of this refactoring was to have clear lines of abstraction between libraries, as well as better understanding the dependencies of each component library. The new libraries introduced under the standard library are:
+
+* `libcore` - This library is intended to be the core functionality for all of Rust. It is a "0-assumption" library which is theoretically maximally portable (no dependencies). The library does not depend on a system libc, for example. This library is suitable for use in contexts such as embedded devices, kernel development, or a Rust library embedded into another language. 
+  
+  The libcore library does not know how to allocate memory, so constructs such as growable vectors and growable strings are not present. The library does rely, however, on an upstream definition of failure. The only requirement for this failure function is that it never return, however. More information about this library can be found in its [documentation](http://doc.rust-lang.org/core/)
+
+* `liblibc` - This library is used to represent bindings to libc on the relevant platform desired. It has appropriate linkage directives to link to necessary system libraries, as well as all the necessary definitions for calling functions.
+
+* `liballoc` - This library is the core allocation interface of Rust. Core "smart pointers" such as `Rc<T>`, `Arc<T>`, and `Box<T>` are provided by this library. Additionally, all memory allocation in Rust is now performed through this library. Currently jemalloc is used to power `liballoc` by default. This library depends on `liblibc` and `libcore`.
+
+* `libcollections` - This library provides the core collection types of the language, such as vectors, strings, maps, linked lists, etc. This library only depends on `liballoc` and `libcore`, in theory not even depending on libc.
+
+* `librustrt` - This library is the core component of the runtime, defining the I/O interfaces, task model, and unwinding. This library provides the definition of failure for all upstream rust crates as unwinding via the system libunwind.
+
+* `libsync` - One of the last libraries before you get to the standard library, this library was refactored from depending on the standard library to having the standard library depend on it. The libsync library is responsible for providing the primitives necessary for writing concurrent code in Rust such as channels, mutexes, etc.
+
+* `librand` - As with libsync, this library was refactored from depending on the standard library to having the standard library depend on it. As a consequence, however, this library no longer defines primitives such as `OsRng`. Instead, the librand library only depends on libcore, and the missing functionality is all provided by the standard library.
+
+None of these crates should normally be linked to explicitly. Instead, the standard library reexports all necessary functionality required. For example, the following modules exist in the standard library now:
+
+* `std::collections`
+* `std::sync`
+* `std::comm`
+* `std::rand`
+* `std::rt`
+
+And various other explicitly reexported modules such as all of core, `rc`, `owned`, etc.
+
+With this facade of the standard library, it should be easier to pick and choose the amount of functionality from Rust. It's much easier to write idiomatic rust without the runtime now, for example, through usage of just the `libcollections` crate.
 
 ## 0.10 April 2014
 
