@@ -1,5 +1,5 @@
 ---
-**Moved into [the standard library documentation for `std::ops`](http://static.rust-lang.org/doc/master/std/ops/index.html).**
+**Moved into [the standard library documentation for `std::ops`](http://doc.rust-lang.org/master/std/ops/).**
 
 ---
 
