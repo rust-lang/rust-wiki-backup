@@ -9,7 +9,7 @@ bikeshed | A [highly important discussion](http://www.catb.org/jargon/html/B/bik
 bors | The name of our continuous integration bot, a [Python script](https://github.com/graydon/bors) that checks for reviewed pull requests and runs the test on it, merging it if they pass.
 box | (noun) An allocated chunk of memory, (verb) To place a value in such a box
 unbox | To get the value out of a box, usually destroying the box in the process.
-built-in trait | A compiler-defined trait that is implicitly implemented for each eligible type. They are `Send`, `Freeze`, `Copy`, and `'static`.
+built-in trait | A compiler-defined trait that is implicitly implemented for each eligible type. They are `Send`, `Share`, `Copy`, and `'static`.
 <a name="closure" />closure | Refers both to the type (`∣ ∣`, `proc()`) and the literal notation: `∣args∣ expression` (where expression can be a block, ie `∣x∣ { println(x.to_str()); 5}`). It is said to "close over" its environment; it can "capture" values from surrounding code. (*Note:* This is using a non-pipe unicode character because github doesn't like using that character in tables.)
 crate | Rust's compilation unit, a single library or executable. Is the root of a namespace.
 FFI | See _foreign function interface_.
