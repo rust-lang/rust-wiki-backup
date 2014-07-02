@@ -4,6 +4,39 @@ This is an archive of all the existing Rust release artifacts. Each release is s
 [pre-0.8-key]: http://www.rust-lang.org/rust-key-old.gpg.ascii
 [pre-0.5-key]: http://www.rust-lang.org/rust-key-very-old.gpg.ascii
 
+## 0.11.0
+
+* [Announcement][0.11.0-announce]
+* [Release notes][0.11.0-notes]
+* [Source code][0.11.0-tar] ([signature][0.11.0-tar-sig])
+* [Windows installer][0.11.0-exe] ([signature][0.11.0-exe-sig])
+* [Linux x86_64 tarball][0.11.0-linux-x64] ([signature][0.11.0-linux-x64-sig])
+* [Linux i686 tarball][0.11.0-linux-x32] ([signature][0.11.0-linux-x32-sig])
+* [Mac OS X x86_64 pkg][0.11.0-osx-x64-pkg] ([signature][0.11.0-osx-x64-pkg-sig])
+* [Mac OS X i686 pkg][0.11.0-osx-x32-pkg] ([signature][0.11.0-osx-x32-pkg-sig])
+* [Mac OS X x86_64 tarball][0.11.0-osx-x64-tar] ([signature][0.11.0-osx-x64-tar-sig])
+* [Mac OS X i686 tarball][0.11.0-osx-x32-tar] ([signature][0.11.0-osx-x32-tar-sig])
+* [Documentation][0.11.0-docs]
+
+[0.11.0-announce]: https://mail.mozilla.org/pipermail/rust-dev/2014-April/009387.html
+[0.11.0-notes]: https://github.com/mozilla/rust/blob/0.11.0/RELEASES.txt
+[0.11.0-tar]: http://static.rust-lang.org/dist/rust-0.11.0.tar.gz
+[0.11.0-tar-sig]: http://static.rust-lang.org/dist/rust-0.11.0.tar.gz.asc
+[0.11.0-exe]: http://static.rust-lang.org/dist/rust-0.11.0-install.exe
+[0.11.0-exe-sig]: http://static.rust-lang.org/dist/rust-0.11.0-install.exe.asc
+[0.11.0-linux-x64]: http://static.rust-lang.org/dist/rust-0.11.0-x86_64-unknown-linux-gnu.tar.gz
+[0.11.0-linux-x64-sig]: http://static.rust-lang.org/dist/rust-0.11.0-x86_64-unknown-linux-gnu.tar.gz.asc
+[0.11.0-linux-x32]: http://static.rust-lang.org/dist/rust-0.11.0-i686-unknown-linux-gnu.tar.gz
+[0.11.0-linux-x32-sig]: http://static.rust-lang.org/dist/rust-0.11.0-i686-unknown-linux-gnu.tar.gz.asc
+[0.11.0-osx-x64-pkg]: http://static.rust-lang.org/dist/rust-0.11.0-x86_64-apple-darwin.pkg
+[0.11.0-osx-x64-pkg-sig]: http://static.rust-lang.org/dist/rust-0.11.0-x86_64-apple-darwin.pkg.asc
+[0.11.0-osx-x32-pkg]: http://static.rust-lang.org/dist/rust-0.11.0-i686-apple-darwin.pkg
+[0.11.0-osx-x32-pkg-sig]: http://static.rust-lang.org/dist/rust-0.11.0-i686-apple-darwin.pkg.asc
+[0.11.0-osx-x64-tar]: http://static.rust-lang.org/dist/rust-0.11.0-x86_64-apple-darwin.tar.gz
+[0.11.0-osx-x64-tar-sig]: http://static.rust-lang.org/dist/rust-0.11.0-x86_64-apple-darwin.tar.gz.asc
+[0.11.0-osx-x32-tar]: http://static.rust-lang.org/dist/rust-0.11.0-i686-apple-darwin.tar.gz
+[0.11.0-osx-x32-tar-sig]: http://static.rust-lang.org/dist/rust-0.11.0-i686-apple-darwin.tar.gz.asc
+[0.11.0-docs]: http://doc.rust-lang.org/0.11.0/index.html
 
 ## 0.10
 
