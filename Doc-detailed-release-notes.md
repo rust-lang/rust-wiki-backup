@@ -8,6 +8,20 @@ Additionally, the Rust [RFC process](https://github.com/rust-lang/rfcs/blob/mast
 
 ### DST, vectors, and strings
 
+In preparation for an implementation of dynamically-sized-types (DST), the `~str` and `~[T]` types have been removed from the language. These will be reincarnated as `Box<str>` and `Box<[T]>` (`Box` explained below), but currently do not exist today. These types are replaced by `String` and `Vec`.
+
+#### `Vec`
+
+The `Vec` type replaces the old `~[T]` type and brings with it some significant speed improvements. The layout of `Vec` has been altered from that of `~[T]` to take much greater advantage of LLVM's optimizations passes.
+
+Like `~[T]`, `Vec<T>` is a growable vector which can be done through a mutable pointer. It is freely borrowable to `&mut [T]` and `&[T]`.
+
+#### `String`
+
+This is essentially a drop-in replacement for the `~str` type. It is the default "owned string" type of Rust, and supports mutation through a mutable pointer. It is backed by a `Vec<u8>` type and has the runtime invariant that it only ever carries bytes which are a valid utf8 encoding. The type is freely borrowable to the `&str` type via the `as_slice()` method.
+
+The `String` type is in the prelude and lives in `std::string`.
+
 ### Removal of `~` and `@`
 
 The ubiquitous `~` and `@` pointers have been removed from the language to be relegated to libraries. The type syntax `~T` is replaced by `Box<T>` which lives in `std::owned`, and the type syntax `@T` was replaced by `Gc<T>` which lives in `std::gc`.
