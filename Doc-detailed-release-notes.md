@@ -10,6 +10,14 @@ Additionally, the Rust [RFC process](https://github.com/rust-lang/rfcs/blob/mast
 
 ### Removal of `~` and `@`
 
+The ubiquitous `~` and `@` pointers have been removed from the language to be relegated to libraries. The type syntax `~T` is replaced by `Box<T>` which lives in `std::owned`, and the type syntax `@T` was replaced by `Gc<T>` which lives in `std::gc`.
+
+The expression syntax, `~expr`, has been replaced by `box expr` and the `@expr` syntax has been replaced by `box(GC) expr` where `GC` lives in `std::gc`. The `box` expressions is Rust's equivalent of "placement-new" and will support user-defined allocators in the future, but it currently only supports `Box` and `Gc` pointers.
+
+This is largely just a syntactic change, but it is only one milestone in the long trail of features being moved from the compiler into libraries instead. With this change comes simplified compiler support, improved discoverabilty in documentation, and a more consistent standing next to other smart pointers such as `Rc` and `Arc`.
+
+The major significance of this change is spurred by DST after which `~` and `@` will no longer need to be specially treated and hence have no need for being specially recognized by the compiler.
+
 ### The "`std`" facade
 
 The standard library, `libstd`, has been refactored to instead be an umbrella library encompassing a number of smaller libraries underneath it. The purpose of this refactoring was to have clear lines of abstraction between libraries, as well as better understanding the dependencies of each component library. The new libraries introduced under the standard library are:
