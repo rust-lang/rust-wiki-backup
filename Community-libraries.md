@@ -228,6 +228,7 @@ See also http://arewewebyet.com/
   * [Earlz/rustymvc](https://github.com/Earlz/rustymvc)
   * [erickt/rust-mongrel2](https://github.com/erickt/rust-mongrel2): bindings for the [Mongrel2](http://mongrel2.org) webserver
   * [floor-org/floor](https://github.com/floor-org/floor)
+  * [iron/iron](https://github.com/iron/iron)
   * [jroweboy/oxidize](https://github.com/jroweboy/oxidize)
   * [Ogeon/rustful](https://github.com/Ogeon/rustful):  [<img src="https://travis-ci.org/Ogeon/rustful.png?branch=master">](https://travis-ci.org/Ogeon/rustful)
   * [SimonSapin/rust-url](https://github.com/SimonSapin/rust-url)
