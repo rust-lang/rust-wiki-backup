@@ -29,6 +29,8 @@
   * Since 1.24. [Nightly builds](http://nightly.geany.org/) or the [git master](https://github.com/geany/geany) may have additional improvements.
 * Gedit
   * included, see `src/etc/`
+* Intellij
+  * [Vektah's Intellij plugin] (http://plugins.jetbrains.com/plugin/7438) - Can be installed from Plugins settings in app
 * Kate
   * included, see `src/etc/`
     (the file can be copied or linked to ~/.kde/share/apps/katepart/syntax/)
