@@ -223,6 +223,7 @@ See [Database Access](Community-libraries#wiki-database-access)
 
 See also http://arewewebyet.com/
 
+  * [andelf/rust-httpc](https://github.com/andelf/rust-httpc)
   * [chris-morgan/rust-http](https://github.com/chris-morgan/rust-http): Superceeded by Teepee  [<img src="https://travis-ci.org/chris-morgan/rust-http.png?branch=master">](https://travis-ci.org/chris-morgan/rust-http)
   * [conduit-rust/conduit](https://github.com/conduit-rust/conduit)
   * [Earlz/rustymvc](https://github.com/Earlz/rustymvc)
