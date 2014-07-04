@@ -226,9 +226,9 @@ See also http://arewewebyet.com/
   * [SimonSapin/rust-url](https://github.com/SimonSapin/rust-url)
   * [url.rs](https://github.com/mozilla/rust/blob/master/src/liburl/lib.rs)
   * client
+    * [andelf/rust-httpc](https://github.com/andelf/rust-httpc)
     * [carllerche/curl-rust](https://github.com/carllerche/curl-rust)
   * server
-    * [andelf/rust-httpc](https://github.com/andelf/rust-httpc)
     * [chris-morgan/rust-http](https://github.com/chris-morgan/rust-http): Superceeded by Teepee  [<img src="https://travis-ci.org/chris-morgan/rust-http.png?branch=master">](https://travis-ci.org/chris-morgan/rust-http)
     * [conduit-rust/conduit](https://github.com/conduit-rust/conduit)
     * [Earlz/rustymvc](https://github.com/Earlz/rustymvc)
