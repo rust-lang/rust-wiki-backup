@@ -233,11 +233,11 @@ See also http://arewewebyet.com/
     * [conduit-rust/conduit](https://github.com/conduit-rust/conduit)
     * [Earlz/rustymvc](https://github.com/Earlz/rustymvc)
     * [erickt/rust-mongrel2](https://github.com/erickt/rust-mongrel2): bindings for the [Mongrel2](http://mongrel2.org) webserver
-    * [floor-org/floor](https://github.com/floor-org/floor)
-    * [iron/iron](https://github.com/iron/iron)
+    * [floor-org/floor](https://github.com/floor-org/floor): inspired by Express.js, which is inspired by Sinatra.
+    * [iron/iron](https://github.com/iron/iron): inspired by Express.js, which is inspired by Sinatra.
     * [jroweboy/oxidize](https://github.com/jroweboy/oxidize)
     * [Ogeon/rustful](https://github.com/Ogeon/rustful):  [<img src="https://travis-ci.org/Ogeon/rustful.png?branch=master">](https://travis-ci.org/Ogeon/rustful)
-    * [skade/widmann](https://github.com/skade/widmann): [<img src="https://travis-ci.org/skade/widmann.png?branch=master">](https://travis-ci.org/skade/widmann)
+    * [skade/widmann](https://github.com/skade/widmann): inspired by Sinatra. [<img src="https://travis-ci.org/skade/widmann.png?branch=master">](https://travis-ci.org/skade/widmann)
     * [teepee/teepee](https://github.com/teepee/teepee) [<img src="https://travis-ci.org/teepee/teepee.png?branch=master">](https://travis-ci.org/teepee/teepee)
     * [WebeWizard/libhttpd](https://github.com/WebeWizard/libhttpd)
 
