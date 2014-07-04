@@ -236,8 +236,6 @@ See also http://arewewebyet.com/
   * [teepee/teepee](https://github.com/teepee/teepee) [<img src="https://travis-ci.org/teepee/teepee.png?branch=master">](https://travis-ci.org/teepee/teepee)
   * [url.rs](https://github.com/mozilla/rust/blob/master/src/liburl/lib.rs)
   * [WebeWizard/libhttpd](https://github.com/WebeWizard/libhttpd)
-  * [wycats/route-recognizer.rs](https://github.com/wycats/route-recognizer.rs)
-  * [wycats/routed-http.rs](https://github.com/wycats/routed-http.rs)
 
 ## XML
 See [Encoding](Community-libraries#encoding)
