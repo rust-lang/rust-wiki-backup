@@ -223,20 +223,23 @@ See [Database Access](Community-libraries#wiki-database-access)
 
 See also http://arewewebyet.com/
 
-  * [andelf/rust-httpc](https://github.com/andelf/rust-httpc)
-  * [chris-morgan/rust-http](https://github.com/chris-morgan/rust-http): Superceeded by Teepee  [<img src="https://travis-ci.org/chris-morgan/rust-http.png?branch=master">](https://travis-ci.org/chris-morgan/rust-http)
-  * [conduit-rust/conduit](https://github.com/conduit-rust/conduit)
-  * [Earlz/rustymvc](https://github.com/Earlz/rustymvc)
-  * [erickt/rust-mongrel2](https://github.com/erickt/rust-mongrel2): bindings for the [Mongrel2](http://mongrel2.org) webserver
-  * [floor-org/floor](https://github.com/floor-org/floor)
-  * [iron/iron](https://github.com/iron/iron)
-  * [jroweboy/oxidize](https://github.com/jroweboy/oxidize)
-  * [Ogeon/rustful](https://github.com/Ogeon/rustful):  [<img src="https://travis-ci.org/Ogeon/rustful.png?branch=master">](https://travis-ci.org/Ogeon/rustful)
   * [SimonSapin/rust-url](https://github.com/SimonSapin/rust-url)
-  * [skade/widmann](https://github.com/skade/widmann): [<img src="https://travis-ci.org/skade/widmann.png?branch=master">](https://travis-ci.org/skade/widmann)
-  * [teepee/teepee](https://github.com/teepee/teepee) [<img src="https://travis-ci.org/teepee/teepee.png?branch=master">](https://travis-ci.org/teepee/teepee)
   * [url.rs](https://github.com/mozilla/rust/blob/master/src/liburl/lib.rs)
-  * [WebeWizard/libhttpd](https://github.com/WebeWizard/libhttpd)
+  * client
+    * [carllerche/curl-rust](https://github.com/carllerche/curl-rust)
+  * server
+    * [andelf/rust-httpc](https://github.com/andelf/rust-httpc)
+    * [chris-morgan/rust-http](https://github.com/chris-morgan/rust-http): Superceeded by Teepee  [<img src="https://travis-ci.org/chris-morgan/rust-http.png?branch=master">](https://travis-ci.org/chris-morgan/rust-http)
+    * [conduit-rust/conduit](https://github.com/conduit-rust/conduit)
+    * [Earlz/rustymvc](https://github.com/Earlz/rustymvc)
+    * [erickt/rust-mongrel2](https://github.com/erickt/rust-mongrel2): bindings for the [Mongrel2](http://mongrel2.org) webserver
+    * [floor-org/floor](https://github.com/floor-org/floor)
+    * [iron/iron](https://github.com/iron/iron)
+    * [jroweboy/oxidize](https://github.com/jroweboy/oxidize)
+    * [Ogeon/rustful](https://github.com/Ogeon/rustful):  [<img src="https://travis-ci.org/Ogeon/rustful.png?branch=master">](https://travis-ci.org/Ogeon/rustful)
+    * [skade/widmann](https://github.com/skade/widmann): [<img src="https://travis-ci.org/skade/widmann.png?branch=master">](https://travis-ci.org/skade/widmann)
+    * [teepee/teepee](https://github.com/teepee/teepee) [<img src="https://travis-ci.org/teepee/teepee.png?branch=master">](https://travis-ci.org/teepee/teepee)
+    * [WebeWizard/libhttpd](https://github.com/WebeWizard/libhttpd)
 
 ## XML
 See [Encoding](Community-libraries#encoding)
