@@ -17,7 +17,7 @@ Applications
 Libraries
 ---------
 
-* `lmath` linear algebra library: https://github.com/bjz/lmath-rs
+* `cgmath` linear algebra library: https://github.com/bjz/cgmath-rs
 * `sharegl` OpenGL context library: https://github.com/mozilla-servo/sharegl
 
 Bindings
