@@ -12,6 +12,7 @@ unbox | To get the value out of a box, usually destroying the box in the process
 built-in trait | A compiler-defined trait that is implicitly implemented for each eligible type. They are `Send`, `Share`, `Copy`, and `'static`.
 <a name="closure" />closure | Refers both to the type (`∣ ∣`, `proc()`) and the literal notation: `∣args∣ expression` (where expression can be a block, ie `∣x∣ { println(x.to_str()); 5}`). It is said to "close over" its environment; it can "capture" values from surrounding code. (*Note:* This is using a non-pipe unicode character because github doesn't like using that character in tables.)
 crate | Rust's compilation unit, a single library or executable. Is the root of a namespace.
+DST | [Dynamically sized type](http://smallcultfollowing.com/babysteps/blog/2014/01/05/dst-take-5/)
 FFI | See _foreign function interface_.
 foreign function interface | Calling code written in another language. Rust has a native C FFI, using `extern "C" fn`.
 heap allocation | A dynamic allocation not on the stack.
