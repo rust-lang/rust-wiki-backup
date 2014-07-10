@@ -54,6 +54,8 @@ See [Encoding](Community-libraries#encoding)
       * [mneumann/rust-redis](https://github.com/mneumann/rust-redis) [<img src="https://travis-ci.org/mneumann/rust-redis.png?branch=master">](https://travis-ci.org/mneumann/rust-redis)
 * SQL
   * [wycats/rust-arel](https://github.com/wycats/rust-arel): An in-progress port of the Ruby SQL building library arel
+  * MySql
+    * [blackbeam/rust-mysql-simple](https://github.com/blackbeam/rust-mysql-simple): [<img src="https://travis-ci.org/blackbeam/rust-mysql-simple.png?branch=master">](https://travis-ci.org/blackbeam/rust-mysql-simple)
   * PostgreSql
       * [sfackler/rust-postgres](https://github.com/sfackler/rust-postgres): [<img src="https://travis-ci.org/sfackler/rust-postgres.png?branch=master">](https://travis-ci.org/sfackler/rust-postgres)
   * Sqlite
