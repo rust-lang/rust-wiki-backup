@@ -1,7 +1,4 @@
 Listing of notes for developers working on the Rust compiler and tools.
-
-## Developer forum
-
 The developer forum is located at http://discuss.rust-lang.org/.
 
 ## Process and workflow notes
