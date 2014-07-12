@@ -115,7 +115,6 @@ See also [[Computer Graphics and Game Development]].
 * Gtk
   * [JeremyLetang/rgtk](https://github.com/JeremyLetang/rgtk)
 * ncurses
-  * [doomsplayer/ncurses-rust](https://github.com/doomsplayer/ncurses-rust)
   * [drhodes/rust-ncurses](https://github.com/drhodes/rust-ncurses)
   * [eevee/amulet](https://github.com/eevee/amulet)
   * [jeaye/ncurses-rs](https://github.com/jeaye/ncurses-rs): [![Build Status](https://travis-ci.org/jeaye/ncurses-rs.png?branch=master)](https://travis-ci.org/jeaye/ncurses-rs.png)
