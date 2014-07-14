@@ -31,6 +31,7 @@ owning pointer | `Box<T>`, a pointer to an owned box.
 <a name="phantom_type" />phantom type | An `enum` with no variants. This cannot be constructed in safe code. See the [cheetsheet](https://github.com/mozilla/rust/wiki/Doc-FAQ-Cheatsheet#how-do-i-express-phantom-types) for an example.
 plain old data (Pod) | Any value that can be safely copied by moving bits, including scalars, references, and structs containing only Pod. Types which are pod implement the `Copy` trait.
 raw pointer | `*T`, a pointer to anything. Requires unsafe code to dereference, no static verification is done on them.
+rust | Rust is named after a [fungus](http://en.wikipedia.org/wiki/Rust_%28fungus%29) that is robust, distributed, and parallel. And, Graydon is a biology nerd. See [TL;DR](http://www.reddit.com/r/rust/comments/27jvdt/internet_archaeology_the_definitive_endall_source/)
 rustdoc | The Rust documentation generator.
 rustc | The Rust source code compiler.
 cargo | The official package manager for Rust programs and libraries.
