@@ -12,7 +12,7 @@ The developer forum is located at http://discuss.rust-lang.org/.
 * [[Note compiler snapshots]]
 * [[Note git workflow]]
 * [[Note tag label names and definitions]]
-* [[Note style guide]]
+* [Note style guide](https://github.com/rust-lang/rust-guidelines)
 * [[Note bors usage]] - Instructing bors to build, check, and merge on github
 * [[Note testsuite]] - How Rust's tests are organized and operated
 * [[Note rustc hacking guide]]
