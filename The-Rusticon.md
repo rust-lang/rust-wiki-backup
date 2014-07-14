@@ -69,3 +69,22 @@ syntax | name
 `foo!()` | Either a [*macro*](#macro) or *syntax extension*.
 `#[xyz]`, `#![xyz]` | An [*attribute*](#attribute).
 `::<int>`, `: int` (in `let x: int ...`) | A [*type hint*](#type_hint). 
+
+## Taking Arguments
+
+AKA: "Help, where do I put the `mut`?"
+
+There are a few combinations:
+
+```rust
+fn A(x: T) { }
+fn B(x: &T) { }
+fn C(x: &mut T) { }
+fn D(mut x: T) { }
+fn E(mut x: &T) { }
+fn F(mut x: &mut T) { }
+```
+
+The `mut` before the `x` refers to the *binding*, whereas the `mut` after the `&` refers to *aliasability*. Only one `&mut` may exist to a given value at a given time, which means you are free to mutate it as you please. When a binding a mutable, you may reassign, so in `D` through `F`, in the body of the function you could write `x = foo();`. In `A` and `D`, the type is passed by-value, and if the type is "affine", it will be moved. The opposite of "affine" is "Copy", or "POD" (plain-old-data, jacked from C++), and these types will be copied rather than moved. That is, `A` and `D` would get a fresh copy that, if they mutated, the caller would not see the mutations. Additionally, `D` would be able to mutate `x` willy-nilly, as opposed to `A`, which would need a `let mut y = x;` or similar.
+
+`B` and `E` take shared references. These are "aliasable" references, and multiple shared references can point at the same data at the same time. Any mutations that happen through a `&T` need to be safe in the face of this! Doing so is called "internal mutability", and is how the `RefCell` type works.
