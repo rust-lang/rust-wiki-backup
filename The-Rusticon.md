@@ -5,11 +5,10 @@ term | definition
 <a name="algebraic_data_type" /> algebraic data type | A type with a set of possible variants. These are declared in Rust using the `enum` keyword. More information can be found on [the Wikipedia article](http://en.wikipedia.org/wiki/Algebraic_data_type).
 <a name="attribute" />attribute | A way of adding metadata to an item. Written as `#[attribute_name]` (other examples being `#[doc="Foo"]`, `#[doc(hidden="true")]`).
 bikeshed | A [highly important discussion](http://www.catb.org/jargon/html/B/bikeshedding.html) about some non-fundamental part of the language (such as syntax or identifier names).
-<a name="reference" /> reference | A non-owning pointer to an object. Has an associated lifetime, to assert that what it points to is always valid data.
 bors | The name of our continuous integration bot, a [Python script](https://github.com/graydon/bors) that checks for reviewed pull requests and runs the test on it, merging it if they pass.
 box | (noun) An allocated chunk of memory, (verb) To place a value in such a box
-unbox | To get the value out of a box, usually destroying the box in the process.
 built-in trait | A compiler-defined trait that is implicitly implemented for each eligible type. They are `Send`, `Share`, `Copy`, and `'static`.
+cargo | The official package manager for Rust programs and libraries.
 <a name="closure" />closure | Refers both to the type (`∣ ∣`, `proc()`) and the literal notation: `∣args∣ expression` (where expression can be a block, ie `∣x∣ { println(x.to_str()); 5}`). It is said to "close over" its environment; it can "capture" values from surrounding code. (*Note:* This is using a non-pipe unicode character because github doesn't like using that character in tables.)
 crate | Rust's compilation unit, a single library or executable. Is the root of a namespace.
 DST | [Dynamically sized type](http://smallcultfollowing.com/babysteps/blog/2014/01/05/dst-take-5/)
@@ -31,12 +30,12 @@ owning pointer | `Box<T>`, a pointer to an owned box.
 <a name="phantom_type" />phantom type | An `enum` with no variants. This cannot be constructed in safe code. See the [cheetsheet](https://github.com/mozilla/rust/wiki/Doc-FAQ-Cheatsheet#how-do-i-express-phantom-types) for an example.
 plain old data (Pod) | Any value that can be safely copied by moving bits, including scalars, references, and structs containing only Pod. Types which are pod implement the `Copy` trait.
 raw pointer | `*T`, a pointer to anything. Requires unsafe code to dereference, no static verification is done on them.
+<a name="record_structure" />record structure | A struct declared with named fields, for example `struct Point { x: f32, y: f32 }`
+<a name="reference" /> reference | A non-owning pointer to an object. Has an associated lifetime, to assert that what it points to is always valid data.
 rust | <a name="rust" /> Rust is named after a [fungus](http://en.wikipedia.org/wiki/Rust_%28fungus%29) that is robust, distributed, and parallel. And, Graydon is a biology nerd. See [TL;DR](http://www.reddit.com/r/rust/comments/27jvdt/internet_archaeology_the_definitive_endall_source/)
 rustdoc | The Rust documentation generator.
 rustc | The Rust source code compiler.
-cargo | The official package manager for Rust programs and libraries.
 sigil | (*Obsolete*) A character placed in front of a type, identifier or literal. In the context of Rust, this usually refered to the pointer symbols: `&`, `~`, `@`, and `*`.
-<a name="record_structure" />record structure | A struct declared with named fields, for example `struct Point { x: f32, y: f32 }`
 stack allocation | All local variables are a stack allocation.
 syntax extension | Code generation at compiletime, broken into three groups: declarative macros, which are described above as `macros`; procedural macros, which are written as Rust code that processes a token tree and produce an AST, and attributes.
 task | Rust's fundamental unit of computation. Similar to a thread.
@@ -44,6 +43,7 @@ trait | Rust's approach to ad-hoc polymorphism, and used for generics and dynami
 <a name="tuple_structure" />tuple structure | A struct declared [without named fields](#record_structure), for example `struct Point(f32, f32)`
 TWiR | This Week in Rust. cmr's [weekly summary](http://blog.octayn.net/) of Rust's development.
 <a name="type_hint" />type hint | Syntax like `foo::<int>()` to give an explicit type for a generic function, method or struct constructor. Usually redundant due to type inference.
+unbox | To get the value out of a box, usually destroying the box in the process.
 <a name="unit_type" />unit type | The unit type, denoted `()`, permits only one value, also denoted `()`. Functions without return value have return type `()`. Sometimes called *nil*.
 unit structure | A struct that only has one value, for example `struct Foo;` where `Foo` becomes the name of both the type and its only value. Works just the same as the *unit type* `()`, except it is a distinct type.
 <a name="variant" />variant | One of the set of possible values that can be represented by an `enum`.
