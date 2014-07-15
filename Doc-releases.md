@@ -18,7 +18,7 @@ This is an archive of all the existing Rust release artifacts. Each release is s
 * [Mac OS X i686 tarball][0.11.0-osx-x32-tar] ([signature][0.11.0-osx-x32-tar-sig])
 * [Documentation][0.11.0-docs]
 
-[0.11.0-announce]: https://mail.mozilla.org/pipermail/rust-dev/2014-April/009387.html
+[0.11.0-announce]: https://mail.mozilla.org/pipermail/rust-dev/2014-July/010655.html
 [0.11.0-notes]: https://github.com/mozilla/rust/blob/0.11.0/RELEASES.txt
 [0.11.0-tar]: http://static.rust-lang.org/dist/rust-0.11.0.tar.gz
 [0.11.0-tar-sig]: http://static.rust-lang.org/dist/rust-0.11.0.tar.gz.asc
