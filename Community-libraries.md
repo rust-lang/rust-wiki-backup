@@ -72,6 +72,9 @@ Wanted library: [[Lib datetime]]
 ## Embedded Languages
 * Lua
   * [kballard/rust-lua](https://github.com/kballard/rust-lua) (Lua 5.1): [<img src="https://travis-ci.org/kballard/rust-lua.png?branch=master">](https://travis-ci.org/kballard/rust-lua)
+  * [tomaka/rust-hl-lua](https://github.com/tomaka/rust-hl-lua) (Lua 5.2)
+* Python
+  * [lukemetz/rustpy](https://github.com/lukemetz/rustpy)
 
 ## Encoding
 * [Base64](https://github.com/mozilla/rust/blob/master/src/libserialize/base64.rs)
