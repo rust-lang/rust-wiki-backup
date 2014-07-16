@@ -27,7 +27,7 @@ wget -c http://dl.google.com/android/ndk/android-ndk-r9b-linux-x86_64.tar.bz2
 
 2. Download rustc from git repository
 
-        git clone  http://github.com/mozilla/rust.git
+        git clone https://github.com/rust-lang/rust.git
     
 3. Configure with ndk toolchain path
 
