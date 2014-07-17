@@ -124,6 +124,7 @@ See also [[Computer Graphics and Game Development]].
   * [jeaye/ncurses-rs](https://github.com/jeaye/ncurses-rs): [![Build Status](https://travis-ci.org/jeaye/ncurses-rs.png?branch=master)](https://travis-ci.org/jeaye/ncurses-rs.png)
   * [pnkfelix/rust-curses](https://github.com/pnkfelix/rust-curses)
 * Termbox
+  * [gchp/rustbox](https://github.com/gchp/rustbox)
   * [apribadi/rust-termbox](https://github.com/apribadi/rust-termbox)
 * wxWidgets
   * [kenz-gelsoft/wxRust](https://github.com/kenz-gelsoft/wxRust): [![Build Status](https://travis-ci.org/kenz-gelsoft/wxRust.png?branch=master)](https://travis-ci.org/kenz-gelsoft/wxRust)
