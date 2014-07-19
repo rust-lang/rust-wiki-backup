@@ -32,6 +32,7 @@ getting Rust working on other platforms
 
 [[Building for Android|Doc building for Android]]  
 [[Building for iOS|Doc building for iOS]]  
+[Cross-build for ARM Cortex M3/M4](https://github.com/hackndev/zinc) -  Zinc bare metal stack   
 
 ## Guides in other languages
 [Pr&eacute;sentation du langage Rust](http://lea-linux.org/documentations/Rust) - Detailed documentation in French, with examples  
