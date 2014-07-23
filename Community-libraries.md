@@ -87,6 +87,9 @@ Wanted library: [[Lib datetime]]
 * CSV
   * [BurntSushi/rust-csv](https://github.com/BurntSushi/rust-csv): [<img src="https://api.travis-ci.org/BurntSushi/rust-csv.png">](https://travis-ci.org/BurntSushi/rust-csv)
   * [Geal/rust-csv](https://github.com/Geal/rust-csv): [<img src="https://travis-ci.org/Geal/rust-csv.png?branch=master">](https://travis-ci.org/Geal/rust-csv)
+* Erlang External Term Format [(about)](http://erlang.org/doc/apps/erts/erl_ext_dist.html)
+  * [seriyps/rust-erl-ext](https://github.com/seriyps/rust-erl-ext)
+  * [LeebDeveloper/retf](https://github.com/LeebDeveloper/retf)
 * HTML
     * [veddan/rust-htmlescape](https://github.com/veddan/rust-htmlescape):  [<img src="https://travis-ci.org/veddan/rust-htmlescape.png?branch=master">](https://travis-ci.org/veddan/rust-htmlescape)
 * [JSON](https://github.com/mozilla/rust/blob/master/src/libserialize/json.rs)
