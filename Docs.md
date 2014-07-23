@@ -94,6 +94,7 @@ People sometimes write about Rust. Interesting stuff usually appears on [r/rust]
 Some Rust classics:
 
 * [A 30 minute introduction to Rust](http://words.steveklabnik.com/a-30-minute-introduction-to-rust)
+* [What does 'unsafe' mean?](http://huonw.github.io/2014/07/24/what-does-rusts-unsafe-mean.html)
 * [Pointers in Rust: A Guide](http://words.steveklabnik.com/pointers-in-rust-a-guide)
 * [Garbage collection thoughts](http://sebastiansylvan.com/2012/12/01/garbage-collection-thoughts/)
 * [Understanding pointers, ownership and lifetimes in Rust](http://paulkoerbitz.de/posts/Understanding-Pointers-Ownership-and-Lifetimes-in-Rust.html)
