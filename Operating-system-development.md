@@ -27,4 +27,7 @@ Here is a short list of some OS projects in Rust. Feel free to add your own:
 Contents to come..
 
 * [The OS-dev wiki](http://wiki.osdev.org/)
+* [ARM Infocenter](http://infocenter.arm.com/help/index.jsp)
+* [X86 Opcode and Instruction Reference](http://ref.x86asm.net/)
+* [Context Switching on X86](http://samwho.co.uk/blog/2013/06/01/context-switching-on-x86/)
 * [Rust's __morestack implementation](https://github.com/mozilla/rust/blob/master/src/rt/arch/i386/morestack.S)
