@@ -37,6 +37,7 @@ meaning of the label and does not think it is self-evident.
 | A-metadata               | Crate-embedded data for reflection/compilation    |
 | A-parser                 | Parser impl. (not *specification*; see A-grammar) |
 | A-pkg                    | Issues with package management e.g. rustpkg       |
+| A-plugin                 | compiler plugins and their infrastructure         |
 | A-pretty                 | Pretty-printing rust source via `rustc --pretty`  |
 | A-regions                | Lifetime semantics; borrow-checker (aka borrowck) |
 | A-resolve                | Identifier/name resolution                        |
