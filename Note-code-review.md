@@ -5,7 +5,7 @@ Code review checklist
 * Commit message summaries have to be descriptive.
 * Commit messages should be *accurate*: if it has deviated from top-level description, don't `r+` without getting that fixed; see e.g. [flip-i-mean-rev commit](../commit/bf9c25562da1c0e768309693617e54e998a953d1) as an example of accidental deviation.
 * Almost every change should contain a test case as described in the [testing](https://github.com/mozilla/rust/wiki/Doc-unit-testing) page.
-* Code optimization should contain a bench case as described in the [bench](https://github.com/mozilla/rust/wiki/Doc-unit-testing#benchmarking) section of the [testing](https://github.com/mozilla/rust/wiki/Doc-unit-testing) page.
+* Code optimization should contain a bench case as described in the [bench](https://github.com/rust-lang/rust/wiki/Note-testsuite#benchmarks-saved-metrics-and-ratchets) section of the [testing](https://github.com/rust-lang/rust/wiki/Note-testsuite) page.
 * Look for commits that could be squashed. 
 
 General Suggestions
