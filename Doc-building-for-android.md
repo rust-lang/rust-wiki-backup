@@ -1,6 +1,6 @@
 Rust has been ported to Android OS running on ARM architecture. Android on other architectures is not yet supported.
 
-In the issue tracker, [Android-related issues](https://github.com/mozilla/rust/issues?labels=A-android) are labelled `A-android`, and [ARM-related issues](https://github.com/mozilla/rust/issues?labels=A-ARM) are labelled `A-ARM`.
+In the issue tracker, [Android-related issues](https://github.com/rust-lang/rust/issues?labels=A-android) are labelled `A-android`, and [ARM-related issues](https://github.com/rust-lang/rust/issues?labels=A-ARM) are labelled `A-ARM`.
 
 Instructions to build a cross compiler to Android on ARM, to cross compile Rust sources, and to run resulting binaries follow.
 
