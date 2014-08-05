@@ -175,6 +175,8 @@ See also [[Computer Graphics and Game Development]].
   * [glycerine/rust-nanomsg](https://github.com/glycerine/rust-nanomsg)
 * ZeroMQ
   * [erickt/rust-zmq](https://github.com/erickt/rust-zmq):  [<img src="https://travis-ci.org/erickt/rust-zmq.png?branch=master">](https://travis-ci.org/erickt/rust-zmq)
+* STOMP
+  * [zslayton/stomp-rs](https://github.com/zslayton/stomp-rs):  [<img src="https://travis-ci.org/zslayton/stomp-rs.png?branch=master">](https://travis-ci.org/zslayton/stomp-rs)
 
 ## NoSQL
 See [Database Access](Community-libraries#wiki-database-access)
