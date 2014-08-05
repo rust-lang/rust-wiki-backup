@@ -2,6 +2,7 @@ See also:
 
 * [Awesome Rust](https://github.com/kud1ing/awesome-rust)
 * [Travis CI Status](http://hiho.io/rust-ci/)
+* [Rust Kit Library Browser](http://rustkit.io/)
 
 ## Audio
 
