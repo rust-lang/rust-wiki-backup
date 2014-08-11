@@ -1,6 +1,6 @@
 Rust's primary documentation, including the tutorial, guides and manual, are on the Rust website. The wiki is mostly used for in-progress documentation or somewhat random pieces of advice/hints, as well as fast-evolving community maintained lists.
 
-* [Master](http://static.rust-lang.org/doc/master/index.html) - documentation for the 'master' branch of the git repository.
+* [Master](http://doc.rust-lang.org/master/index.html) - documentation for the 'master' branch of the git repository.
 * [Release 0.11.0](http://doc.rust-lang.org/0.11.0/index.html) - documentation for the latest release.
 
 Additional supplementary documentation is maintained here on the wiki.
