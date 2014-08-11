@@ -20,22 +20,22 @@ This is an archive of all the existing Rust release artifacts. Each release is s
 
 [0.11.0-announce]: https://mail.mozilla.org/pipermail/rust-dev/2014-July/010655.html
 [0.11.0-notes]: https://github.com/mozilla/rust/blob/0.11.0/RELEASES.txt
-[0.11.0-tar]: http://static.rust-lang.org/dist/rust-0.11.0.tar.gz
-[0.11.0-tar-sig]: http://static.rust-lang.org/dist/rust-0.11.0.tar.gz.asc
-[0.11.0-exe]: http://static.rust-lang.org/dist/rust-0.11.0-install.exe
-[0.11.0-exe-sig]: http://static.rust-lang.org/dist/rust-0.11.0-install.exe.asc
-[0.11.0-linux-x64]: http://static.rust-lang.org/dist/rust-0.11.0-x86_64-unknown-linux-gnu.tar.gz
-[0.11.0-linux-x64-sig]: http://static.rust-lang.org/dist/rust-0.11.0-x86_64-unknown-linux-gnu.tar.gz.asc
-[0.11.0-linux-x32]: http://static.rust-lang.org/dist/rust-0.11.0-i686-unknown-linux-gnu.tar.gz
-[0.11.0-linux-x32-sig]: http://static.rust-lang.org/dist/rust-0.11.0-i686-unknown-linux-gnu.tar.gz.asc
-[0.11.0-osx-x64-pkg]: http://static.rust-lang.org/dist/rust-0.11.0-x86_64-apple-darwin.pkg
-[0.11.0-osx-x64-pkg-sig]: http://static.rust-lang.org/dist/rust-0.11.0-x86_64-apple-darwin.pkg.asc
-[0.11.0-osx-x32-pkg]: http://static.rust-lang.org/dist/rust-0.11.0-i686-apple-darwin.pkg
-[0.11.0-osx-x32-pkg-sig]: http://static.rust-lang.org/dist/rust-0.11.0-i686-apple-darwin.pkg.asc
-[0.11.0-osx-x64-tar]: http://static.rust-lang.org/dist/rust-0.11.0-x86_64-apple-darwin.tar.gz
-[0.11.0-osx-x64-tar-sig]: http://static.rust-lang.org/dist/rust-0.11.0-x86_64-apple-darwin.tar.gz.asc
-[0.11.0-osx-x32-tar]: http://static.rust-lang.org/dist/rust-0.11.0-i686-apple-darwin.tar.gz
-[0.11.0-osx-x32-tar-sig]: http://static.rust-lang.org/dist/rust-0.11.0-i686-apple-darwin.tar.gz.asc
+[0.11.0-tar]: https://static.rust-lang.org/dist/rust-0.11.0.tar.gz
+[0.11.0-tar-sig]: https://static.rust-lang.org/dist/rust-0.11.0.tar.gz.asc
+[0.11.0-exe]: https://static.rust-lang.org/dist/rust-0.11.0-install.exe
+[0.11.0-exe-sig]: https://static.rust-lang.org/dist/rust-0.11.0-install.exe.asc
+[0.11.0-linux-x64]: https://static.rust-lang.org/dist/rust-0.11.0-x86_64-unknown-linux-gnu.tar.gz
+[0.11.0-linux-x64-sig]: https://static.rust-lang.org/dist/rust-0.11.0-x86_64-unknown-linux-gnu.tar.gz.asc
+[0.11.0-linux-x32]: https://static.rust-lang.org/dist/rust-0.11.0-i686-unknown-linux-gnu.tar.gz
+[0.11.0-linux-x32-sig]: https://static.rust-lang.org/dist/rust-0.11.0-i686-unknown-linux-gnu.tar.gz.asc
+[0.11.0-osx-x64-pkg]: https://static.rust-lang.org/dist/rust-0.11.0-x86_64-apple-darwin.pkg
+[0.11.0-osx-x64-pkg-sig]: https://static.rust-lang.org/dist/rust-0.11.0-x86_64-apple-darwin.pkg.asc
+[0.11.0-osx-x32-pkg]: https://static.rust-lang.org/dist/rust-0.11.0-i686-apple-darwin.pkg
+[0.11.0-osx-x32-pkg-sig]: https://static.rust-lang.org/dist/rust-0.11.0-i686-apple-darwin.pkg.asc
+[0.11.0-osx-x64-tar]: https://static.rust-lang.org/dist/rust-0.11.0-x86_64-apple-darwin.tar.gz
+[0.11.0-osx-x64-tar-sig]: https://static.rust-lang.org/dist/rust-0.11.0-x86_64-apple-darwin.tar.gz.asc
+[0.11.0-osx-x32-tar]: https://static.rust-lang.org/dist/rust-0.11.0-i686-apple-darwin.tar.gz
+[0.11.0-osx-x32-tar-sig]: https://static.rust-lang.org/dist/rust-0.11.0-i686-apple-darwin.tar.gz.asc
 [0.11.0-docs]: http://doc.rust-lang.org/0.11.0/index.html
 
 ## 0.10
@@ -54,22 +54,22 @@ This is an archive of all the existing Rust release artifacts. Each release is s
 
 [0.10-announce]: https://mail.mozilla.org/pipermail/rust-dev/2014-April/009387.html
 [0.10-notes]: https://github.com/mozilla/rust/blob/0.10/RELEASES.txt
-[0.10-tar]: http://static.rust-lang.org/dist/rust-0.10.tar.gz
-[0.10-tar-sig]: http://static.rust-lang.org/dist/rust-0.10.tar.gz.asc
-[0.10-exe]: http://static.rust-lang.org/dist/rust-0.10-install.exe
-[0.10-exe-sig]: http://static.rust-lang.org/dist/rust-0.10-install.exe.asc
-[0.10-linux-x64]: http://static.rust-lang.org/dist/rust-0.10-x86_64-unknown-linux-gnu.tar.gz
-[0.10-linux-x64-sig]: http://static.rust-lang.org/dist/rust-0.10-x86_64-unknown-linux-gnu.tar.gz.asc
-[0.10-linux-x32]: http://static.rust-lang.org/dist/rust-0.10-i686-unknown-linux-gnu.tar.gz
-[0.10-linux-x32-sig]: http://static.rust-lang.org/dist/rust-0.10-i686-unknown-linux-gnu.tar.gz.asc
-[0.10-osx-x64-pkg]: http://static.rust-lang.org/dist/rust-0.10-x86_64-apple-darwin.pkg
-[0.10-osx-x64-pkg-sig]: http://static.rust-lang.org/dist/rust-0.10-x86_64-apple-darwin.pkg.asc
-[0.10-osx-x32-pkg]: http://static.rust-lang.org/dist/rust-0.10-i686-apple-darwin.pkg
-[0.10-osx-x32-pkg-sig]: http://static.rust-lang.org/dist/rust-0.10-i686-apple-darwin.pkg.asc
-[0.10-osx-x64-tar]: http://static.rust-lang.org/dist/rust-0.10-x86_64-apple-darwin.tar.gz
-[0.10-osx-x64-tar-sig]: http://static.rust-lang.org/dist/rust-0.10-x86_64-apple-darwin.tar.gz.asc
-[0.10-osx-x32-tar]: http://static.rust-lang.org/dist/rust-0.10-i686-apple-darwin.tar.gz
-[0.10-osx-x32-tar-sig]: http://static.rust-lang.org/dist/rust-0.10-i686-apple-darwin.tar.gz.asc
+[0.10-tar]: https://static.rust-lang.org/dist/rust-0.10.tar.gz
+[0.10-tar-sig]: https://static.rust-lang.org/dist/rust-0.10.tar.gz.asc
+[0.10-exe]: https://static.rust-lang.org/dist/rust-0.10-install.exe
+[0.10-exe-sig]: https://static.rust-lang.org/dist/rust-0.10-install.exe.asc
+[0.10-linux-x64]: https://static.rust-lang.org/dist/rust-0.10-x86_64-unknown-linux-gnu.tar.gz
+[0.10-linux-x64-sig]: https://static.rust-lang.org/dist/rust-0.10-x86_64-unknown-linux-gnu.tar.gz.asc
+[0.10-linux-x32]: https://static.rust-lang.org/dist/rust-0.10-i686-unknown-linux-gnu.tar.gz
+[0.10-linux-x32-sig]: https://static.rust-lang.org/dist/rust-0.10-i686-unknown-linux-gnu.tar.gz.asc
+[0.10-osx-x64-pkg]: https://static.rust-lang.org/dist/rust-0.10-x86_64-apple-darwin.pkg
+[0.10-osx-x64-pkg-sig]: https://static.rust-lang.org/dist/rust-0.10-x86_64-apple-darwin.pkg.asc
+[0.10-osx-x32-pkg]: https://static.rust-lang.org/dist/rust-0.10-i686-apple-darwin.pkg
+[0.10-osx-x32-pkg-sig]: https://static.rust-lang.org/dist/rust-0.10-i686-apple-darwin.pkg.asc
+[0.10-osx-x64-tar]: https://static.rust-lang.org/dist/rust-0.10-x86_64-apple-darwin.tar.gz
+[0.10-osx-x64-tar-sig]: https://static.rust-lang.org/dist/rust-0.10-x86_64-apple-darwin.tar.gz.asc
+[0.10-osx-x32-tar]: https://static.rust-lang.org/dist/rust-0.10-i686-apple-darwin.tar.gz
+[0.10-osx-x32-tar-sig]: https://static.rust-lang.org/dist/rust-0.10-i686-apple-darwin.tar.gz.asc
 [0.10-docs]: http://doc.rust-lang.org/doc/0.10/index.html
 
 ## 0.9
@@ -82,10 +82,10 @@ This is an archive of all the existing Rust release artifacts. Each release is s
 
 [0.9-announce]: https://mail.mozilla.org/pipermail/rust-dev/2014-January/007753.html
 [0.9-notes]: https://github.com/mozilla/rust/blob/0.9/RELEASES.txt
-[0.9-tar]: http://static.rust-lang.org/dist/rust-0.9.tar.gz
-[0.9-tar-sig]: http://static.rust-lang.org/dist/rust-0.9.tar.gz.asc
-[0.9-exe]: http://static.rust-lang.org/dist/rust-0.9-install.exe
-[0.9-exe-sig]: http://static.rust-lang.org/dist/rust-0.9-install.exe.asc
+[0.9-tar]: https://static.rust-lang.org/dist/rust-0.9.tar.gz
+[0.9-tar-sig]: https://static.rust-lang.org/dist/rust-0.9.tar.gz.asc
+[0.9-exe]: https://static.rust-lang.org/dist/rust-0.9-install.exe
+[0.9-exe-sig]: https://static.rust-lang.org/dist/rust-0.9-install.exe.asc
 [0.9-rustpkg-manual]: http://doc.rust-lang.org/doc/0.9/rustpkg.html
 [0.9-docs]: http://doc.rust-lang.org/doc/0.9/index.html
 
@@ -110,10 +110,10 @@ This is an archive of all the existing Rust release artifacts. Each release is s
 
 [0.8-announce]: https://mail.mozilla.org/pipermail/rust-dev/2013-September/005804.html
 [0.8-notes]: https://github.com/mozilla/rust/blob/0.8/RELEASES.txt
-[0.8-tar]: http://static.rust-lang.org/dist/rust-0.8.tar.gz
-[0.8-tar-sig]: http://static.rust-lang.org/dist/rust-0.8.tar.gz.asc
-[0.8-exe]: http://static.rust-lang.org/dist/rust-0.8-install.exe
-[0.8-exe-sig]: http://static.rust-lang.org/dist/rust-0.8-install.exe.asc
+[0.8-tar]: https://static.rust-lang.org/dist/rust-0.8.tar.gz
+[0.8-tar-sig]: https://static.rust-lang.org/dist/rust-0.8.tar.gz.asc
+[0.8-exe]: https://static.rust-lang.org/dist/rust-0.8-install.exe
+[0.8-exe-sig]: https://static.rust-lang.org/dist/rust-0.8-install.exe.asc
 [0.8-tutorial]: http://doc.rust-lang.org/doc/0.8/tutorial.html
 [0.8-tutorial-borrowed-ptr]: http://doc.rust-lang.org/doc/0.8/tutorial-borrowed-ptr.html
 [0.8-tutorial-conditions]: http://doc.rust-lang.org/doc/0.8/tutorial-conditions.html
@@ -141,10 +141,10 @@ This is an archive of all the existing Rust release artifacts. Each release is s
 
 [0.7-announce]: https://mail.mozilla.org/pipermail/rust-dev/2013-July/004667.html
 [0.7-notes]: https://github.com/mozilla/rust/blob/release-0.7/RELEASES.txt
-[0.7-tar]: http://static.rust-lang.org/dist/rust-0.7.tar.gz
-[0.7-tar-sig]: http://static.rust-lang.org/dist/rust-0.7.tar.gz.asc
-[0.7-exe]: http://static.rust-lang.org/dist/rust-0.7-install.exe
-[0.7-exe-sig]: http://static.rust-lang.org/dist/rust-0.7-install.exe.asc
+[0.7-tar]: https://static.rust-lang.org/dist/rust-0.7.tar.gz
+[0.7-tar-sig]: https://static.rust-lang.org/dist/rust-0.7.tar.gz.asc
+[0.7-exe]: https://static.rust-lang.org/dist/rust-0.7-install.exe
+[0.7-exe-sig]: https://static.rust-lang.org/dist/rust-0.7-install.exe.asc
 [0.7-tutorial]: http://doc.rust-lang.org/doc/0.7/tutorial.html
 [0.7-manual]: http://doc.rust-lang.org/doc/0.7/rust.html
 [0.7-manual-pdf]: http://doc.rust-lang.org/doc/0.7/rust.pdf
@@ -165,10 +165,10 @@ This is an archive of all the existing Rust release artifacts. Each release is s
 
 [0.6-announce]: https://mail.mozilla.org/pipermail/rust-dev/2013-April/003427.html  
 [0.6-notes]: https://github.com/mozilla/rust/blob/release-0.6/RELEASES.txt
-[0.6-tar]: http://static.rust-lang.org/dist/rust-0.6.tar.gz
-[0.6-tar-sig]: http://static.rust-lang.org/dist/rust-0.6.tar.gz.asc
-[0.6-exe]: http://static.rust-lang.org/dist/rust-0.6-install.exe
-[0.6-exe-sig]: http://static.rust-lang.org/dist/rust-0.6-install.exe.asc
+[0.6-tar]: https://static.rust-lang.org/dist/rust-0.6.tar.gz
+[0.6-tar-sig]: https://static.rust-lang.org/dist/rust-0.6.tar.gz.asc
+[0.6-exe]: https://static.rust-lang.org/dist/rust-0.6-install.exe
+[0.6-exe-sig]: https://static.rust-lang.org/dist/rust-0.6-install.exe.asc
 [0.6-tutorial]: http://doc.rust-lang.org/doc/0.6/tutorial.html
 [0.6-manual]: http://doc.rust-lang.org/doc/0.6/rust.html
 [0.6-manual-pdf]: http://doc.rust-lang.org/doc/0.6/rust.pdf
@@ -188,10 +188,10 @@ This is an archive of all the existing Rust release artifacts. Each release is s
 
 [0.5-announce]:  https://mail.mozilla.org/pipermail/rust-dev/2012-December/002787.html
 [0.5-notes]: https://github.com/mozilla/rust/blob/release-0.5/RELEASES.txt
-[0.5-tar]: http://static.rust-lang.org/dist/rust-0.5.tar.gz
-[0.5-tar-sig]: http://static.rust-lang.org/dist/rust-0.5.tar.gz.asc
-[0.5-exe]: http://static.rust-lang.org/dist/rust-0.5-install.exe
-[0.5-exe-sig]: http://static.rust-lang.org/dist/rust-0.5-install.exe.asc
+[0.5-tar]: https://static.rust-lang.org/dist/rust-0.5.tar.gz
+[0.5-tar-sig]: https://static.rust-lang.org/dist/rust-0.5.tar.gz.asc
+[0.5-exe]: https://static.rust-lang.org/dist/rust-0.5-install.exe
+[0.5-exe-sig]: https://static.rust-lang.org/dist/rust-0.5-install.exe.asc
 [0.5-tutorial]: http://doc.rust-lang.org/doc/0.5/tutorial.html
 [0.5-manual]: http://doc.rust-lang.org/doc/0.5/rust.html
 [0.5-manual-pdf]: http://doc.rust-lang.org/doc/0.5/rust.pdf
@@ -211,10 +211,10 @@ This is an archive of all the existing Rust release artifacts. Each release is s
 
 [0.4-announce]: https://mail.mozilla.org/pipermail/rust-dev/2012-October/002489.html
 [0.4-notes]: https://github.com/mozilla/rust/blob/release-0.4/RELEASES.txt
-[0.4-tar]: http://static.rust-lang.org/dist/rust-0.4.tar.gz
-[0.4-tar-sig]: http://static.rust-lang.org/dist/rust-0.4.tar.gz.asc
-[0.4-exe]: http://static.rust-lang.org/dist/rust-0.4-install.exe
-[0.4-exe-sig]: http://static.rust-lang.org/dist/rust-0.4-install.exe.asc
+[0.4-tar]: https://static.rust-lang.org/dist/rust-0.4.tar.gz
+[0.4-tar-sig]: https://static.rust-lang.org/dist/rust-0.4.tar.gz.asc
+[0.4-exe]: https://static.rust-lang.org/dist/rust-0.4-install.exe
+[0.4-exe-sig]: https://static.rust-lang.org/dist/rust-0.4-install.exe.asc
 [0.4-tutorial]: http://doc.rust-lang.org/doc/0.4/tutorial.html
 [0.4-manual]: http://doc.rust-lang.org/doc/0.4/rust.html
 [0.4-manual-pdf]: http://doc.rust-lang.org/doc/0.4/rust.pdf
@@ -229,8 +229,8 @@ This is an archive of all the existing Rust release artifacts. Each release is s
 
 [0.3.1-announce]: https://mail.mozilla.org/pipermail/rust-dev/2012-July/002152.html
 [0.3.1-notes]: https://github.com/mozilla/rust/blob/release-0.3.1/RELEASES.txt
-[0.3.1-tar]: http://static.rust-lang.org/dist/rust-0.3.1.tar.gz
-[0.3.1-tar-sig]: http://static.rust-lang.org/dist/rust-0.3.1.tar.gz.asc
+[0.3.1-tar]: https://static.rust-lang.org/dist/rust-0.3.1.tar.gz
+[0.3.1-tar-sig]: https://static.rust-lang.org/dist/rust-0.3.1.tar.gz.asc
 
 This was an OS X bugfix release.
 
@@ -247,10 +247,10 @@ This was an OS X bugfix release.
 
 [0.3-announce]: https://mail.mozilla.org/pipermail/rust-dev/2012-July/002087.html
 [0.3-notes]: https://github.com/mozilla/rust/blob/release-0.3/RELEASES.txt
-[0.3-tar]: http://static.rust-lang.org/dist/rust-0.3.tar.gz
-[0.3-tar-sig]: http://static.rust-lang.org/dist/rust-0.3.tar.gz.asc
-[0.3-exe]: http://static.rust-lang.org/dist/rust-0.3-install.exe
-[0.3-exe-sig]: http://static.rust-lang.org/dist/rust-0.3-install.exe.asc
+[0.3-tar]: https://static.rust-lang.org/dist/rust-0.3.tar.gz
+[0.3-tar-sig]: https://static.rust-lang.org/dist/rust-0.3.tar.gz.asc
+[0.3-exe]: https://static.rust-lang.org/dist/rust-0.3-install.exe
+[0.3-exe-sig]: https://static.rust-lang.org/dist/rust-0.3-install.exe.asc
 [0.3-tutorial]: http://doc.rust-lang.org/doc/0.3/tutorial.html
 [0.3-manual]: http://doc.rust-lang.org/doc/0.3/rust.html
 [0.3-manual-pdf]: http://doc.rust-lang.org/doc/0.3/rust.pdf
@@ -266,10 +266,10 @@ This was an OS X bugfix release.
 
 [0.2-announce]: https://mail.mozilla.org/pipermail/rust-dev/2012-March/001511.html
 [0.2-notes]: https://github.com/mozilla/rust/blob/release-0.2/RELEASES.txt
-[0.2-tar]: http://static.rust-lang.org/dist/rust-0.2.tar.gz
-[0.2-tar-sig]: http://static.rust-lang.org/dist/rust-0.2.tar.gz.asc
-[0.2-exe]: http://static.rust-lang.org/dist/rust-0.2-install.exe
-[0.2-exe-sig]: http://static.rust-lang.org/dist/rust-0.2-install.exe.asc
+[0.2-tar]: https://static.rust-lang.org/dist/rust-0.2.tar.gz
+[0.2-tar-sig]: https://static.rust-lang.org/dist/rust-0.2.tar.gz.asc
+[0.2-exe]: https://static.rust-lang.org/dist/rust-0.2-install.exe
+[0.2-exe-sig]: https://static.rust-lang.org/dist/rust-0.2-install.exe.asc
 
 ## 0.1
 
@@ -279,5 +279,5 @@ This was an OS X bugfix release.
 
 [0.1-announce]: https://mail.mozilla.org/pipermail/rust-dev/2012-January/001256.html
 [0.1-notes]: https://github.com/mozilla/rust/blob/release-0.1/RELEASES.txt
-[0.1-tar]: http://static.rust-lang.org/dist/rust-0.1.tar.gz
-[0.1-tar-sig]: http://static.rust-lang.org/dist/rust-0.1.tar.gz.asc
+[0.1-tar]: https://static.rust-lang.org/dist/rust-0.1.tar.gz
+[0.1-tar-sig]: https://static.rust-lang.org/dist/rust-0.1.tar.gz.asc
