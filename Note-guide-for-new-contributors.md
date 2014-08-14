@@ -24,7 +24,6 @@ The source is also littered with hundreds of comments marked with 'FIXME' and 'X
 
 Another easy way to get involved is to participate in bug triage. Every week we send out lists of bugs to contributors along with instructions on how to move them forward. If you would like to participate email Brian at banderson@mozilla.com.
 
-Oh, hey, it's more [[contribution ideas|Note-contribution-ideas]].
 
 If in doubt, ask on IRC. Somebody will surely have a task that needs to be done.
 
