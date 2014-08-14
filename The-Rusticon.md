@@ -29,7 +29,7 @@ newtype struct | A [*tuple structure*](#tuple_structure) with a single unnamed f
 owning pointer | `Box<T>`, a pointer to an owned box.
 <a name="phantom_type" />phantom type | An `enum` with no variants. This cannot be constructed in safe code. See the [cheetsheet](https://github.com/mozilla/rust/wiki/Doc-FAQ-Cheatsheet#how-do-i-express-phantom-types) for an example.
 plain old data (Pod) | Any value that can be safely copied by moving bits, including scalars, references, and structs containing only Pod. Types which are pod implement the `Copy` trait.
-raw pointer | `*T`, a pointer to anything. Requires unsafe code to dereference, no static verification is done on them.
+raw pointer | `*const T` or `*mut T`, a pointer to anything. Requires unsafe code to dereference, no static verification is done on them.
 <a name="record_structure" />record structure | A struct declared with named fields, for example `struct Point { x: f32, y: f32 }`
 <a name="reference" /> reference | A non-owning pointer to an object. Has an associated lifetime, to assert that what it points to is always valid data.
 rust | <a name="rust" /> Rust is named after a [fungus](http://en.wikipedia.org/wiki/Rust_%28fungus%29) that is robust, distributed, and parallel. And, Graydon is a biology nerd. See [TL;DR](http://www.reddit.com/r/rust/comments/27jvdt/internet_archaeology_the_definitive_endall_source/)
