@@ -19,10 +19,11 @@ Rust is quickly becoming an excellent language for computer graphics and game de
 - [RustAllegro](https://github.com/SiegeLord/RustAllegro) [![Build Status](https://travis-ci.org/SiegeLord/RustAllegro.png?branch=master)](https://travis-ci.org/SiegeLord/RustAllegro)
 - [ncurses-rs](https://github.com/jeaye/ncurses-rs) [<img src="https://travis-ci.org/jeaye/ncurses-rs.png?branch=master">](https://travis-ci.org/jeaye/ncurses-rs)
 
-#### OpenGL
+#### Graphics
 
 - [gl-rs](https://github.com/bjz/gl-rs) [<img src="https://travis-ci.org/bjz/gl-rs.png?branch=master">](https://travis-ci.org/bjz/gl-rs)
 - [rust-opengles](https://github.com/mozilla-servo/rust-opengles)
+- [gfx-rs](https://github.com/gfx-rs/gfx-rs) [<img src="https://travis-ci.org/gfx-rs/gfx-rs.png?branch=master">](https://travis-ci.org/gfx-rs/gfx-rs)
 
 #### Audio
 
