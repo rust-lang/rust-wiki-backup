@@ -8,6 +8,12 @@ Rust is quickly becoming an excellent language for computer graphics and game de
 
 - [rust-gamedev-kit](https://github.com/rlane/rust-gamedev-kit) [<img src="https://travis-ci.org/rlane/rust-gamedev-kit.png?branch=master">](https://travis-ci.org/rlane/rust-gamedev-kit)
 
+#### Graphics
+
+- [gl-rs](https://github.com/bjz/gl-rs) [<img src="https://travis-ci.org/bjz/gl-rs.png?branch=master">](https://travis-ci.org/bjz/gl-rs)
+- [rust-opengles](https://github.com/mozilla-servo/rust-opengles)
+- [gfx-rs](https://github.com/gfx-rs/gfx-rs) [<img src="https://travis-ci.org/gfx-rs/gfx-rs.png?branch=master">](https://travis-ci.org/gfx-rs/gfx-rs)
+
 #### Windowing
 
 - [glfw-rs](https://github.com/bjz/glfw-rs) [<img src="https://travis-ci.org/bjz/glfw-rs.png?branch=master">](https://travis-ci.org/bjz/glfw-rs)
@@ -18,12 +24,6 @@ Rust is quickly becoming an excellent language for computer graphics and game de
 - [rust-glut](https://github.com/mozilla-servo/rust-glut)
 - [RustAllegro](https://github.com/SiegeLord/RustAllegro) [![Build Status](https://travis-ci.org/SiegeLord/RustAllegro.png?branch=master)](https://travis-ci.org/SiegeLord/RustAllegro)
 - [ncurses-rs](https://github.com/jeaye/ncurses-rs) [<img src="https://travis-ci.org/jeaye/ncurses-rs.png?branch=master">](https://travis-ci.org/jeaye/ncurses-rs)
-
-#### Graphics
-
-- [gl-rs](https://github.com/bjz/gl-rs) [<img src="https://travis-ci.org/bjz/gl-rs.png?branch=master">](https://travis-ci.org/bjz/gl-rs)
-- [rust-opengles](https://github.com/mozilla-servo/rust-opengles)
-- [gfx-rs](https://github.com/gfx-rs/gfx-rs) [<img src="https://travis-ci.org/gfx-rs/gfx-rs.png?branch=master">](https://travis-ci.org/gfx-rs/gfx-rs)
 
 #### Audio
 
