@@ -3,6 +3,7 @@ Rust is quickly becoming an excellent language for computer graphics and game de
 ### Community
 
 - [#rust-gamedev](http://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-gamedev) on irc.mozilla.org 
+- [/r/rust_gamedev](http://reddit.com/r/rust_gamedev)
 
 ### Libraries
 
