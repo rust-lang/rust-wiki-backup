@@ -256,6 +256,7 @@ See also http://arewewebyet.com/
     * [Ogeon/rustful](https://github.com/Ogeon/rustful):  [<img src="https://travis-ci.org/Ogeon/rustful.png?branch=master">](https://travis-ci.org/Ogeon/rustful)
     * [skade/widmann](https://github.com/skade/widmann): inspired by Sinatra. [<img src="https://travis-ci.org/skade/widmann.png?branch=master">](https://travis-ci.org/skade/widmann)
     * [WebeWizard/libhttpd](https://github.com/WebeWizard/libhttpd)
+    * [nathansizemore/rustic-io](https://github.com/nathansizemore/rustic-io): Websocket abstraction inspired by socket.io [<img src="https://travis-ci.org/nathansizemore/rustic-io.png?branch=master">](https://travis-ci.org/nathansizemore/rustic-io)
 
 ## XML
 See [Encoding](Community-libraries#encoding)
