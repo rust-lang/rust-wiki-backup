@@ -108,7 +108,9 @@ export PATH="/c/mingw-builds/x32-4.8.1-release-win32-dwarf-rev5/mingw32/bin:/usr
 
 Get the command line tools for xcode from  [Apple Developer Downloads](https://developer.apple.com/downloads/index.action) or Xcode.app -> Preferences -> Downloads -> Components.
 
-Then, optionally get Valgrind and pandoc. Vallgrind is available in machomebrew: `brew install valgrind`. pandoc must be installed manually according to the [installation instructions](http://johnmacfarlane.net/pandoc/installing.html). ccache can also be installed from machomebrew: `brew install ccache`.
+Then, optionally get Valgrind and pandoc. Valgrind is available from [homebrew]: `brew install valgrind`. pandoc must be installed manually according to the [installation instructions](http://johnmacfarlane.net/pandoc/installing.html). ccache can also be installed from [homebrew]: `brew install ccache`.
+
+[homebrew]: http://brew.sh/
 
 Sometimes, on OS X, compiling Rust might fail with a "too many open files" error, especially when running `make check`.
  * One solution is to limit the number of concurrent threads during the run, via the environment variable `RUST_THREADS`, e.g. `% RUST_THREADS=2 make check`.
