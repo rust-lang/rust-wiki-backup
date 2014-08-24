@@ -250,7 +250,7 @@ See also http://arewewebyet.com/
     * [conduit-rust/conduit](https://github.com/conduit-rust/conduit)
     * [Earlz/rustymvc](https://github.com/Earlz/rustymvc)
     * [erickt/rust-mongrel2](https://github.com/erickt/rust-mongrel2): bindings for the [Mongrel2](http://mongrel2.org) webserver
-    * [iron/iron](https://github.com/iron/iron): inspired by Express.js, which is inspired by Sinatra.
+    * [iron/iron](https://github.com/iron/iron): Middleware based, concurrency oriented pure Rust framework.
     * [jroweboy/oxidize](https://github.com/jroweboy/oxidize)
     * [nickel-org/nickel.rs](https://github.com/nickel-org/nickel.rs): inspired by Express.js, which is inspired by Sinatra.
     * [Ogeon/rustful](https://github.com/Ogeon/rustful):  [<img src="https://travis-ci.org/Ogeon/rustful.png?branch=master">](https://travis-ci.org/Ogeon/rustful)
