@@ -197,9 +197,8 @@ See [Database Access](Community-libraries#wiki-database-access)
 * [random](https://github.com/mozilla/rust/blob/master/src/libcstd/rand.rs)
 
 ## Regular Expressions
-See https://github.com/mozilla/rust/issues/3591
+See the [regex crate](http://doc.rust-lang.org/regex/).
 
-* [BurntSushi/regexp](https://github.com/BurntSushi/regexp):  [<img src="https://travis-ci.org/BurntSushi/regexp.png?branch=master">](https://travis-ci.org/BurntSushi/regexp)
 * [glennsl/rust-re](https://github.com/glennsl/rust-re)
 * [sanxiyn/rree](https://github.com/sanxiyn/rree)
 * PCRE
