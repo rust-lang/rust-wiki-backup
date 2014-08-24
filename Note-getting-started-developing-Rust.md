@@ -1,8 +1,9 @@
 This page describes how to download and build the Rust compiler and
 associated tools and libraries from the current git sources.  If
 you're more interested in _using_ Rust than in hacking on the Rust
-compiler, you might prefer to install a released version, following
+compiler, you might prefer to install a prebuilt snapshot from [here](http://www.rust-lang.org/install.html), following
 the instructions in the [tutorial](http://doc.rust-lang.org/doc/master/tutorial.html).
+For Windows users, see [[Using Rust on Windows]].
 
 ## Prerequisites
 
@@ -47,62 +48,37 @@ Also, make sure you have the `lmodern` font package (see [#3989](https://github.
 
 ### Windows
 
-Whether building from source or running the rustc binaries, see [[Using Rust on Windows]] for instructions on setting up MinGW.
+Rust build system depends on UNIX shell environment, so you need MSYS which provides such environment on Windows.
+We currently recommend [MSYS2](http://sourceforge.net/projects/msys2/), which also provides convenient package manager. You can install compiler toolchain using MSYS2's package manager.
 
-#### MSYS
+(MSYS1 is fine if you already have it, but configuring MSYS1 is not an easy job. Also beware of MSYS1 bugs i.e. [`make -jN` freezes randomly](http://sourceforge.net/mailarchive/message.php?msg_id=29801372).)
 
-The MinGW linked to from the above "using Rust" instructions should also be sufficient for building Rust. Note though that to build Rust, we additionally require MSYS, a collection of Unix utilities ported to Windows. We currently recommend the inclusive version of MSYS provided by the [mingw-builds project](http://sourceforge.net/apps/trac/mingw-w64/wiki/MSYS). Extract these to a directory somewhere and make sure they are on your path when building Rust. Using the MSYS shell can also be slightly more pleasant than building directly from the windows terminal.
+#### 32-bit build
 
-#### More info for Windows users.
+Execute `mingw32_shell.bat` to run MSYS2 for 32-bit system. Run the following commands:
 
-It is known that msys make freezes randomly i[f `-jN` option is given](http://sourceforge.net/mailarchive/message.php?msg_id=29801372).
+    pacman -S mingw-w64-i686-toolchain
+    pacman -S base-devel
 
-Once installed, we tend to work inside the MSYS shell.
-If you are a consistent user of MinGW or plan to be, you might also want to subscribe to their mailing list: [Mingw-users](https://lists.sourceforge.net/lists/listinfo/mingw-users)
+To check installation, type `gcc -v`. Target should be `i686-w64-mingw32`.
 
-(OPTIONAL)
-* Using `mingw-get` alone will open a GUI interface for package management.  You can update MinGW components once you start it's console by using the command `mingw-get update`, this updates the package repository for MinGW.  After which you can upgrade packages with `mingw-get upgrade`. **mingw-get upgrade will overwrite to latest versions of GCC as well, so you might have to upgrade to a lower version afterwards.**
+Now everything is ready. change directory to rust source code, and run:
 
-(OPTIONAL - if using another Git installer or method other than the Quick Steps):
+    ./configure
+    make
 
-* Put the git binary path *after* the MinGW path. So add a line like the following to your `/etc/profile` or `.bashrc`:
+Then it will start build.
 
-~~~~bash
-export PATH=$PATH:/c/Program\ Files/Git/bin
-~~~~
+#### 64-bit build
 
-(OPTIONAL - working with multiple toolchains & modifying your PATH):
+WARNING: 64-bit build is currently not tested by buildbot, so it may fail to build.
 
-* In Windows, to try out or work with different toolchains for building Rust with MinGW, the easiest way is to modify and add at the end of your Msys profile file, `C:\MinGW\msys\1.0\etc\profile` something like the following, and uncomment whichever toolchain path you want to work with and Remember to exit the Msys console and reopen it:
+Execute `mingw64_shell.bat` to run MSYS2 for 64-bit system. Run the following commands:
 
-~~~~bash
-# Enable MinGW64 path by uncommenting one of the following lines:
-# export PATH="/c/mingw-builds/x64-4.8.1-release-win32-seh-rev5/mingw64/bin:/usr/local:$PATH"
-# export PATH="/c/drangon_mingw64/mingw64/bin:/usr/local:$PATH"
-export PATH="/c/mingw-builds/x32-4.8.1-release-win32-dwarf-rev5/mingw32/bin:/usr/local:$PATH"
+    pacman -S mingw-w64-x86_64-toolchain
+    pacman -S base-devel
 
-# Enable LLVM path by uncommenting the following line:
-# export PATH="$HOME/build/Release+Asserts/bin:$PATH"
-~~~~
-
-**Troubleshooting Windows environment setups:**
-
-* If Python cannot be found during ./configure, then you need to add its path to the end of `/c/mingw/msys/1.0/etc/profile`, like this:
- * `export PATH="/c/PYTHON27:$PATH"`
-
-* If while building you receive an error that `libpthread-2.dll` is not found, you forgot to install the mingw32-libpthread-old package into MinGW from Step 5, so do this:
-
- * `mingw-get install mingw32-libpthread-old`
-
-* If while building you receive an error that `libpthreadGC.dll` is not found, you forgot to install libpthreadgc runtime library into MinGW from Step 5, so do this:
-
- * `mingw-get install mingw32-libpthreadgc`
-
-* If while building you receive an error that `libpthreadGC2.dll` is not found (e.g. when llvm-config tries to run), here is one workaround. (There may be a mingw-get solution too... anyone? I've done windows dev but I'm new to mingw):
-
- * download pthreads for win32, e.g. here ftp://sourceware.org/pub/pthreads-win32/pthreads-w32-2-9-1-release.zip
- * unzip the zip file, and copy the pthreads-w32-2-9-1-release/Pre-built.d/dll/*.dll to c:/mingw/bin/
-
+To check installation, type `gcc -v`. Target should be `x86_64-w64-mingw32`.
 
 ### OSX
 
