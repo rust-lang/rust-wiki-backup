@@ -73,47 +73,6 @@ getting Rust working on other platforms
 [rust-skane]: http://www.meetup.com/rust-skane/
 [rust-zh]: https://plus.google.com/communities/100629002107624231185/
 
-
-## Blogs
-
-People sometimes write about Rust. Interesting stuff usually appears on [r/rust].
-
-[Ben]: http://winningraceconditions.blogspot.com/
-[Brian]: http://brson.github.com/
-[Eric Holk]: http://blog.theincredibleholk.org/
-[Erick Tryzelaar]: http://erickt.github.com/
-[Felix]: http://blog.pnkfx.org/
-[Graydon]: https://blog.mozilla.org/graydon/
-[Niko]: http://smallcultfollowing.com/babysteps/
-[Patrick]: http://pcwalton.github.com/
-[Tim]: http://tim.dreamwidth.org/tag/research
-[Zack]: http://blog.z0w0.me/
-
-[r/rust]: http://reddit.com/r/rust
-
-Some Rust classics:
-
-* [A 30 minute introduction to Rust](http://words.steveklabnik.com/a-30-minute-introduction-to-rust)
-* [What does 'unsafe' mean?](http://huonw.github.io/2014/07/24/what-does-rusts-unsafe-mean.html)
-* [Pointers in Rust: A Guide](http://words.steveklabnik.com/pointers-in-rust-a-guide)
-* [Garbage collection thoughts](http://sebastiansylvan.com/2012/12/01/garbage-collection-thoughts/)
-* [Understanding pointers, ownership and lifetimes in Rust](http://paulkoerbitz.de/posts/Understanding-Pointers-Ownership-and-Lifetimes-in-Rust.html)
-* [A taste of Rust](https://lwn.net/Articles/547145/)
-* [An overview of memory management in Rust](http://pcwalton.github.com/blog/2013/03/18/an-overview-of-memory-management-in-rust/)
-* [Which pointer should I use?](http://pcwalton.github.com/blog/2013/03/09/which-pointer-should-i-use/)
-* [Lifetimes explained](http://maikklein.github.io/2013/08/27/lifetimes-explained/)
-* [Little things that matter in language design](http://lwn.net/Articles/553131/)
-* [Operator overloading in Rust](http://maniagnosis.crsr.net/2013/04/operator-overloading-in-rust.html)
-* [Embedding Rust in Ruby](http://brson.github.com/2013/03/10/embedding-rust-in-ruby/)
-* [A first parallel program in Rust](http://blog.leahhanson.us/a-first-parallel-program-in-rust.html)
-* [FizzBuzz revisited](http://composition.al/blog/2013/03/02/fizzbuzz-revisited/)
-* [Ownership types in Rust, and whether they're worth it](http://tim.dreamwidth.org/1784423.html)
-* [Reasoning about the heap in Rust](http://johnbender.us/2013/04/30/reasoning-about-the-heap-in-rust)
-* [The Option Type](http://nickdesaulniers.github.io/blog/2013/05/07/rust-pattern-matching-and-the-option-type/)
-* [How I got started hacking rustc](http://cmr.github.io/blog/2013/06/23/how-i-got-started-with-rust/)
-* [Abstraction penalties, stack allocation, and ownership types](http://robert.ocallahan.org/2007/10/abstraction-penalties-stack-allocation_23.html)
-* [Présentation de Rust 0.8](http://linuxfr.org/news/presentation-de-rust-0-8) - A very detailed article about Rust 0.8, in French!
-
 ## Presentations
 
 There is a steady stream of broadcast presentations on [Air Mozilla](https://air.mozilla.org/?tag=rust).
