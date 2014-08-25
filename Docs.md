@@ -116,24 +116,17 @@ Some Rust classics:
 
 ## Presentations
 
+There is a steady stream of broadcast presentations on [Air Mozilla](https://air.mozilla.org/?tag=rust).
+
+Here are some collected presentations for other locations:
+
 * [Panel: Systems Programming in 2014 and Beyond](http://channel9.msdn.com/Events/Lang-NEXT/Lang-NEXT-2014/Panel-Systems-Programming-Languages-in-2014-and-Beyond) - Niko Matsakis, Andrei Alexandrescu, Rob Pike, Bjarne Stroustrup
 * [Rust: Safe Systems Programming with the Fun of FP](http://www.techtalkshub.com/rust-safe-systems-programming-fun-fp/) - Felix Klock, CodeMesh 2014
-* [Guaranteeing Memory Safety in Rust](https://air.mozilla.org/guaranteeing-memory-safety-in-rust/) - Niko Matsakis
-* [Bay Area Meetup, May 2014](https://air.mozilla.org/rust-meetup-may-2014/) - John Regehr - Fuzzing and Reducing, testing topics.
-* [Bar Area Meetup, March 2014](https://air.mozilla.org/rust-meetup-march-2014/) - Julia Evans: Building a Kernel in Rust, more.
-* [Bay Area Meetup, February 2014](https://air.mozilla.org/rust-meetup-february-2014/) - David Renshaw - Cap'n'Proto, Steven Fackler - macro export, Kevin Cantu - testing.
-* [Bay Area Meetup, January 2014](https://air.mozilla.org/rust-meetup-january-2014/) - Brian Anderson - Rust 1.0; Niko Matsakis - dynamically sized types; Kevin Ballard - Lua bindings; Corey Richardson - evangelism.
 * [Niko's linux.conf.au talk 2014](https://t.co/aaYgMqZprC) - Memory ownership and Lifetimes. January 10, 2014.
-* [Bay Area Meetup, December 2013](https://air.mozilla.org/rust-meetup-december-2013/) - Alex Crichton - Channel Performance; Steve Klabnik - documentation; Chris Morgan - documentation; Luqman Aden - Minecraft chat client.
-* [Bay Area Meetup, November 2013](https://air.mozilla.org/sprocketnes-practical-systems-programming-in-rust/) - Brian Anderson - Rust community; Patrick Walton - SprocketNES; Frank Denis - Rust at OpenDNS; Yehuda Katz - Embedding Rust in C.
 * [John Clements, 10-minute talk (video)](http://www.youtube.com/watch?v=_KgXy7jnwhY) at SoCal PLS on Rust, Macros, and Hygiene. December 2013.
 * [Felix's Codemesh 2013 slides](http://pnkfelix.github.io/present-rust-codemesh2013/fklock-rust-codemesh2013.pdf)
 * Geoffroy Couprie's [Scala.IO 2013 slides](http://dev.unhandledexpression.com/slides/rust-scalaio/)
 * Steve's presentation at RuPy 2013 "Nobody Knows Rust." [slides](http://steveklabnik.github.io/nobody_knows_rust/#/), video to come soon
 * [Tim's presentation at OS Bridge 2013](http://opensourcebridge.org/sessions/970) - And [slides](http://opensourcebridge.org/wiki/2013/Rust%3A_A_Friendly_Introduction)
 * [Niko's presentation at Northeastern](http://smallcultfollowing.com/babysteps/blog/2013/07/18/rust-presentation-at-northeastern/) - Slides only
-* [An I/O system for Rust](https://air.mozilla.org/intern-presentations-reed/) - Eric Reed's intern presentation on I/O
-* [Types of Types](https://air.mozilla.org/ben-blum-from-the-research-team-presents-types-of-types-in-rust/) - Ben Blum's intern presentation on 'kinds'
-* [Default methods in Rust](https://air.mozilla.org/intern-presentation-sullivan/) - Michael Sullivan's intern presentation on default methods
-* [A work stealing runtime for Rust](https://air.mozilla.org/2013-intern-todd/) - Aaron Todd's intern presentation on the Rust scheduler
 * [Dave Herman's StrangeLoop 2012 talk](http://www.infoq.com/presentations/Rust)
