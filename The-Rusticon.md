@@ -39,6 +39,7 @@ sigil | (*Obsolete*) A character placed in front of a type, identifier or litera
 stack allocation | All local variables are a stack allocation.
 syntax extension | Code generation at compiletime, broken into three groups: declarative macros, which are described above as `macros`; procedural macros, which are written as Rust code that processes a token tree and produce an AST, and attributes.
 task | Rust's fundamental unit of computation. Similar to a thread.
+TLS | Task/Thread-Local Storage. See [these meeting minutes](https://github.com/rust-lang/meeting-minutes/blob/master/workweek-2014-08-18/libgreen-and-tls-redux.md)
 trait | Rust's approach to ad-hoc polymorphism, and used for generics and dynamic dispatch. Also known as [type classes](http://en.wikipedia.org/wiki/Type_class).
 <a name="tuple_structure" />tuple structure | A struct declared [without named fields](#record_structure), for example `struct Point(f32, f32)`
 TWiR | This Week in Rust. cmr's [weekly summary](http://blog.octayn.net/) of Rust's development.
