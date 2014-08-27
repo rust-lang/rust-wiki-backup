@@ -64,7 +64,7 @@ meaning of the label and does not think it is self-evident.
 | E-hard                   | Effort: hard                                      |
 | E-needtest               | Effort: requires a unit test to be closed         |
 | &nbsp;                                                                       |
-| *IMPORTANCE TAGS*        |                                                   |
+| *IMPACT TAGS*            |                                                   |
 | I-ICE                    | Importance: error internal to rustc               |
 | I-cleanup                | Importance: Internal source code cleanup          |
 | I-completion             | Importance: fill gaps in existing implementation  |
