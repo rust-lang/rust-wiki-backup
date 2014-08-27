@@ -2,6 +2,7 @@ Rust has a community-driven development process where most decisions are made th
 
 | Name               | IRC        | GitHub       | email                  |
 |:-------------------|:-----------|:-------------|:-----------------------|
+| Aaron Turon        | aturon     | aturon       | aturon@mozilla.com     |
 | Alex Crichton      | acrichto   | alexcrichton | acrichton@mozilla.com  |
 | Brian Anderson     | brson      | brson        | banderson@mozilla.com  |
 | Huon Wilson        | huon       | huonw        | dbau.pp@gmail.com      |
