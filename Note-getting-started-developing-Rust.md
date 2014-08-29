@@ -53,6 +53,8 @@ We currently recommend [MSYS2](http://sourceforge.net/projects/msys2/), which al
 
 (MSYS1 is fine if you already have it, but configuring MSYS1 is not an easy job. Also beware of MSYS1 bugs i.e. [`make -jN` freezes randomly](http://sourceforge.net/mailarchive/message.php?msg_id=29801372).)
 
+MSYS2 provides three environments: `mingw32_shell.bat`, `mingw64_shell.bat` and `msys2_shell.bat`. For Rust build you should select correct batch file described below.
+
 #### 32-bit build
 
 Execute `mingw32_shell.bat` to run MSYS2 for 32-bit system. Run the following commands:
