@@ -79,6 +79,7 @@ There is a steady stream of broadcast presentations on [Air Mozilla](https://air
 
 Here are some collected presentations for other locations:
 
+* [ML Family Workshop 2014: The Rust Language and Type System (demo)](https://www.youtube.com/watch?v=RvbkD5nRGA8) - Felix Klock
 * [Panel: Systems Programming in 2014 and Beyond](http://channel9.msdn.com/Events/Lang-NEXT/Lang-NEXT-2014/Panel-Systems-Programming-Languages-in-2014-and-Beyond) - Niko Matsakis, Andrei Alexandrescu, Rob Pike, Bjarne Stroustrup
 * [Rust: Safe Systems Programming with the Fun of FP](http://www.techtalkshub.com/rust-safe-systems-programming-fun-fp/) - Felix Klock, CodeMesh 2014
 * [Niko's linux.conf.au talk 2014](https://t.co/aaYgMqZprC) - Memory ownership and Lifetimes. January 10, 2014.
