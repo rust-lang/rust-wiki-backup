@@ -73,8 +73,6 @@ Then it will start build.
 
 #### 64-bit build
 
-WARNING: 64-bit build is currently not tested by buildbot, so it may fail to build.
-
 Execute `mingw64_shell.bat` to run MSYS2 for 64-bit system. Run the following commands:
 
     pacman -S mingw-w64-x86_64-toolchain
