@@ -63,7 +63,7 @@ syntax | name
 `Box<T>` | If `T` is a type, an *owning pointer* to `T`, and the pointer is to an *owned box*.
 `&T`, `&'a T` | If `T` is a type, a [*reference*](#reference) to `T`, possibly with a *lifetime* (`'a`).
 `∣ ∣`, `∣T∣ -> U` | A [*closure*](#closure). 
-`&[T]`, `&'a [T]` | An *slice* with element type `T` and possibly with a *lifetime*.
+`&[T]`, `&'a [T]` | A *slice* with element type `T` and possibly with a *lifetime*.
 `&mut [T]`, `&'a mut [T]` | A *mutable slice* with element type `T` and possibly with a *lifetime*. One can borrow a `&mut` to the elements of the slice.
 `[T, ..n]` | An *array* of length `n`.
 `[T]` | An *array* whose length is unknown (a dynamically-sized type).
