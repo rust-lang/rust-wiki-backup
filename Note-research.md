@@ -33,6 +33,7 @@ Papers that have had more or less influence on Rust, or which one might want to 
 
 * [Crash-only software](https://www.usenix.org/legacy/events/hotos03/tech/full_papers/candea/candea.pdf)
 * [Composing High-Performance Memory Allocators](http://people.cs.umass.edu/~emery/pubs/berger-pldi2001.pdf)
+* [Reconsidering Custom Memory Allocation](http://people.cs.umass.edu/~emery/pubs/berger-oopsla2002.pdf)
 
 ## Papers *about* Rust
 
