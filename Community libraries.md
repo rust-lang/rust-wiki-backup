@@ -40,9 +40,6 @@ See also [Mathematics](Community-libraries#mathematics)
   * [dnaq/sodiumoxide](https://github.com/dnaq/sodiumoxide)
 * OpenSSL
   * [sfackler/rust-openssl](https://github.com/sfackler/rust-openssl): [<img src="https://travis-ci.org/sfackler/rust-openssl.png?branch=master">](https://travis-ci.org/sfackler/rust-openssl)
- 
-## CSV
-See [Encoding](Community-libraries#encoding)
 
 ## Database Access
 
@@ -183,9 +180,6 @@ See also [[Computer Graphics and Game Development]].
 * SSH
   * [alexcrichton/ssh2-rs](https://github.com/alexcrichton/ssh2-rs):  [<img src="https://travis-ci.org/alexcrichton/ssh2-rs.png?branch=master">](https://travis-ci.org/alexcrichton/ssh2-rs)
 
-## NoSQL
-See [Database Access](Community-libraries#wiki-database-access)
-
 ## Operating system specific
 
 * Windows
@@ -224,9 +218,6 @@ See the [regex crate](http://doc.rust-lang.org/regex/).
   * Unicode normalization (NFD, NFC, NFKD, NFKC)
   * Collator (locale sensitive string comparison), with a configurable degree of strictness
 
-## SQL
-See [Database Access](Community-libraries#wiki-database-access)
-
 ## Template engine
 
 * Mustache
@@ -262,6 +253,3 @@ See also http://arewewebyet.com/
     * [skade/widmann](https://github.com/skade/widmann): inspired by Sinatra. [<img src="https://travis-ci.org/skade/widmann.png?branch=master">](https://travis-ci.org/skade/widmann)
     * [WebeWizard/libhttpd](https://github.com/WebeWizard/libhttpd)
     * [nathansizemore/rustic-io](https://github.com/nathansizemore/rustic-io): Websocket abstraction inspired by socket.io [<img src="https://travis-ci.org/nathansizemore/rustic-io.png?branch=master">](https://travis-ci.org/nathansizemore/rustic-io)
-
-## XML
-See [Encoding](Community-libraries#encoding)
