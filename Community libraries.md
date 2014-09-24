@@ -21,12 +21,13 @@ We want compression/decompression support for TAR and ZIP file formats.
 * [thestinger/rust-snappy](https://github.com/thestinger/rust-snappy): libsnappy bindings
 
 ## Computation
+See also [Mathematics](Community-libraries#mathematics)
 
 * GMP
   * [thestinger/rust-gmp](https://github.com/thestinger/rust-gmp)
 * OpenCL
   * [eholk/rust-opencl](https://github.com/eholk/rust-opencl): OpenCL bindings [<img src="https://travis-ci.org/eholk/rust-opencl.png?branch=master">](https://travis-ci.org/eholk/rust-opencl)
- 
+
 ## Concurrency
  * task management, actor, OTP, [[Bikeshed mapreduce]], pools
  
