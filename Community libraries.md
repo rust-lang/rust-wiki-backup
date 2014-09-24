@@ -153,7 +153,7 @@ See also [[Computer Graphics and Game Development]].
 ## Mathematics
 * [bluss/rust-ndarray](https://github.com/bluss/rust-ndarray) (N-dimensional array with linear algebra)
 * [bjz/cgmath-rs](https://github.com/bjz/cgmath-rs) (Linear algebra and math library for graphics)
-* [cmr/linalg](https://github.com/cmr/linalg) (Linear algebra library)
+* [cmr/linalg](https://github.com/cmr/linalg) (Toy/tinkering linear algebra library)
 
 ## Misc
 * low-level OS services
