@@ -153,7 +153,6 @@ See also [[Computer Graphics and Game Development]].
 ## Mathematics
 
 * [bjz/cgmath-rs](https://github.com/bjz/cgmath-rs) (Linear algebra and math library for graphics)
-* [bjz/lmath-rs](https://github.com/bjz/lmath-rs)
 * [cmr/linalg](https://github.com/cmr/linalg) (Linear algebra library)
 
 ## Misc
