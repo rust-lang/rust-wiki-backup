@@ -13,6 +13,7 @@ Applications
 * `rust-airhockey`: https://github.com/FrozenCow/rust-airhockey
 * `shorai` OS: https://github.com/jmgrosen/shorai
 * `sprocketnes` NES emulator: https://github.com/pcwalton/sprocketnes
+* `crust` Chess engine: https://github.com/mkandalf/crust
 
 Libraries
 ---------
