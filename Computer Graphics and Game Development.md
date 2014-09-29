@@ -48,6 +48,7 @@ Rust is quickly becoming an excellent language for computer graphics and game de
 
 #### Import/Export
 
+- [rust-image](https://github.com/PistonDevelopers/image): Encoding and decoding images in pure Rust
 - [assimp-rs](https://github.com/h3r2tic/assimp-rs)
 - [freeimage-rs](https://github.com/h3r2tic/freeimage-rs)
 - [rust-png](https://github.com/mozilla-servo/rust-png)
