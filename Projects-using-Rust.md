@@ -28,7 +28,7 @@ Bindings
 * GLFW: https://github.com/bjz/glfw-rs/
 * ncurses: https://github.com/kballard/rust-curses
 * OpenGL ES: https://github.com/mozilla-servo/rust-opengles
-* OpenSSL libcrypto: https://github.com/kballard/rustcrypto
+* OpenSSL: https://github.com/sfackler/rust-openssl
 * SDL: https://github.com/brson/rust-sdl
 * SFML: https://github.com/JeremyLetang/rust-sfml
 * SQLite3: https://github.com/linuxfood/rustsqlite
