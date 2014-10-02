@@ -156,6 +156,9 @@ See also [[Computer Graphics and Game Development]].
 * [bjz/cgmath-rs](https://github.com/bjz/cgmath-rs) (Linear algebra and math library for graphics)
 * [cmr/linalg](https://github.com/cmr/linalg) (Toy/tinkering linear algebra library)
 
+## Conversions
+* [uwap/unitr](https://github.com/uwap/unitr) (A unit conversion library)
+
 ## Misc
 * low-level OS services
   * [zargony/rust-fuse](https://github.com/zargony/rust-fuse): Library for filesystems in userspace (FUSE)  [<img src="https://travis-ci.org/zargony/rust-fuse.png?branch=master">](https://travis-ci.org/zargony/rust-fuse)
