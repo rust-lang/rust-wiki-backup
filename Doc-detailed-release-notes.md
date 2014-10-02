@@ -4,7 +4,7 @@ This page covers releases in more detail than the bullet-point list given in the
 
 ### Lifetime elision
 
-### Unboxed closures
+### Where clauses
 
 
 ## 0.11.0 July 2014
