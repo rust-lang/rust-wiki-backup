@@ -8,6 +8,8 @@ This page covers releases in more detail than the bullet-point list given in the
 
 ### Dynamically-sized types
 
+### Slicing syntax
+
 ## 0.11.0 July 2014
 
 While this was a very active development cycle, it was largely focused on polishing the type system and libraries. The major technical focuses this time were implementing [dynamically sized types](http://smallcultfollowing.com/babysteps/blog/2014/01/05/dst-take-5/) and [refactoring the standard library](https://github.com/rust-lang/rfcs/blob/master/complete/0012-libstd-facade.md). This release also marks the complete removal of the `~` and `@` syntax in favor of library types `Box` and `Gc` (though there is still work to be done with the library integration: the compiler still has more knowledge of `Box` and `Gc` than it ultimately should, but the final syntax is in place).
