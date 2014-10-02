@@ -6,6 +6,7 @@ This page covers releases in more detail than the bullet-point list given in the
 
 ### Where clauses
 
+### Dynamically-sized types
 
 ## 0.11.0 July 2014
 
