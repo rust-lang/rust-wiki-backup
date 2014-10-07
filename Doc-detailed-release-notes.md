@@ -8,25 +8,40 @@ This development cycle saw a renewed push to get the final set of 1.0 language f
 
 Lifetime annotations can be left off of function definitions in several common cases.
 
-## Input and Output lifetimes
+#### Input and Output lifetimes
 
 Lifetime positions can appear as either "input" or "output":
 
-For fn definitions, input refers to the types of the formal arguments in the fn definition, while output refers to result types. So fn foo(s: &str) -> (&str, &str) has elided one lifetime in input position and two lifetimes in output position. Note that the input positions of a fn method definition do not include the lifetimes that occur in the method's impl header (nor lifetimes that occur in the trait header, for a default method).
+* For `fn` definitions, input refers to the types of the formal arguments
+  in the `fn` definition, while output refers to
+  result types. So `fn foo(s: &str) -> (&str, &str)` has elided one lifetime in
+  input position and two lifetimes in output position.
+  Note that the input positions of a `fn` method definition do not
+  include the lifetimes that occur in the method's `impl` header
+  (nor lifetimes that occur in the trait header, for a default method).
 
-For impl headers, input refers to the lifetimes appears in the type receiving the impl, while output refers to the trait, if any. So impl<'a> Foo<'a> has 'a in input position, while impl<'a, 'b, 'c> SomeTrait<'b, 'c> for Foo<'a, 'c> has 'a in input position, 'b in output position, and 'c in both input and output positions.
 
-# The rules
+* For `impl` headers, input refers to the lifetimes appears in the type
+  receiving the `impl`, while output refers to the trait, if any. So `impl<'a>
+  Foo<'a>` has `'a` in input position, while `impl<'a, 'b, 'c>
+  SomeTrait<'b, 'c> for Foo<'a, 'c>` has `'a` in input position, `'b`
+  in output position, and `'c` in both input and output positions.
 
-* Each elided lifetime in input position becomes a distinct lifetime parameter. This is the current behavior for fn definitions.
+#### The rules
 
-* If there is exactly one input lifetime position (elided or not), that lifetime is assigned to all elided output lifetimes.
+* Each elided lifetime in input position becomes a distinct lifetime
+  parameter. This is the current behavior for `fn` definitions.
 
-* If there are multiple input lifetime positions, but one of them is &self or &mut self, the lifetime of self is assigned to all elided output lifetimes.
+* If there is exactly one input lifetime position (elided or not), that lifetime
+  is assigned to _all_ elided output lifetimes.
+
+* If there are multiple input lifetime positions, but one of them is `&self` or
+  `&mut self`, the lifetime of `self` is assigned to _all_ elided output lifetimes.
 
 * Otherwise, it is an error to elide an output lifetime.
 
-# Examples
+
+#### Examples
 
 ```
 fn print(s: &str);                                      // elided
