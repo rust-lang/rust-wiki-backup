@@ -75,34 +75,28 @@ impl<'a, 'b> Reader for (&'a str, &'b str) { ... }      // expanded
 impl StrSlice for &str { ... }                          // elided
 impl<'a> StrSlice<'a> for &'a str { ... }               // expanded
 
-trait Bar<'a> { fn bound(&'a self) -> &int { ... }    fn fresh(&self) -> &int { ... } }           // elided
-trait Bar<'a> { fn bound(&'a self) -> &'a int { ... } fn fresh<'b>(&'b self) -> &'b int { ... } } // expanded
+// elided
+trait Bar<'a> {
+  fn bound(&'a self) -> &int { ... }
+  fn fresh(&self) -> &int { ... }
+} 
 
-impl<'a> Bar<'a> for &'a str {
-  fn bound(&'a self) -> &'a int { ... } fn fresh(&self) -> &int { ... }              // elided
+// expanded
+trait Bar<'a> {
+  fn bound(&'a self) -> &'a int { ... }
+  fn fresh<'b>(&'b self) -> &'b int { ... }
 }
+
+// elided
 impl<'a> Bar<'a> for &'a str {
-  fn bound(&'a self) -> &'a int { ... } fn fresh<'b>(&'b self) -> &'b int { ... }    // expanded
+  fn bound(&'a self) -> &'a int { ... }
+  fn fresh(&self) -> &int { ... }
 }
 
-// Note that when the impl reuses the same signature (with the same elisions)
-// from the trait definition, the expanded forms will also match, and thus
-// the `impl` will be compatible with the `trait`.
-
-impl Bar for &str            { fn bound(&self) -> &int { ... } }           // elided
-impl<'a> Bar<'a> for &'a str { fn bound<'b>(&'b self) -> &'b int { ... } } // expanded
-
-// Note that the preceding example's expanded methods do not match the
-// signatures from the above trait definition for `Bar`; in the general
-// case, if the elided signatures between the `impl` and the `trait` do
-// not match, an expanded `impl` may not be compatible with the given
-// `trait` (and thus would not compile).
-
-impl Bar for &str            { fn fresh(&self) -> &int { ... } }           // elided
-impl<'a> Bar<'a> for &'a str { fn fresh<'b>(&'b self) -> &'b int { ... } } // expanded
-
-impl Bar for &str {
-  fn bound(&'a self) -> &'a int { ... } fn fresh(&self) -> &int { ... }    // ILLEGAL: unbound 'a
+// expanded
+impl<'a> Bar<'a> for &'a str {
+  fn bound(&'a self) -> &'a int { ... }
+  fn fresh<'b>(&'b self) -> &'b int { ... }
 }
 ```
 
