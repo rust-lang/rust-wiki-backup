@@ -20,7 +20,8 @@ Decisions about what features to add to Rust are driven by an [RFC (request for 
 * [Bounds on objects and generic types](https://github.com/rust-lang/rfcs/blob/d2c2f0f524df814d7b38f69311ab67f41c2ec3ec/complete/0049-bounds-on-object-and-generic-types.md)
 * [Unifying (unboxed) closures and traits](https://github.com/rust-lang/rfcs/blob/d2c2f0f524df814d7b38f69311ab67f41c2ec3ec/active/0044-closures.md)
 * [Capture inference for (unboxed) closures](https://github.com/rust-lang/rfcs/blob/d2c2f0f524df814d7b38f69311ab67f41c2ec3ec/active/0063-upvar-capture-inference.md)
-* [if let](https://github.com/rust-lang/rfcs/blob/d2c2f0f524df814d7b38f69311ab67f41c2ec3ec/complete/0051-if-let.md)
+* [`if let`](https://github.com/rust-lang/rfcs/blob/d2c2f0f524df814d7b38f69311ab67f41c2ec3ec/complete/0051-if-let.md)
+* [`while let`](https://github.com/rust-lang/rfcs/blob/d2c2f0f524df814d7b38f69311ab67f41c2ec3ec/active/0068-while-let.md)
 * [Tuple indexing](https://github.com/rust-lang/rfcs/blob/d2c2f0f524df814d7b38f69311ab67f41c2ec3ec/complete/0053-tuple-accessors.md)
 * [Feature gate advanced slice patterns](https://github.com/rust-lang/rfcs/blob/d2c2f0f524df814d7b38f69311ab67f41c2ec3ec/complete/0054-feature-gate-slice-pats.md)
 * [Subslice syntax](https://github.com/rust-lang/rfcs/blob/d2c2f0f524df814d7b38f69311ab67f41c2ec3ec/complete/0055-subslice-syntax-change.md)
@@ -32,6 +33,12 @@ Decisions about what features to add to Rust are driven by an [RFC (request for 
 * [Less leaking of private items](https://github.com/rust-lang/rfcs/blob/d2c2f0f524df814d7b38f69311ab67f41c2ec3ec/complete/0048-no-privates-in-public.md)
 * [Change the renaming `use` syntax](https://github.com/rust-lang/rfcs/blob/d2c2f0f524df814d7b38f69311ab67f41c2ec3ec/complete/0047-use-path-as-id.md)
 * [Remove special borrow checking for `Box<T>`](https://github.com/rust-lang/rfcs/blob/d2c2f0f524df814d7b38f69311ab67f41c2ec3ec/complete/0043-box-not-special.md)
+* [Remove `crate_id` attribute](https://github.com/rust-lang/rfcs/blob/d2c2f0f524df814d7b38f69311ab67f41c2ec3ec/complete/0035-remove-crate-id.md)
+* [Index traits](https://github.com/rust-lang/rfcs/blob/d2c2f0f524df814d7b38f69311ab67f41c2ec3ec/complete/0034-index-traits.md)
+* [Remove 'cross-borrowing'](https://github.com/rust-lang/rfcs/blob/d2c2f0f524df814d7b38f69311ab67f41c2ec3ec/complete/0033-remove-cross-borrowing.md)
+* [Remove 'cross-borrowing' redux](https://github.com/rust-lang/rfcs/blob/d2c2f0f524df814d7b38f69311ab67f41c2ec3ec/complete/0037-remove-cross-borrowing-entirely.md)
+* [Remove runtime/IO abstraction](https://github.com/rust-lang/rfcs/blob/d2c2f0f524df814d7b38f69311ab67f41c2ec3ec/active/0062-remove-runtime.md)
+* [`where` clauses](https://github.com/rust-lang/rfcs/blob/d2c2f0f524df814d7b38f69311ab67f41c2ec3ec/active/0066-where.md)
 
 ## 0.11.0 July 2014
 
