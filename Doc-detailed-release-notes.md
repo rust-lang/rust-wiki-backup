@@ -110,6 +110,44 @@ See also the [RFC](https://github.com/rust-lang/rfcs/blob/d2c2f0f524df814d7b38f6
 
 ### Where clauses
 
+The current syntax for placing trait and region bounds on type parameters, `T: Foo + Bar + 'baz`, is not sufficient
+for some future use-cases, including [associated types](https://github.com/rust-lang/rfcs/blob/d2c2f0f524df814d7b38f69311ab67f41c2ec3ec/active/0059-associated-items.md).
+Furthermore, with many bounds, the syntax can become difficult to read and obscure more important aspects of declarations.
+`where` clauses are a new and more flexible syntax for specifying bounds, which come *after* the rest of the declaration.
+
+```rust
+trait Equal {
+    fn equal(&self, other: &Self) -> bool;
+    fn equals<T,U>(&self, this: &T, that: &T, x: &U, y: &U) -> bool
+            where T: Eq, U: Eq;
+}
+
+impl<T> Equal for T where T: Eq {
+    fn equal(&self, other: &T) -> bool {
+        self == other
+    }
+    fn equals<U,X>(&self, this: &U, other: &U, x: &X, y: &X) -> bool
+            where U: Eq, X: Eq {
+        this == other && x == y
+    }
+}
+
+fn equal<T>(x: &T, y: &T) -> bool where T: Eq {
+    x == y
+}
+
+fn main() {
+    println!("{}", equal(&1i, &2i));
+    println!("{}", equal(&1i, &1i));
+    println!("{}", "hello".equal(&"hello"));
+    println!("{}", "hello".equals::<int,&str>(&1i, &1i, &"foo", &"bar"));
+}
+```
+
+It has not been decided whether the old syntax will be removed.
+
+See also the [RFC](https://github.com/rust-lang/rfcs/blob/d2c2f0f524df814d7b38f69311ab67f41c2ec3ec/active/0066-where.md).
+
 ### Dynamically-sized types
 
 ### Slicing syntax
