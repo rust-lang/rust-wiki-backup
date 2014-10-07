@@ -17,6 +17,21 @@ This page covers releases in more detail than the bullet-point list given in the
 Decisions about what features to add to Rust are driven by an [RFC (request for comments) process](https://github.com/rust-lang/rfcs/blob/d2c2f0f524df814d7b38f69311ab67f41c2ec3ec/README.md). This is a partial list of the RFC's that impacted the 0.12.0 development cycle.
 
 * [Lifetime elision](https://github.com/rust-lang/rfcs/blob/d2c2f0f524df814d7b38f69311ab67f41c2ec3ec/active/0039-lifetime-elision.md)
+* [Bounds on objects and generic types](https://github.com/rust-lang/rfcs/blob/d2c2f0f524df814d7b38f69311ab67f41c2ec3ec/complete/0049-bounds-on-object-and-generic-types.md)
+* [Unifying (unboxed) closures and traits](https://github.com/rust-lang/rfcs/blob/d2c2f0f524df814d7b38f69311ab67f41c2ec3ec/active/0044-closures.md)
+* [Capture inference for (unboxed) closures](https://github.com/rust-lang/rfcs/blob/d2c2f0f524df814d7b38f69311ab67f41c2ec3ec/active/0063-upvar-capture-inference.md)
+* [if let](https://github.com/rust-lang/rfcs/blob/d2c2f0f524df814d7b38f69311ab67f41c2ec3ec/complete/0051-if-let.md)
+* [Tuple indexing](https://github.com/rust-lang/rfcs/blob/d2c2f0f524df814d7b38f69311ab67f41c2ec3ec/complete/0053-tuple-accessors.md)
+* [Feature gate advanced slice patterns](https://github.com/rust-lang/rfcs/blob/d2c2f0f524df814d7b38f69311ab67f41c2ec3ec/complete/0054-feature-gate-slice-pats.md)
+* [Subslice syntax](https://github.com/rust-lang/rfcs/blob/d2c2f0f524df814d7b38f69311ab67f41c2ec3ec/complete/0055-subslice-syntax-change.md)
+* [Add variants to type namespace](https://github.com/rust-lang/rfcs/blob/d2c2f0f524df814d7b38f69311ab67f41c2ec3ec/complete/0061-variants-namespace.md)
+* [More expressive `cfg` syntax](https://github.com/rust-lang/rfcs/blob/d2c2f0f524df814d7b38f69311ab67f41c2ec3ec/complete/0065-cfg-syntax.md)
+* [Remove `Gc<T>`](https://github.com/rust-lang/rfcs/blob/d2c2f0f524df814d7b38f69311ab67f41c2ec3ec/complete/0067-remove-refcounting-gc-of-t.md)
+* [Rename `Share`](https://github.com/rust-lang/rfcs/blob/d2c2f0f524df814d7b38f69311ab67f41c2ec3ec/complete/0045-share-to-threadsafe.md)
+* [No shadowing of view items](https://github.com/rust-lang/rfcs/blob/d2c2f0f524df814d7b38f69311ab67f41c2ec3ec/complete/0050-no-module-shadowing.md)
+* [Less leaking of private items](https://github.com/rust-lang/rfcs/blob/d2c2f0f524df814d7b38f69311ab67f41c2ec3ec/complete/0048-no-privates-in-public.md)
+* [Change the renaming `use` syntax](https://github.com/rust-lang/rfcs/blob/d2c2f0f524df814d7b38f69311ab67f41c2ec3ec/complete/0047-use-path-as-id.md)
+* [Remove special borrow checking for `Box<T>`](https://github.com/rust-lang/rfcs/blob/d2c2f0f524df814d7b38f69311ab67f41c2ec3ec/complete/0043-box-not-special.md)
 
 ## 0.11.0 July 2014
 
