@@ -12,6 +12,12 @@ This page covers releases in more detail than the bullet-point list given in the
 
 ### Cargo
 
+### Implemented RFC's
+
+Decisions about what features to add to Rust are driven by an [RFC (request for comments) process](https://github.com/rust-lang/rfcs/blob/d2c2f0f524df814d7b38f69311ab67f41c2ec3ec/README.md). This is a partial list of the RFC's that impacted the 0.12.0 development cycle.
+
+* [Lifetime elision](https://github.com/rust-lang/rfcs/blob/d2c2f0f524df814d7b38f69311ab67f41c2ec3ec/active/0039-lifetime-elision.md)
+
 ## 0.11.0 July 2014
 
 While this was a very active development cycle, it was largely focused on polishing the type system and libraries. The major technical focuses this time were implementing [dynamically sized types](http://smallcultfollowing.com/babysteps/blog/2014/01/05/dst-take-5/) and [refactoring the standard library](https://github.com/rust-lang/rfcs/blob/master/complete/0012-libstd-facade.md). This release also marks the complete removal of the `~` and `@` syntax in favor of library types `Box` and `Gc` (though there is still work to be done with the library integration: the compiler still has more knowledge of `Box` and `Gc` than it ultimately should, but the final syntax is in place).
