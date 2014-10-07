@@ -43,7 +43,7 @@ Lifetime positions can appear as either "input" or "output":
 
 #### Examples
 
-```
+```rust
 fn print(s: &str);                                      // elided
 fn print<'a>(s: &'a str);                               // expanded
 
