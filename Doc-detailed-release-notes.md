@@ -2,7 +2,7 @@ This page covers releases in more detail than the bullet-point list given in the
 
 ## 0.12.0 October 2014
 
-This development cycle saw a renewed push to get the final set of 1.0 language features in order, but also a massive improvement in documentation, in Windows support, and library stabilization.
+This development cycle saw a renewed push to get the final set of 1.0 language features in order, but also a massive improvement in documentation, in Windows support, and library stabilization. This was also the development cycle in which [Cargo](http://crates.io) matured significantly, receiving widespread adoption.
 
 ### Lifetime elision
 
