@@ -142,11 +142,7 @@ It has not been decided whether the old syntax will be removed.
 
 See also the [RFC](https://github.com/rust-lang/rfcs/blob/d2c2f0f524df814d7b38f69311ab67f41c2ec3ec/active/0066-where.md).
 
-### Dynamically-sized types
-
-The work on dynamically sized types allows types which don't have a statically known size to be used much like other types in Rust. Previously, types such as arrays without a fixed length and trait types could not be used in many places and had special treatment in the compiler. Now these types can have `impl`s and can be used as type parameters. That means you can write implement a trait for arrays without caring how the array is referenced (e.g., `impl<T> Foo for [T] { ... }`) and use your own smart pointers with trait objects and arrays (e.g., `Rc<[int]>` or `Rc<Show>`).
-
-### Slicing syntax
+### Slice notation
 
 Slicing syntax allows for conveniently taking a view over a collection. Examples:
 
@@ -159,6 +155,12 @@ let slice3 = v[1..];  //      &['b', 'c', 'd', 'e', 'f']
 ```
 
 Slicing is an overloadable operator, implemented via the `Slice` and `SliceMut` traits.
+
+See also the [RFC](https://github.com/rust-lang/rfcs/blob/d2c2f0f524df814d7b38f69311ab67f41c2ec3ec/active/0058-slice-notation.md)
+
+### Dynamically-sized types
+
+The work on dynamically sized types allows types which don't have a statically known size to be used much like other types in Rust. Previously, types such as arrays without a fixed length and trait types could not be used in many places and had special treatment in the compiler. Now these types can have `impl`s and can be used as type parameters. That means you can write implement a trait for arrays without caring how the array is referenced (e.g., `impl<T> Foo for [T] { ... }`) and use your own smart pointers with trait objects and arrays (e.g., `Rc<[int]>` or `Rc<Show>`).
 
 ### Implemented RFC's
 
@@ -187,6 +189,7 @@ Decisions about what features to add to Rust are driven by an [RFC (request for 
 * [Remove 'cross-borrowing' redux](https://github.com/rust-lang/rfcs/blob/d2c2f0f524df814d7b38f69311ab67f41c2ec3ec/complete/0037-remove-cross-borrowing-entirely.md)
 * [Remove runtime/IO abstraction](https://github.com/rust-lang/rfcs/blob/d2c2f0f524df814d7b38f69311ab67f41c2ec3ec/active/0062-remove-runtime.md)
 * [`where` clauses](https://github.com/rust-lang/rfcs/blob/d2c2f0f524df814d7b38f69311ab67f41c2ec3ec/active/0066-where.md)
+* [Slice notation](https://github.com/rust-lang/rfcs/blob/d2c2f0f524df814d7b38f69311ab67f41c2ec3ec/active/0058-slice-notation.md)
 
 ## 0.11.0 July 2014
 
