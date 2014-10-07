@@ -154,6 +154,16 @@ The work on dynamically sized types allows types which don't have a statically k
 
 ### Slicing syntax
 
+Slicing syntax allows for conveniently taking a view over a collection. Examples:
+
+```
+let v =               vec!['a', 'b', 'c', 'd', 'e', 'f'];
+
+let slice1 = v[1..4]; //      &['b', 'c', 'd']
+let slice2 = v[..4];  // &['a', 'b', 'c', 'd']
+let slice3 = v[1..];  //      &['b', 'c', 'd', 'e', 'f']
+```
+
 ### Implemented RFC's
 
 Decisions about what features to add to Rust are driven by an [RFC (request for comments) process](https://github.com/rust-lang/rfcs/blob/d2c2f0f524df814d7b38f69311ab67f41c2ec3ec/README.md). This is a partial list of the RFC's that impacted the 0.12.0 development cycle.
