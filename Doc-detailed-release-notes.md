@@ -150,6 +150,8 @@ See also the [RFC](https://github.com/rust-lang/rfcs/blob/d2c2f0f524df814d7b38f6
 
 ### Dynamically-sized types
 
+The work on dynamically sized types allows types which don't have a statically known size to be used much like other types in Rust. Previously, types such as arrays without a fixed length and trait types could not be used in many places and had special treatment in the compiler. Now these types can have `impl`s and can be used as type parameters. That means you can write implement a trait for arrays without caring how the array is referenced (e.g., `impl<T> Foo for [T] { ... }`) and use your own smart pointers with trait objects and arrays (e.g., `Rc<[int]>` or `Rc<Show>`).
+
 ### Slicing syntax
 
 ### Implemented RFC's
