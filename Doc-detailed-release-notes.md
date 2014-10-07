@@ -150,7 +150,7 @@ Slicing syntax allows for conveniently taking a view over a collection. Examples
 let v =               vec!['a', 'b', 'c', 'd', 'e', 'f'];
 
 let slice1 = v[1..4]; //      &['b', 'c', 'd']
-let slice2 = v[..4];  // &['a', 'b', 'c', 'd']
+let slice2 = v[..4];  //      &['a', 'b', 'c', 'd']
 let slice3 = v[1..];  //      &['b', 'c', 'd', 'e', 'f']
 ```
 
