@@ -59,6 +59,7 @@ getting Rust working on other platforms
   * [Rust Skåne][rust-skane]
   * [Rust Samurai 其ノ壱](http://atnd.org/events/39890)
   * [Rust 中文圈][rust-zh] (on Google+)
+* [Friends of the Tree][fott] - The Rust Team occasionally likes to recognize people for outstanding contributions to the Rust project, its ecosystem, and its community
 
 [pound-rust]: http://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust
 [pound-rust-internals]: http://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-internals
@@ -72,6 +73,7 @@ getting Rust working on other platforms
 [rust-korea]: http://rust-kr.org/
 [rust-skane]: http://www.meetup.com/rust-skane/
 [rust-zh]: https://plus.google.com/communities/100629002107624231185/
+[fott]: https://github.com/rust-lang/rust/wiki/Doc-friends-of-the-tree
 
 ## Presentations
 
