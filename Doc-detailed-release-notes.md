@@ -104,7 +104,7 @@ See also the [RFC](https://github.com/rust-lang/rfcs/blob/d2c2f0f524df814d7b38f6
 
 ### Where clauses
 
-The current syntax for placing trait and region bounds on type parameters, `T: Foo + Bar + 'baz`, is not sufficient
+The current syntax for placing trait and region bounds on type parameters, `<T: Foo + Bar + 'baz>`, is not sufficient
 for some future use-cases, including [associated types](https://github.com/rust-lang/rfcs/blob/d2c2f0f524df814d7b38f69311ab67f41c2ec3ec/active/0059-associated-items.md).
 Furthermore, with many bounds, the syntax can become difficult to read and obscure more important aspects of declarations.
 `where` clauses are a new and more flexible syntax for specifying bounds, which come *after* the rest of the declaration.
