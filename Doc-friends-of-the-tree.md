@@ -4,7 +4,7 @@ outstanding contributions to The Rust Project, its ecosystem, and its
 community. These people are 'friends of the tree', archived here
 for eternal glory.
 
-## 2014-10-07 Alex Beingessner (Gankro)
+## 2014-10-07 Alexis Beingessner (Gankro)
 
 Alexis Beingessner (aka @Gankro) began contributing to Rust in July,
 and has already had a major impact on several library-related
