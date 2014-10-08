@@ -18,9 +18,9 @@ Before hacking, read some tips on [[getting started|Note-getting-started-develop
 
 The simplest way is to look through the [issue tracker] for issues labeled with "E-easy", "I-enhancement", "I-wishlist", and/or "A-an-interesting-project". Unassigned bugs are always fair game. Assigned bugs that don't seem to be getting worked on actively can be fair game, but always check with the bug owner first in that case.
 
-Outstanding bugs or feature requests in Rust often have a corresponding test in the [[test suite|Note testsuite]] that doesn't yet pass. One good way to jump into Rust development is to look for files in the test/run-pass directory containing the string `xfail-test`. Those tests all correspond to bugs that need to be fixed, features that someone needs to finish, or sometimes tests that need deleting.
+Outstanding bugs or feature requests in Rust often have a corresponding test in the [[test suite|Note testsuite]] that doesn't yet pass. One good way to jump into Rust development is to look for files in the test/run-pass directory containing the string `ignore-`. Those tests all correspond to bugs that need to be fixed, features that someone needs to finish, or sometimes tests that need deleting.
 
-The source is also littered with hundreds of comments marked with 'FIXME' and 'XXX'. In Rust, FIXME comments come with an issue number; sometimes these refer to issues that may be resolved easily.
+The source is also littered with hundreds of comments marked with 'FIXME'. In Rust, many FIXME comments come with an issue number; sometimes these refer to issues that may be resolved easily.
 
 Another easy way to get involved is to participate in bug triage. Every week we send out lists of bugs to contributors along with instructions on how to move them forward. If you would like to participate email Brian at banderson@mozilla.com.
 
