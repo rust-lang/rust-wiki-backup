@@ -160,7 +160,7 @@ It can also be used to conveniently convert `Vec<T>` to `&[T]` or `String` to `&
 let a: Vec<int> = vec![0, 1];
 let b: &[int] = a[];
 
-let c: String = "foo".to_string();
+let c: String = "foo".into_string();
 let d: &str = c[];
 ```
 
