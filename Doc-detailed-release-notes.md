@@ -144,7 +144,7 @@ See also the [RFC](https://github.com/rust-lang/rfcs/blob/d2c2f0f524df814d7b38f6
 
 ### Slice notation
 
-Slicing notation allows for conveniently taking a view over a collection. Examples:
+Slice notation allows for conveniently taking a view over a collection. Examples:
 
 ```
 let v =               vec!['a', 'b', 'c', 'd', 'e', 'f'];
@@ -154,7 +154,7 @@ let slice2 = v[..4];  //      &['a', 'b', 'c', 'd']
 let slice3 = v[1..];  //      &['b', 'c', 'd', 'e', 'f']
 ```
 
-Slice notation can also be used to conveniently convert `Vec<T>` to `&[T]` or `String` to `&str`:
+It can also be used to conveniently convert `Vec<T>` to `&[T]` or `String` to `&str`:
 
 ```
 let a: Vec<int> = vec![0, 1];
