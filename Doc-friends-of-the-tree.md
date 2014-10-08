@@ -4,7 +4,7 @@ outstanding contributions to The Rust Project, its ecosystem, and its
 community. These people are 'friends of the tree', archived here
 for eternal glory.
 
-## 2014-10-07 Alex Beingessner (Gangkro)
+## 2014-10-07 Alex Beingessner (Gankro)
 
 Alexis Beingessner (aka @Gankro) began contributing to Rust in July,
 and has already had a major impact on several library-related
@@ -27,7 +27,7 @@ which happily showed Rust performing quite well.
 As part of his benchmarking work he has ported the 'criterion' benchmarking
 framework to Rust.
 
-## 2014-07-29 Björn Steinbrink (dotdash)
+## 2014-07-29 Björn Steinbrink (dotdash, doener)
 
 Contributing since April 2013. Björn has done many optimizations
 for Rust, including removing allocation bloat in iterators,
