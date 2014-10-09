@@ -4,6 +4,43 @@ This is an archive of all the existing Rust release artifacts. Each release is s
 [pre-0.8-key]: http://www.rust-lang.org/rust-key-old.gpg.ascii
 [pre-0.5-key]: http://www.rust-lang.org/rust-key-very-old.gpg.ascii
 
+## 0.12.0
+
+* [Announcement][0.12.0-announce]
+* [Release notes][0.12.0-notes]
+* [Source code][0.12.0-tar] ([signature][0.12.0-tar-sig])
+* [Windows x86_64 installer][0.12.0-windows-x64] ([signature][0.12.0-windows-x64-sig])
+* [Windows i686 installer][0.12.0-windows-x32] ([signature][0.12.0-windows-x32-sig])
+* [Linux x86_64 tarball][0.12.0-linux-x64] ([signature][0.12.0-linux-x64-sig])
+* [Linux i686 tarball][0.12.0-linux-x32] ([signature][0.12.0-linux-x32-sig])
+* [Mac OS X x86_64 pkg][0.12.0-osx-x64-pkg] ([signature][0.12.0-osx-x64-pkg-sig])
+* [Mac OS X i686 pkg][0.12.0-osx-x32-pkg] ([signature][0.12.0-osx-x32-pkg-sig])
+* [Mac OS X x86_64 tarball][0.12.0-osx-x64-tar] ([signature][0.12.0-osx-x64-tar-sig])
+* [Mac OS X i686 tarball][0.12.0-osx-x32-tar] ([signature][0.12.0-osx-x32-tar-sig])
+* [Documentation][0.12.0-docs]
+
+[0.12.0-announce]: TODO
+[0.12.0-notes]: https://github.com/mozilla/rust/blob/0.12.0/RELEASES.txt
+[0.12.0-tar]: https://static.rust-lang.org/dist/rust-0.12.0.tar.gz
+[0.12.0-tar-sig]: https://static.rust-lang.org/dist/rust-0.12.0.tar.gz.asc
+[0.12.0-windows-x64]: https://static.rust-lang.org/dist/rust-0.12.0-x86_64-w64-mingw32.exe
+[0.12.0-windows-x64-sig]: https://static.rust-lang.org/dist/rust-0.12.0-x86_64-w64-mingw32.exe.asc
+[0.12.0-windows-x32]: https://static.rust-lang.org/dist/rust-0.12.0-i686-w64-mingw32.exe
+[0.12.0-windows-x32-sig]: https://static.rust-lang.org/dist/rust-0.12.0-i686-w64-mingw32.exe.asc
+[0.12.0-linux-x64]: https://static.rust-lang.org/dist/rust-0.12.0-x86_64-unknown-linux-gnu.tar.gz
+[0.12.0-linux-x64-sig]: https://static.rust-lang.org/dist/rust-0.12.0-x86_64-unknown-linux-gnu.tar.gz.asc
+[0.12.0-linux-x32]: https://static.rust-lang.org/dist/rust-0.12.0-i686-unknown-linux-gnu.tar.gz
+[0.12.0-linux-x32-sig]: https://static.rust-lang.org/dist/rust-0.12.0-i686-unknown-linux-gnu.tar.gz.asc
+[0.12.0-osx-x64-pkg]: https://static.rust-lang.org/dist/rust-0.12.0-x86_64-apple-darwin.pkg
+[0.12.0-osx-x64-pkg-sig]: https://static.rust-lang.org/dist/rust-0.12.0-x86_64-apple-darwin.pkg.asc
+[0.12.0-osx-x32-pkg]: https://static.rust-lang.org/dist/rust-0.12.0-i686-apple-darwin.pkg
+[0.12.0-osx-x32-pkg-sig]: https://static.rust-lang.org/dist/rust-0.12.0-i686-apple-darwin.pkg.asc
+[0.12.0-osx-x64-tar]: https://static.rust-lang.org/dist/rust-0.12.0-x86_64-apple-darwin.tar.gz
+[0.12.0-osx-x64-tar-sig]: https://static.rust-lang.org/dist/rust-0.12.0-x86_64-apple-darwin.tar.gz.asc
+[0.12.0-osx-x32-tar]: https://static.rust-lang.org/dist/rust-0.12.0-i686-apple-darwin.tar.gz
+[0.12.0-osx-x32-tar-sig]: https://static.rust-lang.org/dist/rust-0.12.0-i686-apple-darwin.tar.gz.asc
+[0.12.0-docs]: http://doc.rust-lang.org/0.12.0/index.html
+
 ## 0.11.0
 
 * [Announcement][0.11.0-announce]
