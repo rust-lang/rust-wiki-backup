@@ -47,7 +47,7 @@ See also [Mathematics](Community-libraries#mathematics)
   * LevelDB
       * [thestinger/rust-leveldb](https://github.com/thestinger/rust-leveldb)
   * LMDB
-      * [esummers/rust-lightning](https://github.com/esummers/rust-lightning)
+      * [vhbit/lmdb-rs](https://github.com/vhbit/lmdb-rs)
   * MongoDB
       * [10gen-interns/mongo-rust-driver-prototype](https://github.com/10gen-interns/mongo-rust-driver-prototype)
   * Redis
