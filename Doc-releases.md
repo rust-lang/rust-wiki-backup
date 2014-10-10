@@ -20,7 +20,7 @@ This is an archive of all the existing Rust release artifacts. Each release is s
 * [Documentation][0.12.0-docs]
 
 [0.12.0-announce]: https://mail.mozilla.org/pipermail/rust-dev/2014-October/011267.html
-[0.12.0-notes]: https://github.com/mozilla/rust/blob/0.12.0/RELEASES.txt
+[0.12.0-notes]: https://github.com/mozilla/rust/blob/0.12.0/RELEASES.md
 [0.12.0-tar]: https://static.rust-lang.org/dist/rust-0.12.0.tar.gz
 [0.12.0-tar-sig]: https://static.rust-lang.org/dist/rust-0.12.0.tar.gz.asc
 [0.12.0-windows-x64]: https://static.rust-lang.org/dist/rust-0.12.0-x86_64-w64-mingw32.exe
