@@ -1,15 +1,9 @@
-As of release 0.10, Rust still depends on GCC for platform linker and C runtime libraries, so you will need to install one before installing Rust itself. Follow these instructions to set up the environment, then run the [Rust installer].
+As of release 0.12, Rust distribution for Windows is completely self-contained and includes all dependencies from MinGW toolchain required for building Windows binaries.
 
-## MinGW
+Notes:
 
-The current recommended way of obtaining Rust's prerequisites is by using the [mingw-w64 installers](http://sourceforge.net/projects/mingwbuilds/files/mingw-builds-install/mingw-builds-install.exe/download) from the [mingw-builds project](https://sourceforge.net/projects/mingwbuilds/files/host-windows/releases/). The official Rust build bots are using such an installer from late March, 2014.
+1. Rust compiler uses `gcc` as a linker driver, and will search for it in the system `PATH` before searching in the private directory.  This means that any other versions found on `PATH` will override the one bundled with Rust, and may cause linking errors if they aren't compatible.  The solution is to strip down the `PATH` in the console session used to launch `rustc`.
+2. The 32-bit binaries produced by `rustc` will depend on the shared GCC runtime library, `libgcc_s_dw2-1.dll`, which you will need to distribute along with your program.  You'll find it in the `/bin` directory.  
+The 64-bit binaries are dependency-free.
 
-1. Download and run mingw-builds-install.exe.
-2. Choose installation options: architecture=x32, **threads=win32**, exceptions=dwarf.
-3. Now just download and run the [Rust installer].
-3. Use Rust compiler from mingw-builds terminal (there will be a shortcut in the Start menu), or add `<mingw-builds>\mingw32\bin` directory to your PATH.
-4. Verify Rust installation at mingw-builds terminal by typing `rustc --help`
-
-[Rust installer]: http://www.rust-lang.org/install.html
-
-*Note: these instructions are sufficient to run Rust from a binary installation. To build Rust see [[further instructions|Note-getting-started-developing-Rust]].*
+*These instructions cover running Rust from a binary installation. To build Rust see [[further instructions|Note-getting-started-developing-Rust]].*
