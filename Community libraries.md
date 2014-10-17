@@ -172,6 +172,8 @@ See also [[Computer Graphics and Game Development]].
  * Consistent error handling
 * quotas, accounting
 * reflection
+* command-line handling
+  *  [tailhook/rust-argparse](https://github.com/tailhook/rust-argparse) [<img src="https://travis-ci.org/tailhook/rust-argparse.png?branch=master">](https://travis-ci.org/tailhook/rust-argparse)
 
 ## Networking
 
