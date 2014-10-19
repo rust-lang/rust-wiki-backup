@@ -32,6 +32,7 @@ Rust is quickly becoming an excellent language for computer graphics and game de
 - [rust-portaudio](https://github.com/JeremyLetang/rust-portaudio)
 - [rust-portmidi](https://github.com/musitdev/rust-portmidi.git)
 - [ears](https://github.com/JeremyLetang/ears) (simple audio API on top of OpenAL) [![Build Status](https://travis-ci.org/JeremyLetang/ears.png?branch=master)](https://travis-ci.org/JeremyLetang/ears)
+- [rust-sndfile](https://github.com/jeremyletang/rust-sndfile) (library for reading and writing audio files)
 
 #### Mathematics
 - [cgmath-rs](https://github.com/bjz/cgmath-rs) [<img src="https://travis-ci.org/bjz/cgmath-rs.png?branch=master">](https://travis-ci.org/bjz/cgmath-rs)
