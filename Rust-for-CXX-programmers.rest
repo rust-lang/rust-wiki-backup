@@ -253,12 +253,12 @@ similar to what templates would produce.
 
 Function Overloading
 --------------------
-Rust can only select function overloads based on the receiver (and sometimes through return values due to HN type inference).
+Rust can only select function overloads based on the receiver (and sometimes through return values due to Hindley-Milner type inference).
 
 To 'overload' functions on multiple parameters, one must create an extra layer of traits for something that looks like double-dispatch, with each parameter being moved to the receiver by an intermediate function.
 Although this is significantly more boilerplate, the benefit is that its' also ready for runtime polymorphism through trait-objects if needed, and traits improve error messages for generics(templates).
 
-Without overloading multiple parameters, the information you pay in writing more specific function calls is sometimes recovered with HN type inference feeding back through its' arguments.
+Without overloading multiple parameters, the information you pay in writing more specific function calls is sometimes recovered with HM type inference feeding back through its' arguments.
 
 You can also consider Enums for conviniently passing varied options to a function - or use rusts powerful macros for wrapping extra convinience around function calls (eg, it is possible to annotate arguments with keywords & special syntax, handle variadics etc)
 
