@@ -40,11 +40,12 @@ fn main() {
 }
 ```
 
-There are six different modes for compile tests. Each test is run under one or more modes:
+There are seven different modes for compile tests. Each test is run under one or more modes:
 
 * compile-fail - The test should fail to compile. Must include at least one expected error.
 * run-fail - The test should compile but fail at runtime. Must include at least one error-pattern directive.
 * run-pass - The test should compile and run successfully
+* run-pass-valgrind - The test should compile and run (under Valgrind, where possible) successfully
 * pretty - The test should round-trip through the pretty-printer and then compile successfully
 * debug_info - The test will be compiled with debuginfo and an embedded `gdb` command script will be run to query the debuginfo
 * codegen - The test will be compiled to LLVM bitcode, and a companion test written in C++ will be compiled to LLVM bitcode with `clang`, and the number of instructions will be compared
@@ -64,9 +65,10 @@ Valid directives include:
 * `debugger:CMD` - Issues a command to the debugger in `debuginfo` mode
 * `check:RESULT` - Checks the result of a previous `debugger:` directive in `debuginfo` mode
 
-There are seven directories containing compile tests, living in the src/tests directory:
+There are eight directories containing compile tests, living in the src/tests directory:
 
 * run-pass - Tests that are expected to compile and run successfully. Also used for pretty-print testing.
+* run-pass-valgrind - Tests that are expected to compile and run successfully under Valgrind. Also used for pretty-print testing.
 * run-fail - Tests that are expected compile but fail when run. Also used for pretty-print testing.
 * compile-fail - Tests that are expected not to compile
 * bench - Benchmarks and miscellaneous snippets of code that are expected to compile and run successfully. Also used for pretty-print testing.
@@ -78,11 +80,13 @@ There are seven directories containing compile tests, living in the src/tests di
 And finally, build targets:
 
 * `check-stage[N]-rpass` - The tests in the run-pass directory, in run-pass mode
+* `check-stage[N]-rpass-valgrind` - The tests in the run-pass-valgrind directory, in run-pass-valgrind mode
 * `check-stage[N]-rfail` - The tests in the run-fail-directory, in run-fail mode
 * `check-stage[N]-cfail` - The tests in the compile-fail directory, in compile-fail mode
 * `check-stage[N]-bench` - The tests in the bench directory, in run-pass mode
 * `check-stage[N]-pretty` - All the pretty-print tests
 * `check-stage[N]-pretty-rpass` - The tests in the run-pass directory, in pretty mode
+* `check-stage[N]-pretty-rpass-valgrind` - The tests in the run-pass-valgrind directory, in pretty mode
 * `check-stage[N]-pretty-rfail` - The tests in the run-fail directory, in pretty mode
 * `check-stage[N]-pretty-bench` - The tests in the bench directory, in pretty mode
 * `check-stage[N]-pretty-pretty` - The tests in the pretty directory, in pretty mode
