@@ -6,7 +6,7 @@ The developer forum is located at http://discuss.rust-lang.org/.
 * [[Note guide for new contributors]]
 * [[Note getting started developing Rust]] -- How to **Build Rust** on your platform
 * [[Note development policy]] -- **please read this**
-* [RFC process](https://github.com/rust-lang/rfcs/blob/master/active/0001-rfc-process.md) -- **read this for larger changes**
+* [RFC process](https://github.com/rust-lang/rfcs/blob/master/text/0002-rfc-process.md) -- **read this for larger changes**
 * [[Note priority issue criteria]] -- criteria used for evaluating high priority issues
 * [[Note wiki conventions]]
 * [[Note compiler snapshots]]
