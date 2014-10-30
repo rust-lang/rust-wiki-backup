@@ -22,7 +22,7 @@
   * [Erik Rose's BBEdit plugin](https://github.com/erikrose/rust-bbedit-plugin) - Plugin for BBEdit. Probably quite out of date.
 * Eclipse
   * [ianb's Eclipse plugin](https://github.com/ianbollinger/oxide) - Eclipse!
-  * [Reidar Sollid's Eclipse plugin](http://reidarsollid.github.com/RustyCage/) - A newer Eclipse plugin.
+  * [Reidar Sollid's Eclipse plugin](https://github.com/reidarsollid/RustyCage) - A newer Eclipse plugin.
 * Emacs
   * included, see `src/etc/`. 
   * Flycheck has support for on-the-fly syntax error detection. Use the Package Manager (ELPA) to install `flycheck-mode`
