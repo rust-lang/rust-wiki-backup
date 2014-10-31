@@ -6,8 +6,9 @@ The following table describes the bots which post to #rust-bots, and who to cont
 
    |   |   |
 ---|---|---|
-ghrust | notifications from the Rust repo | acrichto
-ghcargo | notifications from the Cargo repo | acrichto
+gh-rust | notifications from the Rust repo | acrichto
+gh-cargo | notifications from the Cargo repo | acrichto
+gh-rfcs | notifications from the RFC repo | acrichto
 gh-rustaceans | notifications from the rustaceans repos | nrc
 redditbot | posts on r/rust | mcpherrin
 
