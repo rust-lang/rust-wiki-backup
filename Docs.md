@@ -48,7 +48,7 @@ getting Rust working on other platforms
   * [#rust on irc.mozilla.org][pound-rust] - Main Rust channel - general discussion
   * [#rust-internals on irc.mozilla.org][pound-rust-internals] - Rust compiler and library development
   * [#rust-gamedev on irc.mozilla.org][pound-rust-gamedev] - game development in Rust
-  * [#rust-osdev on irc.mozill.org][pound-rust-osdev] - OS development in Rust
+  * [#rust-osdev on irc.mozilla.org][pound-rust-osdev] - OS development in Rust
   * [#rust on irc.ozinger.org][pound-rust-korea] - Korean Rust community
 * Mailing list [rust-dev]
 * Reddit's [r/rust]
