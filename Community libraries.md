@@ -138,7 +138,7 @@ See also [[Computer Graphics and Game Development]].
   * [apribadi/rust-termbox](https://github.com/apribadi/rust-termbox)
 * wxWidgets
   * [kenz-gelsoft/wxRust](https://github.com/kenz-gelsoft/wxRust): [![Build Status](https://travis-ci.org/kenz-gelsoft/wxRust.png?branch=master)](https://travis-ci.org/kenz-gelsoft/wxRust)
-* rust-wayland
+* Wayland
   * [eyolfson/rust-wayland](https://github.com/eyolfson/rust-wayland)
 	  
 ## IO
