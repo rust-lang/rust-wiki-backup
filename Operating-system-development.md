@@ -21,6 +21,7 @@ Here is a short list of some OS projects in Rust. Feel free to add your own:
 * [vertexclique/trafo] (https://github.com/vertexclique/trafo) - util-linux written in Rust.
 * [hackndev/zinc] (https://github.com/hackndev/zinc) - bare metal stack for ARM, currently targeting LPC1768 and STM32F4.
 * [mvdnes/element76](https://github.com/mvdnes/element76) - A small i686 kernel
+* [thepowersgang/rust_os](https://github.com/thepowersgang/rust_os) - A very minimal (and incomplete) x86_64 kernel
 
 ### Resources and docs
 
