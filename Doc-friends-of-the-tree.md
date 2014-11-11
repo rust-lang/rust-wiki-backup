@@ -4,6 +4,10 @@ outstanding contributions to The Rust Project, its ecosystem, and its
 community. These people are 'friends of the tree', archived here
 for eternal glory.
 
+## 2014-11-11 Brian Koropoff (unwound)
+
+In the last few weeks, he has fixed many,  many tricky ICEs all over the compiler, but particularly in the area of  unboxed closures and the borrow checker. He has also completely  rewritten how unboxed closures interact with monomorphization and had a  huge impact on making them usable. Brian Koropoff is truly a Friend of  the Tree.
+
 ## 2014-10-07 Alexis Beingessner (Gankro)
 
 Alexis Beingessner (aka @Gankro) began contributing to Rust in July,
