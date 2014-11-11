@@ -15,6 +15,7 @@ DST | [Dynamically sized type](http://smallcultfollowing.com/babysteps/blog/2014
 FFI | See _foreign function interface_.
 foreign function interface | Calling code written in another language. Rust has a native C FFI, using `extern "C" fn`.
 heap allocation | A dynamic allocation not on the stack.
+HRTB | Higher-ranked trait bounds. See [RFC 387](https://github.com/rust-lang/rfcs/blob/master/text/0387-higher-ranked-trait-bounds.md).
 ICE | Internal compiler error: an internal assertion failure in the compiler, which always indicates a bug in the compiler. There should never be any user input that causes an ICE to happen, so if you see one, it's always a bug and reporting it is helpful (see [[HOWTO submit a RUST bug report]]).
 inlining | Inlining is removal of a function call by including the function body directly into the callsite, enabling further optimizations. Controlled with the `inline` attribute: `#[inline(never)]`, `#[inline]` for a standard (though very strong) inline hint, and `#[inline(always)]`. Note that `#[inline]` is required for any cross-crate inlining.
 Intermediate Representation | LLVM IR Code. It can be seen in text form by passing`--emit=ir` to rustc.
