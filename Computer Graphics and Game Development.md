@@ -75,7 +75,7 @@ Rust is quickly becoming an excellent language for computer graphics and game de
 - [cubeland](https://github.com/rlane/cubeland)
 - [Marauder](https://github.com/ozkriff/marauder) [<img src="https://travis-ci.org/ozkriff/marauder.png?branch=master">](https://travis-ci.org/ozkriff/marauder)
 - [pong-rs](https://github.com/zokier/pong-rs)
-- [Q³](https://github.com/Jeaye/q3) [<img src="https://travis-ci.org/jeaye/q3.png?branch=master">](https://travis-ci.org/jeaye/q3)
+- [Q³](https://github.com/jeaye/q3)
 - [rust-airhockey](https://github.com/FrozenCow/rust-airhockey)
 - [rust-story](https://github.com/drbawb/rust-story) - Cave Story written in Rust
 - [rustenstein3D](https://github.com/JeremyLetang/rustenstein3D/)
