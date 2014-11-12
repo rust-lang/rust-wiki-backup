@@ -61,6 +61,7 @@ Execute `mingw32_shell.bat` to run MSYS2 for a 32-bit system. Run the following 
 
     pacman -S mingw-w64-i686-toolchain
     pacman -S base-devel
+    pacman -S git
 
 To check the installation was successful, type `gcc -v`. The target should be `i686-w64-mingw32`.
 
@@ -77,6 +78,7 @@ Execute `mingw64_shell.bat` to run MSYS2 for a 64-bit system. Run the following 
 
     pacman -S mingw-w64-x86_64-toolchain
     pacman -S base-devel
+    pacman -S git
 
 To check the installation was successful, type `gcc -v`. The target should be `i686-w64-mingw32`.
 
