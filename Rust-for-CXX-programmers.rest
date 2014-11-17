@@ -108,7 +108,7 @@ can be used.
 +----------------------------+------------------------------------------------+
 | C++                        | Rust                                           |
 +============================+================================================+
-| `enum T{Foo,Bar,Baz}`      | `enum T{}`, C like enums                       |
+| `enum T {Foo,Bar,Baz}`     | `enum T {}`, C like enums                      |
 +----------------------------+------------------------------------------------+
 |`union {}`                  | `enum T {}`- tagged-union, variants have fields|
 +----------------------------+------------------------------------------------+
@@ -116,13 +116,13 @@ can be used.
 +----------------------------+------------------------------------------------+
 | `boost::optional`          | `Option` (an `enum`)                           |
 +----------------------------+------------------------------------------------+
-| `switch foo.kind {`        | match foo {                                    |
-| `  case BAR: ...break;`    |   Bar => ...,                                  |
+| `switch foo.kind {`        | `match foo {`                                  |
+| `  case BAR: ...break;`    | `  Bar => ...,`                                |
 +----------------------------+------------------------------------------------+
 
 `Option` and `Either` are very common patterns, so they're predefined along
 with utility methods. 
-Option<Box<T>> and Option<&T> are optimised by the compiler to be stored as a single pointer, with a null value representing 'None'.
+`Option<Box<T>>` and `Option<&T>` are optimised by the compiler to be stored as a single pointer, with a null value representing 'None'.
 
 Nominal types
 -------------
@@ -149,7 +149,7 @@ This eliminates the need for C++ 'friend' or 'protected'; C++ can in some situat
 
 Tuples and destructuring
 --------------------------
-Tuples are built into the language syntax and along with destructuring assignment (available in arguments, match, let) they provide a convenient way of grouping multiple values. There are also 'tuple structs', where the type is named but the fields are not.
+Tuples are built into the language syntax and along with destructuring assignment (available in arguments, `match`, `let`) they provide a convenient way of grouping multiple values. There are also 'tuple structs', where the type is named but the fields are not.
 
 Copying and move semantics
 --------------------------
@@ -168,7 +168,7 @@ Concurrency
 
 Rust does not allow sharing mutable data between threads, so it isn't
 vulnerable to races for in-memory data (data races). Instead of sharing data, message
-passing is used instead - either by copying data, or by moving owned pointers
+passing is used - either by copying data, or by moving owned pointers
 between tasks.
 
 Exceptions
