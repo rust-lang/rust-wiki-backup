@@ -110,6 +110,11 @@ Wanted library: [[Lib datetime]]
    * [netvl/rust-xml](https://github.com/netvl/rust-xml): a streaming XML library [![Build Status](https://travis-ci.org/netvl/rust-xml.svg?branch=master)](https://travis-ci.org/netvl/rust-xml)
 
 
+## GIS
+
+   * [JamesFysh/rust-proj4](https://github.com/JamesFysh/rust-proj4): Rust bindings for PROJ.4 [![Build Status](https://travis-ci.org/JamesFysh/rust-proj4.svg?branch=master)](https://travis-ci.org/JamesFysh/rust-proj4)
+
+
 ## Graphics
 
 * Gnuplot
