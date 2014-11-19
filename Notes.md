@@ -6,7 +6,7 @@ The developer forum is located at http://discuss.rust-lang.org/.
 * [[Note guide for new contributors]]
 * [[Note getting started developing Rust]] -- How to **Build Rust** on your platform
 * [[Note development policy]] -- **please read this**
-* [RFC process](https://github.com/rust-lang/rfcs/blob/master/text/0002-rfc-process.md) -- **read this for larger changes**
+* [Note RFC process](https://github.com/rust-lang/rfcs/blob/master/text/0002-rfc-process.md) -- **read this for larger changes**
 * [[Note priority issue criteria]] -- criteria used for evaluating high priority issues
 * [[Note wiki conventions]]
 * [[Note compiler snapshots]]
@@ -14,7 +14,7 @@ The developer forum is located at http://discuss.rust-lang.org/.
 * [[Note tag label names and definitions]]
 * [Note style guide](https://github.com/rust-lang/rust-guidelines)
 * [[Note bors usage]] - Instructing bors to build, check, and merge on github
-* [[IRC notifications channel]]
+* [[Note IRC notifications channel]]
 * [[Note testsuite]] - How Rust's tests are organized and operated
 * [[Note rustc hacking guide]]
 * [[Note code review]]
