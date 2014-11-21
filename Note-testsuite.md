@@ -5,7 +5,7 @@ The rust test suite has several sets of tests for different purposes. As the com
 ### Recipes
 
 * Run the test suite: `make check`. This runs all stage2 tests. This is the criterion for a successful build.
-* Run the test suite without benchmarks: `make check NO_BENCH=1`
+* Run the test suite with benchmarks: `make check PLEASE_BENCH=1`
 * Run only ignored (broken) tests: `make check CHECK_IGNORED=1`
 * Run with verbose output: `make check VERBOSE=1`. This will print useful information like the exact commands being run.
 * Run with valgrind: `make check CFG_ENABLE_VALGRIND=1`
@@ -171,6 +171,8 @@ run-pass/cci_iter_exe.rs:
 
 Most crates include <a href="https://github.com/mozilla/rust/wiki/Doc-unit-testing">unit tests</a> which are part of the crate they test. These crates are built with the `--test` flag and run as part of `make check`.
 
+`libcore` has its tests in a separate crate, named `libcoretest`.
+
 All tests in a module should go in an inner module named `test`, with the attribute `#[cfg(test)]`. Placing tests in their own module is a practical issue - because test cases are not included in normal builds, building with `--test` require a different set of imports than without, and that causes 'unused import' errors.
 
 ```rust
@@ -193,12 +195,8 @@ mod test {
 
 ### Build targets
 
-* `make check-stage[N]-std`
-* `make check-stage[N]-extra`
-* `make check-stage[N]-syntax`
-* `make check-stage[N]-rustc`
-* `make check-stage[N]-rustdoc`
-* `make check-stage[N]-rusti`
+* `make check-stage[N]-crates`
+* `make check-stage[N]-[crate name]`
 
 ## Documentation tests
 
