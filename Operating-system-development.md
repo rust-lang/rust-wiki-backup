@@ -8,6 +8,7 @@ This page aims at referencing here resources and documentation about operating s
 
 Here is a short list of some OS projects in Rust. Feel free to add your own:
 
+* [ryanra/RustOS](https://github.com/ryanra/RustOS)
 * [LeoTestard/Quasar](https://github.com/LeoTestard/Quasar.git)
 * [pcmattman/rustic](https://github.com/pcmattman/rustic.git)
 * [pczarn/rustboot](https://github.com/pczarn/rustboot.git)
