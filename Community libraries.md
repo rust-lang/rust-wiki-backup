@@ -194,6 +194,8 @@ See also [[Computer Graphics and Game Development]].
   * [zslayton/stomp-rs](https://github.com/zslayton/stomp-rs):  [<img src="https://travis-ci.org/zslayton/stomp-rs.png?branch=master">](https://travis-ci.org/zslayton/stomp-rs)
 * SSH
   * [alexcrichton/ssh2-rs](https://github.com/alexcrichton/ssh2-rs):  [<img src="https://travis-ci.org/alexcrichton/ssh2-rs.png?branch=master">](https://travis-ci.org/alexcrichton/ssh2-rs)
+* POP3
+  * [mattnenterprise/rust-pop3](https://github.com/mattnenterprise/rust-pop3):  [<img src="https://api.travis-ci.org/mattnenterprise/rust-pop3.png?branch=master">](https://travis-ci.org/mattnenterprise/rust-pop3)
 
 ## Operating system specific
 
