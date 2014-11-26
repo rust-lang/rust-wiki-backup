@@ -58,7 +58,7 @@ getting Rust working on other platforms
   * [Rust Korea][rust-korea]
   * [Rust Skåne][rust-skane]
   * [Rust Samurai 其ノ壱](http://atnd.org/events/39890)
-  * [Rust 中文圈][rust-zh] (on Google+)
+  * [Rust 中文社区][rust-zh] (on Google+)
   * [Rust London User Group][rust-london]
 * [Friends of the Tree][fott] - The Rust Team occasionally likes to recognize people for outstanding contributions to the Rust project, its ecosystem, and its community
 
