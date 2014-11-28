@@ -196,6 +196,8 @@ See also [[Computer Graphics and Game Development]].
   * [alexcrichton/ssh2-rs](https://github.com/alexcrichton/ssh2-rs):  [<img src="https://travis-ci.org/alexcrichton/ssh2-rs.png?branch=master">](https://travis-ci.org/alexcrichton/ssh2-rs)
 * POP3
   * [mattnenterprise/rust-pop3](https://github.com/mattnenterprise/rust-pop3):  [<img src="https://api.travis-ci.org/mattnenterprise/rust-pop3.png?branch=master">](https://travis-ci.org/mattnenterprise/rust-pop3)
+* FTP
+  * [mattnenterprise/rust-ftp](https://github.com/mattnenterprise/rust-ftp):  [<img src="https://api.travis-ci.org/mattnenterprise/rust-ftp.png?branch=master">](https://travis-ci.org/mattnenterprise/rust-ftp)
 
 ## Operating system specific
 
