@@ -198,6 +198,8 @@ See also [[Computer Graphics and Game Development]].
   * [mattnenterprise/rust-pop3](https://github.com/mattnenterprise/rust-pop3):  [<img src="https://api.travis-ci.org/mattnenterprise/rust-pop3.png?branch=master">](https://travis-ci.org/mattnenterprise/rust-pop3)
 * FTP
   * [mattnenterprise/rust-ftp](https://github.com/mattnenterprise/rust-ftp):  [<img src="https://api.travis-ci.org/mattnenterprise/rust-ftp.png?branch=master">](https://travis-ci.org/mattnenterprise/rust-ftp)
+* NNTP
+  * [mattnenterprise/rust-nntp](https://github.com/mattnenterprise/rust-nntp):  [<img src="https://api.travis-ci.org/mattnenterprise/rust-nntp.png?branch=master">](https://travis-ci.org/mattnenterprise/rust-nntp)
 
 ## Operating system specific
 
