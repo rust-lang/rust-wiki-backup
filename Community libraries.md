@@ -163,7 +163,7 @@ See also [[Computer Graphics and Game Development]].
 * [bjz/cgmath-rs](https://github.com/bjz/cgmath-rs) (Linear algebra and math library for graphics)
 * [cmr/linalg](https://github.com/cmr/linalg) (Toy/tinkering linear algebra library)
 
-## Conversions
+### Unit Conversions
 * [uwap/unitr](https://github.com/uwap/unitr) (A unit conversion library)
 
 ## Misc
@@ -205,6 +205,10 @@ See also [[Computer Graphics and Game Development]].
 
 * Windows
   * [klutzy/rust-windows](https://github.com/klutzy/rust-windows): Win32/Win64 wrapper for Rust
+
+## OS
+
+* [uutils/coreutils](https://github.com/uutils/coreutils): GNU coreutils replacement
 
 ## Parser Generator
 
