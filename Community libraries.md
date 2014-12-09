@@ -185,7 +185,7 @@ See also [[Computer Graphics and Game Development]].
 ## Networking
 
 * GUID
-* [UUID](https://github.com/mozilla/rust/blob/master/src/libuuid/lib.rs)
+* [UUID](https://github.com/rust-lang/uuid)
 * NanoMsg
   * [glycerine/rust-nanomsg](https://github.com/glycerine/rust-nanomsg)
 * ZeroMQ
