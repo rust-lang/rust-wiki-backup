@@ -107,7 +107,7 @@ Wanted library: [[Lib datetime]]
    * [bjz/sax-rs](https://github.com/bjz/sax-rs): bindings to libxml2's SAX parser [<img src="https://travis-ci.org/bjz/sax-rs.png?branch=master">](https://travis-ci.org/bjz/sax-rs)
    * [DanielFath/xml-parser](https://github.com/DanielFath/xml-parser): A hybrid pull, DOM parser written in pure Rust [![Build Status](https://travis-ci.org/DanielFath/xml-parser.png?branch=master)](https://travis-ci.org/DanielFath/xml-parser)
    * [Florob/RustyXML](https://github.com/Florob/RustyXML): an XML parser written in Rust
-   * [netvl/rust-xml](https://github.com/netvl/rust-xml): a streaming XML library [![Build Status](https://travis-ci.org/netvl/rust-xml.svg?branch=master)](https://travis-ci.org/netvl/rust-xml)
+   * [netvl/xml-rs](https://github.com/netvl/rust-xml): an XML library in Rust [![Build Status](https://travis-ci.org/netvl/xml-rs.svg?branch=master)](https://travis-ci.org/netvl/xml-rs)
 
 
 ## GIS
