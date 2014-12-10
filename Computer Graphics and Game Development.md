@@ -79,5 +79,6 @@ Rust is quickly becoming an excellent language for computer graphics and game de
 - [rust-airhockey](https://github.com/FrozenCow/rust-airhockey)
 - [rust-story](https://github.com/drbawb/rust-story) - Cave Story written in Rust
 - [rustenstein3D](https://github.com/JeremyLetang/rustenstein3D/)
+- [rusteroids](https://github.com/benbrunton/rusteroids)[![Build Status](https://travis-ci.org/benbrunton/rusteroids.svg?branch=develop)](https://travis-ci.org/benbrunton/rusteroids)
 - [Rustyhex](https://github.com/dpc/rustyhex/)
 - [xxo](https://github.com/mynery/xxo)
