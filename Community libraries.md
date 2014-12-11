@@ -122,6 +122,8 @@ Wanted library: [[Lib datetime]]
 
 * Images
    * [PistonDevelopers/image](https://github.com/PistonDevelopers/image): Encoding and decoding images in pure Rust [![Build Status](https://travis-ci.org/PistonDevelopers/image.svg?branch=master)](https://travis-ci.org/PistonDevelopers/image)
+* LibRaw
+   * [damienfir/rust-libraw](https://github.com/damienfir/rust-libraw): load RAW image files
 
 See also [[Computer Graphics and Game Development]].
 
