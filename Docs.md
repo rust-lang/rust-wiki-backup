@@ -60,6 +60,7 @@ getting Rust working on other platforms
   * [Rust Samurai 其ノ壱](http://atnd.org/events/39890)
   * [Rust 中文社区][rust-zh] (on Google+)
   * [Rust London User Group][rust-london]
+  * [Rust China](http://rust.cc/)
 * [Friends of the Tree][fott] - The Rust Team occasionally likes to recognize people for outstanding contributions to the Rust project, its ecosystem, and its community
 
 [pound-rust]: http://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust
