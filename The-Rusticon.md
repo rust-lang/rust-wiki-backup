@@ -28,7 +28,6 @@ LTO | See _link-time optimization_.
 monomorphise | The act of generating specialized versions of generic constructs at compile time to improve run time performance. See [_Whole-Program Compilation in MLton_](http://mlton.org/References.attachments/060916-mlton.pdf) and [Niko Matsakis's answer on Stackoverflow](http://stackoverflow.com/a/14198060).
 newtype struct | A [*tuple structure*](#tuple_structure) with a single unnamed field. For example `struct NodeIndex(int)`. Useful to create wrapper types.
 owning pointer | `Box<T>`, a pointer to an owned box.
-<a name="phantom_type" />phantom type | An `enum` with no variants. This cannot be constructed in safe code. See the [cheetsheet](https://github.com/mozilla/rust/wiki/Doc-FAQ-Cheatsheet#how-do-i-express-phantom-types) for an example.
 plain old data (Pod) | Any value that can be safely copied by moving bits, including scalars, references, and structs containing only Pod. Types which are pod implement the `Copy` trait.
 raw pointer | `*const T` or `*mut T`, a pointer to anything. Requires unsafe code to dereference, no static verification is done on them.
 <a name="record_structure" />record structure | A struct declared with named fields, for example `struct Point { x: f32, y: f32 }`
@@ -47,6 +46,7 @@ TWiR | This Week in Rust. cmr's [weekly summary](http://blog.octayn.net/) of Rus
 <a name="type_hint" />type hint | Syntax like `foo::<int>()` to give an explicit type for a generic function, method or struct constructor. Usually redundant due to type inference.
 unbox | To get the value out of a box, usually destroying the box in the process.
 <a name="unit_type" />unit type | The unit type, denoted `()`, permits only one value, also denoted `()`. Functions without return value have return type `()`. Sometimes called *nil*.
+<a name="uninhabited_type" />uninhabited type | An `enum` with no variants. This cannot be constructed in safe code.
 unit structure | A struct that only has one value, for example `struct Foo;` where `Foo` becomes the name of both the type and its only value. Works just the same as the *unit type* `()`, except it is a distinct type.
 <a name="variant" />variant | One of the set of possible values that can be represented by an `enum`.
 <a name="zero_variant_enum" />zero-variant enum | See [*phantom type*](#phantom_type).
