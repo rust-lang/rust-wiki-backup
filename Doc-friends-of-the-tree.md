@@ -4,6 +4,20 @@ outstanding contributions to The Rust Project, its ecosystem, and its
 community. These people are 'friends of the tree', archived here
 for eternal glory.
 
+## 2014-12-16 Gábor Lehel (glaebhoerl)
+
+Gabor's major contributions to Rust have been in the area of language
+design. In the last year he has produced a number of very high quality
+RFCs, and though many of them of not yet been accepted, his ideas are
+often thought-provoking and have had a strong influence on the
+direction of the language. His [trait based exception handling
+RFC][tbeh] was particularly innovative, as well that [for
+future-proofing checked arithmetic][checked]. Gabor is an exceedingly
+clever Friend of the Tree.
+
+[tbeh]: https://github.com/rust-lang/rfcs/pull/243
+[checked]: https://github.com/rust-lang/rfcs/pull/146
+
 ## 2014-11-11 Brian Koropoff (unwound)
 
 In the last few weeks, he has fixed many,  many tricky ICEs all over the compiler, but particularly in the area of  unboxed closures and the borrow checker. He has also completely  rewritten how unboxed closures interact with monomorphization and had a  huge impact on making them usable. Brian Koropoff is truly a Friend of  the Tree.
