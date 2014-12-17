@@ -1,1 +1,1 @@
-See https://github.com/rust-lang/rust-guidelines
+These have been moved to [the Rust guidelines](http://aturon.github.io/)
