@@ -24,6 +24,7 @@ Here is a short list of some OS projects in Rust. Feel free to add your own:
 * [mvdnes/element76](https://github.com/mvdnes/element76) - A small i686 kernel
 * [thepowersgang/rust_os](https://github.com/thepowersgang/rust_os) - A very minimal (and incomplete) x86_64 kernel
 * [ckkashyap/unix] (https://github.com/ckkashyap/unix/wiki) - Port of xv6 (64bit) to Rust
+* [Ming](https://github.com/nopaniers/ming) - Displays a flash screen on Android emulator, more to come.
 
 ### Resources and docs
 
