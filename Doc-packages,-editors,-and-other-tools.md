@@ -21,7 +21,7 @@
 * BBEdit
   * [Erik Rose's BBEdit plugin](https://github.com/erikrose/rust-bbedit-plugin) - Plugin for BBEdit. Probably quite out of date.
 * Eclipse
-  * [ianb's Eclipse plugin](https://github.com/ianbollinger/oxide) - Eclipse!
+  * [ianb's Eclipse plugin](https://github.com/ianbollinger/oxide) - Eclipse! (dead)
   * [Reidar Sollid's Eclipse plugin](https://github.com/reidarsollid/RustyCage) - A newer Eclipse plugin.
 * Emacs
   * included, see `src/etc/`. 
