@@ -56,7 +56,6 @@ Valid directives include:
 * `pp-exact` - The test should pretty-print exactly as written
 * `pp-exact:[filename]` - The pretty-printed test should match the example in `filename`
 * `ignore-test` - Test is broken, don't run it
-* `ignore-fast` - Don't run as part of check-fast, a special win32 test runner (some tests don't work with it)
 * `ignore-pretty` - Test doesn't pretty-print correctly
 * `error-pattern:[...]` - A message that should be expected on standard out. If multiple patterns are provided then they must all be matched, in order (**Note:** error-patterns are somewhat deprecated, see the section on Expected Errors below).
 * `no-reformat` - Don't reformat the code when running the test through the pretty-printer
@@ -214,9 +213,9 @@ Crate API docs are tested as well:
 
 To run all doc tests use `make check-stage[N]-doc`.
 
-## Fast check
+## Minimal (but faster) checking on windows
 
-Because Windows has slow process spawning running `make check` on that platform can take a long time. For this reason we have a `make check-fast` target that the Windows build servers run to keep the cycle time down. This is a stripped-down target which only checks run-pass, run-fail, compile-fail, run-make and target libraries.
+Because Windows has slow process spawning running `make check` on that platform can take a long time. For this reason we have a `make check-lite` target that the Windows build servers run to keep the cycle time down. This is a stripped-down target which only checks run-pass, run-fail, compile-fail, run-make and target libraries.
 
 ## Benchmarks, saved metrics and ratchets
 
