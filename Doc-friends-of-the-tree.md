@@ -4,6 +4,10 @@ outstanding contributions to The Rust Project, its ecosystem, and its
 community. These people are 'friends of the tree', archived here
 for eternal glory.
 
+## 2014-12-30 Kevin Ballard (kballard, Eridius)
+
+This is a belated recognition of Kevin Ballard (aka @kballard, aka Eridius) as a friend of the tree. Kevin put a lot of work into Unicode issues in Rust, especially as related to platform-specific constraints. He wrote the current path module in part to accommodate these constraints, and participated in the recent redesign of the module. He has also been a dedicated and watchful reviewer. Thanks, Kevin, for your contributions!
+
 ## 2014-12-16 Gábor Lehel (glaebhoerl)
 
 Gabor's major contributions to Rust have been in the area of language
