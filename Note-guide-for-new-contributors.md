@@ -2,10 +2,10 @@ You want to contribute to Rust? Frankly, you've made an excellent decision. Rust
 
 The way [many people][cmr] seem to get involved is by simply trying to write Rust code. Inevitably they hit a bug or missing feature, at which point they are compelled to [[write a patch|Note development policy]].
 
-We coordinate through [discuss.rust-lang.org][discuss], [IRC][pound-rust], and the GitHub [issue] tracker.
+We coordinate through [discuss.rust-lang.org][discuss], [IRC][pound-rust-internals], and the GitHub [issue] tracker.
 
 [cmr]: http://blog.octayn.net/blog/2013/06/23/how-i-got-started-hacking-rustc-and-how-you-can-too/
-[pound-rust]: http://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust
+[pound-rust-internals]: http://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-internals
 [r/rust]: http://reddit.com/r/rust
 [issue]: http://github.com/mozilla/rust/issues
 [discuss]: http://discuss.rust-lang.org
