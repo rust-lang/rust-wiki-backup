@@ -152,6 +152,8 @@ make install   # Install the compiler and associated tools
 
 This will build and test the compiler, standard libraries, and supporting tools.
 
+*Note:* You may need to use `sudo make install` if you do not normally have permission to modify the destination directory. The install locations can be adjusted by passing a `--prefix` argument to `configure`. Various other options are also supported, pass `--help` for more information on them.
+
 *Note:* You can use `make -j8` (if you have an 8-core machine) to speed up the build (or at least the LLVM part and the tests). On Linux or OS X, if you have Valgrind installed, the tests will run slowly because they are running under Valgrind. If you define `CFG_DISABLE_VALGRIND=1` in your build environment or run configure with the `--disable-valgrind` flag, you can see the tests running at full speed.
 
 *Note:* If you need to pass in extra flags to `make`, you can add `RUSTFLAGS=...` to the argument list for `make`. For example, `make check RUSTFLAGS="-Z debug-info"` builds the compiler and runs tests with debug info enabled. 
