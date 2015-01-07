@@ -1,6 +1,6 @@
 This page covers releases in more detail than the bullet-point list given in the RELEASES.txt file in the source distribution, in particular focusing on _language level changes_ that will be immediately visible and/or disruptive to users trying to keep their Rust code compiling and working right between releases.
 
-**Note: As of 1.0.0-alpha (January 2015) detailed release notes are no longer produced. Instead the short release notes are extensively cross-referenced with supporting RFC's and other documentation.**
+*Note: As of 1.0.0-alpha (January 2015) detailed release notes are no longer produced. Instead the short release notes are extensively cross-referenced with supporting RFC's and other documentation.*
 
 ## 0.12.0 October 2014
 
