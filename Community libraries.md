@@ -164,6 +164,7 @@ See also [[Computer Graphics and Game Development]].
 * [bluss/rust-ndarray](https://github.com/bluss/rust-ndarray) (N-dimensional array with linear algebra)
 * [bjz/cgmath-rs](https://github.com/bjz/cgmath-rs) (Linear algebra and math library for graphics)
 * [cmr/linalg](https://github.com/cmr/linalg) (Toy/tinkering linear algebra library)
+* [ptal/Rust.Interval](https://github.com/ptal/Rust.Interval) (Interval arithmetic library)
 
 ### Unit Conversions
 * [uwap/unitr](https://github.com/uwap/unitr) (A unit conversion library)
