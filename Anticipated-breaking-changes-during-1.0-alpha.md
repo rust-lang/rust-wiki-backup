@@ -24,7 +24,7 @@
 
 - *`for` loops:* loops will change to take ownership of the iterator, in preparation for `IntoIterator` (or perhaps move directly to `IntoIterator`). This can be trivially worked around by using `by_ref`.
 
-- *Closure types:* we hope to remove the `:` notation for closures in favor of [capture clause inference](https://github.com/rust-lang/rfcs/blob/master/text/0231-upvar-capture-inference.md)
+- *Closure types:* we hope to remove the `:` notation for closures in favor of [capture clause inference](https://github.com/rust-lang/rfcs/blob/master/text/0231-upvar-capture-inference.md).
 
 - *Indexing notation*: either change to take the index by value (unlikely) or to include `IndexSet` (more likely).
 
