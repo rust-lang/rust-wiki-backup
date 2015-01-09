@@ -1,6 +1,6 @@
 # Where do we anticipate breakage during alpha?
 
-## To *unstable* APIs
+## To *unstable* APIs:
 
 Any unstable API may change, but the big changes we expect are:
 
@@ -8,7 +8,7 @@ Any unstable API may change, but the big changes we expect are:
     
 * **IO reform:** An [overhaul of the IO APIs](https://github.com/rust-lang/rfcs/pull/517/) is being planned; please join in the conversation! These changes will be landing throughout the alpha cycle.
 
-## To *stable* APIs/language features
+## To *stable* APIs/language features:
 
 ### Destructors
 
