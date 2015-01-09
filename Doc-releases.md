@@ -4,6 +4,43 @@ This is an archive of all the existing Rust release artifacts. Each release is s
 [pre-0.8-key]: https://static.rust-lang.org/rust-key-old.gpg.ascii
 [pre-0.5-key]: https://static.rust-lang.org/rust-key-very-old.gpg.ascii
 
+## 1.0.0-alpha
+
+* [Announcement][1.0.0-alpha-announce]
+* [Release notes][1.0.0-alpha-notes]
+* [Source code][1.0.0-alpha-tar] ([signature][1.0.0-alpha-tar-sig])
+* [Windows x86_64 installer][1.0.0-alpha-windows-x64] ([signature][1.0.0-alpha-windows-x64-sig])
+* [Windows i686 installer][1.0.0-alpha-windows-x32] ([signature][1.0.0-alpha-windows-x32-sig])
+* [Linux x86_64 tarball][1.0.0-alpha-linux-x64] ([signature][1.0.0-alpha-linux-x64-sig])
+* [Linux i686 tarball][1.0.0-alpha-linux-x32] ([signature][1.0.0-alpha-linux-x32-sig])
+* [Mac OS X x86_64 pkg][1.0.0-alpha-osx-x64-pkg] ([signature][1.0.0-alpha-osx-x64-pkg-sig])
+* [Mac OS X i686 pkg][1.0.0-alpha-osx-x32-pkg] ([signature][1.0.0-alpha-osx-x32-pkg-sig])
+* [Mac OS X x86_64 tarball][1.0.0-alpha-osx-x64-tar] ([signature][1.0.0-alpha-osx-x64-tar-sig])
+* [Mac OS X i686 tarball][1.0.0-alpha-osx-x32-tar] ([signature][1.0.0-alpha-osx-x32-tar-sig])
+* [Documentation][1.0.0-alpha-docs]
+
+[1.0.0-alpha-announce]: http://blog.rust-lang.org/2015/01/09/Rust-1.0-alpha.html
+[1.0.0-alpha-notes]: https://github.com/mozilla/rust/blob/1.0.0-alpha/RELEASES.md
+[1.0.0-alpha-tar]: https://static.rust-lang.org/dist/rust-1.0.0-alpha.tar.gz
+[1.0.0-alpha-tar-sig]: https://static.rust-lang.org/dist/rust-1.0.0-alpha.tar.gz.asc
+[1.0.0-alpha-windows-x64]: https://static.rust-lang.org/dist/rust-1.0.0-alpha-x86_64-pc-windows-gnu.exe
+[1.0.0-alpha-windows-x64-sig]: https://static.rust-lang.org/dist/rust-1.0.0-alpha-x86_64-pc-windows-gnu.exe.asc
+[1.0.0-alpha-windows-x32]: https://static.rust-lang.org/dist/rust-1.0.0-alpha-i686-pc-windows-gnu.exe
+[1.0.0-alpha-windows-x32-sig]: https://static.rust-lang.org/dist/rust-1.0.0-alpha-i686-pc-windows-gnu.exe.asc
+[1.0.0-alpha-linux-x64]: https://static.rust-lang.org/dist/rust-1.0.0-alpha-x86_64-unknown-linux-gnu.tar.gz
+[1.0.0-alpha-linux-x64-sig]: https://static.rust-lang.org/dist/rust-1.0.0-alpha-x86_64-unknown-linux-gnu.tar.gz.asc
+[1.0.0-alpha-linux-x32]: https://static.rust-lang.org/dist/rust-1.0.0-alpha-i686-unknown-linux-gnu.tar.gz
+[1.0.0-alpha-linux-x32-sig]: https://static.rust-lang.org/dist/rust-1.0.0-alpha-i686-unknown-linux-gnu.tar.gz.asc
+[1.0.0-alpha-osx-x64-pkg]: https://static.rust-lang.org/dist/rust-1.0.0-alpha-x86_64-apple-darwin.pkg
+[1.0.0-alpha-osx-x64-pkg-sig]: https://static.rust-lang.org/dist/rust-1.0.0-alpha-x86_64-apple-darwin.pkg.asc
+[1.0.0-alpha-osx-x32-pkg]: https://static.rust-lang.org/dist/rust-1.0.0-alpha-i686-apple-darwin.pkg
+[1.0.0-alpha-osx-x32-pkg-sig]: https://static.rust-lang.org/dist/rust-1.0.0-alpha-i686-apple-darwin.pkg.asc
+[1.0.0-alpha-osx-x64-tar]: https://static.rust-lang.org/dist/rust-1.0.0-alpha-x86_64-apple-darwin.tar.gz
+[1.0.0-alpha-osx-x64-tar-sig]: https://static.rust-lang.org/dist/rust-1.0.0-alpha-x86_64-apple-darwin.tar.gz.asc
+[1.0.0-alpha-osx-x32-tar]: https://static.rust-lang.org/dist/rust-1.0.0-alpha-i686-apple-darwin.tar.gz
+[1.0.0-alpha-osx-x32-tar-sig]: https://static.rust-lang.org/dist/rust-1.0.0-alpha-i686-apple-darwin.tar.gz.asc
+[1.0.0-alpha-docs]: http://doc.rust-lang.org/1.0.0-alpha/index.html
+
 ## 0.12.0
 
 * [Announcement][0.12.0-announce]
