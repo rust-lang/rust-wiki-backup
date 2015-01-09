@@ -30,7 +30,7 @@
 
 ## Traits and type system
 
-- *Coherence:* we will continue to improve the coherence rules (e.g. [the orphan rule](https://github.com/rust-lang/rust/issues/19470)), although this will probably not introduce break but rather allow more code to work.
+- *Coherence:* we will continue to improve the coherence rules (e.g. [the orphan rule](https://github.com/rust-lang/rust/issues/19470)), although this will probably not break existing code but rather allow more code to work.
 
 - *Subtyping:* some details of coercion and subtyping \[[1](https://github.com/rust-lang/rust/issues/18737), [2](https://github.com/mozilla/rust/issues/3598)\] are likely to be tweaked. We do not anticipate significant breakage here.
 
