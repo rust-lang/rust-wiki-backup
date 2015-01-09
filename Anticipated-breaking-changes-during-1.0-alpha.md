@@ -10,6 +10,14 @@ Any unstable API may change, but the big changes we expect are:
 
 ## To *stable* APIs/language features:
 
+### Stable libraries
+
+- *Integer auditing:* with the move away from int/uint, we need to establish formal conventions for integer type choices and roll them out. This will affect some stable APIs, but we will likely add some form of widening to limit the breakage.
+
+- *Overflow semantics:* we plan to introduce [overflow checking in debug builds](https://github.com/rust-lang/rfcs/pull/560).
+
+- *Send/Sync changes:* to allow threads to share stack data, we are considering [removing 'static from Send](https://github.com/rust-lang/rfcs/pull/458), probably accompanied by some shorthand for trait objects that should minimize breakage.
+
 ### Destructors
 
 * *Unsafe destructors:* closing [some holes](https://github.com/rust-lang/rust/issues/8861) and ungating unsafe destructors may cause minor breakage.
@@ -19,14 +27,6 @@ Any unstable API may change, but the big changes we expect are:
 ### DST
 
 - *?Sized:* the default assumptions about whether type parameters are sized continue to be tweaked, and we hope to try an [inference scheme](http://smallcultfollowing.com/babysteps/blog/2014/07/06/implied-bounds/) for them, which may result in some minor breakage.
-
-### Stable libraries
-
-- *Integer auditing:* with the move away from int/uint, we need to establish formal conventions for integer type choices and roll them out. This will affect some stable APIs, but we will likely add some form of widening to limit the breakage.
-
-- *Overflow semantics:* we plan to introduce [overflow checking in debug builds](https://github.com/rust-lang/rfcs/pull/560).
-
-- *Send/Sync changes:* to allow threads to share stack data, we are considering [removing 'static from Send](https://github.com/rust-lang/rfcs/pull/458), probably accompanied by some shorthand for trait objects that should minimize breakage.
 
 ### Notation tweaks
 
