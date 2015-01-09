@@ -1,8 +1,10 @@
-This is an archive of all the existing Rust release artifacts. Each release is signed with the Rust [GPG signing key][key] ([older key][pre-0.8-key], [even older key][pre-0.5-key]). In addition to the included short-form release notes there is also a longer explanation of the changes in each release in the [[detailed release notes|Doc detailed release notes]].
+This is an archive of all the existing Rust release artifacts. Each release is signed with the Rust [GPG signing key][key] ([older key][pre-0.8-key], [even older key][pre-0.5-key]).
 
 [key]: https://static.rust-lang.org/rust-key.gpg.ascii
 [pre-0.8-key]: https://static.rust-lang.org/rust-key-old.gpg.ascii
 [pre-0.5-key]: https://static.rust-lang.org/rust-key-very-old.gpg.ascii
+
+# 1.x
 
 ## 1.0.0-alpha
 
@@ -40,6 +42,10 @@ This is an archive of all the existing Rust release artifacts. Each release is s
 [1.0.0-alpha-osx-x32-tar]: https://static.rust-lang.org/dist/rust-1.0.0-alpha-i686-apple-darwin.tar.gz
 [1.0.0-alpha-osx-x32-tar-sig]: https://static.rust-lang.org/dist/rust-1.0.0-alpha-i686-apple-darwin.tar.gz.asc
 [1.0.0-alpha-docs]: http://doc.rust-lang.org/1.0.0-alpha/index.html
+
+# 0.x
+
+In addition to the included short-form release notes there is also a longer explanation of the changes in each release in the [[detailed release notes|Doc detailed release notes]].
 
 ## 0.12.0
 
