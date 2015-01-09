@@ -26,7 +26,7 @@ Any unstable API may change, but the big changes we expect are:
 
 ### DST
 
-- *?Sized:* the default assumptions about whether type parameters are sized continue to be tweaked, and we hope to try an [inference scheme](http://smallcultfollowing.com/babysteps/blog/2014/07/06/implied-bounds/) for them, which may result in some minor breakage.
+- *Sized:* the default assumptions about whether type parameters are sized continue to be tweaked, and we hope to try an [inference scheme](http://smallcultfollowing.com/babysteps/blog/2014/07/06/implied-bounds/) for them, which may result in some minor breakage.
 
 ### Notation tweaks
 
