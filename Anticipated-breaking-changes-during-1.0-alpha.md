@@ -1,5 +1,7 @@
 # Where do we anticipate breakage to stable features/APIs during alpha?
 
+**Note**: this list does *not* include breakage to features behind a gate or APIs marked `#[unstable]` or `#[experimental]`.
+
 ## Destructors
 
 * *Unsafe destructors:* closing [some holes](https://github.com/rust-lang/rust/issues/8861) and ungating unsafe destructors may cause minor breakage.
