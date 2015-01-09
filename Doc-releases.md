@@ -45,7 +45,7 @@ This is an archive of all the existing Rust release artifacts. Each release is s
 
 # Rust 0.x
 
-In addition to the included short-form release notes there is also a longer explanation of the changes in each release in the [[detailed release notes|Doc detailed release notes]].
+In addition to the included short-form release notes, each 0.x release has a longer explanation in the [[detailed release notes|Doc detailed release notes]].
 
 ## 0.12.0
 
