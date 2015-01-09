@@ -1,18 +1,26 @@
-# Where do we anticipate breakage to stable features/APIs during alpha?
+# Where do we anticipate breakage during alpha?
 
-**Note**: this list does *not* include breakage to features behind a gate or APIs marked `#[unstable]` or `#[experimental]`.
+## To *unstable* APIs
 
-## Destructors
+Any unstable API may change, but the big changes we expect are:
+
+* **Path reform:** The `path` module will soon be [reformed](https://github.com/rust-lang/rfcs/pull/474) to make use of DST, to give a better account of platform differences, and to more closely align with the [new C++ standard](http://article.gmane.org/gmane.comp.lib.boost.devel/256220). Implementation work is largely complete, and the rollout should occur soon after alpha.
+    
+* **IO reform:** An [overhaul of the IO APIs](https://github.com/rust-lang/rfcs/pull/517/) is being planned; please join in the conversation! These changes will be landing throughout the alpha cycle.
+
+## To *stable* APIs/language features
+
+### Destructors
 
 * *Unsafe destructors:* closing [some holes](https://github.com/rust-lang/rust/issues/8861) and ungating unsafe destructors may cause minor breakage.
 
 * *Dynamic-drop restrictions:* We are switching to a scheme that uses [lightweight flags on the stack](https://github.com/rust-lang/rfcs/pull/320) to determine whether a value must be dropped rather than zeroing out memory. This implies some [small restrictions](https://github.com/rust-lang/rfcs/pull/533) on what moves are permitted relative to today.
 
-## DST
+### DST
 
 - *?Sized:* the default assumptions about whether type parameters are sized continue to be tweaked, and we hope to try an [inference scheme](http://smallcultfollowing.com/babysteps/blog/2014/07/06/implied-bounds/) for them, which may result in some minor breakage.
 
-## Stable libraries
+### Stable libraries
 
 - *Integer auditing:* with the move away from int/uint, we need to establish formal conventions for integer type choices and roll them out. This will affect some stable APIs, but we will likely add some form of widening to limit the breakage.
 
@@ -20,7 +28,7 @@
 
 - *Send/Sync changes:* to allow threads to share stack data, we are considering [removing 'static from Send](https://github.com/rust-lang/rfcs/pull/458), probably accompanied by some shorthand for trait objects that should minimize breakage.
 
-## Notation tweaks
+### Notation tweaks
 
 - *`for` loops:* loops will change to take ownership of the iterator, in preparation for `IntoIterator` (or perhaps move directly to `IntoIterator`). This can be trivially worked around by using `by_ref`.
 
@@ -28,7 +36,7 @@
 
 - *Indexing notation*: either change to take the index by value (unlikely) or to include `IndexSet` (more likely).
 
-## Traits and type system
+### Traits and type system
 
 - *Coherence:* we will continue to improve the coherence rules (e.g. [the orphan rule](https://github.com/rust-lang/rust/issues/19470)), although this will probably not break existing code but rather allow more code to work.
 
