@@ -4,7 +4,7 @@ outstanding contributions to The Rust Project, its ecosystem, and its
 community. These people are 'friends of the tree', archived here
 for eternal glory.
 
-## 2014-01-06 Jorge Aparicio (japaric)
+## 2015-01-06 Jorge Aparicio (japaric)
 
 I nominate Jorge Aparicio (japaric) for Friend of the Tree (for the second time, no less!). japaric has done tremendous work porting the codebase to use the new language features that are now available. First, he converted APIs in the standard library to take full advantage of DST after it landed. Next, he converted APIs to use unboxed closures. Then, he converted a large  portion of the libraries to use associated types. Finally, he removed boxed closures from the compiler entirely. He has also worked to roll out RFCs changing the overloaded operators and comparison traits, including both their definitions and their impact on the standard library. And this list excludes a number of smaller changes, like deprecating older syntax. The alpha release would not be where it is without him; Japaric is simply one of the best friends the tree has ever had.
 
