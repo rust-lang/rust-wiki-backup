@@ -5,15 +5,23 @@ You need XCode 5.
 Build Rust cross-compiler:
 ```
 mkdir build_ios; cd build_ios
-../configure --target=arm-apple-ios,i386-apple-ios
-make VERBOSE=1
+../configure --target=armv7-apple-ios,armv7s-apple-ios,i386-apple-ios,aarch64-apple-ios,x86_64-apple-ios
+make
 ```
 
 Once compilation complete you can use it.
 
-To target device:
+To target device (depending on dest architecture):
 ```
-rustc --target=arm-apple-ios foo.rs
+rustc --target=armv7-apple-ios foo.rs
+```
+
+```
+rustc --target=armv7s-apple-ios foo.rs
+```
+
+```
+rustc --target=aarch64-apple-ios foo.rs
 ```
 
 To target simulator:
@@ -21,18 +29,20 @@ To target simulator:
 rustc --target=i386-apple-ios foo.rs
 ```
 
+```
+rustc --target=x86_64-apple-ios foo.rs
+```
+
 ## What you get
 
 * all Rust superpowers
 * exception handling
 * LLDB debugging
-* green tasks
 
 ## Known limitations
 
-* works only for armv7 architecture, armv7s and arm64 will be added soon.
 * segmented stack is disabled that means no stack protection available
 
 ## Resources
 
-* [Sample](https://github.com/vhbit/ObjCrust) of using Rust from Objective C + Makefile for simulateous compiling for both device and simulator 
+* [Sample](https://github.com/vhbit/ObjCrust) of using Rust from Objective C + Makefile for simultaneous compiling for both device and simulator (all architectures)
