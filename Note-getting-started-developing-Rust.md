@@ -2,7 +2,7 @@ This page describes how to download and build the Rust compiler and
 associated tools and libraries from the current git sources.  If
 you're more interested in _using_ Rust than in hacking on the Rust
 compiler, you might prefer to install a prebuilt snapshot from [here](http://www.rust-lang.org/install.html), following
-the instructions in the [guide](http://doc.rust-lang.org/nightly/guide.html).
+the instructions in the [guide](http://doc.rust-lang.org).
 For Windows users, see [[Using Rust on Windows]].
 
 ## Prerequisites
