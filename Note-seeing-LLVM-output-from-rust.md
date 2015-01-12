@@ -1,9 +1,9 @@
 ## General purpose
 
-In your build directory, invoke the Rust compiler with the `--emit=ir` flag. It will look something like:
+In your build directory, invoke the Rust compiler with the `--emit=llvm-ir` flag. It will look something like:
 
 ```
-rustc --emit=ir hello.rs
+rustc --emit=llvm-ir hello.rs
 ```
 
 An LLVM IR file that you can read will now be sitting in `hello.ll`.
