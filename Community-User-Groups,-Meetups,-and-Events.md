@@ -6,6 +6,9 @@ International:
 Paris, France:
  - [Rust Paris](http://www.meetup.com/Rust-Paris/)
 
+Berlin, Germany:
+ - [Rust Berlin](http://www.meetup.com/Rust-Berlin/)
+
 Skåne, Sweden:
  - [Rust Skåne](http://www.meetup.com/rust-skane/)
 
