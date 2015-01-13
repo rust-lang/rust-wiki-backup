@@ -15,6 +15,9 @@ Skåne, Sweden:
 London, UK:
  - [Rust London User Group](http://www.meetup.com/Rust-London-User-Group/)
 
+Geneva, Switzerland:
+ - [Rust Romandie](http://www.meetup.com/rust-romandie/)
+
 Brooklyn, NY, USA:
  - [Brooklyn.rs](http://brooklyn.rs/)
 
