@@ -4,6 +4,24 @@ outstanding contributions to The Rust Project, its ecosystem, and its
 community. These people are 'friends of the tree', archived here
 for eternal glory.
 
+## 2015-01-13 Kang Seonghoon (lifthrasiir, Yurume)
+
+Seonghoon has been an active member of the Rust community since early
+2013, and although he has made a number of valuable contributions to
+Rust itself, his greatest work has been in developing key libraries
+out of tree. [rust-encoding], one of the most popular crates in Cargo,
+performs character encoding, and [rust-chrono] date / time handling,
+both of which fill critical holes in the functionality of the standard
+library. [rust-strconv] is a prototype of efficient numerical string
+conversions that is a candidate for future inclusion in the standard
+library. He maintains a [blog][rustlog] where he discusses his work.
+
+[rust-encoding]: https://github.com/lifthrasiir/rust-encoding
+[rust-strconv]: https://github.com/lifthrasiir/rust-strconv
+[rust-chrono]: https://github.com/lifthrasiir/rust-chrono
+[rustlog]: https://lifthrasiir.github.io/rustlog/
+
+
 ## 2015-01-06 Jorge Aparicio (japaric)
 
 I nominate Jorge Aparicio (japaric) for Friend of the Tree (for the second time, no less!). japaric has done tremendous work porting the codebase to use the new language features that are now available. First, he converted APIs in the standard library to take full advantage of DST after it landed. Next, he converted APIs to use unboxed closures. Then, he converted a large  portion of the libraries to use associated types. Finally, he removed boxed closures from the compiler entirely. He has also worked to roll out RFCs changing the overloaded operators and comparison traits, including both their definitions and their impact on the standard library. And this list excludes a number of smaller changes, like deprecating older syntax. The alpha release would not be where it is without him; Japaric is simply one of the best friends the tree has ever had.
