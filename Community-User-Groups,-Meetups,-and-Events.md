@@ -21,6 +21,9 @@ Geneva, Switzerland:
 Brooklyn, NY, USA:
  - [Brooklyn.rs](http://brooklyn.rs/)
 
+Columbus, OH, USA:
+- [Columbus Rust Society](http://www.meetup.com/columbus-rs/)
+
 Pittsburgh, PA, USA:
  - [Pittsburgh Code Supply](http://www.meetup.com/Pittsburgh-Code-Supply/)
 
