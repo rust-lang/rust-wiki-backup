@@ -195,7 +195,7 @@ mod test {
 ### Build targets
 
 * `make check-stage[N]-crates`
-* `make check-stage[N]-[crate name]`
+* `make check-stage[N]-[crate name]test`
 
 ## Documentation tests
 
