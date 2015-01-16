@@ -274,7 +274,7 @@ Metaprogramming
 Rust includes macros (not textual ones) and syntax extensions which can be used for many of the other use cases of templates and `constexpr`.
 These macros handle repeated items in patterns, can match expressions,blocks parsed properly, and separate arguments with custom syntax elements. As such they can achieve what the 'x-macros' pattern in C does in a single macro definition/invocation.
 Syntax extensions can also be used in place of user-defined literals. 
-Being handled within the AST, they do not have many of the hazards of C macros and considered as a useful tool, rather than an obsolete anti-feature as in C++.
+Being handled within the AST, they do not have many of the hazards of C macros and are considered to be a useful tool, rather than an obsolete anti-feature as in C++.
 
 Module System
 -------------
