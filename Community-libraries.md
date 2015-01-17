@@ -28,6 +28,11 @@ See also [Mathematics](Community-libraries#mathematics)
 * OpenCL
   * [eholk/rust-opencl](https://github.com/eholk/rust-opencl): OpenCL bindings [<img src="https://travis-ci.org/eholk/rust-opencl.png?branch=master">](https://travis-ci.org/eholk/rust-opencl)
 
+## Computer Graphics and Game Development
+* Piston
+   * [PistonDevelopers/piston](https://github.com/PistonDevelopers/piston): A user friendly game engine, with OpenGL, SDL, and other backends.
+   * [PistonDevelopers/asset_store](https://github.com/PistonDevelopers/asset_store): Reading and caching video, audio, images, and other game files.
+
 ## Concurrency
  * task management, actor, OTP, [[Bikeshed mapreduce]], pools
  
@@ -115,7 +120,7 @@ Wanted library: [[Lib datetime]]
    * [JamesFysh/rust-proj4](https://github.com/JamesFysh/rust-proj4): Rust bindings for PROJ.4 [![Build Status](https://travis-ci.org/JamesFysh/rust-proj4.svg?branch=master)](https://travis-ci.org/JamesFysh/rust-proj4)
 
 
-## Graphics
+## Graphics and Image Manipulation
 
 * Gnuplot
    * [SiegeLord/RustGnuplot] (https://github.com/SiegeLord/RustGnuplot) [![Build Status](https://travis-ci.org/SiegeLord/RustGnuplot.png)](https://travis-ci.org/SiegeLord/RustGnuplot)
