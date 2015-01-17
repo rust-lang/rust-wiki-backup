@@ -130,6 +130,8 @@ Wanted library: [[Lib datetime]]
    * [damienfir/rust-libraw](https://github.com/damienfir/rust-libraw): load RAW image files
 * Low-level bindings
    * [servo/rust-core-graphics](https://github.com/servo/rust-core-graphics): CoreGraphics bindings for Rust.
+* Screen capture
+   * [alexchandel/screenshot-rs](https://github.com/alexchandel/screenshot-rs): Get a bitmap image of the display.
 
 See also [[Computer Graphics and Game Development]].
 
