@@ -148,7 +148,7 @@ See also [[Computer Graphics and Game Development]].
   * [kenz-gelsoft/wxRust](https://github.com/kenz-gelsoft/wxRust): [![Build Status](https://travis-ci.org/kenz-gelsoft/wxRust.png?branch=master)](https://travis-ci.org/kenz-gelsoft/wxRust)
 * Wayland
   * [eyolfson/rust-wayland](https://github.com/eyolfson/rust-wayland)
-	  
+
 ## IO
  * AIO, SIO, stdio
  * [filesystem](https://github.com/mozilla/rust/blob/master/src/libstd/os.rs)
@@ -209,6 +209,8 @@ See also [[Computer Graphics and Game Development]].
 
 * Windows
   * [klutzy/rust-windows](https://github.com/klutzy/rust-windows): Win32/Win64 wrapper for Rust
+* Mac
+  * [servo/rust-core-foundation](https://github.com/servo/rust-core-foundation): Rust bindings to the Core Foundation library on Mac OS X and iOS.
 
 ## OS
 
