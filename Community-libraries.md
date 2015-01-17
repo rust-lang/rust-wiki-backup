@@ -119,11 +119,12 @@ Wanted library: [[Lib datetime]]
 
 * Gnuplot
    * [SiegeLord/RustGnuplot] (https://github.com/SiegeLord/RustGnuplot) [![Build Status](https://travis-ci.org/SiegeLord/RustGnuplot.png)](https://travis-ci.org/SiegeLord/RustGnuplot)
-
 * Images
    * [PistonDevelopers/image](https://github.com/PistonDevelopers/image): Encoding and decoding images in pure Rust [![Build Status](https://travis-ci.org/PistonDevelopers/image.svg?branch=master)](https://travis-ci.org/PistonDevelopers/image)
 * LibRaw
    * [damienfir/rust-libraw](https://github.com/damienfir/rust-libraw): load RAW image files
+* Low-level bindings
+   * [servo/rust-core-graphics](https://github.com/servo/rust-core-graphics): CoreGraphics bindings for Rust.
 
 See also [[Computer Graphics and Game Development]].
 
