@@ -62,7 +62,9 @@ meaning of the label and does not think it is self-evident.
 | *EFFORT TAGS*            |                                                   |
 | E-easy                   | Effort: easy                                      |
 | E-hard                   | Effort: hard                                      |
+| E-mentor                 | ?                                                 |
 | E-needtest               | Effort: requires a unit test to be closed         |
+| E-tedious                | Effort: tedious                                   |
 | &nbsp;                                                                       |
 | *IMPACT TAGS*            |                                                   |
 | I-ICE                    | Importance: error internal to rustc               |
