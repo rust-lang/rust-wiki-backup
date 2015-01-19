@@ -1,4 +1,4 @@
-There is an auto-merge robot running on mozilla/rust; its name is "bors";
+There is an auto-merge robot running on rust-lang/rust; its name is "bors";
 it has a github account and is listed as a collaborator in the `rust-push` group.
 Its source is available [on GitHub](https://github.com/graydon/bors).
 
