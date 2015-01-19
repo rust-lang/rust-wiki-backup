@@ -135,7 +135,7 @@ Wanted library: [[Lib datetime]]
 
 See also [[Computer Graphics and Game Development]].
 
-## GUI
+## GUI Toolkits
 
 * Cocoa
   * [mozilla-servo/rust-cocoa](https://github.com/mozilla-servo/rust-cocoa)
