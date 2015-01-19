@@ -2,7 +2,7 @@ There is an auto-merge robot running on mozilla/rust; its name is "bors";
 it has a github account and is listed as a collaborator in the `rust-push` group.
 Its source is available [on GitHub](https://github.com/graydon/bors).
 
-Its status URL is: http://buildbot.rust-lang.org/bors/bors.html
+Its status URL is: http://buildbot.rust-lang.org/homu/queue/rust
 
 It works by scanning pull requests for r+ _on the commit_ (*not* the pull request)
 from one of the reviewers. It also accepts the following input:
