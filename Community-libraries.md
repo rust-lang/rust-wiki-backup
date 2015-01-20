@@ -130,8 +130,6 @@ Wanted library: [[Lib datetime]]
    * [PistonDevelopers/image](https://github.com/PistonDevelopers/image): Encoding and decoding images in pure Rust [![Build Status](https://travis-ci.org/PistonDevelopers/image.svg?branch=master)](https://travis-ci.org/PistonDevelopers/image)
 * LibRaw
    * [damienfir/rust-libraw](https://github.com/damienfir/rust-libraw): load RAW image files
-* Low-level bindings
-   * [servo/rust-core-graphics](https://github.com/servo/rust-core-graphics): CoreGraphics bindings for Rust.
 * Screen capture
    * [alexchandel/screenshot-rs](https://github.com/alexchandel/screenshot-rs): Get a bitmap image of the display.
 
@@ -217,9 +215,10 @@ See also Computer Graphics and Game Development.
 ## Operating system specific
 
 * Windows
-  * [klutzy/rust-windows](https://github.com/klutzy/rust-windows): Win32/Win64 wrapper for Rust
+   * [klutzy/rust-windows](https://github.com/klutzy/rust-windows): Win32/Win64 wrapper for Rust
 * Mac
-  * [servo/rust-core-foundation](https://github.com/servo/rust-core-foundation): Rust bindings to the Core Foundation library on Mac OS X and iOS.
+   * [servo/rust-core-foundation](https://github.com/servo/rust-core-foundation): Core Foundation bindings for Rust.
+   * [servo/rust-core-graphics](https://github.com/servo/rust-core-graphics): Core Graphics bindings for Rust.
 
 ## OS
 
