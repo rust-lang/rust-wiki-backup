@@ -6,11 +6,13 @@ See also:
 
 ## Audio
 
-See [[Computer Graphics and Game Development]].
+* [pistondevelopers/music](https://github.com/pistondevelopers/music): high level library for playing music
+
+See Computer Graphics and Game Development.
 
 ## Collections
 
-See [[Containers]].
+* [chris-morgan/mucell](https://github.com/chris-morgan/mucell): A cell with the ability to mutate the value through an immutable reference when safe
 
 ## Compression
 
@@ -133,7 +135,7 @@ Wanted library: [[Lib datetime]]
 * Screen capture
    * [alexchandel/screenshot-rs](https://github.com/alexchandel/screenshot-rs): Get a bitmap image of the display.
 
-See also [[Computer Graphics and Game Development]].
+See also Computer Graphics and Game Development.
 
 ## GUI Toolkits
 
