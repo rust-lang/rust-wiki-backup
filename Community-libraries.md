@@ -215,10 +215,18 @@ See also Computer Graphics and Game Development.
 ## Operating system specific
 
 * Windows
-   * [klutzy/rust-windows](https://github.com/klutzy/rust-windows): Win32/Win64 wrapper for Rust
+   * [retep998/winapi-rs](https://github.com/retep998/winapi-rs): Low-level types and consts for Windows.
+   * [retep998/kernel32-sys](https://github.com/retep998/kernel32-sys): Low-level bindings to kernel32.
+   * [retep998/user32-sys](https://github.com/retep998/user32-sys): Low-level bindings to user32.
+   * [retep998/gdi32-sys](https://github.com/retep998/gdi32-sys): Low-level bindings to gdi32. (Graphics)
+   * [retep998/shell32-sys](https://github.com/retep998/shell32-sys): Low-level bindings to shell32. (Explorer)
+   * [klutzy/rust-windows](https://github.com/klutzy/rust-windows): Win32/Win64 wrapper. High level, but not Cargo.
 * Mac
-   * [servo/rust-core-foundation](https://github.com/servo/rust-core-foundation): Core Foundation bindings for Rust.
-   * [servo/rust-core-graphics](https://github.com/servo/rust-core-graphics): Core Graphics bindings for Rust.
+   * [servo/rust-core-foundation](https://github.com/servo/rust-core-foundation): Low-level Core Foundation bindings.
+   * [servo/rust-core-graphics](https://github.com/servo/rust-core-graphics): Low-level Core Graphics bindings.
+   * [servo/rust-cocoa](https://github.com/servo/rust-cocoa): Bindings to Objective-C and Cocoa.
+* Linux
+   * [Stebalien/udev-rs](https://github.com/Stebalien/udev-rs): Bindings to udev.
 
 ## OS
 
