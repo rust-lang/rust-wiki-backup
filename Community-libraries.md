@@ -199,6 +199,8 @@ See also Computer Graphics and Game Development.
 * [UUID](https://github.com/rust-lang/uuid)
 * NanoMsg
   * [glycerine/rust-nanomsg](https://github.com/glycerine/rust-nanomsg)
+* Beanstalkd
+  * [schickling/rust-beanstalkd](https://github.com/schickling/rust-beanstalkd):  [<img src="https://travis-ci.org/schickling/rust-beanstalkd.png?branch=master">](https://travis-ci.org/schickling/rust-beanstalkd)
 * ZeroMQ
   * [erickt/rust-zmq](https://github.com/erickt/rust-zmq):  [<img src="https://travis-ci.org/erickt/rust-zmq.png?branch=master">](https://travis-ci.org/erickt/rust-zmq)
 * STOMP
