@@ -1,7 +1,8 @@
-The github wiki system is generally good but suffers from a couple weak points.
+The github wiki system is generally good but suffers from a few missing built-in features:
 
-* No built-in category, tagging or namespace system
-* No search
+* Categorization
+* Tagging
+* Namespacing
 
 This makes it tricky to navigate. On the upside, it's written in simple markdown and can be accessed [through git](_access). This makes it very easy to keep manually organized, in the local filesystem.
 
