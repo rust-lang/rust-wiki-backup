@@ -10,6 +10,7 @@ Papers that have had more or less influence on Rust, or which one might want to 
 * [Alias burying](http://www.cs.uwm.edu/faculty/boyland/papers/unique-preprint.ps) - We tried something similar and abandoned it.
 * [External uniqueness is unique enough](http://www.computingscience.nl/research/techreps/repo/CS-2002/2002-048.pdf)
 * [Uniqueness and Reference Immutability for Safe Parallelism](https://research.microsoft.com/pubs/170528/msr-tr-2012-79.pdf)
+* [Region Based Memory Management](http://www.cs.ucla.edu/~palsberg/tba/papers/tofte-talpin-iandc97.pdf)
 
 ## Concurrency
 
