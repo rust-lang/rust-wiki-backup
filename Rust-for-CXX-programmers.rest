@@ -110,9 +110,9 @@ can be used.
 +============================+================================================+
 | `enum T {Foo,Bar,Baz}`     | `enum T {}`, C like enums                      |
 +----------------------------+------------------------------------------------+
-|`union {}`                  | `enum T {}`- tagged-union, variants have fields|
+| `union {}`                 | `enum T {}`- tagged-union, variants have fields|
 +----------------------------+------------------------------------------------+
-| `boost::variant`           | `enum`, `Either` (an `enum`) for 2 types       |
+| `boost::variant`           | `enum`                                         |
 +----------------------------+------------------------------------------------+
 | `boost::optional`          | `Option` (an `enum`)                           |
 +----------------------------+------------------------------------------------+
@@ -175,9 +175,9 @@ Exceptions
 ----------
 
 Rust does not include C++-style exceptions that can be caught, only uncatchable
-unwinding (`fail`) that can be dealt with at task boundaries. The lack of
+unwinding (`panic`) that can be dealt with at task boundaries. The lack of
 `catch` means that exception safety is much less of an issue, since calling a
-method that fails will prevent that object from ever being used again.
+method that panics will prevent that object from ever being used again.
 
 Generally, errors are handled by using a `enum` of the result type and the
 error type, and the `result` module implements related functionality.
@@ -211,7 +211,7 @@ Methods
 +-------------------------+---------------------------------------------------+
 | C++                     | Rust                                              |
 +=========================+===================================================+
-| `class Foo{ void bar()}`| `struct Foo{};`                                   |
+| `class Foo{ void bar()}`| `struct Foo;`                                     |
 |                         | `impl Foo {  fn bar();   }`                       |
 +-------------------------+---------------------------------------------------+
 | `size_t foo() const`    | `fn foo(&self) -> uint`                           |
