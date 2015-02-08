@@ -12,6 +12,8 @@
   * [Fink](http://fink.cvs.sourceforge.net/viewvc/fink/dists/10.7/stable/main/finkinfo/languages/rust.info?view=log) Also available through fink's apt at `deb http://brendan.users.finkproject.org/10.8 stable main` - maintained by bcully
   * [Homebrew](https://github.com/mxcl/homebrew/blob/master/Library/Formula/rust.rb)
   * [Homebrew Cask](https://github.com/caskroom/homebrew-cask/blob/master/Casks/rust.rb)
+* NetBSD
+  * [pkgsrc-wip](http://pkgsrc-wip.cvs.sourceforge.net/viewvc/pkgsrc-wip/wip/rust/)
 * Windows
   * [NuGet package for nightly builds](https://www.nuget.org/packages/Rust/)
     * [[How to install an unofficial nightly for Windows|Doc how to install an unofficial nightly for Windows]]
