@@ -158,7 +158,7 @@ This will build and test the compiler, standard libraries, and supporting tools.
 
 *Note:* If you need to pass in extra flags to `make`, you can add `RUSTFLAGS=...` to the argument list for `make`. For example, `make check RUSTFLAGS="-Z debug-info"` builds the compiler and runs tests with debug info enabled. 
 
-*Note:* Some make targets are only exercised by `make check-full`.  If you want to see what commands a make invocation is running, you can add `VERBOSE=1` to the argument list for make. Also, if you use make options like `--print-data-base` to see other targets, note that some rules in the database are only generated dynamically.  See also: [Build system notes](note-build-system)
+*Note:* Some make targets are only exercised by `make check-full`.  If you want to see what commands a make invocation is running, you can add `VERBOSE=1` to the argument list for make. Also, if you use make options like `--print-data-base` to see other targets, note that some rules in the database are only generated dynamically.
 
 ## Navigating
 
