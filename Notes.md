@@ -26,7 +26,7 @@ The developer forum is located at http://discuss.rust-lang.org/.
 
 ## Tools
 
-* [Bors's Queue](http://buildbot.rust-lang.org/bors/bors.html) - Our [integration bot, bors](https://github.com/bors) tries to keep the build green.
+* [Bors's Queue](http://buildbot.rust-lang.org/homu/queue/rust) - Our [integration bot, bors](https://github.com/bors) tries to keep the build green.
 * [buildbot](http://buildbot.rust-lang.org) - All pull requests go through buildbot, via bors.
 * [isrustfastyet](http://huonw.github.io/isrustfastyet/mem/)
 * [IRC quotes](http://quotes.burntelectrons.org/search?query=tag%3A%23rust)
