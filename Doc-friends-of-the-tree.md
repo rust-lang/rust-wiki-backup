@@ -6,13 +6,15 @@ for eternal glory.
 
 ## 2015-01-20 Barosl Lee (barosl)
 
-Today I would like to nominate Barosl LEE (@barosl) for Friend of the Tree. Barosl has recently rewritten our bors cron job in a new project called homu. Homu has a number of benefits including:
+Today I would like to nominate Barosl Lee (@barosl) for Friend of the Tree. Barosl has recently rewritten our bors cron job in a new project called [homu]. Homu has a number of benefits including:
 
-    Zero "down time" between testing different PRs (compared to 30+ minutes for bors!)
-    A new rollup button to create separate rollup PRs from other PRs.
-    Multiple repositories are supported (Cargo and Rust are on the same page)
+- Zero "down time" between testing different PRs (compared to 30+ minutes for bors!)
+- A new rollup button to create separate rollup PRs from other PRs.
+- Multiple repositories are supported (Cargo and Rust are on the same page)
 
 Homu was recently deployed for rust-lang/rust thanks to a number of issues being closed out by Barosl, and it's been working fantastically so far! Barosl has also been super responsive to any new issues cropping up. Barosl truly is a Friend of the Tree!
+
+[homu]: https://github.com/barosl/homu
 
 ## 2015-01-13 Kang Seonghoon (lifthrasiir, Yurume)
 
