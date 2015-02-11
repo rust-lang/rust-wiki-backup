@@ -4,6 +4,20 @@ outstanding contributions to The Rust Project, its ecosystem, and its
 community. These people are 'friends of the tree', archived here
 for eternal glory.
 
+## 2015-02-10 Jonathan Reem (reem)
+
+Jonathan Reem has been making an impact on Rust since May 2014. His
+primary contribution has been as the main author of the prominent
+[Iron][iron] web framework, though he has also created several other
+popular projects including the testing framework [stainless]. His
+practical experience with these projects has led to several
+improvements in upstream rust, most notably his complete rewrite of
+the `TaskPool` type. Reem is doing everything he can to advance
+the Rust cause.
+
+[iron]: https://github.com/iron/iron
+[stainless]: https://github.com/reem/stainless
+
 ## 2015-01-20 Barosl Lee (barosl)
 
 Today I would like to nominate Barosl Lee (@barosl) for Friend of the Tree. Barosl has recently rewritten our bors cron job in a new project called [homu]. Homu has a number of benefits including:
