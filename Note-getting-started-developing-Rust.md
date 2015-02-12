@@ -166,7 +166,7 @@ There's a quick guide to the source of the compiler in [src/librustc/README.txt]
 
 ## Editor support
 
-Syntax highlighting for vim and emacs is included in the Rust repository. For vim, the files are under `src/etc/vim`, and for emacs they're under `src/etc/emacs`. Other editors may [[also be supported|Doc packages, editors, and other tools]].
+Syntax highlighting for vim is located at the [rust.vim](https://github.com/rust-lang/rust.vim) repository, and syntax highlighting for emacs is located at the [rust-mode](https://github.com/rust-lang/rust-mode) repository. Other editors may [[also be supported|Doc packages, editors, and other tools]].
 
 ## The issue tracker
 
