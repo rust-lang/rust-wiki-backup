@@ -26,7 +26,7 @@
   * [ianb's Eclipse plugin](https://github.com/ianbollinger/oxide) - Eclipse! (dead)
   * [Reidar Sollid's Eclipse plugin](https://github.com/reidarsollid/RustyCage) - A newer Eclipse plugin.
 * Emacs
-  * included, see `src/etc/`. 
+  * [rust-mode](https://github.com/rust-lang/rust-mode). 
   * Flycheck has support for on-the-fly syntax error detection. Use the Package Manager (ELPA) to install `flycheck-mode`
 * Geany
   * Since 1.24. [Nightly builds](http://nightly.geany.org/) or the [git master](https://github.com/geany/geany) may have additional improvements.
@@ -50,7 +50,7 @@
   * [abaez's Textadept module/lexer](https://bitbucket.org/a_baez/ta-rust)
   * [suhr/ta-rust](https://github.com/suhr/ta-rust)
 * Vim
-  * included, see `src/etc/`. Syntastic has syntax error matching based on rustc.
+  * [rust.vim plugin](https://github.com/rust-lang/rust.vim). Syntastic has syntax error matching based on rustc.
   * [wting's rust.vim syntax](https://github.com/wting/rust.vim) - Vundle compatible plugin updated daily.
 * NEdit
   * [NEdit syntax highlighting for Rust](https://mail.mozilla.org/pipermail/rust-dev/2013-September/005822.html)
