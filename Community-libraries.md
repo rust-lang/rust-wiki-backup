@@ -192,6 +192,7 @@ See also Computer Graphics and Game Development.
 * reflection
 * command-line handling
   *  [tailhook/rust-argparse](https://github.com/tailhook/rust-argparse) [<img src="https://travis-ci.org/tailhook/rust-argparse.png?branch=master">](https://travis-ci.org/tailhook/rust-argparse)
+  *  [docopt/docopt.rs](https://github.com/docopt/docopt.rs) [![Build status](https://api.travis-ci.org/docopt/docopt.rs.svg)](https://travis-ci.org/docopt/docopt.rs)
 
 ## Networking
 
