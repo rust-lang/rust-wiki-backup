@@ -4,7 +4,48 @@ This is an archive of all the existing Rust release artifacts. Each release is s
 [pre-0.8-key]: https://static.rust-lang.org/rust-key-old.gpg.ascii
 [pre-0.5-key]: https://static.rust-lang.org/rust-key-very-old.gpg.ascii
 
-# Rust 1.x
+## 1.0.0-alpha.2
+
+* [Announcement][1.0.0-alpha.2-announce]
+* [Release notes][1.0.0-alpha.2-notes]
+* [Source code][1.0.0-alpha.2-tar] ([signature][1.0.0-alpha.2-tar-sig])
+* [Windows x86_64 .exe installer][1.0.0-alpha.2-windows-x64] ([signature][1.0.0-alpha.2-windows-x64-sig])
+* [Windows i686 .exe installer][1.0.0-alpha.2-windows-x32] ([signature][1.0.0-alpha.2-windows-x32-sig])
+* [Windows x86_64 .msi installer][1.0.0-alpha.2-windows-msi-x64] ([signature][1.0.0-alpha.2-windows-msi-x64-sig])
+* [Windows i686 .msi installer][1.0.0-alpha.2-windows-msi-x32] ([signature][1.0.0-alpha.2-windows-msi-x32-sig])
+* [Linux x86_64 tarball][1.0.0-alpha.2-linux-x64] ([signature][1.0.0-alpha.2-linux-x64-sig])
+* [Linux i686 tarball][1.0.0-alpha.2-linux-x32] ([signature][1.0.0-alpha.2-linux-x32-sig])
+* [Mac OS X x86_64 pkg][1.0.0-alpha.2-osx-x64-pkg] ([signature][1.0.0-alpha.2-osx-x64-pkg-sig])
+* [Mac OS X i686 pkg][1.0.0-alpha.2-osx-x32-pkg] ([signature][1.0.0-alpha.2-osx-x32-pkg-sig])
+* [Mac OS X x86_64 tarball][1.0.0-alpha.2-osx-x64-tar] ([signature][1.0.0-alpha.2-osx-x64-tar-sig])
+* [Mac OS X i686 tarball][1.0.0-alpha.2-osx-x32-tar] ([signature][1.0.0-alpha.2-osx-x32-tar-sig])
+* [Documentation][1.0.0-alpha.2-docs]
+
+[1.0.0-alpha.2-announce]: http://blog.rust-lang.org/2015/02/20/Rust-1.0-alpha2.html
+[1.0.0-alpha.2-notes]: https://github.com/mozilla/rust/blob/1.0.0-alpha.2/RELEASES.md
+[1.0.0-alpha.2-tar]: https://static.rust-lang.org/dist/rust-1.0.0-alpha.2.tar.gz
+[1.0.0-alpha.2-tar-sig]: https://static.rust-lang.org/dist/rust-1.0.0-alpha.2.tar.gz.asc
+[1.0.0-alpha.2-windows-x64]: https://static.rust-lang.org/dist/rust-1.0.0-alpha.2-x86_64-pc-windows-gnu.exe
+[1.0.0-alpha.2-windows-x64-sig]: https://static.rust-lang.org/dist/rust-1.0.0-alpha.2-x86_64-pc-windows-gnu.exe.asc
+[1.0.0-alpha.2-windows-x32]: https://static.rust-lang.org/dist/rust-1.0.0-alpha.2-i686-pc-windows-gnu.exe
+[1.0.0-alpha.2-windows-x32-sig]: https://static.rust-lang.org/dist/rust-1.0.0-alpha.2-i686-pc-windows-gnu.exe.asc
+[1.0.0-alpha.2-windows-msi-x64]: https://static.rust-lang.org/dist/rust-1.0.0-alpha.2-x86_64-pc-windows-gnu.msi
+[1.0.0-alpha.2-windows-msi-x64-sig]: https://static.rust-lang.org/dist/rust-1.0.0-alpha.2-x86_64-pc-windows-gnu.msi.asc
+[1.0.0-alpha.2-windows-msi-x32]: https://static.rust-lang.org/dist/rust-1.0.0-alpha.2-i686-pc-windows-gnu.msi
+[1.0.0-alpha.2-windows-msi-x32-sig]: https://static.rust-lang.org/dist/rust-1.0.0-alpha.2-i686-pc-windows-gnu.msi.asc
+[1.0.0-alpha.2-linux-x64]: https://static.rust-lang.org/dist/rust-1.0.0-alpha.2-x86_64-unknown-linux-gnu.tar.gz
+[1.0.0-alpha.2-linux-x64-sig]: https://static.rust-lang.org/dist/rust-1.0.0-alpha.2-x86_64-unknown-linux-gnu.tar.gz.asc
+[1.0.0-alpha.2-linux-x32]: https://static.rust-lang.org/dist/rust-1.0.0-alpha.2-i686-unknown-linux-gnu.tar.gz
+[1.0.0-alpha.2-linux-x32-sig]: https://static.rust-lang.org/dist/rust-1.0.0-alpha.2-i686-unknown-linux-gnu.tar.gz.asc
+[1.0.0-alpha.2-osx-x64-pkg]: https://static.rust-lang.org/dist/rust-1.0.0-alpha.2-x86_64-apple-darwin.pkg
+[1.0.0-alpha.2-osx-x64-pkg-sig]: https://static.rust-lang.org/dist/rust-1.0.0-alpha.2-x86_64-apple-darwin.pkg.asc
+[1.0.0-alpha.2-osx-x32-pkg]: https://static.rust-lang.org/dist/rust-1.0.0-alpha.2-i686-apple-darwin.pkg
+[1.0.0-alpha.2-osx-x32-pkg-sig]: https://static.rust-lang.org/dist/rust-1.0.0-alpha.2-i686-apple-darwin.pkg.asc
+[1.0.0-alpha.2-osx-x64-tar]: https://static.rust-lang.org/dist/rust-1.0.0-alpha.2-x86_64-apple-darwin.tar.gz
+[1.0.0-alpha.2-osx-x64-tar-sig]: https://static.rust-lang.org/dist/rust-1.0.0-alpha.2-x86_64-apple-darwin.tar.gz.asc
+[1.0.0-alpha.2-osx-x32-tar]: https://static.rust-lang.org/dist/rust-1.0.0-alpha.2-i686-apple-darwin.tar.gz
+[1.0.0-alpha.2-osx-x32-tar-sig]: https://static.rust-lang.org/dist/rust-1.0.0-alpha.2-i686-apple-darwin.tar.gz.asc
+[1.0.0-alpha.2-docs]: http://doc.rust-lang.org/1.0.0-alpha.2/index.html
 
 ## 1.0.0-alpha
 
