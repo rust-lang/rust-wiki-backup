@@ -4,6 +4,10 @@ outstanding contributions to The Rust Project, its ecosystem, and its
 community. These people are 'friends of the tree', archived here
 for eternal glory.
 
+## 2015-02-17 Toby Scrace
+
+Today I would like to nominate Toby Scrace as Friend of the Tree. Toby emailed me over the weekend about a login vulnerability on crates.io where you could log in to whomever the previously logged in user was regardless of whether the GitHub authentication was successful or not. I very much appreciate Toby emailing me privately ahead of time, and I definitely feel that Toby has earned becoming Friend of the Tree.
+
 ## 2015-02-10 Jonathan Reem (reem)
 
 Jonathan Reem has been making an impact on Rust since May 2014. His
