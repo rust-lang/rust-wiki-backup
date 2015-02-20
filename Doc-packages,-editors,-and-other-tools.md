@@ -38,7 +38,7 @@
   * [Rust Kate Config](https://github.com/rust-lang/kate-config) (the file can be copied or linked to ~/.kde/share/apps/katepart/syntax/)
 * Netbeans
   * [Rust NetBeans 8+ Plugin](https://github.com/azazar/rust-netbeans) - Forked drrb's NetBeans Plugin
-  * [drrb's NetBeans 7.3+ Plugin](https://github.com/drrb/rust-netbeans) - Rust NetBeans Plugin
+  * [drrb's NetBeans Plugin](https://github.com/drrb/rust-netbeans) - Rust NetBeans Plugin
 * SublimeText
   * [kib2's SublimeText2 language file](http://kib2.free.fr/Falcon/blog/25-01-2012-SublimeText2-Rust.html) - Highlighting for SublimeText 2
   * [dbp's SublimeText2 (now maintained by jhasse)](https://github.com/jhasse/sublime-rust) - Probably more up to date than the above.
