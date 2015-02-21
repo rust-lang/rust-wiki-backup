@@ -51,7 +51,6 @@
   * [suhr/ta-rust](https://github.com/suhr/ta-rust)
 * Vim
   * [rust.vim plugin](https://github.com/rust-lang/rust.vim). Syntastic has syntax error matching based on rustc.
-  * [wting's rust.vim syntax](https://github.com/wting/rust.vim) - Vundle compatible plugin updated daily.
 * NEdit
   * [NEdit syntax highlighting for Rust](https://mail.mozilla.org/pipermail/rust-dev/2013-September/005822.html)
 * Notepad++
