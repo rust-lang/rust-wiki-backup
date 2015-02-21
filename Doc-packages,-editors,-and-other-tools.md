@@ -35,7 +35,7 @@
 * Intellij
   * [Vektah's Intellij plugin] (http://plugins.jetbrains.com/plugin/7438) - Can be installed from Plugins settings in app
 * Kate
-  * [Rust Kate Config](https://github.com/rust-lang/kate-config) (the file can be copied or linked to ~/.kde/share/apps/katepart/syntax/)
+  * [Rust Kate Config](https://github.com/rust-lang/kate-config) (the file can be copied or linked to ~/.kde/share/apps/katepart/syntax/ for KDE4 or ~/.local/share/katepart5/syntax/ for KF5)
 * Netbeans
   * [Rust NetBeans 8+ Plugin](https://github.com/azazar/rust-netbeans) - Forked drrb's NetBeans Plugin
   * [drrb's NetBeans Plugin](https://github.com/drrb/rust-netbeans) - Rust NetBeans Plugin
