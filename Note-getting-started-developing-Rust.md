@@ -140,7 +140,7 @@ Make sure prerequisites, such as Python or Perl, can be found via the `PATH` env
 
 The `configure` script will pull git submodules if it's the first time.  This may take a while. 
 
-**`--enable-rpath`:** By default, the newly built `rustc` found in `<target>/stage<N>/bin/` will likely have its shared library dependencies pointing to the system-wide library path e.g. `/usr/lib/`.  This could be problematic if you do not intend to `make install` the shared library dependencies to that destination.  Pass `--enable-rpath` to `configure` to make `rustc` link against the newly built libraries in `<target>/stage<N>/bin/`.  Alternatively, you can muck around with `LD_LIBRARY_PATH`.  See [#20835](/rust-lang/rust/issues/20836) #20836 for more details.
+**`--enable-rpath`:** By default, the newly built `rustc` found in `<target>/stage<N>/bin/` will likely have its shared library dependencies pointing to the system-wide library path e.g. `/usr/lib/`.  This could be problematic if you do not intend to `make install` the shared library dependencies to that destination.  Pass `--enable-rpath` to `configure` to make `rustc` link against the newly built libraries in `<target>/stage<N>/bin/`.  Alternatively, you can muck around with `LD_LIBRARY_PATH`.  See [#20835](/rust-lang/rust/issues/20836) for more details.
 
 To adjust the install locations, pass `--prefix=/path/to/install/dir` to `configure`.
 
@@ -160,7 +160,7 @@ make
 
 Optional steps:
 
-Run the test suite. On windows, `make check` may not pass. In any case, `make check-fast` should work (see #4193).
+Run the test suite. On windows, `make check` may not pass. In any case, `make check-fast` should work (see [#4193](/rust-lang/rust/issues/4193)).
 
 *Note:* On Linux or OS X, if you have Valgrind installed, the tests will run slowly because they are running under Valgrind. If you define `CFG_DISABLE_VALGRIND=1` in your build environment or run configure with the `--disable-valgrind` flag, you can see the tests running at full speed.
 
