@@ -41,7 +41,7 @@ $ git push origin mybranch
 
 4. File a pull request against `rust-lang/rust`. Target the pull request to the `master` integration branch in `rust-lang/rust`. Once your pull request is filed, you can create a new branch and do something else.
 
-5. Reviewers regularly look through the @bors integration queue, shown here: http://buildbot.rust-lang.org/bors/bors.html . Monitor your pull request for any additional comments or feedback from reviewers. Once an authorized reviewer leaves a comment of the form `r+` on the end of the final commit in your pull request, @bors will attempt to merge your change to a temporary branch, test it, and advance `master` to that version if the tests pass. If any of these steps fail, it is your responsibility to address any problems that show up and refresh the pull request with updated code, so watch this process to ensure your change integrates.
+5. Reviewers regularly look through the @bors integration queue, shown here: http://buildbot.rust-lang.org/bors/bors.html . Monitor your pull request for any additional comments or feedback from reviewers. Once an authorized reviewer leaves a comment on your pull request of the form `@bors r+ <commit>` (referring to the final commit in the pull request), @bors will attempt to merge your change to a temporary branch, test it, and advance `master` to that version if the tests pass. If any of these steps fail, it is your responsibility to address any problems that show up and refresh the pull request with updated code, so watch this process to ensure your change integrates.
 
 6. Pull `master` into your local repo and verify that it contains your changes:
 ```
