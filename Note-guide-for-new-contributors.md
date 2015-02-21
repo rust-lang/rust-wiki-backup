@@ -4,7 +4,7 @@ The way [many people][cmr] seem to get involved is by simply trying to write Rus
 
 We coordinate through [discuss.rust-lang.org][discuss], [IRC][pound-rust-internals], and the GitHub [issue] tracker.
 
-[cmr]: http://blog.octayn.net/blog/2013/06/23/how-i-got-started-hacking-rustc-and-how-you-can-too/
+[cmr]: http://cmr.github.io/blog/2013/06/23/how-i-got-started-with-rust/
 [pound-rust-internals]: http://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-internals
 [r/rust]: http://reddit.com/r/rust
 [issue]: http://github.com/mozilla/rust/issues
