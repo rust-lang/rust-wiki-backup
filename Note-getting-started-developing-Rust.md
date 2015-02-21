@@ -134,27 +134,45 @@ Before you get started, you should quickly review the [build system notes](https
 ~~~~bash
 git clone git://github.com/mozilla/rust.git
 cd rust
-./configure   # this may take a while if this is your first time, as it downloads LLVM
 ~~~~
 
-If you already have one of the prerequisites installed, like Python or Perl, make sure the PATH environment variable is set so the configure script can find it, otherwise you will get errors during configure.
+Make sure prerequisites, such as Python or Perl, can be found via the `PATH` environment variable, otherwise you will get errors during `./configure`.
+
+The `configure` script will pull git submodules if it's the first time.  This may take a while. 
+
+**`--enable-rpath`:** By default, the newly built `rustc` found in `<target>/stage<N>/bin/` will likely have its shared library dependencies pointing to the system-wide library path e.g. `/usr/lib/`.  This could be problematic if you do not intend to `make install` the shared library dependencies to that destination.  Pass `--enable-rpath` to `configure` to make `rustc` link against the newly built libraries in `<target>/stage<N>/bin/`.  Alternatively, you can muck around with `LD_LIBRARY_PATH`.  See [#20835](/rust-lang/rust/issues/20836) #20836 for more details.
+
+To adjust the install locations, pass `--prefix=/path/to/install/dir` to `configure`.
+
+Run `./configure --help` for various other options.
 
 ~~~~bash
-make    # this will definitely take a while if this is your first time, as it builds LLVM
+./configure --enable-rpath
+~~~~
+
+Build the compiler, standard libraries, and supporting tools.
+
+You can use `make -j` to run a parallel build utilizing all available cores.  You can also specify the number of cores to use e.g. `make -j8` for an 8-core machine.
+
+~~~~bash
+make
 ~~~~
 
 Optional steps:
 
+Run the test suite. On windows, `make check` may not pass. In any case, `make check-fast` should work (see #4193).
+
+*Note:* On Linux or OS X, if you have Valgrind installed, the tests will run slowly because they are running under Valgrind. If you define `CFG_DISABLE_VALGRIND=1` in your build environment or run configure with the `--disable-valgrind` flag, you can see the tests running at full speed.
+
 ~~~~bash
-make check   # Run the test suite. On windows, `make check` may not pass. In any case, `make check-fast` should work (see #4193)
-make install   # Install the compiler and associated tools
+make check
 ~~~~
 
-This will build and test the compiler, standard libraries, and supporting tools.
+Install the compiler and associated tools.  You may need to use `sudo make install` if you do not normally have permission to modify the destination directory.
 
-*Note:* You may need to use `sudo make install` if you do not normally have permission to modify the destination directory. The install locations can be adjusted by passing a `--prefix` argument to `configure`. Various other options are also supported, pass `--help` for more information on them.
-
-*Note:* You can use `make -j8` (if you have an 8-core machine) to speed up the build (or at least the LLVM part and the tests). On Linux or OS X, if you have Valgrind installed, the tests will run slowly because they are running under Valgrind. If you define `CFG_DISABLE_VALGRIND=1` in your build environment or run configure with the `--disable-valgrind` flag, you can see the tests running at full speed.
+~~~~bash
+make install
+~~~~
 
 *Note:* If you need to pass in extra flags to `make`, you can add `RUSTFLAGS=...` to the argument list for `make`. For example, `make check RUSTFLAGS="-Z debug-info"` builds the compiler and runs tests with debug info enabled. 
 
