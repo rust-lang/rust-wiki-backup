@@ -9,7 +9,9 @@ General
 
 When submitting pull requests it is important to know your branch may be rebased, which will change its history and make your branch's history invalid.
 
-One possible workflow that has worked for developers on the project is outlined below. This assumes that you have an 'origin' remote that represents your remote github repo, and a 'upstream' remote that represents rust-lang's. To create the latter, you can execute:
+One possible workflow that has worked for developers on the project is outlined below. This assumes that you have an 'origin' remote that represents your remote github repo (i.e. your github-hosted fork of `rust-lang/rust`), and a 'upstream' remote that represents rust-lang's.
+The 'origin' remote is set when you make the initial clone of your fork.
+To create the 'upstream' remote, you can execute:
 ```
 $ git remote add upstream https://github.com/rust-lang/rust
 ```
