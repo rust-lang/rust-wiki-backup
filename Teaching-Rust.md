@@ -23,7 +23,7 @@ need to know to write real code:
 impls, basic types, using libraries, `Option`, generics
 
 For an example of how to teach Rust I recommend watching [Niko's recent 
-talk](https://t.co/aaYgMqZprC)
+talk](http://mirror.linux.org.au/pub/linux.conf.au/2014/Friday/107-The_Rust_language_memory_ownership_and_lifetimes_-_Nicholas_Matsakis.mp4)
 
 # Rust relating to other languages
 
@@ -34,8 +34,9 @@ specifically functional, not specifically OO, but drawing influence from
 both. The biggest influences are probably C++ and ML. It's design is 
 influenced by existing languages, but more importantly by practical 
 experience solving problems of memory safety, performance, and 
-concurrency in large-scale software (Servo). To that end it deviates 
+concurrency in large-scale software ([Servo]). To that end it deviates 
 from precedent established in other mainstream programming languages, 
 introducing the key concepts of ownership and borrowing.
 
 [C++ programmers]: https://github.com/mozilla/rust/wiki/Rust-for-CXX-programmers
+[Servo]: https://github.com/servo/servo
