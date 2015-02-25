@@ -1,1 +1,1 @@
-See http://static.rust-lang.org/doc/master/complement-cheatsheet.html
+See http://rustbyexample.com/
