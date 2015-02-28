@@ -121,7 +121,7 @@ Instructions to build a cross compiler to Android on ARM, to cross compile Rust 
 
 ### How to add rust code into an ndk project to create an APK
 
-Note: instructions beyond this point need further re-checking with latest android and rust.
+**Note: instructions beyond this point need further re-checking with latest android and rust.**
 
 Use rustc with --crate-type=staticlib etc to emit rust code which can be linked with C/C++ sources compiled by the android standalone toolchain's g++. From here is it possible to create an APK as with NDK examples. Use #[no_mangle] extern "C" rust functions to export functions which can be called by android frameworks
 
