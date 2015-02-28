@@ -32,20 +32,25 @@ Instructions to build a cross compiler to Android on ARM, to cross compile Rust 
       Only do this if you know why you want to - otherwise, the default of ...-4.8 will work fine.
 
     If you're on 64bit linux, the android ndk needs 32bit linux libraries, such as `/lib32/libc.so.6`, `/usr/lib32/libz.so.1`, and `/usr/lib32/libstdc++.so.6.0.17`, so make sure they're installed.
+
     If you're using ubuntu 64, this command will do:
-
-        e.g.) 
-        
-
-    You can simple install at Ubuntu System by 
 
         apt-get install libc6-i386 lib32z1 lib32stdc++6
 
-	Some of the tool chain will need to be placed in your path, if you plan to build with cargo.
+    Some of the tool chain will need to be placed in your path, if you plan to build with cargo.
+    The easy way to do this is to add these environment variables in ~/.bashrc:
 
-		e.g.)
-		ln -s /opt/ndk_standalone/bin/arm-linux-androideabi-gcc /usr/bin/arm-linux-androideabi-gcc
-		ln -s /opt/ndk_standalone/bin/arm-linux-androideabi-ar /usr/bin/arm-linux-androideabi-ar
+        export ANDROID_NDK=".../path/to/android-ndk-<yourvers>"
+        export ANDROID_TOOLCHAIN=".../path/to/standalone/toolchain"
+        export PATH="$PATH:$ANDROID_TOOLCHAIN/bin"
+
+    For example:
+
+        export ANDROID_NDK="$HOME/android-ndk-r10d"
+        export ANDROID_TOOLCHAIN="$HOME/ndk-standalone-14-arm"
+        export PATH="$PATH:$ANDROID_TOOLCHAIN/bin"
+
+    Then do `source ~/.bashrc` to update your environment.
 
 2. Download rustc from git repository
 
@@ -53,51 +58,70 @@ Instructions to build a cross compiler to Android on ARM, to cross compile Rust 
     
 3. Configure with ndk toolchain path
 
-        mkdir build; cd build
+        mkdir build
+        cd build
 
-        ../configure --target=arm-linux-androideabi --android-cross-path=[path of standalone toolchain dir]
+        ../configure \
+            --host=x86_64-unknown-linux-gnu \
+            --target=arm-linux-androideabi \
+            --android-cross-path="$ANDROID_TOOLCHAIN"
 
 4. Build
 
         make
   
-        make install (Optional) 
+        make install  # (Optional) 
 
-    It will copy rustc binaries and libraries into /usr/local (or as defined with --prefix)
+    `make install` will copy rustc binaries and libraries into /usr/local (or as defined with --prefix)
     
 5. How to cross compile
 
-		With rustc:
-	        rustc --target=arm-linux-androideabi -C linker=[path of standalone toolchain dir]/bin/arm-linux-androideabi-gcc hello.rs
+    #### With rustc:
+    
+        rustc --target=arm-linux-androideabi \
+            -C linker=$ANDROID_TOOLCHAIN/bin/arm-linux-androideabi-gcc \
+            -C link-args=-pie \
+            hello.rs
 
-		With cargo:
-			Create a .cargo directory in your project's root dir
-			Create a config file inside the .cargo directory (proj/.cargo/config)
-			Place your deps/linker information inside that file
-			e.g)
-			[target.arm-linux-androideabi]
-			linker = "/opt/ndk_standalone/bin/arm-linux-androideabi-gcc"
-			
-			Compile:
-			cargo build --target=arm-linux-androideabi
+    `-C link-args=-pie` is a workaround for [issue #17437](https://github.com/rust-lang/rust/issues/17437).
+
+    #### With cargo (doesn't work right now):
+
+    Because of the need for the `-C link-args=-pie` to rustc, building android code with cargo is
+    not possible right now.
+    
+    ~~1. Create a .cargo directory in your project's root dir~~  
+    ~~2. Create a config file inside the .cargo directory (proj/.cargo/config)~~  
+    ~~3. Place your deps/linker information inside that file. for example:~~  
+
+        [target.arm-linux-androideabi]
+        linker = "/opt/ndk_standalone/bin/arm-linux-androideabi-gcc"
+
+    ~~4. Then, to compile:~~  
+
+            cargo build --target=arm-linux-androideabi
  
 6. How to run on Android
 
-    Remount your device for get the read/write permission on /system partition
+    1. Push your binary
 
-        adb remount
+            $ adb push hello /data/local/tmp
 
-    Push your binary
+    2. Run using adb shell
 
-        adb push hello /system/bin
-        chmod 777 hello
-
-    Run using adb shell
-
-        adb shell /system/bin/hello
-
+            $ adb shell
+            shell@hammerhead:/ $ cd /data/local/tmp
+            shell@hammerhead:/ $ chmod 755 hello
+            shell@hammerhead:/ $ ./hello
+            it worked!!
+            
+            ...okay, hi. hello world. whatever.
+            shell@hammerhead:/ $ exit
+            $
 
 ### How to add rust code into an ndk project to create an APK
+
+Note: instructions beyond this point need further re-checking with latest android and rust.
 
 Use rustc with --crate-type=staticlib etc to emit rust code which can be linked with C/C++ sources compiled by the android standalone toolchain's g++. From here is it possible to create an APK as with NDK examples. Use #[no_mangle] extern "C" rust functions to export functions which can be called by android frameworks
 
