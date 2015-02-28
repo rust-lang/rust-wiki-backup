@@ -115,7 +115,7 @@ Instructions to build a cross compiler to Android on ARM, to cross compile Rust 
     3. Place your deps/linker information inside that file. for example:
 
             [target.arm-linux-androideabi]
-            linker = "<android_toolkit location>/bin/arm-linux-androideabi-gcc"
+            linker = "arm-linux-androideabi-gcc"
 
     4. Then, to compile:
 
