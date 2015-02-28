@@ -121,7 +121,7 @@ Instructions to build a cross compiler to Android on ARM, to cross compile Rust 
 
             cargo build --target=arm-linux-androideabi
 
-    5. Copy `target/arm-linux-androideabi/<binary name>` to your device, *not* `target/<binary name>`. (This may change depending on how some cargo issues get resolved.)
+    5. Copy `target/arm-linux-androideabi/<binary name>` to your device, *not* `target/<binary name>`. (This may change depending on how some cargo issues about the paths being confusing get resolved.)
  
 6. How to run on Android
 
