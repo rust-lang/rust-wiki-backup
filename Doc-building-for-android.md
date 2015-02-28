@@ -18,7 +18,7 @@ Instructions to build a cross compiler to Android on ARM, to cross compile Rust 
     
     example command to setup standalone tool chain:
     
-        ~/android-ndk-<your-version-here>/build/tools/make-standalone-toolchain.sh \
+        ~/android-ndk-<your-vers>/build/tools/make-standalone-toolchain.sh \
             --platform=android-14 \
             --arch=arm \
             --install-dir=~/ndk-standalone-14-arm
