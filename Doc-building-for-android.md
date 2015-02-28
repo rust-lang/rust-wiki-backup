@@ -70,9 +70,9 @@ Instructions to build a cross compiler to Android on ARM, to cross compile Rust 
 
         make
   
-        make install  # (Optional) 
+        make install
 
-    `make install` will copy rustc binaries and libraries into /usr/local (or as defined with --prefix)
+    `make install` will copy rustc binaries and libraries into /usr/local (or as defined with --prefix). You will probably need to do it as root, depending on whether you set --prefix when doing configure.
     
 5. How to cross compile
 
@@ -85,29 +85,53 @@ Instructions to build a cross compiler to Android on ARM, to cross compile Rust 
 
     `-C link-args=-pie` is a workaround for [issue #17437](https://github.com/rust-lang/rust/issues/17437).
 
-    #### With cargo (doesn't work right now):
+    #### With cargo:
 
-    Because of the need for the `-C link-args=-pie` to rustc, building android code with cargo is
-    not possible right now.
+    Because of the need for the `-C link-args=-pie` to rustc, a horrifying hack is required
+    to build code for android using cargo: putting a `rustc` script earlier on PATH, that will
+    add the `-C link-args=-pie` argument. This is because cargo doesn't allow us to directly
+    set the link-args argument. This script will set up the workaround automatically:
+
+        if [[ ! -d ~/bin ]]; then
+            mkdir ~/bin
+        fi
+        # check if ~/bin comes before the location of rustc
+        # and if it doesn't, put it there
+        if [[ $PATH != *"$HOME/bin:"*"$(dirname $(which rustc))" ]]; then
+            echo 'export PATH="$HOME/bin:$PATH"' >> ~/.bashrc
+        fi
+
+        cat > ~/bin/rustc <<
+        #!/bin/bash
+        exec "$(which rustc)" -C link-args=-pie "\$@"
+        END
+        chmod +x ~/bin/rustc
+
+    After running that script, make sure to `source ~/.bashrc` again, and then the
+    following instructions should work.
     
-    ~~1. Create a .cargo directory in your project's root dir~~  
-    ~~2. Create a config file inside the .cargo directory (proj/.cargo/config)~~  
-    ~~3. Place your deps/linker information inside that file. for example:~~  
+    1. Create a .cargo directory in your project's root dir
+    2. Create a config file inside the .cargo directory (proj/.cargo/config)
+    3. Place your deps/linker information inside that file. for example:
 
-        [target.arm-linux-androideabi]
-        linker = "/opt/ndk_standalone/bin/arm-linux-androideabi-gcc"
+            [target.arm-linux-androideabi]
+            linker = "<android_toolkit location>/bin/arm-linux-androideabi-gcc"
 
-    ~~4. Then, to compile:~~  
+    4. Then, to compile:
 
             cargo build --target=arm-linux-androideabi
+
+    5. Copy `target/arm-linux-androideabi/<binary name>` to your device, *not* `target/<binary name>`. (This may change depending on how some cargo issues get resolved.)
  
 6. How to run on Android
 
-    1. Push your binary
+    1. If necessary, get your binary off your VM or set up USB to pass through. How to do this varies a lot; if you copy the binary off your vm, you'll need the android sdk on your host, and adb set up in your host's PATH.
+
+    2. Push your binary
 
             $ adb push hello /data/local/tmp
 
-    2. Run using adb shell
+    3. Run using adb shell
 
             $ adb shell
             shell@hammerhead:/ $ cd /data/local/tmp
