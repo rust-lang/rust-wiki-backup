@@ -1,29 +1,41 @@
 Rust has been ported to Android OS running on ARM architecture. Android on other architectures is not yet supported.
 
+**Important**: Right now, this only works correctly on linux. It can be made to work on OSX, but if you're on OSX, make things easy by setting up a VM. It has been successfully tested on ubuntu 14.04.2 in virtualbox, if you want something super safe, but most any debian-based thing will almost certainly work.
+
 In the issue tracker, [Android-related issues](https://github.com/rust-lang/rust/issues?labels=A-android) are labelled `A-android`, and [ARM-related issues](https://github.com/rust-lang/rust/issues?labels=A-ARM) are labelled `A-ARM`.
 
 Instructions to build a cross compiler to Android on ARM, to cross compile Rust sources, and to run resulting binaries follow.
 
 1. Setup Android NDK standalone tool chain with your specific [API Level](http://developer.android.com/guide/topics/manifest/uses-sdk-element.html#ApiLevels)
 
-    Download android NDK version _r9b_ or later (you might not be able to build jemalloc with previous version) from http://developer.android.com/tools/sdk/ndk/index.html
+    Download android NDK version _r9b_ or later (you might not be able to build jemalloc with previous versions) from http://developer.android.com/tools/sdk/ndk/index.html. for example:
 
-```
-wget -c http://dl.google.com/android/ndk/android-ndk-r10d-linux-x86_64.tar.bz2
-```
+        $ wget http://dl.google.com/android/ndk/android-ndk-r10d-linux-x86_64.bin
+        $ chmod +x android-ndk-r10d-linux-x86_64.bin
+        $ ./android-ndk-r10d-linux-x86_64.bin
+        $ ls android-ndk-r10d -d
+        android-ndk-r10d
     
     example command to setup standalone tool chain:
     
-        ~/android-ndk-r9b/build/tools/make-standalone-toolchain.sh --platform=android-14 --install-dir=/opt/ndk_standalone --ndk-dir=~/android-ndk-r10d
+        ~/android-ndk-<your-version-here>/build/tools/make-standalone-toolchain.sh \
+            --platform=android-14 \
+            --arch=arm \
+            --install-dir=~/ndk-standalone-14-arm
         
-        --platform    indicates the Android API level
-        --install-dir indicates the directory where the toolchain will be installed
-        --ndk-dir     (This may need an absolute path instead of ~/dir-to-ndk)
+    `--platform`    indicates the Android API level - has successfully been tested with 18 as well  
+    `--install-dir` indicates the directory where the toolchain will be installed. You can pick
+    more or less anything you feel like.  
+    `--arch`        must be set to `arm`, or it won't know what toolchain to use. (Imagine that!)  
+    `--toolchain`   can also be set to one of the names of the directories in
+      `android-ndk-<yourvers>/toolchains/` - keeping in mind it must be one of the arm ones.
+      Only do this if you know why you want to - otherwise, the default of ...-4.8 will work fine.
 
-    In case of 64bit linux system, android ndk needs 32bit linux libraries.
+    If you're on 64bit linux, the android ndk needs 32bit linux libraries, such as `/lib32/libc.so.6`, `/usr/lib32/libz.so.1`, and `/usr/lib32/libstdc++.so.6.0.17`, so make sure they're installed.
+    If you're using ubuntu 64, this command will do:
 
         e.g.) 
-        /lib32/libc.so.6, /usr/lib32/libz.so.1, /usr/lib32/libstdc++.so.6.0.17
+        
 
     You can simple install at Ubuntu System by 
 
