@@ -11,13 +11,15 @@ The rust test suite has several sets of tests for different purposes. As the com
 * Run with valgrind: `make check CFG_ENABLE_VALGRIND=1`
 * Run a specific test: `make check TESTNAME=[...]`
   * The pattern `[...]` can be a complete path to a test, such as
-    `test/run-pass/foobar.rs`; it can also be any substring of a path.
+    `run-pass/foobar.rs`; it can also be any substring of a path.
     For instance, `make check TESTNAME=foo` will run all tests that
     have `foo` in some part of their filename.
   * Note that while this will run only tests matching the given
     pattern, it will still execute all test runners - most of them
     will just not execute any tests. For more precise control, call
     `make` on one of the targets below.
+  * You may need to `touch` the test source file to ensure that `make`
+    runs the necessary test runners.
 * Run without parallelism: `make check RUST_TEST_TASKS=1` - This can make it easier to understand failure output.
 * Build and test std without re-bootstrapping: `make check-stage1-std NO_REBUILD=1` - This makes the build/test cycle **much** faster. (Note: `NO_REBUILD` can also prevent compile tests from being rebuilt. If you want to rebuild those but not the compiler, look for files with the `.ok` extension in the `tmp` subdirectory and remove the appropriate ones.)
 
