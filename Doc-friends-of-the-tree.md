@@ -4,6 +4,10 @@ outstanding contributions to The Rust Project, its ecosystem, and its
 community. These people are 'friends of the tree', archived here
 for eternal glory.
 
+## 2015-03-03 Manish Goregaokar (Manishearth)
+
+Manish started working on Servo as part of the GSoC program in 2014, where he implemented XMLHttpRequest. Since then he's become in integral part of the Servo team while finishing his university studies and organizing Rust community events. In 2015 he took an interest in bors' queue and started making rollup PRs to accelerate the integration process. Nursing the PR queue is the kind of time-consuming labor that creates friends of the tree like Manish, the rollup friend of the tree.
+
 ## 2015-02-17 Toby Scrace
 
 Today I would like to nominate Toby Scrace as Friend of the Tree. Toby emailed me over the weekend about a login vulnerability on crates.io where you could log in to whomever the previously logged in user was regardless of whether the GitHub authentication was successful or not. I very much appreciate Toby emailing me privately ahead of time, and I definitely feel that Toby has earned becoming Friend of the Tree.
