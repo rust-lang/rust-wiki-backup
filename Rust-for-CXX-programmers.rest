@@ -53,7 +53,7 @@ can enforce this with the `managed-heap-memory` lint check). Garbage collection
 will be avoided in the standard library except for concepts like persistent
 (copy-on-write, with shared substructures) containers that require them.
 
-Use `Option<Box<T>>` or `Option<&T>` to represent a potentially null pointer or reference acessable safely through `match` or its helper methods.
+Use `Option<Box<T>>` or `Option<&T>` to represent a potentially null pointer or reference accessible safely through `match` or its helper methods.
 
 The use of Raw pointers is controlled through unsafe blocks.
 
@@ -144,7 +144,7 @@ rust collections and smart pointers manage memory similarly to C++ RAII techniqu
 Visibility
 ----------
 Struct fields and functions are private by default, but can be marked with `pub`.  
-Privacy works at the module level: private fields are still visible to functions and methods throughout a module, and any submodules. 
+Privacy works at the module level: private fields are still visible to functions and methods throughout a module, and any sub-modules. 
 This eliminates the need for C++ 'friend' or 'protected'; C++ can in some situations use a class as a module-like entity. See Modules. Where a C++ programmer might use a class with friends, a rust programmer places the group of classes in a module.
 
 Tuples and destructuring
@@ -194,7 +194,7 @@ function or expression must also return a correctly typed value, or fail.
 This also means indexing a string/vector will do bounds checking like
 `vector<T>::at()` (though there are unsafe functions in `vec::raw` that allow bypassing the bounds checks)
 
-`unsafe {}` blocks are used to enable the use of raw pointers, *T, on which you can do pointer-arithmetic and derefencing to recover all the power of C and C++. Functions may be marked as unsafe, hence only callable from unsafe blocks. 
+`unsafe {}` blocks are used to enable the use of raw pointers, *T, on which you can do pointer-arithmetic and dereferencing to recover all the power of C and C++. Functions may be marked as unsafe, hence only callable from unsafe blocks. 
 
 Unsafe code is used to implement standard library types, providing safe abstractions for most tasks.
 
@@ -256,11 +256,11 @@ Function Overloading
 Rust can only select function overloads based on the receiver (and sometimes through return values due to Hindley-Milner type inference).
 
 To 'overload' functions on multiple parameters, one must create an extra layer of traits for something that looks like double-dispatch, with each parameter being moved to the receiver by an intermediate function.
-Although this is significantly more boilerplate, the benefit is that its' also ready for runtime polymorphism through trait-objects if needed, and traits improve error messages for generics(templates).
+Although this is significantly more boilerplate, the benefit is that it's also ready for runtime polymorphism through trait-objects if needed, and traits improve error messages for generics(templates).
 
 Without overloading multiple parameters, the information you pay in writing more specific function calls is sometimes recovered with HM type inference feeding back through its' arguments.
 
-You can also consider Enums for conviniently passing varied options to a function - or use rusts powerful macros for wrapping extra convinience around function calls (eg, it is possible to annotate arguments with keywords & special syntax, handle variadics etc)
+You can also consider Enums for conveniently passing varied options to a function - or use rusts powerful macros for wrapping extra convenience around function calls (eg, it is possible to annotate arguments with keywords & special syntax, handle variadics etc)
 
 Runtime Polymorphism
 --------------------
@@ -280,7 +280,7 @@ Module System
 -------------
 Rust's modules don't work like most other languages. Modules are namespaces, not 'imported' into individual sources. 
 `mod <module_name>;` is used from the crate root or directory 'mod.rs' file to reference other source files by mounting their contents in the module tree. 
-'mod.rs' files are a special workaround to allow rust's modules tree to mimick a directory structure.
+'mod.rs' files are a special workaround to allow rust's modules tree to mimic a directory structure.
 
 Any public items can be referenced from other modules using the full root-relative path e.g. ::foo::bar, or relative using self:: , super::. 
 "use" directives are a little like 'using namespace' or 'using', and filling some of the role of '#include' - providing shorter aliases for paths, or bringing individual symbols into scope.
