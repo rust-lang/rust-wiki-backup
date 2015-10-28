@@ -40,5 +40,6 @@ Papers that have had more or less influence on Rust, or which one might want to 
 
 * [GPU programming in Rust](http://www.cs.indiana.edu/~eholk/papers/hips2013.pdf)
 * [Parallel closures: a new twist on an old idea](https://www.usenix.org/conference/hotpar12/parallel-closures-new-twist-old-idea) - not exactly about rust, but by nmatsakis
+* [Patina: A Formalization of the Rust Programming Language](ftp://ftp.cs.washington.edu/tr/2015/03/UW-CSE-15-03-02.pdf)
 
 Missing topics: L4, linear types, typestate
